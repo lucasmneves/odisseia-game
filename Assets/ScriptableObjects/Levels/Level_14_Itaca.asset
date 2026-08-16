@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 746d9e69b82bf90409efcd799d16c157, type: 3}
+  m_Name: Level_14_Itaca
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Core.LevelDefinition
+  levelId: Level_14_Itaca
+  displayName: "\xCDtaca"
+  sceneName: Level_14_Itaca
+  order: 14

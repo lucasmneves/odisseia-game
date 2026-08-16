@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Boot/Boot.unity
+    guid: 8fa4f5d0428e8ce4682bf5e563d52834
+  - enabled: 1
+    path: Assets/Scenes/Menu/MainMenu.unity
+    guid: c59490edf9b385f49919a0b73184df6d
+  - enabled: 1
+    path: Assets/Scenes/Menu/LevelSelect.unity
+    guid: 7255f699f6d21a84c92069bbb7cc8bf2
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_01_Troia.unity
+    guid: 1ef9748a56142ad479046623effd17c0
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_02_Cicones.unity
+    guid: bfcec719e7a7dba47ab4698b1497827c
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_03_Lotofagos.unity
+    guid: 2c215ff0e28af144090b8b67e7964c93
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_04_Ciclopes.unity
+    guid: 557e170f0663d5247b77b7e84063b952
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_05_Eolo.unity
+    guid: 4b41a289ffc855f489cc333fd007faef
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_06_Lestrigoes.unity
+    guid: acff21cad55b45846a7c7f6092c4bc6c
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_07_Circe.unity
+    guid: 264787df255351b429990ad83385c812
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_08_MundoDosMortos.unity
+    guid: 14a997d76d5e71c468aa2aa967756a37
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_09_Sereias.unity
+    guid: df35a63dfeeeb5c419e7d4ca00996907
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_10_CilaCaribdis.unity
+    guid: e156900e0ce402d42abc3883d75a6b12
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_11_GadoDoSol.unity
+    guid: 390081cc45199f041b15108a039f3990
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_12_Calipso.unity
+    guid: 3786e72242e103a48acf31fd6ccec0bf
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_13_Feacios.unity
+    guid: 3054ce5ccfc26fb4aac98d7335963611
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_14_Itaca.unity
+    guid: d4d243b1c87a91b4f8a19f0d16b2de6d
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_15_Pretendentes.unity
+    guid: eb27616410015c94880726a4d8a24665
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_16_Final.unity
+    guid: 75fdde438e5990845802fe682a6be991
+  - enabled: 1
+    path: Assets/Scenes/Menu/LevelComplete.unity
+    guid: ef4eb7a64c333ba4fa20dd9119a038dc
+  - enabled: 1
+    path: Assets/Scenes/Menu/Ending.unity
+    guid: 7bf4f4d1159454c4b9fc545830007f63
+  m_configObjects: {}

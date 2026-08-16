@@ -1,0 +1,94 @@
+name: Build Web
+
+# ESTRUTURA INICIAL — não há secrets reais neste repositório.
+# O workflow só executa de fato depois que os secrets listados no README
+# (seção "Deploy") forem configurados em Settings > Secrets and variables > Actions.
+# Enquanto isso, o job de build falha na etapa de ativação de licença, que é o
+# comportamento esperado e explícito.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build WebGL
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. checkout
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      # Cache da pasta Library: sem isso cada build reimporta o projeto inteiro
+      # (vários minutos a mais por execução).
+      - name: Cache Library
+        uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-WebGL-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-WebGL-
+            Library-
+
+      # 2. Unity + 3. Build Web
+      # game-ci/unity-builder cuida da imagem do Unity, da ativação da licença e da
+      # chamada do build. buildMethod aponta para o mesmo BuildScript usado localmente,
+      # então CI e máquina local produzem o mesmo artefato.
+      - name: Build WebGL
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: WebGL
+          buildMethod: BuildScript.BuildWebGL
+          allowDirtyBuild: true
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: odisseia-webgl
+          path: Builds/WebGL
+          if-no-files-found: error
+
+  # 4. Deploy — só na branch principal, e só depois do build passar.
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: odisseia-webgl
+          path: build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
