@@ -1,0 +1,35 @@
+# Normaliza fim de linha nos arquivos de texto do repositório.
+* text=auto
+
+# --- Saída do build WebGL ---
+# Sem isto, a deteccao de binario fica por heuristica de conteudo. Com
+# core.autocrlf=true, um arquivo binario mal detectado teria os bytes 0x0D/0x0A
+# reescritos — corrompendo o wasm/dados e quebrando o jogo no navegador de um
+# jeito dificil de diagnosticar.
+*.unityweb   binary
+*.wasm       binary
+*.data       binary
+*.br         binary
+*.gz         binary
+
+# --- Assets binários do Unity ---
+*.png        binary
+*.jpg        binary
+*.wav        binary
+*.ogg        binary
+*.mp3        binary
+*.ttf        binary
+*.otf        binary
+*.unitypackage binary
+
+# --- Arquivos de projeto Unity ---
+# Cenas, prefabs e assets serializados em YAML: forcar LF evita ruido de diff
+# entre colaboradores em SOs diferentes.
+*.unity      text eol=lf
+*.prefab     text eol=lf
+*.asset      text eol=lf
+*.meta       text eol=lf
+*.mat        text eol=lf
+*.anim       text eol=lf
+*.controller text eol=lf
+*.inputactions text eol=lf
