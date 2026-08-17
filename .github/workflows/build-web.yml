@@ -125,8 +125,37 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      # enablement: true tenta habilitar o Pages automaticamente, evitando o erro
-      # "Get Pages site failed" quando ninguém configurou Settings > Pages ainda.
+      # Criar o site do Pages pela primeira vez via API é uma operacao restrita
+      # que o GITHUB_TOKEN do workflow nao tem permissao para fazer (mesmo com
+      # pages:write) -- so funciona feita manualmente pelo dono do repo, uma
+      # unica vez, pelo navegador. Sem esse preflight, configure-pages falha
+      # la na frente com "Resource not accessible by integration", que nao diz
+      # o que fazer.
+      - name: Verificar se o Pages ja foi habilitado
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          status=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pages")
+
+          if [ "$status" = "404" ]; then
+            echo "::error title=GitHub Pages nao habilitado::O site do Pages ainda nao existe neste repositorio."
+            echo ""
+            echo "Isto e configuracao manual, feita uma unica vez pelo dono do repo:"
+            echo "  1. Va em Settings > Pages"
+            echo "  2. Em 'Build and deployment', Source: selecione 'GitHub Actions'"
+            echo "  3. Rode este workflow de novo"
+            echo ""
+            echo "Criar o site via API (o que este workflow tentaria a seguir) e"
+            echo "uma operacao restrita que o token do workflow nao tem permissao"
+            echo "para fazer -- por isso precisa ser feito pela interface."
+            exit 1
+          fi
+
+      # enablement: true confirma o site ja existente (o preflight acima ja
+      # garantiu isso) -- nao tenta mais criar do zero.
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:

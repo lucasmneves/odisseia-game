@@ -274,7 +274,7 @@ O `-f` é necessário porque o `.gitignore` ignora `Builds/`. Esse caminho versi
 | Sintoma | Causa | Solução |
 |---|---|---|
 | `Missing Unity License File and no Serial was found` | Secret `UNITY_LICENSE` não configurado | Siga o **Caminho A** da seção 10. Ou use o **Caminho B** para publicar sem licença |
-| `Get Pages site failed` / `Not Found` no deploy | Pages não habilitado com source *GitHub Actions* | Settings → Pages → Source: **GitHub Actions** |
+| `Get Pages site failed` (`Not Found`) seguido de `Create Pages site failed` (`Resource not accessible by integration`) | Pages nunca foi habilitado neste repositório. Criar o site pela primeira vez via API é uma operação restrita que o token do workflow não tem permissão para fazer — só funciona feita manualmente, uma vez, pela interface | Settings → Pages → *Build and deployment* → Source: **GitHub Actions**. Depois rode o workflow de novo — os workflows já verificam isso antes de tentar publicar e explicam o mesmo passo se faltar |
 | Deploy roda mas o site fica 404 | Primeiro deploy ainda propagando | Aguarde 1–2 min; confira a URL em Settings → Pages |
 | Página abre em branco no Pages, sem erro | Jekyll processou o build | Os workflows criam `.nojekyll` automaticamente — se publicou à mão, crie o arquivo na raiz do build |
 | `Another deployment is in progress` | Dois workflows concorrendo | Já mitigado pelo `concurrency` nos workflows; aguarde o anterior terminar |
