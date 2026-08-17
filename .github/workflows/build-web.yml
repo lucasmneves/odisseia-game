@@ -1,10 +1,12 @@
 name: Build Web
 
-# ESTRUTURA INICIAL — não há secrets reais neste repositório.
-# O workflow só executa de fato depois que os secrets listados no README
-# (seção "Deploy") forem configurados em Settings > Secrets and variables > Actions.
-# Enquanto isso, o job de build falha na etapa de ativação de licença, que é o
-# comportamento esperado e explícito.
+# Requer o secret UNITY_LICENSE (ou UNITY_SERIAL) configurado no repositório.
+# Sem ele, o job para logo no início com uma mensagem explicando o que fazer,
+# em vez de falhar lá dentro do Unity com um erro críptico.
+#
+# Se você ainda não configurou a licença e só quer publicar no Pages agora,
+# use o workflow "Deploy Pages (build manual)" — ele não precisa de Unity.
+# Ver README, seção "Deploy".
 
 on:
   push:
@@ -13,12 +15,52 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Evita que dois deploys simultâneos briguem pelo ambiente do Pages.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   build:
     name: Build WebGL
     runs-on: ubuntu-latest
 
     steps:
+      # Preflight: transforma "Missing Unity License File and no Serial was found"
+      # numa mensagem que diz o que fazer.
+      - name: Verificar credenciais Unity
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        run: |
+          if [ -z "$UNITY_LICENSE" ] && [ -z "$UNITY_SERIAL" ]; then
+            echo "::error title=Licenca Unity ausente::Nenhum UNITY_LICENSE ou UNITY_SERIAL configurado."
+            echo ""
+            echo "COMO RESOLVER (licenca Personal, gratuita):"
+            echo "  1. Rode o workflow 'Acquire Unity Activation File' (activation.yml)"
+            echo "     na aba Actions deste repositorio."
+            echo "  2. Baixe o artefato .alf gerado."
+            echo "  3. Envie o .alf em https://license.unity3d.com/manual"
+            echo "     e baixe o arquivo .ulf de resposta."
+            echo "  4. Abra o .ulf num editor de texto, copie TODO o conteudo."
+            echo "  5. Cole em Settings > Secrets and variables > Actions >"
+            echo "     New repository secret, com o nome UNITY_LICENSE."
+            echo "  6. Adicione tambem UNITY_EMAIL e UNITY_PASSWORD da sua conta Unity."
+            echo ""
+            echo "Para licenca Pro: configure UNITY_SERIAL no lugar de UNITY_LICENSE."
+            echo ""
+            echo "ALTERNATIVA SEM LICENCA: use o workflow 'Deploy Pages (build manual)'."
+            exit 1
+          fi
+
+          if [ -z "$UNITY_EMAIL" ] || [ -z "$UNITY_PASSWORD" ]; then
+            echo "::warning::UNITY_EMAIL/UNITY_PASSWORD ausentes. A ativacao Personal costuma exigir os dois."
+          fi
+
+          echo "Credenciais presentes. Prosseguindo."
+
       # 1. checkout
       - name: Checkout
         uses: actions/checkout@v4
@@ -37,13 +79,13 @@ jobs:
             Library-
 
       # 2. Unity + 3. Build Web
-      # game-ci/unity-builder cuida da imagem do Unity, da ativação da licença e da
-      # chamada do build. buildMethod aponta para o mesmo BuildScript usado localmente,
-      # então CI e máquina local produzem o mesmo artefato.
+      # buildMethod aponta para o mesmo BuildScript usado localmente, então CI e
+      # máquina local produzem exatamente o mesmo artefato (compressão, stripping etc).
       - name: Build WebGL
         uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
@@ -51,14 +93,22 @@ jobs:
           buildMethod: BuildScript.BuildWebGL
           allowDirtyBuild: true
 
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: odisseia-webgl
-          path: Builds/WebGL
-          if-no-files-found: error
+      # O GitHub Pages roda Jekyll por padrão, que ignora arquivos/pastas iniciados
+      # por "_" e pode reprocessar o HTML. .nojekyll desliga isso.
+      - name: Preparar para GitHub Pages
+        run: |
+          test -f Builds/WebGL/index.html || { echo "::error::Build nao gerou index.html em Builds/WebGL"; exit 1; }
+          touch Builds/WebGL/.nojekyll
+          echo "Conteudo do build:"
+          ls -la Builds/WebGL
+          du -sh Builds/WebGL
 
-  # 4. Deploy — só na branch principal, e só depois do build passar.
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: Builds/WebGL
+
+  # 4. Deploy — só na branch principal e só se o build passou.
   deploy:
     name: Deploy to GitHub Pages
     needs: build
@@ -75,19 +125,12 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: odisseia-webgl
-          path: build
-
+      # enablement: true tenta habilitar o Pages automaticamente, evitando o erro
+      # "Get Pages site failed" quando ninguém configurou Settings > Pages ainda.
       - name: Setup Pages
         uses: actions/configure-pages@v5
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          enablement: true
 
       - name: Deploy
         id: deployment

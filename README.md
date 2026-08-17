@@ -218,34 +218,81 @@ Depois acesse `http://localhost:8080`.
 
 ## 10. Deploy (GitHub Actions)
 
-`.github/workflows/build-web.yml` implementa **checkout → Unity → Build Web → Deploy** (GitHub Pages), com cache da pasta `Library` para builds subsequentes não reimportarem o projeto inteiro.
+Três workflows, para dois caminhos diferentes.
 
-**Este repositório não contém nenhum secret real.** Para o workflow funcionar, configure em *Settings > Secrets and variables > Actions*:
-
-| Secret | Para que serve | Como obter |
+| Workflow | Precisa de licença Unity? | Quando usar |
 |---|---|---|
-| `UNITY_LICENSE` | Conteúdo do arquivo `.ulf` de licença Personal | Gerado pelo fluxo de ativação do [game-ci](https://game.ci/docs/github/activation) |
-| `UNITY_EMAIL` | E-mail da conta Unity | Sua conta Unity |
-| `UNITY_PASSWORD` | Senha da conta Unity | Sua conta Unity |
+| `activation.yml` | Não | **Uma vez**, para obter o arquivo de licença |
+| `build-web.yml` | **Sim** | Caminho padrão: build automático a cada push na `main` |
+| `deploy-pages-manual.yml` | Não | Publicar agora, com um build feito localmente |
 
-Para licença **Pro**, troque `UNITY_LICENSE` por `UNITY_SERIAL`.
+### Pré-requisito comum
 
-Também é preciso habilitar *Settings > Pages > Source: GitHub Actions*. Sem os secrets, o job falha na ativação de licença — comportamento esperado e explícito.
+Habilite **Settings → Pages → Source: GitHub Actions**. Sem isso, o deploy falha mesmo com o build funcionando.
+
+### Caminho A — build automático (recomendado)
+
+Exige configurar a licença Unity uma única vez:
+
+1. **Actions → "Acquire Unity Activation File" → Run workflow**
+2. Baixe o artefato `.alf` gerado
+3. Envie em [license.unity3d.com/manual](https://license.unity3d.com/manual), escolhendo *Unity Personal Edition*
+4. Baixe o `.ulf` que o site devolve
+5. Abra o `.ulf` num editor de texto e copie **todo** o conteúdo
+6. **Settings → Secrets and variables → Actions → New repository secret**
+
+| Secret | Valor |
+|---|---|
+| `UNITY_LICENSE` | Conteúdo completo do arquivo `.ulf` |
+| `UNITY_EMAIL` | E-mail da sua conta Unity |
+| `UNITY_PASSWORD` | Senha da sua conta Unity |
+
+Para licença **Pro**, use `UNITY_SERIAL` no lugar de `UNITY_LICENSE`.
+
+> ⚠️ O `.ulf` é **sensível** — nunca o comite no repositório. O `.alf` não é sensível (é só um pedido de ativação).
+
+### Caminho B — publicar agora, sem licença
+
+```bash
+Unity.exe -batchmode -quit -projectPath . -executeMethod BuildScript.BuildWebGL
+```
+
+```bash
+git add -f Builds/WebGL && git commit -m "chore: build web" && git push
+```
+
+Depois: **Actions → "Deploy Pages (build manual)" → Run workflow**.
+
+O `-f` é necessário porque o `.gitignore` ignora `Builds/`. Esse caminho versiona ~6 MB de binário — aceitável para portfólio, mas é por isso que não é o padrão.
 
 ---
 
 ## 11. Troubleshooting
 
+### CI / GitHub Pages
+
+| Sintoma | Causa | Solução |
+|---|---|---|
+| `Missing Unity License File and no Serial was found` | Secret `UNITY_LICENSE` não configurado | Siga o **Caminho A** da seção 10. Ou use o **Caminho B** para publicar sem licença |
+| `Get Pages site failed` / `Not Found` no deploy | Pages não habilitado com source *GitHub Actions* | Settings → Pages → Source: **GitHub Actions** |
+| Deploy roda mas o site fica 404 | Primeiro deploy ainda propagando | Aguarde 1–2 min; confira a URL em Settings → Pages |
+| Página abre em branco no Pages, sem erro | Jekyll processou o build | Os workflows criam `.nojekyll` automaticamente — se publicou à mão, crie o arquivo na raiz do build |
+| `Another deployment is in progress` | Dois workflows concorrendo | Já mitigado pelo `concurrency` nos workflows; aguarde o anterior terminar |
+
+### Runtime
+
 | Sintoma | Causa provável | Solução |
 |---|---|---|
 | Tela preta ao abrir o build | Aberto via `file://` | Sirva por HTTP (ver seção 9) |
-| Build carrega mas não roda; erro de `Content-Encoding` no console | Servidor não envia header do Brotli | Configure o servidor, ou troque para `WebGLCompressionFormat.Disabled` em `BuildScript` |
+| Erro de `Content-Encoding` no console | Servidor não envia header de Brotli | **Não afeta o Pages**: o build usa `decompressionFallback`, então o loader descomprime em JS. Ver nota abaixo |
 | Botões não respondem | Cena sem `EventSystem` + `InputSystemUIInputModule` | O projeto usa só o Input System novo; o módulo legado não capta cliques |
 | Nada é renderizado na cena | Câmera com `z = 0`, no mesmo plano dos sprites | Câmera 2D deve ficar em `z = -10` |
 | Progresso não salva | Fase aberta direto, sem passar pelo Boot | Comece por `Boot.unity` — o `CampaignManager` vive lá |
 | `Another Unity instance is running` no build CLI | Editor aberto no mesmo projeto | Feche o Editor antes de rodar o build por linha de comando |
 | Áudio mudo no navegador | Política de autoplay do browser | Clique na página uma vez; o áudio começa após a primeira interação |
 | Fase parece longa/curta demais | Ritmo nunca foi medido em playtest | Ver nota abaixo |
+
+**Nota sobre compressão e GitHub Pages**: o build usa Brotli **com `decompressionFallback` ativado** (`webGLCompressionFormat: 0` + `webGLDecompressionFallback: 1`). Isso gera arquivos `.unityweb` que o próprio loader descomprime em JavaScript, sem depender de o servidor mandar `Content-Encoding: br` — que é justamente o que o GitHub Pages **não** faz. Por isso o build funciona no Pages sem configuração extra. Foi verificado servindo o build por um HTTP server sem headers especiais (o mesmo cenário do Pages): carregou completo, sem erro no console.
 
 **Nota honesta sobre balanceamento**: as durações (3-7 min) e as dificuldades foram dimensionadas pela matemática de pulo/velocidade, **não medidas em playtest real**. Os números que mais provavelmente vão precisar de ajuste depois de você jogar: velocidade do perseguidor (Fase 6), dreno da resistência às sereias (Fase 9), drenagem da fome (Fase 11) e a dificuldade do combate em grupo (Fase 15).
 

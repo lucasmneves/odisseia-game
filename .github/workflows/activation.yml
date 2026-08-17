@@ -1,0 +1,51 @@
+name: Acquire Unity Activation File
+
+# Rode este workflow UMA VEZ para obter o arquivo .alf necessário para ativar
+# uma licença Unity Personal na CI.
+#
+# PASSO A PASSO COMPLETO:
+#   1. Actions > "Acquire Unity Activation File" > Run workflow
+#   2. Quando terminar, baixe o artefato "Unity_v6000.x.alf"
+#   3. Vá em https://license.unity3d.com/manual
+#   4. Envie o arquivo .alf, escolha "Unity Personal Edition"
+#   5. Baixe o arquivo .ulf que o site devolve
+#   6. Abra o .ulf num editor de texto e copie TODO o conteúdo
+#   7. Settings > Secrets and variables > Actions > New repository secret
+#        Nome:  UNITY_LICENSE
+#        Valor: (o conteúdo completo do .ulf)
+#   8. Crie também os secrets UNITY_EMAIL e UNITY_PASSWORD com as credenciais
+#      da sua conta Unity
+#   9. Rode o workflow "Build Web"
+#
+# O .alf NÃO é um secret — é só um pedido de ativação. O .ulf resultante É
+# sensível: nunca o comite no repositório, só coloque como secret.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  activation:
+    name: Request activation file
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Request manual activation file
+        id: getManualLicenseFile
+        uses: game-ci/unity-request-activation-file@v2
+        with:
+          unityVersion: 6000.5.8f1
+
+      - name: Upload activation file
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.getManualLicenseFile.outputs.filePath }}
+          path: ${{ steps.getManualLicenseFile.outputs.filePath }}
+
+      - name: Próximos passos
+        run: |
+          echo "Arquivo de ativacao gerado: ${{ steps.getManualLicenseFile.outputs.filePath }}"
+          echo ""
+          echo "1. Baixe o artefato acima"
+          echo "2. Envie em https://license.unity3d.com/manual"
+          echo "3. Baixe o .ulf de resposta"
+          echo "4. Cole o conteudo do .ulf no secret UNITY_LICENSE"

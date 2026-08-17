@@ -1,0 +1,80 @@
+name: Deploy Pages (build manual)
+
+# Publica no GitHub Pages um build que você gerou LOCALMENTE.
+# Não precisa de Unity na CI, não precisa de licença, não precisa de secret.
+#
+# QUANDO USAR: para colocar o jogo no ar agora, enquanto a licença Unity da CI
+# não estiver configurada. Ou como caminho definitivo, se preferir não manter
+# build automatizado.
+#
+# COMO USAR:
+#   1. Gere o build localmente:
+#        Unity.exe -batchmode -quit -projectPath . -executeMethod BuildScript.BuildWebGL
+#
+#   2. O .gitignore ignora Builds/ por padrão. Force a adição desta pasta:
+#        git add -f Builds/WebGL
+#        git commit -m "chore: build web para deploy"
+#        git push
+#
+#   3. Actions > "Deploy Pages (build manual)" > Run workflow
+#
+# NOTA: isso versiona ~6 MB de binário no repositório. É aceitável para um
+# projeto de portfólio, mas é o motivo de este NÃO ser o caminho padrão.
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy build to Pages
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verificar se o build existe no repositório
+        run: |
+          if [ ! -f "Builds/WebGL/index.html" ]; then
+            echo "::error title=Build nao encontrado::Builds/WebGL/index.html nao existe neste commit."
+            echo ""
+            echo "O .gitignore ignora Builds/ por padrao. Para publicar por aqui:"
+            echo "  1. Gere o build local com BuildScript.BuildWebGL"
+            echo "  2. git add -f Builds/WebGL"
+            echo "  3. git commit && git push"
+            echo "  4. Rode este workflow de novo"
+            exit 1
+          fi
+          echo "Build encontrado:"
+          ls -la Builds/WebGL
+          du -sh Builds/WebGL
+
+      - name: Preparar para GitHub Pages
+        run: touch Builds/WebGL/.nojekyll
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: Builds/WebGL
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
