@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Odisseia.Core
 {
@@ -22,8 +23,14 @@ namespace Odisseia.Core
         [Header("Áudio")]
         [SerializeField] private AudioLibrary audioLibrary;
 
+        [Header("Input")]
+        [Tooltip("Asset de controles. Fica aqui para que o menu de opções alcance as " +
+                 "ações a partir de qualquer cena, inclusive as que não têm jogador.")]
+        [SerializeField] private InputActionAsset playerControls;
+
         public Sprite PlaceholderSprite => placeholderSprite;
         public AudioLibrary Audio => audioLibrary;
+        public InputActionAsset PlayerControls => playerControls;
 
         /// <summary>Pode retornar null se o asset não existir — todos os usos tratam isso.</summary>
         public static GameAssets Instance
