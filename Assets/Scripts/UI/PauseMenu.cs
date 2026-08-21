@@ -38,7 +38,51 @@ namespace Odisseia.UI
             restartButton?.onClick.AddListener(RestartLevel);
             menuButton?.onClick.AddListener(BackToMenu);
 
+            CreateControlsButton();
+
             panel?.SetActive(false);
+        }
+
+        /// <summary>
+        /// Insere "Controles" entre Reiniciar e Menu, clonando um botão existente e
+        /// empurrando o de Menu para baixo. Feito em runtime para as 16 fases ganharem
+        /// o botão sem editar 16 cenas.
+        /// </summary>
+        private void CreateControlsButton()
+        {
+            if (resumeButton == null || menuButton == null || panel == null)
+            {
+                return;
+            }
+
+            var menuRect = (RectTransform)menuButton.transform;
+            var resumeRect = (RectTransform)resumeButton.transform;
+            float spacing = Mathf.Abs(resumeRect.anchoredPosition.y - menuRect.anchoredPosition.y) * 0.5f;
+            if (spacing <= 1f)
+            {
+                spacing = resumeRect.sizeDelta.y + 10f;
+            }
+
+            Button controls = Instantiate(resumeButton, resumeButton.transform.parent);
+            controls.name = "ControlsButton";
+            ((RectTransform)controls.transform).anchoredPosition = menuRect.anchoredPosition;
+
+            var label = controls.GetComponentInChildren<Text>();
+            if (label != null)
+            {
+                label.text = "Controles";
+            }
+
+            controls.onClick.RemoveAllListeners();
+            controls.onClick.AddListener(OptionsMenu.Open);
+
+            // Menu principal desce uma linha e o painel cresce para acomodar.
+            menuRect.anchoredPosition -= new Vector2(0f, spacing);
+
+            if (panel.transform is RectTransform panelRect)
+            {
+                panelRect.sizeDelta += new Vector2(0f, spacing);
+            }
         }
 
         private void OnEnable()

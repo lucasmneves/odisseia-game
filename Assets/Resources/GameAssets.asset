@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Core.GameAssets
   placeholderSprite: {fileID: 21300000, guid: 1b72e2c6984fc0442aea0da3df0fafcb, type: 3}
   audioLibrary: {fileID: 11400000, guid: 144f20acf9b0b4d48ad2094303a79551, type: 2}
+  playerControls: {fileID: -944628639613478452, guid: 29b9f4b741cb5074bb14fb2c8737772b, type: 3}

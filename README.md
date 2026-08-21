@@ -43,6 +43,18 @@ Botões virtuais criados automaticamente ao detectar um dispositivo touch:
 | `DEF` | Escudo (segurar) |
 | `BOW` | Arco |
 
+### Remapeamento de teclas
+
+Todas as teclas acima são configuráveis em **Menu principal → Opções → Controles** ou, durante o jogo, em **Pause → Controles**. Clique na tecla de uma ação e pressione a nova; `Esc` cancela a captura.
+
+- **Persistência**: os overrides ficam em PlayerPrefs sob a chave `Odisseia.Bindings`, **separada do save da campanha**. "Novo Jogo" apaga o progresso mas preserva os controles.
+- **Conflitos são recusados**: escolher uma tecla já usada por outra ação desfaz a troca e explica quem já usa aquela tecla, em vez de deixar duas ações no mesmo botão.
+- **Restaurar padrões** devolve tudo ao original.
+- **`Esc` (Pausar) não é remapeável**, de propósito: a mesma tecla também pula diálogo no action map `Dialogue`, e remapear só um dos dois deixaria os dois fora de sincronia.
+- Os **botões de toque acompanham o remapeamento** — cada `OnScreenButton` é reapontado para a tecla atual da ação, então o mobile nunca fica mandando a tecla antiga.
+
+Implementado sobre os *binding overrides* do próprio Input System (`KeyRebindService`); não existe camada de input paralela — as ações continuam as mesmas, só o caminho do controle muda.
+
 Definidos em `Assets/ScriptableObjects/PlayerControls.inputactions` (Unity Input System), em dois action maps: `Player` (Move/Jump/Attack/Shield/Bow/Interact/Pause) e `Dialogue` (Advance/Skip). O mapa `Dialogue` fica ativo só durante falas, e o `Player` é desligado nesses momentos — por isso avançar o diálogo não faz Odisseu pular junto.
 
 **Desktop e mobile alimentam a mesma camada de input.** Cada botão virtual é um `OnScreenButton` do próprio Input System apontando para o mesmo control path de teclado da ação (`DEF` → `<Keyboard>/k`). Não existe lógica de gameplay duplicada entre as duas plataformas — `PlayerCombat`, `PlayerShield` e `PlayerBow` só conhecem a `InputAction`.
@@ -357,13 +369,24 @@ O `-f` é necessário porque o `.gitignore` ignora `Builds/`. Esse caminho versi
 - ✅ 16 fases jogáveis + menus + tela final (21 cenas em Build Settings)
 - ✅ Save/load validado por teste automatizado (round-trip campo a campo)
 - ✅ Validação estrutural das 21 cenas: **0 problemas**
-- ✅ Build WebGL gerado pela CLI: **5,8 MB**
+- ✅ Build WebGL gerado pela CLI: **9,0 MB**
 - ✅ **Build aberto e verificado num navegador real**: engine inicializada, contexto WebGL 2.0 criado, física/Input System/áudio ativos, todos os assets em HTTP 200, barra de carregamento concluída, **zero erros no console**
-- ⏳ **Não** passou por playtest humano — balanceamento é estimativa, e a jogabilidade em si (sensação de controle, dificuldade) não foi verificada visualmente
+
+### Validado jogando (desktop)
+
+- ✅ Arco: disparo, consumo de flecha e contador na HUD
+- ✅ Escudo: defesa ativa segurando a tecla, **com e sem escudo o dano sai correto** (frontal reduzido, pelas costas cheio)
+- ✅ Menu de opções: remapeamento de teclas, recusa de conflito e persistência
+
+### Pendências conhecidas
+
+- ⏳ **Controles mobile nunca testados em dispositivo real** — os botões `DEF` e `BOW` e o layout 2×2 foram implementados e compilam, mas ninguém tocou neles num celular. Testar abrindo o build por HTTP no celular na mesma rede, ou no Chrome com o emulador de dispositivo (F12 → modo dispositivo → **recarregar**, porque `MobilePlatformDetector` decide no load). Verificar: toque simultâneo de mover + defender, mover + arco, e se os botões não se sobrepõem em telas estreitas.
+- ⏳ **Não** passou por playtest humano completo — balanceamento é estimativa e o ritmo das 16 fases não foi medido.
 
 ### Próximos passos sugeridos
 
+- Validar os controles mobile num dispositivo real (ver Pendências)
 - Playtest completo para calibrar dificuldade e ritmo
-- Arte definitiva e tilemaps (hoje tudo é placeholder geométrico)
+- Arte definitiva para as 13 fases que ainda usam placeholder geométrico
 - Música e efeitos definitivos (hoje procedurais)
 - Diálogos condicionais usando `DecisionFlags` (a decisão da Fase 11 já é registrada, mas nada a consome ainda)

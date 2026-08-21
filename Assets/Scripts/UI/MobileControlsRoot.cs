@@ -32,6 +32,7 @@ namespace Odisseia.UI
         private static MobileControlsRoot instance;
 
         private CanvasGroup buttonsGroup;
+        private readonly List<(OnScreenButton button, Bound bound)> boundButtons = new();
         private readonly Dictionary<(int size, int radius), Sprite> roundedSpriteCache = new();
 
         public static MobileControlsRoot Instance
@@ -87,8 +88,12 @@ namespace Odisseia.UI
                 InputSystem.AddDevice<Keyboard>();
             }
 
+            // Os controles podem ter sido remapeados: monta já com as teclas atuais.
+            KeyRebindService.EnsureLoaded();
+
             Build();
             SceneManager.sceneLoaded += OnSceneLoaded;
+            KeyRebindService.BindingsChanged += RefreshBindings;
             RefreshVisibilityForActiveScene();
             Debug.Log("[MobileControlsRoot] Dispositivo mobile detectado — controles touch criados (Left/Right/Jump/Attack/Shield/Bow).");
         }
@@ -98,10 +103,27 @@ namespace Odisseia.UI
             if (instance == this)
             {
                 SceneManager.sceneLoaded -= OnSceneLoaded;
+                KeyRebindService.BindingsChanged -= RefreshBindings;
             }
         }
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode) => RefreshVisibilityForActiveScene();
+
+        /// <summary>
+        /// Reaponta cada botão de toque para a tecla que a ação usa agora. Sem isto um
+        /// remapeamento no menu de opções deixaria os controles virtuais mandando a
+        /// tecla antiga, que não está mais ligada a nada.
+        /// </summary>
+        private void RefreshBindings()
+        {
+            foreach ((OnScreenButton button, Bound bound) in boundButtons)
+            {
+                if (button != null)
+                {
+                    button.controlPath = bound.ResolvePath();
+                }
+            }
+        }
 
         private void RefreshVisibilityForActiveScene()
         {
@@ -156,11 +178,11 @@ namespace Odisseia.UI
             const float gap = 14f;
 
             // Esquerda: setas de movimento contínuo (segurar = anda, soltar = para).
-            CreateOnScreenButton(groupRect, "LeftButton", "<Keyboard>/a", "◄",
+            CreateOnScreenButton(groupRect, "LeftButton", Bind("Move", "negative", "<Keyboard>/a"), "◄",
                 new Vector2(0f, 0f), new Vector2(margin, margin),
                 new Vector2(dpadSize, dpadSize), cornerRadius: 28f);
 
-            CreateOnScreenButton(groupRect, "RightButton", "<Keyboard>/d", "►",
+            CreateOnScreenButton(groupRect, "RightButton", Bind("Move", "positive", "<Keyboard>/d"), "►",
                 new Vector2(0f, 0f), new Vector2(margin * 2f + dpadSize, margin),
                 new Vector2(dpadSize, dpadSize), cornerRadius: 28f);
 
@@ -175,19 +197,19 @@ namespace Odisseia.UI
             float row0 = margin;
             float row1 = margin + actionSize + gap;
 
-            CreateOnScreenButton(groupRect, "AttackButton", "<Keyboard>/j", "ATK",
+            CreateOnScreenButton(groupRect, "AttackButton", Bind("Attack", null, "<Keyboard>/j"), "ATK",
                 new Vector2(1f, 0f), new Vector2(-col1, row0),
                 new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
 
-            CreateOnScreenButton(groupRect, "ShieldButton", "<Keyboard>/k", "DEF",
+            CreateOnScreenButton(groupRect, "ShieldButton", Bind("Shield", null, "<Keyboard>/k"), "DEF",
                 new Vector2(1f, 0f), new Vector2(-col0, row0),
                 new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
 
-            CreateOnScreenButton(groupRect, "JumpButton", "<Keyboard>/space", "JUMP",
+            CreateOnScreenButton(groupRect, "JumpButton", Bind("Jump", null, "<Keyboard>/space"), "JUMP",
                 new Vector2(1f, 0f), new Vector2(-col1, row1),
                 new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
 
-            CreateOnScreenButton(groupRect, "BowButton", "<Keyboard>/l", "BOW",
+            CreateOnScreenButton(groupRect, "BowButton", Bind("Bow", null, "<Keyboard>/l"), "BOW",
                 new Vector2(1f, 0f), new Vector2(-col0, row1),
                 new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
 
@@ -197,9 +219,33 @@ namespace Odisseia.UI
             rotatePrompt.controlsToHide = buttonsGroup;
         }
 
-        private void CreateOnScreenButton(RectTransform parent, string name, string controlPath, string label,
+        /// <summary>Descreve a qual ação um botão de toque corresponde.</summary>
+        private readonly struct Bound
+        {
+            public readonly string ActionName;
+            public readonly string CompositePart;
+            public readonly string Fallback;
+
+            public Bound(string actionName, string compositePart, string fallback)
+            {
+                ActionName = actionName;
+                CompositePart = compositePart;
+                Fallback = fallback;
+            }
+
+            /// <summary>Tecla atualmente ligada à ação, já considerando remapeamentos.</summary>
+            public string ResolvePath() => CompositePart == null
+                ? KeyRebindService.GetEffectivePath(ActionName, Fallback)
+                : KeyRebindService.GetCompositePartPath(ActionName, CompositePart, Fallback);
+        }
+
+        private static Bound Bind(string actionName, string compositePart, string fallback)
+            => new Bound(actionName, compositePart, fallback);
+
+        private void CreateOnScreenButton(RectTransform parent, string name, Bound bound, string label,
             Vector2 anchor, Vector2 anchoredPosition, Vector2 size, float cornerRadius)
         {
+            string controlPath = bound.ResolvePath();
             var go = new GameObject(name, typeof(RectTransform));
             go.transform.SetParent(parent, false);
 
@@ -219,7 +265,9 @@ namespace Odisseia.UI
             // visualmente com o gameplay.
             image.color = new Color(UITheme.ButtonNormal.r, UITheme.ButtonNormal.g, UITheme.ButtonNormal.b, 0.55f);
 
-            go.AddComponent<OnScreenButton>().controlPath = controlPath;
+            var onScreen = go.AddComponent<OnScreenButton>();
+            onScreen.controlPath = controlPath;
+            boundButtons.Add((onScreen, bound));
             go.AddComponent<TouchButtonFeedback>();
 
             var labelGO = new GameObject("Label", typeof(RectTransform));
