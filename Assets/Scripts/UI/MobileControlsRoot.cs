@@ -90,7 +90,7 @@ namespace Odisseia.UI
             Build();
             SceneManager.sceneLoaded += OnSceneLoaded;
             RefreshVisibilityForActiveScene();
-            Debug.Log("[MobileControlsRoot] Dispositivo mobile detectado — controles touch criados (Left/Right/Jump/Attack).");
+            Debug.Log("[MobileControlsRoot] Dispositivo mobile detectado — controles touch criados (Left/Right/Jump/Attack/Shield/Bow).");
         }
 
         private void OnDestroy()
@@ -152,8 +152,8 @@ namespace Odisseia.UI
 
             const float margin = 24f;
             const float dpadSize = 130f;
-            const float jumpSize = 120f;
-            const float attackSize = 100f;
+            const float actionSize = 96f;
+            const float gap = 14f;
 
             // Esquerda: setas de movimento contínuo (segurar = anda, soltar = para).
             CreateOnScreenButton(groupRect, "LeftButton", "<Keyboard>/a", "◄",
@@ -164,16 +164,32 @@ namespace Odisseia.UI
                 new Vector2(0f, 0f), new Vector2(margin * 2f + dpadSize, margin),
                 new Vector2(dpadSize, dpadSize), cornerRadius: 28f);
 
-            // Direita: pulo (mais afastado do canto) e ataque (mais perto do canto),
-            // como no mockup do briefing. Ambos são ações discretas — um toque = um
-            // Jump/Attack, igual a apertar e soltar a tecla rapidamente.
-            CreateOnScreenButton(groupRect, "JumpButton", "<Keyboard>/space", "JUMP",
-                new Vector2(1f, 0f), new Vector2(-(margin + attackSize * 0.6f), margin + attackSize * 0.9f),
-                new Vector2(jumpSize, jumpSize), cornerRadius: jumpSize / 2f);
+            // Direita: bloco 2x2 de ações. Cada botão aponta para o MESMO control path
+            // de teclado da ação — ATK/JUMP são toques discretos e SHIELD funciona
+            // segurando, porque o OnScreenButton mantém a tecla pressionada.
+            //
+            //     BOW   JUMP
+            //     SHD   ATK
+            float col1 = margin;
+            float col0 = margin + actionSize + gap;
+            float row0 = margin;
+            float row1 = margin + actionSize + gap;
 
             CreateOnScreenButton(groupRect, "AttackButton", "<Keyboard>/j", "ATK",
-                new Vector2(1f, 0f), new Vector2(-margin, margin),
-                new Vector2(attackSize, attackSize), cornerRadius: attackSize / 2f);
+                new Vector2(1f, 0f), new Vector2(-col1, row0),
+                new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
+
+            CreateOnScreenButton(groupRect, "ShieldButton", "<Keyboard>/k", "DEF",
+                new Vector2(1f, 0f), new Vector2(-col0, row0),
+                new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
+
+            CreateOnScreenButton(groupRect, "JumpButton", "<Keyboard>/space", "JUMP",
+                new Vector2(1f, 0f), new Vector2(-col1, row1),
+                new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
+
+            CreateOnScreenButton(groupRect, "BowButton", "<Keyboard>/l", "BOW",
+                new Vector2(1f, 0f), new Vector2(-col0, row1),
+                new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
 
             GameObject rotatePanel = CreateRotatePanel(canvasGO.transform);
             var rotatePrompt = canvasGO.AddComponent<RotateDevicePrompt>();

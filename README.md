@@ -16,18 +16,36 @@ Você é **Odisseu**, voltando de Troia para Ítaca. A campanha tem **16 fases j
 
 ## 2. Controles
 
+### Desktop
+
 | Ação | Teclas | Onde funciona |
 |---|---|---|
 | Mover | `A` / `D` ou `←` / `→` | Fases |
 | Pular | `Espaço` | Fases |
-| Atacar | `J` | Fases |
+| Atacar (espada) | `J` | Fases |
+| **Defender (escudo)** | **`K`** (segurar) | Fases |
+| **Atirar (arco)** | **`L`** | Fases |
 | Interagir | `E` | NPCs, gado sagrado (Fase 11), saco dos ventos (Fase 5) |
 | Pausar | `Esc` | Fases |
 | Avançar diálogo | `Espaço` / `J` | Durante cutscenes |
 | Pular diálogo | `Esc` | Durante cutscenes |
 | Navegar menus | Mouse | Menus |
 
-Definidos em `Assets/ScriptableObjects/PlayerControls.inputactions` (Unity Input System), em dois action maps: `Player` (Move/Jump/Attack/Interact/Pause) e `Dialogue` (Advance/Skip). O mapa `Dialogue` fica ativo só durante falas, e o `Player` é desligado nesses momentos — por isso avançar o diálogo não faz Odisseu pular junto.
+### Mobile (Web)
+
+Botões virtuais criados automaticamente ao detectar um dispositivo touch:
+
+| Botão | Ação |
+|---|---|
+| `◄` / `►` | Mover (segurar) |
+| `JUMP` | Pular |
+| `ATK` | Espada |
+| `DEF` | Escudo (segurar) |
+| `BOW` | Arco |
+
+Definidos em `Assets/ScriptableObjects/PlayerControls.inputactions` (Unity Input System), em dois action maps: `Player` (Move/Jump/Attack/Shield/Bow/Interact/Pause) e `Dialogue` (Advance/Skip). O mapa `Dialogue` fica ativo só durante falas, e o `Player` é desligado nesses momentos — por isso avançar o diálogo não faz Odisseu pular junto.
+
+**Desktop e mobile alimentam a mesma camada de input.** Cada botão virtual é um `OnScreenButton` do próprio Input System apontando para o mesmo control path de teclado da ação (`DEF` → `<Keyboard>/k`). Não existe lógica de gameplay duplicada entre as duas plataformas — `PlayerCombat`, `PlayerShield` e `PlayerBow` só conhecem a `InputAction`.
 
 ---
 
@@ -48,9 +66,13 @@ Systems/    Serviços reutilizáveis, agnósticos de fase
             ParallaxLayer, MovingPlatform, DecisionFlags
 
 Player/     Componentes de Odisseu (um por capacidade)
-            PlayerController, PlayerCombat, PlayerRespawn, PlayerInputLock,
+            PlayerController, PlayerCombat, PlayerShield, PlayerBow,
+            PlayerRespawn, PlayerInputLock, PlayerAnimator,
             + efeitos por fase: LotusEffect, WindBagAbility, TransformationEffect,
               SirenResistance, HungerMeter, DisguiseEffect
+
+Combat/     Projéteis
+            Arrow
 
 Enemies/    EnemyController (patrulha/perseguição), BossController (telegrafado)
 
@@ -63,6 +85,37 @@ UI/         Telas e HUD
             MainMenuController, LevelSelectController, LevelCompleteMenu,
             EndingController, SettingsPanel, UITheme + indicadores
 ```
+
+### Combate
+
+Odisseu tem três formas de combate que coexistem, sem "modo" e sem troca de equipamento — dá para alternar livremente entre `J`, `K` e `L` no mesmo segundo.
+
+| | Componente | Comportamento | Valores iniciais |
+|---|---|---|---|
+| ⚔ **Espada** | `PlayerCombat` | Área circular no `AttackPoint`, com cooldown | dano 20, cooldown 0,4 s |
+| 🛡 **Escudo** | `PlayerShield` | Reduz dano no arco frontal enquanto o botão está pressionado | 80% de redução, 120° de cobertura |
+| 🏹 **Arco** | `PlayerBow` + `Arrow` | Dispara uma flecha física; munição limitada | dano 35, velocidade 15, 10 flechas, cooldown 0,5 s |
+
+**Como o escudo sabe de onde vem o golpe.** `HealthSystem.TakeDamage(int)` sozinho não diz nada sobre direção. Em vez de criar um sistema de dano paralelo, o golpe agora pode carregar um `DamageInfo` (origem + se é bloqueável), e o `HealthSystem` procura um `IDamageMitigator` no próprio GameObject antes de aplicar o dano:
+
+```
+Inimigo/Boss ── TakeDamage(dano, DamageInfo) ──> HealthSystem
+                                                     │
+                                            IDamageMitigator?
+                                                     │
+                                               PlayerShield
+                                          (frontal? bloqueável?)
+```
+
+Quem não tem escudo — todos os inimigos — não tem mitigador e se comporta exatamente como antes. A sobrecarga `TakeDamage(int)` continua existindo e representa **dano ambiental**: poço, afogamento, canto das sereias. Sem origem não há direção, então esse dano nunca é bloqueável — que é o comportamento desejado e evita ter que alterar `KillZone`, `TidalHazard` e companhia.
+
+**Ataques bloqueáveis.** `EnemyController` e `BossController` têm um campo `attackBlockable` (ligado por padrão). Desligá-lo é o caminho pronto para um ataque especial que fura a defesa — a estrutura existe, nenhum ataque não bloqueável foi criado ainda.
+
+**Munição.** Odisseu começa com 10 flechas de um máximo de 10. Cada disparo gasta uma; sem munição o disparo não sai e o contador da HUD pisca em vermelho. O prefab `ArrowPickup` repõe 5 flechas e **não é consumido se a aljava já estiver cheia**, para o jogador não desperdiçar o item.
+
+**Regras de compatibilidade.** Defendendo, não se ataca nem se atira (o escudo ocupa as mãos). Soltar `K` devolve o controle imediatamente. O escudo se desliga sozinho no `OnDisable`, então cutscene, diálogo ou morte nunca deixam Odisseu travado em defesa.
+
+Preparado para receber depois, sem reestruturação: stamina, durabilidade do escudo, parry, shield bash, trajetória balística, carregamento do arco e tipos de flecha.
 
 ### Decisões que valem explicar
 

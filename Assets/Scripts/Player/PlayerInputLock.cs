@@ -9,12 +9,16 @@ namespace Odisseia.Player
     {
         private PlayerController controller;
         private PlayerCombat combat;
+        private PlayerShield shield;
+        private PlayerBow bow;
         private Rigidbody2D rb;
 
         private void Awake()
         {
             controller = GetComponent<PlayerController>();
             combat = GetComponent<PlayerCombat>();
+            shield = GetComponent<PlayerShield>();
+            bow = GetComponent<PlayerBow>();
             rb = GetComponent<Rigidbody2D>();
         }
 
@@ -28,6 +32,18 @@ namespace Odisseia.Player
             if (combat != null)
             {
                 combat.enabled = !locked;
+            }
+
+            // O escudo se desliga sozinho no OnDisable, então travar aqui também evita
+            // ficar defendendo durante uma cutscene.
+            if (shield != null)
+            {
+                shield.enabled = !locked;
+            }
+
+            if (bow != null)
+            {
+                bow.enabled = !locked;
             }
 
             if (locked && rb != null)

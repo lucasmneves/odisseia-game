@@ -32,6 +32,8 @@ namespace Odisseia.Enemies
         [SerializeField] private float attackRange = 0.8f;
         [SerializeField] private int damage = 10;
         [SerializeField] private float attackCooldown = 1f;
+        [Tooltip("Se o golpe pode ser bloqueado pelo escudo do jogador.")]
+        [SerializeField] private bool attackBlockable = true;
 
         [Header("Morte")]
         [Tooltip("Atraso antes de remover o objeto. Dá tempo da animação de morte aparecer; " +
@@ -163,7 +165,7 @@ namespace Odisseia.Enemies
 
             if (playerTransform.TryGetComponent(out HealthSystem playerHealth))
             {
-                playerHealth.TakeDamage(damage);
+                playerHealth.TakeDamage(damage, new DamageInfo(transform.position, attackBlockable));
             }
         }
 

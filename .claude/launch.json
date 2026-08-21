@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "webgl-build",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [".claude/serve-build.js"],
+      "port": 8080
+    }
+  ]
+}

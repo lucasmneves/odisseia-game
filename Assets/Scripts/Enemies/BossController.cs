@@ -21,6 +21,9 @@ namespace Odisseia.Enemies
         [SerializeField] private int damage = 40;
         [SerializeField] private float recoveryDuration = 0.4f;
         [SerializeField] private LayerMask targetLayer;
+        [Tooltip("Golpe telegrafado do boss pode ser bloqueado pelo escudo? " +
+                 "Desligar aqui é o caminho para um ataque especial não bloqueável.")]
+        [SerializeField] private bool attackBlockable = true;
 
         public event Action AttackTelegraphed;
         public event Action AttackExecuted;
@@ -73,7 +76,7 @@ namespace Odisseia.Enemies
                 {
                     if (hit.TryGetComponent(out HealthSystem health))
                     {
-                        health.TakeDamage(damage);
+                        health.TakeDamage(damage, new DamageInfo(point.position, attackBlockable));
                     }
                 }
 

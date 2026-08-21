@@ -32,10 +32,13 @@ namespace Odisseia.Player
 
         private InputActionMap playerMap;
         private InputAction attackAction;
+        private PlayerShield shield;
         private float cooldownTimer;
 
         private void Awake()
         {
+            shield = GetComponent<PlayerShield>();
+
             if (inputActions != null)
             {
                 playerMap = inputActions.FindActionMap(actionMapName, throwIfNotFound: false);
@@ -79,6 +82,12 @@ namespace Odisseia.Player
                 return;
             }
 
+            // Defendendo não se ataca — o escudo ocupa as mãos.
+            if (shield != null && shield.IsBlocking)
+            {
+                return;
+            }
+
             cooldownTimer = cooldown;
             Attacked?.Invoke();
 
@@ -95,7 +104,7 @@ namespace Odisseia.Player
             {
                 if (hit.TryGetComponent(out HealthSystem health))
                 {
-                    health.TakeDamage(damage);
+                    health.TakeDamage(damage, new DamageInfo(attackPoint.position));
                     hitSomething = true;
                 }
             }
