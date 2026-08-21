@@ -26,6 +26,17 @@ namespace Odisseia.Systems
             ScreenFader.Instance.FadeOutThen(() => SceneManager.LoadScene(sceneName));
         }
 
+        /// <summary>
+        /// Carrega mostrando a tela de carregamento. É o caminho usado entre fases:
+        /// escurece, mostra o loader com o nome da próxima fase e entra nela sozinho,
+        /// sem tela intermediária de "fase concluída" e sem clique do jogador.
+        /// </summary>
+        public static void LoadWithLoadingScreen(string sceneName, string title = null)
+        {
+            UnityEngine.Time.timeScale = 1f;
+            ScreenFader.Instance.FadeOutThen(() => LoadingScreen.Begin(sceneName, title));
+        }
+
         /// <summary>Carrega imediatamente, sem transição (usado em casos de emergência/testes).</summary>
         public static void LoadImmediate(string sceneName)
         {

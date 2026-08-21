@@ -266,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 1233161402}
     - target: {fileID: 7931176121402265784, guid: e2edd8d42622bab4eba3c84d5c179376, type: 3}
       propertyPath: nextSceneName
-      value: LevelComplete
+      value: Level_09_Sereias
       objectReference: {fileID: 0}
     - target: {fileID: 7931176121402265784, guid: e2edd8d42622bab4eba3c84d5c179376, type: 3}
       propertyPath: outroDialogue
