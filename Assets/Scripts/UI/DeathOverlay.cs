@@ -1,19 +1,24 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using Odisseia.Core;
+using Odisseia.Systems;
 
 namespace Odisseia.UI
 {
     /// <summary>
-    /// Feedback de morte: um aviso curto na tela ao perder toda a vida, antes de o
-    /// jogador reaparecer no checkpoint. Não interrompe o fluxo nem exige clique — a
-    /// regra de respawn continua exatamente a mesma de antes; isto é só a camada de
-    /// comunicação que faltava para a morte não passar despercebida.
+    /// Feedback de morte: um aviso curto na tela ao perder uma vida, antes de o jogador
+    /// reaparecer no checkpoint. Não interrompe o fluxo nem exige clique.
+    ///
+    /// Escuta <see cref="LivesCounter.LifeLost"/> em vez de <c>HealthSystem.Died</c>
+    /// de propósito: na última morte não existe checkpoint para onde voltar, e este
+    /// aviso não deve competir com a tela de fim de jogo. Como o evento só dispara
+    /// quando ainda sobra vida, os dois casos nunca se cruzam — nem dependem da ordem
+    /// em que os componentes recebem o <c>Died</c>.
     /// </summary>
     public class DeathOverlay : MonoBehaviour
     {
-        [SerializeField] private HealthSystem playerHealth;
+        // Não referencia mais o HealthSystem: quem decide se houve perda de vida (e se
+        // ainda há checkpoint para onde voltar) é o LivesCounter.
         [SerializeField] private GameObject panel;
         [SerializeField] private Text messageText;
         [SerializeField] private string message = "Você caiu — retornando ao último checkpoint";
@@ -28,35 +33,30 @@ namespace Odisseia.UI
 
         private void OnEnable()
         {
-            if (playerHealth != null)
-            {
-                playerHealth.Died += OnPlayerDied;
-            }
+            LivesCounter.LifeLost += OnLifeLost;
         }
 
         private void OnDisable()
         {
-            if (playerHealth != null)
-            {
-                playerHealth.Died -= OnPlayerDied;
-            }
+            LivesCounter.LifeLost -= OnLifeLost;
         }
 
-        private void OnPlayerDied()
+        private void OnLifeLost(int remaining)
         {
             if (routine != null)
             {
                 StopCoroutine(routine);
             }
 
-            routine = StartCoroutine(ShowRoutine());
+            routine = StartCoroutine(ShowRoutine(remaining));
         }
 
-        private IEnumerator ShowRoutine()
+        private IEnumerator ShowRoutine(int remaining)
         {
             if (messageText != null)
             {
-                messageText.text = message;
+                string plural = remaining == 1 ? "vida restante" : "vidas restantes";
+                messageText.text = $"{message}\n{remaining} {plural}";
             }
 
             panel?.SetActive(true);

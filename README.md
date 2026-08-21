@@ -129,6 +129,28 @@ Quem não tem escudo — todos os inimigos — não tem mitigador e se comporta 
 
 Preparado para receber depois, sem reestruturação: stamina, durabilidade do escudo, parry, shield bash, trajetória balística, carregamento do arco e tipos de flecha.
 
+### Vidas, experiência e fim de jogo
+
+Odisseu começa a jornada com **3 vidas**.
+
+| Evento | O que acontece |
+|---|---|
+| Morre com vidas restantes | Perde uma vida e volta ao último checkpoint (regra de respawn inalterada) |
+| Morre sem vidas | **Fim da jornada** — tela de fim de jogo e volta ao menu principal |
+| Derrota um inimigo | **+25 XP**; a cada **125 XP** (5 inimigos) ganha uma vida |
+
+**O progresso da campanha é preservado no fim de jogo.** As fases já conquistadas continuam desbloqueadas no Seletor de Fases — perder a jornada custa a jornada, não o que já foi conquistado.
+
+**Uma vida é consumida em um lugar só.** `PlayerRespawn` é o único ponto que chama `LivesCounter.LoseLife()`; se dois lugares descontassem, uma morte custaria duas.
+
+**`DeathOverlay` escuta `LivesCounter.LifeLost`, não `HealthSystem.Died`.** Na última morte não existe checkpoint para onde voltar, e o aviso "retornando ao checkpoint" não deve competir com a tela de fim de jogo. Como o evento só dispara quando ainda sobra vida, os dois casos nunca se cruzam — e o comportamento não depende da ordem em que os componentes recebem o `Died`.
+
+**As vidas não são zeradas por fase.** `LevelIntro` reseta checkpoint e coletáveis a cada fase; as vidas ficam de fora de propósito, porque uma jornada atravessa as 16. Quem reinicia a contagem é o `MainMenuController`, no carregamento do menu — isso cobre Novo Jogo, Continuar, Seletor de Fases e o retorno após um fim de jogo num lugar só.
+
+**XP não vem de boss.** `BossController` é um perigo ambiental telegrafado, sem `HealthSystem` — não morre, então não premia. A experiência vem dos inimigos comuns (`EnemyController`), onde o combate é a mecânica.
+
+Valores em `EnemyController.experienceReward`, `ExperienceCounter.ExperiencePerLife` e `LivesCounter.DefaultStartingLives`.
+
 ### Decisões que valem explicar
 
 - **`HealthSystem` é genérico**: Player, inimigos e bosses usam o mesmo componente. Quem quiser reagir (respawn, feedback, morte) assina os eventos `Damaged`/`Died`. É por isso que `DamageFeedback` funciona igual em todos sem nenhum `if`.

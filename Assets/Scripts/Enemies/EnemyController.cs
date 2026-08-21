@@ -39,6 +39,8 @@ namespace Odisseia.Enemies
         [Tooltip("Atraso antes de remover o objeto. Dá tempo da animação de morte aparecer; " +
                  "a física e o collider já são desligados no instante da morte.")]
         [SerializeField] private float destroyDelay = 0.6f;
+        [Tooltip("Experiência concedida ao jogador. A cada 125 XP ele ganha uma vida.")]
+        [SerializeField] private int experienceReward = 25;
 
         private Rigidbody2D rb;
         private HealthSystem health;
@@ -171,6 +173,8 @@ namespace Odisseia.Enemies
 
         private void OnDied()
         {
+            Odisseia.Systems.ExperienceCounter.Add(experienceReward);
+
             rb.simulated = false;
             if (TryGetComponent(out Collider2D col))
             {

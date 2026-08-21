@@ -22,6 +22,12 @@ namespace Odisseia.UI
 
         private void Awake()
         {
+            // Toda jornada começa aqui — por Novo Jogo, por Continuar ou depois de um
+            // fim de jogo. Reiniciar no carregamento do menu cobre os três caminhos num
+            // lugar só, inclusive quem passa pelo Seletor de Fases.
+            LivesCounter.BeginRun();
+            ExperienceCounter.BeginRun();
+
             continueButton?.onClick.AddListener(OnContinueClicked);
             newGameButton?.onClick.AddListener(OnNewGameClicked);
             levelSelectButton?.onClick.AddListener(OnLevelSelectClicked);
