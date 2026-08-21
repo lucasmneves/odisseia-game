@@ -1,0 +1,1404 @@
+fileFormatVersion: 2
+guid: fedebb422c44c728b042a465f519f087
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 675424370
+    second: CHR_Enemy_Basic_Idle_00
+  - first:
+      213: 309860925
+    second: CHR_Enemy_Basic_Idle_01
+  - first:
+      213: 1880560210
+    second: CHR_Enemy_Basic_Idle_02
+  - first:
+      213: 1619296609
+    second: CHR_Enemy_Basic_Idle_03
+  - first:
+      213: 299871028
+    second: CHR_Enemy_Basic_Idle_04
+  - first:
+      213: 1153694409
+    second: CHR_Enemy_Basic_Idle_05
+  - first:
+      213: 1117973508
+    second: CHR_Enemy_Basic_Run_00
+  - first:
+      213: 424335919
+    second: CHR_Enemy_Basic_Run_01
+  - first:
+      213: 1614840822
+    second: CHR_Enemy_Basic_Run_02
+  - first:
+      213: 1201544231
+    second: CHR_Enemy_Basic_Run_03
+  - first:
+      213: 1998755682
+    second: CHR_Enemy_Basic_Run_04
+  - first:
+      213: 1464397604
+    second: CHR_Enemy_Basic_Run_05
+  - first:
+      213: 701792372
+    second: CHR_Enemy_Basic_Run_06
+  - first:
+      213: 416846329
+    second: CHR_Enemy_Basic_Run_07
+  - first:
+      213: 1757998740
+    second: CHR_Enemy_Basic_Jump_00
+  - first:
+      213: 593343037
+    second: CHR_Enemy_Basic_Jump_01
+  - first:
+      213: 497098453
+    second: CHR_Enemy_Basic_Jump_02
+  - first:
+      213: 109791548
+    second: CHR_Enemy_Basic_Jump_03
+  - first:
+      213: 1164376614
+    second: CHR_Enemy_Basic_Jump_04
+  - first:
+      213: 558225216
+    second: CHR_Enemy_Basic_Jump_05
+  - first:
+      213: 1389870724
+    second: CHR_Enemy_Basic_Jump_06
+  - first:
+      213: 1459659760
+    second: CHR_Enemy_Basic_Attack_00
+  - first:
+      213: 460726153
+    second: CHR_Enemy_Basic_Attack_01
+  - first:
+      213: 1299973206
+    second: CHR_Enemy_Basic_Attack_02
+  - first:
+      213: 725496831
+    second: CHR_Enemy_Basic_Attack_03
+  - first:
+      213: 558577001
+    second: CHR_Enemy_Basic_Attack_04
+  - first:
+      213: 301708556
+    second: CHR_Enemy_Basic_Attack_05
+  - first:
+      213: 423216312
+    second: CHR_Enemy_Basic_Attack_06
+  - first:
+      213: 203867418
+    second: CHR_Enemy_Basic_Attack_07
+  - first:
+      213: 760048811
+    second: CHR_Enemy_Basic_AttackThrow_00
+  - first:
+      213: 496617650
+    second: CHR_Enemy_Basic_AttackThrow_01
+  - first:
+      213: 786656269
+    second: CHR_Enemy_Basic_AttackThrow_02
+  - first:
+      213: 364911085
+    second: CHR_Enemy_Basic_AttackThrow_03
+  - first:
+      213: 849718620
+    second: CHR_Enemy_Basic_AttackThrow_04
+  - first:
+      213: 884638862
+    second: CHR_Enemy_Basic_AttackThrow_05
+  - first:
+      213: 1928137133
+    second: CHR_Enemy_Basic_AttackThrow_06
+  - first:
+      213: 1796559850
+    second: CHR_Enemy_Basic_Hit_00
+  - first:
+      213: 1353585102
+    second: CHR_Enemy_Basic_Hit_01
+  - first:
+      213: 789419900
+    second: CHR_Enemy_Basic_Hit_02
+  - first:
+      213: 377470527
+    second: CHR_Enemy_Basic_Hit_03
+  - first:
+      213: 1497518486
+    second: CHR_Enemy_Basic_Hit_04
+  - first:
+      213: 1601329007
+    second: CHR_Enemy_Basic_Death_00
+  - first:
+      213: 731269287
+    second: CHR_Enemy_Basic_Death_01
+  - first:
+      213: 559629444
+    second: CHR_Enemy_Basic_Death_02
+  - first:
+      213: 690257653
+    second: CHR_Enemy_Basic_Death_03
+  - first:
+      213: 851709096
+    second: CHR_Enemy_Basic_Death_04
+  - first:
+      213: 110462414
+    second: CHR_Enemy_Basic_Death_05
+  - first:
+      213: 1675427015
+    second: CHR_Enemy_Basic_Death_06
+  - first:
+      213: 947648993
+    second: CHR_Enemy_Basic_Death_07
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 863
+        width: 107
+        height: 154
+      alignment: 9
+      pivot: {x: 0.411215, y: 0.025974}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bf08bfefce5527392eaf2127d7e056f
+      internalID: 675424370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 863
+        width: 107
+        height: 154
+      alignment: 9
+      pivot: {x: 0.411215, y: 0.025974}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b29728adde44c12e9f34f62db6d15a5d
+      internalID: 309860925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 863
+        width: 107
+        height: 154
+      alignment: 9
+      pivot: {x: 0.411215, y: 0.025974}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df0c36525335410b2005b0e09b4e1bb2
+      internalID: 1880560210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 863
+        width: 107
+        height: 154
+      alignment: 9
+      pivot: {x: 0.411215, y: 0.025974}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 175b33991a80a5a458dc0c4fb717638c
+      internalID: 1619296609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 863
+        width: 107
+        height: 154
+      alignment: 9
+      pivot: {x: 0.411215, y: 0.025974}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce63c466cb0b03d6e7453576d260acd1
+      internalID: 299871028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 863
+        width: 107
+        height: 154
+      alignment: 9
+      pivot: {x: 0.411215, y: 0.025974}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b5880f4c0e5cb197474db71b12b5400
+      internalID: 1153694409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Run_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 715
+        width: 231
+        height: 148
+      alignment: 9
+      pivot: {x: 0.445887, y: 0.027027}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c29d5c347252add50eb2c358f533b536
+      internalID: 1117973508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Run_01
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 715
+        width: 231
+        height: 148
+      alignment: 9
+      pivot: {x: 0.445887, y: 0.027027}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e6c3fd0adcdd527445334cfaa50b55
+      internalID: 424335919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Run_02
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 715
+        width: 231
+        height: 148
+      alignment: 9
+      pivot: {x: 0.445887, y: 0.027027}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e598b77b3f063bdf9ea5613b37299da
+      internalID: 1614840822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Run_03
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 715
+        width: 231
+        height: 148
+      alignment: 9
+      pivot: {x: 0.445887, y: 0.027027}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21a5f74b2d2dca26beb8fb54da14ca0f
+      internalID: 1201544231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Run_04
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 715
+        width: 231
+        height: 148
+      alignment: 9
+      pivot: {x: 0.445887, y: 0.027027}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaac0c7bb996a576e29574f219d57120
+      internalID: 1998755682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Run_05
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 715
+        width: 231
+        height: 148
+      alignment: 9
+      pivot: {x: 0.445887, y: 0.027027}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 312ec4e5dfda9e604b6cb1595b7949a0
+      internalID: 1464397604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Run_06
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 715
+        width: 231
+        height: 148
+      alignment: 9
+      pivot: {x: 0.445887, y: 0.027027}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a242fb9cddc06f1ab56d10c84cbf50a0
+      internalID: 701792372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Run_07
+      rect:
+        serializedVersion: 2
+        x: 1617
+        y: 715
+        width: 231
+        height: 148
+      alignment: 9
+      pivot: {x: 0.445887, y: 0.027027}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f2183fb4259d161e02ed18dba5671f1
+      internalID: 416846329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Jump_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 551
+        width: 185
+        height: 164
+      alignment: 9
+      pivot: {x: 0.308108, y: 0.02439}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c92eb713e642850f2463fe5e87dffd
+      internalID: 1757998740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Jump_01
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 551
+        width: 185
+        height: 164
+      alignment: 9
+      pivot: {x: 0.308108, y: 0.02439}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8efb8d08c504594578c37f74c2a394a6
+      internalID: 593343037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Jump_02
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 551
+        width: 185
+        height: 164
+      alignment: 9
+      pivot: {x: 0.308108, y: 0.02439}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab596ec443757a1502b19a5ee32f1bc
+      internalID: 497098453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Jump_03
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 551
+        width: 185
+        height: 164
+      alignment: 9
+      pivot: {x: 0.308108, y: 0.02439}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbb586e6197ff53cc49243b82290bb28
+      internalID: 109791548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Jump_04
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 551
+        width: 185
+        height: 164
+      alignment: 9
+      pivot: {x: 0.308108, y: 0.02439}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95af1a71ab95ad0e562cf4243815f88
+      internalID: 1164376614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Jump_05
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 551
+        width: 185
+        height: 164
+      alignment: 9
+      pivot: {x: 0.308108, y: 0.02439}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b3b0b0917d3b88795cd04b6a4c0a424
+      internalID: 558225216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Jump_06
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 551
+        width: 185
+        height: 164
+      alignment: 9
+      pivot: {x: 0.308108, y: 0.02439}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eac6dee0a8a05b3904aaadea92738bb
+      internalID: 1389870724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Attack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 408
+        width: 246
+        height: 143
+      alignment: 9
+      pivot: {x: 0.443089, y: 0.027972}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d984ea60626b8a8942ac162ff8c646
+      internalID: 1459659760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Attack_01
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 408
+        width: 246
+        height: 143
+      alignment: 9
+      pivot: {x: 0.443089, y: 0.027972}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f96f7da0e988a3b20ac998522e694852
+      internalID: 460726153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Attack_02
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 408
+        width: 246
+        height: 143
+      alignment: 9
+      pivot: {x: 0.443089, y: 0.027972}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d052b1de1ace25d1644fe2a0613879d4
+      internalID: 1299973206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Attack_03
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 408
+        width: 246
+        height: 143
+      alignment: 9
+      pivot: {x: 0.443089, y: 0.027972}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ddeffc21d0bc678293e92f419a36ab8
+      internalID: 725496831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Attack_04
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 408
+        width: 246
+        height: 143
+      alignment: 9
+      pivot: {x: 0.443089, y: 0.027972}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ad85b901c1927c5c8ba1088fe671f8a
+      internalID: 558577001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Attack_05
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 408
+        width: 246
+        height: 143
+      alignment: 9
+      pivot: {x: 0.443089, y: 0.027972}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca82ea6ed6aea547e212dbb990972a6d
+      internalID: 301708556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Attack_06
+      rect:
+        serializedVersion: 2
+        x: 1476
+        y: 408
+        width: 246
+        height: 143
+      alignment: 9
+      pivot: {x: 0.443089, y: 0.027972}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e140b36478c8fe3cba89b02af26a310
+      internalID: 423216312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Attack_07
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 408
+        width: 246
+        height: 143
+      alignment: 9
+      pivot: {x: 0.443089, y: 0.027972}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4d190777f57617fe540b3219474e9df
+      internalID: 203867418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_AttackThrow_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 271
+        width: 253
+        height: 137
+      alignment: 9
+      pivot: {x: 0.407115, y: 0.029197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6c172f7d763cb45eb5dfb55fb860879
+      internalID: 760048811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_AttackThrow_01
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 271
+        width: 253
+        height: 137
+      alignment: 9
+      pivot: {x: 0.407115, y: 0.029197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57ac3d11159d7f04665cd7ac873cc43f
+      internalID: 496617650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_AttackThrow_02
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 271
+        width: 253
+        height: 137
+      alignment: 9
+      pivot: {x: 0.407115, y: 0.029197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8538918fdf0b335a2cdc12b0491716ee
+      internalID: 786656269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_AttackThrow_03
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 271
+        width: 253
+        height: 137
+      alignment: 9
+      pivot: {x: 0.407115, y: 0.029197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d3eb0e3709211e8a402f1eae61361d
+      internalID: 364911085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_AttackThrow_04
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 271
+        width: 253
+        height: 137
+      alignment: 9
+      pivot: {x: 0.407115, y: 0.029197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9781d84f46218954f65924574dd17de8
+      internalID: 849718620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_AttackThrow_05
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 271
+        width: 253
+        height: 137
+      alignment: 9
+      pivot: {x: 0.407115, y: 0.029197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87c90394064440fbfff1a6e0284e519b
+      internalID: 884638862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_AttackThrow_06
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 271
+        width: 253
+        height: 137
+      alignment: 9
+      pivot: {x: 0.407115, y: 0.029197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02215be001cd4fd5164948575b7a71d4
+      internalID: 1928137133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Hit_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 130
+        width: 143
+        height: 141
+      alignment: 9
+      pivot: {x: 0.573427, y: 0.028369}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74284f3706b52ae4e3697cbcc563ad3b
+      internalID: 1796559850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Hit_01
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 130
+        width: 143
+        height: 141
+      alignment: 9
+      pivot: {x: 0.573427, y: 0.028369}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b48defcc285203069b001ad4c799bba
+      internalID: 1353585102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Hit_02
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 130
+        width: 143
+        height: 141
+      alignment: 9
+      pivot: {x: 0.573427, y: 0.028369}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3511be3900d5cd94b5feb090989f3238
+      internalID: 789419900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Hit_03
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 130
+        width: 143
+        height: 141
+      alignment: 9
+      pivot: {x: 0.573427, y: 0.028369}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c8fac41796f8bd02b25115ef4103422
+      internalID: 377470527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Hit_04
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 130
+        width: 143
+        height: 141
+      alignment: 9
+      pivot: {x: 0.573427, y: 0.028369}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29a3e0f0841133ef290bd3773510d063
+      internalID: 1497518486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Death_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 226
+        height: 130
+      alignment: 9
+      pivot: {x: 0.575221, y: 0.030769}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba455ece91010e07e9a091a7a3188c6
+      internalID: 1601329007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Death_01
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 0
+        width: 226
+        height: 130
+      alignment: 9
+      pivot: {x: 0.575221, y: 0.030769}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2854533f04c3f4ab247f3cda19bb0e86
+      internalID: 731269287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Death_02
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 0
+        width: 226
+        height: 130
+      alignment: 9
+      pivot: {x: 0.575221, y: 0.030769}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 125b64df28c6f415740c4a7e35184895
+      internalID: 559629444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Death_03
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 0
+        width: 226
+        height: 130
+      alignment: 9
+      pivot: {x: 0.575221, y: 0.030769}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b5dd3a619562602724676b5e8acd372
+      internalID: 690257653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Death_04
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 0
+        width: 226
+        height: 130
+      alignment: 9
+      pivot: {x: 0.575221, y: 0.030769}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae75e13eebbdf457a24e1c4685313dd5
+      internalID: 851709096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Death_05
+      rect:
+        serializedVersion: 2
+        x: 1130
+        y: 0
+        width: 226
+        height: 130
+      alignment: 9
+      pivot: {x: 0.575221, y: 0.030769}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db44f8fd69f1a0dc0bb3983d8cef8467
+      internalID: 110462414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Death_06
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 0
+        width: 226
+        height: 130
+      alignment: 9
+      pivot: {x: 0.575221, y: 0.030769}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 476380ceecc6954f2054771903be3910
+      internalID: 1675427015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Enemy_Basic_Death_07
+      rect:
+        serializedVersion: 2
+        x: 1582
+        y: 0
+        width: 226
+        height: 130
+      alignment: 9
+      pivot: {x: 0.575221, y: 0.030769}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c0d5bdff9673b53f22a8df8c5be3cbf
+      internalID: 947648993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CHR_Enemy_Basic_AttackThrow_00: 760048811
+      CHR_Enemy_Basic_AttackThrow_01: 496617650
+      CHR_Enemy_Basic_AttackThrow_02: 786656269
+      CHR_Enemy_Basic_AttackThrow_03: 364911085
+      CHR_Enemy_Basic_AttackThrow_04: 849718620
+      CHR_Enemy_Basic_AttackThrow_05: 884638862
+      CHR_Enemy_Basic_AttackThrow_06: 1928137133
+      CHR_Enemy_Basic_Attack_00: 1459659760
+      CHR_Enemy_Basic_Attack_01: 460726153
+      CHR_Enemy_Basic_Attack_02: 1299973206
+      CHR_Enemy_Basic_Attack_03: 725496831
+      CHR_Enemy_Basic_Attack_04: 558577001
+      CHR_Enemy_Basic_Attack_05: 301708556
+      CHR_Enemy_Basic_Attack_06: 423216312
+      CHR_Enemy_Basic_Attack_07: 203867418
+      CHR_Enemy_Basic_Death_00: 1601329007
+      CHR_Enemy_Basic_Death_01: 731269287
+      CHR_Enemy_Basic_Death_02: 559629444
+      CHR_Enemy_Basic_Death_03: 690257653
+      CHR_Enemy_Basic_Death_04: 851709096
+      CHR_Enemy_Basic_Death_05: 110462414
+      CHR_Enemy_Basic_Death_06: 1675427015
+      CHR_Enemy_Basic_Death_07: 947648993
+      CHR_Enemy_Basic_Hit_00: 1796559850
+      CHR_Enemy_Basic_Hit_01: 1353585102
+      CHR_Enemy_Basic_Hit_02: 789419900
+      CHR_Enemy_Basic_Hit_03: 377470527
+      CHR_Enemy_Basic_Hit_04: 1497518486
+      CHR_Enemy_Basic_Idle_00: 675424370
+      CHR_Enemy_Basic_Idle_01: 309860925
+      CHR_Enemy_Basic_Idle_02: 1880560210
+      CHR_Enemy_Basic_Idle_03: 1619296609
+      CHR_Enemy_Basic_Idle_04: 299871028
+      CHR_Enemy_Basic_Idle_05: 1153694409
+      CHR_Enemy_Basic_Jump_00: 1757998740
+      CHR_Enemy_Basic_Jump_01: 593343037
+      CHR_Enemy_Basic_Jump_02: 497098453
+      CHR_Enemy_Basic_Jump_03: 109791548
+      CHR_Enemy_Basic_Jump_04: 1164376614
+      CHR_Enemy_Basic_Jump_05: 558225216
+      CHR_Enemy_Basic_Jump_06: 1389870724
+      CHR_Enemy_Basic_Run_00: 1117973508
+      CHR_Enemy_Basic_Run_01: 424335919
+      CHR_Enemy_Basic_Run_02: 1614840822
+      CHR_Enemy_Basic_Run_03: 1201544231
+      CHR_Enemy_Basic_Run_04: 1998755682
+      CHR_Enemy_Basic_Run_05: 1464397604
+      CHR_Enemy_Basic_Run_06: 701792372
+      CHR_Enemy_Basic_Run_07: 416846329
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

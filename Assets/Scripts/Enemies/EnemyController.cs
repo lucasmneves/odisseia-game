@@ -33,6 +33,11 @@ namespace Odisseia.Enemies
         [SerializeField] private int damage = 10;
         [SerializeField] private float attackCooldown = 1f;
 
+        [Header("Morte")]
+        [Tooltip("Atraso antes de remover o objeto. Dá tempo da animação de morte aparecer; " +
+                 "a física e o collider já são desligados no instante da morte.")]
+        [SerializeField] private float destroyDelay = 0.6f;
+
         private Rigidbody2D rb;
         private HealthSystem health;
         private Transform playerTransform;
@@ -169,7 +174,7 @@ namespace Odisseia.Enemies
             {
                 col.enabled = false;
             }
-            Destroy(gameObject, 0.1f);
+            Destroy(gameObject, destroyDelay);
         }
 
         private void OnDrawGizmosSelected()

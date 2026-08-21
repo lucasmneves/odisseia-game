@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Odisseia.Core;
@@ -10,6 +11,13 @@ namespace Odisseia.Player
     /// </summary>
     public class PlayerCombat : MonoBehaviour
     {
+        /// <summary>
+        /// Disparado quando o golpe sai (depois do cooldown, acertando ou não).
+        /// Existe para o <see cref="PlayerAnimator"/> tocar a animação no mesmo
+        /// instante em que o dano e o som acontecem, sem duplicar a regra de cooldown.
+        /// </summary>
+        public event Action Attacked;
+
         [Header("Input")]
         [SerializeField] private InputActionAsset inputActions;
         [SerializeField] private string actionMapName = "Player";
@@ -72,6 +80,7 @@ namespace Odisseia.Player
             }
 
             cooldownTimer = cooldown;
+            Attacked?.Invoke();
 
             // Feedback do golpe em si (sai mesmo errando o alvo — o jogador precisa
             // sentir que a espada respondeu ao comando).
