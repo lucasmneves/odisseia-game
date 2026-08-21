@@ -14,6 +14,8 @@ namespace Odisseia.UI
         [SerializeField] private Text healthText;
         [SerializeField] private Text collectiblesText;
         [SerializeField] private Text arrowsText;
+        [SerializeField] private Text livesText;
+        [SerializeField] private Text experienceText;
         [SerializeField] private HealthSystem playerHealth;
 
         private PlayerBow playerBow;
@@ -27,11 +29,27 @@ namespace Odisseia.UI
                 playerBow = playerHealth.GetComponent<PlayerBow>();
             }
 
-            // As cenas existentes não têm um Text de flechas; criar em runtime evita
-            // editar o HUD Canvas de todas elas.
-            if (arrowsText == null && collectiblesText != null && playerBow != null)
+            // As cenas existentes só têm os Texts de vida e coletáveis; os demais são
+            // criados em runtime, empilhados abaixo, para não editar o HUD Canvas das
+            // 16 fases.
+            if (collectiblesText != null)
             {
-                arrowsText = CreateArrowsLabel(collectiblesText);
+                int slot = 1;
+
+                if (arrowsText == null && playerBow != null)
+                {
+                    arrowsText = CreateStackedLabel(collectiblesText, slot++, "ArrowsText");
+                }
+
+                if (livesText == null)
+                {
+                    livesText = CreateStackedLabel(collectiblesText, slot++, "LivesText");
+                }
+
+                if (experienceText == null)
+                {
+                    experienceText = CreateStackedLabel(collectiblesText, slot, "ExperienceText");
+                }
             }
         }
 
@@ -50,10 +68,14 @@ namespace Odisseia.UI
             }
 
             CollectibleCounter.CountChanged += OnCollectiblesChanged;
+            LivesCounter.Changed += OnLivesChanged;
+            ExperienceCounter.Changed += OnExperienceChanged;
 
             RefreshHealth();
             RefreshCollectibles();
             RefreshArrows();
+            RefreshLives();
+            RefreshExperience();
         }
 
         private void OnDisable()
@@ -71,6 +93,29 @@ namespace Odisseia.UI
             }
 
             CollectibleCounter.CountChanged -= OnCollectiblesChanged;
+            LivesCounter.Changed -= OnLivesChanged;
+            ExperienceCounter.Changed -= OnExperienceChanged;
+        }
+
+        private void OnLivesChanged(int current) => RefreshLives();
+
+        private void OnExperienceChanged(int total, int towardNext) => RefreshExperience();
+
+        private void RefreshLives()
+        {
+            if (livesText != null)
+            {
+                livesText.text = $"Vidas {LivesCounter.Current}";
+            }
+        }
+
+        private void RefreshExperience()
+        {
+            if (experienceText != null)
+            {
+                experienceText.text =
+                    $"XP {ExperienceCounter.TowardNextLife}/{ExperienceCounter.ExperiencePerLife}";
+            }
         }
 
         private void OnArrowsChanged(int current, int max)
@@ -116,19 +161,24 @@ namespace Odisseia.UI
             RestoreArrowsColor();
         }
 
-        /// <summary>Clona o posicionamento do contador de coletáveis, uma linha abaixo.</summary>
-        private static Text CreateArrowsLabel(Text reference)
+        /// <summary>
+        /// Clona o posicionamento de um Text existente, deslocado <paramref name="slot"/>
+        /// linhas abaixo. Mantém a HUD alinhada sem depender de layout group.
+        /// </summary>
+        private static Text CreateStackedLabel(Text reference, int slot, string name)
         {
-            var go = new GameObject("ArrowsText", typeof(RectTransform));
+            var go = new GameObject(name, typeof(RectTransform));
             go.transform.SetParent(reference.transform.parent, false);
 
             var source = (RectTransform)reference.transform;
+            float step = source.sizeDelta.y + 4f;
+
             var rect = (RectTransform)go.transform;
             rect.anchorMin = source.anchorMin;
             rect.anchorMax = source.anchorMax;
             rect.pivot = source.pivot;
             rect.sizeDelta = source.sizeDelta;
-            rect.anchoredPosition = source.anchoredPosition + new Vector2(0f, -source.sizeDelta.y - 4f);
+            rect.anchoredPosition = source.anchoredPosition + new Vector2(0f, -step * slot);
 
             var text = go.AddComponent<Text>();
             text.font = reference.font;
