@@ -60,6 +60,18 @@ namespace Odisseia.Systems
             target = newTarget;
         }
 
+        /// <summary>
+        /// Define os limites em runtime. O mapa da jornada usa isto porque a extensão
+        /// dele depende do traçado do caminho, que é editável — fixar os limites na cena
+        /// os deixaria errados assim que alguém movesse um ponto.
+        /// </summary>
+        public void SetBounds(Vector2 min, Vector2 max)
+        {
+            minBounds = min;
+            maxBounds = max;
+            useBounds = true;
+        }
+
         /// <summary>Screen shake leve. Ignorado silenciosamente se não houver câmera ativa.</summary>
         public static void ShakeActive(float duration, float magnitude)
         {

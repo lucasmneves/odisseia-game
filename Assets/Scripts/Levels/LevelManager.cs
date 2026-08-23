@@ -1,6 +1,7 @@
 using UnityEngine;
 using Odisseia.Core;
 using Odisseia.Systems;
+using Odisseia.WorldMap;
 
 namespace Odisseia.Levels
 {
@@ -28,6 +29,10 @@ namespace Odisseia.Levels
 
             int collectibles = CollectibleCounter.Count;
             CampaignManager.Instance?.CompleteLevel(levelId, collectibles, collectibles);
+
+            // Diz ao mapa onde colocar Odisseu e que houve conclusão agora. O progresso
+            // em si já foi salvo acima — isto é só o recado de navegação.
+            WorldMapSession.ReportLevelFinished(levelId, completed: true);
         }
     }
 }
