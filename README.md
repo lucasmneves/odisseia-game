@@ -211,7 +211,36 @@ Fluxo comum a todas: **início → diálogo de abertura → gameplay → checkpo
 | 15 | Pretendentes | **Combate em grupo**: o confronto no salão, com Penélope e Telêmaco |
 | 16 | Arco de Odisseu | **Clímax**: atravessar as argolas na ordem para revelar o objetivo → tela final |
 
-Progressão: concluir uma fase desbloqueia a próxima (`CampaignManager`), salva coletáveis e pontuação. **Continue** no menu retoma a fase desbloqueada mais avançada. A Fase 16 é a única que carrega `Ending` em vez de `LevelComplete`.
+Progressão: concluir uma fase desbloqueia a próxima (`CampaignManager`), salva coletáveis e pontuação. A Fase 16 é a única que carrega `Ending`; as demais voltam ao **mapa da jornada**.
+
+### Mapa da jornada (`WorldMap`)
+
+Uma camada de progressão no estilo do mapa de mundo do Super Mario World. Odisseu caminha por uma trilha linear entre as 16 fases.
+
+```
+Menu ──► WorldMap ──► Fase ──► WorldMap ──► próxima fase desbloqueada
+```
+
+| Componente | Papel |
+|---|---|
+| `WorldMapPath` | A polilinha do caminho. Pontos editáveis no Inspector; alguns marcados como parada de fase |
+| `LevelNode` | Uma fase no mapa. Só dados + estado; não conhece cor nem sprite |
+| `LevelNodeView` | Aparência por estado (`Locked` / `Available` / `Current` / `Completed`) |
+| `WorldMapPlayerController` | Caminhada presa ao caminho |
+| `WorldMapManager` | Monta o mapa do save, posiciona Odisseu, trata a entrada nas fases |
+| `WorldMapUI` | Título, painel da fase, aviso de bloqueio e anúncio de desbloqueio |
+
+**Movimento por distância, não por posição.** Odisseu guarda um `float` de quanto já andou na trilha, e a posição sai de `path.Evaluate(distância)`. Isso resolve de graça dois requisitos: não sair do caminho (não existe eixo livre para sair) e não atravessar uma fase bloqueada (basta limitar a distância máxima à do último nó desbloqueado). Nenhum collider envolvido.
+
+**O mapa não guarda progresso.** Quem sabe o que está desbloqueado é o `CampaignManager`, apoiado no `SaveSystem`. `WorldMapManager` só traduz isso em estado de nó e limite de caminhada, num método só — mapa e save não têm como discordar.
+
+**`WorldMapSession` é recado, não save.** Guarda em memória qual fase o jogador acabou de jogar, para o mapa saber onde colocar Odisseu na volta. Derivar isso do save daria sempre a fase concluída de maior ordem, o que colocaria Odisseu no lugar errado ao rejogar uma fase antiga.
+
+**Nós e pontos intermediários são coisas diferentes.** O caminho tem 46 pontos: 16 paradas de fase e 30 intermediários. Os intermediários existem para o mapa poder ganhar curvas, ilhas e desvios depois, sem mexer no controlador.
+
+**Placeholders, por enquanto.** Nós e trilha são quadrados coloridos vindos de `Assets/Prefabs/WorldMap/`. Cor, escala e marca de concluído são campos serializados no `LevelNodeView` — trocar por arte definitiva é trocar o prefab, sem tocar em lógica.
+
+No mobile, o mapa mostra só as setas e o botão **JOGAR**; espada, escudo, arco e pulo ficam escondidos, porque pertencem ao gameplay. É o mesmo `MobileControlsRoot`, alternando o conjunto visível por contexto de cena.
 
 ---
 

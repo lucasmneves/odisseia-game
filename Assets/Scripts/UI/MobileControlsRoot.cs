@@ -32,7 +32,19 @@ namespace Odisseia.UI
         private static MobileControlsRoot instance;
 
         private CanvasGroup buttonsGroup;
+        /// <summary>Em que telas cada botão faz sentido.</summary>
+        private enum ButtonContext
+        {
+            /// <summary>Movimento — serve nas fases e no mapa.</summary>
+            Always,
+            /// <summary>Pulo, espada, escudo e arco — só nas fases.</summary>
+            Gameplay,
+            /// <summary>Entrar na fase — só no mapa.</summary>
+            WorldMap,
+        }
+
         private readonly List<(OnScreenButton button, Bound bound)> boundButtons = new();
+        private readonly List<(GameObject go, ButtonContext context)> contextButtons = new();
         private readonly Dictionary<(int size, int radius), Sprite> roundedSpriteCache = new();
 
         public static MobileControlsRoot Instance
@@ -125,12 +137,34 @@ namespace Odisseia.UI
             }
         }
 
+        /// <summary>
+        /// Escolhe o conjunto de botões conforme a cena: nas fases aparece o combate; no
+        /// mapa, só mover e JOGAR; nos menus, nada. A camada de input é a mesma dos dois
+        /// lados — o que muda é quais botões ficam visíveis.
+        /// </summary>
         private void RefreshVisibilityForActiveScene()
         {
-            // Só faz sentido durante as fases: as cenas de menu não têm PlayerController
-            // para controlar.
-            bool hasPlayer = FindAnyObjectByType<PlayerController>() != null;
-            buttonsGroup.gameObject.SetActive(hasPlayer);
+            bool inLevel = FindAnyObjectByType<PlayerController>() != null;
+            bool inWorldMap = FindAnyObjectByType<Odisseia.WorldMap.WorldMapPlayerController>() != null;
+
+            buttonsGroup.gameObject.SetActive(inLevel || inWorldMap);
+
+            foreach ((GameObject go, ButtonContext context) in contextButtons)
+            {
+                if (go == null)
+                {
+                    continue;
+                }
+
+                bool visible = context switch
+                {
+                    ButtonContext.Gameplay => inLevel,
+                    ButtonContext.WorldMap => inWorldMap,
+                    _ => inLevel || inWorldMap,
+                };
+
+                go.SetActive(visible);
+            }
         }
 
         private void Build()
@@ -180,11 +214,11 @@ namespace Odisseia.UI
             // Esquerda: setas de movimento contínuo (segurar = anda, soltar = para).
             CreateOnScreenButton(groupRect, "LeftButton", Bind("Move", "negative", "<Keyboard>/a"), "◄",
                 new Vector2(0f, 0f), new Vector2(margin, margin),
-                new Vector2(dpadSize, dpadSize), cornerRadius: 28f);
+                new Vector2(dpadSize, dpadSize), cornerRadius: 28f, context: ButtonContext.Always);
 
             CreateOnScreenButton(groupRect, "RightButton", Bind("Move", "positive", "<Keyboard>/d"), "►",
                 new Vector2(0f, 0f), new Vector2(margin * 2f + dpadSize, margin),
-                new Vector2(dpadSize, dpadSize), cornerRadius: 28f);
+                new Vector2(dpadSize, dpadSize), cornerRadius: 28f, context: ButtonContext.Always);
 
             // Direita: bloco 2x2 de ações. Cada botão aponta para o MESMO control path
             // de teclado da ação — ATK/JUMP são toques discretos e SHIELD funciona
@@ -212,6 +246,12 @@ namespace Odisseia.UI
             CreateOnScreenButton(groupRect, "BowButton", Bind("Bow", null, "<Keyboard>/l"), "BOW",
                 new Vector2(1f, 0f), new Vector2(-col0, row1),
                 new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
+
+            // Só no mapa: entrar na fase. Reaproveita a ação Interact, a mesma do "E".
+            CreateOnScreenButton(groupRect, "EnterLevelButton", Bind("Interact", null, "<Keyboard>/e"), "JOGAR",
+                new Vector2(1f, 0f), new Vector2(-col1, row0),
+                new Vector2(actionSize * 1.4f, actionSize), cornerRadius: actionSize / 2f,
+                context: ButtonContext.WorldMap);
 
             GameObject rotatePanel = CreateRotatePanel(canvasGO.transform);
             var rotatePrompt = canvasGO.AddComponent<RotateDevicePrompt>();
@@ -243,7 +283,8 @@ namespace Odisseia.UI
             => new Bound(actionName, compositePart, fallback);
 
         private void CreateOnScreenButton(RectTransform parent, string name, Bound bound, string label,
-            Vector2 anchor, Vector2 anchoredPosition, Vector2 size, float cornerRadius)
+            Vector2 anchor, Vector2 anchoredPosition, Vector2 size, float cornerRadius,
+            ButtonContext context = ButtonContext.Gameplay)
         {
             string controlPath = bound.ResolvePath();
             var go = new GameObject(name, typeof(RectTransform));
@@ -268,6 +309,7 @@ namespace Odisseia.UI
             var onScreen = go.AddComponent<OnScreenButton>();
             onScreen.controlPath = controlPath;
             boundButtons.Add((onScreen, bound));
+            contextButtons.Add((go, context));
             go.AddComponent<TouchButtonFeedback>();
 
             var labelGO = new GameObject("Label", typeof(RectTransform));

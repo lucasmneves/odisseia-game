@@ -1,14 +1,14 @@
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using Odisseia.Core;
 using Odisseia.Systems;
+using Odisseia.WorldMap;
 
 namespace Odisseia.UI
 {
     /// <summary>
-    /// Menu principal: Continue (retoma a fase desbloqueada mais avançada),
-    /// New Game (reseta o progresso e começa do zero), Level Select e Settings.
+    /// Menu principal: Continue e New Game levam ao mapa da jornada (o mapa é que
+    /// posiciona Odisseu no ponto de progresso), além de Level Select e Settings.
     /// </summary>
     public class MainMenuController : MonoBehaviour
     {
@@ -18,7 +18,6 @@ namespace Odisseia.UI
         [SerializeField] private Button settingsButton;
         [SerializeField] private GameObject settingsPanel;
         [SerializeField] private string levelSelectSceneName = SceneLoader.LevelSelect;
-        [SerializeField] private string firstLevelSceneName = SceneLoader.Level01Troia;
 
         private void Awake()
         {
@@ -39,31 +38,23 @@ namespace Odisseia.UI
             }
         }
 
+        /// <summary>
+        /// Continuar leva ao mapa, não direto a uma fase: o mapa é que sabe posicionar
+        /// Odisseu no ponto de progresso e mostrar o que já foi conquistado.
+        /// </summary>
         private void OnContinueClicked()
         {
-            string sceneName = firstLevelSceneName;
-            CampaignManager campaign = CampaignManager.Instance;
-
-            if (campaign != null)
-            {
-                LevelDefinition target = campaign.Levels
-                    .Where(level => campaign.IsUnlocked(level.LevelId))
-                    .OrderByDescending(level => level.Order)
-                    .FirstOrDefault();
-
-                if (target != null)
-                {
-                    sceneName = target.SceneName;
-                }
-            }
-
-            SceneLoader.Load(sceneName);
+            // Sem recado de fase recém-jogada, o mapa cai no critério dele: a concluída
+            // mais avançada, ou o começo da jornada.
+            WorldMapSession.Clear();
+            SceneLoader.Load(SceneLoader.WorldMap);
         }
 
         private void OnNewGameClicked()
         {
             CampaignManager.Instance?.StartNewGame();
-            SceneLoader.Load(firstLevelSceneName);
+            WorldMapSession.Clear();
+            SceneLoader.Load(SceneLoader.WorldMap);
         }
 
         private void OnLevelSelectClicked()
