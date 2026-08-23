@@ -8,6 +8,13 @@ namespace Odisseia.Systems
     [RequireComponent(typeof(Collider2D))]
     public class Checkpoint : MonoBehaviour
     {
+        [Header("Arte por estado (opcional)")]
+        [Tooltip("Se os dois sprites estiverem preenchidos, o estado é comunicado " +
+                 "trocando o sprite. Sem eles, cai na tinta abaixo.")]
+        [SerializeField] private Sprite activeSprite;
+        [SerializeField] private Sprite inactiveSprite;
+
+        [Header("Tinta (usada quando não há sprite por estado)")]
         [SerializeField] private Color activeColor = new Color(0.3f, 0.9f, 0.4f);
         [SerializeField] private Color inactiveColor = Color.white;
 
@@ -41,10 +48,23 @@ namespace Odisseia.Systems
 
         private void SetVisual(bool isActive)
         {
-            if (spriteRenderer != null)
+            if (spriteRenderer == null)
             {
-                spriteRenderer.color = isActive ? activeColor : inactiveColor;
+                return;
             }
+
+            Sprite target = isActive ? activeSprite : inactiveSprite;
+
+            // Com arte dos dois estados, trocar o sprite comunica melhor do que
+            // tingir — tingir de verde pintaria o poste inteiro.
+            if (target != null)
+            {
+                spriteRenderer.sprite = target;
+                spriteRenderer.color = Color.white;
+                return;
+            }
+
+            spriteRenderer.color = isActive ? activeColor : inactiveColor;
         }
     }
 }
