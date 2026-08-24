@@ -154,5 +154,15 @@ namespace Odisseia.UI
             items = novos.Where(b => b != null).ToList();
             BuildNavigation();
         }
+
+        /// <summary>
+        /// Quem responde ao ESC / botão B. Necessário quando o navegador é adicionado
+        /// em runtime — aí não há Inspector para preencher o campo, e sem isso o
+        /// "voltar" simplesmente não faz nada.
+        /// </summary>
+        public void SetCancelTarget(MonoBehaviour target)
+        {
+            cancelTarget = target;
+        }
     }
 }
