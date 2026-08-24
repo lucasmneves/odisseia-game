@@ -1,7 +1,7 @@
 # Unity Integration Specification — Ilha dos Ciclopes
 
 > Como os assets entram no projeto **sem quebrar o gameplay já validado**.
-> Cena alvo: `Assets/Scenes/Levels/Level_04_Ciclopes.unity`.
+> Cena alvo: `Assets/Scenes/Levels/Level_05_Ciclopes.unity`.
 
 ---
 
@@ -119,7 +119,7 @@ fase). O dano vem dos `attackPoints` do `BossController`.
 
 ### PF_Beast
 
-Substitui `EnemyBasic.prefab` **apenas nesta fase** — as outras 15 fases continuam usando o
+Substitui `EnemyBasic.prefab` **apenas nesta fase** — as outras 15 etapas continuam usando o
 `EnemyBasic` genérico. Criar variante:
 
 ```

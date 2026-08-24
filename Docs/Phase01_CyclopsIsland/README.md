@@ -45,7 +45,7 @@ verdade), depois vá para `09_GenerationPrompts.md` e comece pelo Odisseu.
 | Inimigo secundário | **Fera quadrúpede**, não sátiro | `01` §3 — sátiro competiria com a silhueta do Odisseu |
 | Escudo do Odisseu | **Fora do slice** | Não há mecânica de bloqueio; prometeria o que o jogo não entrega |
 | Partículas mágicas | **Fora do slice** | Não há magia nesta fase; brilho é reservado a interativos |
-| Fase alvo | `Level_04_Ciclopes.unity` | `00` §0 — a fase de gameplay já existe e funciona |
+| Fase alvo | `Level_05_Ciclopes.unity` | `00` §0 — a fase de gameplay já existe e funciona |
 
 ---
 
@@ -62,8 +62,8 @@ Todos os 64 itens do checklist estão em `TODO`.
 ## Alerta de numeração
 
 O briefing chama isto de "Fase 1". A campanha implementada tem **Fase 1 = Troia** e
-**Fase 4 = Ciclopes**. Este pacote é o **Vertical Slice 01** — a primeira fase a receber
-arte —, materializado sobre a cena `Level_04_Ciclopes` que já tem gameplay validado.
+**Etapa 5 = Ciclopes**. Este pacote é o **Vertical Slice 01** — a primeira fase a receber
+arte —, materializado sobre a cena `Level_05_Ciclopes` que já tem gameplay validado.
 
 Se a intenção era reordenar a campanha para o Ciclope ser a primeira fase narrativa, isso
 é uma mudança de design de campanha (afeta `LevelDefinition`/`CampaignManager`) e precisa

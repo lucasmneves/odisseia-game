@@ -14,7 +14,7 @@ namespace Odisseia.Systems
         public const string LevelSelect = "LevelSelect";
         public const string LevelComplete = "LevelComplete";
         public const string Ending = "Ending";
-        public const string Level01Troia = "Level_01_Troia";
+        public const string FirstLevel = "Level_01_Itaca_Prologue";
 
         /// <summary>
         /// Escurece a tela e então carrega a cena (o fade-in do outro lado é automático,
