@@ -176,7 +176,7 @@ namespace Odisseia.UI
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
             // Abaixo do HUD/Pause/Diálogo (todos em sortingOrder 0 ou 1): quando um
             // desses painéis abre por cima, ele cobre os botões em vez de sobrepor.
-            canvas.sortingOrder = -1;
+            canvas.sortingOrder = UITheme.Layer.MobileControls;
 
             var scaler = canvasGO.AddComponent<CanvasScaler>();
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;

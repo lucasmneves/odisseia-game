@@ -293,13 +293,22 @@ namespace Odisseia.UI
 
         private void Build()
         {
+            // AddComponent ja dispara o Awake, que constroi; o getter chama Build de
+            // novo logo em seguida. Sem esta guarda cada tela nasce com DOIS Canvas —
+            // o duplicado fica invisivel e ainda por cima intercepta clique.
+            if (root != null)
+            {
+                return;
+            }
+
             var canvasGO = new GameObject("OptionsCanvas");
             canvasGO.transform.SetParent(transform, false);
 
             var canvas = canvasGO.AddComponent<Canvas>();
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            // Acima do HUD e do pause (0/1), abaixo do loader (998) e do fade (999).
-            canvas.sortingOrder = 500;
+            // Acima de quem abre esta tela — inclusive a de configurações, de onde vem
+            // o botão "Personalizar". Abaixo da confirmação e das transições de cena.
+            canvas.sortingOrder = UITheme.Layer.KeyRebinding;
 
             var scaler = canvasGO.AddComponent<CanvasScaler>();
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;

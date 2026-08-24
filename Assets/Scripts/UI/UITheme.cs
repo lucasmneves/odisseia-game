@@ -35,5 +35,41 @@ namespace Odisseia.UI
         public const int FontBody = 22;
         public const int FontButton = 24;
         public const int FontHud = 22;
+
+        /// <summary>
+        /// Ordem de empilhamento dos Canvas, do fundo para a frente.
+        ///
+        /// Cada tela que se monta em runtime escolhia o próprio número solto no meio do
+        /// arquivo, e ninguém conseguia ver a pilha inteira — foi assim que a tela de
+        /// remapeamento acabou ABAIXO da de configurações, que é justamente quem a abre.
+        /// Com a lista aqui, dá para conferir a ordem num olhar antes de encaixar mais
+        /// uma tela.
+        ///
+        /// A regra é simples: quem abre fica embaixo de quem foi aberto.
+        /// </summary>
+        public static class Layer
+        {
+            /// <summary>Controles de toque: atrás do HUD, para nunca cobrir informação.</summary>
+            public const int MobileControls = -1;
+
+            /// <summary>HUD, pause e diálogo vivem no 0/1 das próprias cenas.</summary>
+            public const int SceneUI = 0;
+
+            public const int GameOver = 600;
+
+            /// <summary>Configurações, abertas pelo menu ou pelo pause.</summary>
+            public const int Settings = 700;
+
+            /// <summary>Remapeamento de teclas — aberto de dentro das configurações.</summary>
+            public const int KeyRebinding = 750;
+
+            /// <summary>Confirmação: pode ser pedida de qualquer uma das telas acima.</summary>
+            public const int Confirm = 800;
+
+            /// <summary>Transições de cena, sempre por cima de tudo.</summary>
+            public const int Loading = 998;
+
+            public const int Fade = 999;
+        }
     }
 }
