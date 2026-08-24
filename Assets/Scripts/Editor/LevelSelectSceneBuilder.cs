@@ -4,6 +4,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Odisseia.Systems;
 using Odisseia.UI;
 
 /// <summary>
@@ -130,7 +131,7 @@ public static class LevelSelectSceneBuilder
         cabecalho.sizeDelta = new Vector2(0f, HeaderHeight);
         cabecalho.anchoredPosition = Vector2.zero;
 
-        Texto(cabecalho, "Title", "A JORNADA", UITheme.FontHeading, UITheme.TextAccent);
+        Texto(cabecalho, "Title", Localization.Get("ui.levelSelect.title"), UITheme.FontHeading, UITheme.TextAccent);
 
         // Rodapé com o botão de voltar
         RectTransform rodape = Criar("Footer", coluna);
@@ -140,7 +141,7 @@ public static class LevelSelectSceneBuilder
         rodape.sizeDelta = new Vector2(0f, FooterHeight);
         rodape.anchoredPosition = Vector2.zero;
 
-        voltar = Botao(rodape, "BackButton", "VOLTAR");
+        voltar = Botao(rodape, "BackButton", Localization.Get("ui.levelSelect.back"));
         var voltarRect = (RectTransform)voltar.transform;
         voltarRect.anchorMin = voltarRect.anchorMax = new Vector2(0.5f, 0.5f);
         voltarRect.sizeDelta = new Vector2(200f, 46f);

@@ -930,6 +930,7 @@ GameObject:
   - component: {fileID: 300868592}
   - component: {fileID: 300868594}
   - component: {fileID: 300868593}
+  - component: {fileID: 2141217380}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -1196,6 +1197,7 @@ GameObject:
   - component: {fileID: 419079389}
   - component: {fileID: 419079391}
   - component: {fileID: 419079390}
+  - component: {fileID: 2141217387}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -1275,6 +1277,7 @@ GameObject:
   - component: {fileID: 483287632}
   - component: {fileID: 483287634}
   - component: {fileID: 483287633}
+  - component: {fileID: 2141217394}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -1790,7 +1793,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.DialogueSequence
   data: {fileID: 0}
   lines:
-  - speaker: 
+  - key: dlg.Level_06_Eolo.OutroDialogueController.0
+    speaker: 
     text: "Com os ventos de \xC9olo ainda ao seu favor, Odisseu v\xEA \xCDtaca quase
       ao alcance \u2014 mas a viagem est\xE1 longe de terminar."
   secondsPerLine: 3
@@ -2190,7 +2194,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.DialogueSequence
   data: {fileID: 0}
   lines:
-  - speaker: Odisseu
+  - key: dlg.Level_06_Eolo.IntroDialogueController.0
+    speaker: Odisseu
     text: "\xC9olo me deu os ventos contr\xE1rios presos num saco... e o vento favor\xE1vel
       para nos levar para casa."
   secondsPerLine: 3
@@ -3547,6 +3552,7 @@ GameObject:
   - component: {fileID: 1740483896}
   - component: {fileID: 1740483898}
   - component: {fileID: 1740483897}
+  - component: {fileID: 2141217401}
   m_Layer: 0
   m_Name: PauseTitle
   m_TagString: Untagged
@@ -4375,6 +4381,58 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 40}
   m_SizeDelta: {x: 280, y: 52}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2141217380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300868591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.menu
+--- !u!114 &2141217387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419079388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.resume
+--- !u!114 &2141217394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483287631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.restart
+--- !u!114 &2141217401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740483895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.title
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

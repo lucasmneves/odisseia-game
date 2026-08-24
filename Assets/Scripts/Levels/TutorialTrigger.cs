@@ -10,8 +10,21 @@ namespace Odisseia.Levels
     public class TutorialTrigger : MonoBehaviour
     {
         [SerializeField] private TutorialPrompt prompt;
+
+        [Tooltip("Chave de tradução. Preenchida, o texto vem da tabela de idiomas.")]
+        [SerializeField] private string messageKey;
+
         [SerializeField] [TextArea] private string message;
         [SerializeField] private float displayDuration = 3f;
+
+        /// <summary>
+        /// A chave manda; sem chave (ou sem entrada na tabela) vale o texto da cena,
+        /// para uma dica nova continuar aparecendo enquanto a tradução não chega.
+        /// </summary>
+        private string ResolvedMessage =>
+            !string.IsNullOrEmpty(messageKey) && Odisseia.Systems.Localization.Has(messageKey)
+                ? Odisseia.Systems.Localization.Get(messageKey)
+                : message;
 
         private bool triggered;
 
@@ -28,7 +41,7 @@ namespace Odisseia.Levels
             }
 
             triggered = true;
-            prompt?.Show(message, displayDuration);
+            prompt?.Show(ResolvedMessage, displayDuration);
         }
     }
 }

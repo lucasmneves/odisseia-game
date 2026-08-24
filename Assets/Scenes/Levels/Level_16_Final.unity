@@ -1630,7 +1630,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.DialogueSequence
   data: {fileID: 0}
   lines:
-  - speaker: Odisseu
+  - key: dlg.Level_16_Final.ClimaxDialogueController.0
+    speaker: Odisseu
     text: "A corda canta como h\xE1 vinte anos. A flecha voa reta \u2014 atrav\xE9s
       de cada machado, sem desviar uma polegada."
   secondsPerLine: 3
@@ -1749,7 +1750,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.DialogueSequence
   data: {fileID: 0}
   lines:
-  - speaker: Odisseu
+  - key: dlg.Level_16_Final.IntroDialogueController.0
+    speaker: Odisseu
     text: "S\xF3 as m\xE3os que curvaram este arco em juventude podem retes\xE1-lo
       agora. Pen\xE9lope o trouxe como prova final \u2014 sem saber que o mendigo
       diante dela \xE9 o pr\xF3prio rei."
@@ -2029,6 +2031,7 @@ GameObject:
   - component: {fileID: 1061928017}
   - component: {fileID: 1061928019}
   - component: {fileID: 1061928018}
+  - component: {fileID: 2141217660}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -2677,6 +2680,7 @@ GameObject:
   - component: {fileID: 1524327195}
   - component: {fileID: 1524327197}
   - component: {fileID: 1524327196}
+  - component: {fileID: 2141217667}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -3078,7 +3082,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.DialogueSequence
   data: {fileID: 0}
   lines:
-  - speaker: Odisseu
+  - key: dlg.Level_16_Final.OutroDialogueController.0
+    speaker: Odisseu
     text: O disfarce cai. "Sou eu", diz Odisseu. "Voltei para casa."
   secondsPerLine: 3
   panel: {fileID: 726858414}
@@ -3099,6 +3104,7 @@ GameObject:
   - component: {fileID: 1773149212}
   - component: {fileID: 1773149214}
   - component: {fileID: 1773149213}
+  - component: {fileID: 2141217674}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -3178,6 +3184,7 @@ GameObject:
   - component: {fileID: 1774217586}
   - component: {fileID: 1774217588}
   - component: {fileID: 1774217587}
+  - component: {fileID: 2141217681}
   m_Layer: 0
   m_Name: PauseTitle
   m_TagString: Untagged
@@ -3823,6 +3830,58 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -16}
   m_SizeDelta: {x: 0, y: 32}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &2141217660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061928016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.resume
+--- !u!114 &2141217667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524327194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.menu
+--- !u!114 &2141217674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773149211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.restart
+--- !u!114 &2141217681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774217585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.title
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

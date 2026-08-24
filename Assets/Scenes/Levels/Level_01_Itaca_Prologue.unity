@@ -335,9 +335,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.DialogueSequence
   data: {fileID: 0}
   lines:
-  - speaker: "Tel\xEAmaco"
+  - key: dlg.Level_01_Itaca_Prologue.TelemacoDialogueController.0
+    speaker: "Tel\xEAmaco"
     text: "Pai, \xE9 verdade que voc\xEA vai atravessar o mar? Me leve junto!"
-  - speaker: Odisseu
+  - key: dlg.Level_01_Itaca_Prologue.TelemacoDialogueController.1
+    speaker: Odisseu
     text: "Cuide de sua m\xE3e e da ilha por mim, meu filho. \xC9 a tarefa mais dif\xEDcil das duas."
   secondsPerLine: 3
   panel: {fileID: 745333986}
@@ -613,6 +615,7 @@ GameObject:
   - component: {fileID: 300868592}
   - component: {fileID: 300868594}
   - component: {fileID: 300868593}
+  - component: {fileID: 2137713955}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -857,9 +860,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.DialogueSequence
   data: {fileID: 0}
   lines:
-  - speaker: "Pen\xE9lope"
+  - key: dlg.Level_01_Itaca_Prologue.PenelopeDialogueController.0
+    speaker: "Pen\xE9lope"
     text: "Dizem que os arautos de Agamenon vieram buscar reis para uma guerra em Troia. N\xE3o v\xE1, Odisseu."
-  - speaker: "Pen\xE9lope"
+  - key: dlg.Level_01_Itaca_Prologue.PenelopeDialogueController.1
+    speaker: "Pen\xE9lope"
     text: "Se for, jure que volta. Eu espero o tempo que for preciso \u2014 mas jure."
   secondsPerLine: 3
   panel: {fileID: 126741237}
@@ -880,6 +885,7 @@ GameObject:
   - component: {fileID: 419079389}
   - component: {fileID: 419079391}
   - component: {fileID: 419079390}
+  - component: {fileID: 2137713962}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -1103,6 +1109,7 @@ GameObject:
   - component: {fileID: 483287632}
   - component: {fileID: 483287634}
   - component: {fileID: 483287633}
+  - component: {fileID: 2137713969}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -2927,9 +2934,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.DialogueSequence
   data: {fileID: 0}
   lines:
-  - speaker: Odisseu
+  - key: dlg.Level_01_Itaca_Prologue.OutroDialogueController.0
+    speaker: Odisseu
     text: "O juramento me obriga: prometi defender a casa de Menelau, e Agamenon cobra a promessa."
-  - speaker: 
+  - key: dlg.Level_01_Itaca_Prologue.OutroDialogueController.1
+    speaker: 
     text: "Odisseu embarca com seus homens. \xCDtaca fica para tr\xE1s \u2014 e a guerra de Troia espera do outro lado do mar."
   secondsPerLine: 3
   panel: {fileID: 2007458606}
@@ -3485,9 +3494,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.DialogueSequence
   data: {fileID: 0}
   lines:
-  - speaker: Odisseu
+  - key: dlg.Level_01_Itaca_Prologue.IntroDialogueController.0
+    speaker: Odisseu
     text: "\xCDtaca. Minha ilha, minha casa. Pen\xE9lope tece no sal\xE3o e Tel\xEAmaco ainda cabe no meu bra\xE7o."
-  - speaker: Odisseu
+  - key: dlg.Level_01_Itaca_Prologue.IntroDialogueController.1
+    speaker: Odisseu
     text: "Um navio de Micenas ancorou no porto esta manh\xE3. Agamenon manda chamar todos os reis da Gr\xE9cia."
   secondsPerLine: 3
   panel: {fileID: 1550009879}
@@ -3889,6 +3900,7 @@ GameObject:
   - component: {fileID: 1740483896}
   - component: {fileID: 1740483898}
   - component: {fileID: 1740483897}
+  - component: {fileID: 2137713976}
   m_Layer: 0
   m_Name: PauseTitle
   m_TagString: Untagged
@@ -4864,6 +4876,7 @@ MonoBehaviour:
   m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Levels.TutorialTrigger
   prompt: {fileID: 637759001}
+  messageKey: tut.Level_01_Itaca_Prologue.Tutorial_Move
   message: "Use A/D ou \u2190/\u2192 para se mover."
   displayDuration: 3.5
 --- !u!1 &2121126284
@@ -4958,6 +4971,7 @@ MonoBehaviour:
   m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Levels.TutorialTrigger
   prompt: {fileID: 637759001}
+  messageKey: tut.Level_01_Itaca_Prologue.Tutorial_Jump
   message: Pressione SPACE para pular o vao.
   displayDuration: 3.5
 --- !u!1 &2121126312
@@ -5052,8 +5066,61 @@ MonoBehaviour:
   m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Levels.TutorialTrigger
   prompt: {fileID: 637759001}
+  messageKey: tut.Level_01_Itaca_Prologue.Tutorial_Attack
   message: Pressione Z para atacar.
   displayDuration: 3.5
+--- !u!114 &2137713955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300868591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.menu
+--- !u!114 &2137713962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419079388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.resume
+--- !u!114 &2137713969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483287631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.restart
+--- !u!114 &2137713976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740483895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.title
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

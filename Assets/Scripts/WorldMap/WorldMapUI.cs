@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using Odisseia.Systems;
 using Odisseia.UI;
 
 namespace Odisseia.WorldMap
@@ -59,14 +60,14 @@ namespace Odisseia.WorldMap
 
             nodePanel.SetActive(true);
             nodeNameText.text = node.LevelName.ToUpperInvariant();
-            progressText.text = $"Fase {node.Order} de {TotalLevels}";
+            progressText.text = Localization.Get("ui.worldMap.progress", node.Order, TotalLevels);
 
             bool enterable = node.IsEnterable;
             nodeHintText.text = enterable
                 ? (node.State == LevelNodeState.Completed
-                    ? "Já concluída — [E] para jogar de novo"
-                    : "[E] Jogar")
-                : "Bloqueada";
+                    ? Localization.Get("ui.worldMap.replay")
+                    : Localization.Get("ui.worldMap.play"))
+                : Localization.Get("ui.worldMap.blocked");
 
             enterButton.gameObject.SetActive(enterable);
         }
@@ -83,7 +84,9 @@ namespace Odisseia.WorldMap
 
         private IEnumerator LockedRoutine()
         {
-            lockedText.text = lockedMessage;
+            lockedText.text = Localization.Has("ui.worldMap.locked")
+                ? Localization.Get("ui.worldMap.locked")
+                : lockedMessage;
             lockedPanel.SetActive(true);
             yield return new WaitForSeconds(lockedMessageDuration);
             lockedPanel.SetActive(false);
@@ -98,10 +101,10 @@ namespace Odisseia.WorldMap
                 return;
             }
 
-            string text = $"FASE CONCLUÍDA\n\n✓ {completed.LevelName}";
+            string text = Localization.Get("ui.worldMap.stageComplete") + $"\n\n✓ {completed.LevelName}";
             if (unlocked != null)
             {
-                text += $"\n\nNova região desbloqueada:\n{unlocked.LevelName.ToUpperInvariant()}";
+                text += "\n\n" + Localization.Get("ui.worldMap.unlocked") + $"\n{unlocked.LevelName.ToUpperInvariant()}";
             }
 
             announcementText.text = text;
@@ -124,6 +127,10 @@ namespace Odisseia.WorldMap
 
         // ---------------------------------------------------------------- montagem
 
+        /// <summary>Chave da tabela; sem ela, o texto configurado no Inspector.</summary>
+        private static string Texto(string chave, string reserva) =>
+            Localization.Has(chave) ? Localization.Get(chave) : reserva;
+
         private void Build()
         {
             var canvasGO = new GameObject("WorldMapCanvas");
@@ -143,9 +150,9 @@ namespace Odisseia.WorldMap
             Transform root = canvasGO.transform;
 
             // topo
-            CreateText(root, "Title", mapTitle, UITheme.FontHeading, UITheme.TextAccent,
+            CreateText(root, "Title", Texto("ui.worldMap.title", mapTitle), UITheme.FontHeading, UITheme.TextAccent,
                 new Vector2(0.5f, 1f), new Vector2(0f, -26f), new Vector2(600f, 40f));
-            CreateText(root, "Subtitle", mapSubtitle, UITheme.FontBody, UITheme.TextSecondary,
+            CreateText(root, "Subtitle", Texto("ui.worldMap.subtitle", mapSubtitle), UITheme.FontBody, UITheme.TextSecondary,
                 new Vector2(0.5f, 1f), new Vector2(0f, -60f), new Vector2(600f, 28f));
             progressText = CreateText(root, "Progress", string.Empty, UITheme.FontBody,
                 UITheme.TextSecondary, new Vector2(0.5f, 1f), new Vector2(0f, -88f), new Vector2(600f, 28f));

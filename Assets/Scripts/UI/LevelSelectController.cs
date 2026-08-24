@@ -116,7 +116,7 @@ namespace Odisseia.UI
             size.minHeight = 120f;
 
             Text aviso = CreateLabel(go.transform, "Label",
-                "Nenhuma campanha carregada.\n\nAbra o jogo pela cena Boot.",
+                Localization.Get("ui.levelSelect.noCampaign"),
                 TextAnchor.MiddleCenter);
             aviso.color = UITheme.TextSecondary;
             aviso.horizontalOverflow = HorizontalWrapMode.Wrap;

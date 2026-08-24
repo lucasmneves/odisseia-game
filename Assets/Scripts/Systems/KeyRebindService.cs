@@ -165,16 +165,16 @@ namespace Odisseia.Systems
             {
                 baseLabel = binding.name switch
                 {
-                    "negative" => "Mover para a esquerda",
-                    "positive" => "Mover para a direita",
+                    "negative" => Localization.Get("ui.rebind.moveLeft"),
+                    "positive" => Localization.Get("ui.rebind.moveRight"),
                     _ => $"{Translate(actionName)} ({binding.name})",
                 };
                 // Move tem dois compostos (WASD e setas); o segundo é o alternativo.
-                return alternate >= 2 ? $"{baseLabel} (alt.)" : baseLabel;
+                return alternate >= 2 ? Localization.Get("ui.rebind.alternate", baseLabel) : baseLabel;
             }
 
             baseLabel = Translate(actionName);
-            return alternate >= 1 ? $"{baseLabel} (alt.)" : baseLabel;
+            return alternate >= 1 ? Localization.Get("ui.rebind.alternate", baseLabel) : baseLabel;
         }
 
         private static string Translate(string actionName) => actionName switch
