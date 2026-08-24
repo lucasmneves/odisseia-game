@@ -43,11 +43,13 @@ namespace Odisseia.UI
 
         private Button button;
         private Image background;
-        private Text label;
+        private Text[] labels;
+        private Color[] labelBaseColors;
         private RectTransform rect;
 
         private Vector2 basePosition;
         private Vector3 baseScale;
+        private bool layoutDriven;
         private bool highlighted;
         private bool pressed;
         private bool wasInteractable = true;
@@ -56,11 +58,32 @@ namespace Odisseia.UI
         {
             button = GetComponent<Button>();
             background = GetComponent<Image>();
-            label = GetComponentInChildren<Text>();
             rect = (RectTransform)transform;
+
+            // Todos os rótulos, não só o primeiro: uma entrada da seleção de fases tem
+            // número, nome e marca de estado. Recolorir só um deixaria o nome branco e
+            // vivo numa fase bloqueada, que é o oposto do que o estado quer dizer.
+            //
+            // A cor de cada rótulo é guardada como base e o estado desloca a partir
+            // dela, para o dourado do número e o do "concluída" não se perderem.
+            labels = GetComponentsInChildren<Text>(includeInactive: true);
+            labelBaseColors = new Color[labels.Length];
+            for (int i = 0; i < labels.Length; i++)
+            {
+                labelBaseColors[i] = labels[i].color;
+            }
 
             basePosition = rect.anchoredPosition;
             baseScale = rect.localScale;
+
+            // Sob um grupo de layout, quem manda na posição é o grupo. Escrever
+            // anchoredPosition aqui brigaria com ele: a posição guardada no Awake é
+            // anterior ao primeiro cálculo de layout, então destacar o item o
+            // teleportaria para um lugar antigo — na prática, ele some da lista.
+            //
+            // Nesses casos o destaque fica só na cor e na escala, que o layout não
+            // controla. Fora de layout (o menu principal), o deslocamento continua.
+            layoutDriven = GetComponentInParent<LayoutGroup>() != null;
 
             // O Button continua responsável pelo clique; a cor fica com este componente,
             // senão os dois brigam pelo mesmo Image a cada frame.
@@ -186,21 +209,35 @@ namespace Odisseia.UI
                             : UITheme.ButtonNormal;
             }
 
-            if (label != null)
+            if (labels != null)
             {
-                label.color = !button.interactable
-                    ? UITheme.TextSecondary * 0.7f
-                    : highlighted
-                        ? UITheme.TextAccent
-                        : UITheme.TextPrimary;
+                for (int i = 0; i < labels.Length; i++)
+                {
+                    if (labels[i] == null)
+                    {
+                        continue;
+                    }
+
+                    Color baseColor = labelBaseColors[i];
+
+                    labels[i].color = !button.interactable
+                        ? Color.Lerp(baseColor, UITheme.TextSecondary * 0.55f, 0.75f)
+                        : highlighted
+                            ? Color.Lerp(baseColor, UITheme.TextAccent, 0.6f)
+                            : baseColor;
+                }
             }
 
             if (rect != null)
             {
                 float scale = pressed ? pressedScale : highlighted ? highlightScale : 1f;
                 rect.localScale = baseScale * scale;
-                rect.anchoredPosition = basePosition +
-                    new Vector2(highlighted && !pressed ? highlightShift : 0f, 0f);
+
+                if (!layoutDriven)
+                {
+                    rect.anchoredPosition = basePosition +
+                        new Vector2(highlighted && !pressed ? highlightShift : 0f, 0f);
+                }
             }
 
             if (focusMarker != null)

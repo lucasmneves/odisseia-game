@@ -231,11 +231,11 @@ namespace Odisseia.UI
             float row0 = margin;
             float row1 = margin + actionSize + gap;
 
-            CreateOnScreenButton(groupRect, "AttackButton", Bind("Attack", null, "<Keyboard>/j"), "ATK",
+            CreateOnScreenButton(groupRect, "AttackButton", Bind("Attack", null, "<Keyboard>/z"), "ATK",
                 new Vector2(1f, 0f), new Vector2(-col1, row0),
                 new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
 
-            CreateOnScreenButton(groupRect, "ShieldButton", Bind("Shield", null, "<Keyboard>/k"), "DEF",
+            CreateOnScreenButton(groupRect, "ShieldButton", Bind("Shield", null, "<Keyboard>/x"), "DEF",
                 new Vector2(1f, 0f), new Vector2(-col0, row0),
                 new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
 
@@ -243,7 +243,7 @@ namespace Odisseia.UI
                 new Vector2(1f, 0f), new Vector2(-col1, row1),
                 new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
 
-            CreateOnScreenButton(groupRect, "BowButton", Bind("Bow", null, "<Keyboard>/l"), "BOW",
+            CreateOnScreenButton(groupRect, "BowButton", Bind("Bow", null, "<Keyboard>/c"), "BOW",
                 new Vector2(1f, 0f), new Vector2(-col0, row1),
                 new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
 

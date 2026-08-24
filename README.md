@@ -22,12 +22,12 @@ Você é **Odisseu**: a campanha começa em Ítaca, na convocação para a guerr
 |---|---|---|
 | Mover | `A` / `D` ou `←` / `→` | Fases |
 | Pular | `Espaço` | Fases |
-| Atacar (espada) | `J` | Fases |
-| **Defender (escudo)** | **`K`** (segurar) | Fases |
-| **Atirar (arco)** | **`L`** | Fases |
+| Atacar (espada) | `Z` | Fases |
+| **Defender (escudo)** | **`X`** (segurar) | Fases |
+| **Atirar (arco)** | **`C`** | Fases |
 | Interagir | `E` | NPCs, gado sagrado (Fase 11), saco dos ventos (Fase 5) |
 | Pausar | `Esc` | Fases |
-| Avançar diálogo | `Espaço` / `J` | Durante cutscenes |
+| Avançar diálogo | `Espaço` / `Z` | Durante cutscenes |
 | Pular diálogo | `Esc` | Durante cutscenes |
 | Navegar menus | Mouse | Menus |
 
