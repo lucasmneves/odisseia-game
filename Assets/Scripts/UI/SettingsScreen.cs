@@ -174,15 +174,20 @@ namespace Odisseia.UI
             Stepper("Qualidade", SettingsManager.QualityNames,
                 () => SettingsManager.QualityLevel, i => SettingsManager.QualityLevel = i);
 
-            string[] resolucoes = new string[SettingsManager.AvailableResolutions.Length];
-            for (int i = 0; i < resolucoes.Length; i++)
+            // No navegador quem manda no tamanho é a página; oferecer o controle seria
+            // mostrar algo que não muda nada.
+            if (SettingsManager.SupportsResolutionChange)
             {
-                Vector2Int r = SettingsManager.AvailableResolutions[i];
-                resolucoes[i] = $"{r.x} x {r.y}";
-            }
+                string[] resolucoes = new string[SettingsManager.AvailableResolutions.Length];
+                for (int i = 0; i < resolucoes.Length; i++)
+                {
+                    Vector2Int r = SettingsManager.AvailableResolutions[i];
+                    resolucoes[i] = $"{r.x} x {r.y}";
+                }
 
-            Stepper("Resolução", resolucoes,
-                () => SettingsManager.ResolutionIndex, i => SettingsManager.ResolutionIndex = i);
+                Stepper("Resolução", resolucoes,
+                    () => SettingsManager.ResolutionIndex, i => SettingsManager.ResolutionIndex = i);
+            }
 
             Toggle("Tela cheia", SettingsManager.Fullscreen, v => SettingsManager.Fullscreen = v);
 

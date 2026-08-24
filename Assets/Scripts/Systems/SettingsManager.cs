@@ -123,10 +123,8 @@ namespace Odisseia.Systems
         }
 
         /// <summary>
-        /// Resoluções oferecidas. O alvo do projeto é WebGL, onde
-        /// <c>Screen.resolutions</c> não devolve a lista do monitor — a janela é do
-        /// navegador. Por isso a lista é fixa, em passos 16:9 que escalam bem para a
-        /// arte 640x360 do jogo.
+        /// Resoluções oferecidas fora do navegador. Lista fixa em passos 16:9 porque
+        /// <c>Screen.resolutions</c> não é confiável em todos os alvos.
         /// </summary>
         public static Vector2Int[] AvailableResolutions { get; } =
         {
@@ -134,6 +132,23 @@ namespace Odisseia.Systems
             new Vector2Int(1600, 900),
             new Vector2Int(1920, 1080),
         };
+
+        /// <summary>
+        /// Em WebGL o tamanho do canvas pertence à página, não ao jogo: o template
+        /// define <c>canvas.style</c> e a Unity mantém o alvo de render casado com o
+        /// tamanho DOM. Chamar <c>Screen.SetResolution</c> ali muda os atributos do
+        /// canvas por baixo do CSS e o jogo sai do enquadramento — faixas pretas e
+        /// conteúdo cortado.
+        ///
+        /// Quem pergunta é a tela de configurações, para não oferecer um controle
+        /// que não faria nada.
+        /// </summary>
+        public static bool SupportsResolutionChange =>
+#if UNITY_WEBGL && !UNITY_EDITOR
+            false;
+#else
+            true;
+#endif
 
         public static string[] QualityNames => QualitySettings.names;
 
@@ -181,7 +196,24 @@ namespace Odisseia.Systems
                 QualitySettings.SetQualityLevel(quality, applyExpensiveChanges: false);
             }
 
-            // Trocar resolução em WebGL redimensiona o canvas; fora dele, a janela.
+            ApplyDisplay();
+        }
+
+        private static void ApplyDisplay()
+        {
+            if (!SupportsResolutionChange)
+            {
+                // No navegador o tamanho é da página. Só a tela cheia é do jogo, e
+                // mesmo essa só troca quando muda — escrever a cada Apply dispararia
+                // pedidos de fullscreen sem gesto do usuário, que o navegador recusa.
+                if (Screen.fullScreen != fullscreen)
+                {
+                    Screen.fullScreen = fullscreen;
+                }
+
+                return;
+            }
+
             Vector2Int alvo = AvailableResolutions[Mathf.Clamp(resolutionIndex, 0, AvailableResolutions.Length - 1)];
             if (Screen.width != alvo.x || Screen.height != alvo.y || Screen.fullScreen != fullscreen)
             {
