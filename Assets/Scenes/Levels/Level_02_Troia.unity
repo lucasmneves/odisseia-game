@@ -3529,7 +3529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Levels.TutorialTrigger
   prompt: {fileID: 1671229225}
-  message: Pressione J para atacar.
+  message: Pressione Z para atacar.
   displayDuration: 3
 --- !u!61 &1533381463
 BoxCollider2D:
