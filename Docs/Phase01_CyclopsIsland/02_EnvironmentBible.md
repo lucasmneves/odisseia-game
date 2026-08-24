@@ -201,7 +201,7 @@ Cada prop tem função visual, tamanho, camada e colisão definidos.
 
 ## 5. Layout da fase — uso do tileset
 
-O gameplay já existe em `Level_04_Ciclopes.unity` (~72 unidades de extensão). O art pass
+O gameplay já existe em `Level_05_Ciclopes.unity` (~72 unidades de extensão). O art pass
 substitui os retângulos placeholder pelos tiles, respeitando as métricas do Art Bible §4:
 
 | Trecho | Ambiente | Tiles predominantes |

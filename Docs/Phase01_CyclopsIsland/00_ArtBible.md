@@ -10,12 +10,12 @@
 **Discrepância de numeração, resolvida explicitamente:**
 
 O briefing chama isto de "FASE 1". O projeto já tem uma campanha de 16 fases onde
-**Fase 1 = Troia** e **Fase 4 = Ciclopes** (`Level_04_Ciclopes.unity`, com Polifemo,
+**Etapa 1 = Ítaca (prólogo)** e **Etapa 5 = Ciclopes** (`Level_05_Ciclopes.unity`, com Polifemo,
 tema caverna e luta de boss já implementados em gameplay).
 
 **Decisão adotada:** este pacote é o **Vertical Slice 01** — a *primeira fase a receber
 arte de produção*, não a primeira fase da narrativa. Ela se materializa sobre a cena
-existente `Level_04_Ciclopes`.
+existente `Level_05_Ciclopes`.
 
 Isso preserva os dois trabalhos: a ordem narrativa da campanha continua íntegra, e a arte
 entra numa fase que já tem gameplay validado (boss, caverna, plataformas) para testar.
@@ -141,7 +141,7 @@ frustrante):
 
 O Ciclope a 3,0× fica no topo da faixa pedida (2–3×) — a escolha é deliberada: um boss que
 ocupa mais de um terço da altura da tela comunica ameaça sem precisar de nenhum texto.
-Também bate com o gameplay já implementado (`Level_04_Ciclopes` posiciona Polifemo numa
+Também bate com o gameplay já implementado (`Level_05_Ciclopes` posiciona Polifemo numa
 saliência acima da passagem, sem collider — ver documento `07`).
 
 ---

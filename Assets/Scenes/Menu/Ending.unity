@@ -440,7 +440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.EndingController
   playAgainButton: {fileID: 70767342}
   backToMenuButton: {fileID: 592728544}
-  firstLevelSceneName: Level_01_Troia
+  firstLevelSceneName: Level_01_Itaca_Prologue
 --- !u!114 &527388440
 MonoBehaviour:
   m_ObjectHideFlags: 0

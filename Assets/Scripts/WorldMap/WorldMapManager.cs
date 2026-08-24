@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -44,6 +45,11 @@ namespace Odisseia.WorldMap
         [Header("Câmera")]
         [SerializeField] private CameraFollow cameraFollow;
         [SerializeField] private float cameraPadding = 6f;
+
+        [Header("Caminhada automática após concluir uma fase")]
+        [Tooltip("Espera antes de Odisseu sair andando, para o anúncio ser lido.")]
+        [SerializeField] private float autoTravelDelay = 1.2f;
+        [SerializeField] private float autoTravelSpeed = 3.5f;
 
         private readonly List<LevelNode> nodes = new List<LevelNode>();
         private InputAction enterAction;
@@ -307,7 +313,7 @@ namespace Odisseia.WorldMap
 
         private void AnnounceIfJustCompleted()
         {
-            if (!WorldMapSession.JustCompleted || ui == null)
+            if (!WorldMapSession.JustCompleted)
             {
                 return;
             }
@@ -321,8 +327,59 @@ namespace Odisseia.WorldMap
                     node.Order == completed.Order + 1 && node.IsEnterable);
             }
 
-            ui.ShowCompletionAnnouncement(completed, unlocked);
+            ui?.ShowCompletionAnnouncement(completed, unlocked);
             WorldMapSession.Consume();
+
+            if (completed != null && unlocked != null)
+            {
+                StartCoroutine(TravelToUnlocked(unlocked));
+            }
+        }
+
+        /// <summary>
+        /// Depois de concluir uma fase, Odisseu chega ao mapa em cima do nó que acabou
+        /// de vencer — e é dali que a jornada continua. Sem esta caminhada ele fica
+        /// parado no nó já concluído, e quem apertar "entrar" cai de volta na MESMA
+        /// fase, como se o jogo não tivesse avançado.
+        ///
+        /// Andar sozinho até a próxima parada resolve isso e ainda mostra o progresso
+        /// acontecendo, em vez de teletransportar.
+        /// </summary>
+        private IEnumerator TravelToUnlocked(LevelNode unlocked)
+        {
+            if (player == null)
+            {
+                yield break;
+            }
+
+            float from = player.Distance;
+            float to = unlocked.DistanceAlongPath;
+
+            if (Mathf.Approximately(from, to))
+            {
+                MarkCurrent(unlocked);
+                yield break;
+            }
+
+            player.InputSuspended = true;
+
+            // Um respiro para o anúncio de conclusão aparecer antes de Odisseu sair.
+            yield return new WaitForSeconds(autoTravelDelay);
+
+            float duration = Mathf.Max(0.2f, Mathf.Abs(to - from) / Mathf.Max(0.01f, autoTravelSpeed));
+            float elapsed = 0f;
+
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                player.SetDistance(Mathf.Lerp(from, to, elapsed / duration));
+                yield return null;
+            }
+
+            player.SetDistance(to);
+            player.InputSuspended = false;
+
+            MarkCurrent(unlocked);
         }
 
         // ---------------------------------------------------------------- interação

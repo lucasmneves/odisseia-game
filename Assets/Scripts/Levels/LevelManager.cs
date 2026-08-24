@@ -13,7 +13,7 @@ namespace Odisseia.Levels
     /// </summary>
     public class LevelManager : MonoBehaviour
     {
-        [SerializeField] private string levelId = "Level_01_Troia";
+        [SerializeField] private string levelId = "Level_01_Itaca_Prologue";
 
         public string LevelId => levelId;
         public bool IsCompleted { get; private set; }

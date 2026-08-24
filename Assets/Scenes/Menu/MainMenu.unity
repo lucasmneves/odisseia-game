@@ -729,7 +729,7 @@ MonoBehaviour:
   settingsButton: {fileID: 1109659870}
   settingsPanel: {fileID: 69796071}
   levelSelectSceneName: LevelSelect
-  firstLevelSceneName: Level_01_Troia
+  firstLevelSceneName: Level_01_Itaca_Prologue
 --- !u!114 &500164178
 MonoBehaviour:
   m_ObjectHideFlags: 0

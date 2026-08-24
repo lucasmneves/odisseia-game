@@ -6,7 +6,7 @@ Platformer 2D baseado na *Odisseia* de Homero, feito em Unity com alvo Web (WebG
 
 ## 1. Visão do jogo
 
-Você é **Odisseu**, voltando de Troia para Ítaca. A campanha tem **16 fases jogáveis**, cada uma inspirada num episódio do mito e construída em torno de uma ideia de jogo diferente — fuga, esquiva, resistência, decisão, exploração, stealth — em vez de repetir a mesma fórmula dezesseis vezes.
+Você é **Odisseu**: a campanha começa em Ítaca, na convocação para a guerra, e só termina quando ele volta para casa. A campanha tem **16 fases jogáveis**, cada uma inspirada num episódio do mito e construída em torno de uma ideia de jogo diferente — fuga, esquiva, resistência, decisão, exploração, stealth — em vez de repetir a mesma fórmula dezesseis vezes.
 
 **Tom**: colorido, amigável e legível. Todo o visual é placeholder geométrico (retângulos coloridos), de propósito: a prioridade foi ritmo e clareza de gameplay, não arte definitiva. Não há violência gráfica em nenhum momento — inimigos derrotados simplesmente somem, e o desfecho é emocionalmente positivo.
 
@@ -174,7 +174,8 @@ Assets/
 ├── Scenes/
 │   ├── Boot/            Boot.unity
 │   ├── Menu/            MainMenu, LevelSelect, LevelComplete, Ending
-│   └── Levels/          Level_01_Troia .. Level_16_Final
+│   ├── Levels/          Level_01_Itaca_Prologue .. Level_16_Final
+│   └── _ForaDaCampanha/ Lotófagos e Feácios (fora da campanha)
 ├── Scripts/             Core, Systems, Player, Enemies, Levels, UI, Editor
 ├── ScriptableObjects/
 │   ├── PlayerControls.inputactions
@@ -194,24 +195,26 @@ Fluxo comum a todas: **início → diálogo de abertura → gameplay → checkpo
 
 | # | Fase | Ideia central |
 |---|---|---|
-| 1 | Troia | Tutorial: mover, pular, atacar. Poços, combate, desafio de plataformas |
-| 2 | Cícones | Sem mecânica nova — pequenas arenas de combate e obstáculos |
-| 3 | Lotófagos | **Lótus**: zonas que acumulam sonolência, reduzem velocidade e travam o controle no limite |
-| 4 | Ciclopes | **Polifemo** (mini-boss): ataques telegrafados; a saída é esquivar e correr, não matar |
-| 5 | Éolo | **Vento**: correntes que empurram, plataforma móvel, saco dos ventos (`E`) para desobstruir |
-| 6 | Lestrígones | **Fuga**: ameaça que persegue por trás + gigantes arremessando pedras |
-| 7 | Circe | **Transformação**: zonas mágicas desativam o combate temporariamente; erva de moly cura |
-| 8 | Mundo dos Mortos | Atmosfera e narrativa: ruínas, névoa, falas no meio da fase |
-| 9 | Sereias | **Resistência sonora**: barra que drena na zona de influência; o mastro dá imunidade |
-| 10 | Cila e Caríbdis | **Sobrevivência**: ondas, redemoinho e Cila como ameaças ambientais, sem combate |
-| 11 | Gado do Sol | **Recurso + tempo + decisão**: fome drena; comer o gado sagrado resolve, mas cobra o preço |
-| 12 | Calipso | Fase tranquila: exploração e narrativa, sem inimigos |
-| 13 | Feácios | **NPCs**: cidade e palácio, diálogos por interação |
-| 14 | Ítaca | **Disfarce**: guardas não detectam Odisseu disfarçado; stealth leve e reencontros |
+| 1 | Ítaca — O Chamado | **Prólogo e tutorial**: mover, pular, atacar. Penélope, Telêmaco e a convocação de Agamenon |
+| 2 | Troia | A guerra e o cavalo de madeira; ao fim, começa a viagem de volta |
+| 3 | Cícones | Sem mecânica nova — pequenas arenas de combate e obstáculos |
+| 4 | Cítera | **Tempestade no mar**: ondas que sobem e descem, vento, redemoinho e raios telegrafados |
+| 5 | Ciclopes | **Polifemo** (mini-boss): ataques telegrafados; a saída é esquivar e correr, não matar |
+| 6 | Éolo | **Vento**: correntes que empurram, plataforma móvel, saco dos ventos (`E`) para desobstruir |
+| 7 | Lestrígones | **Fuga**: ameaça que persegue por trás + gigantes arremessando pedras |
+| 8 | Circe | **Transformação**: zonas mágicas desativam o combate temporariamente; erva de moly cura |
+| 9 | Mundo dos Mortos | Atmosfera e narrativa: ruínas, névoa, falas no meio da fase |
+| 10 | Sereias | **Resistência sonora**: barra que drena na zona de influência; o mastro dá imunidade |
+| 11 | Cila e Caríbdis | **Sobrevivência**: ondas, redemoinho e Cila como ameaças ambientais, sem combate |
+| 12 | Gado do Sol | **Recurso + tempo + decisão**: fome drena; comer o gado sagrado resolve, mas cobra o preço |
+| 13 | Calipso | Fase tranquila: exploração e narrativa, sem inimigos |
+| 14 | Ítaca — O Retorno | **Disfarce**: guardas não detectam Odisseu disfarçado; stealth leve e reencontros |
 | 15 | Pretendentes | **Combate em grupo**: o confronto no salão, com Penélope e Telêmaco |
-| 16 | Arco de Odisseu | **Clímax**: atravessar as argolas na ordem para revelar o objetivo → tela final |
+| 16 | Final | **Clímax**: atravessar as argolas na ordem para revelar o objetivo → tela final |
 
 Progressão: concluir uma fase desbloqueia a próxima (`CampaignManager`), salva coletáveis e pontuação. A Fase 16 é a única que carrega `Ending`; as demais voltam ao **mapa da jornada**.
+
+A ordem acima é a **ordem oficial da campanha** e não deve ser alterada sem instrução explícita. Lotófagos e Feácios ficaram **fora** da campanha: as cenas continuam no repositório, em `Assets/Scenes/_ForaDaCampanha/`, mas não estão no Build Settings nem na lista do `CampaignManager`.
 
 ### Mapa da jornada (`WorldMap`)
 
@@ -231,6 +234,8 @@ Menu ──► WorldMap ──► Fase ──► WorldMap ──► próxima fas
 | `WorldMapUI` | Título, painel da fase, aviso de bloqueio e anúncio de desbloqueio |
 
 **Movimento por distância, não por posição.** Odisseu guarda um `float` de quanto já andou na trilha, e a posição sai de `path.Evaluate(distância)`. Isso resolve de graça dois requisitos: não sair do caminho (não existe eixo livre para sair) e não atravessar uma fase bloqueada (basta limitar a distância máxima à do último nó desbloqueado). Nenhum collider envolvido.
+
+**Ao concluir uma fase, Odisseu anda sozinho até a próxima.** Ele chega ao mapa em cima do nó que acabou de vencer, o anúncio de desbloqueio aparece, e então `WorldMapManager.TravelToUnlocked` o leva caminhando até a parada recém-liberada. Sem isso ele fica parado no nó já concluído e quem apertar "entrar" cai de volta na **mesma fase** — o jogo parece não ter avançado. Durante a caminhada o `WorldMapPlayerController` fica com `InputSuspended`, para jogador e mapa não disputarem a mesma distância no mesmo frame.
 
 **O mapa não guarda progresso.** Quem sabe o que está desbloqueado é o `CampaignManager`, apoiado no `SaveSystem`. `WorldMapManager` só traduz isso em estado de nó e limite de caminhada, num método só — mapa e save não têm como discordar.
 
@@ -414,7 +419,30 @@ O `-f` é necessário porque o `.gitignore` ignora `Builds/`. Esse caminho versi
 
 ---
 
-## 12. Estado atual
+## 12. Verificação automatizada
+
+Duas ferramentas de Editor, ambas rodáveis por linha de comando. Nenhuma entra no build.
+
+| Ferramenta | O que responde |
+|---|---|
+| `CampaignValidation.Run` | Estrutura: as 16 etapas estão na ordem oficial no `CampaignManager` e no Build Settings? Cada cena abre com o `levelId` certo, `LevelGoal` e Player? A migração de save preserva o progresso? **E a geometria: alguma área letal engloba o ponto onde Odisseu nasce, ou cruza o chão?** |
+| `CampaignProbe.Run` | Runtime: roda a campanha **em play mode** e reporta o que o jogador teria — o que ficou desbloqueado ao concluir uma fase, em que nó Odisseu para no mapa e para onde o botão de entrar levaria. |
+
+```bash
+Unity.exe -batchmode -quit -projectPath . -executeMethod CampaignValidation.Run -logFile val.log
+```
+
+```bash
+Unity.exe -batchmode -projectPath . -executeMethod CampaignProbe.Run -logFile probe.log
+```
+
+A sonda **não** leva `-quit` (ela encerra sozinha) e **apaga o save do Editor** para partir de um jogo novo — o save do build Web, que vive no localStorage do navegador, não é tocado.
+
+Duas armadilhas embutidas nela, caso precise mexer: entrar em play mode dispara *domain reload*, que zera os estáticos e cancela a inscrição em `EditorApplication.update` (por isso o reload é desligado durante a execução e restaurado no fim); e em batchmode o `EditorApplication.update` dispara muito mais rápido que os frames do jogo, então esperas precisam ser em tempo de parede, não em contagem de ticks.
+
+---
+
+## 13. Estado atual
 
 - ✅ Compila sem erros
 - ✅ 16 fases jogáveis + menus + tela final (21 cenas em Build Settings)
@@ -433,11 +461,12 @@ O `-f` é necessário porque o `.gitignore` ignora `Builds/`. Esse caminho versi
 
 - ⏳ **Controles mobile nunca testados em dispositivo real** — os botões `DEF` e `BOW` e o layout 2×2 foram implementados e compilam, mas ninguém tocou neles num celular. Testar abrindo o build por HTTP no celular na mesma rede, ou no Chrome com o emulador de dispositivo (F12 → modo dispositivo → **recarregar**, porque `MobilePlatformDetector` decide no load). Verificar: toque simultâneo de mover + defender, mover + arco, e se os botões não se sobrepõem em telas estreitas.
 - ⏳ **Não** passou por playtest humano completo — balanceamento é estimativa e o ritmo das 16 fases não foi medido.
+- ⏳ **Ítaca — O Chamado e Cítera ainda são placeholder**: o traçado, o ritmo dos perigos e os tempos dos raios de Cítera foram calculados no papel, não jogados.
 
 ### Próximos passos sugeridos
 
 - Validar os controles mobile num dispositivo real (ver Pendências)
 - Playtest completo para calibrar dificuldade e ritmo
-- Arte definitiva para as 13 fases que ainda usam placeholder geométrico
+- Arte definitiva para as fases que ainda usam placeholder geométrico (inclusive o prólogo e Cítera)
 - Música e efeitos definitivos (hoje procedurais)
 - Diálogos condicionais usando `DecisionFlags` (a decisão da Fase 11 já é registrada, mas nada a consome ainda)

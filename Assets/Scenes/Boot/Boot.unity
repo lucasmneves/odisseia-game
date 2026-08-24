@@ -236,9 +236,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Core.CampaignManager
   levels:
+  - {fileID: 11400000, guid: b467e03619d0b3e64a08c90944c7f2b7, type: 2}
   - {fileID: 11400000, guid: cfd2622f9f1855247b134e67ce7c552f, type: 2}
   - {fileID: 11400000, guid: 3d2ce073e2b299940ad840535ca71be9, type: 2}
-  - {fileID: 11400000, guid: 7c049cca5965123439e48c4f7eab8138, type: 2}
+  - {fileID: 11400000, guid: 9de2cae20222a961012fb90e8908fa87, type: 2}
   - {fileID: 11400000, guid: 56915bdf264ca4b4fbf8dd6303dfc1ad, type: 2}
   - {fileID: 11400000, guid: 769b8390dde859e49b01361ffe1f397c, type: 2}
   - {fileID: 11400000, guid: fafcd3dc142cb884aa4c84dc134213a9, type: 2}
@@ -248,7 +249,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: af215a61279b00c44bc497aec991f510, type: 2}
   - {fileID: 11400000, guid: d6cf18948751ec04b8b60b28196a8c8d, type: 2}
   - {fileID: 11400000, guid: e59efce2cf0c77b45be734dad206b42a, type: 2}
-  - {fileID: 11400000, guid: 2e3872f8693deaa4d9fa496f0f8b4700, type: 2}
   - {fileID: 11400000, guid: 6af83228c6f146a4281e742ccea2f9cb, type: 2}
   - {fileID: 11400000, guid: 27c7ac060bd219740a3b1b3126ac47d6, type: 2}
   - {fileID: 11400000, guid: 720751d80277cb748ab8f8e1911d3524, type: 2}

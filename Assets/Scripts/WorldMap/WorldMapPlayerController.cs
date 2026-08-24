@@ -47,6 +47,13 @@ namespace Odisseia.WorldMap
         /// <summary>Verdadeiro enquanto o jogador empurra contra o limite de progresso.</summary>
         public bool BlockedByLock { get; private set; }
 
+        /// <summary>
+        /// Ignora a entrada do jogador. Usado enquanto o mapa move Odisseu sozinho (a
+        /// caminhada até a fase recém-desbloqueada), para os dois não disputarem a
+        /// mesma distância no mesmo frame.
+        /// </summary>
+        public bool InputSuspended { get; set; }
+
         /// <summary>Disparado quando a distância muda.</summary>
         public event Action<float> Moved;
 
@@ -107,7 +114,7 @@ namespace Odisseia.WorldMap
 
         private void Update()
         {
-            if (path == null || moveAction == null)
+            if (path == null || moveAction == null || InputSuspended)
             {
                 return;
             }

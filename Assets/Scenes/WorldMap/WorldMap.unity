@@ -238,95 +238,95 @@ MonoBehaviour:
   points:
   - position: {x: 0, y: 0}
     isLevelStop: 1
-  - position: {x: 1.333, y: 0}
+  - position: {x: 1.333, y: 0.533}
     isLevelStop: 0
-  - position: {x: 2.667, y: 0}
+  - position: {x: 2.667, y: 1.067}
     isLevelStop: 0
-  - position: {x: 4, y: 0}
+  - position: {x: 4, y: 1.6}
     isLevelStop: 1
-  - position: {x: 5.333, y: 0}
+  - position: {x: 5.333, y: 1.4}
     isLevelStop: 0
-  - position: {x: 6.667, y: 0}
+  - position: {x: 6.667, y: 1.2}
     isLevelStop: 0
-  - position: {x: 8, y: 0}
+  - position: {x: 8, y: 1}
     isLevelStop: 1
-  - position: {x: 9.333, y: 0}
+  - position: {x: 9.333, y: 0.367}
     isLevelStop: 0
-  - position: {x: 10.667, y: 0}
+  - position: {x: 10.667, y: -0.267}
     isLevelStop: 0
-  - position: {x: 12, y: 0}
+  - position: {x: 12, y: -0.9}
     isLevelStop: 1
-  - position: {x: 13.333, y: 0}
+  - position: {x: 13.333, y: -0.467}
     isLevelStop: 0
-  - position: {x: 14.667, y: 0}
+  - position: {x: 14.667, y: -0.033}
     isLevelStop: 0
-  - position: {x: 16, y: 0}
+  - position: {x: 16, y: 0.4}
     isLevelStop: 1
-  - position: {x: 17.333, y: 0}
+  - position: {x: 17.333, y: 0.933}
     isLevelStop: 0
-  - position: {x: 18.667, y: 0}
+  - position: {x: 18.667, y: 1.467}
     isLevelStop: 0
-  - position: {x: 20, y: 0}
+  - position: {x: 20, y: 2}
     isLevelStop: 1
-  - position: {x: 21.333, y: 0}
+  - position: {x: 21.333, y: 1.533}
     isLevelStop: 0
-  - position: {x: 22.667, y: 0}
+  - position: {x: 22.667, y: 1.067}
     isLevelStop: 0
-  - position: {x: 24, y: 0}
+  - position: {x: 24, y: 0.6}
     isLevelStop: 1
-  - position: {x: 25.333, y: 0}
+  - position: {x: 25.333, y: 0.867}
     isLevelStop: 0
-  - position: {x: 26.667, y: 0}
+  - position: {x: 26.667, y: 1.133}
     isLevelStop: 0
-  - position: {x: 28, y: 0}
+  - position: {x: 28, y: 1.4}
     isLevelStop: 1
-  - position: {x: 29.333, y: 0}
+  - position: {x: 29.333, y: 0.133}
     isLevelStop: 0
-  - position: {x: 30.667, y: 0}
+  - position: {x: 30.667, y: -1.133}
     isLevelStop: 0
-  - position: {x: 32, y: 0}
+  - position: {x: 32, y: -2.4}
     isLevelStop: 1
-  - position: {x: 33.333, y: 0}
+  - position: {x: 33.333, y: -1.833}
     isLevelStop: 0
-  - position: {x: 34.667, y: 0}
+  - position: {x: 34.667, y: -1.267}
     isLevelStop: 0
-  - position: {x: 36, y: 0}
+  - position: {x: 36, y: -0.7}
     isLevelStop: 1
-  - position: {x: 37.333, y: 0}
+  - position: {x: 37.333, y: -0.2}
     isLevelStop: 0
-  - position: {x: 38.667, y: 0}
+  - position: {x: 38.667, y: 0.3}
     isLevelStop: 0
-  - position: {x: 40, y: 0}
+  - position: {x: 40, y: 0.8}
     isLevelStop: 1
-  - position: {x: 41.333, y: 0}
+  - position: {x: 41.333, y: 1.067}
     isLevelStop: 0
-  - position: {x: 42.667, y: 0}
+  - position: {x: 42.667, y: 1.333}
     isLevelStop: 0
-  - position: {x: 44, y: 0}
+  - position: {x: 44, y: 1.6}
     isLevelStop: 1
-  - position: {x: 45.333, y: 0}
+  - position: {x: 45.333, y: 1.133}
     isLevelStop: 0
-  - position: {x: 46.667, y: 0}
+  - position: {x: 46.667, y: 0.667}
     isLevelStop: 0
-  - position: {x: 48, y: 0}
+  - position: {x: 48, y: 0.2}
     isLevelStop: 1
-  - position: {x: 49.333, y: 0}
+  - position: {x: 49.333, y: 0.133}
     isLevelStop: 0
-  - position: {x: 50.667, y: 0}
+  - position: {x: 50.667, y: 0.067}
     isLevelStop: 0
   - position: {x: 52, y: 0}
     isLevelStop: 1
-  - position: {x: 53.333, y: 0}
+  - position: {x: 53.333, y: 0.333}
     isLevelStop: 0
-  - position: {x: 54.667, y: 0}
+  - position: {x: 54.667, y: 0.667}
     isLevelStop: 0
-  - position: {x: 56, y: 0}
+  - position: {x: 56, y: 1}
     isLevelStop: 1
-  - position: {x: 57.333, y: 0}
+  - position: {x: 57.333, y: 1.267}
     isLevelStop: 0
-  - position: {x: 58.667, y: 0}
+  - position: {x: 58.667, y: 1.533}
     isLevelStop: 0
-  - position: {x: 60, y: 0}
+  - position: {x: 60, y: 1.8}
     isLevelStop: 1
 --- !u!114 &500000014
 MonoBehaviour:

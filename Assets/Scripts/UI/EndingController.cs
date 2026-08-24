@@ -6,14 +6,14 @@ using Odisseia.Systems;
 namespace Odisseia.UI
 {
     /// <summary>
-    /// Tela final da campanha: Jogar novamente (reseta o progresso e volta à Fase 1)
+    /// Tela final da campanha: Jogar novamente (reseta o progresso e volta ao prólogo em Ítaca)
     /// ou Voltar ao menu.
     /// </summary>
     public class EndingController : MonoBehaviour
     {
         [SerializeField] private Button playAgainButton;
         [SerializeField] private Button backToMenuButton;
-        [SerializeField] private string firstLevelSceneName = SceneLoader.Level01Troia;
+        [SerializeField] private string firstLevelSceneName = SceneLoader.FirstLevel;
 
         private void Awake()
         {
