@@ -39,6 +39,8 @@ public static class MainMenuProbe
         PlayerPrefs.DeleteKey("Odisseia.Save");
         PlayerPrefs.Save();
 
+        resolucaoAntes = new Vector2Int(Screen.width, Screen.height);
+
         EditorSceneManager.OpenScene("Assets/Scenes/Boot/Boot.unity", OpenSceneMode.Single);
 
         passo = 0;
@@ -111,6 +113,7 @@ public static class MainMenuProbe
                 Log("resolucoes oferecidas: " + SettingsManager.AvailableResolutions.Length +
                     " | qualidade: " + SettingsManager.QualityNames.Length + " niveis");
 
+                ConferirEnquadramento();
                 DumparSettings();
 
                 // O remapeamento é aberto de dentro das configurações: tem que ficar
@@ -312,6 +315,29 @@ public static class MainMenuProbe
     private static float Luma(Color c) => (0.299f * c.r + 0.587f * c.g + 0.114f * c.b) * c.a;
 
     private static string Hex(Color c) => ColorUtility.ToHtmlStringRGBA(c);
+
+    private static Vector2Int resolucaoAntes;
+
+    /// <summary>
+    /// Abrir o jogo não pode mudar o tamanho da janela. Em WebGL o canvas pertence à
+    /// página: a Unity mantém o alvo de render casado com o tamanho DOM, e um
+    /// Screen.SetResolution muda os atributos do canvas por baixo do CSS — o jogo
+    /// aparece deslocado, com faixa preta e conteúdo cortado.
+    ///
+    /// Aqui só dá para conferir que ninguém mexeu na resolução ao carregar as telas;
+    /// o comportamento específico de WebGL fica atrás de #if e não roda no Editor.
+    /// </summary>
+    private static void ConferirEnquadramento()
+    {
+        var agora = new Vector2Int(Screen.width, Screen.height);
+        Log($"resolução: {resolucaoAntes.x}x{resolucaoAntes.y} -> {agora.x}x{agora.y}");
+
+        if (resolucaoAntes != Vector2Int.zero && agora != resolucaoAntes)
+        {
+            Erro($"abrir as telas mudou a resolução de {resolucaoAntes} para {agora} — " +
+                 "em WebGL isso tira o jogo do enquadramento");
+        }
+    }
 
     private static AudioClip temaAnterior;
 
