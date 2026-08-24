@@ -72,6 +72,51 @@ namespace Odisseia.UI
             {
                 Build();
             }
+
+            // Os rótulos desta tela são resolvidos uma vez, na montagem. Trocar o
+            // idioma aqui dentro exige refazê-la — inclusive porque a própria linha do
+            // idioma muda de nome.
+            Localization.Changed += Rebuild;
+        }
+
+        private void OnDestroy()
+        {
+            Localization.Changed -= Rebuild;
+        }
+
+        /// <summary>
+        /// Refaz a tela no idioma novo, reabrindo se estava aberta.
+        ///
+        /// Adiado um frame de propósito: o evento de idioma nasce do clique num botão
+        /// DESTA tela, e destruí-la no meio do próprio callback deixaria o resto do
+        /// tratador mexendo em objetos já marcados para destruição.
+        /// </summary>
+        private void Rebuild() => StartCoroutine(RebuildRoutine());
+
+        private System.Collections.IEnumerator RebuildRoutine()
+        {
+            yield return null;
+
+            bool estavaAberta = IsOpen;
+
+            if (root != null)
+            {
+                // Desativa antes de destruir: Destroy só age no fim do frame, e sem
+                // isso a tela velha e a nova apareceriam sobrepostas por um instante.
+                root.SetActive(false);
+                Destroy(root);
+            }
+
+            root = null;
+            focusables.Clear();
+            closeButton = null;
+
+            Build();
+
+            if (estavaAberta)
+            {
+                Show();
+            }
         }
 
         private void Update()
@@ -159,19 +204,19 @@ namespace Odisseia.UI
 
             y = 250f;
 
-            Label("CONFIGURAÇÕES", UITheme.FontHeading, UITheme.TextAccent);
+            Label(Localization.Get("ui.settings.title"), UITheme.FontHeading, UITheme.TextAccent);
             y -= 12f;
 
-            Section("ÁUDIO");
-            Slider("Volume geral", SettingsManager.MasterVolume, v => SettingsManager.MasterVolume = v);
-            Slider("Música", SettingsManager.MusicVolume, v => SettingsManager.MusicVolume = v);
-            Slider("Efeitos sonoros", SettingsManager.SfxVolume, v => SettingsManager.SfxVolume = v);
+            Section(Localization.Get("ui.settings.section.audio"));
+            Slider(Localization.Get("ui.settings.masterVolume"), SettingsManager.MasterVolume, v => SettingsManager.MasterVolume = v);
+            Slider(Localization.Get("ui.settings.music"), SettingsManager.MusicVolume, v => SettingsManager.MusicVolume = v);
+            Slider(Localization.Get("ui.settings.sfx"), SettingsManager.SfxVolume, v => SettingsManager.SfxVolume = v);
 
-            Section("CONTROLES");
-            Row("Teclado e controle", "Personalizar", OptionsMenu.Open);
+            Section(Localization.Get("ui.settings.section.controls"));
+            Row(Localization.Get("ui.settings.keyboardGamepad"), Localization.Get("ui.settings.customize"), OptionsMenu.Open);
 
-            Section("GRÁFICOS");
-            Stepper("Qualidade", SettingsManager.QualityNames,
+            Section(Localization.Get("ui.settings.section.graphics"));
+            Stepper(Localization.Get("ui.settings.quality"), SettingsManager.QualityNames,
                 () => SettingsManager.QualityLevel, i => SettingsManager.QualityLevel = i);
 
             // No navegador quem manda no tamanho é a página; oferecer o controle seria
@@ -185,14 +230,21 @@ namespace Odisseia.UI
                     resolucoes[i] = $"{r.x} x {r.y}";
                 }
 
-                Stepper("Resolução", resolucoes,
+                Stepper(Localization.Get("ui.settings.resolution"), resolucoes,
                     () => SettingsManager.ResolutionIndex, i => SettingsManager.ResolutionIndex = i);
             }
 
-            Toggle("Tela cheia", SettingsManager.Fullscreen, v => SettingsManager.Fullscreen = v);
+            Toggle(Localization.Get("ui.settings.fullscreen"), SettingsManager.Fullscreen, v => SettingsManager.Fullscreen = v);
+
+            // Os nomes dos idiomas ficam sempre no próprio idioma ("English",
+            // "Português"): quem abriu a tela sem entender o que está escrito precisa
+            // conseguir reconhecer o seu na lista.
+            Section(Localization.Get("ui.settings.section.language"));
+            Stepper(Localization.Get("ui.settings.language"), Localization.LanguageNames,
+                () => (int)Localization.Current, i => Localization.Current = (Language)i);
 
             y -= 14f;
-            closeButton = WideButton("FECHAR", () =>
+            closeButton = WideButton(Localization.Get("ui.settings.close"), () =>
             {
                 AudioManager.PlayUiConfirm();
                 Close();
@@ -341,7 +393,7 @@ namespace Odisseia.UI
             bool estado = valor;
             Button botao = null;
 
-            botao = SmallButton(estado ? "SIM" : "NÃO", new Vector2(120f, y), () =>
+            botao = SmallButton(estado ? Localization.Get("ui.common.yes") : Localization.Get("ui.common.no"), new Vector2(120f, y), () =>
             {
                 estado = !estado;
                 aoMudar(estado);
@@ -349,7 +401,7 @@ namespace Odisseia.UI
                 Text t = botao.GetComponentInChildren<Text>();
                 if (t != null)
                 {
-                    t.text = estado ? "SIM" : "NÃO";
+                    t.text = estado ? Localization.Get("ui.common.yes") : Localization.Get("ui.common.no");
                 }
 
                 AudioManager.PlayUiClick();

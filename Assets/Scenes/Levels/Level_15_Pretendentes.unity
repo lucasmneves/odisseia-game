@@ -1250,7 +1250,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.DialogueSequence
   data: {fileID: 0}
   lines:
-  - speaker: 
+  - key: dlg.Level_15_Pretendentes.OutroDialogueController.0
+    speaker: 
     text: "Um a um, os pretendentes recuam diante da justi\xE7a de Odisseu. O grande
       sal\xE3o, finalmente, silencia."
   secondsPerLine: 3
@@ -2208,6 +2209,7 @@ GameObject:
   - component: {fileID: 1061928017}
   - component: {fileID: 1061928019}
   - component: {fileID: 1061928018}
+  - component: {fileID: 2141217632}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -2767,6 +2769,7 @@ GameObject:
   - component: {fileID: 1524327195}
   - component: {fileID: 1524327197}
   - component: {fileID: 1524327196}
+  - component: {fileID: 2141217639}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -3278,7 +3281,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.DialogueSequence
   data: {fileID: 0}
   lines:
-  - speaker: "Pen\xE9lope"
+  - key: dlg.Level_15_Pretendentes.PenelopeDialogueController.0
+    speaker: "Pen\xE9lope"
     text: "Vinte anos esperando, testando pretendente ap\xF3s pretendente com enigmas
       e adiamentos. Se voc\xEA \xE9 mesmo Odisseu... prove."
   secondsPerLine: 3
@@ -3320,7 +3324,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.DialogueSequence
   data: {fileID: 0}
   lines:
-  - speaker: Odisseu
+  - key: dlg.Level_15_Pretendentes.IntroDialogueController.0
+    speaker: Odisseu
     text: "O sal\xE3o do meu pr\xF3prio pal\xE1cio, tomado por homens que devoram
       meus bens e cortejam minha esposa \xE0 for\xE7a. Isso termina hoje."
   secondsPerLine: 3
@@ -3471,7 +3476,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.DialogueSequence
   data: {fileID: 0}
   lines:
-  - speaker: "Tel\xEAmaco"
+  - key: dlg.Level_15_Pretendentes.TelemacoDialogueController.0
+    speaker: "Tel\xEAmaco"
     text: Estou ao seu lado, pai. Sempre estive.
   secondsPerLine: 3
   panel: {fileID: 385280824}
@@ -3700,6 +3706,7 @@ GameObject:
   - component: {fileID: 1773149212}
   - component: {fileID: 1773149214}
   - component: {fileID: 1773149213}
+  - component: {fileID: 2141217646}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -3779,6 +3786,7 @@ GameObject:
   - component: {fileID: 1774217586}
   - component: {fileID: 1774217588}
   - component: {fileID: 1774217587}
+  - component: {fileID: 2141217653}
   m_Layer: 0
   m_Name: PauseTitle
   m_TagString: Untagged
@@ -4569,6 +4577,58 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63a8af82bc2c23d4e91410f2d2870ba4, type: 3}
+--- !u!114 &2141217632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061928016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.resume
+--- !u!114 &2141217639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524327194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.menu
+--- !u!114 &2141217646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773149211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.restart
+--- !u!114 &2141217653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774217585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.title
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

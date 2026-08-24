@@ -15,7 +15,25 @@ namespace Odisseia.Core
         [SerializeField] private int order;
 
         public string LevelId => levelId;
-        public string DisplayName => displayName;
+
+        /// <summary>
+        /// Nome mostrado ao jogador, no idioma atual. A chave é derivada do id
+        /// ("level.Level_02_Troia"), então não há um segundo campo para manter em dia:
+        /// renomear a fase é mexer num lugar só, a tabela de idiomas.
+        ///
+        /// Sem entrada na tabela vale o campo do asset, para uma fase nova continuar
+        /// aparecendo com nome enquanto a tradução não chega.
+        /// </summary>
+        public string DisplayName
+        {
+            get
+            {
+                string chave = "level." + levelId;
+                return Odisseia.Systems.Localization.Has(chave)
+                    ? Odisseia.Systems.Localization.Get(chave)
+                    : displayName;
+            }
+        }
         public string SceneName => sceneName;
         public int Order => order;
     }

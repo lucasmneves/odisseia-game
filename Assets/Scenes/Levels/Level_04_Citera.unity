@@ -165,9 +165,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.DialogueSequence
   data: {fileID: 0}
   lines:
-  - speaker: 
+  - key: dlg.Level_04_Citera.OutroDialogueController.0
+    speaker: 
     text: A tempestade finalmente passou. Mas Odisseu havia sido levado para longe de sua rota, para terras desconhecidas...
-  - speaker: 
+  - key: dlg.Level_04_Citera.OutroDialogueController.1
+    speaker: 
     text: "PR\xD3XIMO DESTINO \u2014 A ILHA DOS CICLOPES"
   secondsPerLine: 3
   panel: {fileID: 1119643741}
@@ -649,6 +651,7 @@ GameObject:
   - component: {fileID: 300868592}
   - component: {fileID: 300868594}
   - component: {fileID: 300868593}
+  - component: {fileID: 2137714039}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -1113,6 +1116,7 @@ GameObject:
   - component: {fileID: 419079389}
   - component: {fileID: 419079391}
   - component: {fileID: 419079390}
+  - component: {fileID: 2137714046}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -1283,6 +1287,7 @@ GameObject:
   - component: {fileID: 483287632}
   - component: {fileID: 483287634}
   - component: {fileID: 483287633}
+  - component: {fileID: 2137714053}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -3404,6 +3409,7 @@ GameObject:
   - component: {fileID: 1740483896}
   - component: {fileID: 1740483898}
   - component: {fileID: 1740483897}
+  - component: {fileID: 2137714060}
   m_Layer: 0
   m_Name: PauseTitle
   m_TagString: Untagged
@@ -3988,11 +3994,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.DialogueSequence
   data: {fileID: 0}
   lines:
-  - speaker: 
+  - key: dlg.Level_04_Citera.IntroDialogueController.0
+    speaker: 
     text: "Depois de deixar os c\xEDcones, Odisseu e seus homens retomaram o caminho para casa. Mas o mar n\xE3o permitiria uma viagem tranquila."
-  - speaker: 
+  - key: dlg.Level_04_Citera.IntroDialogueController.1
+    speaker: 
     text: "Uma terr\xEDvel tempestade surgiu no horizonte."
-  - speaker: Odisseu
+  - key: dlg.Level_04_Citera.IntroDialogueController.2
+    speaker: Odisseu
     text: "Segurem-se! N\xE3o deixem o navio virar!"
   secondsPerLine: 3
   panel: {fileID: 845493886}
@@ -5979,7 +5988,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.DialogueSequence
   data: {fileID: 0}
   lines:
-  - speaker: Companheiro
+  - key: dlg.Level_04_Citera.StormDialogue_1_Controller.0
+    speaker: Companheiro
     text: "As ondas est\xE3o ficando maiores, capit\xE3o!"
   secondsPerLine: 2.5
   panel: {fileID: 845493886}
@@ -6129,7 +6139,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.DialogueSequence
   data: {fileID: 0}
   lines:
-  - speaker: Odisseu
+  - key: dlg.Level_04_Citera.StormDialogue_2_Controller.0
+    speaker: Odisseu
     text: "O vento arrancou o leme! J\xE1 n\xE3o somos n\xF3s que escolhemos o rumo."
   secondsPerLine: 2.5
   panel: {fileID: 845493886}
@@ -6589,6 +6600,58 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &2137714039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300868591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.menu
+--- !u!114 &2137714046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419079388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.resume
+--- !u!114 &2137714053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483287631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.restart
+--- !u!114 &2137714060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740483895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.title
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

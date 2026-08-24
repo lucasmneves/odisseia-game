@@ -677,6 +677,7 @@ GameObject:
   - component: {fileID: 300868592}
   - component: {fileID: 300868594}
   - component: {fileID: 300868593}
+  - component: {fileID: 2137714011}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -1025,6 +1026,7 @@ GameObject:
   - component: {fileID: 419079389}
   - component: {fileID: 419079391}
   - component: {fileID: 419079390}
+  - component: {fileID: 2137714018}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -1104,6 +1106,7 @@ GameObject:
   - component: {fileID: 483287632}
   - component: {fileID: 483287634}
   - component: {fileID: 483287633}
+  - component: {fileID: 2137714025}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -2835,9 +2838,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.DialogueSequence
   data: {fileID: 0}
   lines:
-  - speaker: Odisseu
+  - key: dlg.Level_03_Cicones.IntroDialogueController.0
+    speaker: Odisseu
     text: "Primeira parada desde Troia, e j\xE1 saqueamos demais. Os c\xEDcones n\xE3o v\xE3o nos deixar partir em paz."
-  - speaker: Odisseu
+  - key: dlg.Level_03_Cicones.IntroDialogueController.1
+    speaker: Odisseu
     text: Preciso atravessar a vila antes que cerquem meus homens.
   secondsPerLine: 3
   panel: {fileID: 1702997680}
@@ -3034,6 +3039,7 @@ GameObject:
   - component: {fileID: 1740483896}
   - component: {fileID: 1740483898}
   - component: {fileID: 1740483897}
+  - component: {fileID: 2137714032}
   m_Layer: 0
   m_Name: PauseTitle
   m_TagString: Untagged
@@ -3432,7 +3438,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.DialogueSequence
   data: {fileID: 0}
   lines:
-  - speaker: 
+  - key: dlg.Level_03_Cicones.OutroDialogueController.0
+    speaker: 
     text: "Escapamos da f\xFAria dos c\xEDcones. Odisseu retoma a viagem \u2014 o caminho de casa \xE9 pelo mar aberto."
   secondsPerLine: 3
   panel: {fileID: 1965044673}
@@ -3814,6 +3821,58 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 40}
   m_SizeDelta: {x: 280, y: 52}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2137714011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300868591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.menu
+--- !u!114 &2137714018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419079388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.resume
+--- !u!114 &2137714025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483287631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.restart
+--- !u!114 &2137714032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740483895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d1d481eded96f376bf691d26c6b9b0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.UI.LocalizedText
+  key: ui.pause.title
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

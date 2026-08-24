@@ -132,7 +132,7 @@ namespace Odisseia.UI
             {
                 // Só acontece se o save sumir entre abrir o menu e clicar.
                 RefreshContinueAvailability();
-                ShowNotice("Nenhum jogo salvo encontrado.");
+                ShowNotice(Localization.Get("ui.menu.noSave"));
                 return;
             }
 
@@ -155,10 +155,10 @@ namespace Odisseia.UI
             }
 
             ConfirmDialog.Show(
-                "INICIAR NOVO JOGO?",
-                "Todo o progresso atual será substituído.",
-                "CONFIRMAR",
-                "CANCELAR",
+                Localization.Get("ui.confirm.newGame.title"),
+                Localization.Get("ui.confirm.newGame.body"),
+                Localization.Get("ui.confirm.yes"),
+                Localization.Get("ui.confirm.no"),
                 StartNewGame);
         }
 

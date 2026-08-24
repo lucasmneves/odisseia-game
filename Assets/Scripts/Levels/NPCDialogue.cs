@@ -23,6 +23,7 @@ namespace Odisseia.Levels
         [SerializeField] private DialogueSequence dialogue;
         [SerializeField] private PlayerInputLock playerLock;
         [SerializeField] private TutorialPrompt prompt;
+        [Tooltip("Reserva. O texto normal vem da tabela de idiomas.")]
         [SerializeField] private string promptMessage = "Pressione E para conversar";
 
         private InputActionMap playerMap;
@@ -68,7 +69,11 @@ namespace Odisseia.Levels
 
             if (!talking)
             {
-                prompt?.Show(promptMessage, 2f);
+                prompt?.Show(
+                    Odisseia.Systems.Localization.Has("ui.npc.interactPrompt")
+                        ? Odisseia.Systems.Localization.Get("ui.npc.interactPrompt")
+                        : promptMessage,
+                    2f);
             }
         }
 

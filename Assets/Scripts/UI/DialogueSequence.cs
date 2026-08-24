@@ -3,14 +3,47 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Odisseia.Systems;
 
 namespace Odisseia.UI
 {
     [Serializable]
     public struct DialogueLine
     {
+        [Tooltip("Chave de tradução. Preenchida, o texto vem da tabela de idiomas e o " +
+                 "campo abaixo passa a ser só a referência de quem edita a cena.")]
+        public string key;
+
         public string speaker;
         [TextArea] public string text;
+
+        /// <summary>
+        /// Texto a mostrar. A chave manda; sem chave (ou sem entrada na tabela) vale o
+        /// que está escrito na cena — assim uma fala nova continua aparecendo enquanto
+        /// a tradução não chega, em vez de sumir.
+        /// </summary>
+        public string ResolvedText =>
+            !string.IsNullOrEmpty(key) && Localization.Has(key) ? Localization.Get(key) : text;
+
+        /// <summary>
+        /// Nome de quem fala. Os nomes ficam sob "speaker.*" na tabela; um nome sem
+        /// entrada (ex.: narração, que vem vazio) passa direto.
+        /// </summary>
+        public string ResolvedSpeaker
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(speaker))
+                {
+                    return string.Empty;
+                }
+
+                string chave = "speaker." + speaker.ToLowerInvariant()
+                    .Replace("ê", "e").Replace("é", "e").Replace("ó", "o").Replace("í", "i");
+
+                return Localization.Has(chave) ? Localization.Get(chave) : speaker;
+            }
+        }
     }
 
     /// <summary>
@@ -150,13 +183,14 @@ namespace Odisseia.UI
         {
             if (speakerText != null)
             {
-                speakerText.text = line.speaker;
-                speakerText.gameObject.SetActive(!string.IsNullOrEmpty(line.speaker));
+                string quemFala = line.ResolvedSpeaker;
+                speakerText.text = quemFala;
+                speakerText.gameObject.SetActive(!string.IsNullOrEmpty(quemFala));
             }
 
             if (bodyText != null)
             {
-                bodyText.text = line.text;
+                bodyText.text = line.ResolvedText;
             }
         }
 
