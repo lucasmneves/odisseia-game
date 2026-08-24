@@ -72,12 +72,20 @@ namespace Odisseia.UI
 
         private void Build()
         {
+            // AddComponent ja dispara o Awake, que constroi; o getter chama Build de
+            // novo logo em seguida. Sem esta guarda cada tela nasce com DOIS Canvas —
+            // o duplicado fica invisivel e ainda por cima intercepta clique.
+            if (overlay != null)
+            {
+                return;
+            }
+
             var canvasGO = new GameObject("FadeCanvas");
             canvasGO.transform.SetParent(transform, false);
 
             var canvas = canvasGO.AddComponent<Canvas>();
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            canvas.sortingOrder = 999;
+            canvas.sortingOrder = UITheme.Layer.Fade;
 
             var overlayGO = new GameObject("Overlay");
             overlayGO.transform.SetParent(canvasGO.transform, false);

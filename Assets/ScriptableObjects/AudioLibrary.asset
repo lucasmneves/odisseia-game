@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5199927cbf85a04c9cff183add34040, type: 3}
   m_Name: AudioLibrary
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Core.AudioLibrary
+  mainTheme: {fileID: 8300000, guid: 06dc8bfbe481c85711a1c41049326256, type: 3}
   menuMusic: {fileID: 8300000, guid: 77b72083366848e4281950b726fa6696, type: 3}
   levelMusicCalm: {fileID: 8300000, guid: 87283accd8a18a64494365cadfb067b1, type: 3}
   levelMusicTense: {fileID: 8300000, guid: 434ef26696322864cb7b7776f822e314, type: 3}

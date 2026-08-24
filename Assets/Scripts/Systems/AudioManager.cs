@@ -64,6 +64,18 @@ namespace Odisseia.Systems
             }
         }
 
+        /// <summary>
+        /// Volumes separados de música e efeitos, vindos do <see cref="SettingsManager"/>.
+        /// São multiplicadores por canal; o volume geral continua no AudioListener, então
+        /// os dois se combinam sem um anular o outro.
+        /// </summary>
+        public void SetMixLevels(float musicVolume, float sfxVolume)
+        {
+            EnsureSources();
+            musicSource.volume = Mathf.Clamp01(musicVolume) * 0.35f;
+            sfxSource.volume = Mathf.Clamp01(sfxVolume) * 0.6f;
+        }
+
         /// <summary>Troca a música em loop. Não reinicia se já for a mesma faixa.</summary>
         public void PlayMusic(AudioClip clip)
         {
@@ -86,7 +98,7 @@ namespace Odisseia.Systems
             musicSource.Stop();
         }
 
-        public void PlaySfx(AudioClip clip, float volumeScale = 1f)
+        public void PlaySfx(AudioClip clip, float volumeScale = 1f, float pitch = 1f)
         {
             if (clip == null)
             {
@@ -94,6 +106,7 @@ namespace Odisseia.Systems
             }
 
             EnsureSources();
+            sfxSource.pitch = Mathf.Clamp(pitch, 0.4f, 2.5f);
             sfxSource.PlayOneShot(clip, Mathf.Clamp01(volumeScale));
         }
 
@@ -101,11 +114,11 @@ namespace Odisseia.Systems
 
         private static AudioLibrary Library => GameAssets.Instance != null ? GameAssets.Instance.Audio : null;
 
-        public static void Sfx(AudioClip clip, float volumeScale = 1f)
+        public static void Sfx(AudioClip clip, float volumeScale = 1f, float pitch = 1f)
         {
             if (clip != null)
             {
-                Instance.PlaySfx(clip, volumeScale);
+                Instance.PlaySfx(clip, volumeScale, pitch);
             }
         }
 
@@ -117,5 +130,52 @@ namespace Odisseia.Systems
         public static void PlayCheckpoint() => Sfx(Library?.SfxCheckpoint, 0.7f);
         public static void PlayJump() => Sfx(Library?.SfxJump, 0.35f);
         public static void PlayUiClick() => Sfx(Library?.SfxUiClick, 0.5f);
+
+        // ---- Eventos de UI de menu ----
+        //
+        // Cada evento tem um slot próprio na AudioLibrary, hoje vazio. Enquanto os
+        // clipes definitivos não chegam, todos caem no clique já existente com volume
+        // e pitch diferentes: o menu responde de forma distinguível sem precisar
+        // entrar áudio provisório ruim no projeto. Preencher o slot na library
+        // substitui o improviso, sem tocar em código.
+
+        /// <summary>Cursor passou por cima de um item — discreto, quase um tique.</summary>
+        public static void PlayUiHover()
+        {
+            AudioLibrary library = Library;
+            if (library?.SfxUiHover != null)
+            {
+                Sfx(library.SfxUiHover, 0.35f);
+                return;
+            }
+
+            Sfx(library?.SfxUiClick, 0.18f, 1.5f);
+        }
+
+        /// <summary>Escolha confirmada.</summary>
+        public static void PlayUiConfirm()
+        {
+            AudioLibrary library = Library;
+            if (library?.SfxUiConfirm != null)
+            {
+                Sfx(library.SfxUiConfirm, 0.6f);
+                return;
+            }
+
+            Sfx(library?.SfxUiClick, 0.55f, 1.15f);
+        }
+
+        /// <summary>Voltou atrás ou cancelou.</summary>
+        public static void PlayUiCancel()
+        {
+            AudioLibrary library = Library;
+            if (library?.SfxUiCancel != null)
+            {
+                Sfx(library.SfxUiCancel, 0.5f);
+                return;
+            }
+
+            Sfx(library?.SfxUiClick, 0.45f, 0.72f);
+        }
     }
 }

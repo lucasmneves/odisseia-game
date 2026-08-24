@@ -103,7 +103,7 @@ namespace Odisseia.UI
             var canvas = canvasGO.AddComponent<Canvas>();
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
             // Acima de tudo que é jogo, abaixo do loader e do fade de transição.
-            canvas.sortingOrder = 600;
+            canvas.sortingOrder = UITheme.Layer.GameOver;
 
             var scaler = canvasGO.AddComponent<CanvasScaler>();
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
