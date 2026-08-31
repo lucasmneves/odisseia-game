@@ -32,7 +32,7 @@ namespace Odisseia.Levels
             }
 
             triggered = true;
-            prompt?.Show(message, immunityDuration);
+            prompt?.Show(this, message, immunityDuration);
             StartCoroutine(GrantImmunity(resistance));
         }
 

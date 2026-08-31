@@ -42,6 +42,39 @@ Botões virtuais criados automaticamente ao detectar um dispositivo touch:
 | `ATK` | Espada |
 | `DEF` | Escudo (segurar) |
 | `BOW` | Arco |
+| `USE` | Interagir (conversar, examinar) |
+
+### Controle (gamepad)
+
+Xbox (One / Series), DualShock 4, DualSense e qualquer gamepad que o Input System reconheça. O jogo inteiro é jogável só no controle, e teclado e toque continuam iguais.
+
+| Ação | Teclado | Xbox | PlayStation |
+|---|---|---|---|
+| Mover | `A`/`D`, setas | Analógico esq., D-Pad | Analógico esq., D-Pad |
+| Pular | `Espaço` | `A` | `✕` |
+| Espada | `Z` | `X` | `□` |
+| Escudo | `X` (segurar) | `LT` (segurar) | `L2` (segurar) |
+| Arco | `C` | `RT` | `R2` |
+| Interagir | `E` | `Y` | `△` |
+| Pausar | `Esc` | `Menu` | `Options` |
+| Avançar diálogo | `Espaço`/`Z` | `A` | `✕` |
+| Pular diálogo / voltar | `Esc` | `B` | `✕`→`B` |
+
+**Um caminho por ação, não um por console.** As ações apontam para `<Gamepad>/...`, que é a camada abstrata do Input System: `buttonSouth` é `A` no Xbox e `✕` no PlayStation, `buttonWest` é `X` e `□`. Não existe `XboxPlayerController` nem `PS5PlayerController` — existe o mesmo `PlayerController` de sempre, lendo as mesmas `InputAction`. O gamepad entrou como mais um caminho de binding, não como um segundo caminho de input.
+
+**O analógico tem deadzone própria.** Ligar direto em `leftStick/x` pula o processador de deadzone do stick, então a deadzone vem no binding (`axisDeadzone(min=0.15, max=0.95)`). Sem isso, o desgaste normal de um controle usado faz Odisseu andar sozinho. O D-Pad entra como um composto 1DAxis separado, digital, igual às setas do teclado.
+
+**A UI mostra o botão do dispositivo em uso, não do que está conectado.** `InputDeviceTracker` guarda o ÚLTIMO dispositivo usado — quem joga de teclado com um controle plugado na mesa continua vendo teclas até encostar no controle, e volta a ver teclas ao tocar numa tecla. As dicas em tela se reescrevem na troca (`InputDeviceTracker.Changed`), então pegar o controle no meio do treino muda "Pressione Z" para "Pressione X" na hora. Isso é só apresentação: nenhum comando passa pelo tracker.
+
+**Xbox ou PlayStation, resolvido uma vez por controle.** No Editor e em builds nativos o Input System entrega `XInputController` ou `DualShockGamepad` e a resposta é direta. No WebGL não: o navegador entrega um gamepad genérico pela Gamepad API, e o que sobra é o texto de identificação — daí a busca por nome e pelos códigos de fabricante (`045e` Microsoft, `054c` Sony), em todos os campos da descrição, porque o texto útil aparece em campos diferentes conforme o navegador.
+
+A resposta é **guardada por dispositivo**, e `Generic` significa "não sei", não "mudou": havendo já uma resposta concreta, uma leitura genérica não a substitui. Isso não é detalhe — recalcular a família a cada frame fazia o rótulo piscar entre `Y` e `Y/△` no meio de uma conversa, porque bastava um frame de leitura ambígua. Trocar conhecimento por ignorância era a causa da inconsistência. Não identificou nada, a UI mostra as duas grafias (`A/✕`, `X/□`) em vez de arriscar a errada; o jogo nunca deixa de funcionar por não reconhecer o modelo.
+
+**Vibração é acessório.** `HapticFeedback` vibra ao levar dano e ao aparar com o escudo — não ao atacar, que sai a cada 0,4 s e viraria chocalho. Sem controle, com a opção desligada (Configurações → Vibração do controle) ou num navegador sem suporte, as chamadas não fazem nada e o jogo segue igual. `PlayerHaptics` é um ouvinte dos eventos que o combate já dispara: nenhuma linha de espada, escudo, arco ou dano mudou para isso existir.
+
+**Mobile não muda.** Os botões virtuais continuam decididos por `MobilePlatformDetector`, que olha plataforma e dispositivo — não gamepad. Conectar um controle no celular não some com os botões, e no desktop eles continuam ocultos.
+
+**No navegador, o controle só aparece depois de um gesto.** A Gamepad API não expõe nada até a página receber uma interação e um botão do controle ser apertado — é regra do navegador, não do jogo. Na prática: clique no canvas uma vez e aperte qualquer botão do controle.
 
 ### Remapeamento de teclas
 
@@ -57,7 +90,7 @@ Implementado sobre os *binding overrides* do próprio Input System (`KeyRebindSe
 
 Definidos em `Assets/ScriptableObjects/PlayerControls.inputactions` (Unity Input System), em dois action maps: `Player` (Move/Jump/Attack/Shield/Bow/Interact/Pause) e `Dialogue` (Advance/Skip). O mapa `Dialogue` fica ativo só durante falas, e o `Player` é desligado nesses momentos — por isso avançar o diálogo não faz Odisseu pular junto.
 
-**Desktop e mobile alimentam a mesma camada de input.** Cada botão virtual é um `OnScreenButton` do próprio Input System apontando para o mesmo control path de teclado da ação (`DEF` → `<Keyboard>/k`). Não existe lógica de gameplay duplicada entre as duas plataformas — `PlayerCombat`, `PlayerShield` e `PlayerBow` só conhecem a `InputAction`.
+**Teclado, controle e toque alimentam a mesma camada de input.** Cada botão virtual é um `OnScreenButton` do próprio Input System apontando para o mesmo control path de teclado da ação (`DEF` → `<Keyboard>/k`). Não existe lógica de gameplay duplicada entre as duas plataformas — `PlayerCombat`, `PlayerShield` e `PlayerBow` só conhecem a `InputAction`.
 
 ---
 
@@ -75,11 +108,12 @@ Core/       Estado e dados que não dependem de cena
 Systems/    Serviços reutilizáveis, agnósticos de fase
             SceneLoader, SaveSystem, CameraFollow, CheckpointManager,
             CollectibleCounter, AudioManager, DamageFeedback, VfxBurst,
-            ParallaxLayer, MovingPlatform, DecisionFlags
+            ParallaxLayer, MovingPlatform, DecisionFlags, ControlHints,
+            InputDeviceTracker, HapticFeedback
 
 Player/     Componentes de Odisseu (um por capacidade)
             PlayerController, PlayerCombat, PlayerShield, PlayerBow,
-            PlayerRespawn, PlayerInputLock, PlayerAnimator,
+            PlayerRespawn, PlayerInputLock, PlayerAnimator, PlayerHaptics,
             + efeitos por fase: LotusEffect, WindBagAbility, TransformationEffect,
               SirenResistance, HungerMeter, DisguiseEffect
 
@@ -90,10 +124,13 @@ Enemies/    EnemyController (patrulha/perseguição), BossController (telegrafad
 
 Levels/     Peças que compõem uma fase
             LevelManager, LevelIntro, LevelGoal, KillZone, TutorialTrigger,
-            DialogueTrigger, NPCDialogue + hazards/zonas específicos por fase
+            DialogueTrigger, NPCDialogue, LevelObjective, InteractPoint,
+            TrainingCourse, TrainingTarget, ShipDeparture,
+            ProgressionGate, LevelBounds
+            + hazards/zonas específicos por fase
 
 UI/         Telas e HUD
-            HUD, DialogueSequence, PauseMenu, DeathOverlay, ScreenFader,
+            HUD, ObjectiveBanner, DialogueSequence, PauseMenu, DeathOverlay, ScreenFader,
             MainMenuController, LevelSelectController, LevelCompleteMenu,
             EndingController, SettingsPanel, UITheme + indicadores
 ```
@@ -195,7 +232,7 @@ Fluxo comum a todas: **início → diálogo de abertura → gameplay → checkpo
 
 | # | Fase | Ideia central |
 |---|---|---|
-| 1 | Ítaca — O Chamado | **Prólogo e tutorial**: mover, pular, atacar. Penélope, Telêmaco e a convocação de Agamenon |
+| 1 | Ítaca — O Chamado | **Prólogo, tutorial completo e preparação da expedição**: 6 atos, da convocação de Agamenon à partida para Troia (ver abaixo) |
 | 2 | Troia | A guerra e o cavalo de madeira; ao fim, começa a viagem de volta |
 | 3 | Cícones | Sem mecânica nova — pequenas arenas de combate e obstáculos |
 | 4 | Cítera | **Tempestade no mar**: ondas que sobem e descem, vento, redemoinho e raios telegrafados |
@@ -215,6 +252,61 @@ Fluxo comum a todas: **início → diálogo de abertura → gameplay → checkpo
 Progressão: concluir uma fase desbloqueia a próxima (`CampaignManager`), salva coletáveis e pontuação. A Fase 16 é a única que carrega `Ending`; as demais voltam ao **mapa da jornada**.
 
 A ordem acima é a **ordem oficial da campanha** e não deve ser alterada sem instrução explícita. Lotófagos e Feácios ficaram **fora** da campanha: as cenas continuam no repositório, em `Assets/Scenes/_ForaDaCampanha/`, mas não estão no Build Settings nem na lista do `CampaignManager`.
+
+### Fase 1 — Ítaca, o prólogo
+
+A primeira fase é a mais longa da campanha (10–15 min na primeira vez) porque acumula quatro papéis: prólogo narrativo, apresentação dos personagens, tutorial completo de combate e preparação da expedição. Ela vai da convocação de Agamenon até os navios deixarem o porto.
+
+```
+Exploração de Ítaca
+        ↓
+Arauto de Agamenon  →  conversa com Mentor
+        ↓
+Penélope  →  Telêmaco  →  "Eu voltarei para Ítaca"
+        ↓
+Recrutamento (10 homens de Ítaca)
+        ↓
+Treinamento ── espada ─ pulo ─ escudo ─ arco ─ desafio final
+        ↓
+Arsenal (armas e equipamentos)  →  Porto (suprimentos, remos, velas, tripulação)
+        ↓
+Última conversa com Penélope  →  despedida de Telêmaco
+        ↓
+Embarque  →  partida  →  WorldMap (Troia desbloqueada)
+```
+
+**Os atos são dados, não código.** Cada ato é um `LevelObjective` na cena: texto da faixa de objetivo, quantas contribuições exige, o que liga ao começar, o que desliga ao terminar, a fala de encerramento e qual é o próximo. Os atos formam uma lista encadeada — não existe um "director" com o roteiro escrito em C#. Quem contribui (NPC, ponto de interação, o curso de treino) chama `Report`, e o objetivo ignora relatos repetidos, então conversar duas vezes com o mesmo pescador não recruta dois homens.
+
+**Os portões existem para o roteiro não sair da ordem.** Cinco portões fechados (salão, recrutamento, treino, arsenal, porto) são desligados ao fim do ato anterior. Sem eles o jogador podia falar com Penélope antes de o arauto chegar, e a promessa aconteceria antes da convocação. Uma vez abertos, ficam abertos: dá para voltar atrás a qualquer momento.
+
+**O tutorial é o próprio jogo se reportando.** O `TrainingCourse` não reimplementa combate: ele escuta `PlayerCombat.Attacked`, `PlayerShield.Blocked`, `PlayerBow.Fired` e a ação `Jump`, e os alvos (`TrainingTarget`) avisam quando levam dano pelo `HealthSystem` de sempre. Por isso o tutorial não tem como divergir do jogo.
+
+- **Uma etapa por vez**, e não dá para pular sem executar — mas a etapa não tem tempo limite, aceita qualquer ordem de golpes e sobrevive a morrer e voltar do checkpoint.
+- **As instruções mudam com a plataforma.** `ControlHints` monta a dica com a tecla atual (já considerando remapeamento) no desktop e com o rótulo do botão de toque no mobile. Cada dica tem uma variante `.mobile` na tabela de idiomas, para "Pressione Z" virar "Toque em ATK" e não só trocar a letra.
+- **As etapas seguem o terreno, e quem precisa do jogador vai até ele.** A etapa do escudo não fecha ao levantar o escudo — fecha ao BLOQUEAR um golpe. Isso exige alguém batendo, e por isso o parceiro de treino fica logo depois dos bonecos e enxerga 30 unidades em vez das 4 do inimigo comum: ele procura o rei, não o contrário. Sem isso, quem terminava os pulos alguns metros antes segurava o escudo num campo vazio, com o soldado fora da tela, e a etapa não fechava nunca. `PrologueProbe` reprova parceiro de defesa com alcance curto, ou que desista antes do alcance em que enxerga.
+- **Odisseu começa o prólogo sem disfarce, e isso é verificado.** A instância do Player desta cena vinha com `startDisguised` ligado e layer 12 — mecânica da Fase 14, herdada de uma cópia daquela cena (as duas se passam em Ítaca). O disfarce funciona exatamente como anunciado: tira o jogador da layer que os `EnemyController` procuram. Com ele ligado, **nenhum inimigo do prólogo enxergava Odisseu** — perseguiam alguém que, para a física, não estava lá. Nada aparecia como erro: o combate simplesmente não acontecia, e a etapa do escudo, que só fecha ao bloquear um golpe, era impossível por construção. `PrologueSceneBuilder` normaliza o Player ao montar, e `PrologueProbe.ConferirJogador()` reprova jogador disfarçado ou qualquer inimigo cuja máscara não inclua a layer dele.
+- **Golpe que passa pelo escudo erguido é explicado, não ignorado.** A etapa só conta o golpe APARADO, e aparar exige estar de frente — o escudo cobre 120°. Como o parceiro troca de lado enquanto persegue, parte dos golpes chega pelas costas: o jogador segura o botão, apanha, e o contador não anda. Sem explicação, isso é indistinguível de bug, e foi assim que pareceu. O curso compara o frame do último bloqueio com o do dano recebido; se levou dano com o escudo erguido e não aparou, avisa que veio pelas costas. O parceiro também trota mais rápido (3,5) e insiste mais (0,6 s entre golpes) — ele existe para bater, não para fazer esperar.
+- **O parceiro é desligado quando a etapa dele acaba**, senão continua perseguindo Odisseu durante a etapa do arco.
+- **A aljava se enche sozinha nas etapas do arco.** Sem isso, dez flechas erradas deixariam a etapa de acertar alvos impossível de cumprir. Fora do treino a munição continua sendo recurso.
+
+**Nenhum buraco antes de o pulo ser ensinado.** O chão é contínuo do começo ao cais, e as plataformas do treino ficam *acima* de chão sólido — quem erra o pulo cai de volta no campo e tenta de novo. Isso não é generosidade: o pulo só é apresentado no Ato 4, e o caminho do recrutamento vem antes. Um vão de 3,5 unidades ali (o alcance máximo é 4,89, com corrida) cobrava uma habilidade que a fase ainda não tinha ensinado, e três quedas encerravam a jornada no menu principal — a fase ficava impossível de terminar sem nada parecer quebrado. `PrologueProbe.ConferirChao()` agora percorre os colisores de piso e reprova qualquer buraco antes do treino.
+
+**O fundo desta fase é chapado, e isso é escolha.** As telas pintadas em `Art/Odisseia/Backgrounds/` são arte final; o resto do prólogo ainda é retângulo colorido. Juntas na mesma tela, as duas coisas fazem o cenário parecer quebrado — paisagem em detalhe atrás, caixote bege liso na frente. Enquanto a fase for placeholder, o fundo também é: céu chapado, faixa de mar no horizonte e duas camadas de morros feitas de blocos soltos. Blocos soltos em vez de uma imagem repetida resolvem por construção o problema que existia antes — as imagens de fundo não são contínuas nas bordas, e cada repetição virava uma emenda vertical no meio da paisagem. Sem borda para casar, o parallax pode voltar a ser forte (0,55 e 0,35), que é o que dá profundidade de verdade. Para trazer a arte pintada de volta, `PrologueSceneBuilder.UsarFundoPintado = true` — as três camadas já estão posicionadas e sem emenda.
+**A caixa de dica tem dono.** Ela é uma só e vários componentes escrevem nela — NPCs, pontos de interação, portões, o curso de treino. Sem dono, qualquer um apaga a mensagem de qualquer outro, e áreas de gatilho que se encostam viram um piscar: o jogador entra no alcance da Penélope (a dica dela aparece) e meio metro depois sai da área de aviso do portão do salão, que apaga a dica **dela**. Andando na borda entre as duas, pisca sem parar. `TutorialPrompt.Hide(dono)` só apaga para quem escreveu; `Show`/`ShowPersistent` assumem a caixa. Isso resolve a classe inteira, não as três sobreposições que existem hoje (`Gate_Hall`×`NPC_Penelope`, `Gate_Arsenal`×`NPC_Blacksmith`, `Recruit_Elpenor`×`Gate_Training`).
+**A dica de interação fica na tela enquanto o jogador estiver perto.** Ela piscava por dois segundos e sumia, mesmo com Odisseu parado ao lado de Penélope. Quem passasse correndo nunca via que ali dava para conversar — e como Penélope fica antes do portão seguinte, o jogador batia numa parede com o objetivo mandando falar com quem tinha ficado para trás. A fase estava certa e parecia travada.
+
+**O portão pergunta ao objetivo; o objetivo não conhece portão nenhum.** `ProgressionGate` recebe um `LevelObjective` no Inspector e reavalia a condição em três momentos: ao iniciar, quando o objetivo avisa que fechou, e **quando o jogador encosta nele**. O terceiro é o que garante a recuperação — antes, quem abria a barreira era o objetivo (uma lista de objetos para desligar), e um único aviso perdido deixava o portão trancado com o ato já concluído. Isso é softlock: a fase segue "correta" e o jogador fica entre uma parede e um objetivo que não existe mais. Agora chegar no portão o destrava. A raiz do portão nunca é desligada, só o colisor e a folha da porta — desligar tudo tiraria de cena justamente o componente que sabe reavaliar. O portão também explica o que falta e para onde ir, porque parede muda é indistinguível de bug.
+
+**A fase tem limites de mundo, não de tela.** `LevelBounds` guarda a área jogável em unidades de mundo e cuida de três camadas que não se substituem: paredes nas pontas (o jogador simplesmente para), enquadramento da câmera (ela não mostra o lado de fora) e uma rede de segurança que devolve ao último checkpoint quem escapar mesmo assim. Nada disso deriva de `Screen.width`: o jogo roda em navegador de desktop e de celular, e um limite em pixels daria um tamanho de fase diferente para cada aparelho. A rede de segurança é a última linha, não a primeira — se ela disparar em jogo normal, o buraco está nas paredes.
+
+**A garantia contra softlock é uma checagem, não uma promessa.** `PrologueProbe.ConferirAlcance()` calcula, para cada ato, até onde o jogador consegue andar enquanto ele está aberto (o primeiro portão que ainda não abriu) e reprova se algum alvo daquele ato ficou do outro lado. Um objetivo cujo alvo está atrás da barreira que só abre quando ele fechar é um beco sem saída perfeito, e é invisível no Inspector.
+**Figura em pé é apoiada pelo `bounds` do sprite, não por "meia altura acima do chão".** A arte de personagem do projeto é importada com pivô **BottomCenter** e o quadrado placeholder com pivô **central**. A conta fixa acertava o quadrado e deixava todo NPC pintado flutuando exatamente meia altura no ar. Usar `sprite.bounds.min.y` faz a mesma linha servir para qualquer pivô, inclusive o que a arte final escolher. As áreas de gatilho ganharam `offset` pelo mesmo motivo: com a raiz onde o pivô manda, `y = 0` deixou de ser o meio do personagem. `PrologueProbe.ConferirApoio()` reprova qualquer figura fora da linha do chão — é uma falha que nenhuma checagem de roteiro pega, porque a fase continua jogável; ela só fica errada de olhar.
+**A partida.** `ShipDeparture` troca Odisseu por uma silhueta no convés antes de o navio zarpar — um Rigidbody dinâmico travado em cima de um objeto que se move por transform briga com a física. Quem encerra a fase continua sendo o `LevelGoal`, chamado no fim da travessia: conclusão, save e volta ao mapa da jornada seguem num lugar só.
+
+**Penélope se despede no porto, não no palácio.** A última conversa acontece no cais porque é de lá que ela assiste à partida — e porque voltar ao palácio seria refazer 300 unidades de fase a pé.
+
+**A cena é montada por script.** `Odisseia > Montar prologo de Itaca` (ou `-executeMethod PrologueSceneBuilder.Build`) reconstrói a fase inteira do zero, preservando o que é infraestrutura (HUD, pause, morte, câmera, Player, LevelGoal). `Odisseia > Conferir prologo de Itaca` (`PrologueProbe.Run`) confere depois que nenhum ato ficou impossível de fechar — ele conta os reportadores realmente ligados a cada objetivo e compara com o que ele exige, além de verificar que toda fala tem texto nos dois idiomas.
+
 
 ### Mapa da jornada (`WorldMap`)
 
@@ -291,6 +383,7 @@ Medições reais do projeto atual:
 | Partículas | Sprites simples, ≤12 por burst, auto-destrutivos | Sem `ParticleSystem` |
 | Física | Só 2D, sem malhas, sem joints | — |
 | **Build final** | **5,8 MB** (wasm 4,3 + dados 1,3 + loader 0,2) | Menor que o build de 10 fases da etapa anterior (9,9 MB), mesmo com 6 fases a mais, áudio e polish |
+| Fundos de parallax | 9 PNGs, ~4 MB de origem | Passaram a entrar no build quando os `.meta` foram corrigidos (ver *Troubleshooting*). São a maior parte do crescimento do arquivo de dados — o primeiro lugar a olhar se o tamanho incomodar |
 
 Configurações aplicadas automaticamente por `BuildScript.ApplyWebGLSettings()` (para o build da CI ser idêntico ao local):
 - Compressão **Brotli** + `dataCaching`
@@ -412,6 +505,7 @@ O `-f` é necessário porque o `.gitignore` ignora `Builds/`. Esse caminho versi
 | `Another Unity instance is running` no build CLI | Editor aberto no mesmo projeto | Feche o Editor antes de rodar o build por linha de comando |
 | Áudio mudo no navegador | Política de autoplay do browser | Clique na página uma vez; o áudio começa após a primeira interação |
 | Fase parece longa/curta demais | Ritmo nunca foi medido em playtest | Ver nota abaixo |
+| Sprite some da cena e o Inspector mostra "None (Sprite)" | `.meta` malformado: uma chave YAML com `[]` na linha de baixo, na mesma indentação, faz o Unity **recusar o arquivo inteiro** e ignorar a textura em silêncio | Junte na mesma linha (`sprites: []`). Foi o que aconteceu com as 9 imagens de `Art/Odisseia/Backgrounds/`: estavam no repositório mas nenhuma cena conseguia usá-las |
 
 **Nota sobre compressão e GitHub Pages**: o build usa Brotli **com `decompressionFallback` ativado** (`webGLCompressionFormat: 0` + `webGLDecompressionFallback: 1`). Isso gera arquivos `.unityweb` que o próprio loader descomprime em JavaScript, sem depender de o servidor mandar `Content-Encoding: br` — que é justamente o que o GitHub Pages **não** faz. Por isso o build funciona no Pages sem configuração extra. Foi verificado servindo o build por um HTTP server sem headers especiais (o mesmo cenário do Pages): carregou completo, sem erro no console.
 

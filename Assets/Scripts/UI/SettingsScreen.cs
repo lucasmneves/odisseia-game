@@ -235,6 +235,7 @@ namespace Odisseia.UI
             }
 
             Toggle(Localization.Get("ui.settings.fullscreen"), SettingsManager.Fullscreen, v => SettingsManager.Fullscreen = v);
+            Toggle(Localization.Get("ui.settings.vibration"), SettingsManager.Vibration, v => SettingsManager.Vibration = v);
 
             // Os nomes dos idiomas ficam sempre no próprio idioma ("English",
             // "Português"): quem abriu a tela sem entender o que está escrito precisa

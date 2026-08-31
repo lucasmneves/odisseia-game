@@ -30,7 +30,23 @@ namespace Odisseia.Levels
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (triggered || !other.CompareTag("Player"))
+            if (!other.CompareTag("Player"))
+            {
+                return;
+            }
+
+            Trigger();
+        }
+
+        /// <summary>
+        /// Encerra a fase sem depender do jogador tocar o colisor. Existe para as cenas
+        /// que terminam por roteiro (a partida de Itaca, no prologo): assim a conclusao,
+        /// o salvamento e a troca de cena continuam acontecendo aqui, num lugar so, em
+        /// vez de cada cutscene reimplementar o final da fase.
+        /// </summary>
+        public void Trigger()
+        {
+            if (triggered)
             {
                 return;
             }
