@@ -22,6 +22,7 @@ namespace Odisseia.Systems
         private const string KeyQuality = "Odisseia.Settings.Quality";
         private const string KeyFullscreen = "Odisseia.Settings.Fullscreen";
         private const string KeyResolution = "Odisseia.Settings.Resolution";
+        private const string KeyVibration = "Odisseia.Settings.Vibration";
 
         private static bool loaded;
 
@@ -30,6 +31,33 @@ namespace Odisseia.Systems
         private static int quality = -1;
         private static bool fullscreen;
         private static int resolutionIndex = -1;
+        private static bool vibration = true;
+
+        /// <summary>
+        /// Vibração do controle. Ligada por padrão, mas desligável — vibração incomoda
+        /// parte dos jogadores, e no WebGL nem todo navegador/controle a suporta.
+        /// Desligar para os motores na hora, senão um pulso em curso continuaria.
+        /// </summary>
+        public static bool Vibration
+        {
+            get
+            {
+                EnsureLoaded();
+                return vibration;
+            }
+            set
+            {
+                EnsureLoaded();
+                vibration = value;
+                PlayerPrefs.SetInt(KeyVibration, vibration ? 1 : 0);
+                PlayerPrefs.Save();
+
+                if (!vibration)
+                {
+                    HapticFeedback.Stop();
+                }
+            }
+        }
 
         /// <summary>Volume geral (0..1). Multiplica tudo o que sai do jogo.</summary>
         public static float MasterVolume
@@ -165,6 +193,7 @@ namespace Odisseia.Systems
             sfx = PlayerPrefs.GetFloat(KeySfx, 0.9f);
             quality = PlayerPrefs.GetInt(KeyQuality, QualitySettings.GetQualityLevel());
             fullscreen = PlayerPrefs.GetInt(KeyFullscreen, Screen.fullScreen ? 1 : 0) == 1;
+            vibration = PlayerPrefs.GetInt(KeyVibration, 1) == 1;
             resolutionIndex = PlayerPrefs.GetInt(KeyResolution, DefaultResolutionIndex());
 
             Apply();
