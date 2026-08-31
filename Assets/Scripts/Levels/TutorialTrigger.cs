@@ -41,7 +41,7 @@ namespace Odisseia.Levels
             }
 
             triggered = true;
-            prompt?.Show(ResolvedMessage, displayDuration);
+            prompt?.Show(this, ResolvedMessage, displayDuration);
         }
     }
 }

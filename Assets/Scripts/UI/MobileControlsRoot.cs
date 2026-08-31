@@ -230,6 +230,7 @@ namespace Odisseia.UI
             float col0 = margin + actionSize + gap;
             float row0 = margin;
             float row1 = margin + actionSize + gap;
+            float row2 = margin + 2f * (actionSize + gap);
 
             CreateOnScreenButton(groupRect, "AttackButton", Bind("Attack", null, "<Keyboard>/z"), "ATK",
                 new Vector2(1f, 0f), new Vector2(-col1, row0),
@@ -245,6 +246,13 @@ namespace Odisseia.UI
 
             CreateOnScreenButton(groupRect, "BowButton", Bind("Bow", null, "<Keyboard>/c"), "BOW",
                 new Vector2(1f, 0f), new Vector2(-col0, row1),
+                new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
+
+            // Nas fases: interagir com NPCs e com os pontos de preparação. Sem este
+            // botão, tudo que depende de "E" (conversar, examinar) ficava inacessível
+            // no toque — o mapa tinha o seu botão de Interact, o gameplay não tinha.
+            CreateOnScreenButton(groupRect, "InteractButton", Bind("Interact", null, "<Keyboard>/e"), "USE",
+                new Vector2(1f, 0f), new Vector2(-col1, row2),
                 new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
 
             // Só no mapa: entrar na fase. Reaproveita a ação Interact, a mesma do "E".

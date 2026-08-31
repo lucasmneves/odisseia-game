@@ -67,7 +67,7 @@ namespace Odisseia.Levels
 
             hungerInRange = hunger;
             healthInRange = other.GetComponent<HealthSystem>();
-            prompt?.Show("Pressione E para comer o gado sagrado de Hélio (isso terá consequências).", 3f);
+            prompt?.Show(this, "Pressione E para comer o gado sagrado de Hélio (isso terá consequências).", 3f);
         }
 
         private void OnTriggerExit2D(Collider2D other)
@@ -90,7 +90,7 @@ namespace Odisseia.Levels
             hungerInRange.RestoreFull();
             healthInRange?.TakeDamage(consequenceDamage);
             DecisionFlags.Set(decisionFlagKey);
-            prompt?.Show("Você comeu o gado sagrado. Zeus vai cobrar isso.", 3f);
+            prompt?.Show(this, "Você comeu o gado sagrado. Zeus vai cobrar isso.", 3f);
 
             if (TryGetComponent(out SpriteRenderer sr))
             {

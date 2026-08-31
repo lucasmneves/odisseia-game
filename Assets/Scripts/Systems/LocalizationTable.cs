@@ -387,8 +387,8 @@ namespace Odisseia.Systems
 
             ["ui.npc.interactPrompt"] = new[]
             {
-                "Press E to talk",
-                "Pressione E para conversar",
+                "Press {0} to talk",
+                "Pressione {0} para conversar",
             },
 
             ["level.Level_01_Itaca_Prologue"] = new[]
@@ -519,54 +519,6 @@ namespace Odisseia.Systems
 
 
             // ---------------------------------------------------------- Falas
-
-            ["dlg.Level_01_Itaca_Prologue.TelemacoDialogueController.0"] = new[]
-            {
-                "Father, is it true you will cross the sea? Take me with you!",
-                "Pai, é verdade que você vai atravessar o mar? Me leve junto!",
-            },
-
-            ["dlg.Level_01_Itaca_Prologue.TelemacoDialogueController.1"] = new[]
-            {
-                "Look after your mother and the island for me, my son. It is the harder of the two tasks.",
-                "Cuide de sua mãe e da ilha por mim, meu filho. É a tarefa mais difícil das duas.",
-            },
-
-            ["dlg.Level_01_Itaca_Prologue.PenelopeDialogueController.0"] = new[]
-            {
-                "They say Agamemnon's heralds came for kings to fight a war in Troy. Do not go, Odysseus.",
-                "Dizem que os arautos de Agamenon vieram buscar reis para uma guerra em Troia. Não vá, Odisseu.",
-            },
-
-            ["dlg.Level_01_Itaca_Prologue.PenelopeDialogueController.1"] = new[]
-            {
-                "If you go, swear you will return. I will wait as long as it takes — but swear it.",
-                "Se for, jure que volta. Eu espero o tempo que for preciso — mas jure.",
-            },
-
-            ["dlg.Level_01_Itaca_Prologue.OutroDialogueController.0"] = new[]
-            {
-                "The oath binds me: I swore to defend the house of Menelaus, and Agamemnon has come to collect.",
-                "O juramento me obriga: prometi defender a casa de Menelau, e Agamenon cobra a promessa.",
-            },
-
-            ["dlg.Level_01_Itaca_Prologue.OutroDialogueController.1"] = new[]
-            {
-                "Odysseus sets sail with his men. Ithaca falls away behind them — and the war at Troy waits on the far side of the sea.",
-                "Odisseu embarca com seus homens. Ítaca fica para trás — e a guerra de Troia espera do outro lado do mar.",
-            },
-
-            ["dlg.Level_01_Itaca_Prologue.IntroDialogueController.0"] = new[]
-            {
-                "Ithaca. My island, my home. Penelope weaves in the hall, and Telemachus still fits in the crook of my arm.",
-                "Ítaca. Minha ilha, minha casa. Penélope tece no salão e Telêmaco ainda cabe no meu braço.",
-            },
-
-            ["dlg.Level_01_Itaca_Prologue.IntroDialogueController.1"] = new[]
-            {
-                "A ship from Mycenae docked in the harbour this morning. Agamemnon is summoning every king in Greece.",
-                "Um navio de Micenas ancorou no porto esta manhã. Agamenon manda chamar todos os reis da Grécia.",
-            },
 
             ["dlg.Level_02_Troia.OutroDialogueController.0"] = new[]
             {
@@ -871,24 +823,6 @@ namespace Odisseia.Systems
 
             // ---------------------------------------------------------- Dicas de tutorial
 
-            ["tut.Level_01_Itaca_Prologue.Tutorial_Move"] = new[]
-            {
-                "Use A/D or ←/→ to move.",
-                "Use A/D ou ←/→ para se mover.",
-            },
-
-            ["tut.Level_01_Itaca_Prologue.Tutorial_Jump"] = new[]
-            {
-                "Press SPACE to jump the gap.",
-                "Pressione SPACE para pular o vao.",
-            },
-
-            ["tut.Level_01_Itaca_Prologue.Tutorial_Attack"] = new[]
-            {
-                "Press Z to attack.",
-                "Pressione Z para atacar.",
-            },
-
             ["tut.Level_02_Troia.Tutorial_Attack"] = new[]
             {
                 "Press Z to attack.",
@@ -905,6 +839,814 @@ namespace Odisseia.Systems
             {
                 "Use A/D or ←/→ to move.",
                 "Use A/D ou ←/→ para se mover.",
+            },
+
+
+            // ---------------------------------------------------------- Prólogo de Ítaca: personagens
+
+            ["speaker.herald"] = new[]
+            {
+                "Herald",
+                "Arauto",
+            },
+
+            ["speaker.mentor"] = new[]
+            {
+                "Mentor",
+                "Mentor",
+            },
+
+            ["speaker.trainer"] = new[]
+            {
+                "Trainer",
+                "Treinador",
+            },
+
+            ["speaker.blacksmith"] = new[]
+            {
+                "Blacksmith",
+                "Ferreiro",
+            },
+
+            ["speaker.fisherman"] = new[]
+            {
+                "Fisherman",
+                "Pescador",
+            },
+
+            ["speaker.farmer"] = new[]
+            {
+                "Farmer",
+                "Agricultor",
+            },
+
+            ["speaker.sailor"] = new[]
+            {
+                "Sailor",
+                "Marinheiro",
+            },
+
+            ["speaker.eurylochus"] = new[]
+            {
+                "Eurylochus",
+                "Euríloco",
+            },
+
+            ["speaker.rower"] = new[]
+            {
+                "Rower",
+                "Remador",
+            },
+
+            ["speaker.shepherd"] = new[]
+            {
+                "Shepherd",
+                "Pastor",
+            },
+
+            ["speaker.watchman"] = new[]
+            {
+                "Watchman",
+                "Vigia",
+            },
+
+            ["speaker.carpenter"] = new[]
+            {
+                "Carpenter",
+                "Carpinteiro",
+            },
+
+            ["speaker.elpenor"] = new[]
+            {
+                "Elpenor",
+                "Elpenor",
+            },
+
+
+            // ---------------------------------------------------------- Prólogo de Ítaca: objetivos
+
+            ["obj.prologue.explore"] = new[]
+            {
+                "Explore Ithaca",
+                "Explore Ítaca",
+            },
+
+            ["obj.prologue.summons"] = new[]
+            {
+                "Hear out the herald",
+                "Ouça o arauto",
+            },
+
+            ["obj.prologue.family"] = new[]
+            {
+                "Speak with Penelope and Telemachus",
+                "Fale com Penélope e Telêmaco",
+            },
+
+            ["obj.prologue.recruit"] = new[]
+            {
+                "Gather the men of Ithaca",
+                "Reúna os homens de Ítaca",
+            },
+
+            ["obj.prologue.training"] = new[]
+            {
+                "Train for the war",
+                "Treine para a guerra",
+            },
+
+            ["obj.prologue.equipment"] = new[]
+            {
+                "Prepare weapons and equipment",
+                "Prepare armas e equipamentos",
+            },
+
+            ["obj.prologue.ships"] = new[]
+            {
+                "Prepare the ships",
+                "Prepare os navios",
+            },
+
+            ["obj.prologue.farewell"] = new[]
+            {
+                "Say goodbye to your family",
+                "Despeça-se da sua família",
+            },
+
+            ["obj.prologue.depart"] = new[]
+            {
+                "Board the ship and set sail",
+                "Embarque no navio e parta",
+            },
+
+
+            // ---------------------------------------------------------- Prólogo de Ítaca: interações
+
+            ["ui.interact.prompt"] = new[]
+            {
+                "Press {0} to examine",
+                "Pressione {0} para examinar",
+            },
+
+            ["ui.interact.prompt.mobile"] = new[]
+            {
+                "Tap {0} to examine",
+                "Toque em {0} para examinar",
+            },
+
+            ["ui.npc.interactPrompt.mobile"] = new[]
+            {
+                "Tap {0} to talk",
+                "Toque em {0} para conversar",
+            },
+
+            ["int.prologue.town"] = new[]
+            {
+                "The town of Ithaca. Small, and mine.",
+                "A cidade de Ítaca. Pequena, e minha.",
+            },
+
+            ["int.prologue.people"] = new[]
+            {
+                "My people sleep well, because the sea has been quiet.",
+                "Meu povo dorme tranquilo, porque o mar tem estado calmo.",
+            },
+
+            ["int.prologue.soldiers"] = new[]
+            {
+                "A handful of soldiers. Enough for peace, not for a war.",
+                "Um punhado de soldados. Suficiente para a paz, não para uma guerra.",
+            },
+
+            ["int.prologue.palace"] = new[]
+            {
+                "My hall. Penelope and Telemachus are inside.",
+                "Meu salão. Penélope e Telêmaco estão lá dentro.",
+            },
+
+            ["int.prologue.swords"] = new[]
+            {
+                "Swords sharpened.",
+                "Espadas afiadas.",
+            },
+
+            ["int.prologue.shields"] = new[]
+            {
+                "Shields checked.",
+                "Escudos conferidos.",
+            },
+
+            ["int.prologue.arrows"] = new[]
+            {
+                "Bows strung. Arrows counted.",
+                "Arcos retesados. Flechas contadas.",
+            },
+
+            ["int.prologue.armor"] = new[]
+            {
+                "Armour and provisions packed.",
+                "Armaduras e mantimentos embalados.",
+            },
+
+            ["int.prologue.supplies"] = new[]
+            {
+                "Supplies loaded.",
+                "Suprimentos carregados.",
+            },
+
+            ["int.prologue.oars"] = new[]
+            {
+                "Oars aboard.",
+                "Remos a bordo.",
+            },
+
+            ["int.prologue.sails"] = new[]
+            {
+                "Sails mended and raised.",
+                "Velas remendadas e içadas.",
+            },
+
+            ["int.prologue.crew"] = new[]
+            {
+                "The crews know their ships.",
+                "As tripulações conhecem seus navios.",
+            },
+
+
+            // ---------------------------------------------------------- Prólogo de Ítaca: treinamento
+
+            ["tut.prologue.stepDone"] = new[]
+            {
+                "Well done!",
+                "Muito bem!",
+            },
+
+            ["tut.prologue.move"] = new[]
+            {
+                "Use {0} to move.",
+                "Use {0} para se mover.",
+            },
+
+            ["tut.prologue.move.mobile"] = new[]
+            {
+                "Hold {0} to move.",
+                "Segure {0} para se mover.",
+            },
+
+            ["tut.prologue.jump"] = new[]
+            {
+                "Press {0} to jump.",
+                "Pressione {0} para pular.",
+            },
+
+            ["tut.prologue.jump.mobile"] = new[]
+            {
+                "Tap {0} to jump.",
+                "Toque em {0} para pular.",
+            },
+
+            ["tut.prologue.sword"] = new[]
+            {
+                "Press {0} to swing your sword.",
+                "Pressione {0} para golpear com a espada.",
+            },
+
+            ["tut.prologue.sword.mobile"] = new[]
+            {
+                "Tap {0} to swing your sword.",
+                "Toque em {0} para golpear com a espada.",
+            },
+
+            ["tut.prologue.swordDummy"] = new[]
+            {
+                "Hit the training dummy with {0}.",
+                "Acerte o boneco de treino com {0}.",
+            },
+
+            ["tut.prologue.swordDummy.mobile"] = new[]
+            {
+                "Stand next to the dummy and tap {0}.",
+                "Fique perto do boneco e toque em {0}.",
+            },
+
+            ["tut.prologue.jumpGaps"] = new[]
+            {
+                "Cross the platforms with {0}.",
+                "Atravesse as plataformas com {0}.",
+            },
+
+            ["tut.prologue.shield"] = new[]
+            {
+                "The soldier is coming. Hold {0} to block his blows — the shield only covers your front.",
+                "O soldado vem vindo. Segure {0} para bloquear os golpes dele — o escudo só cobre a sua frente.",
+            },
+
+            ["tut.prologue.shield.mobile"] = new[]
+            {
+                "The soldier is coming. Hold {0} to block his blows — the shield only covers your front.",
+                "O soldado vem vindo. Segure {0} para bloquear os golpes dele — o escudo só cobre a sua frente.",
+            },
+
+            ["tut.prologue.bow"] = new[]
+            {
+                "Press {0} to shoot. Every shot costs an arrow.",
+                "Pressione {0} para disparar. Cada tiro gasta uma flecha.",
+            },
+
+            ["tut.prologue.bow.mobile"] = new[]
+            {
+                "Tap {0} to shoot. Every shot costs an arrow.",
+                "Toque em {0} para disparar. Cada tiro gasta uma flecha.",
+            },
+
+            ["tut.prologue.bowTargets"] = new[]
+            {
+                "Hit the targets with the bow.",
+                "Acerte os alvos com o arco.",
+            },
+
+            ["tut.prologue.combo"] = new[]
+            {
+                "Now all of it: bow at range, shield when they swing, sword up close.",
+                "Agora tudo junto: arco à distância, escudo quando atacarem, espada de perto.",
+            },
+
+
+            // ---------------------------------------------------------- Prólogo de Ítaca: falas
+
+            ["dlg.Level_01_Itaca_Prologue.IntroDialogueController.0"] = new[]
+            {
+                "Ithaca. My island, my home.",
+                "Ítaca. Minha ilha, minha casa.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.IntroDialogueController.1"] = new[]
+            {
+                "Penelope weaves in the hall, and Telemachus still fits in the crook of my arm.",
+                "Penélope tece no salão, e Telêmaco ainda cabe no meu braço.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.IntroDialogueController.2"] = new[]
+            {
+                "A quiet morning. Let me walk my kingdom before the day asks anything of me.",
+                "Uma manhã tranquila. Vou caminhar pelo meu reino antes que o dia me peça alguma coisa.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.HeraldDialogueController.0"] = new[]
+            {
+                "King Odysseus. I come from Mycenae.",
+                "Rei Odisseu. Venho de Micenas.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.HeraldDialogueController.1"] = new[]
+            {
+                "King Agamemnon is gathering the kings of Greece.",
+                "O rei Agamenon reúne os reis da Grécia.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.HeraldDialogueController.2"] = new[]
+            {
+                "Troy has challenged our honour. Every king must prepare his men.",
+                "Troia desafiou nossa honra. Cada rei deve preparar seus homens.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.HeraldDialogueController.3"] = new[]
+            {
+                "You have been summoned as well.",
+                "Você também foi convocado.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.HeraldDialogueController.4"] = new[]
+            {
+                "A war. After so many years of peace in Ithaca.",
+                "Uma guerra. Depois de tantos anos de paz em Ítaca.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.HeraldDialogueController.5"] = new[]
+            {
+                "How many men does Agamemnon expect me to bring?",
+                "Quantos homens Agamenon espera que eu leve?",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.HeraldDialogueController.6"] = new[]
+            {
+                "Every man you can gather, my king.",
+                "Todos os homens que puder reunir, meu rei.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.HeraldDialogueController.7"] = new[]
+            {
+                "Then we have much to prepare.",
+                "Então teremos muito a preparar.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.MentorDialogueController.0"] = new[]
+            {
+                "The whole harbour heard it, Odysseus.",
+                "O porto inteiro ouviu, Odisseu.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.MentorDialogueController.1"] = new[]
+            {
+                "I swore an oath years ago. Oaths come due.",
+                "Fiz um juramento anos atrás. Juramentos são cobrados.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.MentorDialogueController.2"] = new[]
+            {
+                "It is not the war that weighs on me. It is who I leave behind.",
+                "Não é a guerra que me pesa. É quem eu deixo para trás.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.MentorDialogueController.3"] = new[]
+            {
+                "Then tell them yourself, before the island tells them for you.",
+                "Então conte a eles você mesmo, antes que a ilha conte por você.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.PenelopeDialogueController.0"] = new[]
+            {
+                "Is it true?",
+                "É verdade?",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.PenelopeDialogueController.1"] = new[]
+            {
+                "Agamemnon has summoned the kings.",
+                "Agamenon convocou os reis.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.PenelopeDialogueController.2"] = new[]
+            {
+                "Then you are going.",
+                "Então você vai.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.PenelopeDialogueController.3"] = new[]
+            {
+                "I have to go.",
+                "Preciso ir.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.PenelopeDialogueController.4"] = new[]
+            {
+                "You always say Ithaca comes first.",
+                "Você sempre diz que Ítaca vem primeiro.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.PenelopeDialogueController.5"] = new[]
+            {
+                "And that is exactly why I must leave.",
+                "E é exatamente por isso que preciso partir.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.TelemacoDialogueController.0"] = new[]
+            {
+                "Father, are you going to fight monsters?",
+                "Pai, você vai lutar contra monstros?",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.TelemacoDialogueController.1"] = new[]
+            {
+                "I hope to fight only men.",
+                "Espero lutar apenas contra homens.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.TelemacoDialogueController.2"] = new[]
+            {
+                "And when do you come back?",
+                "E quando você volta?",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.TelemacoDialogueController.3"] = new[]
+            {
+                "As soon as the war is over.",
+                "Assim que a guerra terminar.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.PromiseDialogueController.0"] = new[]
+            {
+                "Swear it to me.",
+                "Jure para mim.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.PromiseDialogueController.1"] = new[]
+            {
+                "However long it takes.",
+                "Não importa quanto tempo leve.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.PromiseDialogueController.2"] = new[]
+            {
+                "I will come back to Ithaca.",
+                "Eu voltarei para Ítaca.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.PromiseDialogueController.3"] = new[]
+            {
+                "Then go. And keep that promise.",
+                "Então vá. E cumpra essa promessa.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.RecruitFishermanDialogue.0"] = new[]
+            {
+                "I know every rock between here and the mainland, my king. Count me in.",
+                "Conheço cada pedra daqui até o continente, meu rei. Conte comigo.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.RecruitFarmerDialogue.0"] = new[]
+            {
+                "The harvest can wait. Ithaca cannot.",
+                "A colheita pode esperar. Ítaca não.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.RecruitSailorDialogue.0"] = new[]
+            {
+                "I know these waters better than any man alive.",
+                "Conheço estas águas melhor que qualquer homem vivo.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.RecruitBlacksmithDialogue.0"] = new[]
+            {
+                "I am no soldier.",
+                "Não sou soldado.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.RecruitBlacksmithDialogue.1"] = new[]
+            {
+                "But I can make sure your men have weapons.",
+                "Mas posso garantir que seus homens tenham armas.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.RecruitEurylochusDialogue.0"] = new[]
+            {
+                "If you go, my king, I go.",
+                "Se você vai, meu rei, eu também vou.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.RecruitEurylochusDialogue.1"] = new[]
+            {
+                "I have stood beside you before. I will do it again.",
+                "Já estive ao seu lado antes. Estarei de novo.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.RecruitRowerDialogue.0"] = new[]
+            {
+                "Give me the rhythm and I will give you the sea.",
+                "Me dê o ritmo e eu lhe dou o mar.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.RecruitShepherdDialogue.0"] = new[]
+            {
+                "My brother will watch the flock. I will watch your back.",
+                "Meu irmão cuida do rebanho. Eu cuido das suas costas.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.RecruitWatchmanDialogue.0"] = new[]
+            {
+                "I have watched this coast for ten years. Let me watch a different one.",
+                "Vigio esta costa há dez anos. Deixe-me vigiar outra.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.RecruitCarpenterDialogue.0"] = new[]
+            {
+                "A ship is only as good as the man who patches it.",
+                "Um navio vale o quanto vale quem o remenda.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.RecruitElpenorDialogue.0"] = new[]
+            {
+                "I am the youngest here. That means I have the most to prove.",
+                "Sou o mais novo daqui. Então sou quem mais tem a provar.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.RecruitElpenorDialogue.1"] = new[]
+            {
+                "It means you stay close to me.",
+                "Significa que você fica perto de mim.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.MusterDialogueController.0"] = new[]
+            {
+                "The men of Ithaca are ready.",
+                "Os homens de Ítaca estão prontos.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.MusterDialogueController.1"] = new[]
+            {
+                "Ready is not the same as trained. To the training field.",
+                "Prontos não é o mesmo que treinados. Ao campo de treino.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.TrainerIntroDialogue.0"] = new[]
+            {
+                "A sword is not only for striking, my king.",
+                "Uma espada não serve apenas para atacar, meu rei.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.TrainerIntroDialogue.1"] = new[]
+            {
+                "Learn to control your movements first.",
+                "Aprenda antes a controlar seus movimentos.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.TrainerIntroDialogue.2"] = new[]
+            {
+                "The dummies do not hit back. The Trojans will.",
+                "Os bonecos não revidam. Os troianos vão.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.TrainerEndDialogue.0"] = new[]
+            {
+                "We will not fight with strength alone.",
+                "Não lutaremos apenas com força.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.TrainerEndDialogue.1"] = new[]
+            {
+                "We must fight as one.",
+                "Precisamos lutar como um só.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.TrainerEndDialogue.2"] = new[]
+            {
+                "They will follow you, my king. Every one of them.",
+                "Eles vão seguir você, meu rei. Todos eles.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.BlacksmithDialogueController.0"] = new[]
+            {
+                "Your blades are ready.",
+                "Suas lâminas estão prontas.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.BlacksmithDialogueController.1"] = new[]
+            {
+                "I have prepared shields for your men as well.",
+                "Também preparei escudos para seus homens.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.BlacksmithDialogueController.2"] = new[]
+            {
+                "And a few dozen arrows.",
+                "E algumas dezenas de flechas.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.BlacksmithDialogueController.3"] = new[]
+            {
+                "We will need every one of them.",
+                "Vamos precisar de todas elas.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.PortDialogueController.0"] = new[]
+            {
+                "Supplies aboard. Oars counted. Sails mended.",
+                "Suprimentos a bordo. Remos contados. Velas remendadas.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.PortDialogueController.1"] = new[]
+            {
+                "The ships of Ithaca are ready to sail.",
+                "Os navios de Ítaca estão prontos para zarpar.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.FarewellPenelopeDialogue.0"] = new[]
+            {
+                "Are the ships ready?",
+                "Os navios estão prontos?",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.FarewellPenelopeDialogue.1"] = new[]
+            {
+                "They are.",
+                "Estão.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.FarewellPenelopeDialogue.2"] = new[]
+            {
+                "Then it is time.",
+                "Então chegou a hora.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.FarewellPenelopeDialogue.3"] = new[]
+            {
+                "I will come back.",
+                "Eu voltarei.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.FarewellPenelopeDialogue.4"] = new[]
+            {
+                "We will be waiting.",
+                "Estaremos esperando.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.FarewellTelemacoDialogue.0"] = new[]
+            {
+                "I made this for you.",
+                "Fiz isto para você.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.FarewellTelemacoDialogue.1"] = new[]
+            {
+                "It is Ithaca. So you do not forget the way home.",
+                "É Ítaca. Para você não esquecer o caminho de casa.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.FarewellTelemacoDialogue.2"] = new[]
+            {
+                "I will keep it close.",
+                "Vou guardar bem perto.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.FarewellTelemacoDialogue.3"] = new[]
+            {
+                "Look after your mother and the island for me. It is the harder of the two tasks.",
+                "Cuide de sua mãe e da ilha por mim. É a tarefa mais difícil das duas.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.BoardingDialogueController.0"] = new[]
+            {
+                "The men of Ithaca board. The equipment is loaded. The ships are ready.",
+                "Os homens de Ítaca embarcam. Os equipamentos são carregados. Os navios estão prontos.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.BoardingDialogueController.1"] = new[]
+            {
+                "Ithaca. Wait for me.",
+                "Ítaca. Espere por mim.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.OutroDialogueController.0"] = new[]
+            {
+                "Penelope watched from the harbour. Odysseus raised his hand, and the ships pulled away.",
+                "Penélope observava do porto. Odisseu levantou a mão, e os navios se afastaram.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.OutroDialogueController.1"] = new[]
+            {
+                "The ships left Ithaca. Ahead of them lay Troy.",
+                "Os navios deixaram Ítaca. À frente estava Troia.",
+            },
+
+            ["dlg.Level_01_Itaca_Prologue.OutroDialogueController.2"] = new[]
+            {
+                "Odysseus did not yet know that this war would change his life forever.",
+                "Odisseu ainda não sabia que aquela guerra mudaria sua vida para sempre.",
+            },
+
+
+            // ---------------------------------------------------------- Prólogo: portões fechados
+
+            ["gate.prologue.hall"] = new[]
+            {
+                "The hall is closed. I should hear the herald from Mycenae first.",
+                "O salão está fechado. Preciso ouvir antes o arauto de Micenas.",
+            },
+
+            ["gate.prologue.recruit"] = new[]
+            {
+                "Not yet. Penelope and Telemachus are back in the hall, and they deserve to hear it from me.",
+                "Ainda não. Penélope e Telêmaco estão no salão, atrás de mim, e merecem ouvir isso de mim.",
+            },
+
+            ["gate.prologue.training"] = new[]
+            {
+                "The men of Ithaca are still scattered along the road behind me.",
+                "Os homens de Ítaca ainda estão espalhados pelo caminho atrás de mim.",
+            },
+
+            ["gate.prologue.arsenal"] = new[]
+            {
+                "Not before the training field is done. The trainer is waiting behind me.",
+                "Não antes de terminar o campo de treino. O treinador espera atrás de mim.",
+            },
+
+            ["gate.prologue.port"] = new[]
+            {
+                "The weapons are not ready. The blacksmith is back at the armoury.",
+                "As armas não estão prontas. O ferreiro está no arsenal, atrás de mim.",
+            },
+
+
+            // ---------------------------------------------------------- Controle
+
+            ["ctrl.gamepad.move"] = new[]
+            {
+                "Left Stick",
+                "Analógico esquerdo",
+            },
+
+            ["ui.settings.vibration"] = new[]
+            {
+                "Controller vibration",
+                "Vibração do controle",
+            },
+
+
+            ["tut.prologue.shieldBehind"] = new[]
+            {
+                "That one came from behind! Turn to face him — the shield only covers your front.",
+                "Esse veio pelas costas! Vire-se para ele — o escudo só cobre a sua frente.",
             },
 
         };
