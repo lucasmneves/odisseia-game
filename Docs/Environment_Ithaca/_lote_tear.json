@@ -1,0 +1,10 @@
+[
+  {
+    "nome": "_fonte_loom",
+    "args": {
+      "description": "upright wooden weaving loom of the Bronze Age, two tall side posts and a top beam, vertical warp threads hanging with small clay loom weights at the bottom, an unfinished pale cloth woven across the upper part, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the loom.",
+      "width": 80, "height": 96, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  }
+]

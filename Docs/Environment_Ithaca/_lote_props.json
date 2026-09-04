@@ -1,0 +1,42 @@
+[
+  {
+    "nome": "_fonte_anvil",
+    "args": {
+      "description": "blacksmith anvil of dark iron on a short wooden block, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the anvil.",
+      "width": 64, "height": 48, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_forge",
+    "args": {
+      "description": "small stone blacksmith forge with a domed hearth of warm pale limestone blocks, glowing coals in the opening and a short chimney, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the forge.",
+      "width": 96, "height": 80, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_watchtower",
+    "args": {
+      "description": "tall narrow Bronze Age Greek watchtower of warm pale limestone ashlar blocks with a FLAT roof and a plain parapet at the top, one small window near the top and a narrow wooden door at the base, seen from directly in front, strict flat side profile like a technical elevation drawing. Isolated game asset cut out on a fully transparent background, only the tower.",
+      "width": 80, "height": 224, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_field",
+    "args": {
+      "description": "low row of ripe barley crops growing in tilled brown earth, a narrow horizontal strip of golden stalks, seen from directly beside them, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the crop row.",
+      "width": 176, "height": 48, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_boat_hull",
+    "args": {
+      "description": "small wooden fishing boat hull pulled ashore for repair, resting tilted on two short timber props, planked sides and a curved stem, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the boat and its props.",
+      "width": 224, "height": 96, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  }
+]
