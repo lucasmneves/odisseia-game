@@ -35,6 +35,18 @@ const internalId = (key) => (crypto.createHash('md5').update('iid:' + key).diges
 
 const ALIGN = { center: 0, bottom: 7 };
 
+// O Unity escreve um spriteID no .meta de textura de sprite único, e reescrever o arquivo do
+// zero o zera — o que não quebra nada (a cena referencia por fileID 21300000 mais o GUID da
+// textura), mas suja o diff de todos os .meta a cada import. Preservar o valor existente
+// mantém o histórico legível.
+function spriteIdExistente(caminhoDoMeta) {
+  if (!fs.existsSync(caminhoDoMeta)) return '';
+  for (const linha of fs.readFileSync(caminhoDoMeta, 'utf8').split(String.fromCharCode(10))) {
+    if (linha.startsWith('    spriteID: ')) return linha.slice('    spriteID: '.length).trim();
+  }
+  return '';
+}
+
 function textureMeta(unityPath, img, opts) {
   const align = opts.align === undefined ? ALIGN.bottom : opts.align;
   const repeat = !!opts.repeat, fullRect = !!opts.fullRect, slice = opts.slice || null;
@@ -128,7 +140,7 @@ function textureMeta(unityPath, img, opts) {
     '    serializedVersion: 2',
     sprites,
     '    outline: []', '    customData: ', '    physicsShape: []', '    bones: []',
-    '    spriteID: ', '    internalID: 0', '    vertices: []', '    indices: ',
+    '    spriteID: ' + (opts.spriteId || ''), '    internalID: 0', '    vertices: []', '    indices: ',
     '    edges: []', '    weights: []', '    secondaryTextures: []',
     '    spriteCustomMetadata:', '      entries: []',
     names,
@@ -192,6 +204,7 @@ for (const [src, dst] of GROUPS) {
       // que é o que o modo de desenho Tiled do SpriteRenderer exige.
       const tiling = isBackdrop || f === 'ithaca_wall_low_01.png';
       fs.writeFileSync(to + '.meta', textureMeta(unityPath, img, {
+        spriteId: spriteIdExistente(to + '.meta'),
         align: isTileset ? ALIGN.center : ALIGN.bottom,
         repeat: tiling,
         // Malha FullRect é requisito do drawMode Tiled do SpriteRenderer, que é como o
