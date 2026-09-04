@@ -8,7 +8,7 @@ const path = require('path');
 const A = 'Docs/Environment_Ithaca/Architecture';
 const assets = ['ithaca_house_small_01', 'ithaca_column_01', 'ithaca_wall_low_01',
   'ithaca_house_odysseus_01', 'ithaca_palace_01', 'ithaca_warehouse_01',
-  'ithaca_gate_01', 'ithaca_gatepost_01'];
+  'ithaca_gate_01', 'ithaca_gatepost_01', 'ithaca_watchtower_01'];
 const run = (script, ...args) => {
   process.stdout.write(execFileSync(process.execPath, [path.join(__dirname, script), ...args], { encoding: 'utf8' }));
 };
@@ -22,6 +22,7 @@ run('build-house-odysseus.js');   // casa de Odisseu: parede + porta + janelas +
   // é argumento porque é propriedade do asset — medido em 0,50 no palácio e 0,38 no armazém.
   run('build-facade.js', `${A}/_fonte_palacio_pixen.png`, `${A}/ithaca_palace_01.png`, '0.50');
   run('build-facade.js', `${A}/_fonte_armazem_pixen.png`, `${A}/ithaca_warehouse_01.png`, '0.38');
+  run('build-facade.js', `${A}/_fonte_watchtower_pixen.png`, `${A}/ithaca_watchtower_01.png`, '0.38');
 
 console.log('\n== verificando ==');
 run('palette-check.js', ...assets.map(a => `${A}/${a}.png`));
