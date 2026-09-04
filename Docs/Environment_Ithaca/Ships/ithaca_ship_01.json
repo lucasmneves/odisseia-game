@@ -1,0 +1,16 @@
+{
+  "size": [
+    391,
+    257
+  ],
+  "unidades": [
+    9.12,
+    6
+  ],
+  "deck": {
+    "x": 195,
+    "y": 190
+  },
+  "proa": "direita",
+  "nota": "deck.y e a linha da borda; a silhueta do jogador apoia os pes nela. deck.x e o pe do mastro."
+}

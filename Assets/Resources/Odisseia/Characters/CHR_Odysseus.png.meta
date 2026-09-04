@@ -6,155 +6,299 @@ TextureImporter:
       213: 607464041
     second: CHR_Odysseus_Idle_00
   - first:
-      213: 1782047485
+      213: 484640399
     second: CHR_Odysseus_Idle_01
   - first:
-      213: 1763283036
+      213: 1059815052
     second: CHR_Odysseus_Idle_02
   - first:
-      213: 795249733
+      213: 246370751
     second: CHR_Odysseus_Idle_03
   - first:
-      213: 649902474
+      213: 1319836499
     second: CHR_Odysseus_Idle_04
   - first:
-      213: 566493458
+      213: 1313891507
     second: CHR_Odysseus_Idle_05
   - first:
-      213: 141094849
+      213: 1484326039
+    second: CHR_Odysseus_Idle_06
+  - first:
+      213: 1803339939
     second: CHR_Odysseus_Run_00
   - first:
-      213: 1713171963
+      213: 1817484553
     second: CHR_Odysseus_Run_01
   - first:
-      213: 575444720
+      213: 772769931
     second: CHR_Odysseus_Run_02
   - first:
-      213: 1674481888
+      213: 275924365
     second: CHR_Odysseus_Run_03
   - first:
-      213: 1622925304
+      213: 1686115181
     second: CHR_Odysseus_Run_04
   - first:
-      213: 705702391
+      213: 41406001
     second: CHR_Odysseus_Run_05
   - first:
-      213: 1643654183
+      213: 1351966758
     second: CHR_Odysseus_Run_06
   - first:
-      213: 1514026882
+      213: 821716794
     second: CHR_Odysseus_Run_07
   - first:
-      213: 1367323639
+      213: 377960119
     second: CHR_Odysseus_Run_08
   - first:
-      213: 583486694
+      213: 1993289046
     second: CHR_Odysseus_Jump_00
   - first:
-      213: 495345888
+      213: 1884995566
     second: CHR_Odysseus_Jump_01
   - first:
-      213: 1670612473
+      213: 1620962281
     second: CHR_Odysseus_Jump_02
   - first:
-      213: 1003465353
+      213: 967321600
     second: CHR_Odysseus_Jump_03
   - first:
-      213: 116127157
+      213: 1123217441
     second: CHR_Odysseus_Jump_04
   - first:
-      213: 1079991483
+      213: 1034139069
     second: CHR_Odysseus_Jump_05
   - first:
-      213: 451759149
+      213: 1325031974
     second: CHR_Odysseus_Jump_06
   - first:
-      213: 649845428
+      213: 2132786463
+    second: CHR_Odysseus_Jump_07
+  - first:
+      213: 1225113863
+    second: CHR_Odysseus_Fall_00
+  - first:
+      213: 2078799176
+    second: CHR_Odysseus_Fall_01
+  - first:
+      213: 190755656
     second: CHR_Odysseus_AttackLight_00
   - first:
-      213: 822895914
+      213: 1833814497
     second: CHR_Odysseus_AttackLight_01
   - first:
-      213: 1163305595
+      213: 1498865661
     second: CHR_Odysseus_AttackLight_02
   - first:
-      213: 1096512680
+      213: 2012918300
     second: CHR_Odysseus_AttackLight_03
   - first:
-      213: 950511764
+      213: 1189586732
     second: CHR_Odysseus_AttackLight_04
   - first:
-      213: 172164884
+      213: 453431459
     second: CHR_Odysseus_AttackLight_05
   - first:
-      213: 405419390
-    second: CHR_Odysseus_AttackLight_06
-  - first:
-      213: 720073943
+      213: 497377054
     second: CHR_Odysseus_AttackHeavy_00
   - first:
-      213: 307695039
+      213: 605725436
     second: CHR_Odysseus_AttackHeavy_01
   - first:
-      213: 1119790448
+      213: 1798580483
     second: CHR_Odysseus_AttackHeavy_02
   - first:
-      213: 534292612
+      213: 1124672750
     second: CHR_Odysseus_AttackHeavy_03
   - first:
-      213: 1065288788
+      213: 655112417
     second: CHR_Odysseus_AttackHeavy_04
   - first:
-      213: 142009706
+      213: 765986270
     second: CHR_Odysseus_AttackHeavy_05
   - first:
-      213: 1186748672
+      213: 868854811
     second: CHR_Odysseus_AttackHeavy_06
   - first:
-      213: 1079504154
+      213: 1110549738
+    second: CHR_Odysseus_AttackHeavy_07
+  - first:
+      213: 1868528143
+    second: CHR_Odysseus_Shield_00
+  - first:
+      213: 1233608237
+    second: CHR_Odysseus_Shield_01
+  - first:
+      213: 523949785
+    second: CHR_Odysseus_Shield_02
+  - first:
+      213: 2108904496
+    second: CHR_Odysseus_Shield_03
+  - first:
+      213: 770644939
+    second: CHR_Odysseus_Shield_04
+  - first:
+      213: 1689973221
+    second: CHR_Odysseus_Shield_05
+  - first:
+      213: 806144970
+    second: CHR_Odysseus_Bow_00
+  - first:
+      213: 468876869
+    second: CHR_Odysseus_Bow_01
+  - first:
+      213: 1318098162
+    second: CHR_Odysseus_Bow_02
+  - first:
+      213: 1376728280
+    second: CHR_Odysseus_Bow_03
+  - first:
+      213: 785743107
+    second: CHR_Odysseus_Bow_04
+  - first:
+      213: 1359422342
+    second: CHR_Odysseus_Bow_05
+  - first:
+      213: 1156594656
+    second: CHR_Odysseus_Bow_06
+  - first:
+      213: 958558298
+    second: CHR_Odysseus_Bow_07
+  - first:
+      213: 1303998484
     second: CHR_Odysseus_Damage_00
   - first:
-      213: 517101568
+      213: 1412796515
     second: CHR_Odysseus_Damage_01
   - first:
-      213: 1323694241
+      213: 711049571
     second: CHR_Odysseus_Damage_02
   - first:
-      213: 435655424
+      213: 1286222354
     second: CHR_Odysseus_Damage_03
   - first:
-      213: 1720113701
+      213: 1082597521
     second: CHR_Odysseus_Damage_04
   - first:
-      213: 366966250
+      213: 1602927543
     second: CHR_Odysseus_Damage_05
   - first:
-      213: 1304582121
-    second: CHR_Odysseus_Damage_06
-  - first:
-      213: 1093635345
+      213: 1458981133
     second: CHR_Odysseus_Death_00
   - first:
-      213: 1014431266
+      213: 993222119
     second: CHR_Odysseus_Death_01
   - first:
-      213: 813704978
+      213: 683683264
     second: CHR_Odysseus_Death_02
   - first:
-      213: 990536341
+      213: 490961800
     second: CHR_Odysseus_Death_03
   - first:
-      213: 685242245
+      213: 749547720
     second: CHR_Odysseus_Death_04
   - first:
-      213: 229253169
+      213: 513281961
     second: CHR_Odysseus_Death_05
   - first:
-      213: 680144290
+      213: 791561547
     second: CHR_Odysseus_Death_06
   - first:
-      213: 1157022528
+      213: 959908833
     second: CHR_Odysseus_Death_07
+  - first:
+      213: 1527654331
+    second: CHR_Odysseus_Interaction_00
+  - first:
+      213: 2078776295
+    second: CHR_Odysseus_Interaction_01
+  - first:
+      213: 1032412573
+    second: CHR_Odysseus_Interaction_02
+  - first:
+      213: 1864124302
+    second: CHR_Odysseus_Interaction_03
+  - first:
+      213: 1964067833
+    second: CHR_Odysseus_Interaction_04
+  - first:
+      213: 962666838
+    second: CHR_Odysseus_Interaction_05
+  - first:
+      213: 450551868
+    second: CHR_Odysseus_Victory_00
+  - first:
+      213: 440865291
+    second: CHR_Odysseus_Victory_01
+  - first:
+      213: 324539878
+    second: CHR_Odysseus_Victory_02
+  - first:
+      213: 1048316808
+    second: CHR_Odysseus_Victory_03
+  - first:
+      213: 847201489
+    second: CHR_Odysseus_Victory_04
+  - first:
+      213: 1650243805
+    second: CHR_Odysseus_Victory_05
+  - first:
+      213: 1160143097
+    second: CHR_Odysseus_Victory_06
+  - first:
+      213: 1859788866
+    second: CHR_Odysseus_Victory_07
+  - first:
+      213: 2094723887
+    second: CHR_Odysseus_Crouch_00
+  - first:
+      213: 1442023589
+    second: CHR_Odysseus_Crouch_01
+  - first:
+      213: 776373865
+    second: CHR_Odysseus_Crouch_02
+  - first:
+      213: 383762007
+    second: CHR_Odysseus_Crouch_03
+  - first:
+      213: 321317675
+    second: CHR_Odysseus_CrouchWalk_00
+  - first:
+      213: 927023574
+    second: CHR_Odysseus_CrouchWalk_01
+  - first:
+      213: 1913016037
+    second: CHR_Odysseus_CrouchWalk_02
+  - first:
+      213: 163774970
+    second: CHR_Odysseus_Climb_00
+  - first:
+      213: 724071372
+    second: CHR_Odysseus_Climb_01
+  - first:
+      213: 1506322513
+    second: CHR_Odysseus_Climb_02
+  - first:
+      213: 500660896
+    second: CHR_Odysseus_Climb_03
+  - first:
+      213: 1172409022
+    second: CHR_Odysseus_Climb_04
+  - first:
+      213: 1810564787
+    second: CHR_Odysseus_Climb_05
+  - first:
+      213: 1503338674
+    second: CHR_Odysseus_ShieldHold_00
+  - first:
+      213: 645320979
+    second: CHR_Odysseus_ShieldHold_01
+  - first:
+      213: 1569880530
+    second: CHR_Odysseus_ShieldHold_02
+  - first:
+      213: 1979179100
+    second: CHR_Odysseus_ShieldHold_03
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -201,7 +345,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 42.857143
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
@@ -267,18 +411,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 825
-        width: 101
-        height: 150
+        y: 1260
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.514851, y: 0.026667}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f0a47311d13d02683e7214a39bbd1f1
+      spriteID: 2c44a60f5c6fd55f0f78318a39308e7a
       internalID: 607464041
       vertices: []
       indices: 
@@ -288,20 +432,20 @@ TextureImporter:
       name: CHR_Odysseus_Idle_01
       rect:
         serializedVersion: 2
-        x: 101
-        y: 825
-        width: 101
-        height: 150
+        x: 84
+        y: 1260
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.514851, y: 0.026667}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e60136899be27d30ffc4edbf119c5bc
-      internalID: 1782047485
+      spriteID: fe738e3072a4c2a8d74cdeca738bdbda
+      internalID: 484640399
       vertices: []
       indices: 
       edges: []
@@ -310,20 +454,20 @@ TextureImporter:
       name: CHR_Odysseus_Idle_02
       rect:
         serializedVersion: 2
-        x: 202
-        y: 825
-        width: 101
-        height: 150
+        x: 168
+        y: 1260
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.514851, y: 0.026667}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ba2e1192a7e92e5f90b1721982f80c8
-      internalID: 1763283036
+      spriteID: 784c78a69473a3f18863539f379394f6
+      internalID: 1059815052
       vertices: []
       indices: 
       edges: []
@@ -332,20 +476,20 @@ TextureImporter:
       name: CHR_Odysseus_Idle_03
       rect:
         serializedVersion: 2
-        x: 303
-        y: 825
-        width: 101
-        height: 150
+        x: 252
+        y: 1260
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.514851, y: 0.026667}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8eae9cc4daf4804f91066ca05d986b0c
-      internalID: 795249733
+      spriteID: ad7a6dd7d1d46ca28eb9ecc9640c48fe
+      internalID: 246370751
       vertices: []
       indices: 
       edges: []
@@ -354,20 +498,20 @@ TextureImporter:
       name: CHR_Odysseus_Idle_04
       rect:
         serializedVersion: 2
-        x: 404
-        y: 825
-        width: 101
-        height: 150
+        x: 336
+        y: 1260
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.514851, y: 0.026667}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e114955f16bbbda5b05efcea1124025d
-      internalID: 649902474
+      spriteID: 8a3247747e910831f4ec74a38d88f322
+      internalID: 1319836499
       vertices: []
       indices: 
       edges: []
@@ -376,20 +520,42 @@ TextureImporter:
       name: CHR_Odysseus_Idle_05
       rect:
         serializedVersion: 2
-        x: 505
-        y: 825
-        width: 101
-        height: 150
+        x: 420
+        y: 1260
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.514851, y: 0.026667}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22101c0c5eebbe1c30151abc88859eb1
-      internalID: 566493458
+      spriteID: 41e964a0125799127d4b3ddbf85f24f0
+      internalID: 1313891507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Idle_06
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1260
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5aba04d4b9cee1e85b6a3dd7847d726
+      internalID: 1484326039
       vertices: []
       indices: 
       edges: []
@@ -399,19 +565,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 683
-        width: 158
-        height: 142
+        y: 1176
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.424051, y: 0.028169}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77b74b9488468fefeb7d119f195e69d3
-      internalID: 141094849
+      spriteID: 768778bacb8078f4a4b181820f567fde
+      internalID: 1803339939
       vertices: []
       indices: 
       edges: []
@@ -420,20 +586,20 @@ TextureImporter:
       name: CHR_Odysseus_Run_01
       rect:
         serializedVersion: 2
-        x: 158
-        y: 683
-        width: 158
-        height: 142
+        x: 84
+        y: 1176
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.424051, y: 0.028169}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 405ecdc978434d32d023ccb42a2c1d78
-      internalID: 1713171963
+      spriteID: e3dd3afb5e3ca9207b89364c184525a5
+      internalID: 1817484553
       vertices: []
       indices: 
       edges: []
@@ -442,20 +608,20 @@ TextureImporter:
       name: CHR_Odysseus_Run_02
       rect:
         serializedVersion: 2
-        x: 316
-        y: 683
-        width: 158
-        height: 142
+        x: 168
+        y: 1176
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.424051, y: 0.028169}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a101a09b6ae24bfc14a90b750057b96
-      internalID: 575444720
+      spriteID: 1d7a41980c5d074dbb164ec242b79a32
+      internalID: 772769931
       vertices: []
       indices: 
       edges: []
@@ -464,20 +630,20 @@ TextureImporter:
       name: CHR_Odysseus_Run_03
       rect:
         serializedVersion: 2
-        x: 474
-        y: 683
-        width: 158
-        height: 142
+        x: 252
+        y: 1176
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.424051, y: 0.028169}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db17cf424600ca0a7e9463952c5fdffa
-      internalID: 1674481888
+      spriteID: 4caf45dee0cae3d35af82f763df5fc88
+      internalID: 275924365
       vertices: []
       indices: 
       edges: []
@@ -486,20 +652,20 @@ TextureImporter:
       name: CHR_Odysseus_Run_04
       rect:
         serializedVersion: 2
-        x: 632
-        y: 683
-        width: 158
-        height: 142
+        x: 336
+        y: 1176
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.424051, y: 0.028169}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bce5e28795d8ccbc3db7ee5632760deb
-      internalID: 1622925304
+      spriteID: 3ffad121b8146ec91e4db856f072f239
+      internalID: 1686115181
       vertices: []
       indices: 
       edges: []
@@ -508,20 +674,20 @@ TextureImporter:
       name: CHR_Odysseus_Run_05
       rect:
         serializedVersion: 2
-        x: 790
-        y: 683
-        width: 158
-        height: 142
+        x: 420
+        y: 1176
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.424051, y: 0.028169}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03cb9c7c008f0d61ad9628d8c2382887
-      internalID: 705702391
+      spriteID: 3740d991e2515657058a1ce69a08292d
+      internalID: 41406001
       vertices: []
       indices: 
       edges: []
@@ -530,20 +696,20 @@ TextureImporter:
       name: CHR_Odysseus_Run_06
       rect:
         serializedVersion: 2
-        x: 948
-        y: 683
-        width: 158
-        height: 142
+        x: 504
+        y: 1176
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.424051, y: 0.028169}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44fddada17f4986f344c6994268ddb5d
-      internalID: 1643654183
+      spriteID: 563611000bb8ef7278d3fef67e542100
+      internalID: 1351966758
       vertices: []
       indices: 
       edges: []
@@ -552,20 +718,20 @@ TextureImporter:
       name: CHR_Odysseus_Run_07
       rect:
         serializedVersion: 2
-        x: 1106
-        y: 683
-        width: 158
-        height: 142
+        x: 588
+        y: 1176
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.424051, y: 0.028169}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad5044ec8240719573368b933ad5a667
-      internalID: 1514026882
+      spriteID: 0178a3c2ff71fd8a66ca93325e715e12
+      internalID: 821716794
       vertices: []
       indices: 
       edges: []
@@ -574,20 +740,20 @@ TextureImporter:
       name: CHR_Odysseus_Run_08
       rect:
         serializedVersion: 2
-        x: 1264
-        y: 683
-        width: 158
-        height: 142
+        x: 672
+        y: 1176
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.424051, y: 0.028169}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0383e6f883b7754042860acce8d06dae
-      internalID: 1367323639
+      spriteID: 5adaba70bae545e38e53c403e78d36eb
+      internalID: 377960119
       vertices: []
       indices: 
       edges: []
@@ -597,19 +763,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 534
-        width: 160
-        height: 149
+        y: 1092
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.375, y: 0.026846}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f89ee4cb293cfa885330465001d61c13
-      internalID: 583486694
+      spriteID: 00a3939f088040d534a2a472b272beaa
+      internalID: 1993289046
       vertices: []
       indices: 
       edges: []
@@ -618,20 +784,20 @@ TextureImporter:
       name: CHR_Odysseus_Jump_01
       rect:
         serializedVersion: 2
-        x: 160
-        y: 534
-        width: 160
-        height: 149
+        x: 84
+        y: 1092
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.375, y: 0.026846}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff42503674a0bd6c3a3cede282472f04
-      internalID: 495345888
+      spriteID: 715b65e0ab6ae926ae2393770580117a
+      internalID: 1884995566
       vertices: []
       indices: 
       edges: []
@@ -640,20 +806,20 @@ TextureImporter:
       name: CHR_Odysseus_Jump_02
       rect:
         serializedVersion: 2
-        x: 320
-        y: 534
-        width: 160
-        height: 149
+        x: 168
+        y: 1092
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.375, y: 0.026846}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cd3ad492286db7d868e07b66b2a2222
-      internalID: 1670612473
+      spriteID: 140a7fde7a56612acf20949c1c93b10d
+      internalID: 1620962281
       vertices: []
       indices: 
       edges: []
@@ -662,20 +828,20 @@ TextureImporter:
       name: CHR_Odysseus_Jump_03
       rect:
         serializedVersion: 2
-        x: 480
-        y: 534
-        width: 160
-        height: 149
+        x: 252
+        y: 1092
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.375, y: 0.026846}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb8b023615df7d33ab5696a33f89f898
-      internalID: 1003465353
+      spriteID: bde79da4b182a4ca5f590390e8042d3a
+      internalID: 967321600
       vertices: []
       indices: 
       edges: []
@@ -684,20 +850,20 @@ TextureImporter:
       name: CHR_Odysseus_Jump_04
       rect:
         serializedVersion: 2
-        x: 640
-        y: 534
-        width: 160
-        height: 149
+        x: 336
+        y: 1092
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.375, y: 0.026846}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66ddbaba4f9181cc7c474b8cf79c28ff
-      internalID: 116127157
+      spriteID: 45e0f133411bd4b9d305b35218b6e0dc
+      internalID: 1123217441
       vertices: []
       indices: 
       edges: []
@@ -706,20 +872,20 @@ TextureImporter:
       name: CHR_Odysseus_Jump_05
       rect:
         serializedVersion: 2
-        x: 800
-        y: 534
-        width: 160
-        height: 149
+        x: 420
+        y: 1092
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.375, y: 0.026846}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1761b81dddfa2b5ddcb99cff117d034
-      internalID: 1079991483
+      spriteID: bf4e17fa77c51c1ce9c9810455f51616
+      internalID: 1034139069
       vertices: []
       indices: 
       edges: []
@@ -728,20 +894,86 @@ TextureImporter:
       name: CHR_Odysseus_Jump_06
       rect:
         serializedVersion: 2
-        x: 960
-        y: 534
-        width: 160
-        height: 149
+        x: 504
+        y: 1092
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.375, y: 0.026846}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a5aa40e7c8f89ac2158ff9b09be8902
-      internalID: 451759149
+      spriteID: ac9d03aaca7e6bcf9025d384680bb00e
+      internalID: 1325031974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Jump_07
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 1092
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d5f4dd1622e38e03d8f7be6fa57f9e5
+      internalID: 2132786463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Fall_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1008
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6275bc6155224f0d8e6c076857aa24b5
+      internalID: 1225113863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Fall_01
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1008
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d00d552c619bb6e9ed876768a2a3d3
+      internalID: 2078799176
       vertices: []
       indices: 
       edges: []
@@ -751,19 +983,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 396
-        width: 206
-        height: 138
+        y: 924
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.5, y: 0.028986}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8e9805217135e0156d482306cdcede4
-      internalID: 649845428
+      spriteID: 81d4fe3b71e30376fc430b3fd76bdac0
+      internalID: 190755656
       vertices: []
       indices: 
       edges: []
@@ -772,20 +1004,20 @@ TextureImporter:
       name: CHR_Odysseus_AttackLight_01
       rect:
         serializedVersion: 2
-        x: 206
-        y: 396
-        width: 206
-        height: 138
+        x: 84
+        y: 924
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.5, y: 0.028986}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b0487f4187ec494314c23e74a75abc0
-      internalID: 822895914
+      spriteID: 6fd6544aa8601c4271589bda47381f19
+      internalID: 1833814497
       vertices: []
       indices: 
       edges: []
@@ -794,20 +1026,20 @@ TextureImporter:
       name: CHR_Odysseus_AttackLight_02
       rect:
         serializedVersion: 2
-        x: 412
-        y: 396
-        width: 206
-        height: 138
+        x: 168
+        y: 924
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.5, y: 0.028986}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e81fa5a632855df8680b81d46b9f102
-      internalID: 1163305595
+      spriteID: 0c892f1a82be7d40caf812c043c87f9a
+      internalID: 1498865661
       vertices: []
       indices: 
       edges: []
@@ -816,20 +1048,20 @@ TextureImporter:
       name: CHR_Odysseus_AttackLight_03
       rect:
         serializedVersion: 2
-        x: 618
-        y: 396
-        width: 206
-        height: 138
+        x: 252
+        y: 924
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.5, y: 0.028986}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8052caa03cd72a01528e5e7762fd75b
-      internalID: 1096512680
+      spriteID: 9bec7c0727f5759ccf0aa3a126a365c2
+      internalID: 2012918300
       vertices: []
       indices: 
       edges: []
@@ -838,20 +1070,20 @@ TextureImporter:
       name: CHR_Odysseus_AttackLight_04
       rect:
         serializedVersion: 2
-        x: 824
-        y: 396
-        width: 206
-        height: 138
+        x: 336
+        y: 924
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.5, y: 0.028986}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c883604731393e3135a30e5819b3b25
-      internalID: 950511764
+      spriteID: 8e90d43e77abf54ec31a1763774dcf80
+      internalID: 1189586732
       vertices: []
       indices: 
       edges: []
@@ -860,42 +1092,20 @@ TextureImporter:
       name: CHR_Odysseus_AttackLight_05
       rect:
         serializedVersion: 2
-        x: 1030
-        y: 396
-        width: 206
-        height: 138
+        x: 420
+        y: 924
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.5, y: 0.028986}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e4bd98f44ff2620021f3237668e98ea
-      internalID: 172164884
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CHR_Odysseus_AttackLight_06
-      rect:
-        serializedVersion: 2
-        x: 1236
-        y: 396
-        width: 206
-        height: 138
-      alignment: 9
-      pivot: {x: 0.5, y: 0.028986}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e5222b6f9c2bc820f0d090de9cc82fc
-      internalID: 405419390
+      spriteID: 2034d05040d3865bbe14e3c63f506103
+      internalID: 453431459
       vertices: []
       indices: 
       edges: []
@@ -905,19 +1115,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 267
-        width: 214
-        height: 129
+        y: 840
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.383178, y: 0.031008}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: adbad99ddb18d003b043faa68d4e9c8e
-      internalID: 720073943
+      spriteID: 4f65252c8a3a90147ea9d893774474b8
+      internalID: 497377054
       vertices: []
       indices: 
       edges: []
@@ -926,20 +1136,20 @@ TextureImporter:
       name: CHR_Odysseus_AttackHeavy_01
       rect:
         serializedVersion: 2
-        x: 214
-        y: 267
-        width: 214
-        height: 129
+        x: 84
+        y: 840
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.383178, y: 0.031008}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 019d1ccb78ebe880d3c297e0e9f1e3fa
-      internalID: 307695039
+      spriteID: 6c27971b622647c32acc3fbacce18383
+      internalID: 605725436
       vertices: []
       indices: 
       edges: []
@@ -948,20 +1158,20 @@ TextureImporter:
       name: CHR_Odysseus_AttackHeavy_02
       rect:
         serializedVersion: 2
-        x: 428
-        y: 267
-        width: 214
-        height: 129
+        x: 168
+        y: 840
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.383178, y: 0.031008}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfb1190892cfa400af047e4d154ca686
-      internalID: 1119790448
+      spriteID: 076688149da153bb5157d7b4a68c6a0c
+      internalID: 1798580483
       vertices: []
       indices: 
       edges: []
@@ -970,20 +1180,20 @@ TextureImporter:
       name: CHR_Odysseus_AttackHeavy_03
       rect:
         serializedVersion: 2
-        x: 642
-        y: 267
-        width: 214
-        height: 129
+        x: 252
+        y: 840
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.383178, y: 0.031008}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a360286eeb75314389aefcfdaaf10836
-      internalID: 534292612
+      spriteID: c064526efc5cc15f959e17059b25e70a
+      internalID: 1124672750
       vertices: []
       indices: 
       edges: []
@@ -992,20 +1202,20 @@ TextureImporter:
       name: CHR_Odysseus_AttackHeavy_04
       rect:
         serializedVersion: 2
-        x: 856
-        y: 267
-        width: 214
-        height: 129
+        x: 336
+        y: 840
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.383178, y: 0.031008}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 594805364a92d1fb353e65980c543ca5
-      internalID: 1065288788
+      spriteID: 9958bccebc93fcf91b6d23eb3f740554
+      internalID: 655112417
       vertices: []
       indices: 
       edges: []
@@ -1014,20 +1224,20 @@ TextureImporter:
       name: CHR_Odysseus_AttackHeavy_05
       rect:
         serializedVersion: 2
-        x: 1070
-        y: 267
-        width: 214
-        height: 129
+        x: 420
+        y: 840
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.383178, y: 0.031008}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4416e9f53492f653784489970ceae342
-      internalID: 142009706
+      spriteID: 9243c9ba61999f4ffdf036ff4e55d421
+      internalID: 765986270
       vertices: []
       indices: 
       edges: []
@@ -1036,20 +1246,350 @@ TextureImporter:
       name: CHR_Odysseus_AttackHeavy_06
       rect:
         serializedVersion: 2
-        x: 1284
-        y: 267
-        width: 214
-        height: 129
+        x: 504
+        y: 840
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.383178, y: 0.031008}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a87094c8d27c43489e1ba71afee84bde
-      internalID: 1186748672
+      spriteID: 62f2414f12c46b577f87d8e2c17509ea
+      internalID: 868854811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_AttackHeavy_07
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 840
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a920742a771fac67cdf4b99f57b4a5d
+      internalID: 1110549738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Shield_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 756
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04a530e92603f4ad49818049af8a51c6
+      internalID: 1868528143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Shield_01
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 756
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd2afd82fccec56e36bc9ff0b206cd3
+      internalID: 1233608237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Shield_02
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 756
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6990a2623a24d62ce247b138a236891
+      internalID: 523949785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Shield_03
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 756
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05ad4f6751cc0a41a346ad79657b66ba
+      internalID: 2108904496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Shield_04
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 756
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5eac94ac68b084e7a69942d192828ab
+      internalID: 770644939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Shield_05
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 756
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb3375c646d49b8e0d06e0516f75c051
+      internalID: 1689973221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Bow_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 672
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8d1a1901ff77c43c745ff3e4eb91e60
+      internalID: 806144970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Bow_01
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 672
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 246679d17e6203e77ba332dd3086d3e8
+      internalID: 468876869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Bow_02
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 672
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb33952ded065108e6ac0fe8fee87bf
+      internalID: 1318098162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Bow_03
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 672
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a9a6a36646ffa4c0f2ea32cdd7aa98
+      internalID: 1376728280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Bow_04
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 672
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb6ee0ddce2893fe96eec28149209fae
+      internalID: 785743107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Bow_05
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 672
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d16f97caf9c6479ea2dfe5bd1f554617
+      internalID: 1359422342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Bow_06
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 672
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf47ac984ed1855968dc1caf91e33128
+      internalID: 1156594656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Bow_07
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 672
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6267d86af4deb3164254f1b30820b67
+      internalID: 958558298
       vertices: []
       indices: 
       edges: []
@@ -1059,19 +1599,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 132
-        width: 147
-        height: 135
+        y: 588
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.52381, y: 0.02963}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55216bfb8df8c755c5f58ab147494a37
-      internalID: 1079504154
+      spriteID: 1bab8d7a82f89ba89014a553fc61fd1f
+      internalID: 1303998484
       vertices: []
       indices: 
       edges: []
@@ -1080,20 +1620,20 @@ TextureImporter:
       name: CHR_Odysseus_Damage_01
       rect:
         serializedVersion: 2
-        x: 147
-        y: 132
-        width: 147
-        height: 135
+        x: 84
+        y: 588
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.52381, y: 0.02963}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a1b970052e2fcaa38a3d0dcc5ed128f
-      internalID: 517101568
+      spriteID: dac3efc2a01af0caa61eea107ebacf45
+      internalID: 1412796515
       vertices: []
       indices: 
       edges: []
@@ -1102,20 +1642,20 @@ TextureImporter:
       name: CHR_Odysseus_Damage_02
       rect:
         serializedVersion: 2
-        x: 294
-        y: 132
-        width: 147
-        height: 135
+        x: 168
+        y: 588
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.52381, y: 0.02963}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6a2559dff95817ab676ed36bd921dcc
-      internalID: 1323694241
+      spriteID: c3a85519c90d12599dee5fdda15391cd
+      internalID: 711049571
       vertices: []
       indices: 
       edges: []
@@ -1124,20 +1664,20 @@ TextureImporter:
       name: CHR_Odysseus_Damage_03
       rect:
         serializedVersion: 2
-        x: 441
-        y: 132
-        width: 147
-        height: 135
+        x: 252
+        y: 588
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.52381, y: 0.02963}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ddde9203ce173dcba290657002f5e1a
-      internalID: 435655424
+      spriteID: c4e5e36c6247aa18388a24edaeb1f381
+      internalID: 1286222354
       vertices: []
       indices: 
       edges: []
@@ -1146,20 +1686,20 @@ TextureImporter:
       name: CHR_Odysseus_Damage_04
       rect:
         serializedVersion: 2
-        x: 588
-        y: 132
-        width: 147
-        height: 135
+        x: 336
+        y: 588
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.52381, y: 0.02963}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e65dce4a6cb80e2eec11046154c267e1
-      internalID: 1720113701
+      spriteID: d456731f3d22f639464648acc105fe06
+      internalID: 1082597521
       vertices: []
       indices: 
       edges: []
@@ -1168,42 +1708,20 @@ TextureImporter:
       name: CHR_Odysseus_Damage_05
       rect:
         serializedVersion: 2
-        x: 735
-        y: 132
-        width: 147
-        height: 135
+        x: 420
+        y: 588
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.52381, y: 0.02963}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfa4ce79e2f0d21dbf2d6bbdeb807479
-      internalID: 366966250
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CHR_Odysseus_Damage_06
-      rect:
-        serializedVersion: 2
-        x: 882
-        y: 132
-        width: 147
-        height: 135
-      alignment: 9
-      pivot: {x: 0.52381, y: 0.02963}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2b9e8d47821a1677b55dd0b9be0f10d
-      internalID: 1304582121
+      spriteID: fa942bf3a3571f13c59f01706c4c4676
+      internalID: 1602927543
       vertices: []
       indices: 
       edges: []
@@ -1213,19 +1731,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 231
-        height: 132
+        y: 504
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.562771, y: 0.030303}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed5accd7eff070791f6106a945f35d03
-      internalID: 1093635345
+      spriteID: b0c5951cd01f525a685259ebf9e7fd95
+      internalID: 1458981133
       vertices: []
       indices: 
       edges: []
@@ -1234,20 +1752,20 @@ TextureImporter:
       name: CHR_Odysseus_Death_01
       rect:
         serializedVersion: 2
-        x: 231
-        y: 0
-        width: 231
-        height: 132
+        x: 84
+        y: 504
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.562771, y: 0.030303}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0598236d9c8f39b41c7a65d85ed2054
-      internalID: 1014431266
+      spriteID: b66192edbfb3418f825640dbc56f9b81
+      internalID: 993222119
       vertices: []
       indices: 
       edges: []
@@ -1256,20 +1774,20 @@ TextureImporter:
       name: CHR_Odysseus_Death_02
       rect:
         serializedVersion: 2
-        x: 462
-        y: 0
-        width: 231
-        height: 132
+        x: 168
+        y: 504
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.562771, y: 0.030303}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f314d93b2122ca2db675f308e28eaa7
-      internalID: 813704978
+      spriteID: d4cb60d7287222c81e9299123f6ab397
+      internalID: 683683264
       vertices: []
       indices: 
       edges: []
@@ -1278,20 +1796,20 @@ TextureImporter:
       name: CHR_Odysseus_Death_03
       rect:
         serializedVersion: 2
-        x: 693
-        y: 0
-        width: 231
-        height: 132
+        x: 252
+        y: 504
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.562771, y: 0.030303}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6bfe888cf6b1c86849f07a8c526b991
-      internalID: 990536341
+      spriteID: d7896591cef4f10531fdaa4222939795
+      internalID: 490961800
       vertices: []
       indices: 
       edges: []
@@ -1300,20 +1818,20 @@ TextureImporter:
       name: CHR_Odysseus_Death_04
       rect:
         serializedVersion: 2
-        x: 924
-        y: 0
-        width: 231
-        height: 132
+        x: 336
+        y: 504
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.562771, y: 0.030303}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90b5bd19292a979c23124282e9b5778b
-      internalID: 685242245
+      spriteID: bd97c426239ad3426fa571f1ffe5f1d8
+      internalID: 749547720
       vertices: []
       indices: 
       edges: []
@@ -1322,20 +1840,20 @@ TextureImporter:
       name: CHR_Odysseus_Death_05
       rect:
         serializedVersion: 2
-        x: 1155
-        y: 0
-        width: 231
-        height: 132
+        x: 420
+        y: 504
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.562771, y: 0.030303}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4823a6283b8de12f1fe0e294b6951c2
-      internalID: 229253169
+      spriteID: 28353bfe1445d1418f40a2a4e90a03a3
+      internalID: 513281961
       vertices: []
       indices: 
       edges: []
@@ -1344,20 +1862,20 @@ TextureImporter:
       name: CHR_Odysseus_Death_06
       rect:
         serializedVersion: 2
-        x: 1386
-        y: 0
-        width: 231
-        height: 132
+        x: 504
+        y: 504
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.562771, y: 0.030303}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54f6f1fd48a4dc21053e8020927ff4ef
-      internalID: 680144290
+      spriteID: f7b628b1786609ae45f1ac8cafa9d306
+      internalID: 791561547
       vertices: []
       indices: 
       edges: []
@@ -1366,20 +1884,702 @@ TextureImporter:
       name: CHR_Odysseus_Death_07
       rect:
         serializedVersion: 2
-        x: 1617
-        y: 0
-        width: 231
-        height: 132
+        x: 588
+        y: 504
+        width: 84
+        height: 84
       alignment: 9
-      pivot: {x: 0.562771, y: 0.030303}
+      pivot: {x: 0.5, y: 0.142857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bf20cb9e9daf6c3512efe51ab50cfbc
-      internalID: 1157022528
+      spriteID: c54e16f8f2c56c8bebef34684cbf5dcb
+      internalID: 959908833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Interaction_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 420
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d798218a7cb7dcac5a7e2ced19c0ba70
+      internalID: 1527654331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Interaction_01
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 420
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa121323b2d3039434b418178bf16ba
+      internalID: 2078776295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Interaction_02
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 420
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc4140e3efc9fc9a6659af16790b09bd
+      internalID: 1032412573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Interaction_03
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 420
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad41c449b2330e466a37280124423499
+      internalID: 1864124302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Interaction_04
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 420
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4af2217b7e8eb07bcdf98b4fb957e6c
+      internalID: 1964067833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Interaction_05
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 420
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b304dadfa4fa92c7fa1d8aa32b05fa9b
+      internalID: 962666838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Victory_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cfaf178afa1026c6d607c4a5c9aaecd
+      internalID: 450551868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Victory_01
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 336
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfcab427ba2c7aaf75080bf85eee77b0
+      internalID: 440865291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Victory_02
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 336
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd2beb76be3106f7b3730f604bfeb2e4
+      internalID: 324539878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Victory_03
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 336
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ab40bb64945a16c4acc471c279c0b4
+      internalID: 1048316808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Victory_04
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 336
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56f74d1322badb8a63583a8c023ce279
+      internalID: 847201489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Victory_05
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 336
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68d4ab4754c4e37ada5de903e31601f7
+      internalID: 1650243805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Victory_06
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 336
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ae168375f4e60404b9fb6924f935193
+      internalID: 1160143097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Victory_07
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 336
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3dfb0590385fc7fb2649ddb17e345fe
+      internalID: 1859788866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Crouch_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 252
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f57ba5013e01c7d4933000b139d79a0
+      internalID: 2094723887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Crouch_01
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 252
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f65400104d32b530af401785fbc6aaf
+      internalID: 1442023589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Crouch_02
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 252
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 903fb61aaabc2665015661c888a49f77
+      internalID: 776373865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Crouch_03
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 252
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c51b67aab12ea1b38f9c184fdac870ec
+      internalID: 383762007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_CrouchWalk_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 168
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50fe1c0db61cd334b0c80863c19d08d8
+      internalID: 321317675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_CrouchWalk_01
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 168
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a0f954e5d300f16f1b8ba3f1b2e6e5
+      internalID: 927023574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_CrouchWalk_02
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 168
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9fd39c11f7da6d71b9b198e5e873179
+      internalID: 1913016037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Climb_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 84
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0631ddda77c7b29ceaedaddb4688ea23
+      internalID: 163774970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Climb_01
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 84
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ade92345668c1b8a28df2a14b24a20c5
+      internalID: 724071372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Climb_02
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 84
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103310e99efd01c8cf61e18857efdd55
+      internalID: 1506322513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Climb_03
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 84
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 598476596039950af983c8fea429b770
+      internalID: 500660896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Climb_04
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 84
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96cc5935570738a79c2fa073c2f25174
+      internalID: 1172409022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_Climb_05
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 84
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e1fd26972ded2e14cf2054c66d9058b
+      internalID: 1810564787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_ShieldHold_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c8a1e1df4c95281b99f78513e05bce9
+      internalID: 1503338674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_ShieldHold_01
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f4c5bf8096fbb0be9fbdf9351a18f1
+      internalID: 645320979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_ShieldHold_02
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcece9f86ec4295ea235128e44d59020
+      internalID: 1569880530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Odysseus_ShieldHold_03
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 0
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7dba34a35ea9d34111329a7deb6eb9f
+      internalID: 1979179100
       vertices: []
       indices: 
       edges: []
@@ -1398,57 +2598,105 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CHR_Odysseus_AttackHeavy_00: 720073943
-      CHR_Odysseus_AttackHeavy_01: 307695039
-      CHR_Odysseus_AttackHeavy_02: 1119790448
-      CHR_Odysseus_AttackHeavy_03: 534292612
-      CHR_Odysseus_AttackHeavy_04: 1065288788
-      CHR_Odysseus_AttackHeavy_05: 142009706
-      CHR_Odysseus_AttackHeavy_06: 1186748672
-      CHR_Odysseus_AttackLight_00: 649845428
-      CHR_Odysseus_AttackLight_01: 822895914
-      CHR_Odysseus_AttackLight_02: 1163305595
-      CHR_Odysseus_AttackLight_03: 1096512680
-      CHR_Odysseus_AttackLight_04: 950511764
-      CHR_Odysseus_AttackLight_05: 172164884
-      CHR_Odysseus_AttackLight_06: 405419390
-      CHR_Odysseus_Damage_00: 1079504154
-      CHR_Odysseus_Damage_01: 517101568
-      CHR_Odysseus_Damage_02: 1323694241
-      CHR_Odysseus_Damage_03: 435655424
-      CHR_Odysseus_Damage_04: 1720113701
-      CHR_Odysseus_Damage_05: 366966250
-      CHR_Odysseus_Damage_06: 1304582121
-      CHR_Odysseus_Death_00: 1093635345
-      CHR_Odysseus_Death_01: 1014431266
-      CHR_Odysseus_Death_02: 813704978
-      CHR_Odysseus_Death_03: 990536341
-      CHR_Odysseus_Death_04: 685242245
-      CHR_Odysseus_Death_05: 229253169
-      CHR_Odysseus_Death_06: 680144290
-      CHR_Odysseus_Death_07: 1157022528
       CHR_Odysseus_Idle_00: 607464041
-      CHR_Odysseus_Idle_01: 1782047485
-      CHR_Odysseus_Idle_02: 1763283036
-      CHR_Odysseus_Idle_03: 795249733
-      CHR_Odysseus_Idle_04: 649902474
-      CHR_Odysseus_Idle_05: 566493458
-      CHR_Odysseus_Jump_00: 583486694
-      CHR_Odysseus_Jump_01: 495345888
-      CHR_Odysseus_Jump_02: 1670612473
-      CHR_Odysseus_Jump_03: 1003465353
-      CHR_Odysseus_Jump_04: 116127157
-      CHR_Odysseus_Jump_05: 1079991483
-      CHR_Odysseus_Jump_06: 451759149
-      CHR_Odysseus_Run_00: 141094849
-      CHR_Odysseus_Run_01: 1713171963
-      CHR_Odysseus_Run_02: 575444720
-      CHR_Odysseus_Run_03: 1674481888
-      CHR_Odysseus_Run_04: 1622925304
-      CHR_Odysseus_Run_05: 705702391
-      CHR_Odysseus_Run_06: 1643654183
-      CHR_Odysseus_Run_07: 1514026882
-      CHR_Odysseus_Run_08: 1367323639
+      CHR_Odysseus_Idle_01: 484640399
+      CHR_Odysseus_Idle_02: 1059815052
+      CHR_Odysseus_Idle_03: 246370751
+      CHR_Odysseus_Idle_04: 1319836499
+      CHR_Odysseus_Idle_05: 1313891507
+      CHR_Odysseus_Idle_06: 1484326039
+      CHR_Odysseus_Run_00: 1803339939
+      CHR_Odysseus_Run_01: 1817484553
+      CHR_Odysseus_Run_02: 772769931
+      CHR_Odysseus_Run_03: 275924365
+      CHR_Odysseus_Run_04: 1686115181
+      CHR_Odysseus_Run_05: 41406001
+      CHR_Odysseus_Run_06: 1351966758
+      CHR_Odysseus_Run_07: 821716794
+      CHR_Odysseus_Run_08: 377960119
+      CHR_Odysseus_Jump_00: 1993289046
+      CHR_Odysseus_Jump_01: 1884995566
+      CHR_Odysseus_Jump_02: 1620962281
+      CHR_Odysseus_Jump_03: 967321600
+      CHR_Odysseus_Jump_04: 1123217441
+      CHR_Odysseus_Jump_05: 1034139069
+      CHR_Odysseus_Jump_06: 1325031974
+      CHR_Odysseus_Jump_07: 2132786463
+      CHR_Odysseus_Fall_00: 1225113863
+      CHR_Odysseus_Fall_01: 2078799176
+      CHR_Odysseus_AttackLight_00: 190755656
+      CHR_Odysseus_AttackLight_01: 1833814497
+      CHR_Odysseus_AttackLight_02: 1498865661
+      CHR_Odysseus_AttackLight_03: 2012918300
+      CHR_Odysseus_AttackLight_04: 1189586732
+      CHR_Odysseus_AttackLight_05: 453431459
+      CHR_Odysseus_AttackHeavy_00: 497377054
+      CHR_Odysseus_AttackHeavy_01: 605725436
+      CHR_Odysseus_AttackHeavy_02: 1798580483
+      CHR_Odysseus_AttackHeavy_03: 1124672750
+      CHR_Odysseus_AttackHeavy_04: 655112417
+      CHR_Odysseus_AttackHeavy_05: 765986270
+      CHR_Odysseus_AttackHeavy_06: 868854811
+      CHR_Odysseus_AttackHeavy_07: 1110549738
+      CHR_Odysseus_Shield_00: 1868528143
+      CHR_Odysseus_Shield_01: 1233608237
+      CHR_Odysseus_Shield_02: 523949785
+      CHR_Odysseus_Shield_03: 2108904496
+      CHR_Odysseus_Shield_04: 770644939
+      CHR_Odysseus_Shield_05: 1689973221
+      CHR_Odysseus_Bow_00: 806144970
+      CHR_Odysseus_Bow_01: 468876869
+      CHR_Odysseus_Bow_02: 1318098162
+      CHR_Odysseus_Bow_03: 1376728280
+      CHR_Odysseus_Bow_04: 785743107
+      CHR_Odysseus_Bow_05: 1359422342
+      CHR_Odysseus_Bow_06: 1156594656
+      CHR_Odysseus_Bow_07: 958558298
+      CHR_Odysseus_Damage_00: 1303998484
+      CHR_Odysseus_Damage_01: 1412796515
+      CHR_Odysseus_Damage_02: 711049571
+      CHR_Odysseus_Damage_03: 1286222354
+      CHR_Odysseus_Damage_04: 1082597521
+      CHR_Odysseus_Damage_05: 1602927543
+      CHR_Odysseus_Death_00: 1458981133
+      CHR_Odysseus_Death_01: 993222119
+      CHR_Odysseus_Death_02: 683683264
+      CHR_Odysseus_Death_03: 490961800
+      CHR_Odysseus_Death_04: 749547720
+      CHR_Odysseus_Death_05: 513281961
+      CHR_Odysseus_Death_06: 791561547
+      CHR_Odysseus_Death_07: 959908833
+      CHR_Odysseus_Interaction_00: 1527654331
+      CHR_Odysseus_Interaction_01: 2078776295
+      CHR_Odysseus_Interaction_02: 1032412573
+      CHR_Odysseus_Interaction_03: 1864124302
+      CHR_Odysseus_Interaction_04: 1964067833
+      CHR_Odysseus_Interaction_05: 962666838
+      CHR_Odysseus_Victory_00: 450551868
+      CHR_Odysseus_Victory_01: 440865291
+      CHR_Odysseus_Victory_02: 324539878
+      CHR_Odysseus_Victory_03: 1048316808
+      CHR_Odysseus_Victory_04: 847201489
+      CHR_Odysseus_Victory_05: 1650243805
+      CHR_Odysseus_Victory_06: 1160143097
+      CHR_Odysseus_Victory_07: 1859788866
+      CHR_Odysseus_Crouch_00: 2094723887
+      CHR_Odysseus_Crouch_01: 1442023589
+      CHR_Odysseus_Crouch_02: 776373865
+      CHR_Odysseus_Crouch_03: 383762007
+      CHR_Odysseus_CrouchWalk_00: 321317675
+      CHR_Odysseus_CrouchWalk_01: 927023574
+      CHR_Odysseus_CrouchWalk_02: 1913016037
+      CHR_Odysseus_Climb_00: 163774970
+      CHR_Odysseus_Climb_01: 724071372
+      CHR_Odysseus_Climb_02: 1506322513
+      CHR_Odysseus_Climb_03: 500660896
+      CHR_Odysseus_Climb_04: 1172409022
+      CHR_Odysseus_Climb_05: 1810564787
+      CHR_Odysseus_ShieldHold_00: 1503338674
+      CHR_Odysseus_ShieldHold_01: 645320979
+      CHR_Odysseus_ShieldHold_02: 1569880530
+      CHR_Odysseus_ShieldHold_03: 1979179100
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

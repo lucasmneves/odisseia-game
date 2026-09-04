@@ -44,6 +44,12 @@ namespace Odisseia.Levels
 
         private InputAction interactAction;
         private bool playerInRange;
+
+        /// <summary>
+        /// Guardado na entrada do gatilho para tocar a animação de interagir sem ter que
+        /// procurar o jogador na cena no meio da interação.
+        /// </summary>
+        private PlayerAnimator playerAnimator;
         private bool used;
         private bool busy;
 
@@ -89,6 +95,7 @@ namespace Odisseia.Levels
             }
 
             playerInRange = true;
+            playerAnimator = other.GetComponentInParent<PlayerAnimator>();
 
             // Fica na tela enquanto o jogador estiver perto: uma dica que some sozinha
             // deixa o ponto parecendo cenário.
@@ -129,6 +136,8 @@ namespace Odisseia.Levels
 
             used = true;
             busy = true;
+
+            playerAnimator?.PlayInteraction();
 
             if (doneRenderer != null)
             {

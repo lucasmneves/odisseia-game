@@ -1,0 +1,10 @@
+{
+  "description": "ancient Greek Homeric war galley seen from directly beside it, strict flat side profile like a technical elevation drawing. Long low dark wooden hull with a high curved upswept stern post and a sharp pointed prow at the waterline, a single row of round oar ports along the planking, and a painted eye near the bow. Isolated game asset cut out on a fully transparent background, only the ship hull.",
+  "width": 400,
+  "height": 160,
+  "no_background": true,
+  "view": "side",
+  "direction": "east",
+  "outline": "single color black outline",
+  "detail": "medium detail"
+}

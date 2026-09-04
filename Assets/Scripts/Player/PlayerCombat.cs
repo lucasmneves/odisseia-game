@@ -8,6 +8,12 @@ namespace Odisseia.Player
 {
     /// <summary>
     /// Ataque de espada de Odisseu: área circular no AttackPoint, com cooldown.
+    ///
+    /// Dois golpes: o normal e, quando o jogador encadeia um segundo dentro da janela de
+    /// combo, o forte — mais dano, alcance maior e cooldown mais longo. Sai pela mesma
+    /// tecla de propósito: o golpe forte existia só como animação na folha, sem nenhuma
+    /// forma de chegar até ele, e uma tecla nova seria mais uma coisa para o jogador
+    /// aprender por um movimento que a sequência já entrega naturalmente.
     /// </summary>
     public class PlayerCombat : MonoBehaviour
     {
@@ -30,10 +36,27 @@ namespace Odisseia.Player
         [SerializeField] private float cooldown = 0.4f;
         [SerializeField] private LayerMask targetLayer;
 
+        [Header("Golpe forte")]
+        [Tooltip("Um segundo golpe dentro desta janela sai como golpe forte. Zero desliga a sequência.")]
+        [SerializeField] private float comboWindow = 0.8f;
+        [SerializeField] private int heavyDamage = 35;
+        [SerializeField] private float heavyRadius = 0.85f;
+        [Tooltip("Multiplicador de cooldown do golpe forte — ele é mais lento de propósito.")]
+        [SerializeField] private float heavyCooldownScale = 1.5f;
+
         private InputActionMap playerMap;
         private InputAction attackAction;
         private PlayerShield shield;
         private float cooldownTimer;
+        private float comboTimer;
+
+        /// <summary>
+        /// Verdadeiro se o golpe que acabou de sair foi o forte. O
+        /// <see cref="PlayerAnimator"/> lê isto no <c>Attacked</c> para escolher entre
+        /// AttackLight e AttackHeavy — assim o evento continua com a mesma assinatura e
+        /// quem só conta golpes (o TrainingCourse) não precisa saber da diferença.
+        /// </summary>
+        public bool LastAttackWasHeavy { get; private set; }
 
         private void Awake()
         {
@@ -68,6 +91,11 @@ namespace Odisseia.Player
             {
                 cooldownTimer -= Time.deltaTime;
             }
+
+            if (comboTimer > 0f)
+            {
+                comboTimer -= Time.deltaTime;
+            }
         }
 
         private void OnAttackPerformed(InputAction.CallbackContext context)
@@ -88,7 +116,16 @@ namespace Odisseia.Player
                 return;
             }
 
-            cooldownTimer = cooldown;
+            // Encadear: o segundo golpe dentro da janela sai forte. Depois dele a
+            // corrente zera, senão o jogador ficaria só martelando golpes fortes.
+            bool forte = comboTimer > 0f;
+            LastAttackWasHeavy = forte;
+            comboTimer = forte ? 0f : comboWindow;
+
+            cooldownTimer = forte ? cooldown * heavyCooldownScale : cooldown;
+            float raio = forte ? heavyRadius : attackRadius;
+            int dano = forte ? heavyDamage : damage;
+
             Attacked?.Invoke();
 
             // Feedback do golpe em si (sai mesmo errando o alvo — o jogador precisa
@@ -97,14 +134,14 @@ namespace Odisseia.Player
             VfxBurst.Spawn(sprite, attackPoint.position, new Color(0.95f, 0.95f, 1f), 4, 2f, 0.2f, 0.1f, 2f);
             AudioManager.PlayAttack();
 
-            var hits = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius, targetLayer);
+            var hits = Physics2D.OverlapCircleAll(attackPoint.position, raio, targetLayer);
             bool hitSomething = false;
 
             foreach (var hit in hits)
             {
                 if (hit.TryGetComponent(out HealthSystem health))
                 {
-                    health.TakeDamage(damage, new DamageInfo(attackPoint.position));
+                    health.TakeDamage(dano, new DamageInfo(attackPoint.position));
                     hitSomething = true;
                 }
             }

@@ -53,6 +53,7 @@ namespace Odisseia.Levels
 
             triggered = true;
             levelManager?.CompleteLevel();
+            TocarVitoria();
 
             if (outroDialogue != null)
             {
@@ -64,6 +65,32 @@ namespace Odisseia.Levels
             {
                 GoToNextScene();
             }
+        }
+
+        /// <summary>
+        /// Toca a pose de vitória no jogador.
+        ///
+        /// A fase pode terminar por colisor ou por roteiro (o prólogo chama <c>Trigger()</c>
+        /// direto), então não dá para contar com o <c>other</c> do gatilho. O
+        /// <c>playerLock</c> já aponta para o jogador quando está preenchido; quando não
+        /// está, sobra procurar pela tag — é uma vez por fase, no fim dela.
+        ///
+        /// O <c>PlayerInputLock</c> desliga controle, ataque, escudo e arco, mas não o
+        /// animador, então a pose sai normalmente mesmo com o outro travando o jogador.
+        /// </summary>
+        private void TocarVitoria()
+        {
+            PlayerAnimator animator = playerLock != null
+                ? playerLock.GetComponentInChildren<PlayerAnimator>(true)
+                : null;
+
+            if (animator == null)
+            {
+                GameObject jogador = GameObject.FindGameObjectWithTag("Player");
+                animator = jogador != null ? jogador.GetComponentInChildren<PlayerAnimator>(true) : null;
+            }
+
+            animator?.PlayVictory();
         }
 
         private void OnOutroCompleted()

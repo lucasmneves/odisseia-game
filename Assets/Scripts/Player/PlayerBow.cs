@@ -30,6 +30,10 @@ namespace Odisseia.Player
         [Tooltip("De onde a flecha nasce. Precisa ficar fora do collider do jogador.")]
         [SerializeField] private Transform firePoint;
         [SerializeField] private float bowCooldown = 0.5f;
+        [Tooltip("Atraso entre o disparo e a flecha aparecer, em segundos. Existe para a " +
+                 "flecha sair quando o arco já está erguido na animação, e não no quadro " +
+                 "em que o personagem ainda está parado.")]
+        [SerializeField] private float releaseDelay = 0.15f;
         [SerializeField] private float arrowSpeed = 15f;
         [SerializeField] private int arrowDamage = 35;
         [SerializeField] private float arrowLifetime = 3f;
@@ -44,6 +48,10 @@ namespace Odisseia.Player
         private InputAction bowAction;
         private PlayerShield shield;
         private float cooldownTimer;
+
+        /// <summary>Conta o atraso até a flecha sair. Negativo quando não há tiro pendente.</summary>
+        private float releaseTimer = -1f;
+        private Vector2 pendingDirection = Vector2.right;
 
         public int CurrentArrows => currentArrows;
         public int MaxArrows => maxArrows;
@@ -95,6 +103,10 @@ namespace Odisseia.Player
             {
                 bowAction.performed -= OnBowPerformed;
             }
+
+            // Ser desligado no meio do atraso (cutscene, diálogo, morte) cancela a flecha:
+            // ela nasceria depois, fora de contexto, sem o personagem em pose de tiro.
+            releaseTimer = -1f;
         }
 
         private void Update()
@@ -102,6 +114,15 @@ namespace Odisseia.Player
             if (cooldownTimer > 0f)
             {
                 cooldownTimer -= Time.deltaTime;
+            }
+
+            if (releaseTimer > 0f)
+            {
+                releaseTimer -= Time.deltaTime;
+                if (releaseTimer <= 0f)
+                {
+                    ReleaseArrow();
+                }
             }
         }
 
@@ -139,18 +160,44 @@ namespace Odisseia.Player
             cooldownTimer = bowCooldown;
             currentArrows--;
 
-            Vector2 direction = FacingRight ? Vector2.right : Vector2.left;
+            // O disparo é anunciado agora — a animação do arco começa aqui e o
+            // TrainingCourse conta o tiro aqui. A flecha em si só nasce depois de
+            // releaseDelay, quando o arco já está erguido na tela.
+            Fired?.Invoke();
+            ArrowsChanged?.Invoke(currentArrows, maxArrows);
+
+            pendingDirection = FacingRight ? Vector2.right : Vector2.left;
+            releaseTimer = releaseDelay;
+
+            if (releaseTimer <= 0f)
+            {
+                ReleaseArrow();
+            }
+        }
+
+        /// <summary>
+        /// Instancia a flecha. A posição é lida no momento do lançamento, não no do
+        /// disparo, porque o personagem pode ter andado durante o atraso; a direção,
+        /// não — ela fica travada em quem apertou o botão, para virar de lado no meio
+        /// do saque não redirecionar um tiro já pago.
+        /// </summary>
+        private void ReleaseArrow()
+        {
+            releaseTimer = -1f;
+
+            if (arrowPrefab == null)
+            {
+                return;
+            }
+
             Vector3 origin = firePoint != null ? firePoint.position : transform.position + Vector3.up * 0.7f;
 
             Arrow arrow = Instantiate(arrowPrefab, origin, Quaternion.identity);
-            arrow.Launch(direction, arrowSpeed, arrowDamage, arrowLifetime, targetLayer, obstacleLayer);
+            arrow.Launch(pendingDirection, arrowSpeed, arrowDamage, arrowLifetime, targetLayer, obstacleLayer);
 
             Sprite sprite = GameAssets.Instance != null ? GameAssets.Instance.PlaceholderSprite : null;
             VfxBurst.Spawn(sprite, origin, new Color(0.95f, 0.9f, 0.7f), 3, 1.6f, 0.16f);
             AudioManager.PlayAttack();
-
-            Fired?.Invoke();
-            ArrowsChanged?.Invoke(currentArrows, maxArrows);
         }
 
         /// <summary>
