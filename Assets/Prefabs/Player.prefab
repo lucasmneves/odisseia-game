@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 3500000000000000006}
   - component: {fileID: 3500000000000000007}
   - component: {fileID: 1745477662464521589}
+  - component: {fileID: 1100000000000000777}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -240,6 +241,10 @@ MonoBehaviour:
   attackRadius: 0.6
   damage: 20
   cooldown: 0.4
+  comboWindow: 0.8
+  heavyDamage: 35
+  heavyRadius: 0.85
+  heavyCooldownScale: 1.5
   targetLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -415,7 +420,7 @@ MonoBehaviour:
   damageReduction: 0.8
   frontAngle: 120
   visualRoot: {fileID: 5552149219566956053}
-  shieldVisual: {fileID: 3500000000000000001}
+  shieldVisual: {fileID: 0}
 --- !u!114 &3500000000000000007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,6 +441,7 @@ MonoBehaviour:
   arrowPrefab: {fileID: 3300000000000000006, guid: 9e636c24d95de9fcc3122c08c9c6c110, type: 3}
   firePoint: {fileID: 3500000000000000005}
   bowCooldown: 0.5
+  releaseDelay: 0.15
   arrowSpeed: 15
   arrowDamage: 35
   arrowLifetime: 3
@@ -742,3 +748,54 @@ MonoBehaviour:
   - state: Death
     framesPerSecond: 10
     loop: 0
+  - state: Fall
+    framesPerSecond: 8
+    loop: 1
+  - state: Shield
+    framesPerSecond: 12
+    loop: 0
+  - state: Bow
+    framesPerSecond: 14
+    loop: 0
+  - state: Interaction
+    framesPerSecond: 10
+    loop: 0
+  - state: Victory
+    framesPerSecond: 10
+    loop: 0
+  - state: Crouch
+    framesPerSecond: 10
+    loop: 0
+  - state: CrouchWalk
+    framesPerSecond: 9
+    loop: 1
+  - state: Climb
+    framesPerSecond: 13
+    loop: 0
+  - state: ShieldHold
+    framesPerSecond: 8
+    loop: 1
+--- !u!114 &1100000000000000777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098773002786032421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79fd3f5bd8e0ab2d9eeda91689ceabb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Player.PlayerClimb
+  inputActions: {fileID: -944628639613478452, guid: 29b9f4b741cb5074bb14fb2c8737772b, type: 3}
+  actionMapName: Player
+  climbActionName: Jump
+  climbableLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  chestHeight: 0.45
+  headHeight: 1.25
+  reach: 0.45
+  clearance: 1.5
+  climbDuration: 0.45
+  landingInset: 0.35

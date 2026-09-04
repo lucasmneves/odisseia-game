@@ -1,0 +1,32 @@
+GIMP Palette
+Name: Odisseia - Odysseus Master
+Columns: 4
+#
+  0   1   6	Contorno Highlight
+  5   5   7	Contorno Base
+  0   0   9	Contorno Sombra
+ 14   8  19	Contorno Profunda
+226 146  93	Pele Highlight
+202 117  69	Pele Base
+165  84  47	Pele Sombra
+138  62  36	Pele Profunda
+146  72  39	Cabelo / Barba Highlight
+113  56  30	Cabelo / Barba Base
+ 79  39  24	Cabelo / Barba Sombra
+ 61  29  25	Cabelo / Barba Profunda
+198 162  99	Tunica (linho) Highlight
+162 124  65	Tunica (linho) Base
+126  88  42	Tunica (linho) Sombra
+101  65  34	Tunica (linho) Profunda
+245 205  92	Bronze / Dourado Highlight
+187 126  44	Bronze / Dourado Base
+157  97  31	Bronze / Dourado Sombra
+115  62  22	Bronze / Dourado Profunda
+ 97  49  21	Couro Highlight
+ 88  43  24	Couro Base
+ 69  34  26	Couro Sombra
+ 52  23  25	Couro Profunda
+152  29  28	Capa (carmesim) Highlight
+114  14  24	Capa (carmesim) Base
+ 70   4  39	Capa (carmesim) Sombra
+ 36  14  21	Capa (carmesim) Profunda

@@ -5,8 +5,12 @@ using Odisseia.Systems;
 namespace Odisseia.Player
 {
     /// <summary>
-    /// Movimentação horizontal e pulo de Odisseu. Lê as ações do Input System
+    /// Movimentação horizontal, pulo e agachamento de Odisseu. Lê as ações do Input System
     /// (não referencia teclas diretamente).
+    ///
+    /// Agachar encolhe o <see cref="BoxCollider2D"/> para baixo — os pés ficam na mesma
+    /// linha — e limita a velocidade. Levantar depende de haver espaço livre acima, então
+    /// soltar o botão debaixo de um teto mantém o personagem agachado de propósito.
     /// </summary>
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerController : MonoBehaviour
@@ -16,11 +20,19 @@ namespace Odisseia.Player
         [SerializeField] private string actionMapName = "Player";
         [SerializeField] private string moveActionName = "Move";
         [SerializeField] private string jumpActionName = "Jump";
+        [SerializeField] private string crouchActionName = "Crouch";
 
         [Header("Movimento")]
         [SerializeField] private float maxSpeed = 6f;
         [SerializeField] private float acceleration = 40f;
         [SerializeField] private float deceleration = 50f;
+
+        [Header("Agachar")]
+        [Tooltip("Fração da velocidade normal enquanto agachado.")]
+        [SerializeField] private float crouchSpeedMultiplier = 0.45f;
+        [Tooltip("Altura do collider agachado, como fração da altura em pé. 0,73 é a medida " +
+                 "real do sprite agachado (44px de 60), para o collider não descolar da arte.")]
+        [SerializeField] private float crouchHeightFactor = 0.73f;
 
         [Header("Pulo")]
         [SerializeField] private float jumpForce = 12f;
@@ -35,17 +47,41 @@ namespace Odisseia.Player
         [SerializeField] private Transform visualRoot;
 
         private Rigidbody2D rb;
+        private BoxCollider2D body;
         private InputActionMap playerMap;
         private InputAction moveAction;
         private InputAction jumpAction;
+        private InputAction crouchAction;
 
         private float moveInput;
+        private bool crouchHeld;
         private bool jumpQueued;
         private bool facingRight = true;
         private float ownVelocityX;
         private MovingPlatform currentPlatform;
 
+        private Vector2 standingSize;
+        private Vector2 standingOffset;
+
         public bool IsGrounded { get; private set; }
+
+        /// <summary>
+        /// +1 olhando para a direita, -1 para a esquerda. O espelhamento acontece na escala
+        /// do <c>visualRoot</c>, não na raiz, então quem precisa da direção do personagem
+        /// (a escalada, por exemplo) tem que perguntar aqui em vez de ler o transform.
+        /// </summary>
+        public float FacingSign => facingRight ? 1f : -1f;
+
+        /// <summary>Verdadeiro enquanto o collider está encolhido — inclusive quando o
+        /// jogador já soltou o botão mas continua preso debaixo de um teto.</summary>
+        public bool IsCrouching { get; private set; }
+
+        /// <summary>
+        /// Suspende movimento e pulo sem desligar o componente. É o que a escalada usa:
+        /// desligar o <see cref="PlayerController"/> derrubaria o action map inteiro, e o
+        /// mapa é compartilhado com ataque, escudo e arco.
+        /// </summary>
+        public bool MovementSuspended { get; set; }
 
         /// <summary>Multiplicador de velocidade (1 = normal). Usado por efeitos como a sonolência do lótus.</summary>
         public float SpeedMultiplier { get; set; } = 1f;
@@ -64,6 +100,13 @@ namespace Odisseia.Player
             rb.freezeRotation = true;
             rb.interpolation = RigidbodyInterpolation2D.Interpolate;
 
+            body = GetComponent<BoxCollider2D>();
+            if (body != null)
+            {
+                standingSize = body.size;
+                standingOffset = body.offset;
+            }
+
             if (inputActions != null)
             {
                 playerMap = inputActions.FindActionMap(actionMapName, throwIfNotFound: false);
@@ -71,6 +114,7 @@ namespace Odisseia.Player
                 {
                     moveAction = playerMap.FindAction(moveActionName);
                     jumpAction = playerMap.FindAction(jumpActionName);
+                    crouchAction = playerMap.FindAction(crouchActionName);
                 }
             }
         }
@@ -104,15 +148,91 @@ namespace Odisseia.Player
         private void Update()
         {
             moveInput = moveAction != null ? moveAction.ReadValue<float>() : 0f;
+
+            // Lê o valor do controle em vez de IsPressed(), igual ao escudo — assim o
+            // agachar funciona como um "segure", não como um toque.
+            crouchHeld = crouchAction != null && crouchAction.ReadValue<float>() > 0.5f;
         }
 
         private void FixedUpdate()
         {
             CheckGrounded();
+
+            if (MovementSuspended)
+            {
+                // Durante a escalada quem manda na posição é o PlayerClimb.
+                jumpQueued = false;
+                ownVelocityX = 0f;
+                return;
+            }
+
+            UpdateCrouch();
             ApplyHorizontalMovement();
             ApplyJump();
             ApplyPlatformCarry();
             UpdateFacing();
+        }
+
+        /// <summary>
+        /// Agacha enquanto o botão estiver segurado e o personagem estiver no chão.
+        ///
+        /// Levantar não é o simples oposto de agachar: se houver teto logo acima, soltar o
+        /// botão não pode devolver o collider inteiro, senão o personagem atravessa a
+        /// geometria ou é empurrado para fora dela. Por isso o estado só volta a "em pé"
+        /// quando o espaço acima está livre.
+        /// </summary>
+        private void UpdateCrouch()
+        {
+            if (body == null)
+            {
+                return;
+            }
+
+            bool quer = crouchHeld && IsGrounded;
+
+            if (!quer && IsCrouching && !TemEspacoParaLevantar())
+            {
+                quer = true;
+            }
+
+            if (quer == IsCrouching)
+            {
+                return;
+            }
+
+            IsCrouching = quer;
+
+            if (IsCrouching)
+            {
+                float altura = standingSize.y * crouchHeightFactor;
+                body.size = new Vector2(standingSize.x, altura);
+                // Mantém os pés na mesma linha: o collider encolhe para baixo, não para o centro.
+                body.offset = new Vector2(standingOffset.x, standingOffset.y - (standingSize.y - altura) * 0.5f);
+            }
+            else
+            {
+                body.size = standingSize;
+                body.offset = standingOffset;
+            }
+        }
+
+        /// <summary>Testa a faixa que o collider ocuparia se voltasse ao tamanho de pé.</summary>
+        private bool TemEspacoParaLevantar()
+        {
+            float alturaAgachado = standingSize.y * crouchHeightFactor;
+            float sobra = standingSize.y - alturaAgachado;
+            if (sobra <= 0f)
+            {
+                return true;
+            }
+
+            // Só a fatia que falta, um pouco mais estreita que o corpo para não
+            // encostar em paredes laterais e travar o personagem agachado sem motivo.
+            Vector2 tamanho = new Vector2(standingSize.x * 0.9f, sobra * 0.9f);
+            Vector2 centro = (Vector2)transform.position + body.offset
+                + new Vector2(0f, alturaAgachado * 0.5f + sobra * 0.5f);
+
+            return Physics2D.OverlapBox(centro, tamanho, 0f, groundLayer) == null;
         }
 
         private void CheckGrounded()
@@ -127,7 +247,8 @@ namespace Odisseia.Player
 
         private void ApplyHorizontalMovement()
         {
-            float targetSpeed = moveInput * maxSpeed * SpeedMultiplier;
+            float limite = maxSpeed * (IsCrouching ? crouchSpeedMultiplier : 1f);
+            float targetSpeed = moveInput * limite * SpeedMultiplier;
             float rate = Mathf.Abs(moveInput) > 0.01f ? acceleration : deceleration;
             ownVelocityX = Mathf.MoveTowards(ownVelocityX, targetSpeed, rate * Time.fixedDeltaTime);
 
@@ -147,6 +268,21 @@ namespace Odisseia.Player
             if (!jumpQueued)
             {
                 return;
+            }
+
+            // Pular agachado levanta primeiro. Debaixo de um teto não há para onde
+            // levantar, então o pulo simplesmente não sai — em vez de o personagem
+            // subir dentro da geometria.
+            if (IsCrouching)
+            {
+                if (!TemEspacoParaLevantar())
+                {
+                    jumpQueued = false;
+                    return;
+                }
+
+                crouchHeld = false;
+                UpdateCrouch();
             }
 
             jumpQueued = false;
