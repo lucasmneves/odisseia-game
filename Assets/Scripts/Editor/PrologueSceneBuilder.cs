@@ -44,6 +44,87 @@ public static class PrologueSceneBuilder
     private const string BgMid = "Assets/Art/Odisseia/Backgrounds/BG_Fase01_Greece_Mid.png";
     private const string BgNear = "Assets/Art/Odisseia/Backgrounds/BG_Fase01_Greece_Near.png";
 
+    // ---------------------------------------------------- arte de cenário de Ítaca
+    //
+    // Pipeline em Docs/Environment_Ithaca; `node Tools/unity-import.js` traz para cá.
+    // Quando estes arquivos não existem a fase volta sozinha para as silhuetas chapadas,
+    // então o builder continua rodando num clone sem a arte.
+
+    private const string ItacaRaiz = "Assets/Art/Environments/Ithaca/";
+    private const string ItacaCeu = ItacaRaiz + "Background/ithaca_bg_sky.png";
+    private const string ItacaNuvens = ItacaRaiz + "Background/ithaca_bg_clouds.png";
+    private const string ItacaIlha = ItacaRaiz + "Background/ithaca_bg_island_far.png";
+    private const string ItacaOceano = ItacaRaiz + "Background/ithaca_bg_ocean.png";
+    private const string ItacaMontanhas = ItacaRaiz + "Background/ithaca_bg_mountains_far.png";
+
+    private const string ItacaTerrenoGrama = ItacaRaiz + "Terrain/ithaca_tiles_grass.png";
+    private const string ItacaTerrenoTerra = ItacaRaiz + "Terrain/ithaca_tiles_earth.png";
+    private const string ItacaTerrenoPedra = ItacaRaiz + "Terrain/ithaca_tiles_stone.png";
+    private const string ItacaTerrenoMadeira = ItacaRaiz + "Terrain/ithaca_tiles_wood.png";
+
+    /// <summary>
+    /// Lado do tile de terreno em unidades: 32 px a 42,857 px por unidade.
+    /// </summary>
+    private const float LadoDoTile = 32f / 42.857143f;
+
+    /// <summary>
+    /// Índice do tile de topo plano na folha Wang (NW e NE de ar, SW e SE de sólido).
+    ///
+    /// O desenho sólido dele começa na METADE do tile, não no topo — medido nos pixels, e é
+    /// por isso que o tile de topo é posicionado com o CENTRO na linha do chão: assim a
+    /// superfície desenhada coincide com a superfície do colisor.
+    /// </summary>
+    private const int TileTopo = 3;
+
+    /// <summary>Índice do tile totalmente sólido, usado para preencher abaixo do topo.</summary>
+    private const int TileCheio = 6;
+
+    private const string ItacaCasa = ItacaRaiz + "Architecture/ithaca_house_small_01.png";
+    private const string ItacaPalacio = ItacaRaiz + "Architecture/ithaca_house_odysseus_01.png";
+    private const string ItacaColuna = ItacaRaiz + "Architecture/ithaca_column_01.png";
+    private const string ItacaPalacioMegaron = ItacaRaiz + "Architecture/ithaca_palace_01.png";
+    private const string ItacaArmazem = ItacaRaiz + "Architecture/ithaca_warehouse_01.png";
+    private const string ItacaPortao = ItacaRaiz + "Architecture/ithaca_gate_01.png";
+    private const string ItacaBatente = ItacaRaiz + "Architecture/ithaca_gatepost_01.png";
+    private const string ItacaTorre = ItacaRaiz + "Architecture/ithaca_watchtower_01.png";
+    private const string ItacaBigorna = ItacaRaiz + "Props/ithaca_anvil_01.png";
+    private const string ItacaForja = ItacaRaiz + "Props/ithaca_forge_01.png";
+    private const string ItacaLavoura = ItacaRaiz + "Nature/ithaca_field_01.png";
+    private const string ItacaCascoNaPraia = ItacaRaiz + "Port/ithaca_boat_hull_01.png";
+
+    // Figurantes: cinco arquétipos cobrem os dezenove da fase. Gerar dezenove pessoas
+    // distintas custaria dezenove gerações por uma diferença que ninguém lê num figurante.
+    private const string FigPescador = ItacaRaiz + "Figures/ithaca_villager_fisherman.png";
+    private const string FigLavrador = ItacaRaiz + "Figures/ithaca_villager_farmer.png";
+    private const string FigMarinheiro = ItacaRaiz + "Figures/ithaca_villager_sailor.png";
+    private const string FigSoldado = ItacaRaiz + "Figures/ithaca_villager_soldier.png";
+    private const string FigAnciao = ItacaRaiz + "Figures/ithaca_villager_elder.png";
+    private const string ItacaBoneco = ItacaRaiz + "Training/ithaca_training_dummy_01.png";
+    private const string ItacaAlvo = ItacaRaiz + "Training/ithaca_training_target_01.png";
+    private const string ItacaTear = ItacaRaiz + "Props/ithaca_loom_01.png";
+    private const string ItacaMuro = ItacaRaiz + "Architecture/ithaca_wall_low_01.png";
+    private const string ItacaNavio = ItacaRaiz + "Ships/ithaca_ship_01.png";
+    private const string ItacaNavioAtracado = ItacaRaiz + "Ships/ithaca_ship_01_furled.png";
+    private const string ItacaRede = ItacaRaiz + "Port/ithaca_fishing_net_01.png";
+    private const string ItacaPosteDoCais = ItacaRaiz + "Port/ithaca_dock_post_01.png";
+    private const string ItacaSuporteDeArmas = ItacaRaiz + "Training/ithaca_weapon_rack_01.png";
+
+    /// <summary>
+    /// Vegetação e miudezas espalhadas pela fase. Índice fixo porque o espalhamento é
+    /// sorteado com semente — a fase precisa sair igual toda vez que for remontada.
+    /// </summary>
+    private static readonly string[] ItacaVegetacao =
+    {
+        ItacaRaiz + "Nature/ithaca_tree_olive_01.png",
+        ItacaRaiz + "Nature/ithaca_tree_cypress_01.png",
+        ItacaRaiz + "Nature/ithaca_bush_01.png",
+        ItacaRaiz + "Nature/ithaca_rock_medium_01.png",
+        ItacaRaiz + "Nature/ithaca_rock_small_01.png",
+        ItacaRaiz + "Nature/ithaca_tall_grass_01.png",
+        ItacaRaiz + "Nature/ithaca_grass_tuft_01.png",
+        ItacaRaiz + "Nature/ithaca_flowers_01.png",
+    };
+
     /// <summary>
     /// Fundo pintado (Art/Odisseia/Backgrounds) em vez das silhuetas chapadas.
     ///
@@ -90,6 +171,12 @@ public static class PrologueSceneBuilder
     private static readonly Color CorSoldado = new Color(0.72f, 0.66f, 0.5f);
     private static readonly Color CorProp = new Color(0.6f, 0.5f, 0.35f);
     private static readonly Color CorVela = new Color(0.94f, 0.93f, 0.88f);
+
+    /// <summary>Passo Profunda da rampa de Céu (#6481a0) — o topo do degradê da arte de Ítaca.</summary>
+    private static readonly Color CorCeuProfundo = new Color(100f / 255f, 129f / 255f, 160f / 255f);
+
+    /// <summary>Passo Profunda da rampa de Água (#406b84).</summary>
+    private static readonly Color CorAguaProfunda = new Color(64f / 255f, 107f / 255f, 132f / 255f);
 
     private static Sprite square;
     private static InputActionAsset controls;
@@ -408,12 +495,184 @@ public static class PrologueSceneBuilder
     private static GameObject Chao(string nome, float esquerda, float direita, float topo = GroundTop)
     {
         float largura = direita - esquerda;
-        return Bloco(nome, world, esquerda + largura * 0.5f, topo - 0.5f, largura, 1f, CorChao, 0, true);
+        return Vestido(Bloco(nome, world, esquerda + largura * 0.5f, topo - 0.5f, largura, 1f, CorChao, 0, true));
     }
 
     private static GameObject Plataforma(string nome, float centroX, float topo, float largura)
     {
-        return Bloco(nome, world, centroX, topo - 0.25f, largura, 0.5f, CorPedra, 0, true);
+        return Vestido(Bloco(nome, world, centroX, topo - 0.25f, largura, 0.5f, CorPedra, 0, true));
+    }
+
+    /// <summary>
+    /// Apaga o desenho do bloco quando existe arte de terreno para cobri-lo, preservando o
+    /// colisor. É isso que deixa a colisão intacta enquanto a aparência muda: o retângulo
+    /// colorido continua sendo o chão para a física, só parou de aparecer.
+    /// </summary>
+    private static GameObject Vestido(GameObject bloco)
+    {
+        if (Tile(ItacaTerrenoGrama, TileTopo) == null)
+        {
+            return bloco;
+        }
+
+        var sr = bloco.GetComponent<SpriteRenderer>();
+        if (sr != null)
+        {
+            sr.enabled = false;
+        }
+
+        return bloco;
+    }
+
+    /// <summary>
+    /// Um sprite do tileset Wang pelo índice documentado (row-major a partir do topo da
+    /// folha). O nome fatiado é <c>&lt;kit&gt;_NN</c>, escrito assim por
+    /// <c>Tools/unity-import.js</c> justamente para este acesso ser por índice.
+    /// </summary>
+    private static Sprite Tile(string caminho, int indice)
+    {
+        string kit = caminho.Substring(caminho.LastIndexOf('/') + 1).Replace(".png", string.Empty);
+        string alvo = kit + "_" + indice.ToString("00");
+
+        foreach (Object asset in AssetDatabase.LoadAllAssetsAtPath(caminho))
+        {
+            if (asset is Sprite sprite && sprite.name == alvo)
+            {
+                return sprite;
+            }
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Veste um trecho de chão com o tileset: uma fiada de topo e o preenchimento abaixo.
+    ///
+    /// O tile de topo é posicionado com o CENTRO na linha do chão porque o desenho sólido
+    /// dele começa na metade do tile — os cantos de cima do Wang são "upper" (ar). Alinhar
+    /// pelo topo do tile deixaria a superfície desenhada meio tile abaixo da superfície do
+    /// colisor, e o personagem pareceria afundado no chão.
+    ///
+    /// Dois renderers por trecho, em drawMode Tiled, em vez de um objeto por tile: a fase
+    /// tem 349 unidades de chão, o que daria mais de dois mil GameObjects.
+    /// </summary>
+    private static void Terreno(string nome, float esquerda, float direita, string kit,
+        float topo = GroundTop, int fiadasDeBaixo = 7, string kitDeBaixo = null)
+    {
+        Sprite tileTopo = Tile(kit, TileTopo);
+        // O preenchimento pode vir de outro kit: o tile cheio de pedra saiu em fiadas
+        // regulares de tijolo (desvio já registrado do Conceito A) e, empilhado cinco vezes,
+        // vira um paredão amarelo. Pedra no calçamento e terra por baixo lê como cais.
+        Sprite tileCheio = Tile(kitDeBaixo ?? kit, TileCheio);
+        if (tileTopo == null || tileCheio == null)
+        {
+            return;
+        }
+
+        float largura = direita - esquerda;
+        float centro = esquerda + largura * 0.5f;
+
+        FaixaDeTiles(nome + "_Top", centro, topo, largura, LadoDoTile, tileTopo, -1);
+
+        // O preenchimento começa onde o tile de topo termina e desce até passar do que a
+        // câmera enxerga, senão o mundo acaba numa linha e o fundo aparece por baixo.
+        float altura = fiadasDeBaixo * LadoDoTile;
+        FaixaDeTiles(nome + "_Fill", centro, topo - LadoDoTile * 0.5f - altura * 0.5f,
+            largura, altura, tileCheio, -2);
+    }
+
+    /// <summary>
+    /// Um sprite de cenário apoiado na linha do chão. Devolve null quando a arte não existe,
+    /// e aí quem chamou desenha o placeholder de sempre.
+    ///
+    /// Nunca escala: a arte foi feita em 42,857 px por unidade, e esticar um sprite de pixel
+    /// art quebra a densidade que todo o resto do cenário respeita.
+    /// </summary>
+    private static GameObject Prop(string nome, Transform pai, float x, string caminho,
+        int ordem = -1, float topo = GroundTop, bool espelhado = false)
+    {
+        Sprite arte = Arte(caminho);
+        if (arte == null)
+        {
+            return null;
+        }
+
+        var go = new GameObject(nome);
+        go.transform.SetParent(pai, false);
+        // O pivô é BottomCenter, então a base do desenho cai exatamente na linha do chão.
+        go.transform.position = new Vector3(x, topo, 0f);
+
+        var sr = go.AddComponent<SpriteRenderer>();
+        sr.sprite = arte;
+        sr.sortingOrder = ordem;
+        sr.flipX = espelhado;
+        return go;
+    }
+
+    /// <summary>
+    /// Muro baixo de pedra seca ladrilhado num trecho. O sprite foi feito para ladrilhar
+    /// (emenda medida em 0,0 contra mediana interna de 8,8), então vai num renderer só em
+    /// drawMode Tiled. Devolve false quando a arte não existe.
+    /// </summary>
+    private static bool MuroBaixo(string nome, Transform pai, float esquerda, float direita)
+    {
+        Sprite arte = Arte(ItacaMuro);
+        if (arte == null)
+        {
+            return false;
+        }
+
+        float largura = direita - esquerda;
+        var go = new GameObject(nome);
+        go.transform.SetParent(pai, false);
+        go.transform.position = new Vector3(esquerda + largura * 0.5f, GroundTop, 0f);
+
+        var sr = go.AddComponent<SpriteRenderer>();
+        sr.sprite = arte;
+        sr.sortingOrder = -1;
+        sr.drawMode = SpriteDrawMode.Tiled;
+        sr.tileMode = SpriteTileMode.Continuous;
+        sr.size = new Vector2(largura, arte.bounds.size.y);
+        return true;
+    }
+
+    /// <summary>
+    /// Espalha vegetação e pedras num trecho, com semente fixa para a fase sair igual a cada
+    /// remontagem. Fica atrás dos personagens e à frente do terreno.
+    /// </summary>
+    private static void Vegetacao(Transform pai, float esquerda, float direita, int quantidade, int semente)
+    {
+        if (Arte(ItacaVegetacao[0]) == null)
+        {
+            return;
+        }
+
+        var zona = new GameObject("Vegetation").transform;
+        zona.SetParent(pai, false);
+
+        UnityEngine.Random.InitState(semente);
+        for (int i = 0; i < quantidade; i++)
+        {
+            float x = UnityEngine.Random.Range(esquerda, direita);
+            string arte = ItacaVegetacao[UnityEngine.Random.Range(0, ItacaVegetacao.Length)];
+            // Espelhar metade quebra a repetição sem custar asset novo.
+            Prop("Flora_" + i, zona, x, arte, -1, GroundTop, UnityEngine.Random.value < 0.5f);
+        }
+    }
+
+    private static void FaixaDeTiles(string nome, float x, float y, float largura, float altura,
+        Sprite tile, int ordem)
+    {
+        var go = new GameObject(nome);
+        go.transform.SetParent(world, false);
+        go.transform.position = new Vector3(x, y, 0f);
+
+        var sr = go.AddComponent<SpriteRenderer>();
+        sr.sprite = tile;
+        sr.sortingOrder = ordem;
+        sr.drawMode = SpriteDrawMode.Tiled;
+        sr.tileMode = SpriteTileMode.Continuous;
+        sr.size = new Vector2(largura, altura);
     }
 
     /// <summary>
@@ -499,7 +758,14 @@ public static class PrologueSceneBuilder
         fundo.SetParent(world, false);
 
         // Céu inteiro num bloco só: nenhuma camada de parallax pode deixar buraco.
-        Bloco("Sky", fundo, LevelEnd * 0.5f, 6f, LevelEnd + 60f, 30f, CorCeu, -50);
+        // A cor sai da própria arte quando ela existe, para o topo do degradê não encontrar
+        // uma faixa de cor diferente onde o sprite do céu acaba.
+        Bloco("Sky", fundo, LevelEnd * 0.5f, 6f, LevelEnd + 60f, 30f, CorDoTopoDoCeu(), -50);
+
+        if (MontarFundoDeItaca(fundo))
+        {
+            return;
+        }
 
         if (UsarFundoPintado)
         {
@@ -514,6 +780,98 @@ public static class PrologueSceneBuilder
 
         Silhueta(fundo, "Hills_Far", 0.55f, -30, CorMontanha, 3f, 6.5f, 9f, 16f, 7311);
         Silhueta(fundo, "Hills_Mid", 0.35f, -20, CorColina, 1.6f, 3.4f, 6f, 11f, 9042);
+    }
+
+    /// <summary>
+    /// As cinco camadas de Ítaca, da mais distante para a mais próxima. Devolve false se a
+    /// arte não estiver importada, e aí a fase volta às silhuetas chapadas.
+    ///
+    /// A diferença para <see cref="Camada"/>: estas ladrilham. As telas pintadas antigas não
+    /// eram contínuas nas bordas, o que obrigava a um fator de parallax alto (0,93–0,97) com
+    /// uma imagem só cobrindo a fase inteira — ou seja, parallax quase nulo. As camadas de
+    /// Ítaca foram feitas para ladrilhar (a de montanha por espelho, ver
+    /// <c>Tools/make-tileable.js</c>), então o fator pode descer para onde a profundidade
+    /// realmente aparece.
+    ///
+    /// Fator ALTO é longe: a camada acompanha a câmera e quase não desliza na tela.
+    /// </summary>
+    private static bool MontarFundoDeItaca(Transform pai)
+    {
+        if (Arte(ItacaCeu) == null)
+        {
+            return false;
+        }
+
+        // A ordem de empilhamento segue a composição de referência do pipeline de arte
+        // (Docs/Environment_Ithaca/Layers/_composicao_demo.png): céu, nuvens, ilha no
+        // horizonte, faixa de mar e, à frente de tudo, a serra.
+        //
+        // A ilha nasce ABAIXO da linha do mar de propósito: o mar é desenhado depois e cobre
+        // a base dela, que é o que faz a ilha parecer estar no horizonte e não boiando.
+        CamadaLadrilhada(pai, "BG_Sky", ItacaCeu, 1.00f, -50, -2.4f);
+        CamadaLadrilhada(pai, "BG_Clouds", ItacaNuvens, 0.90f, -48, 1.6f);
+        CamadaLadrilhada(pai, "BG_Island", ItacaIlha, 0.82f, -46, -0.9f);
+        CamadaLadrilhada(pai, "BG_Ocean", ItacaOceano, 0.74f, -44, -3.0f);
+        CamadaLadrilhada(pai, "BG_Mountains", ItacaMontanhas, 0.62f, -42, -2.6f);
+        return true;
+    }
+
+    /// <summary>
+    /// Uma camada de parallax que ladrilha, num renderer só.
+    ///
+    /// <c>SpriteDrawMode.Tiled</c> repete o sprite dentro de <c>size</c> gerando a geometria,
+    /// então uma camada de 430 unidades custa um renderer em vez de centenas de objetos. Ele
+    /// exige malha FullRect no import — com malha Tight o recorte é descartado e a camada sai
+    /// esticada em vez de repetida.
+    ///
+    /// A largura vem da conta do deslize: a camada anda <c>(1 - fator)</c> vezes o
+    /// comprimento da fase em relação à câmera, e ainda precisa cobrir a tela nas duas pontas.
+    /// </summary>
+    private static void CamadaLadrilhada(Transform pai, string nome, string caminho, float fator,
+        int ordem, float baseY)
+    {
+        Sprite arte = Arte(caminho);
+        if (arte == null)
+        {
+            return;
+        }
+
+        float deslize = LevelEnd * (1f - fator);
+        float largura = deslize + LarguraDaTela * 2f;
+
+        var go = new GameObject(nome);
+        go.transform.SetParent(pai, false);
+
+        // Centraliza no meio do trajeto que a camada faz EM RELAÇÃO à câmera: esse trajeto vai
+        // de 0 (no começo da fase) a -deslize (no fim), então o meio fica em deslize/2.
+        go.transform.position = new Vector3(deslize * 0.5f, baseY, 1f);
+
+        var sr = go.AddComponent<SpriteRenderer>();
+        sr.sprite = arte;
+        sr.sortingOrder = ordem;
+        sr.drawMode = SpriteDrawMode.Tiled;
+        sr.tileMode = SpriteTileMode.Continuous;
+        // O pivô da arte de cenário é BottomCenter, então size.y cresce para cima a partir
+        // de baseY. Manter size.y na altura nativa impede a camada de repetir na vertical —
+        // um céu em degradê repetido verticalmente vira listra.
+        sr.size = new Vector2(largura, arte.bounds.size.y);
+
+        var parallax = go.AddComponent<ParallaxLayer>();
+        Wire(parallax, "parallaxFactor", fator);
+    }
+
+    /// <summary>
+    /// Cor do bloco de céu que fica atrás de tudo e garante cobertura.
+    ///
+    /// Com a arte de Ítaca ele usa o topo do degradê — <c>#6481a0</c>, o passo Profunda da
+    /// rampa de Céu. Se a cor não casar com o topo do sprite, aparece uma linha horizontal
+    /// exatamente onde o sprite acaba e o bloco começa. Está fixo aqui, e não lido da
+    /// textura, porque as texturas são importadas com <c>isReadable</c> desligado — ligar
+    /// custaria memória em todas elas para uma cor só.
+    /// </summary>
+    private static Color CorDoTopoDoCeu()
+    {
+        return Arte(ItacaCeu) != null ? CorCeuProfundo : CorCeu;
     }
 
     /// <summary>
@@ -617,6 +975,10 @@ public static class PrologueSceneBuilder
         // treinamento, de propósito: o pulo só é ensinado no Ato 4, e um vão mortal
         // antes disso cobra do jogador uma habilidade que a fase ainda não ensinou —
         // três quedas e a jornada acabava no menu principal.
+        //
+        // A arte de terreno é VESTIDA por cima destes colisores, não os substitui: a
+        // geometria de colisão daqui é ajustada e conferida pelo PrologueProbe, e trocá-la
+        // por um Tilemap arriscaria a garantia de que a fase é terminável.
         Chao("Floor_Town", -8f, 79f);
         Chao("Floor_Recruit", 79f, 154f);
         Chao("Floor_Training", 154f, 240f);
@@ -624,18 +986,66 @@ public static class PrologueSceneBuilder
         Chao("Floor_Port", 276f, 322f);
         Chao("Pier", 322f, 341f);
 
+        // Os quatro kits acompanham o percurso: vila e recrutamento em grama, treino e
+        // arsenal em terra batida, porto em pedra, cais em madeira.
+        Terreno("Terrain_Town", -8f, 79f, ItacaTerrenoGrama);
+        Terreno("Terrain_Recruit", 79f, 154f, ItacaTerrenoGrama);
+        Terreno("Terrain_Training", 154f, 240f, ItacaTerrenoTerra);
+        Terreno("Terrain_Arsenal", 240f, 276f, ItacaTerrenoTerra);
+        Terreno("Terrain_Port", 276f, 322f, ItacaTerrenoPedra, GroundTop, 5, ItacaTerrenoTerra);
+        // O cais é um deck, não um paredão: uma fiada só, e o mar aparece por baixo.
+        Terreno("Terrain_Pier", 322f, 341f, ItacaTerrenoMadeira, GroundTop, 1);
+
         // As plataformas do treino ficam ACIMA do chão, não sobre um abismo: quem erra
         // o pulo cai de volta no campo e tenta de novo, em vez de perder uma vida.
         Plataforma("Training_Platform_1", 189f, -0.4f, 4f);
         Plataforma("Training_Platform_2", 194.5f, 0.8f, 4f);
         Plataforma("Training_Platform_3", 200f, -0.4f, 4f);
 
-        // Terra sob o chão inteiro: sem isto o mundo termina numa linha e o fundo
-        // aparece por baixo, como se o chão flutuasse.
-        Bloco("Bedrock", world, 166.5f, -6.4f, 349f, 8f, CorTerra, -3);
+        Terreno("Terrain_Platform_1", 187f, 191f, ItacaTerrenoPedra, -0.4f, 1, ItacaTerrenoTerra);
+        Terreno("Terrain_Platform_2", 192.5f, 196.5f, ItacaTerrenoPedra, 0.8f, 1, ItacaTerrenoTerra);
+        Terreno("Terrain_Platform_3", 198f, 202f, ItacaTerrenoPedra, -0.4f, 1, ItacaTerrenoTerra);
+
+        // Terra sob o chão inteiro: sem isto o mundo termina numa linha e o fundo aparece por
+        // baixo, como se o chão flutuasse. Ladrilhado com o tile cheio de terra — era um bloco
+        // chapado de 349 unidades, e ele APARECE quando a câmera desce, o que eu tinha
+        // presumido que não acontecia.
+        Sprite terraCheia = Tile(ItacaTerrenoTerra, TileCheio);
+        if (terraCheia != null)
+        {
+            FaixaDeTiles("Bedrock", 166.5f, -6.4f, 349f, 8f, terraCheia, -3);
+        }
+        else
+        {
+            Bloco("Bedrock", world, 166.5f, -6.4f, 349f, 8f, CorTerra, -3);
+        }
 
         // Mar depois do cais.
-        Bloco("Sea", world, 400f, -6f, 140f, 8f, CorMar, -4);
+        // Mar depois do cais. A camada de oceano do parallax serve aqui também: é a mesma
+        // água, ladrilha, e um bloco azul chapado ao lado dela denunciava a diferença.
+        Sprite oceano = Arte(ItacaOceano);
+        if (oceano != null)
+        {
+            var mar = new GameObject("Sea");
+            mar.transform.SetParent(world, false);
+            mar.transform.position = new Vector3(400f, GroundTop - 1f, 0f);
+            var sr = mar.AddComponent<SpriteRenderer>();
+            sr.sprite = oceano;
+            sr.sortingOrder = -4;
+            sr.drawMode = SpriteDrawMode.Tiled;
+            sr.tileMode = SpriteTileMode.Continuous;
+            // Altura NATIVA. Esticar o size.y faz a faixa repetir na vertical e aparecer uma
+            // listra no meio do mar — o mesmo motivo pelo qual o céu não repete na vertical.
+            sr.size = new Vector2(140f, oceano.bounds.size.y);
+
+            // Água profunda abaixo da faixa, na cor mais funda da rampa de Água, para o mar
+            // não terminar numa linha reta onde o sprite acaba.
+            Bloco("Sea_Deep", world, 400f, -8f, 140f, 8f, CorAguaProfunda, -5);
+        }
+        else
+        {
+            Bloco("Sea", world, 400f, -6f, 140f, 8f, CorMar, -4);
+        }
 
         MontarLimites();
     }
@@ -653,10 +1063,13 @@ public static class PrologueSceneBuilder
         const float esquerda = -8f;
         const float direita = 341f;
 
-        GameObject paredeEsq = Bloco("Boundary_Left", world, esquerda - 0.5f, GroundTop + 6f,
-            1f, 12f, CorTerra, -2, true);
-        GameObject paredeDir = Bloco("Boundary_Right", world, direita + 0.5f, GroundTop + 6f,
-            1f, 12f, CorTerra, -2, true);
+        // As paredes são física, não cenário: com o fundo chapado elas passavam por barranco,
+        // mas contra a paisagem pintada viram uma laje marrom de 12 unidades na frente do mar.
+        // O colisor continua; só o desenho sai.
+        GameObject paredeEsq = Vestido(Bloco("Boundary_Left", world, esquerda - 0.5f, GroundTop + 6f,
+            1f, 12f, CorTerra, -2, true));
+        GameObject paredeDir = Vestido(Bloco("Boundary_Right", world, direita + 0.5f, GroundTop + 6f,
+            1f, 12f, CorTerra, -2, true));
 
         var limites = new GameObject("LevelBounds");
         limites.transform.SetParent(world, false);
@@ -800,10 +1213,28 @@ public static class PrologueSceneBuilder
         GameObject folha = Bloco(nome + "_Door", raiz.transform, x, GroundTop + 2.5f,
             1.2f, 5f, CorPortao, 1, true);
 
+        // Com arte, o bloco vira só colisor e a folha desenhada entra no lugar dele.
+        //
+        // O desenho tem a MESMA altura que o colisor (5 un), de propósito. Desenhar um portão
+        // baixo e deixar o colisor alto criaria parede invisível, e o README é explícito:
+        // parede muda é indistinguível de bug. O que se vê é o que bloqueia.
+        GameObject desenho = Prop(nome + "_Leaf", raiz.transform, x, ItacaPortao, 1);
+        if (desenho != null)
+        {
+            folha.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
         // Os batentes ficam de pé mesmo depois de aberto, para o lugar continuar
         // legível como uma passagem.
-        Bloco(nome + "_Post_L", world, x - 1.2f, GroundTop + 3f, 0.6f, 6f, CorMadeira, 1);
-        Bloco(nome + "_Post_R", world, x + 1.2f, GroundTop + 3f, 0.6f, 6f, CorMadeira, 1);
+        if (Prop(nome + "_Post_L", world, x - 1.5f, ItacaBatente, 1) == null)
+        {
+            Bloco(nome + "_Post_L", world, x - 1.2f, GroundTop + 3f, 0.6f, 6f, CorMadeira, 1);
+            Bloco(nome + "_Post_R", world, x + 1.2f, GroundTop + 3f, 0.6f, 6f, CorMadeira, 1);
+        }
+        else
+        {
+            Prop(nome + "_Post_R", world, x + 1.5f, ItacaBatente, 1);
+        }
 
         var aviso = new GameObject(nome + "_Notice");
         aviso.transform.SetParent(raiz.transform, false);
@@ -818,7 +1249,16 @@ public static class PrologueSceneBuilder
         Wire(portao, "noticeArea", area);
         Wire(portao, "lockedMessageKey", chaveDaDica);
         Wire(portao, "prompt", prompt);
-        WireArray(portao, "lockedVisuals", folha);
+        // A folha desenhada some junto com o bloco quando o portão abre. Sem isto o colisor
+        // sairia e o desenho ficaria, com o jogador atravessando um portão fechado.
+        if (desenho != null)
+        {
+            WireArray(portao, "lockedVisuals", folha, desenho);
+        }
+        else
+        {
+            WireArray(portao, "lockedVisuals", folha);
+        }
 
         return raiz;
     }
@@ -840,15 +1280,59 @@ public static class PrologueSceneBuilder
     }
 
     /// <summary>NPC conversável: figura + gatilho de alcance + fala.</summary>
+    /// <summary>
+    /// Um sprite está na densidade do projeto quando importa a 42,857 px por unidade. A arte
+    /// pintada dos NPCs nomeados importa a 129 e precisa ser escalada; a arte de figurante
+    /// gerada agora já nasce na densidade certa e não pode ser tocada.
+    /// </summary>
+    private static bool EhPixelArt(Sprite arte)
+    {
+        return Mathf.Abs(arte.pixelsPerUnit - 42.857143f) < 0.01f;
+    }
+
+    /// <summary>
+    /// Figurante sem fala. Existe para não repetir em cada chamada a regra da altura nativa:
+    /// com arte na densidade do projeto, o Figura não pode escalar nada.
+    /// </summary>
+    /// <summary>
+    /// Um sprite nomeado dentro de uma folha fatiada. <c>Arte</c> devolve o PRIMEIRO sprite do
+    /// arquivo, que numa folha de 99 quadros é quase certamente o errado.
+    /// </summary>
+    private static Sprite SpriteDaFolha(string caminho, string nome)
+    {
+        foreach (Object asset in AssetDatabase.LoadAllAssetsAtPath(caminho))
+        {
+            if (asset is Sprite sprite && sprite.name == nome)
+            {
+                return sprite;
+            }
+        }
+
+        return null;
+    }
+
+    private static GameObject FiguraDeCenario(string nome, Transform pai, float x, string caminho,
+        Color cor, int ordem = 1)
+    {
+        Sprite arte = Arte(caminho);
+        return arte != null
+            ? Figura(nome, pai, x, 0.9f, arte.bounds.size.y, cor, ordem, arte)
+            : Figura(nome, pai, x, 0.8f, 1.6f, cor, ordem);
+    }
+
     private static GameObject Npc(string nome, Transform pai, float x, DialogueSequence fala,
         LevelObjective objetivo, Color cor, float altura = 1.6f, Sprite arte = null,
         bool automatico = false)
     {
-        GameObject go = Figura(nome, pai, x, 0.9f, altura, cor, 1, arte);
+        // Arte de figurante em pixel art usa a altura NATIVA, para o fator de escala dar 1 e
+        // os 42,857 px por unidade se manterem. A arte pintada antiga (129 px/un) precisa da
+        // escala, e por isso a regra vale só para o que já está na densidade certa.
+        float alturaReal = arte != null && EhPixelArt(arte) ? arte.bounds.size.y : altura;
+        GameObject go = Figura(nome, pai, x, 0.9f, alturaReal, cor, 1, arte);
 
         var alcance = go.AddComponent<BoxCollider2D>();
         alcance.size = new Vector2(3.2f, 3f);
-        alcance.offset = CentroDaFigura(go, altura);
+        alcance.offset = CentroDaFigura(go, alturaReal);
         alcance.isTrigger = true;
 
         var dialogo = go.AddComponent<NPCDialogue>();
@@ -864,9 +1348,16 @@ public static class PrologueSceneBuilder
     /// <summary>Ponto de interação de cenário: pilha de escudos, barris, velas.</summary>
     private static GameObject Ponto(string nome, Transform pai, float x, string chaveResultado,
         LevelObjective objetivo, Color cor, float largura = 1.4f, float altura = 1.2f,
-        DialogueSequence fala = null)
+        DialogueSequence fala = null, string caminhoDaArte = null)
     {
-        GameObject go = Figura(nome, pai, x, largura, altura, cor);
+        // Com arte, a altura passa a ser a NATIVA do sprite. O Figura escala a arte para a
+        // altura pedida — o que é certo para NPC, cuja proporção é própria, e errado para
+        // cenário: esticar quebraria os 42,857 px por unidade que todo o resto respeita.
+        // Passando a altura nativa, o fator de escala dá exatamente 1.
+        Sprite arte = caminhoDaArte != null ? Arte(caminhoDaArte) : null;
+        GameObject go = arte != null
+            ? Figura(nome, pai, x, largura, arte.bounds.size.y, cor, 1, arte)
+            : Figura(nome, pai, x, largura, altura, cor);
 
         var alcance = go.AddComponent<BoxCollider2D>();
         alcance.size = new Vector2(3f, 3f);
@@ -886,9 +1377,19 @@ public static class PrologueSceneBuilder
 
     /// <summary>Boneco de treino / alvo de arco: leva dano de verdade e avisa o curso.</summary>
     private static GameObject Alvo(string nome, Transform pai, float x, TrainingCourse curso,
-        TrainingAction acao, Color cor, float largura, float altura)
+        TrainingAction acao, Color cor, float largura, float altura, string caminhoDaArte = null)
     {
-        GameObject go = Figura(nome, pai, x, largura, altura, cor);
+        // Com arte, o tamanho vem do desenho — e o COLISOR vai junto. Deixar a caixa no
+        // tamanho do placeholder enquanto o desenho encolhe daria um alvo que se acerta sem
+        // encostar, ou que não se acerta encostando; nos dois casos o tutorial mente.
+        Sprite arte = caminhoDaArte != null ? Arte(caminhoDaArte) : null;
+        if (arte != null)
+        {
+            largura = arte.bounds.size.x;
+            altura = arte.bounds.size.y;
+        }
+
+        GameObject go = Figura(nome, pai, x, largura, altura, cor, 1, arte);
         go.layer = LayerEnemy;
 
         // Gatilho, e nao parede: a espada usa OverlapCircle e a flecha e ela propria um
@@ -1041,52 +1542,84 @@ public static class PrologueSceneBuilder
         // O palácio precisa ser reconhecível de longe: é para onde o objetivo manda o
         // jogador depois da convocação, e mais uma caixa bege no meio de outras caixas
         // beges não é destino nenhum.
-        Bloco("Palace", cidade, 68f, GroundTop + 3.5f, 20f, 7f, CorPalacio, -2);
-        Bloco("Palace_Pediment", cidade, 68f, GroundTop + 7.3f, 22f, 1.2f, CorTelhado, -1);
-        Bloco("Palace_Frieze", cidade, 68f, GroundTop + 6.4f, 20.6f, 0.5f, CorPedra, -1);
-
-        for (int i = 0; i < 5; i++)
+        // A fachada do megaron substitui o prédio, o frontão, o friso e as cinco colunas: ela
+        // já traz colunata, friso e cornija desenhados. Tem 17,78 x 7,00 un — a altura bate
+        // exatamente com a do bloco que havia aqui, e a largura fica 2,2 un menor.
+        //
+        // Espelhada de propósito. A porta está 3,99 un à direita do centro da fachada; com o
+        // espelho ela cai em 64,0, ao lado do Gate_Hall (62) e do tear (63). Sem espelhar, a
+        // porta desenhada ficaria em 72,0 e o jogador entraria no salão por uma parede.
+        if (Prop("Palace", cidade, 68f, ItacaPalacioMegaron, -2, GroundTop, true) == null)
         {
-            Bloco("Column_" + i, cidade, 60f + i * 4f, GroundTop + 3f, 0.9f, 6f, CorPedra, -1);
-        }
+            Bloco("Palace", cidade, 68f, GroundTop + 3.5f, 20f, 7f, CorPalacio, -2);
+            Bloco("Palace_Pediment", cidade, 68f, GroundTop + 7.3f, 22f, 1.2f, CorTelhado, -1);
+            Bloco("Palace_Frieze", cidade, 68f, GroundTop + 6.4f, 20.6f, 0.5f, CorPedra, -1);
 
-        for (int i = 0; i < 3; i++)
-        {
-            Bloco("Palace_Step_" + i, cidade, 68f, GroundTop + 0.15f + i * 0.3f,
-                21f - i * 2f, 0.3f, CorPedra, -1);
+            for (int i = 0; i < 5; i++)
+            {
+                Bloco("Column_" + i, cidade, 60f + i * 4f, GroundTop + 3f, 0.9f, 6f, CorPedra, -1);
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                Bloco("Palace_Step_" + i, cidade, 68f, GroundTop + 0.15f + i * 0.3f,
+                    21f - i * 2f, 0.3f, CorPedra, -1);
+            }
         }
 
         // Moradores e soldados: presença, não interação.
         Figura("Villager_1", cidade, 18f, 0.8f, 1.5f, CorNpc, 1, Arte(BardArt));
         Figura("Villager_2", cidade, 26f, 0.8f, 1.5f, CorNpc, 1, Arte(EumaeusArt));
-        Figura("Soldier_1", cidade, 30f, 0.9f, 1.7f, CorSoldado);
-        Figura("Soldier_2", cidade, 32.5f, 0.9f, 1.7f, CorSoldado);
-        Bloco("Spear_1", cidade, 30.6f, GroundTop + 1.2f, 0.12f, 2.4f, CorMadeira, 2);
-        Bloco("Spear_2", cidade, 33.1f, GroundTop + 1.2f, 0.12f, 2.4f, CorMadeira, 2);
+        FiguraDeCenario("Soldier_1", cidade, 30f, FigSoldado, CorSoldado);
+        FiguraDeCenario("Soldier_2", cidade, 32.5f, FigSoldado, CorSoldado);
+        if (Prop("Spear_1", cidade, 30.6f, ItacaRaiz + "Arsenal/ithaca_spear_01.png", 2) == null)
+        {
+            Bloco("Spear_1", cidade, 30.6f, GroundTop + 1.2f, 0.12f, 2.4f, CorMadeira, 2);
+            Bloco("Spear_2", cidade, 33.1f, GroundTop + 1.2f, 0.12f, 2.4f, CorMadeira, 2);
+        }
+        else
+        {
+            Prop("Spear_2", cidade, 33.1f, ItacaRaiz + "Arsenal/ithaca_spear_01.png", 2, GroundTop, true);
+        }
 
         // Ato 1 — explorar quatro cantos da ilha.
-        Ponto("Look_Town", cidade, 10f, "int.prologue.town", explorar, CorPedra, 1.2f, 1.2f);
-        Ponto("Look_People", cidade, 22f, "int.prologue.people", explorar, CorProp, 1.2f, 1f);
-        Ponto("Look_Soldiers", cidade, 31.5f, "int.prologue.soldiers", explorar, CorProp, 1.2f, 1f);
-        Ponto("Look_Palace", cidade, 44f, "int.prologue.palace", explorar, CorPedra, 1.4f, 1.4f);
+        Ponto("Look_Town", cidade, 10f, "int.prologue.town", explorar, CorPedra, 1.2f, 1.2f,
+            null, ItacaRaiz + "Props/ithaca_cart_01.png");
+        Ponto("Look_People", cidade, 22f, "int.prologue.people", explorar, CorProp, 1.2f, 1f,
+            null, ItacaRaiz + "Props/ithaca_bench_01.png");
+        Ponto("Look_Soldiers", cidade, 31.5f, "int.prologue.soldiers", explorar, CorProp, 1.2f, 1f,
+            null, ItacaSuporteDeArmas);
+        Ponto("Look_Palace", cidade, 44f, "int.prologue.palace", explorar, CorPedra, 1.4f, 1.4f,
+            null, ItacaRaiz + "Props/ithaca_amphora_01.png");
 
         Coletavel(16f, GroundTop + 0.9f);
         Coletavel(38f, GroundTop + 0.9f);
 
         // O arauto de Agamenon só chega depois de o jogador conhecer o reino.
-        GameObject arauto = Npc("NPC_Herald", cidade, 48f, falas["Herald"], convocacao, new Color(0.85f, 0.75f, 0.35f), 1.7f);
+        GameObject arauto = Npc("NPC_Herald", cidade, 48f, falas["Herald"], convocacao, new Color(0.85f, 0.75f, 0.35f), 1.7f, Arte(FigSoldado));
         arauto.SetActive(false);
         WireArray(explorar, "enableOnComplete", arauto);
 
         // Ato 2 — dentro do salão.
-        Bloco("Hall_Floor", cidade, 70f, GroundTop + 0.05f, 20f, 0.1f, CorPedra, -1);
+        // Piso do salão: fiada de pedra ladrilhada. Era uma barra chapada de 20 unidades.
+        if (Tile(ItacaTerrenoPedra, TileTopo) != null)
+        {
+            FaixaDeTiles("Hall_Floor", 70f, GroundTop, 20f, LadoDoTile, Tile(ItacaTerrenoPedra, TileTopo), -1);
+        }
+        else
+        {
+            Bloco("Hall_Floor", cidade, 70f, GroundTop + 0.05f, 20f, 0.1f, CorPedra, -1);
+        }
         // A conversa com a família fecha o Ato 2 e abre o portão seguinte: começa
         // sozinha, para não existir a possibilidade de passar direto e travar.
         Npc("NPC_Penelope", cidade, 66f, falas["Penelope"], familia, CorNpc, 1.7f,
             Arte(PenelopeArt), automatico: true);
         Npc("NPC_Telemaco", cidade, 72f, falas["Telemaco"], familia, CorNpc, 1.1f,
             Arte(TelemachusArt), automatico: true);
-        Bloco("Loom", cidade, 63f, GroundTop + 1f, 1.6f, 2f, CorMadeira, 0);
+        if (Prop("Loom", cidade, 63f, ItacaTear, 0) == null)
+        {
+            Bloco("Loom", cidade, 63f, GroundTop + 1f, 1.6f, 2f, CorMadeira, 0);
+        }
 
         Checkpoint(77f);
     }
@@ -1098,6 +1631,14 @@ public static class PrologueSceneBuilder
     /// </summary>
     private static void Casa(Transform pai, float x, float largura, float altura)
     {
+        // A arte da casa tem tamanho próprio (4,34 x 3,06 un) e não é esticada para caber em
+        // largura/altura: a porta dela foi dimensionada para o Odisseu passar, e escalar
+        // desfaria justamente essa medida. Os parâmetros seguem valendo para o placeholder.
+        if (Prop("House", pai, x, ItacaCasa, -2) != null)
+        {
+            return;
+        }
+
         Bloco("House", pai, x, GroundTop + altura * 0.5f, largura, altura, CorCasa, -2);
         Bloco("House_Roof", pai, x, GroundTop + altura + 0.3f, largura + 0.5f, 0.6f, CorTelhado, -1);
         Bloco("House_Door", pai, x, GroundTop + 0.55f, 0.6f, 1.1f, CorMadeira, -1);
@@ -1111,23 +1652,47 @@ public static class PrologueSceneBuilder
         Transform zona = new GameObject("Act3_Recruit").transform;
         zona.SetParent(world, false);
 
-        Npc("Recruit_Fisherman", zona, 86f, falas["Fisherman"], recrutar, CorNpc);
-        Npc("Recruit_Farmer", zona, 92f, falas["Farmer"], recrutar, CorNpc);
-        Npc("Recruit_Sailor", zona, 98f, falas["Sailor"], recrutar, CorNpc);
-        Npc("Recruit_Blacksmith", zona, 105f, falas["Smith"], recrutar, CorNpc);
-        Npc("Recruit_Eurylochus", zona, 118f, falas["Eurylochus"], recrutar, CorSoldado, 1.8f);
-        Npc("Recruit_Rower", zona, 124f, falas["Rower"], recrutar, CorNpc);
-        Npc("Recruit_Shepherd", zona, 129f, falas["Shepherd"], recrutar, CorNpc);
-        Npc("Recruit_Watchman", zona, 140f, falas["Watchman"], recrutar, CorNpc);
-        Npc("Recruit_Carpenter", zona, 145f, falas["Carpenter"], recrutar, CorNpc);
-        Npc("Recruit_Elpenor", zona, 150f, falas["Elpenor"], recrutar, CorNpc, 1.4f);
+        Npc("Recruit_Fisherman", zona, 86f, falas["Fisherman"], recrutar, CorNpc, 1.6f, Arte(FigPescador));
+        Npc("Recruit_Farmer", zona, 92f, falas["Farmer"], recrutar, CorNpc, 1.6f, Arte(FigLavrador));
+        Npc("Recruit_Sailor", zona, 98f, falas["Sailor"], recrutar, CorNpc, 1.6f, Arte(FigMarinheiro));
+        Npc("Recruit_Blacksmith", zona, 105f, falas["Smith"], recrutar, CorNpc, 1.6f, Arte(FigLavrador));
+        Npc("Recruit_Eurylochus", zona, 118f, falas["Eurylochus"], recrutar, CorSoldado, 1.8f, Arte(FigSoldado));
+        Npc("Recruit_Rower", zona, 124f, falas["Rower"], recrutar, CorNpc, 1.6f, Arte(FigMarinheiro));
+        Npc("Recruit_Shepherd", zona, 129f, falas["Shepherd"], recrutar, CorNpc, 1.6f, Arte(FigLavrador));
+        Npc("Recruit_Watchman", zona, 140f, falas["Watchman"], recrutar, CorNpc, 1.6f, Arte(FigSoldado));
+        Npc("Recruit_Carpenter", zona, 145f, falas["Carpenter"], recrutar, CorNpc, 1.6f, Arte(FigAnciao));
+        Npc("Recruit_Elpenor", zona, 150f, falas["Elpenor"], recrutar, CorNpc, 1.4f, Arte(FigMarinheiro));
 
         // Cenário de trabalho da ilha.
-        Bloco("Nets", zona, 88f, GroundTop + 0.4f, 2f, 0.8f, CorProp, 0);
-        Bloco("Field", zona, 94f, GroundTop + 0.2f, 4f, 0.4f, new Color(0.6f, 0.7f, 0.35f), -1);
-        Bloco("Forge", zona, 107f, GroundTop + 0.8f, 2f, 1.6f, new Color(0.4f, 0.35f, 0.35f), 0);
-        Bloco("Boat_Hull", zona, 126f, GroundTop + 0.5f, 5f, 1f, CorMadeira, -1);
-        Bloco("Watchtower", zona, 142f, GroundTop + 2.5f, 1.6f, 5f, CorPedra, -2);
+        if (Prop("Nets", zona, 88f, ItacaRede, 0) == null)
+        {
+            Bloco("Nets", zona, 88f, GroundTop + 0.4f, 2f, 0.8f, CorProp, 0);
+        }
+
+        if (Prop("Field", zona, 94f, ItacaLavoura, -1) == null)
+        {
+            Bloco("Field", zona, 94f, GroundTop + 0.2f, 4f, 0.4f, new Color(0.6f, 0.7f, 0.35f), -1);
+        }
+
+        if (Prop("Forge", zona, 107f, ItacaForja, 0) == null)
+        {
+            Bloco("Forge", zona, 107f, GroundTop + 0.8f, 2f, 1.6f, new Color(0.4f, 0.35f, 0.35f), 0);
+        }
+
+        // Casco em manutenção na praia: barco de pesca escorado, 5,06 un. Não é o navio de
+        // Odisseu — aquele tem 9,12 un, pertence ao cais e, posto aqui, contaria a história
+        // errada: a expedição pronta antes de ser preparada.
+        if (Prop("Boat_Hull", zona, 126f, ItacaCascoNaPraia, -1) == null)
+        {
+            Bloco("Boat_Hull", zona, 126f, GroundTop + 0.5f, 5f, 1f, CorMadeira, -1);
+        }
+
+        if (Prop("Watchtower", zona, 142f, ItacaTorre, -2) == null)
+        {
+            Bloco("Watchtower", zona, 142f, GroundTop + 2.5f, 1.6f, 5f, CorPedra, -2);
+        }
+
+        Vegetacao(zona, 80f, 152f, 26, 4471);
 
         Coletavel(112f, GroundTop + 0.9f);
         Coletavel(134f, GroundTop + 0.9f);
@@ -1141,13 +1706,25 @@ public static class PrologueSceneBuilder
         Transform campo = new GameObject("Act4_Training").transform;
         campo.SetParent(world, false);
 
-        Bloco("Training_Fence", campo, 197f, GroundTop + 2.6f, 84f, 0.2f, CorMadeira, -3);
-        Bloco("Rack", campo, 162f, GroundTop + 0.7f, 2.4f, 1.4f, CorMadeira, 0);
+        // A cerca do campo: com a arte, um muro baixo de pedra seca ladrilhado na linha do
+        // chão. O placeholder era uma barra a 2,6 de altura, que contra um fundo chapado
+        // passava por cerca e contra a paisagem pintada vira um traço solto no céu.
+        if (!MuroBaixo("Training_Wall", campo, 155f, 239f))
+        {
+            Bloco("Training_Fence", campo, 197f, GroundTop + 2.6f, 84f, 0.2f, CorMadeira, -3);
+        }
+
+        if (Prop("Rack", campo, 162f, ItacaSuporteDeArmas, 0) == null)
+        {
+            Bloco("Rack", campo, 162f, GroundTop + 0.7f, 2.4f, 1.4f, CorMadeira, 0);
+        }
+
+        Vegetacao(campo, 156f, 238f, 18, 8823);
 
         // Soldados treinando ao fundo: a ilha inteira se preparando, não só o rei.
         for (int i = 0; i < 6; i++)
         {
-            Figura("Soldier_Drill_" + i, campo, 166f + i * 2.4f, 0.8f, 1.6f, CorSoldado, -1);
+            FiguraDeCenario("Soldier_Drill_" + i, campo, 166f + i * 2.4f, FigSoldado, CorSoldado, -1);
         }
 
         var cursoGo = new GameObject("TrainingCourse");
@@ -1155,15 +1732,15 @@ public static class PrologueSceneBuilder
         var curso = cursoGo.AddComponent<TrainingCourse>();
 
         // Alvos e parceiros nascem desligados: cada etapa liga o seu.
-        GameObject boneco1 = Alvo("Dummy_Sword_1", campo, 172f, curso, TrainingAction.SwordHit, CorBoneco, 1f, 2f);
-        GameObject boneco2 = Alvo("Dummy_Sword_2", campo, 176f, curso, TrainingAction.SwordHit, CorBoneco, 1f, 2f);
+        GameObject boneco1 = Alvo("Dummy_Sword_1", campo, 172f, curso, TrainingAction.SwordHit, CorBoneco, 1f, 2f, ItacaBoneco);
+        GameObject boneco2 = Alvo("Dummy_Sword_2", campo, 176f, curso, TrainingAction.SwordHit, CorBoneco, 1f, 2f, ItacaBoneco);
         GameObject sparring = Sparring("Sparring_Partner", campo, 182f);
-        GameObject alvo1 = Alvo("Target_Bow_1", campo, 216f, curso, TrainingAction.ArrowHit, CorAlvo, 1.2f, 2f);
-        GameObject alvo2 = Alvo("Target_Bow_2", campo, 220f, curso, TrainingAction.ArrowHit, CorAlvo, 1.2f, 2f);
-        GameObject alvo3 = Alvo("Target_Bow_3", campo, 224f, curso, TrainingAction.ArrowHit, CorAlvo, 1.2f, 2f);
-        GameObject alvoFinal = Alvo("Target_Combo", campo, 230f, curso, TrainingAction.ArrowHit, CorAlvo, 1.2f, 2f);
+        GameObject alvo1 = Alvo("Target_Bow_1", campo, 216f, curso, TrainingAction.ArrowHit, CorAlvo, 1.2f, 2f, ItacaAlvo);
+        GameObject alvo2 = Alvo("Target_Bow_2", campo, 220f, curso, TrainingAction.ArrowHit, CorAlvo, 1.2f, 2f, ItacaAlvo);
+        GameObject alvo3 = Alvo("Target_Bow_3", campo, 224f, curso, TrainingAction.ArrowHit, CorAlvo, 1.2f, 2f, ItacaAlvo);
+        GameObject alvoFinal = Alvo("Target_Combo", campo, 230f, curso, TrainingAction.ArrowHit, CorAlvo, 1.2f, 2f, ItacaAlvo);
         GameObject sparringFinal = Sparring("Sparring_Combo", campo, 234f);
-        GameObject bonecoFinal = Alvo("Dummy_Combo", campo, 238f, curso, TrainingAction.SwordHit, CorBoneco, 1f, 2f);
+        GameObject bonecoFinal = Alvo("Dummy_Combo", campo, 238f, curso, TrainingAction.SwordHit, CorBoneco, 1f, 2f, ItacaBoneco);
 
         boneco1.SetActive(false);
         boneco2.SetActive(false);
@@ -1273,38 +1850,86 @@ public static class PrologueSceneBuilder
         Transform arsenal = new GameObject("Act5_Arsenal").transform;
         arsenal.SetParent(world, false);
 
-        Bloco("Armory", arsenal, 256f, GroundTop + 2f, 20f, 4f, CorCasa, -2);
-        Bloco("Armory_Roof", arsenal, 256f, GroundTop + 4.3f, 21f, 0.6f, CorTelhado, -1);
-        Bloco("Anvil", arsenal, 246f, GroundTop + 0.5f, 1.4f, 1f, new Color(0.35f, 0.35f, 0.38f), 0);
+        // Fachada do armazém: 17,24 x 3,31 un contra os 20 x 4 do bloco que substitui. Ela é
+        // pano de fundo — nenhum portão entra no armazém, e as bancadas de preparação ficam à
+        // frente dela —, então as portas desenhadas são decorativas e não precisam passar no
+        // teste da seção 25 como as da casa e do palácio precisam.
+        if (Prop("Armory", arsenal, 256f, ItacaArmazem, -2) == null)
+        {
+            Bloco("Armory", arsenal, 256f, GroundTop + 2f, 20f, 4f, CorCasa, -2);
+            Bloco("Armory_Roof", arsenal, 256f, GroundTop + 4.3f, 21f, 0.6f, CorTelhado, -1);
+        }
+        if (Prop("Anvil", arsenal, 246f, ItacaBigorna, 0) == null)
+        {
+            Bloco("Anvil", arsenal, 246f, GroundTop + 0.5f, 1.4f, 1f, new Color(0.35f, 0.35f, 0.38f), 0);
+        }
+        Prop("Arsenal_Rack", arsenal, 271f, ItacaSuporteDeArmas, 0);
+        Prop("Arsenal_Spear", arsenal, 240f, ItacaRaiz + "Arsenal/ithaca_spear_01.png", 0);
+        Prop("Arsenal_Shield", arsenal, 242f, ItacaRaiz + "Arsenal/ithaca_shield_round_01.png", 0);
 
-        Npc("NPC_Blacksmith", arsenal, 244f, falas["Blacksmith"], equipar, CorSoldado, 1.7f);
-        Ponto("Prep_Swords", arsenal, 250f, "int.prologue.swords", equipar, CorPedra, 1.4f, 1.2f);
-        Ponto("Prep_Shields", arsenal, 256f, "int.prologue.shields", equipar, CorPedra, 1.6f, 1.4f);
-        Ponto("Prep_Arrows", arsenal, 262f, "int.prologue.arrows", equipar, CorMadeira, 1.4f, 1.4f);
-        Ponto("Prep_Armor", arsenal, 268f, "int.prologue.armor", equipar, CorProp, 1.6f, 1.2f);
+        Npc("NPC_Blacksmith", arsenal, 244f, falas["Blacksmith"], equipar, CorSoldado, 1.7f, Arte(FigLavrador));
+        Ponto("Prep_Swords", arsenal, 250f, "int.prologue.swords", equipar, CorPedra, 1.4f, 1.2f,
+            null, ItacaRaiz + "Arsenal/ithaca_sword_01.png");
+        Ponto("Prep_Shields", arsenal, 256f, "int.prologue.shields", equipar, CorPedra, 1.6f, 1.4f,
+            null, ItacaRaiz + "Arsenal/ithaca_shield_round_01.png");
+        Ponto("Prep_Arrows", arsenal, 262f, "int.prologue.arrows", equipar, CorMadeira, 1.4f, 1.4f,
+            null, ItacaRaiz + "Arsenal/ithaca_arrows_bundle_01.png");
+        Ponto("Prep_Armor", arsenal, 268f, "int.prologue.armor", equipar, CorProp, 1.6f, 1.2f,
+            null, ItacaRaiz + "Props/ithaca_crate_01.png");
 
         Transform porto = new GameObject("Act5_Port").transform;
         porto.SetParent(world, false);
 
-        // Uma pequena frota, para a partida ter escala.
+        // Uma pequena frota, para a partida ter escala. Atracada: vela enrolada na verga,
+        // porque a expedição ainda está sendo preparada — só o navio de Odisseu iça vela, e
+        // só no fim da fase.
         for (int i = 0; i < 4; i++)
         {
             float x = 288f + i * 12f;
+            // Alternar o lado quebra a repetição de quatro cascos idênticos em fila.
+            if (Prop("Ship_Hull_" + i, porto, x, ItacaNavioAtracado, -4, GroundTop - 1.2f, i % 2 == 1) != null)
+            {
+                continue;
+            }
+
             Bloco("Ship_Hull_" + i, porto, x, GroundTop - 0.6f, 9f, 1.6f, CorMadeira, -4);
             Bloco("Ship_Mast_" + i, porto, x, GroundTop + 2.4f, 0.3f, 6f, CorMadeira, -4);
             Bloco("Ship_Sail_" + i, porto, x + 1.4f, GroundTop + 3f, 3f, 3.4f, CorVela, -5);
         }
 
-        Ponto("Port_Supplies", porto, 282f, "int.prologue.supplies", navios, CorProp, 1.4f, 1.4f);
-        Ponto("Port_Oars", porto, 292f, "int.prologue.oars", navios, CorMadeira, 1.8f, 0.8f);
-        Ponto("Port_Sails", porto, 304f, "int.prologue.sails", navios, CorVela, 1.6f, 1.4f);
-        Ponto("Port_Crew", porto, 316f, "int.prologue.crew", navios, CorNpc, 1.2f, 1.6f);
+        Ponto("Port_Supplies", porto, 282f, "int.prologue.supplies", navios, CorProp, 1.4f, 1.4f,
+            null, ItacaRaiz + "Props/ithaca_basket_01.png");
+        // Não há remo no pacote; a lança é o cabo de madeira longo mais próximo.
+        Ponto("Port_Oars", porto, 292f, "int.prologue.oars", navios, CorMadeira, 1.8f, 0.8f,
+            null, ItacaRaiz + "Arsenal/ithaca_spear_01.png");
+        // Vela avulsa também não existe; o rolo de corda lê como cordame preparado para o velame.
+        Ponto("Port_Sails", porto, 304f, "int.prologue.sails", navios, CorVela, 1.6f, 1.4f,
+            null, ItacaRaiz + "Props/ithaca_rope_coil_01.png");
+        // Tripulação são pessoas, e não há sprite disso; o banco marca o ponto onde ela se reúne.
+        Ponto("Port_Crew", porto, 316f, "int.prologue.crew", navios, CorNpc, 1.2f, 1.6f,
+            null, ItacaRaiz + "Props/ithaca_bench_01.png");
 
-        Figura("Sailor_1", porto, 296f, 0.8f, 1.6f, CorNpc);
-        Figura("Sailor_2", porto, 300f, 0.8f, 1.6f, CorNpc);
-        Figura("Sailor_3", porto, 312f, 0.8f, 1.6f, CorNpc);
-        Bloco("Barrels", porto, 286f, GroundTop + 0.5f, 1.2f, 1f, CorProp, 0);
-        Bloco("Ropes", porto, 308f, GroundTop + 0.3f, 1.6f, 0.6f, CorProp, 0);
+        FiguraDeCenario("Sailor_1", porto, 296f, FigMarinheiro, CorNpc);
+        FiguraDeCenario("Sailor_2", porto, 300f, FigMarinheiro, CorNpc);
+        FiguraDeCenario("Sailor_3", porto, 312f, FigMarinheiro, CorNpc);
+        if (Prop("Barrels", porto, 286f, ItacaRaiz + "Props/ithaca_barrel_01.png", 0) == null)
+        {
+            Bloco("Barrels", porto, 286f, GroundTop + 0.5f, 1.2f, 1f, CorProp, 0);
+        }
+
+        if (Prop("Ropes", porto, 308f, ItacaRaiz + "Props/ithaca_rope_coil_01.png", 0) == null)
+        {
+            Bloco("Ropes", porto, 308f, GroundTop + 0.3f, 1.6f, 0.6f, CorProp, 0);
+        }
+
+        // Postes de amarração ao longo do cais.
+        for (int i = 0; i < 5; i++)
+        {
+            Prop("Dock_Post_" + i, porto, 284f + i * 9f, ItacaPosteDoCais, 0);
+        }
+
+        Prop("Port_Net", porto, 298f, ItacaRede, 0);
+        Prop("Port_Anchor", porto, 318f, ItacaRaiz + "Port/ithaca_anchor_01.png", 0);
 
         Checkpoint(279f);
         Checkpoint(320f);
@@ -1333,11 +1958,31 @@ public static class PrologueSceneBuilder
         navio.transform.SetParent(cais, false);
         navio.transform.position = new Vector3(340f, 0f, 0f);
 
-        Bloco("Hull", navio.transform, 340f, GroundTop - 0.4f, 11f, 2f, CorMadeira, -3);
-        Bloco("Mast", navio.transform, 340f, GroundTop + 3f, 0.35f, 7f, CorMadeira, -3);
-        Bloco("Sail", navio.transform, 341.6f, GroundTop + 3.6f, 3.6f, 4f, CorVela, -4);
+        // Altura do convés acima da base do sprite, publicada pelo pipeline de arte em
+        // ithaca_ship_01.json: 257 px de altura menos 190 px até a linha da borda, a 42,857
+        // px por unidade. Adivinhar essa linha põe a silhueta flutuando ou enterrada, e nada
+        // no jogo acusa — a única pista seria olhar.
+        const float ConvesAcimaDaBase = (257f - 190f) / 42.857143f;
+        const float LinhaDoConves = GroundTop + 0.2f;
 
-        GameObject conves = Figura("Odysseus_OnDeck", navio.transform, 337f, 0.8f, 1.5f, new Color(0.9f, 0.8f, 0.4f), 2);
+        float xDoConves = 340f;
+        if (Prop("Hull", navio.transform, 340f, ItacaNavio, -3, LinhaDoConves - ConvesAcimaDaBase) == null)
+        {
+            Bloco("Hull", navio.transform, 340f, GroundTop - 0.4f, 11f, 2f, CorMadeira, -3);
+            Bloco("Mast", navio.transform, 340f, GroundTop + 3f, 0.35f, 7f, CorMadeira, -3);
+            Bloco("Sail", navio.transform, 341.6f, GroundTop + 3.6f, 3.6f, 4f, CorVela, -4);
+            xDoConves = 337f;
+        }
+
+        // A silhueta do convés é o próprio Odisseu parado — é ele que embarca. Vinha como
+        // retângulo dourado, o que só passava despercebido enquanto o resto também era bloco.
+        Sprite odisseuParado = SpriteDaFolha("Assets/Resources/Odisseia/Characters/CHR_Odysseus.png",
+            "CHR_Odysseus_Idle_00");
+        GameObject conves = odisseuParado != null
+            ? Figura("Odysseus_OnDeck", navio.transform, xDoConves, 0.8f, odisseuParado.bounds.size.y,
+                Color.white, 2, odisseuParado)
+            : Figura("Odysseus_OnDeck", navio.transform, xDoConves, 0.8f, 1.5f, new Color(0.9f, 0.8f, 0.4f), 2);
+        conves.transform.position = new Vector3(conves.transform.position.x, LinhaDoConves, conves.transform.position.z);
         conves.SetActive(false);
 
         var embarque = new GameObject("Trigger_Boarding");
