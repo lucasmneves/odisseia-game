@@ -48,9 +48,6 @@ TextureImporter:
       213: 821716794
     second: CHR_Odysseus_Run_07
   - first:
-      213: 377960119
-    second: CHR_Odysseus_Run_08
-  - first:
       213: 1993289046
     second: CHR_Odysseus_Jump_00
   - first:
@@ -732,28 +729,6 @@ TextureImporter:
       bones: []
       spriteID: 0178a3c2ff71fd8a66ca93325e715e12
       internalID: 821716794
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CHR_Odysseus_Run_08
-      rect:
-        serializedVersion: 2
-        x: 672
-        y: 1176
-        width: 84
-        height: 84
-      alignment: 9
-      pivot: {x: 0.5, y: 0.142857}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5adaba70bae545e38e53c403e78d36eb
-      internalID: 377960119
       vertices: []
       indices: 
       edges: []
@@ -2613,7 +2588,6 @@ TextureImporter:
       CHR_Odysseus_Run_05: 41406001
       CHR_Odysseus_Run_06: 1351966758
       CHR_Odysseus_Run_07: 821716794
-      CHR_Odysseus_Run_08: 377960119
       CHR_Odysseus_Jump_00: 1993289046
       CHR_Odysseus_Jump_01: 1884995566
       CHR_Odysseus_Jump_02: 1620962281

@@ -104,7 +104,7 @@ O `Player.prefab` aponta para `Odisseia/Characters/CHR_Odysseus` (arquivo atual:
 | Fase | Estado | Frames | `frame_count` + `keep_first_frame` |
 |---|---|---|---|
 | 2 | Idle ✅ | 7 | 6 + true |
-| 3 | Run | 9 | 8 + true |
+| 3 | Run | 8 | 8 + false |
 | 4 | Jump | 7 | 6 + true |
 | 5 | Fall *(novo)* | 4 | 4 + false |
 | 6 | AttackLight | 7 | 6 + true |
@@ -164,7 +164,7 @@ Zero pixels semi-transparentes; nenhum frame encosta em qualquer borda do canvas
 | Fase | Estado | Frames | Receita | Grupo |
 |---|---|---|---|---|
 | 2 | Idle | 7 | A | `18f59529-7ba5-4b15-aa1c-fb45b16f9cdb` |
-| 3 | Run | 9 | A | `61df180a-1b74-4a5d-b144-7602f64febbb` |
+| 3 | Run | 8 | **B** *(refeito 2×, ver seção 17)* | `7f6a7775-979c-4fe1-8272-5fbc0e548515` |
 | 4 | Jump | 8 | B | `5569f693-a3f7-473c-a848-cb0da1c9a064` |
 | 5 | Fall | 2 | B + seleção manual | `f58c81f3-b6f8-436e-af89-d8e061b83577` |
 | 6 | AttackLight | 6 | B | `101e9f71-0b6d-4bb6-acd2-105eb1e88191` |
@@ -180,7 +180,7 @@ Zero pixels semi-transparentes; nenhum frame encosta em qualquer borda do canvas
 | — | Climb | 6 | B | `72088c2a-115d-487d-9c30-b4d600df6c88` |
 | — | ShieldHold | 4 | B + seleção de emenda | `fb40d80b-3ef4-494d-b77f-bc41ea89d590` |
 
-**99 frames por 16 gerações.** Arquivos em `Master_B/<Estado>_east/CHR_Odysseus_<Estado>_<NN>.png`.
+**98 frames por 20 gerações.** Arquivos em `Master_B/<Estado>_east/CHR_Odysseus_<Estado>_<NN>.png`.
 
 ### O bloqueio de escudo e arco não existia
 
@@ -196,7 +196,7 @@ Consequência de projeto: os itens só existem durante essas animações. É exa
 
 ### Qualidade — o que ficou abaixo do pedido
 
-- **Run** lê como caminhada firme, não corrida disparada.
+- ~~**Run** lê como caminhada firme, não corrida disparada.~~ Corrigido — seção 17.
 - **Victory** virou saudação com a espada à frente do peito, não triunfo com o braço erguido
   (o topo do sprite nunca passa de y=12, confirmando que nada sobe acima da cabeça).
 - **Fall** tem só 2 frames selecionados à mão.
@@ -253,7 +253,7 @@ Sete estados já tinham configuração; os cinco novos foram adicionados.
 | Estado | FPS | Loop | | Estado | FPS | Loop |
 |---|---|---|---|---|---|---|
 | Idle | 8 | sim | | Shield | 12 | não |
-| Run | 13 | sim | | Bow | 14 | não |
+| Run | 16 | sim | | Bow | 14 | não |
 | Jump | 10 | não | | Damage | 18 | não |
 | Fall | 8 | sim | | Death | 10 | não |
 | AttackLight | 18 | não | | Interaction | 10 | não |
@@ -670,7 +670,7 @@ exatamente o defeito que a guarda tinha.
 
 ### Estado da verificação
 
-A folha passou para **756 × 1344, 99 sprites** (16 estados). Conferido estaticamente: 99
+A folha passou para **756 × 1344, 98 sprites** (16 estados). Conferido estaticamente: 98
 `internalID` únicos, GUID e PPU preservados, `ShieldHold` presente no meta, no prefab
 (8 fps, loop) e usado no `PlayerAnimator`.
 
@@ -685,7 +685,7 @@ Unity.exe -batchmode -nographics -quit -projectPath . -executeMethod OdysseusShe
 
 ## 14. O que sobrou como opcional
 
-1. **Run mais veloz** — lê como caminhada firme, não corrida disparada.
+1. ~~**Run mais veloz**~~ — feito, seção 17.
 2. **Victory com braço erguido** — saiu como saudação com a espada à frente do peito.
 3. **Fall com mais frames** — hoje são 2, selecionados à mão.
 
@@ -716,3 +716,151 @@ O MCP `pixellab` está registrado em `~/.claude.json` sob o escopo de projeto `C
 não sob `C:/Users/luucas/Documents/Claude` — por isso as ferramentas não carregam numa sessão
 aberta na pasta do projeto. Contorno: JSON-RPC direto no endpoint HTTP via Node.
 Solução permanente: registrar o servidor também no escopo desta pasta (exige reiniciar a sessão).
+
+---
+
+## 17. O Run refeito — a receita errada estava documentada o tempo todo
+
+**2026-09-05.** A queixa foi "o Odisseu está apenas andando rápido". Estava certa, e a causa
+já estava escrita aqui: a tabela da seção 7 registrava o Run como **Receita A**.
+
+A Receita A é a de movimento *sutil* — âncora `keep_first_frame: true` mais o trava-orientação
+pesado. É exatamente a combinação que a seção 6 documenta como destruidora de movimento amplo:
+"com a âncora e o trava-orientação pesado, o Jump saiu com a base em 71,71,71,71,70,69,71 — o
+corpo subia 2px, virou passada no chão". O Run tinha o mesmo defeito, pelo mesmo motivo, e
+ninguém tinha ligado uma coisa à outra.
+
+Medição do ciclo antigo: pés entre y=69 e y=71 — **2 px de folga**, nenhum quadro no ar.
+
+### Duas tentativas, e por que o template perdeu
+
+| | Receita | Frames | Canvas | Distância da paleta | Equipamento |
+|---|---|---|---|---|---|
+| v2 | template `running-8-frames` | 8 | **64 px** | **11,8** | **perdido** |
+| v3 | **B** (v3, `keep_first_frame: false`) | 8 | 84 px | 3,7 | intacto |
+
+O template devolve a melhor corrida das três — inclinação do tronco, cotovelos dobrados,
+joelho alto. Mas ele **redesenha o personagem**: ampliado a 8× não há espada embainhada, não há
+ombreira de bronze, não há arreio de couro cruzado. Para o sprite que é a referência oficial
+do projeto, isso é outro personagem, não outra animação. Preservado em
+`_descartados/Run_v2_template_sem_equipamento/`.
+
+**Regra que sai daqui:** template troca o esqueleto e leva o equipamento junto. Para um
+personagem com identidade travada, template só serve se a silhueta for genérica.
+
+### Detalhes do template que custam tempo se descobertos por acidente
+
+- Ele devolve o **canvas nativo do personagem (64 px)**, não os 84 px dos outros estados.
+  Encaixar exige `Tools/fit-character-state.js`.
+- `animate_character` **deduplica por template + direção**: repetir a mesma chamada devolve
+  "already complete" sem gerar nada e sem cobrar. Para tentar de novo é preciso
+  `delete_animation` antes.
+- Passar `action_description` junto de um `template_animation_id` **não** muda o resultado.
+- O personagem tem 8 direções. Sem `directions: ["east"]` o template custaria 8 gerações.
+
+### O que ficou
+
+Ciclo de 8 quadros a **16 FPS** (era 9 a 13). O FPS não é gosto: a 6 un/s do
+`PlayerController`, um ciclo de 0,50 s cobre 3 un, ou seja **1,5 un por passada** — coerente
+com um personagem de 1,4 un. Fora dessa faixa o pé patina no chão, que é o outro jeito de uma
+corrida parecer caminhada acelerada.
+
+### Segunda rodada: os braços não tinham se mexido
+
+A primeira Receita B parecia resolvida e não estava. A queixa foi "precisa movimentar mais as
+pernas e os braços". Medindo, ela estava certa **e era específica**: as pernas tinham melhorado
+muito, os braços não tinham mudado nada.
+
+`Tools/motion-metrics.js` transforma isso em número, e o que o faz funcionar é a paleta. A
+rampa **Pele** acha antebraço e punho; medir a silhueta inteira mediria a **capa**, que esvoaça
+sozinha e daria movimento de braço onde não há. O número que importa é o **curso do punho** —
+deslocamento do centro de massa da pele do tronco ao longo do ciclo — porque o braço da corrida
+se move na diagonal (punho do quadril ao queixo) e só a extensão horizontal perderia metade.
+
+| Ciclo | Curso do punho | Abertura das pernas | Energia entre quadros |
+|---|---|---|---|
+| Caminhada (Receita A) | 2,4 | 14 | 87 |
+| Receita B, 1ª tentativa | 5,9 | 26 | 104 |
+| **Aceito (`Run_v5_anatomico`)** | **9,3** | **27** | 101 |
+| Template recusado | 4,1 | 10 | 117 |
+| Idle, como piso | 1,7 | 2 | 27 |
+
+**O que destravou os braços foi TIRAR texto, não acrescentar.** A primeira descrição terminava
+em "o corpo permanece em pé" e "a cabeça permanece de perfil voltada à direita" — cláusulas de
+amortecimento que o modelo obedeceu melhor que o pedido de correr. A versão aceita mantém só a
+âncora do equipamento e descreve anatomicamente o que cada membro faz: *front knee lifted up to
+hip height with the shin hanging down, rear leg extended far behind with the heel kicked up
+toward the buttock, front arm bent at a right angle with the fist raised to chin height, rear
+arm bent and driven back past the hip*.
+
+Isto **contradiz em parte a seção 6**: a Receita B pede "dizer explicitamente o que o corpo não
+deve fazer", e foi exatamente isso que travou a corrida. A regra fina é: proibição serve para
+impedir uma **deformação** (o Fall virando voo horizontal), não para fixar uma **postura** — o
+segundo caso vira freio de amplitude.
+
+### Duas correções que os números reprovaram
+
+**Semear a interpolação com uma pose de corrida pronta.** Como o v3 parte da pose de referência,
+os primeiros quadros saem mansos; passar `custom_start_frame_base64` com um quadro de corrida
+parecia a correção óbvia. Saiu o oposto: o ciclo **congelou** em volta da semente — energia 88,
+a mesma da caminhada, com os 8 quadros quase iguais. A amplitude nasce da viagem entre a pose
+parada e a extrema; começar na extrema elimina a viagem. Preservado em
+`_descartados/Run_v7_semente_congelada/`.
+
+**Cortar os três primeiros quadros.** A emenda do quadro 3 ao 7 fecha melhor que o ciclo inteiro
+(razão 0,71 contra 1,30 — pela regra da seção 9, emenda contra a mediana das transições
+internas). Mas medir a **abertura entre os pés** mostra dois picos, nos quadros 3 e 7: são o
+mesmo momento da passada, e é por isso que a emenda fecha tão bem. Repetir só esse trecho daria
+uma perna sempre à frente — manqueira. Os oito quadros ficaram.
+
+Fica a lição: **a métrica de emenda sozinha engana.** Ela mede continuidade, não fase. Antes de
+cortar quadros de um ciclo de locomoção, contar as passadas.
+
+### A conta da passada depende de contar as passadas
+
+`LocomotionProbe` divide por 2 passadas por ciclo. Verificado, não assumido: a abertura entre
+os pés tem dois picos na caminhada, na 1ª Receita B e no ciclo aceito. (O template tinha três —
+mais um motivo para não ter entrado.) A medida usa só os pés, nunca o centro do corpo: a capa
+arrasta para trás e envenena qualquer medida ancorada no tronco.
+
+### O sprint reusa este ciclo — o FPS deixou de ser constante
+
+**2026-09-05, no mesmo dia.** Correr é `Sprint` no mapa Player (**Shift** ou **R1** /
+`<Gamepad>/rightShoulder`; os gatilhos já eram escudo e arco). Modelado como `type: Value` +
+`expectedControlType: Button`, igual a `Crouch` e `Shield`, que é como o projeto faz botão
+segurado. Velocidade 1,5×: 6 → 9 un/s. Agachar vence o sprint em vez de os dois se
+multiplicarem.
+
+**Não há segunda folha de arte.** O `SpriteAnimator` ganhou `PlaybackScale`, e o
+`PlayerAnimator` a define como `velocidade / MaxSpeed` enquanto o estado é Run. A passada sai
+constante em qualquer velocidade — é o que mantém o pé cravado no chão:
+
+| | Velocidade | Ritmo | Passada |
+|---|---|---|---|
+| Corrida normal | 6,0 un/s | 16 FPS | **1,50 un** |
+| Sprint | 9,0 un/s | 24 FPS | **1,50 un** |
+
+Com FPS fixo o sprint teria passada de 2,25 un e o pé escorregaria — a mesma leitura de
+"andando rápido" que a corrida acabou de deixar de ter. O efeito colateral é bem-vindo: sob a
+sonolência do lótus (`SpeedMultiplier`) a corrida agora fica pesada em vez de acelerada no
+lugar. `PlaybackScale` volta a 1 sozinho a cada troca de estado, para não vazar para um ataque
+e desencontrar o clipe do `lockTimer`.
+
+Verificado por `LocomotionProbe.Medir` — ele lê velocidade, multiplicador, FPS, limites e a
+contagem real de quadros da folha, e falha se a passada variar mais que 2% entre a corrida
+normal e o sprint. Nada disso é erro de compilação: mexer em `sprintMultiplier` ou no FPS do
+Run pode voltar a soltar o pé do chão em silêncio.
+
+O sprint entrou também no menu de remapeamento (`KeyRebindService`) e nos dois probes de
+entrada. **`Crouch` continua de fora do menu de remapeamento** — falta anterior, não
+introduzida aqui.
+
+Revisão animada das três versões lado a lado: `corrida-odisseu.html`.
+
+### Ferramentas novas
+
+| | |
+|---|---|
+| `Tools/contact-strip.js` | tira de contato ampliada de um estado — um ciclo se julga pela pose de cada quadro, e não dá para ver abrindo um PNG por vez |
+| `Tools/fit-character-state.js` | encaixa frames no formato da folha: paleta, pés em y=71, cabeça em x=42 |
+| `Tools/splice-sheet-state.js` | troca **um** estado dentro da folha sem remontar o `.meta`, que é onde moram o GUID e os `internalID` que o prefab referencia |

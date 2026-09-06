@@ -45,6 +45,9 @@ namespace Odisseia.Player
         [SerializeField] private float runThreshold = 0.2f;
         [Tooltip("Velocidade vertical (negativa) a partir da qual Jump vira Fall.")]
         [SerializeField] private float fallThreshold = -0.5f;
+        [Tooltip("Limites do ritmo da corrida, como fração do ritmo configurado para o Run.")]
+        [SerializeField] private float ritmoMinimo = 0.55f;
+        [SerializeField] private float ritmoMaximo = 2f;
 
         private Rigidbody2D rb;
         private PlayerController controller;
@@ -284,7 +287,41 @@ namespace Odisseia.Player
                 return;
             }
 
-            animator.Play(speed > runThreshold ? StateRun : StateIdle);
+            if (speed <= runThreshold)
+            {
+                animator.Play(StateIdle);
+                return;
+            }
+
+            animator.Play(StateRun);
+            animator.PlaybackScale = RitmoDaCorrida(speed);
+        }
+
+        /// <summary>
+        /// A que ritmo tocar o ciclo de corrida, dada a velocidade real.
+        ///
+        /// O FPS configurado no prefab foi escolhido para a velocidade normal do
+        /// <see cref="PlayerController"/>: naquele ritmo cada passada cobre a distância que o
+        /// personagem realmente percorre, e o pé fica cravado no chão. Num sprint 1,5× mais
+        /// rápido, o mesmo ritmo faria o pé PATINAR — que é exatamente a leitura de
+        /// "andando rápido" que a corrida acabou de deixar de ter. Então o ritmo acompanha a
+        /// velocidade, e a proporção se mantém em qualquer valor entre parado e sprint.
+        ///
+        /// Isso também acerta de graça os efeitos que mexem na velocidade: sob a sonolência
+        /// do lótus, a corrida fica pesada em vez de acelerada no lugar.
+        ///
+        /// Os limites existem para os extremos: sem o piso, empurrado contra uma parede o
+        /// personagem congelaria num quadro em vez de correr no lugar.
+        /// </summary>
+        private float RitmoDaCorrida(float speed)
+        {
+            float referencia = controller != null ? controller.MaxSpeed : 0f;
+            if (referencia <= 0.01f)
+            {
+                return 1f;
+            }
+
+            return Mathf.Clamp(speed / referencia, ritmoMinimo, ritmoMaximo);
         }
     }
 }

@@ -29,7 +29,7 @@ public static class OdysseusSheetProbe
     /// <summary>Frames esperados por estado, na ordem das fases do pipeline de arte.</summary>
     private static readonly (string Estado, int Frames)[] Esperado =
     {
-        ("Idle", 7), ("Run", 9), ("Jump", 8), ("Fall", 2),
+        ("Idle", 7), ("Run", 8), ("Jump", 8), ("Fall", 2),
         ("AttackLight", 6), ("AttackHeavy", 8), ("Shield", 6), ("Bow", 8),
         ("Damage", 6), ("Death", 8), ("Interaction", 6), ("Victory", 8),
         ("Crouch", 4), ("CrouchWalk", 3), ("Climb", 6), ("ShieldHold", 4),
@@ -43,7 +43,7 @@ public static class OdysseusSheetProbe
     private static readonly string[] PrecisamDeLoop = { "Idle", "Run", "ShieldHold", "CrouchWalk", "Fall" };
 
     /// <summary>Ações que o mapa "Player" precisa expor para a movimentação funcionar.</summary>
-    private static readonly string[] AcoesNecessarias = { "Move", "Jump", "Crouch" };
+    private static readonly string[] AcoesNecessarias = { "Move", "Jump", "Crouch", "Sprint" };
 
     public static void Run()
     {
@@ -206,7 +206,8 @@ public static class OdysseusSheetProbe
             }
         }
 
-        // A ação de agachar é nova; sem ela o botão simplesmente não responde.
+        // Agachar e correr são ações novas; sem elas o botão simplesmente não responde, e
+        // nada no jogo reclama — a falta é silenciosa.
         var controles = AssetDatabase.LoadAssetAtPath<UnityEngine.InputSystem.InputActionAsset>(
             "Assets/ScriptableObjects/PlayerControls.inputactions");
         if (controles == null)
