@@ -1,0 +1,10 @@
+[
+  {
+    "nome": "_fonte_arrow",
+    "args": {
+      "description": "a single ancient Greek arrow lying horizontally, pointing right: a slender wooden shaft, a small leaf shaped bronze arrowhead at the right end, and three short pale feather fletchings at the left end. Seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the arrow.",
+      "width": 32, "height": 32, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  }
+]

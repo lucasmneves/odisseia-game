@@ -23,6 +23,12 @@ namespace Odisseia.Levels
         private Vector3 startPosition;
         private bool collected;
 
+        /// <summary>
+        /// Flecha cravada no cenário, montada em tempo de execução por <c>Arrow</c>. Não
+        /// flutua: ela está espetada em algo, e flutuar denunciaria que é um pickup solto.
+        /// </summary>
+        private bool fincada;
+
         private void Awake()
         {
             startPosition = transform.position;
@@ -31,7 +37,10 @@ namespace Odisseia.Levels
 
         private void Update()
         {
-            if (collected)
+            // `fincada` sai antes de tudo: a linha abaixo escreve position em todo quadro, e
+            // numa flecha filha de plataforma móvel isso a prenderia ao ponto do impacto
+            // enquanto a plataforma anda embaixo dela.
+            if (collected || fincada)
             {
                 return;
             }
@@ -41,6 +50,30 @@ namespace Odisseia.Levels
         }
 
         private void OnTriggerEnter2D(Collider2D other)
+        {
+            Recolher(other);
+        }
+
+        /// <summary>
+        /// Também em Stay: quem chega com a aljava cheia não dispara Enter de novo ao esvaziá-la
+        /// parado ali, e a flecha ficaria intocável a um passo do jogador.
+        /// </summary>
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            Recolher(other);
+        }
+
+        /// <summary>
+        /// Converte esta flecha, já cravada, em munição a recolher: sem flutuação e valendo a
+        /// única flecha que foi gasta para atirá-la.
+        /// </summary>
+        public void ConfigurarComoFlechaFincada()
+        {
+            fincada = true;
+            amount = 1;
+        }
+
+        private void Recolher(Collider2D other)
         {
             if (collected || !other.CompareTag("Player"))
             {
