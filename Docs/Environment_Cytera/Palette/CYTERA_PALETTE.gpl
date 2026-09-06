@@ -1,0 +1,44 @@
+GIMP Palette
+Name: Odisseia - Cytera Environment
+Columns: 4
+#
+ 43  46  39	Contorno Highlight
+ 29  34  29	Contorno Base
+ 20  20  21	Contorno Sombra
+  5   5   7	Contorno Profunda
+245 205  92	Bronze Highlight
+187 126  44	Bronze Base
+157  97  31	Bronze Sombra
+115  62  22	Bronze Profunda
+252 253 252	Espuma Highlight
+235 240 233	Espuma Base
+206 218 214	Espuma Sombra
+175 183 175	Espuma Profunda
+156 163 154	Ceu tempestade Highlight
+126 133 127	Ceu tempestade Base
+ 90  97  93	Ceu tempestade Sombra
+ 56  61  53	Ceu tempestade Profunda
+102 110 105	Nuvem escura Highlight
+ 73  81  71	Nuvem escura Base
+ 53  58  50	Nuvem escura Sombra
+ 30  33  28	Nuvem escura Profunda
+149 173 162	Mar Highlight
+123 146 136	Mar Base
+ 90 109 105	Mar Sombra
+ 60  66  57	Mar Profunda
+114 132 123	Mar profundo Highlight
+ 86 117 109	Mar profundo Base
+ 64  70  61	Mar profundo Sombra
+ 28  31  26	Mar profundo Profunda
+138 148 141	Rocha molhada Highlight
+111 120 115	Rocha molhada Base
+ 85  93  83	Rocha molhada Sombra
+ 46  50  43	Rocha molhada Profunda
+ 89  71  50	Madeira Highlight
+ 72  49  33	Madeira Base
+ 57  38  27	Madeira Sombra
+ 36  31  24	Madeira Profunda
+223 224 211	Lona Highlight
+138 120  85	Lona Base
+116 101  76	Lona Sombra
+ 70  53  38	Lona Profunda
