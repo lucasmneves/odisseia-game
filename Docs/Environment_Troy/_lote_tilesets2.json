@@ -1,0 +1,22 @@
+[
+  {
+    "nome": "troy_tiles_stone",
+    "args": {
+      "lower_description": "cyclopean masonry of huge irregular pale limestone blocks, Bronze Age Mycenaean wall construction, uneven joints",
+      "transition_description": "worn flat limestone paving slabs",
+      "transition_size": 0.35, "tile_size": 32,
+      "outline": "single color outline", "shading": "medium shading", "detail": "medium detail",
+      "base_tile_id": "5f4763ac-a480-44b2-a2e8-074625df6833"
+    }
+  },
+  {
+    "nome": "troy_tiles_wood",
+    "args": {
+      "lower_description": "rough hewn timber beams of a siege platform, dark weathered wood with visible grain",
+      "transition_description": "worn wooden planking walked on by soldiers",
+      "transition_size": 0.3, "tile_size": 32,
+      "outline": "single color outline", "shading": "medium shading", "detail": "medium detail",
+      "base_tile_id": "5f4763ac-a480-44b2-a2e8-074625df6833"
+    }
+  }
+]

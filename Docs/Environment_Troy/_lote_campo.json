@@ -1,0 +1,66 @@
+[
+  {
+    "nome": "_fonte_tent_large",
+    "args": {
+      "description": "large Greek army ridge tent of coarse undyed canvas on plain wooden poles, guy ropes running down to wooden pegs, the entrance flap tied open, a small red pennant at the ridge, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the tent.",
+      "width": 160, "height": 128, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_tent_small",
+    "args": {
+      "description": "small low Greek army tent of coarse undyed canvas on two short wooden poles, guy ropes pegged down, closed flap, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the tent.",
+      "width": 112, "height": 96, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_campfire",
+    "args": {
+      "description": "small camp cooking fire, burning logs with bright orange and yellow flames, a bronze cauldron hanging from a simple iron tripod above it, ring of stones around the base, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the fire and tripod.",
+      "width": 96, "height": 96, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_supply_pile",
+    "args": {
+      "description": "stacked army supplies, wooden crates and sacks of grain piled together with a coil of rope on top, seen from directly beside them, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the pile.",
+      "width": 112, "height": 96, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_banner_pole",
+    "args": {
+      "description": "tall plain wooden pole planted in the ground carrying a long red war banner hanging down, simple bronze finial at the top, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the pole and banner.",
+      "width": 64, "height": 192, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_barricade",
+    "args": {
+      "description": "defensive barricade of rough timber beams lashed together with rope, some beams splintered and broken, sharpened stakes angled outward, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the barricade.",
+      "width": 128, "height": 80, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_spear_cluster",
+    "args": {
+      "description": "several bronze tipped wooden spears planted upright in dry earth at slightly different angles, one leaning, seen from directly beside them, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the spears.",
+      "width": 96, "height": 128, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_broken_shield",
+    "args": {
+      "description": "round bronze faced war shield abandoned on the ground leaning against a rock, the rim dented and one section split, painted device worn away, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the shield and rock.",
+      "width": 80, "height": 64, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  }
+]

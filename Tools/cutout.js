@@ -58,10 +58,26 @@ function cutout(img, tol = 14, { enclosed = false } = {}) {
   let trapped = 0;
   if (enclosed) for (let i = 0; i < w * h; i++) if (!bg[i] && near(i)) { bg[i] = 1; trapped++; }
 
+  let removed = 0;
+  for (let i = 0; i < w * h; i++) if (bg[i]) removed++;
+
+  // Guarda pelo SINTOMA, não pela causa. Quando o objeto sangra até as bordas, as cores dele
+  // entram na lista de referência, o flood-fill escapa para dentro e come a imagem — foi o que
+  // aconteceu com uma seção de muralha que preenchia o quadro, sem erro nenhum no caminho.
+  //
+  // Tentei detectar pela borda e pelo miolo, e as duas medidas reprovavam o casco do navio,
+  // que é um recorte legítimo com 75% de fundo. O que separa os casos é quanto sobra: a
+  // muralha perdia 92% e o casco perde 75%. O limiar fica em 85%, e a mensagem diz o que fazer
+  // — asset que sangra até a borda é textura, não recorte.
+  const fatia = removed / (w * h);
+  if (fatia > 0.85) {
+    throw new Error(`o recorte removeria ${(100 * fatia).toFixed(0)}% da imagem — o objeto ` +
+      'provavelmente sangra até as bordas; trate-o como textura, sem cutout');
+  }
+
   const out = p.blank(w, h);
   img.data.copy(out.data);
-  let removed = 0;
-  for (let i = 0; i < w * h; i++) if (bg[i]) { out.data[i * 4 + 3] = 0; removed++; }
+  for (let i = 0; i < w * h; i++) if (bg[i]) out.data[i * 4 + 3] = 0;
   return { img: out, removed, trapped, ref };
 }
 
