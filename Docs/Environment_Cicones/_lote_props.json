@@ -1,0 +1,58 @@
+[
+  {
+    "nome": "_fonte_olive_tree",
+    "args": {
+      "description": "a single old olive tree seen from directly beside it, strict flat side profile like a technical elevation drawing. A thick gnarled twisting trunk of grey-brown bark splitting into a few heavy limbs, a broad rounded canopy of small silver-green leaves in clumps with gaps of sky showing through, a few dark olives, exposed roots gripping dry earth at the base. Warm sunlit palette of olive green, silver-grey green and grey-brown bark. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 224, "height": 256, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_scrub_bush",
+    "args": {
+      "description": "a low round Mediterranean scrub bush seen from directly beside it, strict flat side profile like a technical elevation drawing. Dense small dark olive-green leaves on thin woody stems, a rounded silhouette wider than it is tall, a few dry brown twigs sticking out, sitting on dry earth. Warm palette of olive green and dry brown. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 128, "height": 96, "no_background": true, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_grass_tuft",
+    "args": {
+      "description": "a clump of tall dry coastal grass seen from directly beside it, strict flat side profile like a technical elevation drawing. Straw-coloured blades fanning upward and outward from a single base, some bending over at the tip, a few olive-green blades among them, growing out of pale sandy ground. Warm palette of straw yellow, dry ochre and a little olive green. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 128, "height": 96, "no_background": true, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_pithoi_baskets",
+    "args": {
+      "description": "a group of ancient Greek storage vessels standing on the ground, seen from directly beside them, strict flat side profile like a technical elevation drawing. Two large round-bellied terracotta storage jars with narrow necks and small handles, one smaller jar tipped over on its side, and two woven reed baskets with visible weave, one with a cloth over it. Warm palette of terracotta orange, reddish clay and pale straw. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 224, "height": 128, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_well",
+    "args": {
+      "description": "an ancient stone well head seen from directly beside it, strict flat side profile like a technical elevation drawing. A circular wall of fitted pale limestone blocks about waist height, two plain wooden posts either side carrying a horizontal wooden crossbar, a rope hanging down from the bar with a wooden bucket on the end, wet dark stains on the stone, a puddle at the base. Warm palette of pale limestone, cool grey stone and brown timber. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 192, "height": 192, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_handcart",
+    "args": {
+      "description": "a simple ancient wooden handcart seen from directly beside it, strict flat side profile like a technical elevation drawing. A flat plank bed on a single large spoked wooden wheel, two long straight handles tilting down to rest on the ground, rough brown timber with visible grain and iron nails, a sack and a few loose branches loaded on the bed. Warm palette of brown timber and pale straw. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 224, "height": 128, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_wooden_fence",
+    "args": {
+      "description": "a rustic wooden fence seen from directly beside it, strict flat side profile like a technical elevation drawing. Rough vertical posts of split timber driven into dry earth, two horizontal rails lashed across them with cord, uneven post heights, weathered grey-brown wood with visible grain, a few tufts of dry grass at the base. Warm palette of brown timber, weathered grey and straw. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 96, "no_background": true, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_fishing_boat",
+    "args": {
+      "description": "a small ancient Greek fishing boat pulled up on sand, seen from directly beside it, strict flat side profile like a technical elevation drawing. A shallow wooden hull of overlapping planks curving up at both ends, a single short mast with the sail furled and tied to it, wooden oars resting across the gunwale, coils of rope and a folded net inside, the hull resting tilted on the sand. Warm palette of brown timber, pale undyed sailcloth and sand. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 320, "height": 160, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]
