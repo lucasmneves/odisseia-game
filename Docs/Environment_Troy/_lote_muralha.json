@@ -1,0 +1,29 @@
+[
+  {
+    "nome": "_fonte_wall_section",
+    "args": {
+      "description": "a section of the fortified wall of Bronze Age Troy seen from directly in front, strict flat side profile like a technical elevation drawing. Cyclopean masonry of huge irregular pale limestone blocks with uneven joints, the lower third sloping outward in a broad batter and the upper part standing vertical, a plain flat coping of squared stone along the top. Warm pale limestone lit evenly, no directional shadow. Isolated game asset cut out on a fully transparent background, only the wall.",
+      "width": 256, "height": 512, "no_background": true,
+      "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_tower",
+    "args": {
+      "description": "a tall square defensive tower of Bronze Age Troy seen from directly in front, strict flat side profile like a technical elevation drawing. Cyclopean masonry of huge irregular pale limestone blocks, the base sloping outward in a batter, a FLAT top with a low plain parapet of squared stone, two narrow rectangular slit windows near the top, a small red banner on a plain pole at one corner. The whole tower is drawn small enough that its base and its top are both complete and visible. Isolated game asset cut out on a fully transparent background, only the tower.",
+      "width": 192, "height": 640, "no_background": true,
+      "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_gate",
+    "args": {
+      "description": "the great gate of Bronze Age Troy seen from directly in front, strict flat side profile like a technical elevation drawing. A square-headed opening spanned by one massive timber lintel beam resting on cyclopean limestone jambs, tall double doors of thick vertical wooden planks bound with dark iron bands and heavy ring handles, a stone threshold step. Flanking masonry of huge irregular pale limestone blocks. Two red banners hanging beside the opening. The whole gate is drawn small enough that both sides and the top are complete and visible. Isolated game asset cut out on a fully transparent background, only the gate.",
+      "width": 384, "height": 512, "no_background": true,
+      "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  }
+]

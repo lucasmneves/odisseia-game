@@ -21,7 +21,22 @@ using UnityEngine;
 /// </summary>
 public static class PlaceholderProbe
 {
-    private const string ScenePath = "Assets/Scenes/Levels/Level_01_Itaca_Prologue.unity";
+    /// <summary>Cena padrao. Outra entra por <c>-probeScene</c>, para o probe servir todas as
+    /// fases em vez de virar um por fase.</summary>
+    private const string ScenePadrao = "Assets/Scenes/Levels/Level_01_Itaca_Prologue.unity";
+
+    private static string ScenePath
+    {
+        get
+        {
+            string[] args = System.Environment.GetCommandLineArgs();
+            for (int i = 0; i < args.Length - 1; i++)
+            {
+                if (args[i] == "-probeScene") { return args[i + 1]; }
+            }
+            return ScenePadrao;
+        }
+    }
     private const string PlaceholderPath = "Assets/Art/Player/PlaceholderSquare.png";
 
     /// <summary>
@@ -34,6 +49,23 @@ public static class PlaceholderProbe
     private static readonly Dictionary<string, string> Justificados = new Dictionary<string, string>
     {
         ["World/Background/Sky"] = "fundo de cobertura, na cor do topo do degradê do céu; garante que nenhuma camada de parallax deixe buraco",
+
+        // Cicones. Sao preenchimentos CHAPADOS de proposito: cor solida e a ferramenta certa
+        // para o que fica atras de tudo e nao pode ter textura competindo com o cenario.
+        ["CiconesScenery/Sky_Fill"] = "fundo de cobertura na cor do topo do degradê do céu, para nenhuma camada de parallax deixar buraco",
+        ["CiconesScenery/Valley_Fill"] = "vale escuro abaixo do horizonte; sem ele o vão entre trechos de chão mostra o céu, que clareia perto do horizonte e lê como buraco brilhante",
+        ["CiconesScenery/Bank_0"] = "barranco abaixo do tile de chão, fora do alcance de leitura; textura ali competiria com o terreno jogável",
+        ["CiconesScenery/Bank_1"] = "idem Bank_0",
+        ["CiconesScenery/Bank_2"] = "idem Bank_0",
+        // Desligado de proposito pelo CiconesSceneDresser e substituido pelas cinco camadas de
+        // parallax. Fica na cena, e nao apagado, para a fase nao ficar sem fundo nenhum caso
+        // o cenario seja removido.
+        ["Sky_Background"] = "placeholder de céu desligado pelo CiconesSceneDresser; ninguém o liga de volta, e é isso que se espera",
+
+        // Cytera. Mesmo papel dos de Cicones, com os valores invertidos: numa tempestade o
+        // risco de vao descoberto e buraco PRETO, nao buraco brilhante.
+        ["CyteraScenery/Sky_Fill"] = "cobertura acima do céu de tempestade, na cor mais escura da rampa de nuvem",
+        ["CyteraScenery/Sea_Fill"] = "água escura abaixo das faixas de mar; nenhuma textura ali é vista pela câmera",
         ["World/Sea_Deep"] = "água profunda abaixo da faixa de oceano, no passo Profunda da rampa de Água",
         ["LevelGoal"] = "x=420, 50 un além do alcance máximo da câmera (o navio anda 16 un e a câmera trava em 360)",
         ["LevelGoal/Roof"] = "idem LevelGoal",

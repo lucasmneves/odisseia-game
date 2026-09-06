@@ -48,6 +48,16 @@ namespace Odisseia.Systems
         /// <summary>Verdadeiro quando um clipe sem loop chegou ao último quadro.</summary>
         public bool IsFinished { get; private set; }
 
+        /// <summary>
+        /// Multiplica o FPS do estado atual. Serve para uma animação de locomoção acompanhar
+        /// a velocidade real em vez de rodar sempre no mesmo ritmo — é o que impede o pé de
+        /// patinar no chão quando o personagem acelera, desacelera ou entra em sprint.
+        ///
+        /// Volta sozinho a 1 a cada troca de estado, para um valor esquecido aqui não vazar
+        /// para um ataque e desencontrar o clipe do <c>lockTimer</c> que o segura.
+        /// </summary>
+        public float PlaybackScale { get; set; } = 1f;
+
         public string CurrentState { get; private set; }
 
         /// <summary>Duração total do clipe, em segundos (0 se o estado não existir).</summary>
@@ -171,6 +181,7 @@ namespace Odisseia.Systems
 
             CurrentState = state;
             current = frames;
+            PlaybackScale = 1f;
             settings.TryGetValue(state, out currentSettings);
             timer = 0f;
             frame = 0;
@@ -190,9 +201,9 @@ namespace Odisseia.Systems
             }
 
             bool loop = currentSettings == null || currentSettings.loop;
-            float fps = currentSettings != null && currentSettings.framesPerSecond > 0f
+            float fps = (currentSettings != null && currentSettings.framesPerSecond > 0f
                 ? currentSettings.framesPerSecond
-                : defaultFramesPerSecond;
+                : defaultFramesPerSecond) * PlaybackScale;
 
             if (fps <= 0f)
             {

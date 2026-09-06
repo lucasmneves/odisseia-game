@@ -24,6 +24,7 @@ public static class InputBindingsProbe
         ("Attack", "<Keyboard>/z"),
         ("Shield", "<Keyboard>/x"),
         ("Bow", "<Keyboard>/c"),
+        ("Sprint", "<Keyboard>/leftShift"),
         ("Interact", "<Keyboard>/e"),
         ("Pause", "<Keyboard>/escape"),
     };

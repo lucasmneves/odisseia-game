@@ -1,0 +1,26 @@
+[
+  {
+    "nome": "CICONES_ConceptA_Vila",
+    "args": {
+      "description": "a small Bronze Age Aegean coastal village seen from directly beside it, strict flat side profile like a technical elevation drawing. Low houses of rough rubble stone with mud plaster, flat roofs of packed clay laid over exposed round timber beams, doorways spanned by a single straight wooden lintel, small square window openings, low drystone field walls between them, big terracotta storage jars standing outside, woven reed baskets, a wooden handcart, a stone well head, an olive tree with a gnarled trunk and silver-green leaves. Dry pale earth ground with tufts of straw-coloured grass. Behind them a bright blue midday sky and low olive-green hills. Warm sunlit Mediterranean palette of sand, olive green, terracotta and pale limestone. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false,
+      "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "CICONES_ConceptB_CostaRural",
+    "args": {
+      "description": "a fertile Mediterranean shoreline with farmland behind it, seen from directly beside it, strict flat side profile like a technical elevation drawing. Pale sand beach in front meeting shallow turquoise water, smooth rounded boulders, clumps of coastal grass and low scrub, a wooden fishing boat pulled up on the sand, stacked wooden crates and barrels, coils of rope. Behind them terraced fields of dry earth held by low drystone walls, rows of olive trees with gnarled trunks, wooden fence posts, a narrow dirt path climbing inland. Bright blue midday sky over olive-green hills. Warm sunlit Mediterranean palette of sand, olive green, sea blue and pale limestone. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false,
+      "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "CICONES_ConceptC_Conflito",
+    "args": {
+      "description": "a raided Bronze Age Aegean coastal village seen from directly beside it, strict flat side profile like a technical elevation drawing. Rubble stone houses with flat clay roofs over timber beams, one roof caved in and its beams exposed, straight wooden lintels over the doorways, a collapsed drystone wall spilling blocks onto dry earth. Upright timber barricades of lashed planks, round bronze shields propped against them, clusters of planted spears, scattered arrows, a toppled terracotta storage jar, a low fire with a column of pale grey smoke, a torn cloth banner on a leaning pole. Bright blue sky with smoke drifting across it, olive-green hills behind. Warm palette of sand, olive green, terracotta, ember orange and bronze, bright enough to read clearly. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false,
+      "view": "side", "detail": "medium detail"
+    }
+  }
+]

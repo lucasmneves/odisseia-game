@@ -25,7 +25,11 @@ using Odisseia.Systems;
 /// </summary>
 public static class PrologueScreenshot
 {
-    private const string ScenePath = "Assets/Scenes/Levels/Level_01_Itaca_Prologue.unity";
+    /// <summary>
+    /// Cena padrão. Outra fase entra por <c>-shotScene</c>, para o capturador servir a todas em
+    /// vez de virar um por fase.
+    /// </summary>
+    private const string CenaPadrao = "Assets/Scenes/Levels/Level_01_Itaca_Prologue.unity";
 
     /// <summary>Mesmo enquadramento do jogo: ortográfica de tamanho 5, em 16:9.</summary>
     private const float TamanhoOrtografico = 5f;
@@ -45,7 +49,7 @@ public static class PrologueScreenshot
         string saida = ArgumentoTexto("-shotOut", "Docs/Environment_Ithaca/_cena.png");
         string lista = ArgumentoTexto("-shotXs", null);
 
-        EditorSceneManager.OpenScene(ScenePath, OpenSceneMode.Single);
+        EditorSceneManager.OpenScene(ArgumentoTexto("-shotScene", CenaPadrao), OpenSceneMode.Single);
 
         if (lista != null)
         {

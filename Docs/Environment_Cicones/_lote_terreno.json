@@ -1,0 +1,51 @@
+[
+  {
+    "nome": "_fonte_tiles_sand",
+    "args": {
+      "description": "a horizontal strip of pale beach sand ground seen from directly beside it, strict flat side profile like a technical elevation drawing. The top edge is a flat sand surface with a few small pebbles and short tufts of dry coastal grass; below it a solid cross-section of packed sand with scattered small stones, getting darker toward the bottom. Palette of pale sand, warm ochre and dry straw. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 128, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_tiles_earth_grass",
+    "args": {
+      "description": "a horizontal strip of dry Mediterranean farmland ground seen from directly beside it, strict flat side profile like a technical elevation drawing. The top edge is covered by a thin band of olive-green scrub and straw-coloured dry grass; below it a solid cross-section of packed brown earth with embedded small stones and pale roots, getting darker toward the bottom. Palette of dry brown earth, olive green and straw. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 128, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_tiles_rock",
+    "args": {
+      "description": "a horizontal strip of grey coastal bedrock seen from directly beside it, strict flat side profile like a technical elevation drawing. The top edge is an uneven rocky ledge; below it a solid cross-section of layered grey limestone with horizontal strata and cracks, getting darker toward the bottom. Palette of cool grey stone with warm pale highlights. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 128, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_house_small",
+    "args": {
+      "description": "a single small Bronze Age Aegean village house seen from directly in front, strict flat side profile like a technical elevation drawing. Walls of rough irregular stone masonry with patches of mud plaster, a completely flat roof of packed clay resting on exposed round wooden beams whose ends stick out past the wall, one dark doorway spanned by a single straight wooden lintel, one small square window opening with no frame. Warm sunlit palette of pale limestone, mud plaster and brown timber. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 192, "height": 192, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_house_large",
+    "args": {
+      "description": "a two-storey Bronze Age Aegean village house seen from directly in front, strict flat side profile like a technical elevation drawing. Walls of rough irregular stone masonry with mud plaster, a completely flat roof of packed clay on exposed round wooden beams whose ends stick out past the wall, a wooden plank door under a straight wooden lintel, two small square window openings, an external wooden stair of plain planks going up the side to the roof. Warm sunlit palette of pale limestone, mud plaster and brown timber. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 224, "height": 256, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_drystone_wall",
+    "args": {
+      "description": "a low drystone field wall seen from directly beside it, strict flat side profile like a technical elevation drawing. Uncut irregular grey and pale limestone blocks stacked without mortar, the top course uneven, about waist height, standing on dry earth with a few tufts of straw grass at its base. Warm sunlit palette of pale limestone and cool grey stone. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 96, "no_background": true, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_shrine_landmark",
+    "args": {
+      "description": "a small ancient Greek coastal shrine seen from directly in front, strict flat side profile like a technical elevation drawing. A raised platform of three pale limestone steps, four short plain stone posts with simple flat square tops carrying a straight stone beam across them, no arches and no carved capitals, a low stone altar block in the middle blackened at the top with a small flame on it, a bronze tripod bowl beside it, weathered stone with cracks and patches of pale lichen. Warm sunlit palette of pale limestone, bronze and ember orange. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 320, "height": 256, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]

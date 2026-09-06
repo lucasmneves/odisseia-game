@@ -21,11 +21,16 @@ namespace Odisseia.Player
         [SerializeField] private string moveActionName = "Move";
         [SerializeField] private string jumpActionName = "Jump";
         [SerializeField] private string crouchActionName = "Crouch";
+        [SerializeField] private string sprintActionName = "Sprint";
 
         [Header("Movimento")]
         [SerializeField] private float maxSpeed = 6f;
         [SerializeField] private float acceleration = 40f;
         [SerializeField] private float deceleration = 50f;
+
+        [Header("Correr")]
+        [Tooltip("Multiplicador da velocidade enquanto o sprint está segurado (Shift ou R1).")]
+        [SerializeField] private float sprintMultiplier = 1.5f;
 
         [Header("Agachar")]
         [Tooltip("Fração da velocidade normal enquanto agachado.")]
@@ -35,7 +40,12 @@ namespace Odisseia.Player
         [SerializeField] private float crouchHeightFactor = 0.73f;
 
         [Header("Pulo")]
-        [SerializeField] private float jumpForce = 12f;
+        [Tooltip("Impulso vertical. 10,04 dá 70% da altura do pulo antigo (que era 12): a " +
+                 "altura sobe com o QUADRADO do impulso, então 70% de altura pede 12 x raiz(0,7), " +
+                 "e não 12 x 0,7 — este último daria 49% e um pulo bem mais curto que o pedido.")]
+        [SerializeField] private float jumpForce = 10.04f;
+        [Tooltip("Pulos antes de tocar o chão de novo. 2 = pulo duplo; 1 volta ao comportamento antigo.")]
+        [SerializeField] private int maxJumps = 2;
         [SerializeField] private float gravityScale = 3f;
 
         [Header("Detecção de chão")]
@@ -52,10 +62,15 @@ namespace Odisseia.Player
         private InputAction moveAction;
         private InputAction jumpAction;
         private InputAction crouchAction;
+        private InputAction sprintAction;
 
         private float moveInput;
         private bool crouchHeld;
+        private bool sprintHeld;
         private bool jumpQueued;
+
+        /// <summary>Pulos já gastos desde o último contato com o chão.</summary>
+        private int jumpsUsed;
         private bool facingRight = true;
         private float ownVelocityX;
         private MovingPlatform currentPlatform;
@@ -71,6 +86,16 @@ namespace Odisseia.Player
         /// (a escalada, por exemplo) tem que perguntar aqui em vez de ler o transform.
         /// </summary>
         public float FacingSign => facingRight ? 1f : -1f;
+
+        /// <summary>
+        /// Velocidade horizontal de referência, sem sprint, agachamento ou efeito externo.
+        /// O <see cref="Odisseia.Player.PlayerAnimator"/> a usa como denominador para saber a
+        /// que fração da corrida normal o personagem está indo.
+        /// </summary>
+        public float MaxSpeed => maxSpeed;
+
+        /// <summary>Sprint pedido e permitido — ver a nota em ApplyHorizontalMovement.</summary>
+        public bool IsSprinting => sprintHeld && !IsCrouching;
 
         /// <summary>Verdadeiro enquanto o collider está encolhido — inclusive quando o
         /// jogador já soltou o botão mas continua preso debaixo de um teto.</summary>
@@ -115,6 +140,7 @@ namespace Odisseia.Player
                     moveAction = playerMap.FindAction(moveActionName);
                     jumpAction = playerMap.FindAction(jumpActionName);
                     crouchAction = playerMap.FindAction(crouchActionName);
+                    sprintAction = playerMap.FindAction(sprintActionName);
                 }
             }
         }
@@ -139,7 +165,10 @@ namespace Odisseia.Player
 
         private void OnJumpPerformed(InputAction.CallbackContext context)
         {
-            if (IsGrounded)
+            // No ar o toque também vale, enquanto sobrar pulo. Quem valida de verdade é o
+            // ApplyJump: entre este callback e o FixedUpdate o personagem pode ter pousado
+            // ou saído do chão.
+            if (IsGrounded || jumpsUsed < maxJumps)
             {
                 jumpQueued = true;
             }
@@ -152,6 +181,7 @@ namespace Odisseia.Player
             // Lê o valor do controle em vez de IsPressed(), igual ao escudo — assim o
             // agachar funciona como um "segure", não como um toque.
             crouchHeld = crouchAction != null && crouchAction.ReadValue<float>() > 0.5f;
+            sprintHeld = sprintAction != null && sprintAction.ReadValue<float>() > 0.5f;
         }
 
         private void FixedUpdate()
@@ -163,6 +193,10 @@ namespace Odisseia.Player
                 // Durante a escalada quem manda na posição é o PlayerClimb.
                 jumpQueued = false;
                 ownVelocityX = 0f;
+
+                // Agarrado na parede o personagem tem apoio, como no chão: sair da escalada
+                // devolve os dois pulos.
+                jumpsUsed = 0;
                 return;
             }
 
@@ -241,13 +275,33 @@ namespace Odisseia.Player
                 ? Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer)
                 : null;
 
-            IsGrounded = hit != null;
+            bool noChao = hit != null;
+
+            if (noChao && rb.linearVelocity.y <= 0.01f)
+            {
+                // Recarrega ao pousar. A checagem de velocidade não é detalhe: no quadro
+                // seguinte ao pulo o pé ainda está dentro do raio de detecção, e sem ela o
+                // contador zeraria ali mesmo — pulo infinito segurando o botão.
+                jumpsUsed = 0;
+            }
+            else if (!noChao && IsGrounded && jumpsUsed == 0)
+            {
+                // Saiu do chão andando, sem pular: o pulo do chão fica para trás. Sem isto,
+                // quem anda para fora de uma borda ganha os DOIS pulos no ar e flutua.
+                jumpsUsed = 1;
+            }
+
+            IsGrounded = noChao;
             currentPlatform = hit != null ? hit.GetComponent<MovingPlatform>() : null;
         }
 
         private void ApplyHorizontalMovement()
         {
-            float limite = maxSpeed * (IsCrouching ? crouchSpeedMultiplier : 1f);
+            // Agachar VENCE o sprint em vez de os dois se multiplicarem: correr rápido
+            // agachado não é um estado que a arte ou o design do jogo tenham.
+            float limite = maxSpeed * (IsCrouching ? crouchSpeedMultiplier
+                : IsSprinting ? sprintMultiplier
+                : 1f);
             float targetSpeed = moveInput * limite * SpeedMultiplier;
             float rate = Mathf.Abs(moveInput) > 0.01f ? acceleration : deceleration;
             ownVelocityX = Mathf.MoveTowards(ownVelocityX, targetSpeed, rate * Time.fixedDeltaTime);
@@ -270,6 +324,12 @@ namespace Odisseia.Player
                 return;
             }
 
+            if (!IsGrounded && jumpsUsed >= maxJumps)
+            {
+                jumpQueued = false;
+                return;
+            }
+
             // Pular agachado levanta primeiro. Debaixo de um teto não há para onde
             // levantar, então o pulo simplesmente não sai — em vez de o personagem
             // subir dentro da geometria.
@@ -286,6 +346,11 @@ namespace Odisseia.Player
             }
 
             jumpQueued = false;
+            jumpsUsed++;
+
+            // Velocidade vertical ZERADA e reescrita, não somada: sem isso o segundo pulo
+            // dado no topo do arco (subindo ainda) empilharia impulso e subiria bem mais que
+            // o dado já caindo — a altura do pulo duplo mudaria conforme o tempo do toque.
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             AudioManager.PlayJump();
         }

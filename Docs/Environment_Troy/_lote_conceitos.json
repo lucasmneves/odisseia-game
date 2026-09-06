@@ -1,0 +1,18 @@
+[
+  {
+    "nome": "TROIA_ConceptA_Acampamento",
+    "args": {
+      "description": "a row of Greek army tents outside Troy seen from directly beside them, strict flat side profile like a technical elevation drawing. Ridge tents of coarse undyed canvas on plain wooden poles, guy ropes pegged into dry sandy ground, stacked wooden crates and round bronze shields leaning against them, cones of upright spears, a low cooking fire with a bronze cauldron, small red banners on plain poles. Behind them a pale blue daytime sky with a few clouds and the low pale stone wall of Troy far away on the horizon. Warm sunlit palette of sand, undyed canvas, bronze and red. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false,
+      "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "TROIA_ConceptC_Batalha",
+    "args": {
+      "description": "a stretch of besieged ground outside Troy seen from directly beside it, strict flat side profile like a technical elevation drawing. Broken timber barricades standing upright, spears planted in the dry cracked earth, round bronze shields propped against rubble, a small campfire with pale grey smoke rising in a column, a torn red banner on a leaning pole, blocks of fallen pale limestone. Behind it a pale blue daytime sky and the tall pale stone wall of Troy with square flat-topped towers. Warm palette of dust, pale stone, ember orange and bronze, bright enough to read clearly. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false,
+      "view": "side", "detail": "medium detail"
+    }
+  }
+]

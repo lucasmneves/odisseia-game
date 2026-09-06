@@ -1,0 +1,58 @@
+[
+  {
+    "nome": "_fonte_wave_large",
+    "args": {
+      "description": "one single large storm wave, an isolated shape drawn small enough that its whole outline is complete and visible. A steep dark green-grey wall of water rising from left to right, its crest curling over forward and breaking into thick ragged white foam that throws separate droplets into the air, streaks of pale foam running down the wave face, the base darker than the top. Cool palette of slate grey-green, deep teal and foam white. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 384, "height": 224, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_wave_medium",
+    "args": {
+      "description": "one single medium sea swell, an isolated shape drawn small enough that its whole outline is complete and visible. A rounded dark green-grey mound of water with a small white foam cap at its top breaking into a few droplets, pale foam streaks on the near face. Cool palette of slate grey-green, deep teal and foam white. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 128, "no_background": true, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_storm_cloud",
+    "args": {
+      "description": "one single heavy storm cloud, an isolated mass drawn small enough that its whole outline is complete and visible. A wide dark grey-green bank of cloud with a lumpy billowing bottom edge and a flatter top, layered in three tones from pale grey at the top to almost black underneath, ragged wisps trailing from one end. Cool palette of slate grey and grey-green. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 384, "height": 160, "no_background": true, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_sea_rock",
+    "args": {
+      "description": "one single jagged sea rock, an isolated shape drawn small enough that its whole outline is complete and visible. A wet dark grey stone crag with sharp angular facets and a broad base narrowing to an uneven peak, cracks and ledges across it, darker and wetter at the bottom where the water reaches, a few pale mineral streaks. Cool palette of wet slate grey and grey-green. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 224, "height": 192, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_sea_rock_wide",
+    "args": {
+      "description": "one single low wide sea reef, an isolated shape drawn small enough that its whole outline is complete and visible. A flat-topped slab of wet dark grey stone much wider than it is tall, its top surface fairly level for standing on, the sides broken into angular facets, darker and wetter at the base, a few cracks and pale mineral streaks. Cool palette of wet slate grey and grey-green. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 320, "height": 128, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_ship_deck",
+    "args": {
+      "description": "one single section of an ancient Greek ship deck, an isolated piece drawn small enough that its whole outline is complete and visible. Wet dark brown planks running horizontally with visible grain and iron nails, a low curved railing of turned wooden posts along the top edge, the hull planking below curving outward, a coil of rope and a wooden cleat on the deck. Cool wet palette of dark brown timber and grey-green shadow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 384, "height": 128, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_wreckage",
+    "args": {
+      "description": "one single raft of floating shipwreck debris, an isolated clump drawn small enough that its whole outline is complete and visible. Broken wet planks lashed together with rope at odd angles forming a rough flat surface, a splintered beam, a torn scrap of pale canvas caught on it, a broken barrel. Cool wet palette of dark brown timber, pale canvas and grey-green shadow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 112, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_ship_mast",
+    "args": {
+      "description": "one single ship mast with its sail, an isolated object drawn small enough that its whole outline is complete and visible. A tall straight wet wooden mast with a horizontal yard across it, a square sail of pale undyed canvas hanging from the yard and bellying to one side with a torn lower corner, taut ropes running from the yard down past the mast. Cool wet palette of dark brown timber and pale canvas. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 224, "height": 320, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]

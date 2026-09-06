@@ -1,0 +1,48 @@
+GIMP Palette
+Name: Odisseia - Troy Environment
+Columns: 4
+#
+ 43  46  39	Contorno Highlight
+ 29  34  29	Contorno Base
+ 20  20  21	Contorno Sombra
+  5   5   7	Contorno Profunda
+206 238 254	Ceu Highlight
+148 208 243	Ceu Base
+116 181 237	Ceu Sombra
+100 129 160	Ceu Profunda
+242 232 196	Pedra clara Highlight
+227 214 183	Pedra clara Base
+210 194 160	Pedra clara Sombra
+200 182 144	Pedra clara Profunda
+179 156 120	Pedra sombra Highlight
+156 138 114	Pedra sombra Base
+131 108  82	Pedra sombra Sombra
+111  90  69	Pedra sombra Profunda
+215 185 122	Terra seca Highlight
+176 132  76	Terra seca Base
+142 104  69	Terra seca Sombra
+ 98  61  37	Terra seca Profunda
+143 105  66	Madeira Highlight
+101  63  47	Madeira Base
+ 77  51  41	Madeira Sombra
+ 46  30  28	Madeira Profunda
+236 224 186	Lona Highlight
+213 187 141	Lona Base
+177 150 109	Lona Sombra
+126 102  72	Lona Profunda
+249 214 136	Bronze Highlight
+191 142  82	Bronze Base
+136  94  52	Bronze Sombra
+ 95  68  49	Bronze Profunda
+164  70  44	Vermelho Highlight
+149  48  41	Vermelho Base
+ 92  43  36	Vermelho Sombra
+ 56  31  26	Vermelho Profunda
+252 216  78	Fogo Highlight
+227 161  77	Fogo Base
+241 104  26	Fogo Sombra
+167  49  29	Fogo Profunda
+230 232 226	Fumaca Highlight
+160 148 134	Fumaca Base
+136 124 116	Fumaca Sombra
+114  95  74	Fumaca Profunda

@@ -124,4 +124,112 @@ const materialArquitetura = (corteMadeira = 0.36) => (r, g, b) => {
   return 'Terra / caminho';
 };
 
-module.exports = { loadPalette, remap, material, materialDeCenario, materialArquitetura };
+// Classificador de ARQUITETURA DE TROIA. Terceiro da casa, e pela mesma razao dos outros
+// dois: a paleta e outra. Troia nao tem a rampa "Terra / caminho" que o de Itaca usa para
+// calcario, e tem Vermelho e Bronze, que Itaca nao tem.
+//
+// Limiares medidos no portao: calcario fica em 0,20-0,26 de saturacao, a madeira das portas em
+// 0,60, e o estandarte em matiz 353 com 0,37. O corte de madeira em 0,40 separa com folga; o
+// ramo do vermelho vem ANTES dele, senao o estandarte cai em pedra por ter saturacao baixa.
+const materialTroia = (corteMadeira = 0.40) => (r, g, b) => {
+  const L = lum(r, g, b), S = sat(r, g, b);
+  if (L < 25 || (L < 40 && S < 0.35)) return 'Contorno';
+
+  const mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn;
+  let H = 0;
+  if (d) {
+    if (mx === r) H = (((g - b) / d) + 6) % 6;
+    else if (mx === g) H = ((b - r) / d) + 2;
+    else H = ((r - g) / d) + 4;
+    H *= 60;
+  }
+
+  // Faixa estreita, e medida: o estandarte fica em matiz 353, e a ARGAMASSA da muralha em
+  // 23-24 com saturacao 0,38. Com o limite em 25 a argamassa virava vermelha e a muralha saia
+  // com juntas cor de tijolo. 12 separa os dois com folga.
+  if ((H >= 330 || H <= 12) && S >= 0.35) return 'Vermelho';
+  if (g - r >= 6 || b - r >= 6) return 'Pedra sombra';   // frio: sombra e metal
+  if (S >= corteMadeira) return 'Madeira';
+  return L >= 140 ? 'Pedra clara' : 'Pedra sombra';
+};
+
+// Classificador do ACAMPAMENTO de Troia — tendas, fogueira, estandarte, suprimentos.
+//
+// Separado do de arquitetura porque calcario e lona sao o mesmo tipo de material claro e nao
+// se distinguem por numero: o calcario do portao mede S0,20 L192 e a lona da tenda S0,15-0,21
+// L186-227. Num asset de acampamento nao ha calcario, e num de muralha nao ha lona — o grupo
+// resolve o que o limiar nao resolve.
+//
+// Limiares medidos nos oito assets do lote: fogo em S0,84-0,90, madeira em S0,66-0,69 (o corte
+// em 0,78 separa), estandarte em matiz 0 com S1,00, palha e bronze em matiz 39 com S0,58.
+// temFogo: so o asset que REALMENTE tem chama recebe a rampa de Fogo.
+//
+// Sem isso, alguns pixels de brilho da madeira e dos sacos passam do corte de saturacao, caem
+// num grupo Fogo de meia duzia de pixels, e o remapeamento os espalha pela rampa inteira — o
+// que pinta lascas laranja vivas em cima de lanca e saco. Fogo e material raro e concentrado;
+// tratar como opcional custa um booleano e resolve a classe.
+const materialAcampamento = (corteMadeira = 0.40, { temFogo = false } = {}) => (r, g, b) => {
+  const L = lum(r, g, b), S = sat(r, g, b);
+  if (L < 25 || (L < 40 && S < 0.35)) return 'Contorno';
+
+  const mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn;
+  let H = 0;
+  if (d) {
+    if (mx === r) H = (((g - b) / d) + 6) % 6;
+    else if (mx === g) H = ((b - r) / d) + 2;
+    else H = ((r - g) / d) + 4;
+    H *= 60;
+  }
+
+  if (temFogo && S >= 0.78 && H >= 15 && H <= 55) return 'Fogo';
+  if ((H >= 330 || H <= 12) && S >= 0.35) return 'Vermelho';
+  if (g - r >= 6 || b - r >= 6) return 'Pedra sombra';        // frio: metal e sombra
+  if (H >= 28 && H <= 58 && S >= 0.45 && L >= 140) return 'Bronze';
+  if (S >= corteMadeira) return 'Madeira';
+  return L >= 165 ? 'Lona' : (L >= 110 ? 'Terra seca' : 'Pedra sombra');
+};
+
+// Um kit de terreno Wang e UM material — terra, pedra ou madeira, com luz e sombra. Nao ha o
+// que classificar, e classificar so cria chance de errar: o kit de terra de Troia foi parar na
+// rampa de Madeira e o chao saiu marrom-vinho.
+//
+// Aqui o material e dado, e as cores dele se distribuem pelos 4 passos por luminancia
+// relativa. O contorno continua saindo pela rampa propria, senao o quase-preto puxaria o passo
+// mais escuro do material.
+function remapParaRampa(img, ramps, nomeDaRampa) {
+  const rampa = ramps[nomeDaRampa];
+  if (!rampa) throw new Error('rampa inexistente: ' + nomeDaRampa);
+  const contorno = ramps['Contorno'];
+
+  const cores = new Map();
+  for (let i = 0; i < img.width * img.height; i++) {
+    const o = i * 4;
+    if (img.data[o + 3] <= 8) continue;
+    const k = (img.data[o] << 16) | (img.data[o + 1] << 8) | img.data[o + 2];
+    if (!cores.has(k)) cores.set(k, [img.data[o], img.data[o + 1], img.data[o + 2]]);
+  }
+
+  const doMaterial = [...cores.values()].filter(c => lum(c[0], c[1], c[2]) >= 25);
+  const ls = doMaterial.map(c => lum(c[0], c[1], c[2]));
+  const min = Math.min(...ls), max = Math.max(...ls);
+
+  const tabela = new Map();
+  for (const [k, c] of cores) {
+    const L = lum(c[0], c[1], c[2]);
+    if (L < 25) { tabela.set(k, contorno[3]); continue; }
+    const t = max === min ? 1 : (L - min) / (max - min);
+    tabela.set(k, rampa[Math.round((1 - t) * (rampa.length - 1))]);
+  }
+
+  const out = p.blank(img.width, img.height);
+  img.data.copy(out.data);
+  for (let i = 0; i < img.width * img.height; i++) {
+    const o = i * 4;
+    if (img.data[o + 3] <= 8) continue;
+    const c = tabela.get((img.data[o] << 16) | (img.data[o + 1] << 8) | img.data[o + 2]);
+    out.data[o] = c[0]; out.data[o + 1] = c[1]; out.data[o + 2] = c[2];
+  }
+  return out;
+}
+
+module.exports = { loadPalette, remap, remapParaRampa, material, materialDeCenario, materialArquitetura, materialTroia, materialAcampamento };

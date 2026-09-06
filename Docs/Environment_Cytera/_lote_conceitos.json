@@ -1,0 +1,26 @@
+[
+  {
+    "nome": "CYTERA_ConceptA_Moderada",
+    "args": {
+      "description": "a stormy sea seen from directly beside it at wave height, strict flat side profile like a technical elevation drawing. Rolling grey-green swells with white foam crests, a small ancient Greek galley with a curved wooden hull riding one swell, its single square sail half furled and straining, spray blowing off the wave tops. Above, a heavy overcast sky of layered grey cloud with one pale gap letting light through. A dark rocky islet on the horizon. Cool palette of slate grey, deep teal, foam white and wet brown timber, still bright enough to read clearly. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false,
+      "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "CYTERA_ConceptB_Epica",
+    "args": {
+      "description": "a violent sea storm seen from directly beside it at wave height, strict flat side profile like a technical elevation drawing. Towering dark green-black waves with curling crests breaking into thick white foam, an ancient Greek galley pitched steeply on a wave face with its mast leaning and its square sail torn, sheets of driving rain slanting across the whole scene, spray exploding off the crests. Above, a black storm sky of massive layered clouds with a jagged white lightning bolt on one side lighting the cloud edges. Sharp black rocks jutting from the water. Cold dramatic palette of blue-black, deep teal, foam white and lightning white, with wet brown timber. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false,
+      "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "CYTERA_ConceptC_Extrema",
+    "args": {
+      "description": "a catastrophic sea storm seen from directly beside it at wave height, strict flat side profile like a technical elevation drawing. An enormous near-vertical wall of black water filling most of the frame with its crest curling over into ragged white foam, a tiny ancient Greek galley dwarfed at its base with the mast snapped and the sail shredded, a spinning whirlpool of concentric foam rings in the water beside it, dense driving rain, spray filling the air. Above, an almost black sky with several forked lightning bolts at once. Jagged black rocks half drowned in the surge. Very dark palette of black, blue-black and deep teal against violent foam white and lightning white. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false,
+      "view": "side", "detail": "medium detail"
+    }
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "nome": "_fonte_shrine_landmark",
+    "args": {
+      "description": "a single small freestanding ancient Greek stone altar, one isolated object drawn small enough that its whole outline is complete and visible on every side. Three broad weathered limestone steps at the bottom, four short square stone posts with plain flat tops standing on the steps, one straight stone beam laid across the tops of the posts, a low soot-blackened altar block between the posts with a small orange flame burning on it, a bronze tripod bowl beside it, cracked pale limestone with patches of lichen. Warm sunlit palette of pale limestone, bronze and ember orange. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 320, "height": 256, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_foreground_scrub",
+    "args": {
+      "description": "a wide band of tall Mediterranean scrub, one isolated clump drawn small enough that its whole outline is complete and visible. Dark olive-green leafy branches and dry straw-coloured grass blades fanning upward, a few thin woody stems, denser at the bottom and breaking into separate leaves at the top, no ground under it. Dark rich palette of deep olive green and dry ochre. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 384, "height": 160, "no_background": true, "view": "side", "detail": "low detail"
+    }
+  }
+]

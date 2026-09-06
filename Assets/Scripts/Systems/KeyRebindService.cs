@@ -123,7 +123,7 @@ namespace Odisseia.Systems
 
             // Pause fica de fora: Esc também serve para pular diálogo (mapa "Dialogue"),
             // e remapear só um dos dois deixaria os dois fora de sincronia.
-            string[] order = { "Move", "Jump", "Attack", "Shield", "Bow", "Interact" };
+            string[] order = { "Move", "Jump", "Sprint", "Attack", "Shield", "Bow", "Interact" };
 
             foreach (string actionName in order)
             {
@@ -181,6 +181,7 @@ namespace Odisseia.Systems
         {
             "Move" => "Mover",
             "Jump" => "Pular",
+            "Sprint" => "Correr",
             "Attack" => "Atacar",
             "Shield" => "Defender",
             "Bow" => "Arco",

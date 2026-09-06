@@ -1,0 +1,50 @@
+[
+  {
+    "nome": "_fonte_smoke_column",
+    "args": {
+      "description": "a column of thick pale grey smoke rising and widening as it goes up, soft rounded billows, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the smoke.",
+      "width": 96, "height": 224, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_dust_cloud",
+    "args": {
+      "description": "a low puff of pale sandy dust drifting close to the ground, soft rounded shape, thin and wide, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the dust.",
+      "width": 128, "height": 64, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_rubble_pile",
+    "args": {
+      "description": "a pile of fallen pale limestone blocks and broken masonry rubble from a damaged wall, angular chunks stacked unevenly, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the rubble.",
+      "width": 128, "height": 80, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_siege_ladder",
+    "args": {
+      "description": "a long wooden siege ladder leaning at a steep angle, rough hewn side rails and lashed rungs, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the ladder.",
+      "width": 128, "height": 320, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_dry_bush",
+    "args": {
+      "description": "a small dry thorny scrub bush of a parched Anatolian plain, thin bare twigs and a few withered olive-grey leaves, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the bush.",
+      "width": 64, "height": 48, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_foreground_rocks",
+    "args": {
+      "description": "a cluster of large angular limestone boulders resting on dry ground, chunky simple shapes, seen from directly beside them, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the rocks.",
+      "width": 160, "height": 96, "no_background": true, "view": "side", "direction": "east",
+      "outline": "single color black outline", "detail": "medium detail"
+    }
+  }
+]

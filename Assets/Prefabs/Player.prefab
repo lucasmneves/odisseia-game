@@ -201,7 +201,9 @@ MonoBehaviour:
   maxSpeed: 6
   acceleration: 40
   deceleration: 50
-  jumpForce: 12
+  sprintMultiplier: 1.5
+  jumpForce: 10.04
+  maxJumps: 2
   gravityScale: 3
   groundCheck: {fileID: 4903531682111974106}
   groundCheckRadius: 0.15
@@ -731,7 +733,7 @@ MonoBehaviour:
     framesPerSecond: 8
     loop: 1
   - state: Run
-    framesPerSecond: 13
+    framesPerSecond: 16
     loop: 1
   - state: Jump
     framesPerSecond: 10
