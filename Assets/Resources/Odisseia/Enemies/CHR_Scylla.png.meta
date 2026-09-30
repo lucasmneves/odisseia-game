@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: 0c1f1fa35edc21522bd606031efe8a2c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1923019476
+    second: CHR_Scylla_Idle_00
+  - first:
+      213: 21319890
+    second: CHR_Scylla_Idle_01
+  - first:
+      213: 1662343283
+    second: CHR_Scylla_Idle_02
+  - first:
+      213: 1294234236
+    second: CHR_Scylla_Idle_03
+  - first:
+      213: 1322851150
+    second: CHR_Scylla_Idle_04
+  - first:
+      213: 50001229
+    second: CHR_Scylla_Idle_05
+  - first:
+      213: 638334574
+    second: CHR_Scylla_Telegraph_00
+  - first:
+      213: 481060264
+    second: CHR_Scylla_Telegraph_01
+  - first:
+      213: 942791310
+    second: CHR_Scylla_Telegraph_02
+  - first:
+      213: 597527363
+    second: CHR_Scylla_Telegraph_03
+  - first:
+      213: 1734360264
+    second: CHR_Scylla_Attack_00
+  - first:
+      213: 189481298
+    second: CHR_Scylla_Attack_01
+  - first:
+      213: 941032527
+    second: CHR_Scylla_Attack_02
+  - first:
+      213: 813000646
+    second: CHR_Scylla_Attack_03
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spritePixelsToUnits: 42.857143
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CHR_Scylla_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 387
+        width: 185
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66313cb0dfeed2c4eb1700581645cc76
+      internalID: 1923019476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Scylla_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 387
+        width: 185
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb572577f75c9c45aae2c85dafb4298f
+      internalID: 21319890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Scylla_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 387
+        width: 185
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d71a7eb331b8d002b5ac346c973b4d
+      internalID: 1662343283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Scylla_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 387
+        width: 185
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c5612a0a6c25c00fcec0449dc245361
+      internalID: 1294234236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Scylla_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 387
+        width: 185
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 487d11583a3f44e54f584f97bc80e46b
+      internalID: 1322851150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Scylla_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 387
+        width: 185
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 758b3db53725935948d34924964779bf
+      internalID: 50001229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Scylla_Telegraph_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 194
+        width: 185
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a298de28f8233e9a31ab23284cda7e83
+      internalID: 638334574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Scylla_Telegraph_01
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 194
+        width: 185
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5d5d8341fd1f02d9d39f611ba242ac3
+      internalID: 481060264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Scylla_Telegraph_02
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 194
+        width: 185
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70d782afc78768f09080e3e932ef6924
+      internalID: 942791310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Scylla_Telegraph_03
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 194
+        width: 185
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d6a422a1024b052a83dede0d0190aaa
+      internalID: 597527363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Scylla_Attack_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 185
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccadbceda5fa8fe5ec3e7235fcc50708
+      internalID: 1734360264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Scylla_Attack_01
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 1
+        width: 185
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8113a4530dbcf95ce83e6c5ccd477526
+      internalID: 189481298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Scylla_Attack_02
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 1
+        width: 185
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b9c21c6fe7ee2448db1978db28a08b
+      internalID: 941032527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Scylla_Attack_03
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 1
+        width: 185
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19932c975d9f864e771a61f887bad4a6
+      internalID: 813000646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CHR_Scylla_Idle_00: 1923019476
+      CHR_Scylla_Idle_01: 21319890
+      CHR_Scylla_Idle_02: 1662343283
+      CHR_Scylla_Idle_03: 1294234236
+      CHR_Scylla_Idle_04: 1322851150
+      CHR_Scylla_Idle_05: 50001229
+      CHR_Scylla_Telegraph_00: 638334574
+      CHR_Scylla_Telegraph_01: 481060264
+      CHR_Scylla_Telegraph_02: 942791310
+      CHR_Scylla_Telegraph_03: 597527363
+      CHR_Scylla_Attack_00: 1734360264
+      CHR_Scylla_Attack_01: 189481298
+      CHR_Scylla_Attack_02: 941032527
+      CHR_Scylla_Attack_03: 813000646
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

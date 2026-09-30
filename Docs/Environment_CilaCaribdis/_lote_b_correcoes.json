@@ -1,0 +1,23 @@
+[
+  {
+    "nome": "cila_cave_cliff",
+    "args": {
+      "description": "a natural sea cliff of dark volcanic rock with an enormous cave mouth torn into it, isolated on transparent background. One single continuous mass of solid dark stone, split by rough vertical column fractures and irregular wavy bands of darker and lighter grey, with a huge ragged uneven opening gouged through the upper part going pitch black inside. Broad natural rock shelves step below and beside the opening. Pale dead roots trail over the top edge, and splintered pale timbers and a few bleached bones lie wedged on the shelves. This is natural geology, a raw sea-worn rock face, not built by anyone: no bricks, no blocks, no mortar, no arch, no straight lines, no masonry, no stairs, not a tunnel. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 384, "height": 512, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "cila_crag_stack",
+    "args": {
+      "description": "a single narrow sea stack of dark volcanic rock standing alone, isolated on transparent background. One solid tower of near black stone split by rough vertical column fractures of uneven width, the top broken off jagged and slanted, the sides irregular and slightly bulging, wet darker stone at the very bottom with a pale crust of salt, one uneven natural ledge partway up. This is natural geology, a raw weathered rock spire, not built by anyone: no bricks, no blocks, no mortar, no straight lines, no masonry, not a tower, not a chimney. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 128, "height": 384, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "cila_arch_rock",
+    "args": {
+      "description": "a natural sea arch of dark volcanic rock standing in shallow water, isolated on transparent background. One solid mass of weathered near black stone with a rough uneven hole worn straight through the middle by the sea, thick irregular legs of different widths standing on wet dark rock, a broken jagged top, pale salt crust and green weed along the waterline. This is natural geology, a raw sea-worn rock, not built by anyone: no bricks, no blocks, no mortar, no straight lines, no masonry, not a bridge, not a gate. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 320, "height": 288, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]

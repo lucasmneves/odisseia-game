@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: 8a93917554f2cb9c9ae85ef25d1984da
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 262481017
+    second: CHR_Ithaca_Sparring_Idle_00
+  - first:
+      213: 40606281
+    second: CHR_Ithaca_Sparring_Idle_01
+  - first:
+      213: 1003409983
+    second: CHR_Ithaca_Sparring_Idle_02
+  - first:
+      213: 417807305
+    second: CHR_Ithaca_Sparring_Idle_03
+  - first:
+      213: 685086354
+    second: CHR_Ithaca_Sparring_Idle_04
+  - first:
+      213: 1528700397
+    second: CHR_Ithaca_Sparring_Idle_05
+  - first:
+      213: 1261154974
+    second: CHR_Ithaca_Sparring_Run_00
+  - first:
+      213: 1871912216
+    second: CHR_Ithaca_Sparring_Run_01
+  - first:
+      213: 472876750
+    second: CHR_Ithaca_Sparring_Run_02
+  - first:
+      213: 1222242228
+    second: CHR_Ithaca_Sparring_Run_03
+  - first:
+      213: 1070677904
+    second: CHR_Ithaca_Sparring_Run_04
+  - first:
+      213: 585659833
+    second: CHR_Ithaca_Sparring_Hit_00
+  - first:
+      213: 68562470
+    second: CHR_Ithaca_Sparring_Hit_01
+  - first:
+      213: 1782903891
+    second: CHR_Ithaca_Sparring_Hit_02
+  - first:
+      213: 616223672
+    second: CHR_Ithaca_Sparring_Hit_03
+  - first:
+      213: 454786781
+    second: CHR_Ithaca_Sparring_Hit_04
+  - first:
+      213: 777008018
+    second: CHR_Ithaca_Sparring_Hit_05
+  - first:
+      213: 1855358211
+    second: CHR_Ithaca_Sparring_Death_00
+  - first:
+      213: 1894753416
+    second: CHR_Ithaca_Sparring_Death_01
+  - first:
+      213: 1628644340
+    second: CHR_Ithaca_Sparring_Death_02
+  - first:
+      213: 923424454
+    second: CHR_Ithaca_Sparring_Death_03
+  - first:
+      213: 707519457
+    second: CHR_Ithaca_Sparring_Death_04
+  - first:
+      213: 28241965
+    second: CHR_Ithaca_Sparring_Death_05
+  - first:
+      213: 1133355162
+    second: CHR_Ithaca_Sparring_Death_06
+  - first:
+      213: 1502694831
+    second: CHR_Ithaca_Sparring_Death_07
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spritePixelsToUnits: 42.857143
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 196
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e55b6134f5a3aa4d10300b3226db7f36
+      internalID: 262481017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 196
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b73769ce812b8ed2242e2e35c9be7e98
+      internalID: 40606281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 196
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58daadf34b6e02f4a4663032047c1b49
+      internalID: 1003409983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 196
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fab201b1510ed626488c656f3a429574
+      internalID: 417807305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 196
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 981d80acb1b703a8735380f8b06d738f
+      internalID: 685086354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 196
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01d2f289aee18cbed169699e1b27e246
+      internalID: 1528700397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Run_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 131
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f8f26efff37ae619695df22b449e4ae
+      internalID: 1261154974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Run_01
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 131
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c43fb08ddb62b3e43fe69661b7353151
+      internalID: 1871912216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Run_02
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 131
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15863369fbcd31b0a03cc8fd85a00698
+      internalID: 472876750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Run_03
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 131
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f630706856a3f238e1dbf544921dc90
+      internalID: 1222242228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Run_04
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 131
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d543c584ac9b2fe205b96c9f10d5066c
+      internalID: 1070677904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Hit_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 66
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 266ef4efc16e0e4255793f468ec1613c
+      internalID: 585659833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Hit_01
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 66
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 844d172d20d7781ba468692107c9d991
+      internalID: 68562470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Hit_02
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 66
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f30e6273367b20c592c567f6ce8324c0
+      internalID: 1782903891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Hit_03
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 66
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 573aa8fd2e7198b56b2018e7dd69ce64
+      internalID: 616223672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Hit_04
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 66
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c3bbabf24ae9abd28c35a179588d83
+      internalID: 454786781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Hit_05
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 66
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c95345b73108e36be82ffe6b009c2436
+      internalID: 777008018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Death_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b349d777495442361771d2b455d25739
+      internalID: 1855358211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Death_01
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9df2dad9dea5d77dfc8d6deb684db53
+      internalID: 1894753416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Death_02
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 1
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df747e284f99462469116ec8ff94e73
+      internalID: 1628644340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Death_03
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 1
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 612941ecfb463406ad6e8c8d7e2abc9b
+      internalID: 923424454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Death_04
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3224c048f9e162a41f56ca858b4ce1b
+      internalID: 707519457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Death_05
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08780924da045200d3887eea56508bfb
+      internalID: 28241965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Death_06
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 1
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f94c64187b8e56b937d0c42e5aea1729
+      internalID: 1133355162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Ithaca_Sparring_Death_07
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1
+        width: 73
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6625e17aa69120a0002212f35a19d929
+      internalID: 1502694831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CHR_Ithaca_Sparring_Idle_00: 262481017
+      CHR_Ithaca_Sparring_Idle_01: 40606281
+      CHR_Ithaca_Sparring_Idle_02: 1003409983
+      CHR_Ithaca_Sparring_Idle_03: 417807305
+      CHR_Ithaca_Sparring_Idle_04: 685086354
+      CHR_Ithaca_Sparring_Idle_05: 1528700397
+      CHR_Ithaca_Sparring_Run_00: 1261154974
+      CHR_Ithaca_Sparring_Run_01: 1871912216
+      CHR_Ithaca_Sparring_Run_02: 472876750
+      CHR_Ithaca_Sparring_Run_03: 1222242228
+      CHR_Ithaca_Sparring_Run_04: 1070677904
+      CHR_Ithaca_Sparring_Hit_00: 585659833
+      CHR_Ithaca_Sparring_Hit_01: 68562470
+      CHR_Ithaca_Sparring_Hit_02: 1782903891
+      CHR_Ithaca_Sparring_Hit_03: 616223672
+      CHR_Ithaca_Sparring_Hit_04: 454786781
+      CHR_Ithaca_Sparring_Hit_05: 777008018
+      CHR_Ithaca_Sparring_Death_00: 1855358211
+      CHR_Ithaca_Sparring_Death_01: 1894753416
+      CHR_Ithaca_Sparring_Death_02: 1628644340
+      CHR_Ithaca_Sparring_Death_03: 923424454
+      CHR_Ithaca_Sparring_Death_04: 707519457
+      CHR_Ithaca_Sparring_Death_05: 28241965
+      CHR_Ithaca_Sparring_Death_06: 1133355162
+      CHR_Ithaca_Sparring_Death_07: 1502694831
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

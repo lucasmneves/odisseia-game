@@ -1,0 +1,44 @@
+GIMP Palette
+Name: Odisseia - Calipso Environment
+Columns: 4
+#
+ 43  46  39	Contorno Highlight
+ 29  34  29	Contorno Base
+ 20  20  21	Contorno Sombra
+  5   5   7	Contorno Profunda
+245 205  92	Bronze Highlight
+187 126  44	Bronze Base
+157  97  31	Bronze Sombra
+115  62  22	Bronze Profunda
+250 214 168	Areia Highlight
+228 205 180	Areia Base
+207 182 156	Areia Sombra
+170 153 138	Areia Profunda
+247 241 236	Agua rasa Highlight
+129 176 169	Agua rasa Base
+108 166 167	Agua rasa Sombra
+ 82 133 144	Agua rasa Profunda
+ 69 108 126	Agua funda Highlight
+ 58  88 114	Agua funda Base
+ 37  54  51	Agua funda Sombra
+ 13  17  18	Agua funda Profunda
+127 157  58	Folhagem clara Highlight
+102 139  53	Folhagem clara Base
+ 77 119  51	Folhagem clara Sombra
+ 43  81  42	Folhagem clara Profunda
+ 57 121  80	Folhagem funda Highlight
+ 35  83  60	Folhagem funda Base
+ 16  41  35	Folhagem funda Sombra
+ 11  34  30	Folhagem funda Profunda
+238 175  73	Rocha ocre Highlight
+238 148  63	Rocha ocre Base
+165  89  53	Rocha ocre Sombra
+ 96  54  40	Rocha ocre Profunda
+179 165 148	Marmore Highlight
+136 125 120	Marmore Base
+117 112 113	Marmore Sombra
+ 85  82  88	Marmore Profunda
+159 106  79	Madeira Highlight
+128  88  73	Madeira Base
+112  75  67	Madeira Sombra
+ 93  64  62	Madeira Profunda

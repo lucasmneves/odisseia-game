@@ -1,0 +1,495 @@
+{
+  "Penelope_s64": {
+    "id": "aebb46e2-4820-4403-b83f-2ca82356d431",
+    "size": 64,
+    "prompt": "Penelope, queen of Ithaca, adult woman in her late twenties, slender upright posture, long dark reddish-brown hair gathered in a low knot with a thin bronze band, ankle-length off-white linen peplos pinned at the shoulders with small bronze pins, deep sea-blue border on the hem, sea-blue woollen mantle draped over one shoulder and arm, leather sandals, serene warm expression, hands empty, side view, 16-bit pixel art game character, Bronze Age Mycenaean Greek, Mediterranean island of Ithaca",
+    "east": "Docs/Characters/Fase01/Penelope_s64/Penelope_east.png",
+    "nota": "62 px, mais alta que o Odisseu (60); descartada por escala"
+  },
+  "Penelope": {
+    "id": "d97a1303-cbbd-4c67-88cf-a87f9ba28f3a",
+    "size": 60,
+    "prompt": "Penelope, queen of Ithaca, adult woman in her late twenties, slender upright posture, long dark reddish-brown hair gathered in a low knot with a thin bronze band, ankle-length off-white linen peplos pinned at the shoulders with small bronze pins, deep sea-blue border on the hem, sea-blue woollen mantle draped over one shoulder and arm, leather sandals, serene warm expression, hands empty, side view, 16-bit pixel art game character, Bronze Age Mycenaean Greek, Mediterranean island of Ithaca",
+    "east": "Docs/Characters/Fase01/Penelope/Penelope_east.png",
+    "idleJob": "character: d97a1303-cbbd-4c67-88cf-a87f9ba28f3a\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted)\ndirections: east (1 jobs)\ngroup: c1f792bb-faba-467e-98f1-530c06732cd1\nframes: 7",
+    "idlePrompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted",
+    "idleFrames": 7
+  },
+  "Herald_Mycenae": {
+    "id": "c7ac823e-313a-4eff-b151-a67fb7be39e3",
+    "size": 64,
+    "prompt": "herald of king Agamemnon from Mycenae, tall formal adult man, neatly trimmed black beard, long deep indigo-blue tunic to the shins with a gold meander border, short indigo cloak fastened with a gold disc brooch, thin gold circlet on black hair, holding a tall wooden herald staff with a bronze tip upright in his front hand, the staff stays attached to his hand, proud stern expression, side view, 16-bit pixel art game character, Bronze Age Mycenaean Greek, Mediterranean island of Ithaca",
+    "east": "Docs/Characters/Fase01/Herald_Mycenae/Herald_Mycenae_east.png",
+    "idleJob": "character: c7ac823e-313a-4eff-b151-a67fb7be39e3\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted)\ndirections: east (1 jobs)\ngroup: e655da39-4a1d-420f-9f8a-c1315c6a651e\nframes: 7",
+    "idlePrompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted",
+    "idleFrames": 7
+  },
+  "Soldier_Ithaca": {
+    "id": "7a5a09a9-5ab2-4f93-95a6-397d542ef223",
+    "size": 64,
+    "prompt": "Ithacan foot soldier, adult man, bronze Greek helmet with cheek guards and no crest, layered leather and linen cuirass over a short off-white tunic, leather pteruges skirt, bronze greaves, leather sandals, short dark beard, holding a tall wooden spear with a bronze head upright at his side, the spear stays attached to his hand, side view, 16-bit pixel art game character, Bronze Age Mycenaean Greek, Mediterranean island of Ithaca",
+    "east": "Docs/Characters/Fase01/Soldier_Ithaca/Soldier_Ithaca_east.png",
+    "idleJob": "character: 7a5a09a9-5ab2-4f93-95a6-397d542ef223\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted)\ndirections: east (1 jobs)\ngroup: df8cc2f5-8d9e-4a82-be36-b5d85365cb22\nframes: 7",
+    "idlePrompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted",
+    "idleFrames": 7,
+    "anims": {
+      "Idle": {
+        "job": "character: 7a5a09a9-5ab2-4f93-95a6-397d542ef223\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted)\ndirections: east (1 jobs)\ngroup: df8cc2f5-8d9e-4a82-be36-b5d85365cb22\nframes: 7",
+        "frames": 7
+      },
+      "Run": {
+        "job": "character: 7a5a09a9-5ab2-4f93-95a6-397d542ef223\nanimation: v3 custom (running forward fast, side view facing right, front knee lifted to hip height, back heel kicking up behind, body leaning slightly forward, spear held level in the front hand, the spear stays attached to his hand in every frame)\ndi",
+        "prompt": "running forward fast, side view facing right, front knee lifted to hip height, back heel kicking up behind, body leaning slightly forward, spear held level in the front hand, the spear stays attached to his hand in every frame",
+        "frames": 8
+      },
+      "Death": {
+        "job": "character: 7a5a09a9-5ab2-4f93-95a6-397d542ef223\nanimation: v3 custom (struck down, side view facing right, knees buckle and the body falls backward, landing flat on his back on the ground and lying still, the spear dropping beside him)\ndirections: east (1 jobs)\ngroup: 1cf6abee-c7ea-4187-a7cb-199f0c9",
+        "prompt": "struck down, side view facing right, knees buckle and the body falls backward, landing flat on his back on the ground and lying still, the spear dropping beside him",
+        "frames": 8
+      },
+      "Hit": {
+        "job": "character: 7a5a09a9-5ab2-4f93-95a6-397d542ef223\nanimation: v3 custom (recoiling from a blow to the chest, side view facing right, torso snaps backward and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, the spear stays attached to his hand in every frame)\ndir",
+        "prompt": "recoiling from a blow to the chest, side view facing right, torso snaps backward and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, the spear stays attached to his hand in every frame",
+        "frames": 6
+      }
+    }
+  },
+  "Trainer_Veteran": {
+    "id": "7c97e190-acd6-44d9-ba69-11409c7ac3b0",
+    "size": 64,
+    "prompt": "veteran Ithacan drill instructor, muscular man in his fifties, short grey beard, bronze Greek helmet with a tall crimson horsehair crest, bronze muscle cuirass over a sea-blue short tunic, bronze greaves, holding a plain wooden practice staff upright in his hand, the staff stays attached to his hand, stern but fair expression, side view, 16-bit pixel art game character, Bronze Age Mycenaean Greek, Mediterranean island of Ithaca",
+    "east": "Docs/Characters/Fase01/Trainer_Veteran/Trainer_Veteran_east.png",
+    "idleJob": "character: 7c97e190-acd6-44d9-ba69-11409c7ac3b0\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted)\ndirections: east (1 jobs)\ngroup: cfe92f34-e7d0-41ef-a3d6-705874b0a03d\nframes: 7",
+    "idlePrompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted",
+    "idleFrames": 7
+  },
+  "Villager_Woman": {
+    "id": "a7e7ba9f-75d3-47f1-aa61-11943829186f",
+    "size": 60,
+    "prompt": "Ithacan village woman, adult, sturdy build, ankle-length plain undyed linen dress, olive-green shawl over the shoulders, dark brown hair covered by a pale sand-colored headscarf, bare forearms, leather sandals, friendly expression, hands empty, side view, 16-bit pixel art game character, Bronze Age Mycenaean Greek, Mediterranean island of Ithaca",
+    "east": "Docs/Characters/Fase01/Villager_Woman/Villager_Woman_east.png",
+    "idleJob": "character: a7e7ba9f-75d3-47f1-aa61-11943829186f\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted)\ndirections: east (1 jobs)\ngroup: 55b3b198-0e85-4c5b-8b85-2e0d34bede98\nframes: 7",
+    "idlePrompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted",
+    "idleFrames": 7
+  },
+  "Villager_Merchant": {
+    "id": "fd1650e7-1bbf-41f1-9059-88363cfadc18",
+    "size": 64,
+    "prompt": "Ithacan market trader, middle-aged plump man, short curly black beard, knee-length sand-colored tunic with a brown woollen mantle over one shoulder, leather coin pouch on a rope belt, leather sandals, cheerful expression, hands empty, side view, 16-bit pixel art game character, Bronze Age Mycenaean Greek, Mediterranean island of Ithaca",
+    "east": "Docs/Characters/Fase01/Villager_Merchant/Villager_Merchant_east.png",
+    "idleJob": "character: fd1650e7-1bbf-41f1-9059-88363cfadc18\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted)\ndirections: east (1 jobs)\ngroup: 4535d336-18cf-4cb1-9c6e-09080567c305\nframes: 7",
+    "idlePrompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted",
+    "idleFrames": 7
+  },
+  "Telemachus_Child_r1": {
+    "id": "0f355ebf-8f82-41ad-813b-3ae772516064",
+    "size": 44,
+    "prompt": "Telemachus, a young Greek boy about seven years old, son of the king, small child body with a larger head and short limbs, wavy dark reddish-brown hair, knee-length off-white linen tunic with a crimson border and a thin leather belt, simple leather sandals, bright curious expression, hands empty, side view, 16-bit pixel art game character, Bronze Age Mycenaean Greek, Mediterranean island of Ithaca",
+    "east": "Docs/Characters/Fase01/Telemachus_Child_r1/Telemachus_Child_east.png",
+    "nota": "rosto de anime (olhos grandes, rubor), lê como menina, vista 3/4; descartado"
+  },
+  "Telemachus_Child": {
+    "id": "c6eb8647-5e2d-410d-8621-748adbcd9702",
+    "size": 44,
+    "prompt": "Telemachus, a seven year old Greek boy, son of the king, in strict side profile facing right, small sturdy child body, short tousled dark reddish-brown hair like his father, simple small dot eyes and a small nose, plain determined little face, knee-length off-white linen tunic with a crimson border and a thin leather belt, simple leather sandals, hands empty, side view, 16-bit pixel art game character, Bronze Age Mycenaean Greek, Mediterranean island of Ithaca",
+    "descartado_idle_east": "Idle na rotação east (de costas): 1 geração perdida",
+    "east": "Docs/Characters/Fase01/Telemachus_Child/Telemachus_Child_east.png",
+    "idleJob": "character: c6eb8647-5e2d-410d-8621-748adbcd9702\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted)\ndirections: south (1 jobs)\ngroup: 1780a2c6-86d1-48c7-9516-c190b73047f9\nframes: ",
+    "idlePrompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted",
+    "idleFrames": 7
+  },
+  "Villager_Fisherman": {
+    "id": "d05d3c25-983c-4e5b-b03a-60d53c998ef8",
+    "size": 64,
+    "prompt": "Ithacan village fisherman, lean weathered adult man, plain undyed short linen tunic, bare arms, short dark beard, rope belt, bare feet, hands empty, side view, 16-bit pixel art game character, Bronze Age Mycenaean Greek, Mediterranean island of Ithaca",
+    "east": "Docs/Characters/Fase01/Villager_Fisherman/Villager_Fisherman_east.png",
+    "idleJob": "character: d05d3c25-983c-4e5b-b03a-60d53c998ef8\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted)\ndirections: east (1 jobs)\ngroup: cff46603-b952-495b-95f2-1e88cd0e9be2\nframes: 7",
+    "idlePrompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted",
+    "idleFrames": 7
+  },
+  "Villager_Farmer": {
+    "id": "c5f8e969-3363-4ca6-addb-aff1157940f8",
+    "size": 64,
+    "prompt": "Ithacan village farmer, sturdy adult man, coarse brown belted knee-length tunic, wide straw sun hat, short brown beard, leather sandals, hands empty, side view, 16-bit pixel art game character, Bronze Age Mycenaean Greek, Mediterranean island of Ithaca",
+    "east": "Docs/Characters/Fase01/Villager_Farmer/Villager_Farmer_east.png",
+    "idleJob": "character: c5f8e969-3363-4ca6-addb-aff1157940f8\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted)\ndirections: east (1 jobs)\ngroup: 217fcaa5-ea90-47c1-ada1-a1d3672deecf\nframes: 7",
+    "idlePrompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted",
+    "idleFrames": 7
+  },
+  "Villager_Sailor": {
+    "id": "575a9cc6-ab00-4a64-b20b-66c4ea69ec21",
+    "size": 64,
+    "prompt": "Ithacan sailor, wiry young adult man, short sleeveless faded sea-blue tunic, rope belt, bare feet, wind-burnt face, short black hair, clean-shaven, hands empty, side view, 16-bit pixel art game character, Bronze Age Mycenaean Greek, Mediterranean island of Ithaca",
+    "east": "Docs/Characters/Fase01/Villager_Sailor/Villager_Sailor_east.png",
+    "idleJob": "character: 575a9cc6-ab00-4a64-b20b-66c4ea69ec21\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted)\ndirections: east (1 jobs)\ngroup: 1fe3492a-0ebd-4252-a08c-a22be9b51bee\nframes: 7",
+    "idlePrompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted",
+    "idleFrames": 7
+  },
+  "Villager_Elder": {
+    "id": "96f515ea-1c07-4a8b-95a1-b3f39c8a56fe",
+    "size": 60,
+    "prompt": "old Ithacan villager, long grey beard, bald crown with grey hair at the sides, long plain dark blue robe, slightly stooped, leaning on a wooden walking staff held in his front hand, the staff stays attached to his hand, side view, 16-bit pixel art game character, Bronze Age Mycenaean Greek, Mediterranean island of Ithaca",
+    "east": "Docs/Characters/Fase01/Villager_Elder/Villager_Elder_east.png",
+    "idleJob": "character: 96f515ea-1c07-4a8b-95a1-b3f39c8a56fe\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted)\ndirections: east (1 jobs)\ngroup: d5b87bff-0978-48d5-af23-fc37e86fd69c\nframes: 7",
+    "idlePrompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted",
+    "idleFrames": 7
+  },
+  "Trojan_Soldier": {
+    "anims": {
+      "Idle": {
+        "job": "character: c416f3a0-7b39-4dd0-86ad-969c7dc29075\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer",
+        "prompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted",
+        "frames": 7
+      },
+      "Hit": {
+        "job": "character: c416f3a0-7b39-4dd0-86ad-969c7dc29075\nanimation: v3 custom (recoiling from a blow to the chest, side view facing right, torso snaps backward and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, spear and shield stay attached to his hands in every fra",
+        "prompt": "recoiling from a blow to the chest, side view facing right, torso snaps backward and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, spear and shield stay attached to his hands in every frame",
+        "frames": 6
+      },
+      "Run": {
+        "job": "character: c416f3a0-7b39-4dd0-86ad-969c7dc29075\nanimation: v3 custom (running forward fast, side view facing right, front knee lifted to hip height, back heel kicking up behind, body leaning slightly forward, spear held level in the front hand and shield on the back arm, spear and shield stay attach",
+        "prompt": "running forward fast, side view facing right, front knee lifted to hip height, back heel kicking up behind, body leaning slightly forward, spear held level in the front hand and shield on the back arm, spear and shield stay attached to his hands in every frame",
+        "frames": 8
+      },
+      "Death": {
+        "job": "character: c416f3a0-7b39-4dd0-86ad-969c7dc29075\nanimation: v3 custom (struck down, side view facing right, knees buckle and the body falls backward, landing flat on his back on the ground and lying still, spear and shield dropping beside him)\ndirections: east (1 jobs)\ngroup: 253c0b33-b18a-4351-8c8d-",
+        "prompt": "struck down, side view facing right, knees buckle and the body falls backward, landing flat on his back on the ground and lying still, spear and shield dropping beside him",
+        "frames": 8
+      }
+    },
+    "id": "c416f3a0-7b39-4dd0-86ad-969c7dc29075",
+    "size": 60,
+    "prompt": "Trojan foot soldier defending the walled city of Troy, lean sturdy adult man, bronze Phrygian-style helmet whose top curves forward into a rounded point, no horsehair crest, bronze scale armour vest over a knee-length sand-colored linen tunic with a terracotta border, slate-blue sash at the waist, bronze greaves, leather sandals, short black curly beard, round shield faced with terracotta leather and a sand-colored spiral motif on his back arm, short spear in his front hand, spear and shield stay attached to his hands in every frame, side view, 16-bit pixel art game character, Bronze Age Mycenaean era, Trojan War, sun-bleached Aegean coast",
+    "east": "Docs/Characters/Fase02/Trojan_Soldier/Trojan_Soldier_east.png"
+  },
+  "Greek_Soldier_Mycenae": {
+    "anims": {
+      "Idle": {
+        "job": "character: 6855cafb-1ea7-47a7-9c5e-a2e6ee2e1dd3\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer",
+        "prompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted",
+        "frames": 7
+      }
+    },
+    "id": "6855cafb-1ea7-47a7-9c5e-a2e6ee2e1dd3",
+    "size": 64,
+    "prompt": "Mycenaean Greek hoplite of the army of Agamemnon, adult man, bronze Greek helmet with a tall deep indigo horsehair crest running front to back, bronze muscle cuirass with gold trim over a deep indigo short tunic, large round bronze aspis shield with a gold rim on his back arm, tall spear held upright in his front hand, bronze greaves, leather sandals, short dark beard, spear and shield stay attached to his hands in every frame, side view, 16-bit pixel art game character, Bronze Age Mycenaean era, Trojan War, sun-bleached Aegean coast",
+    "east": "Docs/Characters/Fase02/Greek_Soldier_Mycenae/Greek_Soldier_Mycenae_east.png"
+  },
+  "Cicones_Warrior": {
+    "anims": {
+      "Idle": {
+        "job": "character: f4640c38-d2a2-4e6f-9a1d-353a7b84a946\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer",
+        "prompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted",
+        "frames": 7
+      },
+      "Run": {
+        "job": "character: f4640c38-d2a2-4e6f-9a1d-353a7b84a946\nanimation: v3 custom (running forward fast, side view facing right, front knee lifted to hip height, back heel kicking up behind, body leaning slightly forward, spear held level in the front hand and shield on the back arm, spear and shield stay attach",
+        "prompt": "running forward fast, side view facing right, front knee lifted to hip height, back heel kicking up behind, body leaning slightly forward, spear held level in the front hand and shield on the back arm, spear and shield stay attached to his hands in every frame",
+        "frames": 8
+      },
+      "Death": {
+        "job": "character: f4640c38-d2a2-4e6f-9a1d-353a7b84a946\nanimation: v3 custom (struck down, side view facing right, knees buckle and the body falls backward, landing flat on his back on the ground and lying still, spear and shield dropping beside him)\ndirections: east (1 jobs)\ngroup: 3bf7a496-55ca-4150-89bb-",
+        "prompt": "struck down, side view facing right, knees buckle and the body falls backward, landing flat on his back on the ground and lying still, spear and shield dropping beside him",
+        "frames": 8
+      },
+      "Hit": {
+        "job": "character: f4640c38-d2a2-4e6f-9a1d-353a7b84a946\nanimation: v3 custom (recoiling from a blow to the chest, side view facing right, torso snaps backward and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, spear and shield stay attached to his hands in every fra",
+        "prompt": "recoiling from a blow to the chest, side view facing right, torso snaps backward and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, spear and shield stay attached to his hands in every frame",
+        "frames": 6
+      }
+    },
+    "id": "f4640c38-d2a2-4e6f-9a1d-353a7b84a946",
+    "size": 60,
+    "prompt": "Ciconian warrior, a Thracian coastal tribesman defending his town, lean wiry adult man, tall pointed fox-fur cap with ear flaps, long dark braided beard, ankle-length olive-green woollen cloak with an earth-brown geometric zigzag border, leather jerkin over a short brown tunic, soft leather boots, bronze arm rings, crescent-shaped wicker shield covered in brown hide on his back arm, short spear in his front hand, spear and shield stay attached to his hands in every frame, side view, 16-bit pixel art game character, Bronze Age, Thracian coast of the northern Aegean",
+    "east": "Docs/Characters/Fase03/Cicones_Warrior/Cicones_Warrior_east.png"
+  },
+  "Polyphemus_r1": {
+    "anims": {},
+    "id": "02e0b420-d4af-4255-98e2-45ed52f3a36c",
+    "size": 208,
+    "prompt": "Polyphemus the cyclops of Greek myth, a colossal hulking shepherd giant, a single huge round eye set in the centre of his forehead under one heavy brow, wild dark curly hair and a thick unkempt beard, broad hunched shoulders, huge muscular arms and oversized hands, barrel chest, thick heavy legs, weathered tanned skin, a rough off-white sheep fleece wrapped around his waist and slung over one shoulder, rope belt, bare feet, holding a huge knotted olive-wood club in his front hand, the club stays attached to his hands in every frame, menacing brutish but slightly comical expression, side view, 16-bit pixel art game character, Greek mythology, wild rocky island of the Cyclopes",
+    "east": "Docs/Characters/Fase05/Polyphemus_r1/Polyphemus_east.png",
+    "nota": "reprovado: na vista south tem DOIS olhos normais + um terceiro pequeno na testa; na east a clava cobre o rosto. 7 gerações"
+  },
+  "Polyphemus": {
+    "anims": {
+      "Idle": {
+        "job": "character: 41ff35f6-2355-4bbc-aa7d-f301bcbcbf33\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer",
+        "prompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted, the club stays attached to his hands in every frame",
+        "frames": 7
+      },
+      "Slam": {
+        "job": "character: 41ff35f6-2355-4bbc-aa7d-f301bcbcbf33\nanimation: v3 custom (slowly raising the huge club high over his head with both hands, body leaning back to wind up, holding it there for a moment, then slamming it straight down onto the ground in front of him with all his weight, body bending forward",
+        "prompt": "slowly raising the huge club high over his head with both hands, body leaning back to wind up, holding it there for a moment, then slamming it straight down onto the ground in front of him with all his weight, body bending forward as the club head strikes the ground, side view facing right, the club stays attached to his hands in every frame",
+        "frames": 8
+      }
+    },
+    "id": "41ff35f6-2355-4bbc-aa7d-f301bcbcbf33",
+    "size": 208,
+    "prompt": "Polyphemus the cyclops of Greek myth, a colossal hulking shepherd giant, his face has only one eye: one huge round cyclops eye in the middle of his face where two eyes would be, directly above the nose, under one heavy unibrow, wild dark curly hair and a thick unkempt beard, broad hunched shoulders, huge muscular arms and oversized hands, barrel chest, thick heavy legs, weathered tanned skin, a rough off-white sheep fleece wrapped around his waist and slung over one shoulder, rope belt, bare feet, holding a huge knotted olive-wood club low at his side with its head resting on the ground, the club kept away from his face, the club stays attached to his hands in every frame, menacing brutish but slightly comical expression, side view, 16-bit pixel art game character, Greek mythology, wild rocky island of the Cyclopes",
+    "east": "Docs/Characters/Fase05/Polyphemus/Polyphemus_east.png"
+  },
+  "Aeolus_r1": {
+    "anims": {},
+    "id": "cd48d3a3-10fc-4025-a195-806873b26bbc",
+    "size": 68,
+    "prompt": "Aeolus, keeper of the winds and king of Aeolia in Greek myth, tall dignified mature man, long silver-white hair and a long silver beard streaming sideways as if blown by the wind, ankle-length pale sky-blue chiton, a white woollen himation mantle billowing out behind him, a thin pale gold circlet, a bronze arm band, leather sandals, holding a slender white wooden staff topped with a small spiral in his front hand, the staff stays attached to his hand, calm powerful expression, side view, 16-bit pixel art game character, Greek mythology, floating island of Aeolia among the clouds",
+    "east": "Docs/Characters/Fase06/Aeolus_r1/Aeolus_east.png",
+    "nota": "reprovado: desenhou a ilha flutuante e nuvens do texto-base do prompt; 2 gerações"
+  },
+  "Aeolus": {
+    "anims": {
+      "Idle": {
+        "job": "character: 7e125e83-2159-411e-b176-5ae3c9583526\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer",
+        "prompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted, the staff stays attached to his hand",
+        "frames": 7
+      }
+    },
+    "id": "7e125e83-2159-411e-b176-5ae3c9583526",
+    "size": 68,
+    "prompt": "Aeolus, keeper of the winds and king of Aeolia in Greek myth, tall dignified mature man, long silver-white hair and a long silver beard streaming sideways as if blown by the wind, ankle-length pale sky-blue chiton, a white woollen himation mantle billowing out behind him, a thin pale gold circlet, a bronze arm band, leather sandals, holding a slender white wooden staff topped with a small spiral in his front hand, the staff stays attached to his hand, calm powerful expression, side view, 16-bit pixel art game character, Greek mythology",
+    "east": "Docs/Characters/Fase06/Aeolus/Aeolus_east.png"
+  },
+  "Lestrigon_Warrior": {
+    "anims": {
+      "Idle": {
+        "job": "character: b97b3d21-4dff-45fe-8c3b-5c0906ce4daa\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer",
+        "prompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted, the boulder stays held in both hands",
+        "frames": 7
+      },
+      "Run": {
+        "job": "character: b97b3d21-4dff-45fe-8c3b-5c0906ce4daa\nanimation: v3 custom (running forward heavily with long thundering strides, side view facing right, front knee lifted high, back leg pushing off, torso leaning forward, arms pumping, the boulder stays held in both hands against his chest)\ndirections: e",
+        "prompt": "running forward heavily with long thundering strides, side view facing right, front knee lifted high, back leg pushing off, torso leaning forward, arms pumping, the boulder stays held in both hands against his chest",
+        "frames": 8
+      },
+      "Throw": {
+        "job": "character: b97b3d21-4dff-45fe-8c3b-5c0906ce4daa\nanimation: v3 custom (lifting the huge boulder high over his head with both arms, leaning back and holding it there for a moment, then hurling it forward and down with all his strength, arms swinging through, body lunging forward, side view facing righ",
+        "prompt": "lifting the huge boulder high over his head with both arms, leaning back and holding it there for a moment, then hurling it forward and down with all his strength, arms swinging through, body lunging forward, side view facing right",
+        "frames": 8
+      },
+      "Charge": {
+        "job": "character: b97b3d21-4dff-45fe-8c3b-5c0906ce4daa\nanimation: v3 custom (charging forward heavily with long thundering strides, empty-handed, both fists clenched and arms pumping, side view facing right, front knee lifted high, back leg pushing off, torso leaning forward)\ndirections: east (1 jobs)\ngrou",
+        "prompt": "charging forward heavily with long thundering strides, empty-handed, both fists clenched and arms pumping, side view facing right, front knee lifted high, back leg pushing off, torso leaning forward",
+        "frames": 8
+      }
+    },
+    "id": "b97b3d21-4dff-45fe-8c3b-5c0906ce4daa",
+    "size": 192,
+    "prompt": "Laestrygonian giant warrior from the man-eating giant people of Greek myth, a towering broad-shouldered giant, ruddy ochre-brown skin, two fierce eyes under a heavy brow, shaved head with a single black topknot, a long black braided beard, thick muscular arms and legs, a dark leather kilt studded with bronze, a wide leather belt, a bronze torque around his neck and bronze arm rings, bare feet, holding a large rough grey boulder in both hands in front of his belly, the boulder stays held in both hands, menacing brutish expression, side view, 16-bit pixel art game character, Greek mythology",
+    "east": "Docs/Characters/Fase07/Lestrigon_Warrior/Lestrigon_Warrior_east.png"
+  },
+  "Circe": {
+    "anims": {
+      "Idle": {
+        "job": "character: 112d8983-7ddc-47bc-b7ac-5387b73896a5\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer",
+        "prompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted, the cup stays in her hand"
+      }
+    },
+    "id": "112d8983-7ddc-47bc-b7ac-5387b73896a5",
+    "size": 64,
+    "prompt": "Circe the enchantress of Greek myth, tall graceful adult woman, long dark wavy hair falling to her waist crowned with a thin golden laurel wreath, ankle-length deep violet peplos with an olive-green woven border, a sheer pale green shawl draped over her arms, golden armbands and a golden snake bracelet, bare feet, holding a small golden kylix cup raised in one hand, the cup stays in her hand, serene knowing smile, side view, 16-bit pixel art game character, Greek mythology",
+    "east": "Docs/Characters/Fase08/Circe/Circe_east.png"
+  },
+  "Circe_Wolf_std": {
+    "anims": {},
+    "id": "06680f22-169d-4d49-ba4e-ae424ea022d5",
+    "size": 68,
+    "prompt": "enchanted grey wolf from the island of Circe in Greek myth, lean powerful wolf, grey-brown fur with a darker back, glowing pale green eyes, a thin golden collar with a small violet charm, snarling, side view, 16-bit pixel art game character, Greek mythology",
+    "east": "Docs/Characters/Fase08/Circe_Wolf_std/Circe_Wolf_east.png",
+    "nota": "reprovado: modo standard chapado (18 cores), cinza pedido saiu preto-carvão, lê como pantera"
+  },
+  "Circe_Wolf": {
+    "anims": {
+      "Idle": {
+        "job": "character: 4f805faa-08e5-43a0-8438-f2a2c2b4e186\nanimation: v3 custom (standing alert and breathing, head low, tail slowly swaying, side view facing right, all four paws stay planted)\ndirections: east (1 jobs)\ngroup: b02542fb-d568-4e9d-83f9-b38f3bc6b9de\nframes: 7 (1 reference + 6 animated)\ncost: 1 ge",
+        "prompt": "standing alert and breathing, head low, tail slowly swaying, side view facing right, all four paws stay planted",
+        "frames": 7
+      },
+      "Hit": {
+        "job": "character: 4f805faa-08e5-43a0-8438-f2a2c2b4e186\nanimation: v3 custom (flinching back from a blow, side view facing right, head jerking back, body recoiling and crouching, then recovering to a snarling stance)\ndirections: east (1 jobs)\ngroup: bbe380bf-6458-4122-a1e5-628f3ede89c2\nframes: 6 (reference ",
+        "prompt": "flinching back from a blow, side view facing right, head jerking back, body recoiling and crouching, then recovering to a snarling stance",
+        "frames": 6
+      },
+      "Run": {
+        "job": "character: 4f805faa-08e5-43a0-8438-f2a2c2b4e186\nanimation: v3 custom (running fast in a full gallop, side view facing right, legs stretching forward and back, body low and long, ears back)\ndirections: east (1 jobs)\ngroup: 36cfcb77-4788-45b2-9c83-c4a2abbf9b8e\nframes: 8 (reference stripped, keep_first",
+        "prompt": "running fast in a full gallop, side view facing right, legs stretching forward and back, body low and long, ears back",
+        "frames": 8
+      },
+      "Death": {
+        "job": "character: 4f805faa-08e5-43a0-8438-f2a2c2b4e186\nanimation: v3 custom (collapsing from a fatal blow, side view facing right, legs giving way, body falling onto its side on the ground and lying still)\ndirections: east (1 jobs)\ngroup: 060e03d8-431d-4f94-8a9c-0c5ea4575c40\nframes: 8 (reference stripped, ",
+        "prompt": "collapsing from a fatal blow, side view facing right, legs giving way, body falling onto its side on the ground and lying still",
+        "frames": 8
+      }
+    },
+    "id": "4f805faa-08e5-43a0-8438-f2a2c2b4e186",
+    "size": 68,
+    "prompt": "enchanted grey wolf from the island of Circe in Greek myth, lean powerful wolf, grey-brown fur with a darker back, glowing pale green eyes, a thin golden collar with a small violet charm, snarling, side view, 16-bit pixel art game character, Greek mythology",
+    "east": "Docs/Characters/Fase08/Circe_Wolf/Circe_Wolf_east.png"
+  },
+  "Shade_Warrior": {
+    "anims": {
+      "Idle": {
+        "job": "character: 3d75c50c-fcc9-4a7b-ab67-99f3396781b5\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer",
+        "prompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted",
+        "frames": 7
+      },
+      "Run": {
+        "job": "character: 3d75c50c-fcc9-4a7b-ab67-99f3396781b5\nanimation: v3 custom (running forward fast, side view facing right, front knee lifted to hip height, back heel kicking up behind, body leaning slightly forward, spear held level in the front hand and shield on the back arm, spear and shield stay attach",
+        "prompt": "running forward fast, side view facing right, front knee lifted to hip height, back heel kicking up behind, body leaning slightly forward, spear held level in the front hand and shield on the back arm, spear and shield stay attached to his hands in every frame",
+        "frames": 8
+      },
+      "Death": {
+        "job": "character: 3d75c50c-fcc9-4a7b-ab67-99f3396781b5\nanimation: v3 custom (struck down, side view facing right, knees buckle and the body falls backward, landing flat on his back on the ground and lying still, spear and shield dropping beside him)\ndirections: east (1 jobs)\ngroup: 004496c7-1462-4f17-a9bf-",
+        "prompt": "struck down, side view facing right, knees buckle and the body falls backward, landing flat on his back on the ground and lying still, spear and shield dropping beside him",
+        "frames": 8
+      },
+      "Hit": {
+        "job": "character: 3d75c50c-fcc9-4a7b-ab67-99f3396781b5\nanimation: v3 custom (recoiling from a blow to the chest, side view facing right, torso snaps backward and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, spear and shield stay attached to his hands in every fra",
+        "prompt": "recoiling from a blow to the chest, side view facing right, torso snaps backward and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, spear and shield stay attached to his hands in every frame",
+        "frames": 6
+      }
+    },
+    "id": "3d75c50c-fcc9-4a7b-ab67-99f3396781b5",
+    "size": 60,
+    "prompt": "ghostly shade of a dead Greek warrior from the underworld of Greek myth, pale grey-blue skin, a faded ragged tunic and a cracked bronze helmet all washed out in grey-blue and pale white tones, a small battered round shield on his back arm, a broken spear in his front hand, pale glowing eyes, sorrowful stern expression, spear and shield stay attached to his hands in every frame, side view, 16-bit pixel art game character, Greek mythology",
+    "east": "Docs/Characters/Fase09/Shade_Warrior/Shade_Warrior_east.png"
+  },
+  "Shade": {
+    "anims": {
+      "Idle": {
+        "job": "character: 129989a4-cd80-430b-b76a-f615ec1754dc\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer",
+        "prompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted",
+        "frames": 7
+      }
+    },
+    "id": "129989a4-cd80-430b-b76a-f615ec1754dc",
+    "size": 60,
+    "prompt": "ghostly shade of a nameless dead person from the underworld of Greek myth, a thin hooded figure wrapped in a long faded grey-blue burial shroud, pale grey-violet skin, pale glowing eyes, arms held close to the body, sorrowful longing expression, side view, 16-bit pixel art game character, Greek mythology",
+    "east": "Docs/Characters/Fase09/Shade/Shade_east.png"
+  },
+  "Anticleia": {
+    "anims": {
+      "Idle": {
+        "job": "character: 414939de-a76e-4bf5-bf62-e68568a3c2ee\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer",
+        "prompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted",
+        "frames": 7
+      }
+    },
+    "id": "414939de-a76e-4bf5-bf62-e68568a3c2ee",
+    "size": 60,
+    "prompt": "Anticleia, the ghost of the mother of Odysseus in Greek myth, elderly noble Greek woman, grey hair in a low bun under a pale translucent-looking veil, a long faded pale blue-grey peplos and mantle, pale grey skin, hands clasped in front of her, gentle sorrowful loving expression, side view, 16-bit pixel art game character, Greek mythology",
+    "east": "Docs/Characters/Fase09/Anticleia/Anticleia_east.png"
+  },
+  "Siren": {
+    "anims": {
+      "Idle": {
+        "job": "character: cb43f7a7-eb2c-4639-922e-bb9585cba84f\nanimation: v3 custom (singing softly with her mouth open, head gently tilting, wings slowly opening a little and folding back, chest rising with each breath, hands open at her chest, in strict side profile facing right, head stays turned right in profi",
+        "prompt": "singing softly with her mouth open, head gently tilting, wings slowly opening a little and folding back, chest rising with each breath, hands open at her chest, in strict side profile facing right, head stays turned right in profile, no turning toward the viewer, feet stay planted",
+        "frames": 7
+      }
+    },
+    "id": "cb43f7a7-eb2c-4639-922e-bb9585cba84f",
+    "size": 64,
+    "prompt": "a siren of Greek myth, beautiful young woman with large white and turquoise feathered bird wings folded behind her shoulders, long flowing sea-green hair with small white shells in it, soft turquoise and cream feathers covering her body from the waist down like a feathered dress, slender bird legs ending in small golden talons, a thin gold circlet, pale skin, gentle alluring smile, both hands open at her chest as if singing, side view, 16-bit pixel art game character, Greek mythology",
+    "east": "Docs/Characters/Fase10/Siren/Siren_east.png"
+  },
+  "Scylla": {
+    "anims": {
+      "Idle": {
+        "job": "character: 09cce54d-0f32-4b8f-b289-5cb2f76255cb\nanimation: v3 custom (swaying slowly and menacingly, serpent necks coiling and uncoiling, serpent heads snapping their jaws, hair drifting, in strict side profile facing right, no turning toward the viewer)\ndirections: east (1 jobs)\ngroup: 9aeec530-541",
+        "prompt": "swaying slowly and menacingly, serpent necks coiling and uncoiling, serpent heads snapping their jaws, hair drifting, in strict side profile facing right, no turning toward the viewer",
+        "frames": 7
+      },
+      "Strike": {
+        "job": "character: 09cce54d-0f32-4b8f-b289-5cb2f76255cb\nanimation: v3 custom (rearing back with all serpent necks drawn up high, jaws open, holding for a moment, then lunging forward and down, every serpent head darting down to snatch prey below, side view facing right)\ndirections: east (1 jobs)\ngroup: 3e43",
+        "prompt": "rearing back with all serpent necks drawn up high, jaws open, holding for a moment, then lunging forward and down, every serpent head darting down to snatch prey below, side view facing right",
+        "frames": 8
+      }
+    },
+    "id": "09cce54d-0f32-4b8f-b289-5cb2f76255cb",
+    "size": 192,
+    "prompt": "Scylla the sea monster of Greek myth, the upper body of a fierce woman with long wild dark violet-blue hair and slate-grey skin, from her waist downward a writhing mass of six long serpent necks each ending in a snapping sea-serpent head with pale bone teeth, deep blue and violet scales, coral-pink fins along the necks, clawed hands, menacing expression, side view, 16-bit pixel art game character, Greek mythology",
+    "east": "Docs/Characters/Fase11/Scylla/Scylla_east.png"
+  },
+  "Sun_Cattle": {
+    "anims": {
+      "Grazing": {
+        "job": "character: 26c5d746-9d2d-47e5-bc7f-12a7b96df0e6\nanimation: v3 custom (calmly lowering its head all the way down to the grass and grazing, side view facing right, body stays still, all four hooves stay planted)\ndirections: east (1 jobs)\ngroup: 00e725fa-f048-481d-b640-8f5b03286c83\nframes: 5 (1 referen",
+        "prompt": "calmly lowering its head all the way down to the grass and grazing, side view facing right, body stays still, all four hooves stay planted",
+        "nota": "DESCARTADO: disparado (1 geração cobrada) e interrompido pelo usuário antes do download; a Fase 12 fechou sem pose pastando (2026-09-30). Quadros não baixados."
+      }
+    },
+    "id": "26c5d746-9d2d-47e5-bc7f-12a7b96df0e6",
+    "size": 80,
+    "prompt": "sacred cattle of the sun god in Greek myth, a calm sturdy ox with a robust body and a deep chest, four sturdy legs with dark hooves, cream-white coat with soft warm golden-ochre shading, long pale ivory horns curving upward with golden tips, gentle dark eyes, a tail ending in a tuft, a thin golden collar, peaceful friendly look, side view, 16-bit pixel art game character, Bronze Age Mycenaean Greek",
+    "east": "Docs/Characters/Fase12/Sun_Cattle/Sun_Cattle_east.png",
+    "perfil_usado": "east (rot_east.png)"
+  },
+  "Calypso": {
+    "anims": {
+      "Idle": {
+        "job": "character: ad432a38-9a93-4974-be76-58f274724e9b\nanimation: v3 custom (standing still and breathing softly, head slightly lowered in sorrow, veil and long hair stirring gently in a soft sea breeze, hands stay clasped in front of her, in strict side profile facing left, head stays turned left in profi",
+        "prompt": "standing still and breathing softly, head slightly lowered in sorrow, veil and long hair stirring gently in a soft sea breeze, hands stay clasped in front of her, in strict side profile facing left, head stays turned left in profile, no turning toward the viewer, feet stay planted",
+        "frames": 7
+      }
+    },
+    "id": "ad432a38-9a93-4974-be76-58f274724e9b",
+    "size": 64,
+    "prompt": "Calypso the immortal nymph of Greek myth, tall graceful adult woman with a serene melancholy face, long loose honey-brown hair falling past her waist, a sheer jade-green veil draped over the back of her head and down over her shoulders, ankle-length shimmering white peplos with a thin jade-green woven border, a slim golden belt at the waist, small golden earrings, bare feet, hands clasped gently in front of her, hands empty, calm sad gentle expression, side view, 16-bit pixel art game character, Greek mythology",
+    "east": "Docs/Characters/Fase13/Calypso/Calypso_east.png"
+  },
+  "Eumaeus": {
+    "anims": {
+      "Idle": {
+        "job": "character: d397a0b9-91a6-4e53-8c5c-4f483c0d9ca3\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer",
+        "prompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted, the staff stays in his hand",
+        "frames": 7
+      }
+    },
+    "id": "d397a0b9-91a6-4e53-8c5c-4f483c0d9ca3",
+    "size": 60,
+    "prompt": "Eumaeus the old swineherd of Ithaca, loyal kind elderly man, weathered tanned face, short grey beard and thinning grey hair, knee-length coarse brown woollen tunic with a rope belt, a rough goatskin cape over his shoulders, leather sandals, holding a plain wooden shepherd staff upright in his front hand, the staff stays attached to his hand, warm humble expression, side view, 16-bit pixel art game character, Bronze Age Mycenaean Greek",
+    "east": "Docs/Characters/Fase14/Eumaeus/Eumaeus_east.png"
+  },
+  "Telemachus_Adult": {
+    "anims": {
+      "Idle": {
+        "job": "character: 4537dcee-8133-42a4-aaab-cb3dfcc620f6\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer",
+        "prompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted, the spear stays in his hand",
+        "frames": 7
+      }
+    },
+    "id": "4537dcee-8133-42a4-aaab-cb3dfcc620f6",
+    "size": 64,
+    "prompt": "Telemachus son of Odysseus, a young man of twenty, lean and upright, short tousled dark reddish-brown hair and a short young beard like his father, knee-length off-white linen tunic with a thin crimson border and a leather belt, a sea-blue travelling cloak pinned at one shoulder, leather sandals, holding a tall spear upright in his front hand, the spear stays attached to his hand, determined earnest expression, side view, 16-bit pixel art game character, Bronze Age Mycenaean Greek",
+    "east": "Docs/Characters/Fase14/Telemachus_Adult/Telemachus_Adult_east.png"
+  },
+  "Suitor": {
+    "anims": {
+      "Idle": {
+        "job": "character: 6aa164f4-223a-4ca6-9b62-453681c6e1b3\nanimation: v3 custom (standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer",
+        "prompt": "standing still and breathing calmly, chest rising and falling gently, arms relaxed, in strict side profile facing right, head stays turned right in profile, shoulders and hips stay square to the right, no turning toward the viewer, feet stay planted, the sword stays in his hand",
+        "frames": 7
+      },
+      "Death": {
+        "job": "character: 6aa164f4-223a-4ca6-9b62-453681c6e1b3\nanimation: v3 custom (struck down, side view facing right, knees buckle and the body falls backward, landing flat on his back on the ground and lying still, the sword dropping beside him)\ndirections: east (1 jobs)\ngroup: c5d34ee7-ed40-4879-a2b0-c015e79",
+        "prompt": "struck down, side view facing right, knees buckle and the body falls backward, landing flat on his back on the ground and lying still, the sword dropping beside him",
+        "frames": 8
+      },
+      "Run": {
+        "job": "character: 6aa164f4-223a-4ca6-9b62-453681c6e1b3\nanimation: v3 custom (running forward fast, side view facing right, front knee lifted to hip height, back heel kicking up behind, body leaning slightly forward, short sword held forward in the front hand, the short sword stays attached to his hand in e",
+        "prompt": "running forward fast, side view facing right, front knee lifted to hip height, back heel kicking up behind, body leaning slightly forward, short sword held forward in the front hand, the short sword stays attached to his hand in every frame",
+        "frames": 8
+      },
+      "Hit": {
+        "job": "character: 6aa164f4-223a-4ca6-9b62-453681c6e1b3\nanimation: v3 custom (recoiling from a blow to the chest, side view facing right, torso snaps backward and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, the short sword stays attached to his hand in every fram",
+        "prompt": "recoiling from a blow to the chest, side view facing right, torso snaps backward and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, the short sword stays attached to his hand in every frame",
+        "frames": 6
+      }
+    },
+    "id": "6aa164f4-223a-4ca6-9b62-453681c6e1b3",
+    "size": 60,
+    "prompt": "arrogant young Greek nobleman, one of the suitors of Penelope, well-fed and smug, oiled black curly hair crowned with a garland of green vine leaves, fine knee-length saffron-yellow chiton with a bronze-colored meander border, a cream cloak thrown back over one shoulder, gold arm rings, no armour and no helmet, leather sandals, holding a short bronze sword in his front hand, the short sword stays attached to his hand, sneering expression, side view, 16-bit pixel art game character, Bronze Age Mycenaean Greek",
+    "east": "Docs/Characters/Fase15/Suitor/Suitor_east.png"
+  }
+}

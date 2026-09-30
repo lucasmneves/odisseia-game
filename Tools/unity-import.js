@@ -38,10 +38,77 @@ const GRUPOS_CYTERA = [
   ['Background', 'Background'], ['Ocean', 'Ocean'], ['Rocks', 'Rocks'],
   ['Ship', 'Ship'], ['Effects', 'Effects'], ['Weather', 'Weather'],
 ];
+const GRUPOS_CICLOPES = [
+  ['Background', 'Background'], ['Midground', 'Midground'], ['Gameplay', 'Gameplay'],
+  ['Cave', 'Cave'], ['Props', 'Props'], ['Special', 'Special'],
+];
+const GRUPOS_EOLO = [
+  ['Background', 'Background'], ['Gameplay', 'Gameplay'], ['Palace', 'Palace'],
+  ['Props', 'Props'], ['Wind', 'Wind'],
+];
+const GRUPOS_LESTRIGOES = [
+  ['Background', 'Background'], ['Midground', 'Midground'], ['Gameplay', 'Gameplay'],
+  ['City', 'City'], ['Harbor', 'Harbor'], ['Props', 'Props'],
+];
+const GRUPOS_CIRCE = [
+  ['Background', 'Background'], ['Midground', 'Midground'], ['Gameplay', 'Gameplay'],
+  ['Forest', 'Forest'], ['Ruins', 'Ruins'], ['Palace', 'Palace'], ['Magic', 'Magic'],
+  ['Props', 'Props'], ['VFX', 'VFX'],
+];
+const GRUPOS_MORTOS = [
+  ['Background', 'Background'], ['Midground', 'Midground'], ['Gameplay', 'Gameplay'],
+  ['Ruins', 'Ruins'], ['River', 'River'], ['Souls', 'Souls'], ['Special', 'Special'],
+  ['Props', 'Props'], ['VFX', 'VFX'],
+];
+const GRUPOS_SEREIAS = [
+  ['Background', 'Background'], ['Midground', 'Midground'], ['Gameplay', 'Gameplay'],
+  ['Ocean', 'Ocean'], ['Beach', 'Beach'], ['Rocks', 'Rocks'], ['Ruins', 'Ruins'],
+  ['Shipwrecks', 'Shipwrecks'], ['Special', 'Special'], ['Props', 'Props'], ['VFX', 'VFX'],
+];
+const GRUPOS_CILA = [
+  ['Background', 'Background'], ['Midground', 'Midground'], ['Gameplay', 'Gameplay'],
+  ['Ocean', 'Ocean'], ['Rocks', 'Rocks'], ['Charybdis', 'Charybdis'], ['Scylla', 'Scylla'],
+  ['Shipwrecks', 'Shipwrecks'], ['Props', 'Props'], ['VFX', 'VFX'],
+];
+const GRUPOS_GADO = [
+  ['Background', 'Background'], ['Midground', 'Midground'], ['Gameplay', 'Gameplay'],
+  ['Ocean', 'Ocean'], ['Fields', 'Fields'], ['Pasture', 'Pasture'],
+  ['SacredCattle', 'SacredCattle'], ['Temple', 'Temple'], ['SacredArea', 'SacredArea'],
+  ['Props', 'Props'], ['VFX', 'VFX'],
+];
+const GRUPOS_CALIPSO = [
+  ['Background', 'Background'], ['Midground', 'Midground'], ['Gameplay', 'Gameplay'],
+  ['Ocean', 'Ocean'], ['Beach', 'Beach'], ['Forest', 'Forest'], ['Waterfall', 'Waterfall'],
+  ['Palace', 'Palace'], ['Garden', 'Garden'], ['Special', 'Special'],
+  ['Foreground', 'Foreground'], ['Props', 'Props'], ['VFX', 'VFX'],
+];
+const GRUPOS_ITACARETURN = [
+  ['Background', 'Background'], ['Midground', 'Midground'], ['Gameplay', 'Gameplay'],
+  ['Harbor', 'Harbor'], ['Village', 'Village'], ['Palace', 'Palace'],
+  ['Vegetation', 'Vegetation'], ['Variations', 'Variations'], ['Special', 'Special'],
+  ['Foreground', 'Foreground'], ['Props', 'Props'], ['VFX', 'VFX'],
+];
+const GRUPOS_PRETENDENTES = [
+  ['Background', 'Background'], ['Midground', 'Midground'], ['Gameplay', 'Gameplay'],
+  ['Courtyard', 'Courtyard'], ['GreatHall', 'GreatHall'], ['Banquet', 'Banquet'],
+  ['Invasion', 'Invasion'], ['Special', 'Special'], ['Foreground', 'Foreground'],
+  ['Props', 'Props'], ['VFX', 'VFX'],
+];
 const FASE = process.env.FASE_SRC || '';
 const GROUPS = FASE.includes('Troy') ? GRUPOS_TROIA
   : FASE.includes('Cicones') ? GRUPOS_CICONES
   : FASE.includes('Cytera') ? GRUPOS_CYTERA
+  : FASE.includes('Ciclopes') ? GRUPOS_CICLOPES
+  : FASE.includes('Eolo') ? GRUPOS_EOLO
+  : FASE.includes('Lestrigoes') ? GRUPOS_LESTRIGOES
+  : FASE.includes('Circe') ? GRUPOS_CIRCE
+  : FASE.includes('MundoDosMortos') ? GRUPOS_MORTOS
+  : FASE.includes('Sereias') ? GRUPOS_SEREIAS
+  : FASE.includes('CilaCaribdis') ? GRUPOS_CILA
+  : FASE.includes('GadoDoSol') ? GRUPOS_GADO
+  : FASE.includes('Calipso') ? GRUPOS_CALIPSO
+  : FASE.includes('ItacaReturn') ? GRUPOS_ITACARETURN
+  : FASE.includes('Pretendentes') ? GRUPOS_PRETENDENTES
   : GRUPOS_ITACA;
 
 // Pasta de destino dentro de Assets, derivada de DST. Antes estava escrita a mao como
@@ -59,7 +126,46 @@ const FAIXAS_CYTERA = [
   'cytera_ocean_surface.png', 'cytera_deep_water.png', 'cytera_foam_line.png',
   'cytera_rain.png', 'cytera_deck_planks.png', 'cytera_sky_storm.png',
 ];
-const ehFaixaQueRepete = nome => nome.includes('_tiles_') || FAIXAS_CYTERA.includes(nome);
+const FAIXAS_CICLOPES = ['ciclopes_tiles_cavewall.png', 'ciclopes_stalactites.png'];
+const FAIXAS_MORTOS = ['mortos_river_band.png', 'mortos_cavern_far.png', 'mortos_mist.png',
+  'mortos_soul_lights.png', 'mortos_cavern_wall.png', 'mortos_stalactites.png'];
+const FAIXAS_CIRCE = ['circe_canopy_light.png', 'circe_forest_far.png', 'circe_forest_mid.png',
+  'circe_light_shafts.png', 'circe_motes.png', 'circe_undergrowth.png', 'circe_mist_band.png',
+  'circe_forest_band.png'];
+const FAIXAS_LESTRIGOES = ['lestrigoes_cliff_wall.png', 'lestrigoes_giant_wall.png'];
+const FAIXAS_EOLO = ['eolo_sky_high.png', 'eolo_clouds_far.png', 'eolo_clouds_near.png',
+  'eolo_wind_lines.png', 'eolo_wind_motes.png', 'eolo_island_underside.png',
+  'eolo_entablature.png', 'eolo_steps.png'];
+// Em Cila e Caribdis as faixas sao as camadas de parallax e as duas pecas de chao extraidas
+// da folha Wang — o kit de 16 pecas NAO entra como faixa, so as pecas soltas.
+const FAIXAS_CILA = ['cila_bg_walls_far.png', 'cila_sea_churn.png', 'cila_rock_ground_body.png',
+  'cila_rock_ground_top.png', 'cila_wall_columnar.png'];
+// O degrade da tempestade entra como FAIXA por um motivo diferente dos outros: ele nao
+// ladrilha, mas precisa de malha FULL RECT. A malha "tight" padrao recorta regioes totalmente
+// transparentes, e a metade esquerda deste sprite tem alpha zero — com tight, metade do
+// degrade some da malha e o veu deixa de cobrir o comeco do trecho.
+const FAIXAS_GADO = ['gado_bg_hills.png', 'gado_sea_calm.png', 'gado_grove_band.png',
+  'gado_storm_gradient.png',
+  'gado_grass_ground_body.png', 'gado_grass_ground_top.png',
+  'gado_stone_ground_body.png', 'gado_stone_ground_top.png'];
+const FAIXAS_CALIPSO = ['calipso_bg_sea_horizon.png', 'calipso_forest_band.png',
+  'calipso_foam_line.png', 'calipso_sand_ground_body.png', 'calipso_sand_ground_top.png',
+  'calipso_grass_ground_body.png', 'calipso_grass_ground_top.png',
+  'calipso_dusk_gradient.png'];
+const FAIXAS_ITACARETURN = ['itaca_ret_bg_dusk.png', 'itaca_ret_village_band.png',
+  'itaca_ret_dusk_gradient.png', 'ithaca_grass_ground_body.png', 'ithaca_grass_ground_top.png',
+  'ithaca_stone_ground_body.png', 'ithaca_stone_ground_top.png'];
+// Faixas de Pretendentes: as duas paredes que repetem e o degrade de luz de fogo, que precisa
+// de malha FULL RECT porque a metade esquerda dele e alpha zero.
+const FAIXAS_PRETENDENTES = ['pret_hall_wall_band.png', 'pret_courtyard_wall_band.png',
+  'pret_firelight_gradient.png'];
+const ehFaixaQueRepete = nome => nome.includes('_tiles_') || FAIXAS_CILA.includes(nome)
+  || FAIXAS_CALIPSO.includes(nome) || FAIXAS_ITACARETURN.includes(nome)
+  || FAIXAS_PRETENDENTES.includes(nome)
+  || FAIXAS_GADO.includes(nome) || FAIXAS_CYTERA.includes(nome)
+  || FAIXAS_CICLOPES.includes(nome) || FAIXAS_EOLO.includes(nome)
+  || FAIXAS_LESTRIGOES.includes(nome) || FAIXAS_CIRCE.includes(nome)
+  || FAIXAS_MORTOS.includes(nome);
 
 // Determinístico: o mesmo caminho sempre dá o mesmo GUID.
 const guid = (key) => crypto.createHash('md5').update('odisseia:' + key).digest('hex');
@@ -216,12 +322,27 @@ function ensureFolder(dir, unityPath) {
   if (!fs.existsSync(meta)) fs.writeFileSync(meta, folderMeta(unityPath));
 }
 
+// Exportado para quem precisa escrever .meta fora deste pipeline — a folha de quadros de
+// Caribdis, por exemplo, que vai para Resources e nao para Assets/Art. Duplicar o escritor de
+// .meta seria duplicar tambem as regras de GUID e de internalID, que sao justamente o que nao
+// pode divergir entre dois lugares.
+module.exports = { textureMeta, folderMeta, textMeta, ensureFolder, guid, spriteId, internalId, ALIGN };
+
+// Rodar o pipeline de importacao so quando este arquivo E o programa, e nao quando alguem o
+// carrega pelos utilitarios acima.
+if (require.main !== module) { return; }
+
 ensureFolder(path.join(ROOT, 'Assets/Art/Environments'), 'Assets/Art/Environments');
 ensureFolder(DST, PASTA_UNITY);
 
 let copied = 0, sliced = 0, texts = 0;
 for (const [src, dst] of GROUPS) {
   const srcDir = path.join(SRC, src), dstDir = path.join(DST, dst);
+  // A lista de grupos de uma fase e escrita ANTES de saber quais delas vao existir de fato —
+  // Sereias, por exemplo, nao tem "Props" porque os props dela moram em Beach e Rocks. Grupo
+  // que nao existe e ausencia normal, nao erro: antes o importador derrubava o pipeline inteiro
+  // com um ENOENT de scandir.
+  if (!fs.existsSync(srcDir)) { console.log(`  (sem ${src})`); continue; }
   ensureFolder(dstDir, PASTA_UNITY + '/' + dst);
   for (const f of fs.readdirSync(srcDir).sort()) {
     if (f.startsWith('_')) continue;                               // fontes, provas, descartes

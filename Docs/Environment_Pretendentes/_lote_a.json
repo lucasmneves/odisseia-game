@@ -1,0 +1,58 @@
+[
+  {
+    "nome": "pret_hall_wall_band",
+    "args": {
+      "description": "a long continuous interior wall of an ancient Greek great hall at night, seen from directly in front, strict flat side profile like a technical elevation drawing. A row of thick plain fluted columns of pale cream limestone standing in front of a high stone wall with a painted band of simple red and dark blue geometric meander pattern running along it, a bronze torch bracket with a burning flame fixed to the wall between every pair of columns, deep blue-grey shadow in the recesses and warm orange firelight on the column faces, the same spacing repeating across the whole width. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 320, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "pret_courtyard_wall_band",
+    "args": {
+      "description": "a long continuous inner courtyard wall of an ancient Greek palace at night, seen from directly in front, strict flat side profile like a technical elevation drawing. A low wall of pale cream limestone blocks with a flat stone coping, square doorways with heavy wooden doors at intervals, torn red cloth banners hanging from the top of the wall, spears and round shields leaning against it, a dark blue night sky above the wall top, firelight glowing orange on the lower wall and cool blue shadow above, repeating across the whole width. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 288, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "pret_banquet_table",
+    "args": {
+      "description": "a long low ancient Greek feasting table heaped with food and wine, isolated on transparent background, seen from directly beside it. A heavy plain wooden table crowded with a whole roast pig on a platter, loaves of round bread, bunches of grapes and figs, clay amphorae and wine jugs, several bronze drinking cups knocked over, red wine spilled and dripping over the edge, gnawed bones and a torn cloth hanging off one end. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 384, "height": 160, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "pret_barricade",
+    "args": {
+      "description": "a rough makeshift barricade, isolated on transparent background, seen from directly beside it. Stacked wooden crates and barrels, an overturned two wheeled cart on its side, long planks jammed at angles between them, a torn red cloth thrown over the top, a few spears stuck upright into the pile. Rough and hastily thrown together. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 320, "height": 192, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "pret_banner",
+    "args": {
+      "description": "a single long hanging cloth banner, isolated on transparent background, seen from directly in front. A tall narrow strip of deep red cloth hanging from a short wooden crossbar with two cords, a simple dark bronze coloured boar emblem sewn in the middle, the lower edge torn and ragged, a few loose threads, slightly creased. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 96, "height": 256, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "pret_throne",
+    "args": {
+      "description": "an empty ancient Greek carved stone chair of a king standing on a low stepped stone platform, isolated on transparent background, seen from directly in front. A tall straight backed seat of pale cream limestone with carved lion paw feet and simple armrests, an old sheepskin thrown over the seat, three wide shallow stone steps below it, a bronze shield and a spear leaning carelessly against one side, spilled wine cups on the lowest step. The chair itself is empty. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 256, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "pret_spilled_feast",
+    "args": {
+      "description": "a low scattered spread of feast debris on a floor, isolated on transparent background, seen from beside it. Two toppled clay amphorae lying on their sides with a pool of red wine spreading from them, a dropped bronze cup, gnawed bones, broken bread, a crushed bunch of grapes and a fallen cushion, low and wide. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 96, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "pret_cooking_fire",
+    "args": {
+      "description": "an open cooking fire with a roasting spit, isolated on transparent background, seen from directly beside it. A ring of blackened stones around a bed of glowing embers and tall orange and yellow flames, two forked wooden posts on either side holding an iron spit with a large joint of meat roasting over the fire, a few sparks rising, a small pile of split logs beside it. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 224, "height": 192, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]

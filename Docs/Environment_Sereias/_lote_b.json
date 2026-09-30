@@ -1,0 +1,51 @@
+[
+  {
+    "nome": "sereias_rock_spire",
+    "args": {
+      "description": "a single tall weathered sea rock standing alone, isolated on transparent background, seen from beside it, strict flat side profile like a technical elevation drawing. A narrow spire of pale cream limestone with sharp horizontal strata and a broken uneven top, wider at the base, damp darker stone at the very bottom, a small tuft of green scrub clinging to one ledge. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 128, "height": 256, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "sereias_boulders",
+    "args": {
+      "description": "a cluster of three large rounded limestone boulders resting together, isolated on transparent background, seen from beside them, strict flat side profile like a technical elevation drawing. Pale cream stone worn smooth by the sea, cracks and pitted texture across their faces, the tallest in the middle, damp darker stone along their bases, a little green weed in the gaps between them. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 224, "height": 160, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "sereias_shrine",
+    "args": {
+      "description": "a small ancient Greek shrine of pale stone standing alone, isolated on transparent background, seen from directly in front, strict flat side profile like a technical elevation drawing. Three worn steps carrying two plain round columns with simple flat square tops, and one straight stone beam laid flat across them with no arch and no triangular roof, weathered and cracked, pale sea-bleached stone, small green weeds at the foot of the steps, the gap between the columns open to what is behind. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 256, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "sereias_fallen_column",
+    "args": {
+      "description": "a broken ancient Greek stone column lying on its side, isolated on transparent background, seen from beside it, strict flat side profile like a technical elevation drawing. A pale weathered cylinder split into three drums lying end to end and slightly apart, cracked and chipped edges, faint vertical fluting, sand and small green weeds gathered against its lower side. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 96, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "sereias_wreck_hull",
+    "args": {
+      "description": "the broken hull of a small ancient wooden ship lying tilted on a shore, isolated on transparent background, seen from beside it, strict flat side profile like a technical elevation drawing. Weathered brown planking cracked open along the side with several planks missing, the curved prow still standing, the stern low and split, bleached sun-dried wood, a length of frayed rope trailing from the prow. No people. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 320, "height": 160, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "sereias_wreck_ribs",
+    "args": {
+      "description": "the bare curved ribs of a wrecked wooden ship half buried in sand, isolated on transparent background, seen from beside them, strict flat side profile like a technical elevation drawing. Seven or eight curved weathered timbers rising from the ground in a row, sun-bleached pale grey-brown, some snapped short and some tall, the planking long gone between them. No people. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 128, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "sereias_sea_grass",
+    "args": {
+      "description": "a low tuft of coastal sea grass with small flowers, isolated on transparent background, seen from beside it, strict flat side profile like a technical elevation drawing. Thin stiff blades of pale green and olive grass fanning upward from a sandy base, a few small white and pale pink flowers on slender stems among them. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 128, "height": 96, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]

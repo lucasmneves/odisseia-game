@@ -1,0 +1,44 @@
+[
+  {
+    "nome": "calipso_cliff_waterfall",
+    "args": {
+      "description": "a tall eroded sandstone cliff with a narrow waterfall, isolated on transparent background. Warm ochre and rust sandstone worn into soft rounded scallops and shallow scooped hollows by centuries of water, every edge CURVED and bulging, wavy irregular colour bands flowing across the face like the grain of wood, no flat surface anywhere and no straight edge anywhere, hanging green vines and tufts of fern spilling from the hollows, and a slim white fall of water coming over the rounded top lip and running down into white foam below. Smooth organic weathered stone. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 384, "height": 512, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "calipso_garden_flowers",
+    "args": {
+      "description": "a low spread of garden flowers and soft plants, isolated on transparent background, seen from beside it. Clumps of broad green leaves with tall stems carrying white, pink and pale yellow blossoms, a low rounded shrub heavy with small red flowers, and tufts of fine grass between them, low and wide and soft. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 96, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "calipso_ferns_foreground",
+    "args": {
+      "description": "a low clump of large fern fronds and broad leaves, isolated on transparent background, seen from beside it. Several arching fern fronds spreading out low and wide from a central base, a few big glossy heart shaped leaves among them, deep green with lighter green where the light catches the upper fronds, very low and very wide. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 288, "height": 96, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "calipso_fountain",
+    "args": {
+      "description": "a small round ancient Greek garden fountain of pale stone, isolated on transparent background, seen from directly in front. A low circular basin of weathered cream stone on a single step, a short carved pedestal rising from its middle with a shallow bowl on top, a thin arc of clear water falling from the bowl into the basin, still water in the basin below, moss in the joints and a few small flowers at its foot. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 224, "height": 224, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "calipso_cypress",
+    "args": {
+      "description": "a single tall slim cypress tree standing alone, isolated on transparent background. A narrow very dark green column of dense foliage tapering to a point at the top, slightly uneven along its sides, a short bare trunk at the base, and a little dry grass at its foot. Very tall and very narrow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 96, "height": 288, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "calipso_foam_line",
+    "args": {
+      "description": "a long thin line of gentle white sea foam, seen from directly beside it at water level, strict flat side profile like a technical elevation drawing. A soft uneven band of white and pale turquoise foam bubbles running the whole width, thicker in some places and thinner in others, with a few small rounded crests, very calm with no breaking waves, the same low height from left to right so it reads as one continuous strip. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 512, "height": 48, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  }
+]

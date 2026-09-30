@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: 8c369d333ff11baf1bc146536a790a10
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1286427474
+    second: CHR_Cicones_Warrior_Idle_00
+  - first:
+      213: 1124815575
+    second: CHR_Cicones_Warrior_Idle_01
+  - first:
+      213: 337194599
+    second: CHR_Cicones_Warrior_Idle_02
+  - first:
+      213: 66339766
+    second: CHR_Cicones_Warrior_Idle_03
+  - first:
+      213: 98264909
+    second: CHR_Cicones_Warrior_Idle_04
+  - first:
+      213: 1403893909
+    second: CHR_Cicones_Warrior_Idle_05
+  - first:
+      213: 1170837395
+    second: CHR_Cicones_Warrior_Run_00
+  - first:
+      213: 1555566280
+    second: CHR_Cicones_Warrior_Run_01
+  - first:
+      213: 2011330627
+    second: CHR_Cicones_Warrior_Run_02
+  - first:
+      213: 2125625487
+    second: CHR_Cicones_Warrior_Run_03
+  - first:
+      213: 958315028
+    second: CHR_Cicones_Warrior_Run_04
+  - first:
+      213: 784667842
+    second: CHR_Cicones_Warrior_Hit_00
+  - first:
+      213: 1017748586
+    second: CHR_Cicones_Warrior_Hit_01
+  - first:
+      213: 1924784939
+    second: CHR_Cicones_Warrior_Hit_02
+  - first:
+      213: 500255881
+    second: CHR_Cicones_Warrior_Hit_03
+  - first:
+      213: 233537620
+    second: CHR_Cicones_Warrior_Hit_04
+  - first:
+      213: 1769333706
+    second: CHR_Cicones_Warrior_Hit_05
+  - first:
+      213: 2094352113
+    second: CHR_Cicones_Warrior_Death_00
+  - first:
+      213: 1906012157
+    second: CHR_Cicones_Warrior_Death_01
+  - first:
+      213: 309090800
+    second: CHR_Cicones_Warrior_Death_02
+  - first:
+      213: 2056469526
+    second: CHR_Cicones_Warrior_Death_03
+  - first:
+      213: 1924564609
+    second: CHR_Cicones_Warrior_Death_04
+  - first:
+      213: 432070218
+    second: CHR_Cicones_Warrior_Death_05
+  - first:
+      213: 1639147520
+    second: CHR_Cicones_Warrior_Death_06
+  - first:
+      213: 1938403579
+    second: CHR_Cicones_Warrior_Death_07
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spritePixelsToUnits: 42.857143
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 184
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c222aa24d4ac351a4e3576f74819f69
+      internalID: 1286427474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 184
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c5c20b988eb059846bb6034b671ca48
+      internalID: 1124815575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 184
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b854b9aded7a78e592a6bd5569a35db
+      internalID: 337194599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 184
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5216abcb507d042bca95e853c2581f55
+      internalID: 66339766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 184
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7506958de697799ec83283b569f90d2
+      internalID: 98264909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 184
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8a3d7b7532262e81c8717ac58bb6569
+      internalID: 1403893909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Run_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 123
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d8731858baf5f05589ac4c7a100456
+      internalID: 1170837395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Run_01
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 123
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acff6b35e519a4d3cd3c9b1b9ceca5b6
+      internalID: 1555566280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Run_02
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 123
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b43d972f663b4b913d7a86a183100c
+      internalID: 2011330627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Run_03
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 123
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0934b1cdeccac3aa51cd04d9d5ad727c
+      internalID: 2125625487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Run_04
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 123
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c74482ab85e15563824692ef1a2fa78d
+      internalID: 958315028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Hit_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 62
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 043da01c11c9716757024c45ffb47a33
+      internalID: 784667842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Hit_01
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 62
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd745dc345f0d3d4df832185f1461038
+      internalID: 1017748586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Hit_02
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 62
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3fd7ece24537b4434bb3a11735007c4
+      internalID: 1924784939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Hit_03
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 62
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9bb085e0cf22de59b12d5f6a84f1a9e
+      internalID: 500255881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Hit_04
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 62
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3d62f9ecef9e7e6f9830e31a6c967ad
+      internalID: 233537620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Hit_05
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 62
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b08efcdcbe00ed8ac3729d3d2c9cd3ce
+      internalID: 1769333706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Death_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2858a0261fb3ab10970e2726787bbb00
+      internalID: 2094352113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Death_01
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 232314c34862d58607895cca9aa16f06
+      internalID: 1906012157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Death_02
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 1
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ccdcad5f7f793f7b443622e569aab01
+      internalID: 309090800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Death_03
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 1
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2c9f2d445a09faa66203b411a0b8281
+      internalID: 2056469526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Death_04
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 1
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f53b8aba463587175175e2caea93c39a
+      internalID: 1924564609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Death_05
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 1
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6714056786c2f82941535999a494ad80
+      internalID: 432070218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Death_06
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 1
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f2c9d6d0205e164b64ce4d021a929f8
+      internalID: 1639147520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Cicones_Warrior_Death_07
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 1
+        width: 61
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ab638c7d32e1037d65649dcd7c644d
+      internalID: 1938403579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CHR_Cicones_Warrior_Idle_00: 1286427474
+      CHR_Cicones_Warrior_Idle_01: 1124815575
+      CHR_Cicones_Warrior_Idle_02: 337194599
+      CHR_Cicones_Warrior_Idle_03: 66339766
+      CHR_Cicones_Warrior_Idle_04: 98264909
+      CHR_Cicones_Warrior_Idle_05: 1403893909
+      CHR_Cicones_Warrior_Run_00: 1170837395
+      CHR_Cicones_Warrior_Run_01: 1555566280
+      CHR_Cicones_Warrior_Run_02: 2011330627
+      CHR_Cicones_Warrior_Run_03: 2125625487
+      CHR_Cicones_Warrior_Run_04: 958315028
+      CHR_Cicones_Warrior_Hit_00: 784667842
+      CHR_Cicones_Warrior_Hit_01: 1017748586
+      CHR_Cicones_Warrior_Hit_02: 1924784939
+      CHR_Cicones_Warrior_Hit_03: 500255881
+      CHR_Cicones_Warrior_Hit_04: 233537620
+      CHR_Cicones_Warrior_Hit_05: 1769333706
+      CHR_Cicones_Warrior_Death_00: 2094352113
+      CHR_Cicones_Warrior_Death_01: 1906012157
+      CHR_Cicones_Warrior_Death_02: 309090800
+      CHR_Cicones_Warrior_Death_03: 2056469526
+      CHR_Cicones_Warrior_Death_04: 1924564609
+      CHR_Cicones_Warrior_Death_05: 432070218
+      CHR_Cicones_Warrior_Death_06: 1639147520
+      CHR_Cicones_Warrior_Death_07: 1938403579
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

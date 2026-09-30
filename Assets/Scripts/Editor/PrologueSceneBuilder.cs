@@ -34,11 +34,26 @@ public static class PrologueSceneBuilder
     private const string SquarePath = "Assets/Art/Player/PlaceholderSquare.png";
     private const string ControlsPath = "Assets/ScriptableObjects/PlayerControls.inputactions";
 
-    private const string PenelopeArt = "Assets/Art/Odisseia/Characters/NPCs/CHR_NPC_Penelope.png";
-    private const string TelemachusArt = "Assets/Art/Odisseia/Characters/NPCs/CHR_NPC_Telemachus.png";
-    private const string EumaeusArt = "Assets/Art/Odisseia/Characters/NPCs/CHR_NPC_Eumaeus.png";
-    private const string BardArt = "Assets/Art/Odisseia/Characters/NPCs/CHR_NPC_Bard.png";
-    private const string AlcinousArt = "Assets/Art/Odisseia/Characters/NPCs/CHR_NPC_Alcinous.png";
+    // Elenco em pixel art (Docs/Characters/CHARACTER_ART_MASTER.md). Cada nome é uma folha em
+    // Resources/Odisseia/Characters/NPCs/CHR_<nome>.png com o estado Idle; o Idle_00 é também o
+    // sprite parado. Substituíram a arte pintada a 129 px/un (CHR_NPC_*), que borrava no
+    // tamanho de jogo e deixava a Penélope mais alta que o Odisseu. A arte pintada continua no
+    // projeto porque as fases 14 e 15 ainda a usam.
+    private const string ElencoPasta = "Assets/Resources/Odisseia/Characters/NPCs/";
+    private const string ElencoResources = "Odisseia/Characters/NPCs/";
+    private const string ChrPenelope = "Penelope";
+    private const string ChrTelemaco = "Telemachus_Child";
+    private const string ChrArauto = "Herald_Mycenae";
+    private const string ChrSoldado = "Soldier_Ithaca";
+    private const string ChrInstrutor = "Trainer_Veteran";
+    private const string ChrMulher = "Villager_Woman";
+    private const string ChrMercador = "Villager_Merchant";
+    private const string ChrPescador = "Villager_Fisherman";
+    private const string ChrLavrador = "Villager_Farmer";
+    private const string ChrMarinheiro = "Villager_Sailor";
+    private const string ChrMarinheiroOcre = "Villager_Sailor_Ochre";
+    private const string ChrMarinheiroOliva = "Villager_Sailor_Olive";
+    private const string ChrArtesao = "Villager_Elder_Brown";
 
     private const string BgFar = "Assets/Art/Odisseia/Backgrounds/BG_Fase01_Greece_Far.png";
     private const string BgMid = "Assets/Art/Odisseia/Backgrounds/BG_Fase01_Greece_Mid.png";
@@ -92,13 +107,6 @@ public static class PrologueSceneBuilder
     private const string ItacaLavoura = ItacaRaiz + "Nature/ithaca_field_01.png";
     private const string ItacaCascoNaPraia = ItacaRaiz + "Port/ithaca_boat_hull_01.png";
 
-    // Figurantes: cinco arquétipos cobrem os dezenove da fase. Gerar dezenove pessoas
-    // distintas custaria dezenove gerações por uma diferença que ninguém lê num figurante.
-    private const string FigPescador = ItacaRaiz + "Figures/ithaca_villager_fisherman.png";
-    private const string FigLavrador = ItacaRaiz + "Figures/ithaca_villager_farmer.png";
-    private const string FigMarinheiro = ItacaRaiz + "Figures/ithaca_villager_sailor.png";
-    private const string FigSoldado = ItacaRaiz + "Figures/ithaca_villager_soldier.png";
-    private const string FigAnciao = ItacaRaiz + "Figures/ithaca_villager_elder.png";
     private const string ItacaBoneco = ItacaRaiz + "Training/ithaca_training_dummy_01.png";
     private const string ItacaAlvo = ItacaRaiz + "Training/ithaca_training_target_01.png";
     private const string ItacaTear = ItacaRaiz + "Props/ithaca_loom_01.png";
@@ -1291,10 +1299,6 @@ public static class PrologueSceneBuilder
     }
 
     /// <summary>
-    /// Figurante sem fala. Existe para não repetir em cada chamada a regra da altura nativa:
-    /// com arte na densidade do projeto, o Figura não pode escalar nada.
-    /// </summary>
-    /// <summary>
     /// Um sprite nomeado dentro de uma folha fatiada. <c>Arte</c> devolve o PRIMEIRO sprite do
     /// arquivo, que numa folha de 99 quadros é quase certamente o errado.
     /// </summary>
@@ -1311,13 +1315,51 @@ public static class PrologueSceneBuilder
         return null;
     }
 
-    private static GameObject FiguraDeCenario(string nome, Transform pai, float x, string caminho,
-        Color cor, int ordem = 1)
+    /// <summary>Quadro parado (Idle_00) de um personagem do elenco; null se a folha não existir.</summary>
+    private static Sprite Elenco(string chr)
     {
-        Sprite arte = Arte(caminho);
-        return arte != null
+        return SpriteDaFolha(ElencoPasta + "CHR_" + chr + ".png", "CHR_" + chr + "_Idle_00");
+    }
+
+    /// <summary>
+    /// Liga o Idle do elenco no corpo da figura e vira o rosto. O FPS varia um pouco com a
+    /// posição: sem isso os seis soldados do treino respiram em uníssono, que lê como máquina.
+    /// A arte olha para a direita (o master é todo `east`); quem conversa com o Odisseu olha
+    /// para a esquerda, que é de onde o jogador chega.
+    /// </summary>
+    private static void DarVida(GameObject figura, string chr, bool olharEsquerda)
+    {
+        Transform corpo = figura != null ? figura.transform.Find("Body") : null;
+        if (corpo == null || Elenco(chr) == null)
+        {
+            return;
+        }
+
+        corpo.GetComponent<SpriteRenderer>().flipX = olharEsquerda;
+        var animador = corpo.gameObject.AddComponent<SpriteAnimator>();
+        Wire(animador, "resourcePath", ElencoResources + "CHR_" + chr);
+        Wire(animador, "defaultState", "Idle");
+        Wire(animador, "defaultFramesPerSecond", 5.5f + Mathf.Repeat(figura.transform.position.x * 0.37f, 1.2f));
+    }
+
+    private static GameObject FiguraDoElenco(string nome, Transform pai, float x, string chr,
+        Color cor, int ordem = 1, bool olharEsquerda = false)
+    {
+        Sprite arte = Elenco(chr);
+        GameObject go = arte != null
             ? Figura(nome, pai, x, 0.9f, arte.bounds.size.y, cor, ordem, arte)
             : Figura(nome, pai, x, 0.8f, 1.6f, cor, ordem);
+        DarVida(go, chr, olharEsquerda);
+        return go;
+    }
+
+    /// <summary>NPC conversável do elenco: olha para o jogador e respira.</summary>
+    private static GameObject NpcDoElenco(string nome, Transform pai, float x, DialogueSequence fala,
+        LevelObjective objetivo, string chr, Color cor, bool automatico = false)
+    {
+        GameObject go = Npc(nome, pai, x, fala, objetivo, cor, 1.6f, Elenco(chr), automatico);
+        DarVida(go, chr, true);
+        return go;
     }
 
     private static GameObject Npc(string nome, Transform pai, float x, DialogueSequence fala,
@@ -1568,10 +1610,10 @@ public static class PrologueSceneBuilder
         }
 
         // Moradores e soldados: presença, não interação.
-        Figura("Villager_1", cidade, 18f, 0.8f, 1.5f, CorNpc, 1, Arte(BardArt));
-        Figura("Villager_2", cidade, 26f, 0.8f, 1.5f, CorNpc, 1, Arte(EumaeusArt));
-        FiguraDeCenario("Soldier_1", cidade, 30f, FigSoldado, CorSoldado);
-        FiguraDeCenario("Soldier_2", cidade, 32.5f, FigSoldado, CorSoldado);
+        FiguraDoElenco("Villager_1", cidade, 18f, ChrMulher, CorNpc);
+        FiguraDoElenco("Villager_2", cidade, 26f, ChrMercador, CorNpc, 1, true);
+        FiguraDoElenco("Soldier_1", cidade, 30f, ChrSoldado, CorSoldado);
+        FiguraDoElenco("Soldier_2", cidade, 32.5f, ChrSoldado, CorSoldado, 1, true);
         if (Prop("Spear_1", cidade, 30.6f, ItacaRaiz + "Arsenal/ithaca_spear_01.png", 2) == null)
         {
             Bloco("Spear_1", cidade, 30.6f, GroundTop + 1.2f, 0.12f, 2.4f, CorMadeira, 2);
@@ -1596,7 +1638,9 @@ public static class PrologueSceneBuilder
         Coletavel(38f, GroundTop + 0.9f);
 
         // O arauto de Agamenon só chega depois de o jogador conhecer o reino.
-        GameObject arauto = Npc("NPC_Herald", cidade, 48f, falas["Herald"], convocacao, new Color(0.85f, 0.75f, 0.35f), 1.7f, Arte(FigSoldado));
+        // O arauto é a presença de Agamenon na fase: Micenas em índigo e ouro, contra o linho e o
+        // bronze de Ítaca. Agamenon mesmo não entra em cena.
+        GameObject arauto = NpcDoElenco("NPC_Herald", cidade, 48f, falas["Herald"], convocacao, ChrArauto, new Color(0.85f, 0.75f, 0.35f));
         arauto.SetActive(false);
         WireArray(explorar, "enableOnComplete", arauto);
 
@@ -1612,10 +1656,10 @@ public static class PrologueSceneBuilder
         }
         // A conversa com a família fecha o Ato 2 e abre o portão seguinte: começa
         // sozinha, para não existir a possibilidade de passar direto e travar.
-        Npc("NPC_Penelope", cidade, 66f, falas["Penelope"], familia, CorNpc, 1.7f,
-            Arte(PenelopeArt), automatico: true);
-        Npc("NPC_Telemaco", cidade, 72f, falas["Telemaco"], familia, CorNpc, 1.1f,
-            Arte(TelemachusArt), automatico: true);
+        NpcDoElenco("NPC_Penelope", cidade, 66f, falas["Penelope"], familia, ChrPenelope, CorNpc,
+            automatico: true);
+        NpcDoElenco("NPC_Telemaco", cidade, 72f, falas["Telemaco"], familia, ChrTelemaco, CorNpc,
+            automatico: true);
         if (Prop("Loom", cidade, 63f, ItacaTear, 0) == null)
         {
             Bloco("Loom", cidade, 63f, GroundTop + 1f, 1.6f, 2f, CorMadeira, 0);
@@ -1652,16 +1696,16 @@ public static class PrologueSceneBuilder
         Transform zona = new GameObject("Act3_Recruit").transform;
         zona.SetParent(world, false);
 
-        Npc("Recruit_Fisherman", zona, 86f, falas["Fisherman"], recrutar, CorNpc, 1.6f, Arte(FigPescador));
-        Npc("Recruit_Farmer", zona, 92f, falas["Farmer"], recrutar, CorNpc, 1.6f, Arte(FigLavrador));
-        Npc("Recruit_Sailor", zona, 98f, falas["Sailor"], recrutar, CorNpc, 1.6f, Arte(FigMarinheiro));
-        Npc("Recruit_Blacksmith", zona, 105f, falas["Smith"], recrutar, CorNpc, 1.6f, Arte(FigLavrador));
-        Npc("Recruit_Eurylochus", zona, 118f, falas["Eurylochus"], recrutar, CorSoldado, 1.8f, Arte(FigSoldado));
-        Npc("Recruit_Rower", zona, 124f, falas["Rower"], recrutar, CorNpc, 1.6f, Arte(FigMarinheiro));
-        Npc("Recruit_Shepherd", zona, 129f, falas["Shepherd"], recrutar, CorNpc, 1.6f, Arte(FigLavrador));
-        Npc("Recruit_Watchman", zona, 140f, falas["Watchman"], recrutar, CorNpc, 1.6f, Arte(FigSoldado));
-        Npc("Recruit_Carpenter", zona, 145f, falas["Carpenter"], recrutar, CorNpc, 1.6f, Arte(FigAnciao));
-        Npc("Recruit_Elpenor", zona, 150f, falas["Elpenor"], recrutar, CorNpc, 1.4f, Arte(FigMarinheiro));
+        NpcDoElenco("Recruit_Fisherman", zona, 86f, falas["Fisherman"], recrutar, ChrPescador, CorNpc);
+        NpcDoElenco("Recruit_Farmer", zona, 92f, falas["Farmer"], recrutar, ChrLavrador, CorNpc);
+        NpcDoElenco("Recruit_Sailor", zona, 98f, falas["Sailor"], recrutar, ChrMarinheiro, CorNpc);
+        NpcDoElenco("Recruit_Blacksmith", zona, 105f, falas["Smith"], recrutar, ChrMercador, CorNpc);
+        NpcDoElenco("Recruit_Eurylochus", zona, 118f, falas["Eurylochus"], recrutar, ChrSoldado, CorSoldado);
+        NpcDoElenco("Recruit_Rower", zona, 124f, falas["Rower"], recrutar, ChrMarinheiroOcre, CorNpc);
+        NpcDoElenco("Recruit_Shepherd", zona, 129f, falas["Shepherd"], recrutar, ChrLavrador, CorNpc);
+        NpcDoElenco("Recruit_Watchman", zona, 140f, falas["Watchman"], recrutar, ChrSoldado, CorNpc);
+        NpcDoElenco("Recruit_Carpenter", zona, 145f, falas["Carpenter"], recrutar, ChrArtesao, CorNpc);
+        NpcDoElenco("Recruit_Elpenor", zona, 150f, falas["Elpenor"], recrutar, ChrMarinheiroOliva, CorNpc);
 
         // Cenário de trabalho da ilha.
         if (Prop("Nets", zona, 88f, ItacaRede, 0) == null)
@@ -1724,7 +1768,7 @@ public static class PrologueSceneBuilder
         // Soldados treinando ao fundo: a ilha inteira se preparando, não só o rei.
         for (int i = 0; i < 6; i++)
         {
-            FiguraDeCenario("Soldier_Drill_" + i, campo, 166f + i * 2.4f, FigSoldado, CorSoldado, -1);
+            FiguraDoElenco("Soldier_Drill_" + i, campo, 166f + i * 2.4f, ChrSoldado, CorSoldado, -1, true);
         }
 
         var cursoGo = new GameObject("TrainingCourse");
@@ -1777,7 +1821,8 @@ public static class PrologueSceneBuilder
         });
 
         // O treinador abre o ato; o curso liga junto com ele.
-        Figura("NPC_Trainer", campo, 160f, 0.9f, 1.8f, CorSoldado, 1, Arte(AlcinousArt));
+        // O instrutor era a arte do Alcínoo, rei feácio, de manto azul e 1,8 un.
+        FiguraDoElenco("NPC_Trainer", campo, 160f, ChrInstrutor, CorSoldado);
         Gatilho("Trigger_TrainerIntro", campo, 158f, falas["TrainerIntro"]);
 
         WireArray(treinar, "enableOnStart", cursoGo);
@@ -1867,7 +1912,7 @@ public static class PrologueSceneBuilder
         Prop("Arsenal_Spear", arsenal, 240f, ItacaRaiz + "Arsenal/ithaca_spear_01.png", 0);
         Prop("Arsenal_Shield", arsenal, 242f, ItacaRaiz + "Arsenal/ithaca_shield_round_01.png", 0);
 
-        Npc("NPC_Blacksmith", arsenal, 244f, falas["Blacksmith"], equipar, CorSoldado, 1.7f, Arte(FigLavrador));
+        NpcDoElenco("NPC_Blacksmith", arsenal, 244f, falas["Blacksmith"], equipar, ChrMercador, CorSoldado);
         Ponto("Prep_Swords", arsenal, 250f, "int.prologue.swords", equipar, CorPedra, 1.4f, 1.2f,
             null, ItacaRaiz + "Arsenal/ithaca_sword_01.png");
         Ponto("Prep_Shields", arsenal, 256f, "int.prologue.shields", equipar, CorPedra, 1.6f, 1.4f,
@@ -1909,9 +1954,9 @@ public static class PrologueSceneBuilder
         Ponto("Port_Crew", porto, 316f, "int.prologue.crew", navios, CorNpc, 1.2f, 1.6f,
             null, ItacaRaiz + "Props/ithaca_bench_01.png");
 
-        FiguraDeCenario("Sailor_1", porto, 296f, FigMarinheiro, CorNpc);
-        FiguraDeCenario("Sailor_2", porto, 300f, FigMarinheiro, CorNpc);
-        FiguraDeCenario("Sailor_3", porto, 312f, FigMarinheiro, CorNpc);
+        FiguraDoElenco("Sailor_1", porto, 296f, ChrMarinheiro, CorNpc);
+        FiguraDoElenco("Sailor_2", porto, 300f, ChrMarinheiroOcre, CorNpc, 1, true);
+        FiguraDoElenco("Sailor_3", porto, 312f, ChrMarinheiroOliva, CorNpc);
         if (Prop("Barrels", porto, 286f, ItacaRaiz + "Props/ithaca_barrel_01.png", 0) == null)
         {
             Bloco("Barrels", porto, 286f, GroundTop + 0.5f, 1.2f, 1f, CorProp, 0);
@@ -1944,10 +1989,10 @@ public static class PrologueSceneBuilder
 
         // Penélope e Telêmaco vão até o cais: é lá que a despedida acontece e é de lá
         // que ela assiste à partida — voltar ao palácio seria refazer a fase inteira a pé.
-        GameObject penelope = Npc("NPC_Penelope_Port", cais, 326f, falas["FarewellPenelope"],
-            despedida, CorNpc, 1.7f, Arte(PenelopeArt), automatico: true);
-        GameObject telemaco = Npc("NPC_Telemaco_Port", cais, 330f, falas["FarewellTelemaco"],
-            despedida, CorNpc, 1.1f, Arte(TelemachusArt), automatico: true);
+        GameObject penelope = NpcDoElenco("NPC_Penelope_Port", cais, 326f, falas["FarewellPenelope"],
+            despedida, ChrPenelope, CorNpc, automatico: true);
+        GameObject telemaco = NpcDoElenco("NPC_Telemaco_Port", cais, 330f, falas["FarewellTelemaco"],
+            despedida, ChrTelemaco, CorNpc, automatico: true);
 
         penelope.SetActive(false);
         telemaco.SetActive(false);

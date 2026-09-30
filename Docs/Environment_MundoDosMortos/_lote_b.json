@@ -1,0 +1,37 @@
+[
+  {
+    "nome": "_fonte_ruined_wall",
+    "args": {
+      "description": "one single fragment of an ancient stone wall seen from directly beside it, strict flat side profile like a technical elevation drawing. Courses of pale marble blocks with the top broken away in a ragged diagonal, one block fallen out leaving a dark gap, deep cracks, dark damp stains along the base, a straight incised line running along one course. Cool palette of pale marble and blue-grey shadow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 288, "height": 224, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_broken_statue",
+    "args": {
+      "description": "one single broken marble statue on a plinth, seen from directly beside it, strict flat side profile like a technical elevation drawing. A standing draped figure with the head missing and one arm broken off at the elbow, the robe folds cut as simple flat bands, deep cracks across the torso, standing on a chipped square plinth, dark stains in the hollows. Cool palette of pale marble and blue-grey shadow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 160, "height": 288, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_stone_gate",
+    "args": {
+      "description": "one single ancient stone gateway seen from directly in front, strict flat side profile like a technical elevation drawing. Two thick upright piers of huge pale stone blocks carrying one massive straight stone lintel across the top with no arch, a tall black opening between them, deep cracks in the piers, a fallen block at one foot, straight incised lines along the lintel. Cool palette of pale marble and blue-grey shadow against a black opening. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 288, "height": 320, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_shore_rocks",
+    "args": {
+      "description": "one single cluster of pale river stones seen from directly beside it, strict flat side profile like a technical elevation drawing. Five or six smooth rounded pale grey stones of different sizes resting against each other, wet and darker along their lower edges, a few small pebbles beside them, nothing under them. Cool palette of pale grey stone and blue-grey shadow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 192, "height": 112, "no_background": true, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_stalactites",
+    "args": {
+      "description": "a horizontal strip of cave ceiling seen from directly beside it, strict flat side profile like a technical elevation drawing. Raw blue-grey rock along the top edge with pointed stalactites of many different lengths hanging down, thicker at the base and tapering to points, damp highlights near the tips. Cool palette of blue-grey stone. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 128, "no_background": true, "view": "side", "detail": "low detail"
+    }
+  }
+]

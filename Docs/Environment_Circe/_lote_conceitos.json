@@ -1,0 +1,23 @@
+[
+  {
+    "nome": "CIRCE_ConceptA_Floresta",
+    "args": {
+      "description": "an old Mediterranean woodland glade seen from directly beside it, strict flat side profile like a technical elevation drawing. Thick twisting trunks of ancient oaks and laurels with deep bark, broad canopies of layered green leaves overhead letting warm sunlight through in shafts, ferns and broad-leaved plants on the floor, a scatter of small pale flowers, mushrooms at the base of a trunk, a mossy fallen log, thin mist low between the trunks. Warm palette of sunlit green, deep shadow green, brown bark and pale gold light. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "CIRCE_ConceptB_Templo",
+    "args": {
+      "description": "a small ancient Greek temple half swallowed by forest, seen from directly in front, strict flat side profile like a technical elevation drawing. A raised platform of pale marble steps carrying plain stone columns with simple flat tops and a straight stone beam across them with no arches, ivy and thick roots climbing the columns, moss in the joints, a dark doorway between the middle columns, a bronze brazier burning at the foot of the steps, laurel trees crowding in on both sides and leaning over the roof. Warm palette of pale marble, deep green foliage, brown roots and bronze. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "CIRCE_ConceptC_Jardim",
+    "args": {
+      "description": "an overgrown ancient garden of broken ruins, seen from directly beside it, strict flat side profile like a technical elevation drawing. Toppled marble columns lying in the grass with roots growing over them, a standing fragment of wall, a cracked stone basin with clear water in it, a weathered statue missing an arm, beds of tall flowering herbs and pale luminous night-blooming flowers, ivy over everything, a stone path of worn slabs winding between them, old trees at the edges. Warm palette of pale marble, deep green foliage, soft violet and pale gold flowers. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  }
+]

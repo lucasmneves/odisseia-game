@@ -1,0 +1,58 @@
+[
+  {
+    "nome": "itaca_ret_bg_dusk",
+    "args": {
+      "description": "a calm sea under a golden evening sky with hazy headlands far away, seen from the shore, strict flat side profile like a technical elevation drawing. Still blue water in low swells with long warm gold glints running across it, a low flat horizon, two soft blue-grey headlands far off near the edges, and above a big evening sky going from warm amber at the horizon up through soft gold to pale blue near the top, with long flat clouds lit from below. Calm and wide and nostalgic. Palette of deep blue water, warm amber and gold sky, soft blue-grey distance. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "itaca_ret_village_band",
+    "args": {
+      "description": "a long continuous band of a small ancient Greek hillside village, seen from directly beside it, strict flat side profile like a technical elevation drawing. Low flat roofed houses of pale cream limestone at slightly different heights with small square windows and plain wooden doors, low dry stone walls running between them, dark cypresses and round olive trees in the gaps, a few clay roof vents and hanging cloths, repeating across the whole width so it reads as one continuous village. Lit warmly from one side with the shaded faces in cool shadow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 256, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "itaca_ret_house_overgrown",
+    "args": {
+      "description": "a small abandoned ancient Greek house of pale cream limestone taken over by plants, isolated on transparent background, seen from directly in front. A low square flat roofed house with one plain wooden door hanging crooked on its hinges and one small square window, thick ivy and creeping vines climbing across most of the front wall and over the roof edge, tall weeds and grass grown up against the base, a few blocks fallen from one corner, the stone stained and darkened by years of weather. Nobody there. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 192, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "itaca_ret_fence_broken",
+    "args": {
+      "description": "a broken wooden field fence, isolated on transparent background, seen from beside it. A line of weathered grey-brown posts with two horizontal rails, several posts leaning at different angles and two snapped off short, one rail fallen to the ground, the wood split and silvered by weather, tall grass and weeds grown up through the gaps. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 288, "height": 96, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "itaca_ret_boat_derelict",
+    "args": {
+      "description": "a small old wooden fishing boat pulled up and left on a shore, isolated on transparent background, seen from beside it. A short curved hull of weathered grey-brown planks tilted over onto one side, several planks sprung loose along the top edge, the mast gone and only its stump left, a frayed rope trailing from the bow, dry weed and a little sand gathered along its lower side. No people. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 320, "height": 160, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "itaca_ret_market_stall",
+    "args": {
+      "description": "a small ancient Greek market stall, isolated on transparent background, seen from directly in front. A simple wooden trestle table under a square awning of faded striped cloth held up by four plain poles, clay jars and shallow baskets of figs, olives and grain set out on the table, a bundle of dried herbs hanging from one pole, a stack of two crates beside it. No people. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 224, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "itaca_ret_brazier",
+    "args": {
+      "description": "a tall ancient Greek bronze brazier on a stand with a fire burning in it, isolated on transparent background, seen from directly in front. A wide shallow bronze bowl on three slim curved legs joined by a ring, dark weathered metal with green patina in the hollows, a low orange and gold flame with a few sparks rising from the bowl, and a warm glow on the rim. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 160, "height": 224, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "itaca_ret_overgrowth",
+    "args": {
+      "description": "a low spreading clump of weeds and creeping vines, isolated on transparent background, seen from beside it. Long trailing vine stems with small leaves spreading out sideways and low, coarse tufts of tall dry grass among them, a few small pale wildflowers, low and wide and untended. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 96, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]

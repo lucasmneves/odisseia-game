@@ -1,0 +1,44 @@
+[
+  {
+    "nome": "_fonte_glow_flowers",
+    "args": {
+      "description": "one single clump of pale night-blooming flowers seen from directly beside it, strict flat side profile like a technical elevation drawing. Slender green stems carrying wide open star-shaped blossoms of pale cream and soft violet, each with a small bright centre, a faint pale halo of tiny dots around the heads as if they give off a little light, broad leaves at the base. Warm palette of pale cream, soft violet, bright centre and green stems. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 192, "height": 160, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_stone_basin",
+    "args": {
+      "description": "one single ancient stone water basin seen from directly beside it, strict flat side profile like a technical elevation drawing. A wide shallow rectangular trough of pale marble on a low plinth, clear still water inside reflecting pale light, a crack down one side, moss along the base, water trickling from a small spout at one end. Warm palette of pale marble, clear blue-green water and moss. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 224, "height": 128, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_alchemy_table",
+    "args": {
+      "description": "one single low ancient worktable of a herbalist, seen from directly beside it, strict flat side profile like a technical elevation drawing. A plain wooden table with turned legs holding small clay jars, a shallow bronze bowl, a stone mortar and pestle, bunches of dried herbs tied with cord, and a rolled papyrus scroll, more herbs hanging from a rack behind it. Nothing made of glass and nothing modern. Warm palette of brown timber, terracotta, bronze and dried green herbs. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 192, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_mossy_statue",
+    "args": {
+      "description": "one single weathered marble statue of a draped woman, seen from directly beside it, strict flat side profile like a technical elevation drawing. A standing figure with one arm lowered, the robe folds cut as simple flat bands, the face worn smooth, standing on a square plinth, thick moss up one side and ivy trailing from the shoulder, a chip missing from the base. Warm palette of pale marble, moss green and grey shadow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 160, "height": 288, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_amphorae",
+    "args": {
+      "description": "one single group of ancient Greek jars seen from directly beside them, strict flat side profile like a technical elevation drawing. Two tall terracotta amphorae with narrow necks and looped handles standing upright, one shorter round jar beside them with a cloth tied over its mouth, a woven basket of dried herbs, ivy creeping up one jar. Warm palette of terracotta orange, pale straw and green ivy. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 224, "height": 160, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_mist_band",
+    "args": {
+      "description": "a horizontal band of low ground mist seen from directly beside it, strict flat side profile like a technical elevation drawing. Soft pale wisps of fog lying close to the ground, thicker and more solid at the bottom edge and breaking into thin separate streaks toward the top, uneven along its length, nothing else in the picture. Palette of pale grey-green and off-white only. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 96, "no_background": true, "view": "side", "detail": "low detail"
+    }
+  }
+]

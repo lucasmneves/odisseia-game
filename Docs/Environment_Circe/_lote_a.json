@@ -1,0 +1,58 @@
+[
+  {
+    "nome": "_fonte_tiles_forest",
+    "args": {
+      "description": "a horizontal strip of forest floor seen from directly beside it, strict flat side profile like a technical elevation drawing. The top edge is a thick band of green moss and low ferns with a few pale flowers, below it a solid cross-section of dark damp earth threaded with pale roots and small stones, getting darker toward the bottom. Warm palette of moss green, dark brown earth and pale roots. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 160, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_tiles_marble",
+    "args": {
+      "description": "a horizontal strip of an ancient paved terrace seen from directly beside it, strict flat side profile like a technical elevation drawing. The top edge is worn pale marble slabs with moss growing in the joints and one cracked slab, below it a solid cross-section of stacked pale stone blocks with ivy trailing down over them, darker at the bottom. Warm palette of pale marble, moss green and grey shadow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 160, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_canopy",
+    "args": {
+      "description": "a horizontal strip of forest canopy seen from below and from directly beside it, strict flat side profile like a technical elevation drawing. Dense layered clumps of green leaves hanging down from the top edge with gaps of open air between them, a few thin branches crossing, some leaves lighter where sun catches them and others deep in shadow, a hanging vine or two. Warm palette of sunlit yellow-green, mid green and deep shadow green. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 160, "no_background": true, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_big_tree",
+    "args": {
+      "description": "one single ancient forest tree seen from directly beside it, strict flat side profile like a technical elevation drawing. A massive twisting trunk of deeply furrowed brown bark splitting into heavy limbs, a broad canopy of layered green leaves in distinct clumps, thick roots spreading over the ground at the base, ivy climbing one side of the trunk, patches of moss. Warm palette of brown bark, layered greens and moss. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 320, "height": 384, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_fern_cluster",
+    "args": {
+      "description": "one single cluster of ferns and broad-leaved plants seen from directly beside it, strict flat side profile like a technical elevation drawing. Several arching fern fronds fanning up and out from a common base, a few wide flat leaves among them, one small pale flower, nothing under them. Warm palette of mid green, deep green and a pale flower. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 192, "height": 128, "no_background": true, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_fallen_column",
+    "args": {
+      "description": "one single toppled marble column seen from directly beside it, strict flat side profile like a technical elevation drawing. A fluted stone shaft lying on its side broken into two pieces with a gap between them, the broken ends rough, moss along the lower edge and ivy growing over one piece, grass around the base. Warm palette of pale marble, moss green and grey shadow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 288, "height": 128, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_ruined_wall",
+    "args": {
+      "description": "one single fragment of a ruined stone wall seen from directly beside it, strict flat side profile like a technical elevation drawing. Courses of pale rectangular blocks with the top broken away in a ragged diagonal, ivy hanging down over the face, moss in the joints, one block fallen out leaving a gap, grass at the base. Warm palette of pale marble, moss green and grey shadow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 288, "height": 224, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_temple_front",
+    "args": {
+      "description": "one single small ancient Greek temple front overgrown by forest, seen from directly in front, strict flat side profile like a technical elevation drawing. Four plain marble columns with simple flat tops on a low platform of three steps, one straight stone beam across them and a low triangular gable above with no arches, a dark doorway in the middle, thick ivy and roots climbing two of the columns, moss on the steps. Warm palette of pale marble, deep green ivy and grey shadow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 384, "height": 320, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]

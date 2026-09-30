@@ -1,0 +1,58 @@
+[
+  {
+    "nome": "_fonte_tiles_quay",
+    "args": {
+      "description": "a horizontal strip of an ancient stone quay seen from directly beside it, strict flat side profile like a technical elevation drawing. The top edge is a paved surface of large flat grey slabs with worn joints, below it a solid cross-section of enormous rough-cut grey blocks stacked without mortar, the lowest course dark and wet with a green waterline stain. Palette of cool grey stone from pale to almost black. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 160, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_tiles_rock",
+    "args": {
+      "description": "a horizontal strip of cold coastal bedrock seen from directly beside it, strict flat side profile like a technical elevation drawing. The top edge is bare uneven grey rock with a few tufts of dark scrub, below it a solid cross-section of grey stone in tall vertical columnar fractures like basalt, getting darker toward the bottom. Palette of cool grey stone and dark green scrub. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 160, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_tiles_planks",
+    "args": {
+      "description": "a horizontal strip of a heavy wooden pier deck seen from directly beside it, strict flat side profile like a technical elevation drawing. The top edge is thick weathered planks running across with visible grain and iron spikes, below it two stout crossbeams and the tops of round pilings, dark and damp underneath. Palette of dark weathered timber and grey iron. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 128, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_cliff_wall",
+    "args": {
+      "description": "a horizontal strip of a towering sea cliff face seen from directly beside it, strict flat side profile like a technical elevation drawing. Grey rock split into tall narrow vertical columns like basalt, packed side by side with dark cracks between them, a few horizontal ledges crossing the face with tufts of dark scrub on them. Palette of cool grey stone, even in value so it reads as a distant wall. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 256, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_giant_wall",
+    "args": {
+      "description": "a horizontal strip of a colossal defensive wall seen from directly beside it, strict flat side profile like a technical elevation drawing. Enormous irregular grey blocks stacked without mortar, each block the size of a cart, the joints between them deep and uneven, the top course flat, a band of darker stone at the base. Nothing decorative, no battlements and no arches. Palette of cool grey stone. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 192, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_giant_house",
+    "args": {
+      "description": "one single crude oversized stone house seen from directly in front, strict flat side profile like a technical elevation drawing. Walls of enormous rough uncut grey blocks, a completely flat roof of packed clay on thick exposed round timber beams whose ends stick out past the wall, one very tall dark doorway spanned by a single massive straight timber lintel and no arch, one small square window high up, everything built at a scale far too large for an ordinary person. Palette of cool grey stone and dark timber. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 320, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_watchtower",
+    "args": {
+      "description": "one single squat stone watchtower seen from directly beside it, strict flat side profile like a technical elevation drawing. A thick tapering shaft of enormous rough grey blocks with a flat open top and a plain low parapet, no battlements and no roof, one narrow dark opening near the top, a timber ladder lashed to one side, the base wider and darker. Palette of cool grey stone and dark timber. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 192, "height": 320, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_giant_ship",
+    "args": {
+      "description": "one single enormous ancient wooden ship seen from directly beside it, strict flat side profile like a technical elevation drawing. A broad heavy hull of thick overlapping dark planks curving up at both ends, a single very thick mast with a furled square sail lashed to a yard, a row of oar ports along the side, heavy ropes, a carved blunt prow, the whole vessel far larger and cruder than a normal boat. Palette of dark weathered timber, pale sailcloth and grey iron. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 384, "height": 224, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]

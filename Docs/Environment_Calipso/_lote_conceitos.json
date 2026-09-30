@@ -1,0 +1,23 @@
+[
+  {
+    "nome": "CALIPSO_ConceptA_Praia",
+    "args": {
+      "description": "a quiet paradise island shore with forest and a small pale stone dwelling, seen from directly beside it, strict flat side profile like a technical elevation drawing. Fine pale sand meeting very calm clear turquoise water with a thin still line of foam, smooth grey boulders along the waterline, behind them a dense band of deep green broadleaf trees and tall cypresses, and half hidden among them a small ancient Greek dwelling of pale stone with two plain columns and a flat roof, vines growing over it. Soft warm late afternoon light, long gentle shadows, a wide empty horizon behind. Beautiful and completely still, with nobody there. Palette of pale sand, turquoise, deep green, warm cream stone and gold light. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "CALIPSO_ConceptB_Cachoeira",
+    "args": {
+      "description": "a lush island valley with a tall waterfall and a small Greek palace, seen from directly beside it, strict flat side profile like a technical elevation drawing. A high cliff of warm ochre rock with a narrow white waterfall dropping into a clear green pool, thick green vegetation and hanging vines on the rock faces, broad old trees with heavy canopies, and to one side a low elegant palace of pale cream stone with a row of slim columns, a flat roof and wide steps down to the water, flowering plants spilling over its walls. Warm sunlight from above, soft shadows, mist at the foot of the fall. Palette of warm ochre rock, deep and bright greens, white water, cream stone and gold light. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "CALIPSO_ConceptC_Isolada",
+    "args": {
+      "description": "a small lone island ringed by open ocean, with an old forest and a pale hall close to the water, seen from directly beside it, strict flat side profile like a technical elevation drawing. Calm deep blue sea filling the whole width behind, a low green island rising from it with gnarled ancient trees and soft undergrowth, weathered marble steps and broken columns half swallowed by the greenery, and near the shore a long low hall of pale stone with slender columns and a flat roof, a single lit doorway. Wide flat horizon, a very large sky, warm low sun. The island reads as small and the sea as endless. Palette of deep blue, soft green, weathered cream marble and warm gold. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  }
+]

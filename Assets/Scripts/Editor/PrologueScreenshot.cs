@@ -117,7 +117,8 @@ public static class PrologueScreenshot
         return originais;
     }
 
-    private static void Render(float x, float y, string saida)
+    // internal: o CyclopsCastDresser.Poses fotografa poses do chefe montadas em memória.
+    internal static void Render(float x, float y, string saida)
     {
         Dictionary<Transform, Vector3> originais = AplicarParallax(x, y);
         var go = new GameObject("__ShotCamera");

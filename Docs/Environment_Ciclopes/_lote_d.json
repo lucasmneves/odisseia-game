@@ -1,0 +1,9 @@
+[
+  {
+    "nome": "_fonte_boulder_cluster",
+    "args": {
+      "description": "one single cluster of small rocks seen from directly beside it, strict flat side profile like a technical elevation drawing. Five angular pale limestone stones of different sizes resting against each other, the largest at the back and the smallest in front, cracks across their faces, darker where they touch, nothing under them and nothing behind them. Warm sunlit palette of pale limestone and cool grey stone. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 192, "height": 112, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]

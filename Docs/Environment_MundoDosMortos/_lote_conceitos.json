@@ -1,0 +1,23 @@
+[
+  {
+    "nome": "MORTOS_ConceptA_Caverna",
+    "args": {
+      "description": "a vast underground cavern with a slow dark river, seen from directly beside it, strict flat side profile like a technical elevation drawing. Walls of raw blue-grey rock with natural pillars, a broad band of still black-green water crossing the floor with a pale reflection on it, a shore of pale grey pebbles, low mist lying on the water, three burning bronze torches on the wall throwing warm orange light on the rock, a few pale drifting lights over the river. Cool palette of blue-grey stone and black-green water against warm orange torchlight, dark but bright enough to read clearly, mythological and not frightening. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "MORTOS_ConceptB_Ruinas",
+    "args": {
+      "description": "ancient Greek ruins standing underground in mist, seen from directly beside them, strict flat side profile like a technical elevation drawing. Broken pale marble columns of different heights on a cracked stone floor, a straight stone lintel still resting on two of them with no arches, a low altar with a small pale flame, fallen blocks, thick low mist between the columns hiding their bases, a rough rock ceiling far above with pale drifting lights under it. Cool palette of pale marble and blue-grey shadow against a small warm flame, dark but readable. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "MORTOS_ConceptC_Vale",
+    "args": {
+      "description": "a sunless valley with a black river and a cave mouth, seen from directly beside it, strict flat side profile like a technical elevation drawing. Steep walls of blue-grey rock on both sides, a wide dark river running along the bottom with a stone landing at its edge, a tall jagged opening in the rock face leading into blackness, dead bare trees on the bank with pale twisted trunks, scattered pale stones, mist lying low over the water, one bronze brazier burning by the landing. Cool palette of blue-grey rock, black-green water and pale dead wood against one warm fire. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  }
+]

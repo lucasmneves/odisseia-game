@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: 7ce2d63d931571243eb3525fd75d3310
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1637085576
+    second: CHR_Trojan_Soldier_Idle_00
+  - first:
+      213: 301927221
+    second: CHR_Trojan_Soldier_Idle_01
+  - first:
+      213: 1490312854
+    second: CHR_Trojan_Soldier_Idle_02
+  - first:
+      213: 2113876949
+    second: CHR_Trojan_Soldier_Idle_03
+  - first:
+      213: 1841943296
+    second: CHR_Trojan_Soldier_Idle_04
+  - first:
+      213: 984746895
+    second: CHR_Trojan_Soldier_Idle_05
+  - first:
+      213: 915869301
+    second: CHR_Trojan_Soldier_Run_00
+  - first:
+      213: 896407727
+    second: CHR_Trojan_Soldier_Run_01
+  - first:
+      213: 1060137678
+    second: CHR_Trojan_Soldier_Run_02
+  - first:
+      213: 1762404730
+    second: CHR_Trojan_Soldier_Run_03
+  - first:
+      213: 1371001881
+    second: CHR_Trojan_Soldier_Run_04
+  - first:
+      213: 292730123
+    second: CHR_Trojan_Soldier_Hit_00
+  - first:
+      213: 2018454339
+    second: CHR_Trojan_Soldier_Hit_01
+  - first:
+      213: 1089626598
+    second: CHR_Trojan_Soldier_Hit_02
+  - first:
+      213: 1445941558
+    second: CHR_Trojan_Soldier_Hit_03
+  - first:
+      213: 1611932965
+    second: CHR_Trojan_Soldier_Hit_04
+  - first:
+      213: 1537739574
+    second: CHR_Trojan_Soldier_Hit_05
+  - first:
+      213: 1052940395
+    second: CHR_Trojan_Soldier_Death_00
+  - first:
+      213: 792958727
+    second: CHR_Trojan_Soldier_Death_01
+  - first:
+      213: 70841826
+    second: CHR_Trojan_Soldier_Death_02
+  - first:
+      213: 1241611105
+    second: CHR_Trojan_Soldier_Death_03
+  - first:
+      213: 1655670287
+    second: CHR_Trojan_Soldier_Death_04
+  - first:
+      213: 304190757
+    second: CHR_Trojan_Soldier_Death_05
+  - first:
+      213: 533866125
+    second: CHR_Trojan_Soldier_Death_06
+  - first:
+      213: 1997325666
+    second: CHR_Trojan_Soldier_Death_07
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spritePixelsToUnits: 42.857143
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 187
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9d0e57119bfae400267537af373cb92
+      internalID: 1637085576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 187
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5802dfd95e5ea1cd386c08da014c23ba
+      internalID: 301927221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 187
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b3293e70c906f4ca93c8ffa155f22d
+      internalID: 1490312854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 187
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35e8e45aa2d97d283d6c45957a19b86c
+      internalID: 2113876949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 187
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20bc5078da303b58ee733fc5c9e65b60
+      internalID: 1841943296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 187
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e326d9904c9785bcb46becf722298b1
+      internalID: 984746895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Run_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 125
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7df8c2b0c2777c30a5cc3d832fa7613
+      internalID: 915869301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Run_01
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 125
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ade98a6f89cf2b46ba3012754d03a50f
+      internalID: 896407727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Run_02
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 125
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1afada5fa72439dbf7683a1716a9e145
+      internalID: 1060137678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Run_03
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 125
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f2212542bb4dba760e0c278d61b8e74
+      internalID: 1762404730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Run_04
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 125
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 459d0bf09044250160f8317b9659ad3c
+      internalID: 1371001881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Hit_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 63
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0f72d0766c21375cfe1504b36e59b76
+      internalID: 292730123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Hit_01
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 63
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81dc5de678adf729bf35b45b2635de49
+      internalID: 2018454339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Hit_02
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 63
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57418da80d03ed907bc283ed2e7f99c7
+      internalID: 1089626598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Hit_03
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 63
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa97d9b1fb66b8020d74d86fd12ae8cb
+      internalID: 1445941558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Hit_04
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 63
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1a1e1eae71856c23dd8487869cb51be
+      internalID: 1611932965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Hit_05
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 63
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9766568b3137c65908f6f4ed276993
+      internalID: 1537739574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Death_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 410b2b3f944da89c9df2ffa60519cac3
+      internalID: 1052940395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Death_01
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 1
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c2a5861da15b5caa5e63ba1a9f97505
+      internalID: 792958727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Death_02
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 1
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96b6150b2ba3621f32f21adaf0d6de1a
+      internalID: 70841826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Death_03
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 1
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c52564fc1ff7887d6926b5963b3e0f
+      internalID: 1241611105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Death_04
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 1
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea76dc633a75423dc5db616c996b36e2
+      internalID: 1655670287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Death_05
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 1
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 995ec9c1d580048151351e466f859ca1
+      internalID: 304190757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Death_06
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 1
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9794c8f4f45295e5559b3df2b7c281e3
+      internalID: 533866125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Trojan_Soldier_Death_07
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1
+        width: 63
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb1cac91212324343bfdb4e0a1efa9eb
+      internalID: 1997325666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CHR_Trojan_Soldier_Idle_00: 1637085576
+      CHR_Trojan_Soldier_Idle_01: 301927221
+      CHR_Trojan_Soldier_Idle_02: 1490312854
+      CHR_Trojan_Soldier_Idle_03: 2113876949
+      CHR_Trojan_Soldier_Idle_04: 1841943296
+      CHR_Trojan_Soldier_Idle_05: 984746895
+      CHR_Trojan_Soldier_Run_00: 915869301
+      CHR_Trojan_Soldier_Run_01: 896407727
+      CHR_Trojan_Soldier_Run_02: 1060137678
+      CHR_Trojan_Soldier_Run_03: 1762404730
+      CHR_Trojan_Soldier_Run_04: 1371001881
+      CHR_Trojan_Soldier_Hit_00: 292730123
+      CHR_Trojan_Soldier_Hit_01: 2018454339
+      CHR_Trojan_Soldier_Hit_02: 1089626598
+      CHR_Trojan_Soldier_Hit_03: 1445941558
+      CHR_Trojan_Soldier_Hit_04: 1611932965
+      CHR_Trojan_Soldier_Hit_05: 1537739574
+      CHR_Trojan_Soldier_Death_00: 1052940395
+      CHR_Trojan_Soldier_Death_01: 792958727
+      CHR_Trojan_Soldier_Death_02: 70841826
+      CHR_Trojan_Soldier_Death_03: 1241611105
+      CHR_Trojan_Soldier_Death_04: 1655670287
+      CHR_Trojan_Soldier_Death_05: 304190757
+      CHR_Trojan_Soldier_Death_06: 533866125
+      CHR_Trojan_Soldier_Death_07: 1997325666
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

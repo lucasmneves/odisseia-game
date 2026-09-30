@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: 8846728170817fc9a786f6219cfccbb6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 665681657
+    second: CHR_Lestrigon_Warrior_Idle_00
+  - first:
+      213: 772887219
+    second: CHR_Lestrigon_Warrior_Idle_01
+  - first:
+      213: 943842764
+    second: CHR_Lestrigon_Warrior_Idle_02
+  - first:
+      213: 1116316823
+    second: CHR_Lestrigon_Warrior_Idle_03
+  - first:
+      213: 483820883
+    second: CHR_Lestrigon_Warrior_Idle_04
+  - first:
+      213: 702848414
+    second: CHR_Lestrigon_Warrior_Idle_05
+  - first:
+      213: 1979121636
+    second: CHR_Lestrigon_Warrior_Telegraph_00
+  - first:
+      213: 321693981
+    second: CHR_Lestrigon_Warrior_Telegraph_01
+  - first:
+      213: 174381972
+    second: CHR_Lestrigon_Warrior_Telegraph_02
+  - first:
+      213: 1506667473
+    second: CHR_Lestrigon_Warrior_Telegraph_03
+  - first:
+      213: 1380136112
+    second: CHR_Lestrigon_Warrior_Telegraph_04
+  - first:
+      213: 1784190495
+    second: CHR_Lestrigon_Warrior_Telegraph_05
+  - first:
+      213: 350596984
+    second: CHR_Lestrigon_Warrior_Attack_00
+  - first:
+      213: 1304047313
+    second: CHR_Lestrigon_Warrior_Attack_01
+  - first:
+      213: 1720677915
+    second: CHR_Lestrigon_Warrior_Run_00
+  - first:
+      213: 231150752
+    second: CHR_Lestrigon_Warrior_Run_01
+  - first:
+      213: 62646529
+    second: CHR_Lestrigon_Warrior_Run_02
+  - first:
+      213: 1534045663
+    second: CHR_Lestrigon_Warrior_Run_03
+  - first:
+      213: 1962495273
+    second: CHR_Lestrigon_Warrior_Run_04
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spritePixelsToUnits: 42.857143
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CHR_Lestrigon_Warrior_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 574
+        width: 181
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 292a41823ee922af8b081075123eec51
+      internalID: 665681657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Lestrigon_Warrior_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 574
+        width: 181
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52713c6f9a9c9ebbce25e96570103b39
+      internalID: 772887219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Lestrigon_Warrior_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 574
+        width: 181
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e78305c9a2263a2e975f8d63d8b71e0
+      internalID: 943842764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Lestrigon_Warrior_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 574
+        width: 181
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411746219d08307b44f60c1a602c0138
+      internalID: 1116316823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Lestrigon_Warrior_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 574
+        width: 181
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5198064e97a81dae09a587c339bfe52
+      internalID: 483820883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Lestrigon_Warrior_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 574
+        width: 181
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44c5a7f6cf0c67ceaf5b1dbe5691e296
+      internalID: 702848414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Lestrigon_Warrior_Telegraph_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 383
+        width: 181
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ae10092ebc447f9a5186cca3b8ead64
+      internalID: 1979121636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Lestrigon_Warrior_Telegraph_01
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 383
+        width: 181
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8edcf3eb5d6c5efe3fb3a7cb8bd058d1
+      internalID: 321693981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Lestrigon_Warrior_Telegraph_02
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 383
+        width: 181
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ab1a0544b68f07439e0cd3a3131b43d
+      internalID: 174381972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Lestrigon_Warrior_Telegraph_03
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 383
+        width: 181
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07eca4bc16b380805f9b3a9ce30be8b4
+      internalID: 1506667473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Lestrigon_Warrior_Telegraph_04
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 383
+        width: 181
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60616c0f891f0b905aca2211aab1df68
+      internalID: 1380136112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Lestrigon_Warrior_Telegraph_05
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 383
+        width: 181
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ef9c1fb818d9346d3deacb5ca9b4db
+      internalID: 1784190495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Lestrigon_Warrior_Attack_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 192
+        width: 181
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d9841f884f03c0066be07803804e74
+      internalID: 350596984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Lestrigon_Warrior_Attack_01
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 192
+        width: 181
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c61d9fe3dcf6568b1a7485a07a041658
+      internalID: 1304047313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Lestrigon_Warrior_Run_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 181
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d28afab4a16e52eac01297b2c4b00ea
+      internalID: 1720677915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Lestrigon_Warrior_Run_01
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 1
+        width: 181
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2734db61722d8a639d0f6647327c11ac
+      internalID: 231150752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Lestrigon_Warrior_Run_02
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 1
+        width: 181
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f809c473c07a42064bb199ffd48af56c
+      internalID: 62646529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Lestrigon_Warrior_Run_03
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 1
+        width: 181
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeabb1380bc33e15d3d387d0c1dd9e70
+      internalID: 1534045663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Lestrigon_Warrior_Run_04
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 1
+        width: 181
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c480c4ed0f1b8d9b97304679ec4f7896
+      internalID: 1962495273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CHR_Lestrigon_Warrior_Idle_00: 665681657
+      CHR_Lestrigon_Warrior_Idle_01: 772887219
+      CHR_Lestrigon_Warrior_Idle_02: 943842764
+      CHR_Lestrigon_Warrior_Idle_03: 1116316823
+      CHR_Lestrigon_Warrior_Idle_04: 483820883
+      CHR_Lestrigon_Warrior_Idle_05: 702848414
+      CHR_Lestrigon_Warrior_Telegraph_00: 1979121636
+      CHR_Lestrigon_Warrior_Telegraph_01: 321693981
+      CHR_Lestrigon_Warrior_Telegraph_02: 174381972
+      CHR_Lestrigon_Warrior_Telegraph_03: 1506667473
+      CHR_Lestrigon_Warrior_Telegraph_04: 1380136112
+      CHR_Lestrigon_Warrior_Telegraph_05: 1784190495
+      CHR_Lestrigon_Warrior_Attack_00: 350596984
+      CHR_Lestrigon_Warrior_Attack_01: 1304047313
+      CHR_Lestrigon_Warrior_Run_00: 1720677915
+      CHR_Lestrigon_Warrior_Run_01: 231150752
+      CHR_Lestrigon_Warrior_Run_02: 62646529
+      CHR_Lestrigon_Warrior_Run_03: 1534045663
+      CHR_Lestrigon_Warrior_Run_04: 1962495273
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

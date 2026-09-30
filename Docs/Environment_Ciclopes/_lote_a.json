@@ -1,0 +1,58 @@
+[
+  {
+    "nome": "_fonte_tiles_wild",
+    "args": {
+      "description": "a horizontal strip of wild rocky island ground seen from directly beside it, strict flat side profile like a technical elevation drawing. The top edge is dry earth broken by pale limestone slabs pushing through, with a few tufts of tough silver-green scrub; below it a solid cross-section of packed ochre earth full of embedded angular stones, getting darker toward the bottom. Palette of dry ochre earth, pale limestone and olive green. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 128, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_tiles_cavefloor",
+    "args": {
+      "description": "a horizontal strip of natural cave floor seen from directly beside it, strict flat side profile like a technical elevation drawing. The top edge is uneven grey bedrock worn smooth in places with loose pebbles and a shallow puddle, below it a solid cross-section of raw layered grey rock with irregular cracks, getting much darker toward the bottom. Palette of cool grey stone from pale to almost black. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 128, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_tiles_cavewall",
+    "args": {
+      "description": "a horizontal strip of raw cave wall seen from directly beside it, strict flat side profile like a technical elevation drawing. Uncut natural grey rock with irregular bulges, deep vertical cracks and damp darker patches, no bricks and no cut blocks, the surface rough and broken. Palette of cool grey stone, dark and even in value. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 192, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_stalactites",
+    "args": {
+      "description": "a horizontal strip of cave ceiling seen from directly beside it, strict flat side profile like a technical elevation drawing. Raw grey rock along the top edge with pointed stalactites of many different lengths hanging down from it, thicker at the base and tapering to points, a few with damp highlights near the tip. Palette of cool grey stone. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 128, "no_background": true, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_cave_mouth",
+    "args": {
+      "description": "one single cave entrance in a limestone cliff, an isolated piece drawn small enough that its whole outline is complete and visible. A tall arched opening of raw broken rock, its edges jagged and uncut with no built masonry, the inside going black toward the middle, layered pale limestone bands around it, tufts of scrub clinging to ledges above, loose boulders at the base. Warm sunlit palette of pale limestone and cool grey stone against a black interior. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 320, "height": 320, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_boulder_large",
+    "args": {
+      "description": "one single large weathered boulder, an isolated rock drawn small enough that its whole outline is complete and visible. A rounded mass of pale limestone with flat worn facets, cracks running across it, darker where it meets the ground, a patch of dry moss on one shoulder. Warm sunlit palette of pale limestone and cool grey stone. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 192, "height": 160, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_boulder_cluster",
+    "args": {
+      "description": "one single cluster of small rocks, an isolated group drawn small enough that its whole outline is complete and visible. Four or five angular pale limestone stones of different sizes resting against each other on the ground, a couple of loose pebbles beside them, dry grass at the base. Warm sunlit palette of pale limestone and dry ochre. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 192, "height": 96, "no_background": true, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_torch_wall",
+    "args": {
+      "description": "one single wall torch, an isolated object drawn small enough that its whole outline is complete and visible. A short wooden shaft wrapped in cloth at the top burning with an orange flame, held in a simple bent bronze bracket, a little soot above it. Palette of dark timber, bronze and warm orange flame. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 96, "height": 160, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]

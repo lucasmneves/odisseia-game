@@ -1,0 +1,56 @@
+GIMP Palette
+Name: Odisseia - Ciclopes Environment
+Columns: 4
+#
+ 43  46  39	Contorno Highlight
+ 29  34  29	Contorno Base
+ 20  20  21	Contorno Sombra
+  5   5   7	Contorno Profunda
+206 238 254	Ceu Highlight
+148 208 243	Ceu Base
+116 181 237	Ceu Sombra
+100 129 160	Ceu Profunda
+245 205  92	Bronze Highlight
+187 126  44	Bronze Base
+157  97  31	Bronze Sombra
+115  62  22	Bronze Profunda
+252 216  78	Fogo Highlight
+227 161  77	Fogo Base
+241 104  26	Fogo Sombra
+167  49  29	Fogo Profunda
+246 239 222	Calcario Highlight
+230 221 200	Calcario Base
+204 198 177	Calcario Sombra
+174 171 157	Calcario Profunda
+190 191 185	Pedra cinza Highlight
+143 144 136	Pedra cinza Base
+ 98 106 100	Pedra cinza Sombra
+ 54  59  57	Pedra cinza Profunda
+ 86  93  87	Rocha profunda Highlight
+ 63  70  68	Rocha profunda Base
+ 39  42  41	Rocha profunda Sombra
+ 23  26  25	Rocha profunda Profunda
+227 195 137	Terra seca Highlight
+187 168 127	Terra seca Base
+156 131  98	Terra seca Sombra
+112  86  56	Terra seca Profunda
+214 164  84	Ocre queimado Highlight
+160 115  60	Ocre queimado Base
+136  98  59	Ocre queimado Sombra
+ 84  56  35	Ocre queimado Profunda
+160 164  74	Oliveira Highlight
+102 110  57	Oliveira Base
+ 68  81  58	Oliveira Sombra
+ 36  49  32	Oliveira Profunda
+137  93  52	Madeira Highlight
+108  68  39	Madeira Base
+ 65  43  31	Madeira Sombra
+ 42  27  20	Madeira Profunda
+230 138  62	Terracota Highlight
+183 100  43	Terracota Base
+145  82  39	Terracota Sombra
+105  73  44	Terracota Profunda
+139 206 189	Mar raso Highlight
+ 74 157 165	Mar raso Base
+ 64 137 159	Mar raso Sombra
+ 51  68  75	Mar raso Profunda

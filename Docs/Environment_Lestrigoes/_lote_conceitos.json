@@ -1,0 +1,23 @@
+[
+  {
+    "nome": "LESTRIGOES_ConceptA_Baia",
+    "args": {
+      "description": "a narrow sea inlet between two enormous cliffs, seen from directly beside it, strict flat side profile like a technical elevation drawing. Sheer walls of grey layered rock rising far higher than any building, their tops lost above the frame, a narrow strip of dark water between them with a small wooden boat dwarfed on it, loose boulders piled at the waterline, a few tough shrubs clinging to ledges. Behind, a pale overcast sky in the gap between the cliffs. Cool palette of grey stone, dark sea blue and pale sky, dangerous and monumental but bright enough to read clearly. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "LESTRIGOES_ConceptB_Porto",
+    "args": {
+      "description": "an ancient harbour built at a size meant for giants, seen from directly beside it, strict flat side profile like a technical elevation drawing. A quay of enormous rough stone blocks with mooring posts as thick as tree trunks, a heavy wooden pier on massive pilings, one huge broad-beamed wooden ship with a thick mast beside a normal small boat that looks tiny next to it, coils of heavy rope, oversized barrels and crates, a great stone ramp climbing away. Behind it low crude stone buildings with flat roofs on timber beams, and a grey cliff. Cool palette of grey stone, dark timber and sea blue. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "LESTRIGOES_ConceptC_Vale",
+    "args": {
+      "description": "a fortified coastal settlement below huge mountains, seen from directly beside it, strict flat side profile like a technical elevation drawing. A long wall of enormous irregular stone blocks stacked without mortar, far taller than the buildings behind it, a squat flat-topped watchtower of the same rough stone, a gateway spanned by one massive straight timber lintel with no arch, crude houses of rubble stone with flat clay roofs behind the wall, timber scaffolding against one section, a stone ramp leading up. Grey mountain slopes rising behind. Cool palette of grey stone, dry ochre earth and dark timber. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  }
+]

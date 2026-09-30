@@ -1,0 +1,37 @@
+[
+  {
+    "nome": "_fonte_mooring",
+    "args": {
+      "description": "one single massive mooring post seen from directly beside it, strict flat side profile like a technical elevation drawing. A thick weathered timber post as wide as a tree trunk standing upright in a stone socket, its top worn round, heavy rope coiled several times around it and trailing down to the ground in loose loops, dark waterline stain on the lower half. Palette of dark weathered timber, pale rope and grey stone. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 160, "height": 224, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_giant_crates",
+    "args": {
+      "description": "one single stack of oversized cargo seen from directly beside it, strict flat side profile like a technical elevation drawing. Two enormous wooden crates with thick planks and iron corner bands stacked one on the other, a huge barrel lying on its side beside them with heavy hoops, a folded fishing net and a coil of thick rope on top, everything built far larger than a person could carry. Palette of dark weathered timber, grey iron and pale rope. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 288, "height": 224, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_stone_stair",
+    "args": {
+      "description": "one single flight of enormous stone steps seen from directly beside it, strict flat side profile like a technical elevation drawing. Six steps of huge rough grey blocks climbing to the right, each step far taller than a normal stair so a person would have to climb rather than walk, the front faces chipped and worn, dark shadow under each overhang. Palette of cool grey stone. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 288, "height": 224, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_coastal_scrub",
+    "args": {
+      "description": "one single clump of dark coastal scrub seen from directly beside it, strict flat side profile like a technical elevation drawing. Dense small dark green leaves on stiff woody stems, a rounded windswept silhouette leaning to one side, a few bare grey twigs sticking out, nothing under it. Cool palette of dark green and grey-brown. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 160, "height": 128, "no_background": true, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_broken_ship",
+    "args": {
+      "description": "one single wrecked wooden ship hull seen from directly beside it, strict flat side profile like a technical elevation drawing. A large broken hull tipped on its side with a jagged hole smashed through the planking, the ribs exposed inside, a snapped mast lying across it, torn sailcloth hanging loose, scattered planks around the base. Palette of dark weathered timber, pale torn sailcloth and grey shadow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 384, "height": 192, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]

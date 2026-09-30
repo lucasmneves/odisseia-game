@@ -1,0 +1,23 @@
+[
+  {
+    "nome": "CICLOPES_ConceptA_IlhaSelvagem",
+    "args": {
+      "description": "a wild uninhabited Mediterranean island hillside seen from directly beside it, strict flat side profile like a technical elevation drawing. Bare pale limestone outcrops breaking through dry earth, tufts of tough silver-green scrub and thorny bushes, a few wind-bent olive trees with gnarled trunks, loose boulders scattered on the slope, a goat track worn into the dirt. Behind it a bright blue midday sky and a taller grey rocky ridge. Warm sunlit palette of pale limestone, dry ochre earth, olive green and sea blue. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "CICLOPES_ConceptB_CostaComCaverna",
+    "args": {
+      "description": "a rocky Mediterranean sea cliff with a cave mouth in it, seen from directly beside it, strict flat side profile like a technical elevation drawing. A wall of layered grey and pale limestone rising from a narrow pebble beach, a wide dark cave opening at its base with jagged stone edges, water lapping at the rocks, clumps of coastal scrub clinging to ledges, a few large fallen boulders. Bright blue sky above and turquoise shallow water in front. Warm sunlit palette of pale limestone, cool grey stone, olive green and turquoise. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "CICLOPES_ConceptC_CavernaDoGigante",
+    "args": {
+      "description": "the inside of an enormous cave lit by a fire, seen from directly beside it, strict flat side profile like a technical elevation drawing. A vast chamber of grey rock with a rough uneven floor, thick stone columns and hanging stalactites at the top, an oversized campfire ringed with boulders throwing warm orange light on the walls, gigantic clay storage jars taller than a person, huge stacked logs, a crude oversized wooden pen, a big pile of pale stones. Everything scaled far too large for an ordinary person. Palette of cool grey stone and dry ochre with warm orange firelight, bright enough to read clearly, adventurous and not frightening. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  }
+]
