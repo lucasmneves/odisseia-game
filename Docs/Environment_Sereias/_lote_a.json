@@ -1,0 +1,58 @@
+[
+  {
+    "nome": "sereias_bg_sea",
+    "args": {
+      "description": "a wide calm open sea under a bright hazy sky, seen straight on from the shore, strict flat side profile like a technical elevation drawing. A high pale gold and cream sky with soft haze near the horizon, a flat far horizon line, and below it wide still turquoise water carrying long thin horizontal glints of light. Nothing else in the frame. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 512, "height": 256, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "sereias_bg_islets",
+    "args": {
+      "description": "a row of small distant limestone islets standing in calm water, seen straight on from far away, strict flat side profile like a technical elevation drawing. Low rounded humps of pale cream stone of different heights, soft green scrub on their tops, their bases meeting flat turquoise water, hazy and pale from distance. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 512, "height": 192, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "sereias_mid_cliff",
+    "args": {
+      "description": "a long low cliff wall of pale cream limestone seen straight on from beside it, strict flat side profile like a technical elevation drawing. Horizontal weathered strata, rounded blocky forms, small ledges, tufts of green scrub and pale flowers growing from cracks, darker damp stone along the bottom edge. The wall continues past both edges of the frame. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 512, "height": 256, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "sereias_tiles_sand",
+    "args": {
+      "description": "a horizontal band of fine pale beach sand seen from beside it in cross section, strict flat side profile like a technical elevation drawing. A crisp top surface line of bright cream sand, then packed damp sand below in warmer tan, small pebbles and shell fragments through it, growing darker toward the bottom. The band continues past both edges of the frame. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 512, "height": 160, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "sereias_tiles_rock",
+    "args": {
+      "description": "a horizontal band of pale limestone shelf seen from beside it in cross section, strict flat side profile like a technical elevation drawing. A flat worn top surface of cream stone, then blocky layered rock below with horizontal joints and cracks, patches of green weed in the seams, darker damp stone toward the bottom. The band continues past both edges of the frame. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 512, "height": 160, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "sereias_water_surface",
+    "args": {
+      "description": "a horizontal band of calm shallow turquoise sea water seen from slightly above, strict flat side profile like a technical elevation drawing. Bright clear turquoise with long thin horizontal white glints scattered across it, gentle darker ripple lines, growing deeper and bluer toward the bottom of the band. The band continues past both edges of the frame. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 512, "height": 128, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "sereias_foam_line",
+    "args": {
+      "description": "a thin horizontal line of white sea foam where shallow water meets sand, isolated on transparent background, strict flat side profile like a technical elevation drawing. Soft irregular white and pale green froth with small bubbles, thicker in places and thinner in others, fading to nothing at its top and bottom edges. The line continues past both edges of the frame. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 512, "height": 64, "no_background": true, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "sereias_shore_stones",
+    "args": {
+      "description": "a small cluster of smooth rounded sea stones resting on sand, isolated on transparent background, seen from beside them, strict flat side profile like a technical elevation drawing. Six or seven water-worn pebbles of pale cream and warm grey stone in different sizes, the larger ones behind, damp and slightly darker at their bases, a little green weed between two of them. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 192, "height": 96, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "nome": "gado_altar",
+    "args": {
+      "description": "a low ancient Greek stone altar, isolated on transparent background, seen from directly beside it. A rectangular block of pale golden limestone on two worn steps, its top hollowed into a shallow basin with a small warm flame burning in it, a simple carved sun disc on the front face, weathered and cracked stone, a few dry offerings and a shallow bowl on the step. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 224, "height": 192, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "gado_standing_stones",
+    "args": {
+      "description": "a row of five rough upright standing stones, isolated on transparent background, seen from directly beside them. Weathered pale grey blocks of uneven height and width planted in the ground and leaning at slightly different angles, worn smooth on top by weather, lichen and small green weeds around their bases. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 320, "height": 160, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "gado_cattle_grazing",
+    "args": {
+      "description": "a single sturdy white ox with its head lowered to graze, in profile facing right, isolated on transparent background. A heavy calm bull with a broad body and short strong legs, its neck bent down so the muzzle nearly touches the ground, short curved horns, its coat creamy white shading to warm gold along the back and flanks, dark hooves and dark muzzle, a small brass bell on a band round its neck. Calm and healthy and well fed. Simple clear silhouette. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 160, "height": 128, "no_background": true, "view": "side", "direction": "east", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "gado_calf",
+    "args": {
+      "description": "a single small white calf standing in profile facing right, isolated on transparent background. A young animal with a small round body, thin legs, a short neck and only tiny horn buds, its coat creamy white with a faint warm gold along the back, dark hooves and dark muzzle, clearly smaller and slighter than a grown ox. Simple clear silhouette. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 128, "height": 96, "no_background": true, "view": "side", "direction": "east", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "gado_shrubs_flowers",
+    "args": {
+      "description": "a low clump of meadow flowers and small shrubs, isolated on transparent background, seen from directly beside it. Tufts of green grass with small white and yellow wildflowers on thin stems, two low rounded bushes with small dark leaves and a few pink blossoms, low and wide and soft. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 224, "height": 96, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "gado_ruined_column",
+    "args": {
+      "description": "a broken ancient Greek stone column standing alone, isolated on transparent background, seen from directly beside it. A pale golden limestone shaft with faint vertical fluting, snapped off jagged about two thirds up, standing on a simple square base, cracked and chipped edges, dry grass and small weeds gathered at its foot. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 128, "height": 256, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "gado_shade_tree_big",
+    "args": {
+      "description": "a single very large spreading shade tree standing alone, isolated on transparent background. A thick straight trunk rising into a broad high canopy of dense green leaves in soft rounded clumps, several heavy low branches spreading wide, rough dark bark, dappled lighter green where the sun catches the top of the canopy, and short grass at the foot. Much taller and wider than an olive tree. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 288, "height": 288, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]

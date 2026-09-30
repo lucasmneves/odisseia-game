@@ -465,3 +465,321 @@ Não há Python nesta máquina; scripts auxiliares vão de Node.
 Artifacts publicados:
 - Personagem: https://claude.ai/code/artifact/a54d574a-2017-4bd9-a0eb-8477a0b6d22d
 - Cenário: https://claude.ai/code/artifact/7a762a9f-8474-45d8-aa13-625701ecb700
+
+## Fases 09 e 10 — Mundo dos Mortos e Sereias (2026-09-06)
+
+Integradas e verificadas. `PlaceholderProbe` sai 0 nas duas; a bateria completa
+(`OdysseusSheetProbe`, `LocomotionProbe.Medir`, `JumpReachProbe.Medir`,
+`InputBindingsProbe.Check`, `CampaignValidation`) sai 0; zero erro de compilação.
+
+- Masters: `Docs/Environment_MundoDosMortos/MORTOS_MASTER_REFERENCE.md` e
+  `Docs/Environment_Sereias/SEREIAS_MASTER_REFERENCE.md`.
+- Vestidores: `MundoDosMortosSceneDresser` (55 objetos) e `SereiasSceneDresser` (47).
+- Gerações PixelLab: 16 em Mortos, 18 em Sereias.
+
+**Pendência anterior a estas fases:** `PlaceholderProbe` falha em Troia (fase 02) com nove
+placeholders acesos — seis são plataformas de gameplay nunca vestidas (`Platform_Bridge`,
+`Gauntlet_1..3`, `Wall_Troia`, `Obstacle_Low`) e `TroyScenery/Sky_Fill` só precisa de
+justificativa escrita. As fases 11 a 16 ainda não foram vestidas.
+
+## Fases 11 e 12 — Cila e Caribdis e Gado do Sol (2026-09-09)
+
+Integradas e verificadas. `PlaceholderProbe` sai 0 nas duas, `CampaignValidation` sai 0, zero
+erro de compilação.
+
+- Masters: `Docs/Environment_CilaCaribdis/CILA_MASTER_REFERENCE.md` e
+  `Docs/Environment_GadoDoSol/GADO_MASTER_REFERENCE.md`.
+- Vestidores: `CilaCaribdisSceneDresser` (29 objetos) e `GadoDoSolSceneDresser` (49).
+- Gerações PixelLab: **40 nas duas somadas** (528 → 568 de 2000).
+
+### O que estas duas fases acrescentam ao que já se sabia
+
+**O xadrez de transparência PINTADO reapareceu quatro vezes**, e o motivo de ele passar
+despercebido virou ferramenta: *o visualizador de PNG mostra alpha real como xadrez cinza,
+exatamente igual a um xadrez pintado.* Olhar não distingue; só contar pixels opacos distingue.
+`Tools/checker-cut.js` faz as duas coisas — `temXadrezPintado` cobra e `removerXadrez` corta.
+
+O `cutout.js` genérico **não** serve nesse caso: os cinzas do xadrez medem o mesmo valor das
+faces iluminadas do basalto, e o flood-fill por tolerância removeu 50,7% da parede, devolvendo
+um esqueleto. Quando cor não separa fundo de objeto, o que separa é ESTRUTURA (o xadrez ocupa a
+primeira linha inteira) ou GEOMETRIA (o redemoinho é uma elipse).
+
+**Rampa estreita demais não escurece um asset: ela o APAGA.** A parede colunar quantizada na
+rampa `Basalto` (4 passos, faixa de 0,18) virou uma mancha preta sem colunas. A medida que
+resolveu foi ver que ela já era mais escura que o chão (L 0,278 contra 0,432) — a quantização
+não corrigia nada. Escurecer por FATOR preserva todo o contraste interno.
+
+**Exclusão no prompt não segura substantivo de arquitetura.** "not built by anyone, no bricks,
+no masonry" corrigiu Sereias e falhou três vezes aqui, porque *"boca de caverna", "arco" e
+"prateleira de rocha" já são substantivos de arquitetura*. A saída foi a da casa de Ítaca:
+parar de gerar e construir — o pináculo é uma fatia da parede e a falésia da caverna é a mesma
+parede escavada, as duas a custo zero.
+
+**Quatro de cinco faixas de parallax não ladrilhavam**, e nenhuma tinha dado sinal. Medir com
+`seam-test.js` antes de montar é barato; `mirrorDouble` resolve as quatro.
+
+**Pivô na base desenha PARA CIMA.** Três objetos da fase 12 foram postos fora do quadro sem um
+único erro no console: o véu da tempestade em y=4 ocupava de 4 a 44; as ondas de Cila em
+baseY −3,2 flutuavam no ar entre as colunas. Toda faixa posicionada por topo precisa descer a
+altura inteira.
+
+**Um agrupamento vale dez componentes.** A fase 11 saiu com 13 `ParallaxLayer` contra 5 a 8 das
+outras onze fases. Penduradas em dois contêineres com um componente cada, caíram para 5 — o
+mesmo resultado visual, metade das escritas de transform por quadro.
+
+### Pendências
+
+- **Notion não foi atualizado.** O servidor MCP dele usa OAuth (`https://mcp.notion.com/mcp`,
+  sem token estático em `~/.claude.json`) e devolve `401 invalid_token` ao ser chamado por
+  `Tools/notion.js`. O contorno que funciona para o PixelLab não funciona aqui. Toda a
+  documentação desta rodada está nos dois masters acima, prontos para publicação quando o
+  servidor for autenticado no escopo desta pasta.
+- **Nada foi testado em play mode, mobile ou navegador** — vale para estas duas fases e para as
+  nove anteriores.
+- `LocalizationProbe.Check` falha com `código pede chave que não existe: speaker.` — é falso
+  positivo pré-existente: o probe lê o literal da concatenação `"speaker." + falante` em
+  `PrologueProbe.cs:245`. Sem relação com as fases 11 e 12, que não usam chaves de falante.
+
+## Fases 13 e 14 — Calipso e Ítaca Return (2026-09-12)
+
+Integradas e verificadas. `PlaceholderProbe` sai 0 nas duas, `CampaignValidation` sai 0, zero
+erro de compilação.
+
+- Masters: `Docs/Environment_Calipso/CALIPSO_MASTER_REFERENCE.md` e
+  `Docs/Environment_ItacaReturn/ITACARETURN_MASTER_REFERENCE.md`.
+- Vestidores: `CalipsoSceneDresser` (42 objetos) e `ItacaReturnSceneDresser` (62, dos quais
+  **40 são arte reusada da fase 01**).
+- Gerações PixelLab: **28 nas duas somadas** (568 → 596 de 2000).
+
+### O que estas duas fases acrescentam
+
+**Ítaca Return não tem paleta própria — usa a da fase 01, sem trocar um hex.** É a primeira fase
+da campanha assim, e a decisão é o requisito: cor é o que o olho reconhece antes da forma, e uma
+paleta nova diria "outro lugar" antes de qualquer prédio entrar em quadro. A mudança vem da LUZ
+(fim de tarde em vez de meio-dia), do ESTADO (casa com hera, cerca quebrada, barco apodrecido) e
+do que PASSOU A EXISTIR (feira, braseiros). Os prédios reusados ficam intactos de propósito: o
+contraste entre o que resistiu e o que não resistiu é o que conta o tempo.
+
+**Negar um conceito no prompt deixa o modelo escolher o substituto; nomear a alternativa não.**
+"not built by anyone, no bricks, no masonry" falhou de novo na falésia de Calipso. O que
+funcionou foi descrever positivamente a forma natural e insistir na propriedade que a alvenaria
+não tem — CURVA: *"worn into soft rounded scallops, every edge CURVED and bulging, no flat
+surface anywhere"*. É a mesma razão do sucesso de "basalto colunar hexagonal" na fase 11.
+
+**Camada de parallax não tem borda fixa em x.** Ela se desloca em relação ao mundo a cada
+quadro, então encurtá-la só muda onde a borda passeia. Faixa que precisa parar num ponto do
+mundo tem de ser `Faixa` presa ao mundo, não `Camada`.
+
+**Espelhar cria um eixo de simetria que o olho pega.** Na faixa de vila de Ítaca Return o eixo
+produziu um prédio simétrico em forma de borboleta ao lado da porta de casa. A posição do eixo é
+calculável a partir do início da faixa e do período; mascarar com um prop é mais barato que
+regerar.
+
+**Folga do chão tem de cobrir o alcance da CÂMERA, não o fim do chão.** Um buraco magenta no
+canto do último quadro veio de folga de 8 com câmera que enxerga 11 unidades além do chão.
+
+**Terceira fase seguida em que um ramo do classificador resolveu o material errado**: cachoeira
+cinza-pedra, tronco de mármore branco, areia estourada. A regra que sobrou: **o destino dos
+ramos ambíguos é declarado por asset, nunca afinado no limiar** — casca, terra, pano e calcário
+ocupam a mesma região de matiz e luminância, e nenhum limiar os separa.
+
+### Pendências
+
+- **Notion continua inacessível**, verificado nesta rodada: `401 invalid_token`. O servidor MCP
+  dele é OAuth e não tem token estático em `~/.claude.json`. `Tools/notion.js` está pronto e
+  volta a funcionar quando o servidor for autenticado neste escopo.
+- **Nada testado em play mode, mobile ou navegador** — vale para as catorze fases vestidas.
+- As fases 15 e 16 seguem sem vestir.
+
+## Fase 15 — Pretendentes, e revisão da 14 (2026-09-12, segunda rodada)
+
+Fase 15 integrada e verificada; fase 14 revisada contra o segundo briefing. `PlaceholderProbe` sai 0
+nas duas, `CampaignValidation` sai 0, zero erro de compilação, **zero pixel magenta** nas capturas.
+
+- Master: `Docs/Environment_Pretendentes/PRETENDENTES_MASTER_REFERENCE.md`; a revisão da 14 está na
+  seção 9 de `ITACARETURN_MASTER_REFERENCE.md`.
+- Vestidor novo: `PretendentesSceneDresser` (50 objetos — 15 da fase 01, 6 da fase 14, 23 novos).
+- Gerações PixelLab: **15** (601 → 616 de 2000).
+
+### O que esta rodada acrescenta
+
+**Paleta que estende em vez de substituir.** A 15 tem as 9 rampas de Ítaca lidas do arquivo da fase
+01, intactas, mais Bronze, Fogo, Vinho e Noite — literalmente o que os pretendentes trouxeram. É o
+jeito de ter identidade própria sem deixar de ser a mesma casa.
+
+**A paleta da fase 01 tem uma cor repetida** (`#6b5d4e` em `Terra / caminho` e `Pedra`). É anterior à
+regra de não repetir e ficou registrada, não corrigida: mudar a paleta da 01 quebraria a
+continuidade das três fases de Ítaca.
+
+**Os tilesets de Ítaca vazam o fundo da câmera na linha do chão.** A fileira de superfície deles tem
+falhas, e com o bloco de terra terminando em −3 nada cobria a faixa atrás. Medido: até 118 px
+magenta por quadro, todos em y=−2,0. **Passou despercebido na fase 14 da rodada anterior** —
+encontrado agora contando pixels, não olhando. Calipso não tinha o defeito (tiles com superfície
+fechada), e a comparação entre as duas apontou a causa. Qualquer fase futura que use os tiles de
+Ítaca precisa do bloco de terra subindo até −1,9.
+
+**Contar pixels de uma cor numa captura acha defeito que o olho não acha.** Uma linha pontilhada
+de 1 px na borda do chão some numa miniatura de 960×540. Um script de 10 linhas contando
+`#ff00ff` pegou nas duas fases de uma vez.
+
+**Xadrez pintado dentro de objeto vazado** (navio com cordame) escapa das duas passadas do
+`checker-cut.js`. Terceira passada opt-in (`cercado`) anda só por pixel cinza-neutro na cor exata
+do xadrez.
+
+**Editor do Unity aberto trava o batchmode**, e aconteceu no início desta rodada. Ler a cena direto
+do YAML adianta trabalho mas **não enxerga instâncias de prefab** — inimigos e `LevelGoal` só
+aparecem no probe real.
+
+### Pendências
+
+- **Notion continua inacessível** (OAuth; `401`). Documentação nos masters e aqui.
+- **Nada testado em play mode, WebGL, mobile ou gamepad** — vale para as quinze fases vestidas.
+- Fogo e tochas são sprites **estáticos**: não há componente de cintilação no projeto, e o briefing
+  proíbe criar sistema novo para isso.
+- Fase 16 segue sem vestir.
+
+## Personagens da Fase 01 — Character Art Master (2026-09-29)
+
+Referência nova de personagens: **`Docs/Characters/CHARACTER_ART_MASTER.md`** (escala, paleta por
+facção, NPC design system, animação de NPC, processo PixelLab). Notion: página "Character Art Master —
+Fase 01" em 🎨 Art, "PixelLab — Personagens" em 🤖 AI e decisões D-011 a D-015.
+
+- **Odisseu mantido** (master de 16 estados). Os seis NPCs pintados saíram da fase 01: 30 figuras
+  trocadas por 11 personagens v3 + 3 variações de cor, todos com Idle (`SpriteAnimator`, pingue-pongue).
+- Folhas em `Assets/Resources/Odisseia/Characters/NPCs/CHR_<Nome>.png`; fontes e ids em `Docs/Characters/`.
+- Penélope estava a 1,7 un (mais alta que o Odisseu); agora 1,35. Telêmaco virou criança (0,98 un).
+  O instrutor usava a arte do Alcínoo. Agamenon não aparece na fase — o arauto de Micenas o representa.
+- PixelLab: **38 gerações** (616 → 654 de 2000).
+- Verificado: `PrologueSceneBuilder.Build`, `PrologueProbe` (39 figuras apoiadas, desvio 0,00),
+  `PlaceholderProbe`, `OdysseusSheetProbe`, `CampaignValidation`, capturas em
+  `Docs/Characters/Fase01/_capturas/`.
+
+### Pendências
+- A arte pintada `CHR_NPC_*` continua nas fases 14 e 15 e nos Feácios. O Telêmaco de lá é adulto:
+  precisa de personagem próprio, não do da fase 01.
+- Figurantes antigos `Environments/Ithaca/Figures/ithaca_villager_*` ficaram sem uso (não apagados).
+- Nada testado em play mode, navegador, mobile ou gamepad — o Idle dos NPCs só roda em runtime.
+
+## Personagens da Fase 02 — Troia (2026-09-29)
+
+Extensão do Character Art Master: **`Docs/Characters/Fase02/TROY_CAST.md`**. Notion: "Character Art —
+Fase 02 — Troia" em 🎨 Art, seção nova em "PixelLab — Personagens", decisões D-016 a D-019.
+
+- Auditoria por `CastProbe.Run -probeScene <cena>` (novo, serve a qualquer fase): Troia tem só o
+  Odisseu e 3 `EnemyBasic`. Nenhum NPC, nenhum narrativo em cena.
+- **Trojan Soldier Master** (Idle, Run, Hit, Death) substitui o inimigo **só em Troia**, por override
+  nas instâncias (`TroyCastDresser.Dress`). O prefab `EnemyBasic` ficou intacto.
+- **Greek Soldier Master** (Micenas): 3 figuras de fundo no acampamento.
+- PixelLab: **9 gerações** (654 → 663 de 2000).
+- `CampaignValidation`, `OdysseusSheetProbe` e `PrologueProbe` passam. `PlaceholderProbe` em Troia
+  segue falhando pelos 9 placeholders de CENÁRIO já conhecidos.
+
+### Pendências
+- As outras 6 fases com `EnemyBasic` (01, 03, 08, 09, 14, 15) ainda usam o inimigo pintado carmesim.
+- Nada testado em play mode, navegador, mobile ou gamepad.
+
+## Personagens da Fase 03 — Cicones (2026-09-29)
+
+Extensão: **`Docs/Characters/Fase03/CICONES_CAST.md`**. Notion: "Character Art — Fase 03 — Cicones",
+seção nova em "PixelLab — Personagens", decisões D-020 e D-021.
+
+- CastProbe (agora conta Animators, overrides por inimigo e scripts da cena): Odisseu + 3 `EnemyBasic`
+  idênticos ao prefab; 0 Animator; nenhum NPC, grego ou narrativo.
+- **Cicones Warrior Master** (Idle, Run 3–7, Hit, Death) por override na cena (`CiconesCastDresser.Dress`).
+- Override virou helper comum: `EnemyFactionOverride.Aplicar` (Troia refatorada e reverificada).
+- PixelLab: **6 gerações** (663 → 669 de 2000).
+- `PlaceholderProbe` Cicones limpo; `CampaignValidation` passa.
+- Inimigo carmesim ainda nas fases 01, 08, 09, 14 e 15.
+
+## Personagens da Fase 04 — Citera (2026-09-29)
+
+Extensão: **`Docs/Characters/Fase04/CYTHERA_CAST.md`**. Notion: "Character Art — Fase 04 — Citera",
+seção em "PixelLab — Personagens", decisões D-022 e D-023. **0 gerações** (669 de 2000).
+
+- CastProbe: só o Odisseu. A fase fala com a tripulação e um "Companheiro" responde, mas o navio estava vazio.
+- `CyteraCastDresser.Dress`: marinheiro, remador ocre e Elpenor oliva da Fase 01 nos conveses
+  (pés no topo do colisor, guarda de 1,5 un do nascimento). `Remove` tira o elenco.
+- `PlaceholderProbe` Citera limpo; `CampaignValidation` passa.
+- **Pendência de cenário:** linha magenta de 1 px na altura do mar em todas as capturas; não é dos
+  personagens (mesma contagem sem o elenco); as capturas de 06/09 tinham 0 → regressão posterior.
+
+## Personagens da Fase 05 — Ciclopes (2026-09-29)
+
+Extensão: **`Docs/Characters/Fase05/CYCLOPES_CAST.md`** — contém o POLYPHEMUS CHARACTER MASTER v1.
+Notion: "Character Art — Fase 05 — Ciclopes", seção em "PixelLab — Personagens", decisões D-024 a D-026.
+
+- CastProbe (agora com bloco de chefe): Odisseu + Polifemo placeholder (3 quadrados flutuando 3 un acima
+  do chão). Chefe estacionário, sem colisor, 999 de vida; eventos `AttackTelegraphed`/`AttackExecuted` sem ouvinte.
+- Polifemo 4,6 un, de pé, olhando para a esquerda; Idle + Telegraph + Attack (os dois últimos de UMA
+  geração "Slam" dividida). `BossAnimator` (novo, runtime) liga os eventos; `BossController` intacto.
+- **O v3 não faz um olho só** (2 tentativas): olho único pintado por `Tools/cyclops-eye.js` em cada quadro.
+- `CyclopsCastDresser.Dress` / `.Poses`. Justificativas do Polifemo removidas do `PlaceholderProbe`.
+- PixelLab: **28 gerações** (669 → 697 de 2000), 1 master descartado.
+
+## Personagens da Fase 06 — Éolo (2026-09-29)
+
+Extensão: **`Docs/Characters/Fase06/AEOLUS_CAST.md`** — AEOLUS CHARACTER MASTER v1 e AEOLUS WIND BAG MASTER.
+Notion: "Character Art — Fase 06 — Éolo", seção em "PixelLab — Personagens", decisões D-027 e D-028.
+
+- CastProbe: só o Odisseu; o Éolo não estava na cena, mas o palácio foi montado com o vão central
+  reservado para ele. Entra como figura (Idle), no alto dos degraus, diante da porta (`AeolusCastDresser`).
+- Odre dos ventos refeito em densidade nativa (0,61 un); `EoloSceneDresser` agora usa escala 1.
+- PixelLab: **8 gerações** (697 → 705 de 2000), 3 descartes.
+- `PlaceholderProbe` Éolo limpo; `CampaignValidation` passa.
+- Pendência de cenário: peças do palácio encolhidas a 0,52 (mesma classe de defeito de densidade do odre antigo).
+
+## Personagens da Fase 07 — Lestrigões (2026-09-29)
+
+Extensão: **`Docs/Characters/Fase07/LESTRIGONS_CAST.md`** — LESTRIGON WARRIOR MASTER v1.
+Notion: "Character Art — Fase 07 — Lestrigões", seção em "PixelLab — Personagens", decisões D-029 a D-031.
+
+- CastProbe (agora com bloco de perseguidor): 2 arremessadores `Giant` placeholder + `PursuerHazard`
+  **invisível** (o `LestrigoesSceneDresser` desliga o desenho dele). Sem inimigos carmesim.
+- Um master para os três: arremessadores Idle/Telegraph/Attack (`BossAnimator`), perseguidor Run (filho
+  `Art_Lestrigon`, que anula a escala 3×4 herdada do Transform do colisor).
+- `BossArtDresser` (novo) é o helper comum de chefe; `CyclopsCastDresser` refatorado e reverificado.
+- PixelLab: **36 gerações** (705 → 741 de 2000), 1 descarte.
+- **Pendência de cenário registrada, não tocada:** peças do palácio de Éolo (fase 06) encolhidas a 0,52.
+
+## Personagens da Fase 08 — Circe (2026-09-29)
+
+Extensão: **`Docs/Characters/Fase08/CIRCE_CAST.md`** — CIRCE CHARACTER MASTER v1 e lobo encantado.
+Notion: "Character Art — Fase 08 — Circe", seção em "PixelLab — Personagens", decisões D-032 a D-034.
+
+- CastProbe: Circe ausente (templo com vão reservado); 2 `EnemyBasic` carmesim; transformação é só tinta.
+- Circe (v3, perfil `south-east`) diante do templo, Idle com vapor na taça; lobos encantados (`pro` com
+  estilo do Odisseu — o v3 recusa quadrúpede) por override (`CirceCastDresser`).
+- PixelLab: **30 gerações** (741 → 771 de 2000), 1 descarte (lobo `standard`).
+- `EnemyBasic` carmesim ainda nas fases 01, 09, 14 e 15.
+
+## Personagens da Fase 09 — Mundo dos Mortos (2026-09-29)
+
+Extensão: **`Docs/Characters/Fase09/MUNDO_DOS_MORTOS_CAST.md`** — Shade Warrior, Spirit NPC (`Shade`), Anticleia.
+Notion: "Character Art — Fase 09 — Mundo dos Mortos", seção em "PixelLab — Personagens", decisões D-035 a D-037.
+
+- Inimigos carmesim -> sombras de guerreiros (override); 3 sombras + Anticleia nos altares reservados
+  (`UnderworldCastDresser`). Tirésias não está em cena. Transparência pela cor do renderer.
+- O alpha 0,55 antigo deixava a sombra cinza invisível: agora ciano pálido 0,85 nesta cena.
+- PixelLab: **12 gerações** (771 → 783 de 2000), sem descarte.
+- `EnemyBasic` carmesim ainda nas fases 01, 14 e 15.
+
+## Personagens da Fase 10 — Sereias (2026-09-29)
+
+Extensão: **`Docs/Characters/Fase10/SIRENS_CAST.md`** — SIREN CHARACTER MASTER v1.
+Notion: "Character Art — Fase 10 — Sereias", seção em "PixelLab — Personagens", decisão D-038.
+
+- CastProbe: nenhuma sereia; só a mecânica do canto (SirenZone, SirenResistance, MastAnchor). Sem inimigos.
+- Sereia mulher-ave (asas turquesa), bonita; Idle que canta; 3 figuras (santuário + ao pé das agulhas)
+  com 2 variações por matiz (`SirenCastDresser`).
+- PixelLab: **3 gerações** (783 → 786 de 2000), sem descarte.
+
+## Personagens da Fase 11 — Cila e Caríbdis (2026-09-30)
+
+Extensão: **`Docs/Characters/Fase11/CILA_CARIBDIS_CAST.md`** — CILA CHARACTER MASTER v1.
+Notion: "Character Art — Fase 11 — Cila e Caríbdis", seção em "PixelLab — Personagens", decisões D-039 e D-040.
+
+- Cila = BOSS (`BossController` "Giant"): torso de mulher e seis serpentes; Idle/Telegraph/Attack; base y = 0,55
+  medida contra a câmera de jogo (tamanho 6, +1) — `ScyllaCastDresser`.
+- Caríbdis = ENVIRONMENT (`FX_Charybdis`), intocada; escala 0,42 fica como pendência de cenário.
+- PixelLab: **20 gerações** (786 → 806 de 2000), sem descarte.
+- Pendências: Cila com pés visíveis ("pairando"); palácio de Éolo 0,52; porco da Circe; `EnemyBasic` carmesim em 01, 14, 15.

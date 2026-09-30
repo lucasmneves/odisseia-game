@@ -66,6 +66,95 @@ public static class PlaceholderProbe
         // risco de vao descoberto e buraco PRETO, nao buraco brilhante.
         ["CyteraScenery/Sky_Fill"] = "cobertura acima do céu de tempestade, na cor mais escura da rampa de nuvem",
         ["CyteraScenery/Sea_Fill"] = "água escura abaixo das faixas de mar; nenhuma textura ali é vista pela câmera",
+
+        // Ciclopes.
+        ["CiclopesScenery/Sky_Fill"] = "fundo de cobertura na cor do topo do degradê do céu",
+        ["CiclopesScenery/Valley_Fill"] = "vale escuro abaixo do horizonte, fora do alcance de leitura",
+        ["CiclopesScenery/Cave_Backdrop"] = "rocha maciça atrás da caverna; sem ela o céu aparece acima da faixa de parede",
+        ["CiclopesScenery/Cave_Veil_0"] = "véu de escurecimento progressivo da caverna: cor chapada com alpha é a ferramenta certa para isso",
+        ["CiclopesScenery/Cave_Veil_1"] = "idem Cave_Veil_0",
+        ["CiclopesScenery/Cave_Veil_2"] = "idem Cave_Veil_0",
+        ["CiclopesScenery/Bank_Floor_1"] = "barranco abaixo do tile de chão; textura ali competiria com o terreno jogável",
+        ["CiclopesScenery/Bank_Floor_2"] = "idem Bank_Floor_1",
+        ["CiclopesScenery/Bank_Floor_Narrow"] = "idem Bank_Floor_1",
+        ["CiclopesScenery/Bank_Floor_3_Boss"] = "idem Bank_Floor_1",
+        ["CiclopesScenery/Bank_Floor_4"] = "idem Bank_Floor_1",
+
+        // Polifemo NAO e cenario: e o chefe da fase, e o briefing desta rodada proibe gerar
+        // personagens. Fica registrado aqui para o probe nao mascarar a pendencia dele.
+        // Polyphemus/Body, Head e Eye saíram daqui em 2026-09-29: o chefe ganhou arte
+        // (CyclopsCastDresser). Se um quadrado voltar, o probe precisa acusar.
+
+        // O brilho da saida e uma AFFORDANCE de gameplay, nao decoracao: marcar a saida com
+        // uma forma de cor chapada e o uso certo do quadrado, do mesmo jeito que os veus.
+        ["ExitGlow"] = "brilho que marca a saída da fase; forma de cor chapada é a ferramenta certa para um glow",
+
+        // Eolo.
+        ["EoloScenery/Sky_Fill"] = "cobertura acima do céu; aqui o degradê escurece para cima, então a cobertura é a cor profunda",
+        ["EoloScenery/Air_Fill"] = "abaixo das ilhas não há chão nenhum: é ar, e o azul continua",
+
+        // Lestrigoes.
+        ["LestrigoesScenery/Sky_Fill"] = "fundo de cobertura na cor do topo do degradê do céu",
+        ["LestrigoesScenery/Valley_Fill"] = "vale escuro abaixo do horizonte, fora do alcance de leitura",
+        ["LestrigoesScenery/Bank_0"] = "barranco abaixo do tile de chão; textura ali competiria com o terreno jogável",
+        ["LestrigoesScenery/Bank_1"] = "idem Bank_0",
+        ["LestrigoesScenery/Bank_2"] = "idem Bank_0",
+
+        // Os gigantes NAO sao cenario: sao os inimigos da fase, e o briefing desta rodada
+        // proibe gerar personagens. Ficam registrados para o probe nao mascarar a pendencia.
+        // Giant/Body e Giant/Head saíram daqui em 2026-09-29: os Lestrigões ganharam arte
+        // (LestrigonCastDresser). Se um quadrado voltar, o probe precisa acusar.
+
+        // Circe.
+        ["CirceScenery/Canopy_Fill"] = "cobertura acima da copa, na cor da luz filtrada; nesta fase não há céu",
+        ["CirceScenery/Floor_Fill"] = "terra escura abaixo do tile de chão, fora do alcance de leitura",
+        ["CirceScenery/Bank_Floor_1"] = "barranco abaixo do tile de chão; textura ali competiria com o terreno jogável",
+        ["CirceScenery/Bank_Floor_2"] = "idem Bank_Floor_1",
+        ["CirceScenery/Bank_Floor_3"] = "idem Bank_Floor_1",
+
+        // Mundo dos Mortos. O briefing proibe preto absoluto, entao a cobertura desta fase e a
+        // pedra mais funda da paleta (#151615) e nao #000 — e por isso ela aparece aqui, como
+        // preenchimento consciente, em vez de passar batida.
+        ["MortosScenery/Rock_Fill"] = "rocha macica acima e atras de tudo; sem ela o topo do quadro fica sem nada desenhado, e o briefing proibe preto absoluto",
+        ["MortosScenery/Depth_Fill"] = "rocha funda abaixo da linha do rio, fora do alcance de leitura da camera",
+        ["MortosScenery/River_Deep"] = "agua funda ATRAS da faixa do rio; sem ela a agua terminava numa linha reta contra a rocha preta, e um degrade chapado e a ferramenta certa para profundidade",
+        ["MortosScenery/Bank_0"] = "barranco abaixo do tile de chao; textura ali competiria com o terreno jogavel",
+        ["MortosScenery/Bank_1"] = "idem Bank_0",
+        ["MortosScenery/Bank_2"] = "idem Bank_0",
+
+        // Sereias.
+        ["SereiasScenery/Sky_Fill"] = "cobertura acima do ceu, em #e6debf — a cor MEDIDA da primeira linha do bg_sea; qualquer outro creme deixaria uma emenda horizontal visivel",
+        ["SereiasScenery/Sea_Fill"] = "agua escura abaixo da linha do chao, fora do alcance de leitura; sem ela o vao entre trechos mostra o ceu",
+        ["SereiasScenery/Bank_Floor_1"] = "barranco abaixo do tile de areia, em #776657 — a cor MEDIDA da ultima linha do proprio tile, para a emenda entre os dois desaparecer",
+        ["SereiasScenery/Bank_Floor_SirenZone"] = "idem Bank_Floor_1",
+        ["SereiasScenery/Bank_Floor_2"] = "idem Bank_Floor_1",
+
+        // Fase 11 — Cila e Caribdis. Só dois preenchimentos, e não há barranco: o corpo da
+        // plataforma aqui é o próprio tile Wang escurecido, não um retângulo chapado.
+        ["CilaCaribdisScenery/Sky_Fill"] = "cobertura acima do céu, em #847c77 — a cor MEDIDA da primeira linha de cila_bg_walls_far (274 dos 672 px dela); qualquer outro cinza deixaria uma emenda horizontal visível",
+        ["CilaCaribdisScenery/Deep_Fill"] = "água funda abaixo da linha do chão, no passo Profunda da rampa Agua funda; sem ela o vão entre as ilhas mostrava o fundo da câmera em magenta",
+
+        // Fase 12 — Gado do Sol.
+        ["GadoDoSolScenery/Sky_Fill"] = "cobertura acima do céu, em #6dafd1 — a cor MEDIDA da primeira linha de gado_bg_hills (387 dos 672 px)",
+        ["GadoDoSolScenery/Ground_Fill"] = "terra da ilha abaixo da linha do chão, no passo Profunda da rampa Terra; é terra e não mar, senão o pasto leria como ilha flutuante",
+
+
+        // Fase 13 — Calipso.
+        ["CalipsoScenery/Sky_Fill"] = "cobertura acima do céu, em #bb995e — a cor MEDIDA da primeira linha de calipso_bg_sea_horizon (846 dos 1342 px)",
+        ["CalipsoScenery/Ground_Fill"] = "terra da ilha abaixo da linha do chão, no passo Profunda da rampa Madeira; é terra e não mar, senão a floresta leria como ilha flutuante",
+
+
+        // Fase 14 — Itaca Return. A cobertura de ceu NAO e dourada: o topo do ceu de fim de
+        // tarde e o verde-acinzentado frio que sobra acima do ouro, e usar o ouro deixaria uma
+        // emenda horizontal onde a cobertura encontra a camada.
+        ["ItacaReturnScenery/Sky_Fill"] = "cobertura acima do céu, em #99a593 — a cor MEDIDA da primeira linha de itaca_ret_bg_dusk (546 dos 1342 px)",
+        ["ItacaReturnScenery/Ground_Fill"] = "terra abaixo da linha do chão, no passo Profunda da rampa Terra / caminho da paleta da FASE 01",
+
+
+        // Fase 15 — Pretendentes.
+        ["PretendentesScenery/Sky_Fill"] = "cobertura acima do céu: a cor MEDIDA da primeira linha de itaca_ret_bg_dusk (#99a593) multiplicada pelo mesmo tom de noite aplicado ao céu reusado, calculada no vestidor para não haver emenda",
+        ["PretendentesScenery/Ground_Fill"] = "terra abaixo do piso, no passo Profunda de Pedra; topo em −1,9 para cobrir as falhas da fileira de superfície dos tiles de Ítaca",
+        ["PretendentesScenery/Hall_Ceiling"] = "teto escuro do salão acima da parede, em Noite Profunda; o salão é interior, e sem ele o céu noturno aparecia por cima com a câmera alta",        ["LevelGoal/MagicGlow"] = "brilho mágico que marca a saída; forma de cor chapada é a ferramenta certa para um glow",
         ["World/Sea_Deep"] = "água profunda abaixo da faixa de oceano, no passo Profunda da rampa de Água",
         ["LevelGoal"] = "x=420, 50 un além do alcance máximo da câmera (o navio anda 16 un e a câmera trava em 360)",
         ["LevelGoal/Roof"] = "idem LevelGoal",

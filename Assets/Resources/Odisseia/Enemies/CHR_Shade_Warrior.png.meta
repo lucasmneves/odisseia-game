@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: e5132f0ad56ea6112165d21b7ecd91b6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1438696411
+    second: CHR_Shade_Warrior_Idle_00
+  - first:
+      213: 2090369835
+    second: CHR_Shade_Warrior_Idle_01
+  - first:
+      213: 1434851236
+    second: CHR_Shade_Warrior_Idle_02
+  - first:
+      213: 1574470194
+    second: CHR_Shade_Warrior_Idle_03
+  - first:
+      213: 623179018
+    second: CHR_Shade_Warrior_Idle_04
+  - first:
+      213: 1634707440
+    second: CHR_Shade_Warrior_Idle_05
+  - first:
+      213: 1165151348
+    second: CHR_Shade_Warrior_Run_00
+  - first:
+      213: 1218207862
+    second: CHR_Shade_Warrior_Run_01
+  - first:
+      213: 631837090
+    second: CHR_Shade_Warrior_Run_02
+  - first:
+      213: 641786654
+    second: CHR_Shade_Warrior_Run_03
+  - first:
+      213: 1059621205
+    second: CHR_Shade_Warrior_Run_04
+  - first:
+      213: 458514270
+    second: CHR_Shade_Warrior_Hit_00
+  - first:
+      213: 944902590
+    second: CHR_Shade_Warrior_Hit_01
+  - first:
+      213: 1339137493
+    second: CHR_Shade_Warrior_Hit_02
+  - first:
+      213: 49640656
+    second: CHR_Shade_Warrior_Hit_03
+  - first:
+      213: 1772733802
+    second: CHR_Shade_Warrior_Hit_04
+  - first:
+      213: 417903640
+    second: CHR_Shade_Warrior_Hit_05
+  - first:
+      213: 1277623223
+    second: CHR_Shade_Warrior_Death_00
+  - first:
+      213: 1180592402
+    second: CHR_Shade_Warrior_Death_01
+  - first:
+      213: 454467572
+    second: CHR_Shade_Warrior_Death_02
+  - first:
+      213: 1589615769
+    second: CHR_Shade_Warrior_Death_03
+  - first:
+      213: 1004930543
+    second: CHR_Shade_Warrior_Death_04
+  - first:
+      213: 904893651
+    second: CHR_Shade_Warrior_Death_05
+  - first:
+      213: 18278306
+    second: CHR_Shade_Warrior_Death_06
+  - first:
+      213: 643927350
+    second: CHR_Shade_Warrior_Death_07
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spritePixelsToUnits: 42.857143
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 190
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a34ff1a561c8e67eccd2d682fd6eaeb
+      internalID: 1438696411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 190
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e92e414ff3634f27038d88a09436b41
+      internalID: 2090369835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 190
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e2b34158ccbda5b6002acc0f2e0aca4
+      internalID: 1434851236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 190
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 336ae6a1a30efb0499cc4d36d19ea6fe
+      internalID: 1574470194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 190
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31f96555a80c6951816d8e1fefae7b58
+      internalID: 623179018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 190
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b36cc54fadd27b0059c88c0099f2a951
+      internalID: 1634707440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Run_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 127
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 818b2cc20f0dbff36bed5cfecb4222bf
+      internalID: 1165151348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Run_01
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 127
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41286b67a01d18b61d8c618e11d5cd3a
+      internalID: 1218207862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Run_02
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 127
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b81826eac904348420e977e5269158de
+      internalID: 631837090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Run_03
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 127
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df53d2c21a50d4be00e4fd78b2a97044
+      internalID: 641786654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Run_04
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 127
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 137602ceaf25b852af2e3b537303b55f
+      internalID: 1059621205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Hit_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 64
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b75d432e7ecf6bc7cd0f7011f993f3aa
+      internalID: 458514270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Hit_01
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 64
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b277b82d27a013a77fa36c99dc75eb
+      internalID: 944902590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Hit_02
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 64
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 896e5383ef3892ddbfddb6f80b8abe7b
+      internalID: 1339137493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Hit_03
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 64
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85a63c423159e72796b9ac6c4628c462
+      internalID: 49640656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Hit_04
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 64
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f2291ff94b1b8f3731c036afc583d33
+      internalID: 1772733802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Hit_05
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 64
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1c7c5ced9539f3c5aeb172eada7bfcc
+      internalID: 417903640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Death_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fb485d12f0ec18cb40a3b0a50c877d7
+      internalID: 1277623223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Death_01
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 1
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09bf99e52580ef7d17570ff3a38879c0
+      internalID: 1180592402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Death_02
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 1
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 568f436d7b336d998730925b6cd4a78b
+      internalID: 454467572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Death_03
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 1
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27b95a72d6dd7f8a782ac50563822dd7
+      internalID: 1589615769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Death_04
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 1
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67be120e930cdd6e968d9fc207f481ce
+      internalID: 1004930543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Death_05
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1192ed3d9bda8450953d5fb861067ba
+      internalID: 904893651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Death_06
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 1
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e27d32203a189326a561e3fce20907e
+      internalID: 18278306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Shade_Warrior_Death_07
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 1
+        width: 65
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20290c68f577337e02f8bf1c9a98eb2b
+      internalID: 643927350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CHR_Shade_Warrior_Idle_00: 1438696411
+      CHR_Shade_Warrior_Idle_01: 2090369835
+      CHR_Shade_Warrior_Idle_02: 1434851236
+      CHR_Shade_Warrior_Idle_03: 1574470194
+      CHR_Shade_Warrior_Idle_04: 623179018
+      CHR_Shade_Warrior_Idle_05: 1634707440
+      CHR_Shade_Warrior_Run_00: 1165151348
+      CHR_Shade_Warrior_Run_01: 1218207862
+      CHR_Shade_Warrior_Run_02: 631837090
+      CHR_Shade_Warrior_Run_03: 641786654
+      CHR_Shade_Warrior_Run_04: 1059621205
+      CHR_Shade_Warrior_Hit_00: 458514270
+      CHR_Shade_Warrior_Hit_01: 944902590
+      CHR_Shade_Warrior_Hit_02: 1339137493
+      CHR_Shade_Warrior_Hit_03: 49640656
+      CHR_Shade_Warrior_Hit_04: 1772733802
+      CHR_Shade_Warrior_Hit_05: 417903640
+      CHR_Shade_Warrior_Death_00: 1277623223
+      CHR_Shade_Warrior_Death_01: 1180592402
+      CHR_Shade_Warrior_Death_02: 454467572
+      CHR_Shade_Warrior_Death_03: 1589615769
+      CHR_Shade_Warrior_Death_04: 1004930543
+      CHR_Shade_Warrior_Death_05: 904893651
+      CHR_Shade_Warrior_Death_06: 18278306
+      CHR_Shade_Warrior_Death_07: 643927350
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

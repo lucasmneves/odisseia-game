@@ -1,0 +1,56 @@
+GIMP Palette
+Name: Odisseia - Pretendentes Environment
+Columns: 4
+#
+ 43  46  39	Contorno Highlight
+ 29  34  29	Contorno Base
+ 20  20  21	Contorno Sombra
+  5   5   7	Contorno Profunda
+206 238 254	Ceu Highlight
+148 208 243	Ceu Base
+116 181 237	Ceu Sombra
+100 129 160	Ceu Profunda
+208 235 242	Agua Highlight
+110 173 182	Agua Base
+ 87 126 162	Agua Sombra
+ 64 107 132	Agua Profunda
+127 139  90	Folhagem Highlight
+107 121  88	Folhagem Base
+ 82  87  52	Folhagem Sombra
+ 51  61  46	Folhagem Profunda
+180 160  91	Oliva seca Highlight
+153 140 100	Oliva seca Base
+111 104  66	Oliva seca Sombra
+ 93  87  52	Oliva seca Profunda
+245 213 167	Terra / caminho Highlight
+203 180 146	Terra / caminho Base
+150 130 104	Terra / caminho Sombra
+107  93  78	Terra / caminho Profunda
+132 111  94	Pedra Highlight
+107  93  78	Pedra Base
+ 87  71  61	Pedra Sombra
+ 62  58  51	Pedra Profunda
+160 188 196	Pedra fria Highlight
+142 138 111	Pedra fria Base
+111 102  95	Pedra fria Sombra
+ 67  60  59	Pedra fria Profunda
+151 122  66	Madeira Highlight
+125  92  79	Madeira Base
+100  67  58	Madeira Sombra
+ 56  46  42	Madeira Profunda
+245 205  92	Bronze Highlight
+187 126  44	Bronze Base
+157  97  31	Bronze Sombra
+115  62  22	Bronze Profunda
+231 184 113	Fogo Highlight
+244 132  47	Fogo Base
+172 113  74	Fogo Sombra
+109  49  37	Fogo Profunda
+188  77  71	Vinho Highlight
+141  43  47	Vinho Base
+118  28  40	Vinho Sombra
+ 81  17  32	Vinho Profunda
+ 75  88 102	Noite Highlight
+ 43  61  77	Noite Base
+ 24  35  49	Noite Sombra
+ 15  17  24	Noite Profunda

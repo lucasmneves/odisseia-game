@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: a8e736ddfcb8695dd58e7783673cc2d5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 958127926
+    second: CHR_Polyphemus_Idle_00
+  - first:
+      213: 1278939003
+    second: CHR_Polyphemus_Idle_01
+  - first:
+      213: 1057359322
+    second: CHR_Polyphemus_Idle_02
+  - first:
+      213: 2094691342
+    second: CHR_Polyphemus_Idle_03
+  - first:
+      213: 445601181
+    second: CHR_Polyphemus_Idle_04
+  - first:
+      213: 2064019654
+    second: CHR_Polyphemus_Idle_05
+  - first:
+      213: 1194278980
+    second: CHR_Polyphemus_Telegraph_00
+  - first:
+      213: 406412438
+    second: CHR_Polyphemus_Telegraph_01
+  - first:
+      213: 282445703
+    second: CHR_Polyphemus_Telegraph_02
+  - first:
+      213: 69327250
+    second: CHR_Polyphemus_Telegraph_03
+  - first:
+      213: 314014434
+    second: CHR_Polyphemus_Telegraph_04
+  - first:
+      213: 1485522429
+    second: CHR_Polyphemus_Telegraph_05
+  - first:
+      213: 86638494
+    second: CHR_Polyphemus_Attack_00
+  - first:
+      213: 1922109869
+    second: CHR_Polyphemus_Attack_01
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spritePixelsToUnits: 42.857143
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CHR_Polyphemus_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 409
+        width: 257
+        height: 202
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82b93faf9baf06b6dfdbe9585f2413b0
+      internalID: 958127926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Polyphemus_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 409
+        width: 257
+        height: 202
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 834b1a1f275c87f2f3532f17e62891a4
+      internalID: 1278939003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Polyphemus_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 409
+        width: 257
+        height: 202
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2184753c6e3b930b0fcb9582d2ec27c9
+      internalID: 1057359322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Polyphemus_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 409
+        width: 257
+        height: 202
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9387ef417d19930ed597df8e0ca4a5c
+      internalID: 2094691342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Polyphemus_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 409
+        width: 257
+        height: 202
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 370c3e76adb14057db62e071dbe750ba
+      internalID: 445601181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Polyphemus_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 409
+        width: 257
+        height: 202
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba098e848011b1f309ce4754ae25f7b8
+      internalID: 2064019654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Polyphemus_Telegraph_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 205
+        width: 257
+        height: 202
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 354bad9a4f5dea7c768504e4df3ee966
+      internalID: 1194278980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Polyphemus_Telegraph_01
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 205
+        width: 257
+        height: 202
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a137d61b79d00f9f08ed13d472eec45c
+      internalID: 406412438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Polyphemus_Telegraph_02
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 205
+        width: 257
+        height: 202
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44d40fce3990daf09e47cc7f11bdddd4
+      internalID: 282445703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Polyphemus_Telegraph_03
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 205
+        width: 257
+        height: 202
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f45ba0ea2906a42d0382fd09b2c3aeb4
+      internalID: 69327250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Polyphemus_Telegraph_04
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 205
+        width: 257
+        height: 202
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6101f2e625ae97d6edd6ea5ed6f13486
+      internalID: 314014434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Polyphemus_Telegraph_05
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 205
+        width: 257
+        height: 202
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0f0fd74fce90ec002b316ca2c2aa107
+      internalID: 1485522429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Polyphemus_Attack_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 257
+        height: 202
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98586bf7868e5695305b24252e2cb778
+      internalID: 86638494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Polyphemus_Attack_01
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1
+        width: 257
+        height: 202
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a37016a0bdc93daf2f44be49a8504788
+      internalID: 1922109869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CHR_Polyphemus_Idle_00: 958127926
+      CHR_Polyphemus_Idle_01: 1278939003
+      CHR_Polyphemus_Idle_02: 1057359322
+      CHR_Polyphemus_Idle_03: 2094691342
+      CHR_Polyphemus_Idle_04: 445601181
+      CHR_Polyphemus_Idle_05: 2064019654
+      CHR_Polyphemus_Telegraph_00: 1194278980
+      CHR_Polyphemus_Telegraph_01: 406412438
+      CHR_Polyphemus_Telegraph_02: 282445703
+      CHR_Polyphemus_Telegraph_03: 69327250
+      CHR_Polyphemus_Telegraph_04: 314014434
+      CHR_Polyphemus_Telegraph_05: 1485522429
+      CHR_Polyphemus_Attack_00: 86638494
+      CHR_Polyphemus_Attack_01: 1922109869
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

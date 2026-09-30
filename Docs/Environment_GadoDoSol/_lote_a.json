@@ -1,0 +1,58 @@
+[
+  {
+    "nome": "gado_bg_hills",
+    "args": {
+      "description": "distant rolling green hills under a bright blue sky with a small pale temple on the highest crest, seen from far away, strict flat side profile like a technical elevation drawing. Soft rounded hills in layers of green fading paler and hazier with distance, scattered dark cypresses and round olive trees small with distance, a thin worn path winding up, and on the far crest a tiny golden limestone temple with a row of columns catching the sun. High soft white clouds in a clear blue sky. Bright and calm and hazy so it sits far behind everything. Palette of sky blue, soft green, pale gold and white. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "gado_bg_sea",
+    "args": {
+      "description": "a wide band of calm blue Mediterranean sea, seen from directly beside it at water level, strict flat side profile like a technical elevation drawing. Deep blue water in long gentle horizontal swells with small bright glints on the crests, a paler turquoise band nearer the front, and a thin line of white foam along the very front edge, the whole band the same height from left to right so it reads as one continuous strip of calm water. Bright sunny day. Palette of deep blue, turquoise and white. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 160, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "gado_mid_grove",
+    "args": {
+      "description": "a long band of an olive grove on gentle green ground, seen from directly beside it, strict flat side profile like a technical elevation drawing. A row of broad round olive trees with gnarled pale trunks and soft grey-green canopies, tall slim dark cypresses standing between them, low flowering shrubs at their feet, all sitting on a strip of green grass, repeating across the whole width so it reads as one continuous grove. Warm sunlight from above. Palette of olive green, dark cypress green, fresh grass green and pale bark. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 256, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "gado_temple",
+    "args": {
+      "description": "an ancient Greek temple of pale golden limestone, isolated on transparent background, seen from directly in front. A wide stepped stone platform carrying a row of eight plain fluted columns with simple square capitals, a straight entablature above them and a low triangular pediment carved with a plain sun disc, broad worn steps coming down the front, weathered and cracked sun-bleached golden stone, the gaps between the columns open and dark. Classical Greek, austere and heavy, no arches, no towers, no spires. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 512, "height": 384, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "gado_cattle_idle",
+    "args": {
+      "description": "a single sturdy white ox standing in profile facing right, isolated on transparent background. A heavy calm bull with a broad body, short strong legs, a thick neck and short curved horns, its coat creamy white shading to warm gold along the back and flanks, dark hooves and a dark muzzle, a small brass bell on a band round its neck. Calm and healthy and well fed. Simple clear silhouette. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 160, "height": 128, "no_background": true, "view": "side", "direction": "east", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "gado_olive_tree",
+    "args": {
+      "description": "a single broad old olive tree standing alone, isolated on transparent background. A short thick gnarled trunk splitting low into several twisting branches, a wide soft rounded canopy of small grey-green leaves in clumps, pale knotted bark, a few small dark olives, and short dry grass at the foot of the trunk. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 224, "height": 224, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "gado_cypress",
+    "args": {
+      "description": "a single tall slim cypress tree standing alone, isolated on transparent background. A narrow dark green column of dense foliage tapering to a point at the top, slightly uneven along its sides, a very short bare trunk at the base, and a little dry grass at its foot. Very tall and very narrow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 96, "height": 288, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "gado_drystone_wall",
+    "args": {
+      "description": "a low field wall of stacked dry stone, isolated on transparent background, seen from directly beside it. Rough pale limestone blocks of uneven size stacked without mortar in loose courses, the top edge uneven, gaps and shadows between the stones, patches of moss and small green weeds growing from the joints, low and long. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 320, "height": 96, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]

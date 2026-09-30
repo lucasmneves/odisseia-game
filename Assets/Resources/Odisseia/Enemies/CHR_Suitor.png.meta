@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: 163d1de89d88fc3f9449e0764c55078f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1077300830
+    second: CHR_Suitor_Idle_00
+  - first:
+      213: 1296447288
+    second: CHR_Suitor_Idle_01
+  - first:
+      213: 1418001831
+    second: CHR_Suitor_Idle_02
+  - first:
+      213: 381576308
+    second: CHR_Suitor_Idle_03
+  - first:
+      213: 1742585909
+    second: CHR_Suitor_Idle_04
+  - first:
+      213: 47783847
+    second: CHR_Suitor_Idle_05
+  - first:
+      213: 2486903
+    second: CHR_Suitor_Run_00
+  - first:
+      213: 1713941909
+    second: CHR_Suitor_Run_01
+  - first:
+      213: 1458553927
+    second: CHR_Suitor_Run_02
+  - first:
+      213: 2019111399
+    second: CHR_Suitor_Run_03
+  - first:
+      213: 1958130182
+    second: CHR_Suitor_Run_04
+  - first:
+      213: 1924933653
+    second: CHR_Suitor_Hit_00
+  - first:
+      213: 2032569354
+    second: CHR_Suitor_Hit_01
+  - first:
+      213: 1906324478
+    second: CHR_Suitor_Hit_02
+  - first:
+      213: 92735086
+    second: CHR_Suitor_Hit_03
+  - first:
+      213: 1061440907
+    second: CHR_Suitor_Hit_04
+  - first:
+      213: 630275413
+    second: CHR_Suitor_Hit_05
+  - first:
+      213: 1857198724
+    second: CHR_Suitor_Death_00
+  - first:
+      213: 1806930028
+    second: CHR_Suitor_Death_01
+  - first:
+      213: 1119233115
+    second: CHR_Suitor_Death_02
+  - first:
+      213: 791413274
+    second: CHR_Suitor_Death_03
+  - first:
+      213: 1715536342
+    second: CHR_Suitor_Death_04
+  - first:
+      213: 848394678
+    second: CHR_Suitor_Death_05
+  - first:
+      213: 726415527
+    second: CHR_Suitor_Death_06
+  - first:
+      213: 1166026920
+    second: CHR_Suitor_Death_07
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spritePixelsToUnits: 42.857143
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CHR_Suitor_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 184
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8039c118f2625cd4f804d733016e071a
+      internalID: 1077300830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 184
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f0c5f070f3defda0cb157de32b6527c
+      internalID: 1296447288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 184
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4ebccc88220c397b38625c6fc39e69e
+      internalID: 1418001831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 184
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 183dea0700f6031125432018e71e6845
+      internalID: 381576308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 184
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcdf7451289a9473180e64a9717a7b57
+      internalID: 1742585909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 184
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c28ff3869c3317e22918c57c17c25aba
+      internalID: 47783847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Run_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 123
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d3200cbf61a6420a3da8cd91089601
+      internalID: 2486903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Run_01
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 123
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 036d05017a788fa317ad7973c95b391f
+      internalID: 1713941909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Run_02
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 123
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 977aafb5ef5c3bbfe6adb7e87864cb28
+      internalID: 1458553927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Run_03
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 123
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50059d69e7c8135f76f2f59033c2d0f3
+      internalID: 2019111399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Run_04
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 123
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d36e482fda4a93f56e5d977d60a095
+      internalID: 1958130182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Hit_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 62
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 172cc79b0d4aaaa54059478582efaeb5
+      internalID: 1924933653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Hit_01
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 62
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8caf938d7fd1045794481d1e6eb7df54
+      internalID: 2032569354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Hit_02
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 62
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 094c1ba7fce0c9a9e8a19a3f2f7e1755
+      internalID: 1906324478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Hit_03
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 62
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdec6796f346ce6933db9fc03f925c8e
+      internalID: 92735086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Hit_04
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 62
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e06b5081685944bde73de0614b049407
+      internalID: 1061440907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Hit_05
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 62
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ec24467633d690d3ebf412ed1763d5b
+      internalID: 630275413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Death_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da5b403a89b1b4b11e8acac349330a61
+      internalID: 1857198724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Death_01
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe41829fea5a0a122613209ca3d304fa
+      internalID: 1806930028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Death_02
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 1
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a994bb6769f67d513fe03cf265180c
+      internalID: 1119233115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Death_03
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 1
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a75b912fbce7f40306090548e9c1783
+      internalID: 791413274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Death_04
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 1
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b11d1c49e31afd2aa17c610220a41f0e
+      internalID: 1715536342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Death_05
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 1
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d5153729cb38ba1038075ae9d87d99
+      internalID: 848394678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Death_06
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 1
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 637ec4938526dfc3d2c49175d1a478cf
+      internalID: 726415527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Suitor_Death_07
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 1
+        width: 67
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf7988c549bbb34561aa4546450769e
+      internalID: 1166026920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CHR_Suitor_Idle_00: 1077300830
+      CHR_Suitor_Idle_01: 1296447288
+      CHR_Suitor_Idle_02: 1418001831
+      CHR_Suitor_Idle_03: 381576308
+      CHR_Suitor_Idle_04: 1742585909
+      CHR_Suitor_Idle_05: 47783847
+      CHR_Suitor_Run_00: 2486903
+      CHR_Suitor_Run_01: 1713941909
+      CHR_Suitor_Run_02: 1458553927
+      CHR_Suitor_Run_03: 2019111399
+      CHR_Suitor_Run_04: 1958130182
+      CHR_Suitor_Hit_00: 1924933653
+      CHR_Suitor_Hit_01: 2032569354
+      CHR_Suitor_Hit_02: 1906324478
+      CHR_Suitor_Hit_03: 92735086
+      CHR_Suitor_Hit_04: 1061440907
+      CHR_Suitor_Hit_05: 630275413
+      CHR_Suitor_Death_00: 1857198724
+      CHR_Suitor_Death_01: 1806930028
+      CHR_Suitor_Death_02: 1119233115
+      CHR_Suitor_Death_03: 791413274
+      CHR_Suitor_Death_04: 1715536342
+      CHR_Suitor_Death_05: 848394678
+      CHR_Suitor_Death_06: 726415527
+      CHR_Suitor_Death_07: 1166026920
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,14 @@
+[
+  {
+    "nome": "cila_tiles_rock",
+    "args": {
+      "lower_description": "solid weathered sea rock, pale grey-green stone with rough irregular cracks, salt-stained, natural geology and not masonry",
+      "transition_description": "wet dark rock surface with a thin crust of pale salt and scattered green weed",
+      "transition_size": 0.25,
+      "tile_size": { "width": 32, "height": 32 },
+      "outline": "single color outline",
+      "shading": "medium shading",
+      "detail": "medium detail"
+    }
+  }
+]

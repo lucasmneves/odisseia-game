@@ -1,0 +1,23 @@
+[
+  {
+    "nome": "PRETEND_ConceptA_PalacioOcupado",
+    "args": {
+      "description": "the courtyard front of an ancient Greek palace taken over by rowdy occupiers, at dusk, strict flat side profile like a technical elevation drawing. A long low colonnaded palace of pale cream limestone with a flat roof and a tall wooden double door, the same calm building as before but now cluttered: crude barricades of crates and upturned carts along the front, spears and round shields leaning against the columns, red cloth banners hung carelessly between the columns, a cooking fire with a spit burning in the middle of the courtyard, wine jars and scattered bones on the flagstones. Warm orange firelight against a dim blue evening sky. No people. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "PRETEND_ConceptB_Banquete",
+    "args": {
+      "description": "the interior of a great ancient Greek hall during an endless feast, strict flat side profile like a technical elevation drawing. A long hall of pale cream limestone with a row of thick plain columns, high walls with painted bands, bronze braziers and wall torches burning, and running the whole length a long low wooden table crowded with overturned wine cups, clay amphorae, platters of roast meat, bread, grapes and figs, spilled red wine pooling on the stone floor, dropped cushions and a toppled bench. At the far end a raised stone dais with an empty carved chair. Warm heavy firelight and deep shadows. No people. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "PRETEND_ConceptC_Barricadas",
+    "args": {
+      "description": "the damaged entrance of an ancient Greek palace held by occupiers, at night, strict flat side profile like a technical elevation drawing. Pale cream limestone walls and columns with a broken section of wall, a heavy wooden gate propped open and blocked by a barricade of crates, barrels, benches and planks, a weapon rack of spears and bronze helmets, a watch fire burning in an iron brazier, torches on poles, torn red banners, and a courtyard of flagstones scattered with debris. Cold blue night sky with strong orange firelight and long hard shadows. No people. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  }
+]

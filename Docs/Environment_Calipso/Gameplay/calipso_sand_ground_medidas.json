@@ -1,0 +1,14 @@
+{
+  "corpo": {
+    "tile": "wang_0",
+    "indice": 6,
+    "celula": "2,1",
+    "primeiraLinhaOpaca": 0
+  },
+  "topo": {
+    "tile": "wang_12",
+    "indice": 3,
+    "celula": "3,0",
+    "primeiraLinhaOpaca": 16
+  }
+}

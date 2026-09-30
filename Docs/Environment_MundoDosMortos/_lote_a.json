@@ -1,0 +1,58 @@
+[
+  {
+    "nome": "_fonte_tiles_cavefloor",
+    "args": {
+      "description": "a horizontal strip of underground cave floor seen from directly beside it, strict flat side profile like a technical elevation drawing. The top edge is uneven blue-grey bedrock scattered with pale grey pebbles, below it a solid cross-section of layered blue-grey rock with deep cracks, growing much darker toward the bottom. Cool palette of blue-grey stone from pale to almost black. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 160, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_tiles_ruinfloor",
+    "args": {
+      "description": "a horizontal strip of an ancient cracked stone pavement seen from directly beside it, strict flat side profile like a technical elevation drawing. The top edge is worn pale marble slabs with wide cracks and one slab tilted out of line, below it a solid cross-section of stacked pale stone blocks going dark blue-grey at the bottom. Cool palette of pale marble and blue-grey shadow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 160, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_cavern_wall",
+    "args": {
+      "description": "a horizontal strip of a vast cavern wall seen from directly beside it, strict flat side profile like a technical elevation drawing. Raw blue-grey rock in tall uneven columns with deep dark clefts between them, damp streaks running down, a few horizontal ledges, no cut blocks and no brickwork. Cool palette of blue-grey stone, dark and even in value so it reads as distance. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 256, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_river_band",
+    "args": {
+      "description": "a horizontal strip of still dark water seen from directly beside it, strict flat side profile like a technical elevation drawing. A flat black-green surface with long thin horizontal ripples catching a faint pale reflection, a few small warm orange reflections stretched across it, darker toward the bottom of the strip. Cool palette of black-green water with pale and warm orange reflections. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 128, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_broken_column",
+    "args": {
+      "description": "one single broken ancient Greek column seen from directly beside it, strict flat side profile like a technical elevation drawing. A pale marble shaft with shallow vertical fluting snapped off partway up, the broken top jagged, a plain round base at the bottom, deep cracks and dark stains across it, a chip missing from the base. Cool palette of pale marble and blue-grey shadow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 128, "height": 288, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_altar",
+    "args": {
+      "description": "one single low ancient stone altar seen from directly beside it, strict flat side profile like a technical elevation drawing. A rectangular block of pale marble on two broad steps, its top surface soot-blackened with a small pale flame burning on it, simple straight incised lines carved along the side, a shallow bronze bowl resting at one end, cracks across the steps. Cool palette of pale marble and blue-grey shadow against a small pale flame and bronze. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 192, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_dead_tree",
+    "args": {
+      "description": "one single dead bare tree seen from directly beside it, strict flat side profile like a technical elevation drawing. A pale bone-white twisting trunk with no bark, splitting into many thin leafless branches that fork and taper, a few broken stubs, roots gripping bare rock at the base, no leaves at all. Cool palette of bone white and grey shadow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 224, "height": 288, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_brazier_tall",
+    "args": {
+      "description": "one single tall bronze brazier on a stone plinth, seen from directly beside it, strict flat side profile like a technical elevation drawing. A wide shallow bronze bowl on a slender stand with three feet, standing on a square block of pale stone, warm orange flames with a bright yellow core rising from the bowl, green patina on the metal, soot on the stone. Cool palette of bronze, pale stone and blue-grey shadow against warm orange flame. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 128, "height": 256, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]

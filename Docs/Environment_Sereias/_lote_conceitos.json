@@ -1,0 +1,23 @@
+[
+  {
+    "nome": "SEREIAS_ConceptA_Estreito",
+    "args": {
+      "description": "a calm sunlit sea channel between low pale limestone islets, seen from directly beside it, strict flat side profile like a technical elevation drawing. Very still turquoise water with long horizontal glints, low rounded rocks of warm cream limestone rising straight out of the water, soft green scrub and pale flowers on their tops, a bright hazy horizon, and among the rocks the broken ribs and snapped mast of an old wooden ship half sunk in the shallows. Beautiful and inviting on first look, with the wreck as the only wrong note. Bright palette of turquoise, cream limestone, pale gold light and soft green. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "SEREIAS_ConceptB_Praia",
+    "args": {
+      "description": "a small curved beach of pale sand below a low rocky shore, seen from directly beside it, strict flat side profile like a technical elevation drawing. Fine cream sand meeting shallow clear turquoise water with a thin line of white foam, smooth rounded stones along the waterline, tufts of sea grass and small white and pink flowers on the bank behind, a weathered ancient Greek shrine of pale stone with two plain columns and a straight stone beam standing back from the sand, and scattered along the sand the bleached curved timbers of wrecked boats and pale sun-bleached bones. Warm inviting light. Bright palette of cream sand, turquoise water, pale stone, soft green and white. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "SEREIAS_ConceptC_Rochedos",
+    "args": {
+      "description": "a row of tall jagged sea rocks rising out of shallow water, seen from directly beside it, strict flat side profile like a technical elevation drawing. Sharp weathered grey and cream stone spires streaked with white, dark wet stone at the waterline, clumps of green weed, and jammed between the rocks the smashed hulls of several wooden ships with cracked planking and trailing rope, one hull tipped on its side. Bright clear sky behind and calm shining water below, so the danger reads only in the wreckage. Palette of grey and cream stone, turquoise water, dark wet rock and weathered brown wood. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  }
+]

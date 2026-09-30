@@ -1,0 +1,23 @@
+[
+  {
+    "nome": "GADO_ConceptA_Ilha",
+    "args": {
+      "description": "a sunlit Mediterranean island of wide green pasture above the sea, seen from directly beside it, strict flat side profile like a technical elevation drawing. Rolling meadows of fresh green grass scattered with small white and yellow flowers, low dry-stone walls crossing the slopes, a few broad olive trees and dark slim cypresses, pale limestone outcrops, and a small herd of sturdy white cattle grazing in the open. Bright blue sky with a few high soft clouds, calm deep blue sea and a hazy island on the horizon behind. Warm strong midday sun, soft shadows. Bright palette of sky blue, fresh green, cream limestone, warm gold and white. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "GADO_ConceptB_Vale",
+    "args": {
+      "description": "a peaceful sunlit valley with an ancient Greek temple of the sun, seen from directly beside it, strict flat side profile like a technical elevation drawing. A broad temple of pale golden limestone standing on a stepped platform with a row of plain fluted columns and a low triangular pediment carved with a simple sun disc, wide stone steps coming down to a green meadow, a stone altar with a small flame in front of it, tall cypresses on both sides, olive trees and flowering shrubs on the slopes, and low dry-stone walls. Bright blue sky, strong warm sunlight, long soft shadows across the grass. Bright palette of sky blue, fresh green, pale gold limestone, warm gold and white. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "GADO_ConceptC_Sagrado",
+    "args": {
+      "description": "a sacred sunlit island of fields and low hills with a temple far behind, seen from directly beside it, strict flat side profile like a technical elevation drawing. In front a wide meadow of green grass and pale wildflowers with a worn dirt path running through it and a low dry-stone wall, in the middle rounded green hills with olive groves and dark cypresses and a small stone shrine with a ring of standing stones, and far behind on the highest hill a pale golden temple with a row of columns catching the sun. A few white cattle resting in the middle distance. Bright blue sky with high thin clouds, warm afternoon light, gentle haze on the far hills. Bright palette of sky blue, fresh green, olive, cream and warm gold. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  }
+]

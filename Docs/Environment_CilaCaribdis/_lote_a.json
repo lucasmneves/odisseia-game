@@ -1,0 +1,58 @@
+[
+  {
+    "nome": "cila_bg_walls_far",
+    "args": {
+      "description": "a distant view down a flooded canyon of black volcanic sea cliffs under a storm, seen from directly beside it, strict flat side profile like a technical elevation drawing. Receding walls of dark columnar basalt on the left and right growing paler and hazier with distance, the gap between them narrowing far away to a pale bruised-violet slot of storm sky, faint sheets of rain, a low dark sea between them. Muted and hazy so it sits far behind everything. Palette of near black basalt, bruised violet sky and dark teal water. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "cila_wall_columnar",
+    "args": {
+      "description": "one colossal cliff face of columnar basalt, isolated on transparent background. A single tall slab of dark hexagonal rock columns packed side by side in tight vertical bundles, each column a slightly different dark grey, sharp fractured tops at different heights, damp near-black stone at the bottom, thin pale mineral streaks running down the faces, a few narrow ledges. Very tall and narrow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 512, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "cila_cave_cliff",
+    "args": {
+      "description": "a cliff of dark layered rock with an enormous black cave mouth, isolated on transparent background. Cracked dark grey stone with horizontal strata, a huge ragged opening gouged into the upper part going pitch black inside, several broad flat ledges below and beside the opening, pale dead roots hanging over the top edge, splintered pale timbers and a few bleached bones wedged on the ledges. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 384, "height": 512, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "cila_crag_stack",
+    "args": {
+      "description": "a single narrow sea stack of dark basalt standing alone, isolated on transparent background. A tall thin tower of near black volcanic rock with vertical column fractures, a broken uneven top, slightly wider at the base, wet darker stone at the very bottom with a pale ring of salt, one small ledge partway up. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 128, "height": 384, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "cila_charybdis_funnel",
+    "args": {
+      "description": "an enormous whirlpool in dark sea water, isolated on transparent background, seen from slightly above at a shallow angle so it reads as a wide flattened oval. Many concentric rings of spinning deep teal water drawn as smooth nested ovals getting smaller and darker toward the middle, thin white foam streaks curving along each ring, and at the centre a pitch black throat. Bright white foam crowded around the widest outer ring. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 512, "height": 256, "no_background": true, "view": "low top-down", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "cila_wreck_ribs",
+    "args": {
+      "description": "the bare curved ribs of a wrecked wooden ship jammed between rocks, isolated on transparent background. Six or seven curved weathered timbers rising in a broken row, dark sea-soaked brown wood, some snapped short and splintered and some tall, a length of frayed rope tangled through them, no planking left between them. No people. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 320, "height": 160, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "cila_debris_timbers",
+    "args": {
+      "description": "a small scattered pile of broken ship wreckage, isolated on transparent background. Four or five snapped dark wooden planks lying across each other at angles, a cracked oar blade, a coil of wet frayed rope, and two bleached bones among them, all sea-soaked and splintered. No people. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 224, "height": 96, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "cila_bg_sea_churn",
+    "args": {
+      "description": "a wide band of violently churning storm sea, seen from directly beside it at water level, strict flat side profile like a technical elevation drawing. Deep green black water in long horizontal swells with many white breaking crests and torn spray along the tops, dark troughs between them, the whole band the same height from left to right so it reads as one continuous strip of rough water. Palette of deep teal, green black and white foam. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 192, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  }
+]

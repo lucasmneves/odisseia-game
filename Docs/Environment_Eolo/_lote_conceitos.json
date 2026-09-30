@@ -1,0 +1,23 @@
+[
+  {
+    "nome": "EOLO_ConceptA_IlhaElevada",
+    "args": {
+      "description": "a high Greek clifftop terrace above a sea of cloud, seen from directly beside it, strict flat side profile like a technical elevation drawing. A flat platform of pale limestone slabs at the top of a sheer pale rock face, a low balustrade of short square stone posts along its edge, wind-bent cypress trees and tufts of grass leaning hard to one side, a bronze brazier on a tripod, a long pale cloth banner streaming sideways in the wind. Below and behind, a bright field of white and pale gold clouds with the tops of distant rock spires poking through. Bright airy palette of pale limestone, white cloud, sky blue, bronze and cypress green. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "EOLO_ConceptB_Palacio",
+    "args": {
+      "description": "an ancient Greek hilltop palace seen from directly in front, strict flat side profile like a technical elevation drawing. A wide platform of pale limestone steps carrying a row of tall plain stone columns with simple flat square tops, a straight stone beam laid across them with no arches, a low pitched roofline of pale stone, bronze doors between the middle columns, tall bronze braziers burning at the foot of the steps, long cloth banners hanging from the beam and streaming sideways in the wind. Around it a bright sky and banks of white cloud below the platform. Bright airy palette of pale limestone, white cloud, sky blue and bronze. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "EOLO_ConceptC_Arquipelago",
+    "args": {
+      "description": "a chain of floating rock islands in an open sky, seen from directly beside them, strict flat side profile like a technical elevation drawing. Several separate chunks of pale limestone hanging in the air at different heights, each with a flat grassy top and a ragged rocky underside trailing loose stones, small stone stairways and narrow rope bridges linking them, wind-bent grass and a single cypress on one island, thin streaks of wind drawn as pale curving lines between them. Behind, layered white and pale gold clouds and a wide blue sky. Bright airy palette of pale limestone, white cloud, sky blue and grass green. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  }
+]

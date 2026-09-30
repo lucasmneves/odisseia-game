@@ -1,0 +1,23 @@
+[
+  {
+    "nome": "ITACARET_ConceptA_Amanhecer",
+    "args": {
+      "description": "a small ancient Greek island town at dawn seen from the shore, strict flat side profile like a technical elevation drawing. Low flat roofed houses of pale cream limestone with small square windows and plain wooden doors climbing a gentle green slope, a long low colonnaded palace of the same stone standing highest at the back, olive trees and dark cypresses between the houses, low dry stone walls, and in front a small harbour with a wooden jetty and one beached galley with a square sail. Cool pale dawn sky going from soft rose at the horizon to pale blue above, long soft shadows falling to one side, calm blue sea. Quiet and empty and familiar. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "ITACARET_ConceptB_Caminho",
+    "args": {
+      "description": "a worn path climbing to a small ancient Greek island town in the late afternoon, strict flat side profile like a technical elevation drawing. A dusty track running from the front of the picture up between low dry stone walls, past low flat roofed houses of pale cream limestone with wooden doors, olive trees and tall dark cypresses leaning over the walls, goats grazing on the slope, and at the top a long low colonnaded palace of pale stone catching the last light. Warm gold late afternoon sun from one side, long shadows stretching across the path, a few thin clouds. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "ITACARET_ConceptC_Dourado",
+    "args": {
+      "description": "a small ancient Greek island town under a golden evening sky with the sea behind, strict flat side profile like a technical elevation drawing. Low flat roofed houses of pale cream limestone glowing warm in the last sun, a long low colonnaded palace standing above them, olive trees and dark cypresses in deep shadow against the light, low dry stone walls, a small harbour with a wooden jetty and moored boats, and behind everything a wide calm sea and hazy blue headlands under a sky of deep gold and amber with long flat clouds. Strong warm backlight, deep long shadows, the whole town small against a very big sky. Nostalgic and still. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  }
+]

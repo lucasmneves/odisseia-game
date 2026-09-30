@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: dde351e96af73883ec93e7c7a08bf3a8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 733704781
+    second: CHR_Circe_Wolf_Idle_00
+  - first:
+      213: 1905376794
+    second: CHR_Circe_Wolf_Idle_01
+  - first:
+      213: 645333416
+    second: CHR_Circe_Wolf_Idle_02
+  - first:
+      213: 891484362
+    second: CHR_Circe_Wolf_Idle_03
+  - first:
+      213: 393094081
+    second: CHR_Circe_Wolf_Idle_04
+  - first:
+      213: 895830490
+    second: CHR_Circe_Wolf_Idle_05
+  - first:
+      213: 730175962
+    second: CHR_Circe_Wolf_Run_00
+  - first:
+      213: 1293196293
+    second: CHR_Circe_Wolf_Run_01
+  - first:
+      213: 1337140563
+    second: CHR_Circe_Wolf_Run_02
+  - first:
+      213: 1271589662
+    second: CHR_Circe_Wolf_Run_03
+  - first:
+      213: 486115633
+    second: CHR_Circe_Wolf_Run_04
+  - first:
+      213: 1647959205
+    second: CHR_Circe_Wolf_Hit_00
+  - first:
+      213: 2041740002
+    second: CHR_Circe_Wolf_Hit_01
+  - first:
+      213: 1522362285
+    second: CHR_Circe_Wolf_Hit_02
+  - first:
+      213: 1230123273
+    second: CHR_Circe_Wolf_Hit_03
+  - first:
+      213: 881143852
+    second: CHR_Circe_Wolf_Hit_04
+  - first:
+      213: 932887655
+    second: CHR_Circe_Wolf_Hit_05
+  - first:
+      213: 1489879608
+    second: CHR_Circe_Wolf_Death_00
+  - first:
+      213: 1634525655
+    second: CHR_Circe_Wolf_Death_01
+  - first:
+      213: 2131284253
+    second: CHR_Circe_Wolf_Death_02
+  - first:
+      213: 1752680799
+    second: CHR_Circe_Wolf_Death_03
+  - first:
+      213: 1355650318
+    second: CHR_Circe_Wolf_Death_04
+  - first:
+      213: 1513985653
+    second: CHR_Circe_Wolf_Death_05
+  - first:
+      213: 1258203876
+    second: CHR_Circe_Wolf_Death_06
+  - first:
+      213: 332267419
+    second: CHR_Circe_Wolf_Death_07
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spritePixelsToUnits: 42.857143
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 181
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7632d3e628b7b30106e6e937894091fe
+      internalID: 733704781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 181
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 925fe7031051c938c9fe9e8564ab5ac7
+      internalID: 1905376794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 181
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6b6f1ac026b1d904f519ed17ab1d1ab
+      internalID: 645333416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 181
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf4e3b54dbcd185cc378e936be4e80ca
+      internalID: 891484362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 181
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df00984071a9f535eb8c95db4c547036
+      internalID: 393094081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 181
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b4f1ec687d2a7a0da65fabe52a47be
+      internalID: 895830490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Run_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 121
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f27905ea09fd52e92216f54ee81c785
+      internalID: 730175962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Run_01
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 121
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f0cfc49cc959cb96990b87ca7c44569
+      internalID: 1293196293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Run_02
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 121
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcbca58767fa0160d4e59d3a2ba691b3
+      internalID: 1337140563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Run_03
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 121
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcdf0b0b33e8c7c1127fc08227aa5c1b
+      internalID: 1271589662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Run_04
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 121
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 865651f217fde8a53299cd6c41937931
+      internalID: 486115633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Hit_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 61
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb4d5aa6d6b6646bbcbad8a6c9d43f2
+      internalID: 1647959205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Hit_01
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 61
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b010b3a47e970a68afd42ff8828629bc
+      internalID: 2041740002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Hit_02
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 61
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beed0e8b518817ed8699ec07086a960e
+      internalID: 1522362285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Hit_03
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 61
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ff03d990d8962f22957cb092e6536b7
+      internalID: 1230123273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Hit_04
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 61
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f88c8ed7afc42bb1c234caaad78ff1b
+      internalID: 881143852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Hit_05
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 61
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ca46ce724601c0e6ad4839a02c5f809
+      internalID: 932887655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Death_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b56dcc0ee12ecdc265a6c56746e0a76d
+      internalID: 1489879608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Death_01
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a25fb8d2046599ebbbb4bebd2bdf5ca7
+      internalID: 1634525655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Death_02
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56854c214ae05f2574a9abc26dde249
+      internalID: 2131284253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Death_03
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 1
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 873175ce797747cbdeeda4daef01fe95
+      internalID: 1752680799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Death_04
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 1
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 412e1f34a8a49b47658d285f902ecefd
+      internalID: 1355650318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Death_05
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 1
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1278c0bc73ee64998f959aeb43ad1f93
+      internalID: 1513985653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Death_06
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 1
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53642589a5c8cf33152732c46e0c4f6b
+      internalID: 1258203876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHR_Circe_Wolf_Death_07
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 1
+        width: 79
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a666c3cc91384d98d62ced11a3c89e87
+      internalID: 332267419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CHR_Circe_Wolf_Idle_00: 733704781
+      CHR_Circe_Wolf_Idle_01: 1905376794
+      CHR_Circe_Wolf_Idle_02: 645333416
+      CHR_Circe_Wolf_Idle_03: 891484362
+      CHR_Circe_Wolf_Idle_04: 393094081
+      CHR_Circe_Wolf_Idle_05: 895830490
+      CHR_Circe_Wolf_Run_00: 730175962
+      CHR_Circe_Wolf_Run_01: 1293196293
+      CHR_Circe_Wolf_Run_02: 1337140563
+      CHR_Circe_Wolf_Run_03: 1271589662
+      CHR_Circe_Wolf_Run_04: 486115633
+      CHR_Circe_Wolf_Hit_00: 1647959205
+      CHR_Circe_Wolf_Hit_01: 2041740002
+      CHR_Circe_Wolf_Hit_02: 1522362285
+      CHR_Circe_Wolf_Hit_03: 1230123273
+      CHR_Circe_Wolf_Hit_04: 881143852
+      CHR_Circe_Wolf_Hit_05: 932887655
+      CHR_Circe_Wolf_Death_00: 1489879608
+      CHR_Circe_Wolf_Death_01: 1634525655
+      CHR_Circe_Wolf_Death_02: 2131284253
+      CHR_Circe_Wolf_Death_03: 1752680799
+      CHR_Circe_Wolf_Death_04: 1355650318
+      CHR_Circe_Wolf_Death_05: 1513985653
+      CHR_Circe_Wolf_Death_06: 1258203876
+      CHR_Circe_Wolf_Death_07: 332267419
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

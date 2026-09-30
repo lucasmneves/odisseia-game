@@ -1,0 +1,26 @@
+[
+  {
+    "nome": "calipso_tiles_sand",
+    "args": {
+      "lower_description": "fine pale golden beach sand, packed and smooth with faint ripples and a few tiny shells",
+      "transition_description": "dry loose surface sand with scattered small pebbles and a little dry seaweed",
+      "transition_size": 0.25,
+      "tile_size": { "width": 32, "height": 32 },
+      "outline": "single color outline",
+      "shading": "medium shading",
+      "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "calipso_tiles_grass",
+    "args": {
+      "lower_description": "dark moist forest earth with pale tree roots and small stones, natural ground and not masonry",
+      "transition_description": "thick soft green moss and forest grass with small ferns and fallen leaves",
+      "transition_size": 0.5,
+      "tile_size": { "width": 32, "height": 32 },
+      "outline": "single color outline",
+      "shading": "medium shading",
+      "detail": "medium detail"
+    }
+  }
+]

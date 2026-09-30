@@ -1,0 +1,23 @@
+[
+  {
+    "nome": "CILA_ConceptA_Estreito",
+    "args": {
+      "description": "a narrow sea channel walled in by two enormous dark cliffs, seen from directly beside it, strict flat side profile like a technical elevation drawing. Sheer black basalt walls rising off both edges of the picture and squeezing the storm sky down to a narrow bright slot between them, deep green-black water churning below with tall white breaking crests, and in the middle of the channel a wide spinning funnel of water dragging rings of foam down into a dark throat. Sheets of rain, spray bursting where waves hit the rock, and a single warm gold lightning flash lighting the cliff faces. Cold palette of black basalt, bruised violet storm sky, deep teal water and white foam, with warm gold only in the lightning. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "CILA_ConceptB_Passagem",
+    "args": {
+      "description": "a claustrophobic passage of open water between two colossal sea crags, seen from directly beside it, strict flat side profile like a technical elevation drawing. On the left a towering cliff of dark layered rock with a huge black cave mouth gouged into it high above the water, cracked bones and splintered ship timbers wedged on the ledges around the opening, on the right a lower broad crag of the same rock with water pouring off it in white sheets. Between them a strip of violent deep green sea with a churning ring of foam. Storm sky visible only as a thin pale band far above, driving rain, spray. Cold palette of black and slate rock, deep teal water, white foam and bruised violet sky, with weathered warm brown in the broken timbers. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "CILA_ConceptC_Garganta",
+    "args": {
+      "description": "a vast sea gorge with giant waves, seen from directly beside it, strict flat side profile like a technical elevation drawing. Immense walls of weathered dark stone on both sides pitted with black cave openings and hung with pale dead roots, enormous curling green-black waves taller than the caves rolling through the gorge, and dominating the lower middle a colossal whirlpool with wide concentric rings of spinning water and foam spiralling into blackness. Debris and broken planks caught in the rings, heavy rain, spray hanging in the air, a stormy sky far above. Cold palette of dark stone, deep teal and green-black water, white foam and bruised violet sky, with warm gold in a lightning flash. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "nome": "_fonte_banner",
+    "args": {
+      "description": "one single long cloth banner streaming sideways in the wind, seen from directly beside it, strict flat side profile like a technical elevation drawing. A pale undyed cloth hanging from a short horizontal bronze rod, blown out almost horizontal with deep ripples running along it and a frayed forked tail, a simple painted band near the top edge. Palette of pale cloth, warm ochre band and bronze. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 128, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_rope_bridge",
+    "args": {
+      "description": "a horizontal strip of a rope and plank bridge seen from directly beside it, strict flat side profile like a technical elevation drawing. Two thick ropes sagging in a shallow curve with wooden planks laid across them, thin vertical ropes rising from the planks to a handrail rope above, a few planks missing and one hanging loose. Palette of pale rope, dark brown timber and grey shadow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 320, "height": 128, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_statue",
+    "args": {
+      "description": "one single weathered ancient Greek statue on a plinth, seen from directly beside it, strict flat side profile like a technical elevation drawing. A standing draped figure of pale marble with one arm raised, the folds of the robe cut as simple flat bands, the face and hands worn smooth by weather, standing on a plain square marble plinth, a crack across the base and pale lichen in the hollows. Palette of pale marble, cool grey shadow and a little lichen green. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 128, "height": 288, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_small_island",
+    "args": {
+      "description": "one single small floating rock island, an isolated chunk seen from directly beside it, strict flat side profile like a technical elevation drawing. A flat top covered by a thin band of bright green grass, pale grey layered rock below it, the underside breaking into ragged downward points with two loose chunks hanging in the air beneath, nothing else around it. Palette of grass green and pale grey stone going dark at the tips. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 192, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]

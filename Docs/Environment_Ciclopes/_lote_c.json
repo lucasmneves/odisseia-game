@@ -1,0 +1,9 @@
+[
+  {
+    "nome": "_fonte_boulder_large",
+    "args": {
+      "description": "one single large weathered boulder seen from directly beside it, strict flat side profile like a technical elevation drawing. A rounded mass of pale limestone with flat worn facets and cracks running across it, darker where it meets the ground, a patch of dry moss on one shoulder, nothing under it and nothing behind it. Warm sunlit palette of pale limestone and cool grey stone. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 192, "height": 160, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "nome": "calipso_bg_sea_horizon",
+    "args": {
+      "description": "a very wide calm open sea under a warm late afternoon sky, seen from the shore, strict flat side profile like a technical elevation drawing. Still deep blue water in long low swells with soft gold glints, a low flat horizon line, two small hazy green islands far away near the edges, and above it a big soft sky going from pale cream at the horizon to warm gold higher up with a few long flat clouds. Very calm and very open, the sea filling the lower part and the sky filling the upper part. Palette of deep blue, turquoise, pale cream and warm gold. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 384, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "calipso_bg_forest_band",
+    "args": {
+      "description": "a long continuous band of dense mediterranean island forest, seen from directly beside it, strict flat side profile like a technical elevation drawing. Rounded broadleaf canopies in layers of green, tall slim dark cypresses rising between them, pale trunks visible in the gaps, thick undergrowth and ferns at their feet, all sitting on a strip of grass, repeating across the whole width so it reads as one continuous wall of trees. Warm low sunlight catching the tops of the canopies while the lower foliage stays in deep blue-green shade. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 672, "height": 288, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "calipso_cliff_waterfall",
+    "args": {
+      "description": "a natural rock face of warm ochre stone with a narrow waterfall dropping down it, isolated on transparent background. One single continuous mass of layered ochre and rust coloured stone, wind and water worn, with irregular wavy bands of colour and thin cracks, hanging green vines and tufts of fern growing from the hollows, and a slim white fall of water coming over the top edge and running straight down the face into white foam at the bottom. This is natural geology, a raw weathered rock face, not built by anyone: no bricks, no blocks, no mortar, no straight lines, no masonry, not a wall. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 384, "height": 512, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "calipso_palace",
+    "args": {
+      "description": "a long low ancient Greek hall of pale weathered stone, isolated on transparent background, seen from directly in front. A wide low platform of worn steps carrying a row of six slim plain columns with simple square tops, a straight stone beam laid across them and a flat roof above, one tall open doorway in the middle going dark inside, flowering vines climbing two of the columns and spilling over the roof edge. Weathered pale grey stone, cracked and softened by time, elegant and horizontal. Classical Greek, no arches, no towers, no spires, not a castle. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 512, "height": 320, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "calipso_tree_ancient",
+    "args": {
+      "description": "a single very old broadleaf tree standing alone, isolated on transparent background. A thick twisting trunk with deeply furrowed pale bark splitting into several heavy spreading branches, a wide dense rounded canopy of dark green leaves in soft clumps, long thin vines hanging down from the lower branches, knotted roots gripping the ground at its foot with moss between them. Tall and broad and old. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 288, "height": 320, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "calipso_raft",
+    "args": {
+      "description": "a small raft of freshly cut logs lashed together, isolated on transparent background, seen from beside it. Eight or nine straight pale logs laid side by side and bound with rope at both ends, a short mast of a thinner trunk standing near the middle with a plain square cloth sail furled against it, a coil of rope and a rough wooden oar lying on the logs. The wood is new and pale, not weathered. No people. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 320, "height": 224, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "calipso_shore_rocks",
+    "args": {
+      "description": "a cluster of four smooth rounded sea boulders resting together, isolated on transparent background, seen from beside them. Grey stone worn completely smooth by the water, the largest in the middle and smaller ones around it, a pale line of dried salt around their lower parts, a little green weed in the gaps between them. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 128, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "calipso_bench_ruin",
+    "args": {
+      "description": "a weathered stone bench beside a broken column, isolated on transparent background, seen from beside them. A simple long slab of pale grey stone resting on two carved supports, cracked along its length, and next to it a short stump of a fluted column snapped off low with its top missing, both softened by time with moss in the cracks and tall grass grown up around their feet. Nothing on the bench. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 288, "height": 160, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "nome": "_fonte_giant_jars",
+    "args": {
+      "description": "one single group of enormous crude clay storage jars, an isolated group drawn small enough that its whole outline is complete and visible. Three rough unglazed terracotta jars with wide round bellies and thick uneven rims, clearly hand-shaped and far cruder than fine pottery, one leaning against another, a crack down one side, a coarse cloth tied over one mouth with rope. Palette of rough terracotta orange, dark clay and pale straw. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 320, "height": 256, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_giant_logs",
+    "args": {
+      "description": "one single stack of enormous rough logs, an isolated pile drawn small enough that its whole outline is complete and visible. Whole tree trunks with the bark still on, stacked crosswise in a loose heap, the cut ends showing thick growth rings, a broken branch sticking out, everything far too heavy for one person to move. Palette of dark brown bark, pale cut wood and grey shadow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 320, "height": 192, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_giant_fire",
+    "args": {
+      "description": "one single enormous campfire, an isolated object drawn small enough that its whole outline is complete and visible. A ring of large rough boulders around a bed of glowing embers with whole logs burning across it, tall orange and yellow flames with a bright core, pale smoke curling from one side, ash spread around the stone ring. Palette of grey stone, dark charred wood, and bright orange and yellow flame. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 256, "height": 224, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_giant_pen",
+    "args": {
+      "description": "one single crude oversized animal pen fence, an isolated structure drawn small enough that its whole outline is complete and visible. Thick unshaped tree trunks driven upright into the ground with rough branches lashed across them by heavy rope, the timber untrimmed with bark still on, uneven heights, far bigger and cruder than a normal fence, straw scattered at the base. Palette of dark brown bark, pale rope and dry straw. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 320, "height": 192, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_bones",
+    "args": {
+      "description": "one single small scattered pile of clean animal bones, an isolated group drawn small enough that its whole outline is complete and visible. A few pale curved rib bones, one long leg bone and a small horned skull of a goat resting on the ground, dry and bleached white, arranged loosely, not gory and with no blood. Palette of bone white, pale grey and dry ochre ground. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 192, "height": 96, "no_background": true, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_giant_staff",
+    "args": {
+      "description": "one single enormous wooden club, an isolated object drawn small enough that its whole outline is complete and visible. A whole young tree trunk stripped of branches, thick and knotted, one end sharpened to a rough point and the other worn smooth from handling, bark peeling in strips, lying at an angle on the ground. Palette of dark brown bark and pale stripped wood. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 320, "height": 128, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_cliff_column",
+    "args": {
+      "description": "one single natural rock pillar inside a cave, an isolated column drawn small enough that its whole outline is complete and visible. A thick irregular shaft of raw grey stone running from floor to ceiling, formed where a stalactite met a stalagmite, wider at both ends and narrower in the middle, its surface rippled and uneven with no cut blocks and no carving. Palette of cool grey stone from pale to dark. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 128, "height": 320, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_wild_olive",
+    "args": {
+      "description": "one single wind-bent wild olive tree, an isolated tree drawn small enough that its whole outline is complete and visible. A thick gnarled trunk leaning hard to one side as if shaped by constant wind, sparse ragged clumps of small silver-green leaves, several bare dead branches, exposed roots gripping bare rock at the base. Warm palette of grey-brown bark, silver-green leaves and pale limestone. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 224, "height": 256, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]

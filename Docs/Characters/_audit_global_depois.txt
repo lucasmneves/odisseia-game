@@ -1,0 +1,303 @@
+===== Level_01_Itaca_Prologue (jogador ordem 0)
+Level_01_Itaca_Prologue | JOGADOR | Player/Visual/ShieldVisual | PlaceholderSquare | ppu 8 | esc 0,85 | ordem 2 | Default | inativo | y -0,93 !PPU !ESCALA
+Level_01_Itaca_Prologue | JOGADOR | Player/Visual/Body | CHR_Odysseus | ppu 42,857 | esc 1,00 | ordem 0 | Default | ativo | y -1,48
+Level_01_Itaca_Prologue | figura | World/Act1_Ithaca/Villager_1/Body | CHR_Villager_Woman | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | figura | World/Act1_Ithaca/Villager_2/Body | CHR_Villager_Merchant | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | figura | World/Act1_Ithaca/Soldier_1/Body | CHR_Soldier_Ithaca | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | figura | World/Act1_Ithaca/Soldier_2/Body | CHR_Soldier_Ithaca | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | NPC | World/Act1_Ithaca/NPC_Herald/Body | CHR_Herald_Mycenae | ppu 42,857 | esc 1,00 | ordem 1 | Default | inativo | y -2,00
+Level_01_Itaca_Prologue | NPC | World/Act1_Ithaca/NPC_Penelope/Body | CHR_Penelope | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | NPC | World/Act1_Ithaca/NPC_Telemaco/Body | CHR_Telemachus_Child | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | NPC | World/Act3_Recruit/Recruit_Fisherman/Body | CHR_Villager_Fisherman | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | NPC | World/Act3_Recruit/Recruit_Farmer/Body | CHR_Villager_Farmer | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | NPC | World/Act3_Recruit/Recruit_Sailor/Body | CHR_Villager_Sailor | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | NPC | World/Act3_Recruit/Recruit_Blacksmith/Body | CHR_Villager_Merchant | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | NPC | World/Act3_Recruit/Recruit_Eurylochus/Body | CHR_Soldier_Ithaca | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | NPC | World/Act3_Recruit/Recruit_Rower/Body | CHR_Villager_Sailor_Ochre | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | NPC | World/Act3_Recruit/Recruit_Shepherd/Body | CHR_Villager_Farmer | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | NPC | World/Act3_Recruit/Recruit_Watchman/Body | CHR_Soldier_Ithaca | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | NPC | World/Act3_Recruit/Recruit_Carpenter/Body | CHR_Villager_Elder_Brown | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | NPC | World/Act3_Recruit/Recruit_Elpenor/Body | CHR_Villager_Sailor_Olive | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | figura | World/Act4_Training/Soldier_Drill_0/Body | CHR_Soldier_Ithaca | ppu 42,857 | esc 1,00 | ordem -1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | figura | World/Act4_Training/Soldier_Drill_1/Body | CHR_Soldier_Ithaca | ppu 42,857 | esc 1,00 | ordem -1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | figura | World/Act4_Training/Soldier_Drill_2/Body | CHR_Soldier_Ithaca | ppu 42,857 | esc 1,00 | ordem -1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | figura | World/Act4_Training/Soldier_Drill_3/Body | CHR_Soldier_Ithaca | ppu 42,857 | esc 1,00 | ordem -1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | figura | World/Act4_Training/Soldier_Drill_4/Body | CHR_Soldier_Ithaca | ppu 42,857 | esc 1,00 | ordem -1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | figura | World/Act4_Training/Soldier_Drill_5/Body | CHR_Soldier_Ithaca | ppu 42,857 | esc 1,00 | ordem -1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | inimigo | World/Act4_Training/Sparring_Partner/Visual/Body | CHR_Ithaca_Sparring | ppu 42,857 | esc 1,00 | ordem 2 | Default | inativo | y -1,40
+Level_01_Itaca_Prologue | inimigo | World/Act4_Training/Sparring_Combo/Visual/Body | CHR_Ithaca_Sparring | ppu 42,857 | esc 1,00 | ordem 2 | Default | inativo | y -1,40
+Level_01_Itaca_Prologue | figura | World/Act4_Training/NPC_Trainer/Body | CHR_Trainer_Veteran | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | NPC | World/Act5_Arsenal/NPC_Blacksmith/Body | CHR_Villager_Merchant | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | figura | World/Act5_Port/Sailor_1/Body | CHR_Villager_Sailor | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | figura | World/Act5_Port/Sailor_2/Body | CHR_Villager_Sailor_Ochre | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | figura | World/Act5_Port/Sailor_3/Body | CHR_Villager_Sailor_Olive | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_01_Itaca_Prologue | NPC | World/Act6_Departure/NPC_Penelope_Port/Body | CHR_Penelope | ppu 42,857 | esc 1,00 | ordem 1 | Default | inativo | y -2,00
+Level_01_Itaca_Prologue | NPC | World/Act6_Departure/NPC_Telemaco_Port/Body | CHR_Telemachus_Child | ppu 42,857 | esc 1,00 | ordem 1 | Default | inativo | y -2,00
+Level_01_Itaca_Prologue |  | World/Act6_Departure/Ship_Odysseus/Odysseus_OnDeck/Body | CHR_Odysseus | ppu 42,857 | esc 1,00 | ordem 2 | Default | inativo | y -2,08
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | LevelGoal ordem 0 x 419,40..420,60 y -1,70..-0,30
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | LevelGoal/Roof ordem 1 x 419,10..420,90 y -0,09..0,47
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Gate_Hall/Gate_Hall_Leaf ordem 1 x 60,80..63,20 y -2,00..2,99
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Gate_Hall_Post_L ordem 1 x 60,17..60,83 y -2,00..3,16
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Gate_Hall_Post_R ordem 1 x 63,17..63,83 y -2,00..3,16
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Gate_Recruit/Gate_Recruit_Leaf ordem 1 x 78,80..81,20 y -2,00..2,99
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Gate_Recruit_Post_L ordem 1 x 78,17..78,83 y -2,00..3,16
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Gate_Recruit_Post_R ordem 1 x 81,17..81,83 y -2,00..3,16
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Gate_Training/Gate_Training_Leaf ordem 1 x 153,30..155,70 y -2,00..2,99
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Gate_Training_Post_L ordem 1 x 152,67..153,33 y -2,00..3,16
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Gate_Training_Post_R ordem 1 x 155,67..156,33 y -2,00..3,16
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Gate_Arsenal/Gate_Arsenal_Leaf ordem 1 x 239,30..241,70 y -2,00..2,99
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Gate_Arsenal_Post_L ordem 1 x 238,67..239,33 y -2,00..3,16
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Gate_Arsenal_Post_R ordem 1 x 241,67..242,33 y -2,00..3,16
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Gate_Port/Gate_Port_Leaf ordem 1 x 275,80..278,20 y -2,00..2,99
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Gate_Port_Post_L ordem 1 x 275,17..275,83 y -2,00..3,16
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Gate_Port_Post_R ordem 1 x 278,17..278,83 y -2,00..3,16
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act1_Ithaca/Spear_1 ordem 2 x 30,23..30,97 y -2,00..0,05
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act1_Ithaca/Spear_2 ordem 2 x 32,73..33,47 y -2,00..0,05
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act1_Ithaca/Look_Town/Body ordem 1 x 9,07..10,93 y -2,00..-0,69
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act1_Ithaca/Look_People/Body ordem 1 x 21,25..22,75 y -2,00..-1,25
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act1_Ithaca/Look_Soldiers/Body ordem 1 x 30,85..32,15 y -2,00..-0,51
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act1_Ithaca/Look_Palace/Body ordem 1 x 43,63..44,37 y -2,00..-1,07
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act1_Ithaca/Loom ordem 0 x 62,07..63,93 y -2,00..0,24
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Collectible ordem 0 x 15,84..16,16 y -1,26..-0,94
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Collectible ordem 0 x 37,84..38,16 y -1,26..-0,94
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Checkpoint ordem 0 x 76,47..77,53 y -2,00..-0,60
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act3_Recruit/Nets ordem 0 x 87,44..88,56 y -2,00..-0,88
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act3_Recruit/Forge ordem 0 x 105,88..108,12 y -2,00..-0,13
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Collectible ordem 0 x 111,84..112,16 y -1,26..-0,94
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Collectible ordem 0 x 133,84..134,16 y -1,26..-0,94
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Checkpoint ordem 0 x 151,47..152,53 y -2,00..-0,60
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act4_Training/Rack ordem 0 x 161,35..162,65 y -2,00..-0,51
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Checkpoint ordem 0 x 155,47..156,53 y -2,00..-0,60
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Checkpoint ordem 0 x 201,47..202,53 y -2,00..-0,60
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Checkpoint ordem 0 x 236,47..237,53 y -2,00..-0,60
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Arsenal/Anvil ordem 0 x 245,25..246,75 y -2,00..-0,88
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Arsenal/Arsenal_Rack ordem 0 x 270,35..271,65 y -2,00..-0,51
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Arsenal/Arsenal_Spear ordem 0 x 239,63..240,37 y -2,00..0,05
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Arsenal/Arsenal_Shield ordem 0 x 241,53..242,47 y -2,00..-1,07
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Arsenal/Prep_Swords/Body ordem 1 x 249,63..250,37 y -2,00..-1,07
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Arsenal/Prep_Shields/Body ordem 1 x 255,53..256,47 y -2,00..-1,07
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Arsenal/Prep_Arrows/Body ordem 1 x 261,63..262,37 y -2,00..-1,07
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Arsenal/Prep_Armor/Body ordem 1 x 267,63..268,37 y -2,00..-1,25
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Port/Port_Supplies/Body ordem 1 x 281,63..282,37 y -2,00..-1,25
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Port/Port_Oars/Body ordem 1 x 291,63..292,37 y -2,00..0,05
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Port/Port_Sails/Body ordem 1 x 303,63..304,37 y -2,00..-1,25
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Port/Port_Crew/Body ordem 1 x 315,25..316,75 y -2,00..-1,25
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Port/Barrels ordem 0 x 285,63..286,37 y -2,00..-1,07
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Port/Ropes ordem 0 x 307,63..308,37 y -2,00..-1,25
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Port/Dock_Post_0 ordem 0 x 283,63..284,37 y -2,00..-0,51
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Port/Dock_Post_1 ordem 0 x 292,63..293,37 y -2,00..-0,51
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Port/Dock_Post_2 ordem 0 x 301,63..302,37 y -2,00..-0,51
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Port/Dock_Post_3 ordem 0 x 310,63..311,37 y -2,00..-0,51
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Port/Dock_Post_4 ordem 0 x 319,63..320,37 y -2,00..-0,51
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Port/Port_Net ordem 0 x 297,44..298,56 y -2,00..-0,88
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Act5_Port/Port_Anchor ordem 0 x 317,53..318,47 y -2,00..-0,88
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Checkpoint ordem 0 x 278,47..279,53 y -2,00..-0,60
+Level_01_Itaca_Prologue | !CENARIO_SOBRE_JOGADOR | World/Checkpoint ordem 0 x 319,47..320,53 y -2,00..-0,60
+===== Level_02_Troia (jogador ordem 0)
+Level_02_Troia | JOGADOR | Player/Visual/ShieldVisual | PlaceholderSquare | ppu 8 | esc 0,85 | ordem 2 | Default | inativo | y -1,73 !PPU !ESCALA
+Level_02_Troia | JOGADOR | Player/Visual/Body | CHR_Odysseus | ppu 42,857 | esc 1,00 | ordem 0 | Default | ativo | y -2,28
+Level_02_Troia | inimigo | EnemyBasic/Visual/Body | CHR_Trojan_Soldier | ppu 42,857 | esc 1,00 | ordem 2 | Default | ativo | y -2,00
+Level_02_Troia | inimigo | EnemyBasic/Visual/Body | CHR_Trojan_Soldier | ppu 42,857 | esc 1,00 | ordem 2 | Default | ativo | y -2,00
+Level_02_Troia | inimigo | EnemyBasic/Visual/Body | CHR_Trojan_Soldier | ppu 42,857 | esc 1,00 | ordem 2 | Default | ativo | y -2,00
+Level_02_Troia | figura | TroyCast/Greek_Soldier_Fire/Body | CHR_Greek_Soldier_Mycenae | ppu 42,857 | esc 1,00 | ordem 0 | Default | ativo | y -2,00
+Level_02_Troia | figura | TroyCast/Greek_Soldier_Fire_2/Body | CHR_Greek_Soldier_Mycenae | ppu 42,857 | esc 1,00 | ordem 0 | Default | ativo | y -2,00
+Level_02_Troia | figura | TroyCast/Greek_Sentry_Front/Body | CHR_Greek_Soldier_Mycenae | ppu 42,857 | esc 1,00 | ordem -1 | Default | ativo | y -2,00
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | Wall_Troia ordem 0 x -33,75..-32,25 y -2,00..4,00
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | Platform_Bridge ordem 0 x 7,00..14,00 y -1,30..-0,80
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | Gauntlet_1 ordem 0 x 29,00..32,00 y -1,30..-0,80
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | Gauntlet_2 ordem 0 x 35,00..38,00 y -1,30..-0,80
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | Gauntlet_3 ordem 0 x 41,00..44,00 y -1,30..-0,80
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | Obstacle_Low ordem 0 x -4,30..-3,70 y -2,00..-1,20
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | Checkpoint ordem 0 x -1,53..-0,47 y -2,00..-0,60
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x -10,16..-9,84 y -1,56..-1,24
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 1,84..2,16 y -1,56..-1,24
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 10,34..10,66 y -0,36..-0,04
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 16,84..17,16 y -1,56..-1,24
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 23,84..24,16 y -1,56..-1,24
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 49,84..50,16 y -1,56..-1,24
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 63,84..64,16 y -1,56..-1,24
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | LevelGoal ordem 0 x 68,25..71,75 y -2,00..-1,00
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | LevelGoal/Mast ordem 1 x 69,93..70,07 y -1,10..0,90
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | LevelGoal/Sail ordem 1 x 69,91..70,79 y -0,15..0,55
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | TroyScenery/Camp_Fire ordem 1 x -21,77..-20,23 y -2,00..-0,04
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | TroyScenery/Camp_Supplies ordem 1 x -19,16..-16,85 y -2,00..0,05
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | TroyScenery/War_Barricade_1 ordem 1 x -11,44..-8,57 y -2,00..-0,16
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | TroyScenery/War_Spears_1 ordem 1 x -7,05..-4,95 y -2,00..0,54
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | TroyScenery/War_Shield_1 ordem 1 x -0,82..0,82 y -2,00..-0,72
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | TroyScenery/War_Barricade_2 ordem 1 x 15,57..18,44 y -2,00..-0,16
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | TroyScenery/War_Spears_2 ordem 1 x 21,95..24,05 y -2,00..0,54
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | TroyScenery/War_Shield_2 ordem 1 x 47,18..48,82 y -2,00..-0,72
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | TroyScenery/War_Spears_3 ordem 1 x 50,95..53,05 y -2,00..0,54
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | TroyScenery/War_Rubble_1 ordem 1 x 43,55..46,45 y -2,00..-0,20
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | TroyScenery/War_Rubble_2 ordem 1 x 66,55..69,45 y -2,00..-0,20
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | TroyScenery/Flora_-28 ordem 0 x -28,44..-27,56 y -2,00..-1,21
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | TroyScenery/Flora_-19 ordem 0 x -19,44..-18,56 y -2,00..-1,21
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | TroyScenery/Flora_-8 ordem 0 x -8,44..-7,56 y -2,00..-1,21
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | TroyScenery/Flora_16 ordem 0 x 15,56..16,44 y -2,00..-1,21
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | TroyScenery/Flora_24 ordem 0 x 23,56..24,44 y -2,00..-1,21
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | TroyScenery/Flora_47 ordem 0 x 46,56..47,44 y -2,00..-1,21
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | TroyScenery/Flora_57 ordem 0 x 56,56..57,44 y -2,00..-1,21
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | TroyScenery/FG_Rocks_1 ordem 3 x -15,83..-12,17 y -2,00..0,12
+Level_02_Troia | !CENARIO_SOBRE_JOGADOR | TroyScenery/FG_Rocks_2 ordem 3 x 19,17..22,83 y -2,00..0,12
+Level_02_Troia | !EMPATE_COM_JOGADOR | TroyCast/Greek_Soldier_Fire/Body ordem 0
+Level_02_Troia | !EMPATE_COM_JOGADOR | TroyCast/Greek_Soldier_Fire_2/Body ordem 0
+===== Level_03_Cicones (jogador ordem 0)
+Level_03_Cicones | JOGADOR | Player/Visual/ShieldVisual | PlaceholderSquare | ppu 8 | esc 0,85 | ordem 2 | Default | inativo | y -1,73 !PPU !ESCALA
+Level_03_Cicones | JOGADOR | Player/Visual/Body | CHR_Odysseus | ppu 42,857 | esc 1,00 | ordem 0 | Default | ativo | y -2,28
+Level_03_Cicones | inimigo | EnemyBasic/Visual/Body | CHR_Cicones_Warrior | ppu 42,857 | esc 1,00 | ordem 2 | Default | ativo | y -2,00
+Level_03_Cicones | inimigo | EnemyBasic/Visual/Body | CHR_Cicones_Warrior | ppu 42,857 | esc 1,00 | ordem 2 | Default | ativo | y -2,00
+Level_03_Cicones | inimigo | EnemyBasic/Visual/Body | CHR_Cicones_Warrior | ppu 42,857 | esc 1,00 | ordem 2 | Default | ativo | y -2,00
+Level_03_Cicones | !CENARIO_SOBRE_JOGADOR | Checkpoint ordem 0 x -1,53..-0,47 y -2,00..-0,60
+Level_03_Cicones | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x -2,16..-1,84 y -1,56..-1,24
+Level_03_Cicones | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 11,84..12,16 y -1,56..-1,24
+Level_03_Cicones | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 27,84..28,16 y -1,56..-1,24
+Level_03_Cicones | !CENARIO_SOBRE_JOGADOR | LevelGoal ordem 0 x 31,75..32,25 y -2,00..-0,20
+===== Level_04_Citera (jogador ordem 0)
+Level_04_Citera | JOGADOR | Player/Visual/ShieldVisual | PlaceholderSquare | ppu 8 | esc 0,85 | ordem 2 | Default | inativo | y -1,23 !PPU !ESCALA
+Level_04_Citera | JOGADOR | Player/Visual/Body | CHR_Odysseus | ppu 42,857 | esc 1,00 | ordem 0 | Default | ativo | y -1,78
+Level_04_Citera | figura | CyteraCast/Crew_Sailor/Body | CHR_Villager_Sailor | ppu 42,857 | esc 1,00 | ordem -1 | Default | ativo | y -2,00
+Level_04_Citera | figura | CyteraCast/Crew_Rower/Body | CHR_Villager_Sailor_Ochre | ppu 42,857 | esc 1,00 | ordem -1 | Default | ativo | y -2,00
+Level_04_Citera | figura | CyteraCast/Crew_Elpenor/Body | CHR_Villager_Sailor_Olive | ppu 42,857 | esc 1,00 | ordem -1 | Default | ativo | y -2,00
+Level_04_Citera | !CENARIO_SOBRE_JOGADOR | Checkpoint ordem 0 x 12,47..13,53 y -2,00..-0,60
+Level_04_Citera | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 3,84..4,16 y -1,56..-1,24
+Level_04_Citera | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 20,84..21,16 y -1,56..-1,24
+Level_04_Citera | !CENARIO_SOBRE_JOGADOR | CyteraScenery/Art_Onda_1 ordem 6 x -1,06..3,56 y -3,90..-1,42
+Level_04_Citera | !CENARIO_SOBRE_JOGADOR | CyteraScenery/Art_Onda_1_Spray ordem 7 x -0,62..3,12 y -2,80..-0,56
+Level_04_Citera | !CENARIO_SOBRE_JOGADOR | CyteraScenery/Art_Onda_2 ordem 6 x 8,61..12,39 y -3,90..-1,87
+Level_04_Citera | !CENARIO_SOBRE_JOGADOR | CyteraScenery/Art_Onda_2_Spray ordem 7 x 8,63..12,37 y -2,80..-0,56
+Level_04_Citera | !CENARIO_SOBRE_JOGADOR | CyteraScenery/Art_Onda_3 ordem 6 x 21,61..25,39 y -3,90..-1,87
+Level_04_Citera | !CENARIO_SOBRE_JOGADOR | CyteraScenery/Art_Onda_3_Spray ordem 7 x 21,63..25,37 y -2,80..-0,56
+Level_04_Citera | !CENARIO_SOBRE_JOGADOR | CyteraScenery/Art_Redemoinho_Anel_1 ordem 4 x 15,26..19,74 y -2,74..-0,26
+Level_04_Citera | !CENARIO_SOBRE_JOGADOR | CyteraScenery/Art_Redemoinho_Anel_2 ordem 5 x 15,87..19,13 y -2,40..-0,60
+Level_04_Citera | !CENARIO_SOBRE_JOGADOR | CyteraScenery/Art_Redemoinho_Anel_3 ordem 6 x 16,43..18,57 y -2,10..-0,91
+Level_04_Citera | !CENARIO_SOBRE_JOGADOR | CyteraScenery/Art_Raio_1 ordem 9 x 2,60..5,40 y -3,00..4,00
+Level_04_Citera | !CENARIO_SOBRE_JOGADOR | CyteraScenery/Art_Raio_2 ordem 9 x 19,60..22,40 y -3,00..4,00
+Level_04_Citera | !CENARIO_SOBRE_JOGADOR | CyteraScenery/Art_Raio_3 ordem 9 x 28,10..30,90 y -3,00..4,00
+===== Level_05_Ciclopes (jogador ordem 0)
+Level_05_Ciclopes | JOGADOR | Player/Visual/ShieldVisual | PlaceholderSquare | ppu 8 | esc 0,85 | ordem 2 | Default | inativo | y -1,73 !PPU !ESCALA
+Level_05_Ciclopes | JOGADOR | Player/Visual/Body | CHR_Odysseus | ppu 42,857 | esc 1,00 | ordem 0 | Default | ativo | y -2,28
+Level_05_Ciclopes | CHEFE | Polyphemus/Body | CHR_Polyphemus | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_05_Ciclopes | !CENARIO_SOBRE_JOGADOR | Checkpoint ordem 0 x 0,47..1,53 y -2,00..-0,60
+Level_05_Ciclopes | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 3,84..4,16 y -1,56..-1,24
+Level_05_Ciclopes | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 8,84..9,16 y -1,56..-1,24
+Level_05_Ciclopes | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 38,84..39,16 y -1,56..-1,24
+Level_05_Ciclopes | !CENARIO_SOBRE_JOGADOR | LevelGoal ordem 0 x 47,70..48,30 y -2,00..-0,20
+Level_05_Ciclopes | !PRIMEIRO_PLANO | CiclopesScenery/FG_Rock_3 (ordem 12) cobre Polyphemus/Body até 0,15 un acima dos pés
+===== Level_06_Eolo (jogador ordem 0)
+Level_06_Eolo | JOGADOR | Player/Visual/ShieldVisual | PlaceholderSquare | ppu 8 | esc 0,85 | ordem 2 | Default | inativo | y -1,73 !PPU !ESCALA
+Level_06_Eolo | JOGADOR | Player/Visual/Body | CHR_Odysseus | ppu 42,857 | esc 1,00 | ordem 0 | Default | ativo | y -2,28
+Level_06_Eolo | figura | AeolusCast/Aeolus/Body | CHR_Aeolus | ppu 42,857 | esc 1,00 | ordem -11 | Default | ativo | y -0,45
+Level_06_Eolo | !CENARIO_SOBRE_JOGADOR | Checkpoint ordem 0 x 0,47..1,53 y -2,00..-0,60
+Level_06_Eolo | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 3,84..4,16 y -1,56..-1,24
+Level_06_Eolo | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 29,84..30,16 y -1,56..-1,24
+===== Level_07_Lestrigoes (jogador ordem 0)
+Level_07_Lestrigoes | JOGADOR | Player/Visual/ShieldVisual | PlaceholderSquare | ppu 8 | esc 0,85 | ordem 2 | Default | inativo | y -1,73 !PPU !ESCALA
+Level_07_Lestrigoes | JOGADOR | Player/Visual/Body | CHR_Odysseus | ppu 42,857 | esc 1,00 | ordem 0 | Default | ativo | y -2,28
+Level_07_Lestrigoes | PERSEGUIDOR | PursuerHazard | PlaceholderSquare | ppu 8 | esc 4,00 | ordem 0 | Default | desligado | y -3,50 !PPU !ESCALA
+Level_07_Lestrigoes | PERSEGUIDOR | PursuerHazard/Art_Lestrigon | CHR_Lestrigon_Warrior | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_07_Lestrigoes | CHEFE | Giant/Body | CHR_Lestrigon_Warrior | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_07_Lestrigoes | CHEFE | Giant/Body | CHR_Lestrigon_Warrior | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_07_Lestrigoes | !CENARIO_SOBRE_JOGADOR | Checkpoint ordem 0 x 5,47..6,53 y -2,00..-0,60
+Level_07_Lestrigoes | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x -4,16..-3,84 y -1,56..-1,24
+Level_07_Lestrigoes | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 11,84..12,16 y -1,56..-1,24
+Level_07_Lestrigoes | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 29,84..30,16 y -1,56..-1,24
+===== Level_08_Circe (jogador ordem 0)
+Level_08_Circe | JOGADOR | Player/Visual/ShieldVisual | PlaceholderSquare | ppu 8 | esc 0,85 | ordem 2 | Default | inativo | y -1,73 !PPU !ESCALA
+Level_08_Circe | JOGADOR | Player/Visual/Body | CHR_Odysseus | ppu 42,857 | esc 1,00 | ordem 0 | Default | ativo | y -2,28
+Level_08_Circe | inimigo | EnemyBasic/Visual/Body | CHR_Circe_Wolf | ppu 42,857 | esc 1,00 | ordem 2 | Default | ativo | y -2,00
+Level_08_Circe | inimigo | EnemyBasic/Visual/Body | CHR_Circe_Wolf | ppu 42,857 | esc 1,00 | ordem 2 | Default | ativo | y -2,00
+Level_08_Circe | figura | CirceCast/Circe/Body | CHR_Circe | ppu 42,857 | esc 1,00 | ordem -1 | Default | ativo | y -2,00
+Level_08_Circe | !CENARIO_SOBRE_JOGADOR | Checkpoint ordem 0 x 5,47..6,53 y -2,00..-0,60
+Level_08_Circe | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 7,84..8,16 y -1,56..-1,24
+Level_08_Circe | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 23,84..24,16 y -1,56..-1,24
+Level_08_Circe | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 35,84..36,16 y -1,56..-1,24
+===== Level_09_MundoDosMortos (jogador ordem 0)
+Level_09_MundoDosMortos | JOGADOR | Player/Visual/ShieldVisual | PlaceholderSquare | ppu 8 | esc 0,85 | ordem 2 | Default | inativo | y -1,73 !PPU !ESCALA
+Level_09_MundoDosMortos | JOGADOR | Player/Visual/Body | CHR_Odysseus | ppu 42,857 | esc 1,00 | ordem 0 | Default | ativo | y -2,28
+Level_09_MundoDosMortos | inimigo | EnemyBasic/Visual/Body | CHR_Shade_Warrior | ppu 42,857 | esc 1,00 | ordem 2 | Default | ativo | y -2,00
+Level_09_MundoDosMortos | inimigo | EnemyBasic/Visual/Body | CHR_Shade_Warrior | ppu 42,857 | esc 1,00 | ordem 2 | Default | ativo | y -2,00
+Level_09_MundoDosMortos | figura | UnderworldCast/Shade_1/Body | CHR_Shade | ppu 42,857 | esc 1,00 | ordem -1 | Default | ativo | y -2,00
+Level_09_MundoDosMortos | figura | UnderworldCast/Shade_2/Body | CHR_Shade | ppu 42,857 | esc 1,00 | ordem -1 | Default | ativo | y -2,00
+Level_09_MundoDosMortos | figura | UnderworldCast/Shade_3/Body | CHR_Shade | ppu 42,857 | esc 1,00 | ordem -1 | Default | ativo | y -2,00
+Level_09_MundoDosMortos | figura | UnderworldCast/Anticleia/Body | CHR_Anticleia | ppu 42,857 | esc 1,00 | ordem -1 | Default | ativo | y -2,00
+Level_09_MundoDosMortos | !CENARIO_SOBRE_JOGADOR | Checkpoint ordem 0 x 8,47..9,53 y -2,00..-0,60
+Level_09_MundoDosMortos | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 3,84..4,16 y -1,56..-1,24
+Level_09_MundoDosMortos | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 23,84..24,16 y -1,56..-1,24
+Level_09_MundoDosMortos | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 31,84..32,16 y -1,56..-1,24
+===== Level_10_Sereias (jogador ordem 0)
+Level_10_Sereias | JOGADOR | Player/Visual/ShieldVisual | PlaceholderSquare | ppu 8 | esc 0,85 | ordem 2 | Default | inativo | y -1,73 !PPU !ESCALA
+Level_10_Sereias | JOGADOR | Player/Visual/Body | CHR_Odysseus | ppu 42,857 | esc 1,00 | ordem 0 | Default | ativo | y -2,28
+Level_10_Sereias | figura | SirenCast/Siren_Shrine/Body | CHR_Siren | ppu 42,857 | esc 1,00 | ordem -14 | Default | ativo | y -2,00
+Level_10_Sereias | figura | SirenCast/Siren_Spire_L/Body | CHR_Siren_Violet | ppu 42,857 | esc 1,00 | ordem -14 | Default | ativo | y -2,00
+Level_10_Sereias | figura | SirenCast/Siren_Spire_R/Body | CHR_Siren_Sea | ppu 42,857 | esc 1,00 | ordem -14 | Default | ativo | y -2,00
+Level_10_Sereias | !CENARIO_SOBRE_JOGADOR | Checkpoint ordem 0 x -6,53..-5,47 y -2,00..-0,60
+Level_10_Sereias | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 17,84..18,16 y -1,56..-1,24
+Level_10_Sereias | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 27,84..28,16 y -1,56..-1,24
+===== Level_11_CilaCaribdis (jogador ordem 0)
+Level_11_CilaCaribdis | JOGADOR | Player/Visual/ShieldVisual | PlaceholderSquare | ppu 8 | esc 0,85 | ordem 2 | Default | inativo | y -1,73 !PPU !ESCALA
+Level_11_CilaCaribdis | JOGADOR | Player/Visual/Body | CHR_Odysseus | ppu 42,857 | esc 1,00 | ordem 0 | Default | ativo | y -2,28
+Level_11_CilaCaribdis | CHEFE | Giant/Body | CHR_Scylla | ppu 42,857 | esc 1,00 | ordem -20 | Default | ativo | y 0,55
+Level_11_CilaCaribdis | !CENARIO_SOBRE_JOGADOR | Checkpoint ordem 0 x -6,53..-5,47 y -2,00..-0,60
+Level_11_CilaCaribdis | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x -8,16..-7,84 y -1,56..-1,24
+Level_11_CilaCaribdis | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 25,84..26,16 y -1,56..-1,24
+Level_11_CilaCaribdis | !CENARIO_SOBRE_JOGADOR | CilaCaribdisScenery/Charybdis_Art ordem 6 x 13,71..18,79 y -3,62..-1,08
+Level_11_CilaCaribdis | !CENARIO_SOBRE_JOGADOR | CilaCaribdisScenery/Debris_13 ordem 3 x 12,38..14,42 y -1,95..-1,02
+Level_11_CilaCaribdis | !CENARIO_SOBRE_JOGADOR | CilaCaribdisScenery/Debris_19 ordem 3 x 18,18..20,62 y -2,10..-0,99
+Level_11_CilaCaribdis | !CENARIO_SOBRE_JOGADOR | CilaCaribdisScenery/Debris_30 ordem 3 x 28,67..30,53 y -1,95..-1,11
+===== Level_12_GadoDoSol (jogador ordem 0)
+Level_12_GadoDoSol | JOGADOR | Player/Visual/ShieldVisual | PlaceholderSquare | ppu 8 | esc 0,85 | ordem 2 | Default | inativo | y -1,73 !PPU !ESCALA
+Level_12_GadoDoSol | JOGADOR | Player/Visual/Body | CHR_Odysseus | ppu 42,857 | esc 1,00 | ordem 0 | Default | ativo | y -2,28
+Level_12_GadoDoSol | figura | SacredCattle | sun_cattle_idle | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_12_GadoDoSol | figura | SacredCattle | sun_cattle_idle | ppu 42,857 | esc 1,00 | ordem 1 | Default | ativo | y -2,00
+Level_12_GadoDoSol |  | GadoDoSolScenery/Herd_-3 | sun_cattle_idle_ochre | ppu 42,857 | esc 1,00 | ordem -2 | Default | ativo | y -2,05
+Level_12_GadoDoSol |  | GadoDoSolScenery/Herd_7 | sun_cattle_idle | ppu 42,857 | esc 1,00 | ordem -3 | Default | ativo | y -1,95
+Level_12_GadoDoSol |  | GadoDoSolScenery/Herd_9 | sun_cattle_idle_ochre | ppu 42,857 | esc 1,00 | ordem -2 | Default | ativo | y -2,05
+Level_12_GadoDoSol |  | GadoDoSolScenery/Herd_16 | sun_cattle_idle | ppu 42,857 | esc 1,00 | ordem -3 | Default | ativo | y -1,95
+Level_12_GadoDoSol |  | GadoDoSolScenery/Herd_17 | sun_cattle_idle_ochre | ppu 42,857 | esc 1,00 | ordem -2 | Default | ativo | y -2,05
+Level_12_GadoDoSol | !CENARIO_SOBRE_JOGADOR | Checkpoint ordem 0 x -0,53..0,53 y -2,00..-0,60
+Level_12_GadoDoSol | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x -8,16..-7,84 y -1,56..-1,24
+Level_12_GadoDoSol | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 21,84..22,16 y -1,56..-1,24
+Level_12_GadoDoSol | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 31,84..32,16 y -1,56..-1,24
+===== Level_13_Calipso (jogador ordem 0)
+Level_13_Calipso | JOGADOR | Player/Visual/ShieldVisual | PlaceholderSquare | ppu 8 | esc 0,85 | ordem 2 | Default | inativo | y -1,73 !PPU !ESCALA
+Level_13_Calipso | JOGADOR | Player/Visual/Body | CHR_Odysseus | ppu 42,857 | esc 1,00 | ordem 0 | Default | ativo | y -2,28
+Level_13_Calipso | figura | CalypsoCast/Calypso/Body | CHR_Calypso | ppu 42,857 | esc 1,00 | ordem -1 | Default | ativo | y -2,00
+Level_13_Calipso | !CENARIO_SOBRE_JOGADOR | Checkpoint ordem 0 x 5,47..6,53 y -2,00..-0,60
+Level_13_Calipso | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x -6,16..-5,84 y -1,56..-1,24
+Level_13_Calipso | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 13,84..14,16 y -0,36..-0,04
+Level_13_Calipso | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 33,84..34,16 y -1,56..-1,24
+Level_13_Calipso | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 39,84..40,16 y -1,56..-1,24
+===== Level_14_Itaca_Return (jogador ordem 0)
+Level_14_Itaca_Return | JOGADOR | Player/Visual/ShieldVisual | PlaceholderSquare | ppu 8 | esc 0,85 | ordem 2 | Default | inativo | y -1,73 !PPU !ESCALA
+Level_14_Itaca_Return | JOGADOR | Player/Visual/Body | CHR_Odysseus | ppu 42,857 | esc 1,00 | ordem 0 | Default | ativo | y -2,28
+Level_14_Itaca_Return | inimigo | EnemyBasic/Visual/Body | CHR_Suitor | ppu 42,857 | esc 1,00 | ordem 2 | Default | ativo | y -2,00
+Level_14_Itaca_Return | inimigo | EnemyBasic/Visual/Body | CHR_Suitor | ppu 42,857 | esc 1,00 | ordem 2 | Default | ativo | y -2,00
+Level_14_Itaca_Return | NPC | NPC_Eumeu/Body | CHR_Eumaeus | ppu 42,857 | esc 1,00 | ordem -1 | Default | ativo | y -2,00
+Level_14_Itaca_Return | NPC | NPC_Telemaco/Body | CHR_Telemachus_Adult | ppu 42,857 | esc 1,00 | ordem -1 | Default | ativo | y -2,00
+Level_14_Itaca_Return | !CENARIO_SOBRE_JOGADOR | Checkpoint ordem 0 x 3,47..4,53 y -2,00..-0,60
+Level_14_Itaca_Return | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x -8,16..-7,84 y -1,56..-1,24
+Level_14_Itaca_Return | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 11,84..12,16 y -1,56..-1,24
+Level_14_Itaca_Return | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 33,84..34,16 y -1,56..-1,24
+Level_14_Itaca_Return | !CENARIO_SOBRE_JOGADOR | ItacaReturnScenery/Brazier_-3 ordem 3 x 34,50..36,30 y -2,00..0,75
+Level_14_Itaca_Return | !CENARIO_SOBRE_JOGADOR | ItacaReturnScenery/Brazier_3 ordem 3 x 39,70..41,50 y -2,00..0,75
+===== Level_15_Pretendentes (jogador ordem 0)
+Level_15_Pretendentes | JOGADOR | Player/Visual/ShieldVisual | PlaceholderSquare | ppu 8 | esc 0,85 | ordem 2 | Default | inativo | y -1,73 !PPU !ESCALA
+Level_15_Pretendentes | JOGADOR | Player/Visual/Body | CHR_Odysseus | ppu 42,857 | esc 1,00 | ordem 0 | Default | ativo | y -2,28
+Level_15_Pretendentes | NPC | NPC_Penelope/Body | CHR_Penelope | ppu 42,857 | esc 1,00 | ordem -1 | Default | ativo | y -2,00
+Level_15_Pretendentes | NPC | NPC_Telemaco/Body | CHR_Telemachus_Adult | ppu 42,857 | esc 1,00 | ordem -1 | Default | ativo | y -2,00
+Level_15_Pretendentes | inimigo | EnemyBasic/Visual/Body | CHR_Suitor | ppu 42,857 | esc 1,00 | ordem 2 | Default | ativo | y -2,00
+Level_15_Pretendentes | inimigo | EnemyBasic/Visual/Body | CHR_Suitor | ppu 42,857 | esc 1,00 | ordem 2 | Default | ativo | y -2,00
+Level_15_Pretendentes | inimigo | EnemyBasic/Visual/Body | CHR_Suitor | ppu 42,857 | esc 1,00 | ordem 2 | Default | ativo | y -2,00
+Level_15_Pretendentes | inimigo | EnemyBasic/Visual/Body | CHR_Suitor | ppu 42,857 | esc 1,00 | ordem 2 | Default | ativo | y -2,00
+Level_15_Pretendentes | !CENARIO_SOBRE_JOGADOR | Checkpoint ordem 0 x 5,47..6,53 y -2,00..-0,60
+Level_15_Pretendentes | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x -8,16..-7,84 y -1,56..-1,24
+Level_15_Pretendentes | !CENARIO_SOBRE_JOGADOR | Collectible ordem 0 x 9,84..10,16 y -1,56..-1,24
+===== Level_16_Final (jogador ordem 0)
+Level_16_Final | JOGADOR | Player/Visual/ShieldVisual | PlaceholderSquare | ppu 8 | esc 0,85 | ordem 2 | Default | inativo | y -1,73 !PPU !ESCALA
+Level_16_Final | JOGADOR | Player/Visual/Body | CHR_Odysseus | ppu 42,857 | esc 1,00 | ordem 0 | Default | ativo | y -2,28
+Level_16_Final | !CENARIO_SOBRE_JOGADOR | Checkpoint ordem 0 x 1,47..2,53 y -2,00..-0,60
+Level_16_Final | !CENARIO_SOBRE_JOGADOR | LevelGoal ordem 0 x 37,70..38,30 y -2,00..-0,20
+Level_16_Final | !CENARIO_SOBRE_JOGADOR | AxeRing_10 ordem 0 x 9,93..10,08 y -1,90..-0,30
+Level_16_Final | !CENARIO_SOBRE_JOGADOR | AxeRing_18 ordem 0 x 17,93..18,08 y -1,90..-0,30
+Level_16_Final | !CENARIO_SOBRE_JOGADOR | AxeRing_26 ordem 0 x 25,93..26,08 y -1,90..-0,30
+Level_16_Final | !CENARIO_SOBRE_JOGADOR | AxeRing_34 ordem 0 x 33,93..34,08 y -1,90..-0,30

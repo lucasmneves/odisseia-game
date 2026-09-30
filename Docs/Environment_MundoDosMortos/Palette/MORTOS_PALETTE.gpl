@@ -1,0 +1,44 @@
+GIMP Palette
+Name: Odisseia - MundoDosMortos Environment
+Columns: 4
+#
+ 43  46  39	Contorno Highlight
+ 29  34  29	Contorno Base
+ 20  20  21	Contorno Sombra
+  5   5   7	Contorno Profunda
+245 205  92	Bronze Highlight
+187 126  44	Bronze Base
+157  97  31	Bronze Sombra
+115  62  22	Bronze Profunda
+252 216  78	Fogo Highlight
+227 161  77	Fogo Base
+241 104  26	Fogo Sombra
+167  49  29	Fogo Profunda
+135 155 165	Pedra fria Highlight
+108 127 139	Pedra fria Base
+ 83 102 116	Pedra fria Sombra
+ 69  88 104	Pedra fria Profunda
+ 77  84  89	Pedra funda Highlight
+ 57  80  83	Pedra funda Base
+ 53  74  77	Pedra funda Sombra
+ 21  22  21	Pedra funda Profunda
+217 232 234	Marmore palido Highlight
+189 206 211	Marmore palido Base
+172 192 200	Marmore palido Sombra
+121 141 153	Marmore palido Profunda
+ 69 101  83	Agua morta Highlight
+ 39  72  42	Agua morta Base
+ 29  53  30	Agua morta Sombra
+ 17  31  15	Agua morta Profunda
+228 232 212	Alma Highlight
+186 194 174	Alma Base
+158 179 174	Alma Sombra
+112 130 126	Alma Profunda
+196 192 173	Madeira morta Highlight
+166 157 133	Madeira morta Base
+125 110  87	Madeira morta Sombra
+ 78  73  61	Madeira morta Profunda
+181 145 102	Terra Highlight
+113  89  70	Terra Base
+ 96  71  51	Terra Sombra
+ 53  37  26	Terra Profunda

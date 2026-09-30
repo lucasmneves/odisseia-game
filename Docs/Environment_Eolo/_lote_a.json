@@ -1,0 +1,58 @@
+[
+  {
+    "nome": "_fonte_tiles_island",
+    "args": {
+      "description": "a horizontal strip of a floating rock island seen from directly beside it, strict flat side profile like a technical elevation drawing. The top edge is a thin band of bright green wind-swept grass, below it a solid cross-section of pale grey layered rock with horizontal strata and cracks, growing darker toward the bottom where it becomes ragged. Palette of grass green and pale grey stone. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 160, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_island_underside",
+    "args": {
+      "description": "a horizontal strip of the ragged underside of a floating rock island, seen from directly beside it, strict flat side profile like a technical elevation drawing. The top edge is flat dark rock and below it the stone breaks into long uneven downward points of different lengths with loose chunks hanging off, going almost black at the tips. Palette of dark grey and brown stone. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 128, "no_background": true, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "_fonte_column",
+    "args": {
+      "description": "one single ancient Greek stone column seen from directly beside it, strict flat side profile like a technical elevation drawing. A tall plain shaft of pale marble with shallow vertical fluting, a simple round moulding at the top and a plain square block above it, a plain round base at the bottom, weathered with a few chips and a patch of pale lichen, no carving and no ornament. Warm palette of pale marble and cool grey shadow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 96, "height": 320, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_entablature",
+    "args": {
+      "description": "a horizontal strip of ancient Greek stone entablature seen from directly beside it, strict flat side profile like a technical elevation drawing. A straight beam of pale marble across the whole width with a plain lower band, a row of short rectangular blocks above it, and a projecting flat cornice at the top, entirely straight with no arches and no figures. Warm palette of pale marble and cool grey shadow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 96, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_steps",
+    "args": {
+      "description": "a horizontal strip of a wide ancient Greek stairway seen from directly beside it, strict flat side profile like a technical elevation drawing. Four broad shallow steps of pale marble stacked one above the other, each set back from the one below, the front faces worn smooth and the edges chipped, joints between the blocks visible. Warm palette of pale marble and cool grey shadow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing, no sky, no background.",
+      "width": 256, "height": 128, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_bronze_door",
+    "args": {
+      "description": "one single pair of tall bronze doors seen from directly in front, strict flat side profile like a technical elevation drawing. Two leaves of dark green-brown bronze set in a plain pale marble frame with a straight lintel above and no arch, each leaf divided into flat rectangular panels with a large round ring handle, patches of green patina on the metal. Palette of dark bronze, green patina and pale marble. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 160, "height": 256, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_brazier",
+    "args": {
+      "description": "one single tall bronze brazier seen from directly beside it, strict flat side profile like a technical elevation drawing. A wide shallow bronze bowl on a slender fluted bronze stand with three splayed feet, orange flames rising from the bowl with a bright yellow core, a little pale smoke above, patches of green patina on the metal. Palette of bronze, green patina and warm orange flame. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 128, "height": 256, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "_fonte_cypress",
+    "args": {
+      "description": "one single tall cypress tree bent by wind, seen from directly beside it, strict flat side profile like a technical elevation drawing. A narrow flame-shaped column of dense dark green foliage leaning hard to one side, its tip curving over, a short dark trunk at the base, a few sprigs blown loose from the outline. Palette of dark cypress green and grey-brown trunk. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 128, "height": 288, "no_background": true, "view": "side", "detail": "medium detail"
+    }
+  }
+]

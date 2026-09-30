@@ -1,0 +1,44 @@
+GIMP Palette
+Name: Odisseia - CilaCaribdis Environment
+Columns: 4
+#
+ 43  46  39	Contorno Highlight
+ 29  34  29	Contorno Base
+ 20  20  21	Contorno Sombra
+  5   5   7	Contorno Profunda
+245 205  92	Bronze Highlight
+187 126  44	Bronze Base
+157  97  31	Bronze Sombra
+115  62  22	Bronze Profunda
+ 53  55  66	Basalto Highlight
+ 45  46  54	Basalto Base
+ 29  30  34	Basalto Sombra
+  9   9   9	Basalto Profunda
+137 145 140	Rocha jogavel Highlight
+ 96 106 102	Rocha jogavel Base
+ 68  83  81	Rocha jogavel Sombra
+ 38  49  53	Rocha jogavel Profunda
+ 58 102 107	Agua funda Highlight
+ 32  74  73	Agua funda Base
+ 19  55  50	Agua funda Sombra
+  8  30  29	Agua funda Profunda
+ 90 150 142	Agua agitada Highlight
+ 63 127 116	Agua agitada Base
+ 42 106  93	Agua agitada Sombra
+ 15  67  57	Agua agitada Profunda
+253 253 249	Espuma Highlight
+223 235 238	Espuma Base
+184 206 221	Espuma Sombra
+143 176 189	Espuma Profunda
+184 188 213	Ceu de tempestade Highlight
+154 155 188	Ceu de tempestade Base
+115 110 139	Ceu de tempestade Sombra
+ 74  67  92	Ceu de tempestade Profunda
+253 250 226	Relampago Highlight
+250 223 157	Relampago Base
+199 143  83	Relampago Sombra
+171 112  58	Relampago Profunda
+166 141 123	Madeira do navio Highlight
+125  94  59	Madeira do navio Base
+107  82  54	Madeira do navio Sombra
+ 79  49  35	Madeira do navio Profunda

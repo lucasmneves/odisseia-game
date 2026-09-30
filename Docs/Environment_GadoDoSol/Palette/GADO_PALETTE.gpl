@@ -1,0 +1,44 @@
+GIMP Palette
+Name: Odisseia - GadoDoSol Environment
+Columns: 4
+#
+ 43  46  39	Contorno Highlight
+ 29  34  29	Contorno Base
+ 20  20  21	Contorno Sombra
+  5   5   7	Contorno Profunda
+245 205  92	Bronze Highlight
+187 126  44	Bronze Base
+157  97  31	Bronze Sombra
+115  62  22	Bronze Profunda
+176 211 228	Ceu Highlight
+133 191 223	Ceu Base
+108 171 214	Ceu Sombra
+ 79 146 199	Ceu Profunda
+ 57 119 171	Mar Highlight
+ 35  89 143	Mar Base
+ 16  43  43	Mar Sombra
+  4   6   8	Mar Profunda
+148 176  72	Pasto Highlight
+128 160  63	Pasto Base
+ 97 140  53	Pasto Sombra
+ 71 106  47	Pasto Profunda
+ 93 130  54	Folhagem Highlight
+ 55  88  61	Folhagem Base
+ 41  80  50	Folhagem Sombra
+ 38  65  46	Folhagem Profunda
+249 217 143	Calcario dourado Highlight
+237 202 132	Calcario dourado Base
+215 174 104	Calcario dourado Sombra
+188 143  83	Calcario dourado Profunda
+163 112  66	Terra Highlight
+141  95  64	Terra Base
+105  69  58	Terra Sombra
+ 77  49  55	Terra Profunda
+254 249 226	Gado sagrado Highlight
+249 230 189	Gado sagrado Base
+233 207 160	Gado sagrado Sombra
+201 158  93	Gado sagrado Profunda
+219 204 184	Muro seco Highlight
+140 127 116	Muro seco Base
+113  91  74	Muro seco Sombra
+ 62  49  44	Muro seco Profunda

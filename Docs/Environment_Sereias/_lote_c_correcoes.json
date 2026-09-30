@@ -1,0 +1,23 @@
+[
+  {
+    "nome": "sereias_bg_islets",
+    "args": {
+      "description": "distant small rocky islands far out at sea on a bright hazy day, seen from the shore, strict flat side profile like a technical elevation drawing. Three or four low pale humps of natural eroded rock rising from flat calm turquoise water, rounded and soft edged, faded almost to pale cream by distance haze, a thin dark line of scrub along their tops. They are small and low in the frame with wide open water and pale sky around them. Natural weathered rock, not built, no walls, no bricks, no buildings. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 512, "height": 192, "no_background": false, "view": "side", "detail": "low detail"
+    }
+  },
+  {
+    "nome": "sereias_mid_cliff",
+    "args": {
+      "description": "a natural sea cliff of eroded cream limestone seen from beside it, strict flat side profile like a technical elevation drawing. One single continuous mass of solid rock, wind and water worn, with soft rounded bulges, shallow scooped hollows, irregular wavy bands of colour running through the stone, and thin cracks. Tufts of green scrub grow from the hollows. Damp darker stone along the lowest edge. This is natural geology, a raw rock face, not built by anyone: no bricks, no blocks, no mortar, no straight lines, no masonry, not a wall. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 512, "height": 256, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "sereias_tiles_rock",
+    "args": {
+      "description": "a natural shelf of eroded cream limestone at the seashore, seen from beside it in cross section, strict flat side profile like a technical elevation drawing. A flat worn top surface polished by the sea, then one solid continuous mass of rock below it with irregular wavy layers, small rounded pits and hollows, and thin uneven cracks. Patches of green weed in the hollows, damp darker stone toward the bottom. This is natural geology, raw solid rock, not built by anyone: no bricks, no blocks, no mortar, no masonry, not a wall. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 512, "height": 160, "no_background": false, "view": "side", "detail": "medium detail"
+    }
+  }
+]

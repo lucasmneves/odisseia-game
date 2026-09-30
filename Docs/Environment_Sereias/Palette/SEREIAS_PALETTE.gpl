@@ -1,0 +1,40 @@
+GIMP Palette
+Name: Odisseia - Sereias Environment
+Columns: 4
+#
+ 43  46  39	Contorno Highlight
+ 29  34  29	Contorno Base
+ 20  20  21	Contorno Sombra
+  5   5   7	Contorno Profunda
+245 205  92	Bronze Highlight
+187 126  44	Bronze Base
+157  97  31	Bronze Sombra
+115  62  22	Bronze Profunda
+206 238 254	Ceu Highlight
+148 208 243	Ceu Base
+116 181 237	Ceu Sombra
+100 129 160	Ceu Profunda
+248 235 203	Areia e calcario Highlight
+209 193 161	Areia e calcario Base
+174 149 127	Areia e calcario Sombra
+129 111  99	Areia e calcario Profunda
+157 213 197	Agua rasa Highlight
+122 192 180	Agua rasa Base
+ 96 174 164	Agua rasa Sombra
+ 78 153 147	Agua rasa Profunda
+ 77 131 125	Agua funda Highlight
+ 64 116 122	Agua funda Base
+ 59 102 111	Agua funda Sombra
+ 22  45  42	Agua funda Profunda
+249 252 251	Espuma Highlight
+175 222 202	Espuma Base
+141 192 169	Espuma Sombra
+113 158 138	Espuma Profunda
+197 212 183	Vegetacao Highlight
+152 171  78	Vegetacao Base
+ 90 121  78	Vegetacao Sombra
+ 65  92  66	Vegetacao Profunda
+219 185 140	Madeira naufragio Highlight
+156 129 110	Madeira naufragio Base
+138 104  97	Madeira naufragio Sombra
+102  70  66	Madeira naufragio Profunda

@@ -17,11 +17,19 @@ public static class SceneLayoutProbe
 {
     public static void Listar()
     {
-        string cena = "Assets/Scenes/Levels/Level_03_Cicones.unity";
+        // Sem default: um flag com nome errado despejava a cena de Cícones em silêncio, e o dump
+        // parece legítimo. Foi assim que uma auditoria da fase errada passou por verdadeira.
+        string cena = null;
         string[] args = System.Environment.GetCommandLineArgs();
         for (int i = 0; i < args.Length - 1; i++)
         {
             if (args[i] == "-cena") { cena = args[i + 1]; }
+        }
+        if (string.IsNullOrEmpty(cena))
+        {
+            Debug.LogError("[Layout] falta -cena <caminho da cena>");
+            if (Application.isBatchMode) { EditorApplication.Exit(1); }
+            return;
         }
 
         EditorSceneManager.OpenScene(cena, OpenSceneMode.Single);
@@ -41,10 +49,13 @@ public static class SceneLayoutProbe
                      .OrderBy(s => s.transform.position.x))
         {
             Debug.Log(string.Format(CultureInfo.InvariantCulture,
-                "[Sprite]   {0,-24} pos ({1:0.0}, {2:0.0})  escala ({3:0.00}, {4:0.00})  ordem {5}  sprite {6}",
+                // "(off)" importa: um renderer desligado ainda aparece no dump, e sem essa marca
+                // não dá para distinguir "placeholder coberto" de "placeholder ainda aceso".
+                "[Sprite]   {0,-24} pos ({1:0.0}, {2:0.0})  escala ({3:0.00}, {4:0.00})  ordem {5}  sprite {6}{7}",
                 sr.gameObject.name, sr.transform.position.x, sr.transform.position.y,
                 sr.transform.lossyScale.x, sr.transform.lossyScale.y, sr.sortingOrder,
-                sr.sprite != null ? sr.sprite.name : "—"));
+                sr.sprite != null ? sr.sprite.name : "—",
+                sr.enabled && sr.gameObject.activeInHierarchy ? "" : "  (off)"));
         }
 
         if (Application.isBatchMode) { EditorApplication.Exit(0); }
