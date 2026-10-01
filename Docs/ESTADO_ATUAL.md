@@ -783,3 +783,16 @@ Notion: "Character Art — Fase 11 — Cila e Caríbdis", seção em "PixelLab �
 - Caríbdis = ENVIRONMENT (`FX_Charybdis`), intocada; escala 0,42 fica como pendência de cenário.
 - PixelLab: **20 gerações** (786 → 806 de 2000), sem descarte.
 - Pendências: Cila com pés visíveis ("pairando"); palácio de Éolo 0,52; porco da Circe; `EnemyBasic` carmesim em 01, 14, 15.
+
+## Cenário da Fase 16 — Final (2026-10-01)
+
+Fonte: **`Docs/Environment/Fase16/FINAL_ENVIRONMENT_ART.md`**. Notion: "Environment Art — Fase 16 — Final" em 🎨 Art,
+seção em "PixelLab — Personagens" (🤖 AI), decisões D-055 a D-058.
+
+- A mesma casa da 15, na manhã seguinte: reaproveitei parede, trono, braseiros, colunas e piso. São novos os machados, o arco,
+  a lareira (base + chama separada), o tear, o fundo do amanhecer, a fachada do palácio e 2 peças de primeiro plano.
+- PixelLab: **20 gerações** (845 → 865 de 2000), todas `pixen`. Na nuvem funciona com `PIXELLAB_API_KEY` +
+  `NODE_USE_ENV_PROXY=1`.
+- `FinalSceneDresser` escrito e **não executado** (a sessão não tinha Unity). Falta rodar `FinalSceneDresser.Run`,
+  `PlaceholderProbe`, `CampaignValidation`, `FinalSceneDresser.Shots` e o WebGL Build. A prévia montada fora do Unity
+  está em `Docs/Environment/Fase16/_previa/`.

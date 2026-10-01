@@ -154,7 +154,12 @@ public static class PlaceholderProbe
         // Fase 15 — Pretendentes.
         ["PretendentesScenery/Sky_Fill"] = "cobertura acima do céu: a cor MEDIDA da primeira linha de itaca_ret_bg_dusk (#99a593) multiplicada pelo mesmo tom de noite aplicado ao céu reusado, calculada no vestidor para não haver emenda",
         ["PretendentesScenery/Ground_Fill"] = "terra abaixo do piso, no passo Profunda de Pedra; topo em −1,9 para cobrir as falhas da fileira de superfície dos tiles de Ítaca",
-        ["PretendentesScenery/Hall_Ceiling"] = "teto escuro do salão acima da parede, em Noite Profunda; o salão é interior, e sem ele o céu noturno aparecia por cima com a câmera alta",        ["LevelGoal/MagicGlow"] = "brilho mágico que marca a saída; forma de cor chapada é a ferramenta certa para um glow",
+        ["PretendentesScenery/Hall_Ceiling"] = "teto escuro do salão acima da parede, em Noite Profunda; o salão é interior, e sem ele o céu noturno aparecia por cima com a câmera alta",
+
+        // Fase 16 — Final.
+        ["FinalScenery/Sky_Fill"] = "cobertura acima do céu, em #b0c5d1 — a cor MEDIDA da primeira linha de final_bg_dawn (1534 dos 1534 px)",
+        ["FinalScenery/Ground_Fill"] = "terra abaixo do piso, no passo Profunda de Pedra; topo em −1,9 para cobrir as falhas da fileira de superfície dos tiles de Ítaca (mesma regra da 15)",
+        ["LevelGoal/MagicGlow"] = "brilho mágico que marca a saída; forma de cor chapada é a ferramenta certa para um glow",
         ["World/Sea_Deep"] = "água profunda abaixo da faixa de oceano, no passo Profunda da rampa de Água",
         ["LevelGoal"] = "x=420, 50 un além do alcance máximo da câmera (o navio anda 16 un e a câmera trava em 360)",
         ["LevelGoal/Roof"] = "idem LevelGoal",

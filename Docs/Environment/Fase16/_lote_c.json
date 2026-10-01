@@ -1,0 +1,54 @@
+[
+  {
+    "nome": "final_fg_stones_a",
+    "ferramenta": "create_image_pixen",
+    "args": {
+      "description": "a low foreground clump of weathered pale limestone blocks and a fallen fluted column drum half-buried in earth, wild acanthus leaves, tall dry grass and a small flowering caper bush growing between the stones, seen from directly beside it, strict flat side profile. Drawn small enough that the whole clump is complete and visible. Isolated game asset cut out on a fully transparent background, only the stones and plants. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 160,
+      "height": 64,
+      "no_background": true,
+      "view": "side",
+      "detail": "medium detail",
+      "outline": "single color black outline"
+    }
+  },
+  {
+    "nome": "final_fg_stones_b",
+    "ferramenta": "create_image_pixen",
+    "args": {
+      "description": "a low foreground clump of weathered pale limestone blocks and a fallen fluted column drum half-buried in earth, wild acanthus leaves, tall dry grass and a small flowering caper bush growing between the stones, seen from directly beside it, strict flat side profile. Drawn small enough that the whole clump is complete and visible. Isolated game asset cut out on a fully transparent background, only the stones and plants. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 160,
+      "height": 64,
+      "no_background": true,
+      "view": "side",
+      "detail": "medium detail",
+      "outline": "single color black outline"
+    }
+  },
+  {
+    "nome": "final_fg_column_a",
+    "ferramenta": "create_image_pixen",
+    "args": {
+      "description": "a broken fluted column of pale cream limestone standing upright, snapped off at the top, wrapped in dark green ivy, a young olive branch growing from its base among a few stones, seen from directly beside it, strict flat side profile. Drawn small enough that the whole column from base to the broken top is complete and visible. Isolated game asset cut out on a fully transparent background, only the broken column and plants. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 64,
+      "height": 160,
+      "no_background": true,
+      "view": "side",
+      "detail": "medium detail",
+      "outline": "single color black outline"
+    }
+  },
+  {
+    "nome": "final_fg_column_b",
+    "ferramenta": "create_image_pixen",
+    "args": {
+      "description": "a broken fluted column of pale cream limestone standing upright, snapped off at the top, wrapped in dark green ivy, a young olive branch growing from its base among a few stones, seen from directly beside it, strict flat side profile. Drawn small enough that the whole column from base to the broken top is complete and visible. Isolated game asset cut out on a fully transparent background, only the broken column and plants. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 64,
+      "height": 160,
+      "no_background": true,
+      "view": "side",
+      "detail": "medium detail",
+      "outline": "single color black outline"
+    }
+  }
+]
