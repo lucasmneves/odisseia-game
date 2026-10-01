@@ -1,4 +1,32 @@
 arquivo	px	célula	quadros	ppu	point	compr	pivô	semi%	cantos	xadrez	soltos	fator	cores	dist_paleta	nome	veredito
+Assets/Art/Effects/Boss/fx_scylla_strike.png	364x64	72x64	5	42.857143	true	true	base	0.0	0	false	22	1	9	32.0	true	ok, ver: 22 px soltos
+Assets/Art/Effects/Boss/fx_scylla_telegraph.png	243x40	60x40	4	42.857143	true	true	base	0.0	0	false	0	1	3	11.0	true	ok
+Assets/Art/Effects/Combat/fx_heavy_slash.png	219x56	54x56	4	42.857143	true	true	centro	0.0	0	false	184	1	34	25.4	true	ok, ver: 184 px soltos
+Assets/Art/Effects/Combat/fx_hit_v2.png	115x28	28x28	4	42.857143	true	true	centro	0.0	0	false	3	1	47	22.1	true	ok
+Assets/Art/Effects/Combat/fx_ricochet.png	95x26	31x26	3	42.857143	true	true	centro	0.0	0	false	63	1	28	25.3	true	ok, ver: 63 px soltos
+Assets/Art/Effects/Combat/fx_slash_v2.png	143x32	35x32	4	42.857143	true	true	centro	0.0	0	false	2	1	18	27.7	true	ok
+Assets/Art/Effects/Combat/fx_thrust.png	239x12	59x12	4	42.857143	true	true	centro	0.0	0	false	0	1	10	36.1	true	ok
+Assets/Art/Effects/Magic/fx_circe_circle.png	387x96	96x96	4	42.857143	true	true	centro	0.0	0	false	8	1	171	28.4	true	ok, ver: 8 px soltos
+Assets/Art/Effects/Magic/fx_circe_circle_ground.png	515x34	128x34	4	42.857143	true	true	base	0.0	0	false	7	1	5	39.2	true	ok, ver: 7 px soltos
+Assets/Art/Effects/Magic/fx_circe_cure.png	389x64	64x64	6	42.857143	true	true	centro	0.0	0	false	19	1	67	33.4	true	ok, ver: 19 px soltos
+Assets/Art/Effects/Magic/fx_circe_smoke.png	195x64	48x64	4	42.857143	true	true	base	0.0	0	false	24	1	44	43.5	true	ok, ver: 24 px soltos, longe da paleta (44)
+Assets/Art/Effects/Magic/fx_circe_transform.png	389x64	64x64	6	42.857143	true	true	centro	0.0	0	false	348	1	119	46.8	true	ok, ver: 348 px soltos, longe da paleta (47)
+Assets/Art/Effects/Particles/Combat/ptc_spark.png	79x7	7x7	10	42.857143	true	true	centro	0.0	0	false	0	1	29	25.0	true	ok
+Assets/Art/Effects/Particles/Debris/ptc_chip.png	41x5	6x5	6	42.857143	true	true	centro	0.0	0	false	0	1	35	14.7	true	ok
+Assets/Art/Effects/Particles/Debris/ptc_debris_tint.png	69x5	6x5	10	42.857143	true	true	centro	0.0	0	false	1	1	32	36.2	true	ok
+Assets/Art/Effects/Particles/Dust/fx_fall_dust.png	299x24	59x24	5	42.857143	true	true	base	0.0	0	false	7	1	17	20.0	true	ok, ver: 7 px soltos
+Assets/Art/Effects/Particles/Dust/fx_land_dust.png	304x22	60x22	5	42.857143	true	true	base	0.0	0	false	0	1	11	22.3	true	ok
+Assets/Art/Effects/Particles/Dust/ptc_dust_puff.png	47x12	11x12	4	42.857143	true	true	centro	0.0	0	false	0	1	62	30.4	true	ok
+Assets/Art/Effects/Particles/Dust/ptc_skid_dust.png	58x17	-	1	42.857143	true	true	base	0.0	0	false	3	1	8	20.6	true	ok
+Assets/Art/Effects/Particles/Environment/ptc_sand.png	23x2	3x2	6	42.857143	true	true	centro	0.0	1	false	4	1	3	0.0	true	ok
+Assets/Art/Effects/Particles/Nature/ptc_leaf.png	54x8	10x8	5	42.857143	true	true	centro	0.0	0	false	0	1	34	23.8	true	ok
+Assets/Art/Effects/Particles/Water/ptc_drop.png	49x11	9x11	5	42.857143	true	true	centro	0.0	0	false	0	1	37	16.3	true	ok
+Assets/Art/Effects/Particles/Water/ptc_foam.png	161x7	8x7	18	42.857143	true	true	centro	0.0	0	false	22	1	29	34.6	true	ok, ver: 22 px soltos
+Assets/Art/Effects/Storm/fx_storm_strike.png	259x48	64x48	4	42.857143	true	true	base	0.0	0	false	116	1	8	45.4	true	ok, ver: 116 px soltos, longe da paleta (45)
+Assets/Art/Effects/Storm/fx_storm_warn_crackle.png	259x32	64x32	4	42.857143	true	true	base	0.0	0	false	54	1	51	42.5	true	ok, ver: 54 px soltos, longe da paleta (42)
+Assets/Art/Effects/Water/fx_ripple.png	131x10	32x10	4	42.857143	true	true	centro	0.0	0	false	0	1	3	7.1	true	ok
+Assets/Art/Effects/Water/fx_splash_large.png	319x58	63x58	5	42.857143	true	true	base	0.0	0	false	25	1	46	30.5	true	ok, ver: 25 px soltos
+Assets/Art/Effects/Water/fx_splash_small.png	159x29	31x29	5	42.857143	true	true	base	0.0	0	false	20	1	38	31.4	true	ok, ver: 20 px soltos
 Assets/Art/Effects/fx_arrow_impact.png	92x27	30x27	3	42.857143	true	true	centro	0.0	0	false	2	1	42	16.0	true	ok
 Assets/Art/Effects/fx_block.png	119x28	29x28	4	42.857143	true	true	centro	0.0	0	false	0	1	25	8.6	true	ok
 Assets/Art/Effects/fx_collect.png	103x20	25x20	4	42.857143	true	true	centro	0.0	0	false	1	1	65	31.6	true	ok
@@ -9,6 +37,7 @@ Assets/Art/Effects/fx_slash.png	167x44	41x44	4	42.857143	true	true	centro	0.0	0	
 Assets/Art/Items/item_arrow_quiver.png	31x38	-	1	42.857143	true	true	base	0.0	0	false	0	1	28	18.0	true	ok
 Assets/Art/Items/item_checkpoint_altar.png	342x82	48x82	7	42.857143	true	true	base	0.0	0	false	2	1	70	18.1	true	ok
 Assets/Art/Items/item_collectible_coin.png	279x37	34x37	8	42.857143	true	true	centro	0.0	0	false	0	1	3871	48.0	true	ok, ver: longe da paleta (48)
+Assets/Art/Ending/ending_bedroom_olive.png	604x340	-	1	42.857143	true	true	centro	0.0	4	false	0	1	103	15.5	true	ok
 Assets/Art/Ending/ending_reunion.png	38x60	-	1	42.857143	true	true	base	0.0	0	false	0	1	56	19.7	true	ok
 Assets/Art/Ending/ending_reunion_close.png	49x78	-	1	42.857143	true	true	base	0.0	0	false	0	1	56	19.7	true	ok
 Assets/Art/Map/Emblems/emblem_01.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	37	6.2	true	ok
@@ -43,8 +72,12 @@ Assets/Art/Map/Emblems/emblem_15.png	56x56	-	1	42.857143	true	true	centro	0.0	0	
 Assets/Art/Map/Emblems/emblem_15_locked.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	45	14.0	true	ok
 Assets/Art/Map/Emblems/emblem_16.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	52	2.9	true	ok
 Assets/Art/Map/Emblems/emblem_16_locked.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	37	13.0	true	ok
+Assets/Art/Map/States/map_state_completed_wreath.png	80x80	-	1	42.857143	true	true	centro	0.0	0	false	0	1	55	15.8	true	ok
+Assets/Art/Map/States/map_state_current_ring.png	291x72	72x72	4	42.857143	true	true	centro	0.0	0	false	0	1	4	4.0	true	ok
 Assets/Art/Map/map_aegean.png	604x340	-	1	42.857143	true	true	centro	0.0	4	false	0	1	43	7.7	true	ok
 Assets/Art/Map/map_ship_marker.png	18x23	-	1	42.857143	true	true	base	0.0	0	false	0	1	49	18.8	true	ok
+Assets/Art/Map/map_trail_dot.png	11x5	5x5	2	42.857143	true	true	centro	0.0	0	false	0	1	3	4.4	true	ok
+Assets/Art/Map/map_wave_glint.png	47x4	11x4	4	42.857143	true	true	centro	0.0	0	false	0	1	2	0.0	true	ok
 Assets/Art/UI/HUD/icon_arrows.png	23x26	-	1	42.857143	true	true	centro	0.0	0	false	0	1	60	19.8	true	ok
 Assets/Art/UI/HUD/icon_coin.png	27x29	-	1	42.857143	true	true	centro	0.0	0	false	0	1	606	49.0	true	ok, ver: longe da paleta (49)
 Assets/Art/UI/HUD/icon_health.png	32x32	-	1	42.857143	true	true	centro	0.0	0	false	0	1	61	42.0	true	ok, ver: longe da paleta (42)
@@ -56,6 +89,9 @@ Assets/Art/UI/HUD/icon_wax.png	20x24	-	1	42.857143	true	true	centro	0.0	0	false	
 Assets/Art/UI/HUD/icon_xp.png	31x30	-	1	42.857143	true	true	centro	0.0	0	false	0	1	48	20.6	true	ok
 Assets/Art/UI/MainMenu/menu_bg_ithaca.png	604x400	-	1	42.857143	true	true	centro	0.0	4	false	0	1	44	18.9	true	ok
 Assets/Art/UI/MainMenu/menu_bg_ithaca_odysseus.png	604x400	-	1	42.857143	true	true	centro	0.0	4	false	0	1	95	18.9	true	ok
+Assets/Art/UI/Transitions/fx_victory_laurel.png	564x112	112x112	5	42.857143	true	true	centro	0.0	0	false	1	1	69	24.3	true	ok
+Assets/Art/UI/Transitions/ui_death_vignette_9slice.png	48x48	-	1	42.857143	true	true	centro	0.0	4	false	57	1	1	0.0	true	ok, ver: 57 px soltos
+Assets/Art/UI/Transitions/ui_meander_band_tile.png	12x18	-	1	42.857143	true	true	centro	0.0	4	false	0	1	6	0.0	true	ok
 Assets/Art/Environments/Troy/Gameplay/troy_fallen_block.png	128x35	-	1	42.857143	true	true	centro	0.0	0	false	0	1	14	17.3	true	ok
 Assets/Art/Environments/Troy/Gameplay/troy_plank_bridge.png	300x17	-	1	42.857143	true	true	centro	0.0	0	false	0	1	48	19.5	true	ok
 Assets/Art/Environments/Cytera/Foreground/cytera_fg_rigging.png	33x88	-	1	42.857143	true	true	base	0.0	0	false	0	1	32	19.1	true	ok
@@ -72,3 +108,17 @@ Assets/Art/Environments/ItacaReturn/Props/itaca_ret_brazier_anim.png	755x190	125
 Assets/Art/Environments/Pretendentes/Courtyard/pret_cooking_fire_anim.png	1241x174	206x174	6	42.857143	true	true	base	0.0	0	false	63	1	43	0.0	true	ok, ver: 63 px soltos
 Assets/Art/Environments/Pretendentes/VFX/pret_torch_stand_anim.png	227x197	37x197	6	42.857143	true	true	base	0.0	0	false	2	1	16	0.0	true	ok
 Assets/Art/Environments/Troy/Camp/troy_campfire_01_anim.png	401x84	66x84	6	42.857143	true	true	base	0.0	0	false	0	1	43	14.3	true	ok
+Assets/Art/Environments/Cytera/Ocean/cytera_wave_large_anim.png	2309x206	384x206	6	42.857143	true	true	base	0.0	0	false	282	1	26	31.4	true	ok, ver: 282 px soltos
+Assets/Art/Environments/Cytera/Weather/cytera_lightning_b.png	128x320	-	1	42.857143	true	true	base	0.0	0	false	0	1	2	48.7	true	ok, ver: longe da paleta (49)
+Assets/Art/Environments/Cytera/Weather/cytera_lightning_strike.png	515x320	128x320	4	42.857143	true	true	base	0.0	0	false	343	1	2	48.8	true	ok, ver: 343 px soltos, longe da paleta (49)
+Assets/Art/Environments/Cytera/Background/cytera_storm_cloud_lit.png	384x160	-	1	42.857143	true	true	base	0.0	0	false	0	1	224	18.5	true	ok
+Assets/Art/Environments/MundoDosMortos/Props/mortos_brazier_tall_spectral_anim.png	773x256	128x256	6	42.857143	true	true	base	0.0	0	false	3	1	29	19.7	true	ok
+Assets/Art/Environments/CilaCaribdis/Ocean/cila_tidal_surge_anim.png	515x56	128x56	4	42.857143	true	true	base	0.0	0	false	11	1	38	27.1	true	ok, ver: 11 px soltos
+Assets/Art/Environments/Ciclopes/Special/ciclopes_giant_fire_anim.png	1541x224	256x224	6	42.857143	true	true	base	0.0	0	false	0	1	52	21.8	true	ok
+Assets/Art/Environments/Ciclopes/Props/ciclopes_torch_wall_anim.png	581x160	96x160	6	42.857143	true	true	base	0.0	0	false	0	1	28	14.5	true	ok
+Assets/Art/Environments/Eolo/Palace/eolo_brazier_native_anim.png	479x159	79x159	6	42.857143	true	true	base	0.0	0	false	0	1	28	17.5	true	ok
+Assets/Art/Environments/Ithaca/Props/ithaca_torch_01_anim.png	197x48	32x48	6	42.857143	true	true	base	0.0	0	false	0	1	57	19.9	true	ok
+Assets/Art/Environments/Shared/Props/shared_oil_lamp_anim.png	179x26	29x26	6	42.857143	true	true	base	0.0	0	false	0	1	44	30.8	true	ok
+Assets/Art/Environments/MundoDosMortos/Souls/mortos_soul_wander.png	293x64	48x64	6	42.857143	true	true	base	0.0	0	false	0	1	61	23.3	true	ok
+Assets/Art/Environments/MundoDosMortos/Souls/mortos_soul_wander_small.png	149x32	24x32	6	42.857143	true	true	base	0.0	0	false	0	1	51	22.6	true	ok
+Assets/Art/Environments/MundoDosMortos/Souls/mortos_soul_vanish.png	195x64	48x64	4	42.857143	true	true	base	0.0	0	false	240	1	56	23.6	true	ok, ver: 240 px soltos

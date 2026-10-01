@@ -8,7 +8,7 @@
 //             · pixels soltos (componentes de 1–2 px) · densidade (fator de ampliação, mesma regra do scale-probe)
 //             · paleta: distância média de cada cor à paleta de Ítaca/Pretendentes
 //   nome    — snake_case minúsculo
-// Imagens que SÃO o quadro inteiro (mapa, menu) dispensam o teste de canto opaco.
+// Imagens que SÃO o quadro inteiro (mapa, menu, ladrilhos, 9-slices) dispensam o teste de canto opaco.
 const fs = require('fs'), path = require('path');
 const p = require('./png.js');
 const { loadPalette } = require('./ramp-map.js');
@@ -16,7 +16,7 @@ const { temXadrezPintado } = require('./checker-cut.js');
 
 const ROOT = path.join(__dirname, '..');
 const PAL = Object.values(loadPalette(path.join(ROOT, 'Docs/Environment_Pretendentes/Palette/PRETENDENTES_PALETTE.gpl'))).flat();
-const QUADRO_INTEIRO = /map_aegean|menu_bg_/;
+const QUADRO_INTEIRO = /map_aegean|menu_bg_|ending_bedroom_|_tile\.png|_9slice\.png/;   // ladrilhos e 9-slices são opacos até a borda de propósito
 
 function listar() {
   const raizes = ['Assets/Art/Effects', 'Assets/Art/Items', 'Assets/Art/Ending', 'Assets/Art/Map', 'Assets/Art/UI'];
@@ -31,6 +31,20 @@ function listar() {
     'Assets/Art/Environments/Pretendentes/Courtyard/pret_cooking_fire_anim.png',
     'Assets/Art/Environments/Pretendentes/VFX/pret_torch_stand_anim.png',
     'Assets/Art/Environments/Troy/Camp/troy_campfire_01_anim.png',
+    'Assets/Art/Environments/Cytera/Ocean/cytera_wave_large_anim.png',
+    'Assets/Art/Environments/Cytera/Weather/cytera_lightning_b.png',
+    'Assets/Art/Environments/Cytera/Weather/cytera_lightning_strike.png',
+    'Assets/Art/Environments/Cytera/Background/cytera_storm_cloud_lit.png',
+    'Assets/Art/Environments/MundoDosMortos/Props/mortos_brazier_tall_spectral_anim.png',
+    'Assets/Art/Environments/CilaCaribdis/Ocean/cila_tidal_surge_anim.png',
+    'Assets/Art/Environments/Ciclopes/Special/ciclopes_giant_fire_anim.png',
+    'Assets/Art/Environments/Ciclopes/Props/ciclopes_torch_wall_anim.png',
+    'Assets/Art/Environments/Eolo/Palace/eolo_brazier_native_anim.png',
+    'Assets/Art/Environments/Ithaca/Props/ithaca_torch_01_anim.png',
+    'Assets/Art/Environments/Shared/Props/shared_oil_lamp_anim.png',
+    'Assets/Art/Environments/MundoDosMortos/Souls/mortos_soul_wander.png',
+    'Assets/Art/Environments/MundoDosMortos/Souls/mortos_soul_wander_small.png',
+    'Assets/Art/Environments/MundoDosMortos/Souls/mortos_soul_vanish.png',
   ];
   const andar = (d) => fs.existsSync(path.join(ROOT, d)) ? fs.readdirSync(path.join(ROOT, d), { withFileTypes: true }).flatMap(e =>
     e.isDirectory() ? andar(d + '/' + e.name) : e.name.endsWith('.png') ? [d + '/' + e.name] : []) : [];

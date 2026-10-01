@@ -817,3 +817,18 @@ Fonte: **`Docs/Art/PIXELLAB_ASSET_COMPLETION_MASTER.md`** (auditoria, plano apro
 (`backblaze.pixellab.ai` → 403 na saída); IDs e grupos em `Docs/Art/PixelLab/_pendentes/animacoes_pagas.json`; recuperar com
 `node Tools/fetch-paid-anims.js` quando o host for liberado. Ressalvas: moeda ainda com degradê de pintura (corrigível por
 código), lótus do HUD pequena demais em 1×. 0 gerações.
+
+## PixelLab Visual Polish Pass 02 (2026-10-01)
+
+Fonte: **`Docs/Art/PIXELLAB_VISUAL_POLISH_PASS_02.md`** (auditoria, plano, 12 grupos, fechamento). Prancha geral:
+`Docs/Art/PixelLab/_polish_pass_02.png`.
+
+- **166 gerações** (987 → 1153; restam 847), 65 jobs sem falha. 50 assets novos, todos gerados e empacotados por
+  `node Tools/build-pack.js <grupo>` (reprodutível byte a byte), `pack-audit`: 123 arquivos, 0 falhas. **Sem integração.**
+- Combate v2 e partículas; água (splash, ondinha, crista animada de Citera); tempestade (aviso, golpe, raio animado);
+  Circe (círculo de Hécate, transformação, cura pela moly, fumaça); Mortos (braseiro espectral, alma errante); Cila
+  (maré, aviso e golpe do chefe); 5 fogos animados + lamparina grega; estados do mapa; transições (meandro, louros,
+  vinheta); Ending (o quarto com a cama na oliveira).
+- **Achado de gameplay:** as 2 `TidalHazard` da Fase 11 estão invisíveis em jogo (o dresser desliga o placeholder) —
+  `cila_tidal_surge_anim` é o primeiro item da integração.
+- Pendente: integração; HUD (PP-18/19); download das 8 animações pagas (backblaze bloqueado).
