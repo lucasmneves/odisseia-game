@@ -263,3 +263,9 @@ quando	id	nome	ferramenta	job	status
 2026-10-01T19:31:50.266Z	PP-14	bedroom_a	create_image_pixen	bc9f09e4-3578-4ae1-a1af-da397bd78a8c	disparado
 2026-10-01T19:33:01.765Z	PP-14	bedroom_b	-	842f72b3-8536-4e1e-acae-ac3c092f3319	ok 1 img 72s
 2026-10-01T19:33:12.306Z	PP-14	bedroom_a	-	bc9f09e4-3578-4ae1-a1af-da397bd78a8c	ok 1 img 82s
+2026-10-01T20:34:43.083Z	TR-01	master_a	create_image_pixen	4c101812-6128-4867-92a2-8161ca6160f2	disparado
+2026-10-01T20:34:43.743Z	TR-01	master_b	create_image_pixen	4d8252b4-cb8b-48ae-af21-ae50ab86aac5	disparado
+2026-10-01T20:34:44.162Z	TR-01	master_c	create_image_pixen	6d6ac0e3-2a5d-4a96-bfa5-88f209b1a9f9	disparado
+2026-10-01T20:36:16.143Z	TR-01	master_a	-	4c101812-6128-4867-92a2-8161ca6160f2	ok 1 img 93s
+2026-10-01T20:36:18.181Z	TR-01	master_c	-	6d6ac0e3-2a5d-4a96-bfa5-88f209b1a9f9	ok 1 img 94s
+2026-10-01T20:37:17.291Z	TR-01	master_b	-	4d8252b4-cb8b-48ae-af21-ae50ab86aac5	ok 1 img 154s
