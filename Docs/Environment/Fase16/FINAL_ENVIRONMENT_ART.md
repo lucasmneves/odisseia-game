@@ -241,3 +241,9 @@ limpa em magenta de propósito).
 - A chama da lareira está separada para animação, mas **não anima**: o projeto não tem componente
   de cintilação, e criar um sistema estava fora do escopo.
 - Os braseiros e o trono reusados continuam encolhidos pelo Transform (0,55 / 0,62), herdado da 15.
+
+## 11. Depois — Asset Completion (2026-10-01)
+
+A chama da lareira ganhou loop: `Final/Props/final_hearth_fire_anim.png` (6 quadros, pingue-pongue), no mesmo canvas de
+103×82 da base — troca direta pela `final_hearth_fire` com `SpriteAnimator`. Ver `Docs/Art/PIXELLAB_ASSET_COMPLETION_MASTER.md`.
+O Ending (fora desta cena) ganhou o par do reencontro: `Assets/Art/Ending/ending_reunion.png`.

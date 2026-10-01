@@ -1,0 +1,74 @@
+arquivo	px	célula	quadros	ppu	point	compr	pivô	semi%	cantos	xadrez	soltos	fator	cores	dist_paleta	nome	veredito
+Assets/Art/Effects/fx_arrow_impact.png	92x27	30x27	3	42.857143	true	true	centro	0.0	0	false	2	1	42	16.0	true	ok
+Assets/Art/Effects/fx_block.png	119x28	29x28	4	42.857143	true	true	centro	0.0	0	false	0	1	25	8.6	true	ok
+Assets/Art/Effects/fx_collect.png	103x20	25x20	4	42.857143	true	true	centro	0.0	0	false	1	1	65	31.6	true	ok
+Assets/Art/Effects/fx_death.png	263x45	43x45	6	42.857143	true	true	centro	0.0	0	false	223	1	62	14.9	true	ok, ver: 223 px soltos
+Assets/Art/Effects/fx_hit.png	107x26	26x26	4	42.857143	true	true	centro	0.0	0	false	0	1	47	23.7	true	ok
+Assets/Art/Effects/fx_jump_dust.png	231x15	57x15	4	42.857143	true	true	base	0.0	2	false	1	1	18	24.7	true	ok
+Assets/Art/Effects/fx_slash.png	167x44	41x44	4	42.857143	true	true	centro	0.0	0	false	0	1	27	27.4	true	ok
+Assets/Art/Items/item_arrow_quiver.png	31x38	-	1	42.857143	true	true	base	0.0	0	false	0	1	28	18.0	true	ok
+Assets/Art/Items/item_checkpoint_altar.png	342x82	48x82	7	42.857143	true	true	base	0.0	0	false	2	1	70	18.1	true	ok
+Assets/Art/Items/item_collectible_coin.png	279x37	34x37	8	42.857143	true	true	centro	0.0	0	false	0	1	3871	48.0	true	ok, ver: longe da paleta (48)
+Assets/Art/Ending/ending_reunion.png	38x60	-	1	42.857143	true	true	base	0.0	0	false	0	1	56	19.7	true	ok
+Assets/Art/Ending/ending_reunion_close.png	49x78	-	1	42.857143	true	true	base	0.0	0	false	0	1	56	19.7	true	ok
+Assets/Art/Map/Emblems/emblem_01.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	37	6.2	true	ok
+Assets/Art/Map/Emblems/emblem_01_locked.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	35	13.4	true	ok
+Assets/Art/Map/Emblems/emblem_02.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	61	4.6	true	ok
+Assets/Art/Map/Emblems/emblem_02_locked.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	53	13.5	true	ok
+Assets/Art/Map/Emblems/emblem_03.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	53	6.3	true	ok
+Assets/Art/Map/Emblems/emblem_03_locked.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	43	13.8	true	ok
+Assets/Art/Map/Emblems/emblem_04.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	48	8.9	true	ok
+Assets/Art/Map/Emblems/emblem_04_locked.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	44	14.7	true	ok
+Assets/Art/Map/Emblems/emblem_05.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	43	8.4	true	ok
+Assets/Art/Map/Emblems/emblem_05_locked.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	40	13.9	true	ok
+Assets/Art/Map/Emblems/emblem_06.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	37	6.4	true	ok
+Assets/Art/Map/Emblems/emblem_06_locked.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	36	13.9	true	ok
+Assets/Art/Map/Emblems/emblem_07.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	56	9.3	true	ok
+Assets/Art/Map/Emblems/emblem_07_locked.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	44	15.3	true	ok
+Assets/Art/Map/Emblems/emblem_08.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	49	5.1	true	ok
+Assets/Art/Map/Emblems/emblem_08_locked.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	41	13.8	true	ok
+Assets/Art/Map/Emblems/emblem_09.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	55	6.6	true	ok
+Assets/Art/Map/Emblems/emblem_09_locked.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	47	13.4	true	ok
+Assets/Art/Map/Emblems/emblem_10.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	59	6.3	true	ok
+Assets/Art/Map/Emblems/emblem_10_locked.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	52	13.8	true	ok
+Assets/Art/Map/Emblems/emblem_11.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	62	4.2	true	ok
+Assets/Art/Map/Emblems/emblem_11_locked.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	54	13.8	true	ok
+Assets/Art/Map/Emblems/emblem_12.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	46	7.1	true	ok
+Assets/Art/Map/Emblems/emblem_12_locked.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	41	15.5	true	ok
+Assets/Art/Map/Emblems/emblem_13.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	57	7.2	true	ok
+Assets/Art/Map/Emblems/emblem_13_locked.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	49	14.1	true	ok
+Assets/Art/Map/Emblems/emblem_14.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	32	4.4	true	ok
+Assets/Art/Map/Emblems/emblem_14_locked.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	29	14.5	true	ok
+Assets/Art/Map/Emblems/emblem_15.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	49	4.0	true	ok
+Assets/Art/Map/Emblems/emblem_15_locked.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	45	14.0	true	ok
+Assets/Art/Map/Emblems/emblem_16.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	52	2.9	true	ok
+Assets/Art/Map/Emblems/emblem_16_locked.png	56x56	-	1	42.857143	true	true	centro	0.0	0	false	0	1	37	13.0	true	ok
+Assets/Art/Map/map_aegean.png	604x340	-	1	42.857143	true	true	centro	0.0	4	false	0	1	43	7.7	true	ok
+Assets/Art/Map/map_ship_marker.png	18x23	-	1	42.857143	true	true	base	0.0	0	false	0	1	49	18.8	true	ok
+Assets/Art/UI/HUD/icon_arrows.png	23x26	-	1	42.857143	true	true	centro	0.0	0	false	0	1	60	19.8	true	ok
+Assets/Art/UI/HUD/icon_coin.png	27x29	-	1	42.857143	true	true	centro	0.0	0	false	0	1	606	49.0	true	ok, ver: longe da paleta (49)
+Assets/Art/UI/HUD/icon_health.png	32x32	-	1	42.857143	true	true	centro	0.0	0	false	0	1	61	42.0	true	ok, ver: longe da paleta (42)
+Assets/Art/UI/HUD/icon_hunger.png	30x28	-	1	42.857143	true	true	centro	0.0	0	false	0	1	38	21.4	true	ok
+Assets/Art/UI/HUD/icon_lives.png	29x30	-	1	42.857143	true	true	centro	0.0	0	false	0	1	58	18.1	true	ok
+Assets/Art/UI/HUD/icon_lotus.png	17x12	-	1	42.857143	true	true	centro	0.0	0	false	0	1	23	43.7	true	ok, ver: longe da paleta (44)
+Assets/Art/UI/HUD/icon_shield.png	28x28	-	1	42.857143	true	true	centro	0.0	0	false	0	1	49	25.5	true	ok
+Assets/Art/UI/HUD/icon_wax.png	20x24	-	1	42.857143	true	true	centro	0.0	0	false	0	1	48	27.2	true	ok
+Assets/Art/UI/HUD/icon_xp.png	31x30	-	1	42.857143	true	true	centro	0.0	0	false	0	1	48	20.6	true	ok
+Assets/Art/UI/MainMenu/menu_bg_ithaca.png	604x400	-	1	42.857143	true	true	centro	0.0	4	false	0	1	44	18.9	true	ok
+Assets/Art/UI/MainMenu/menu_bg_ithaca_odysseus.png	604x400	-	1	42.857143	true	true	centro	0.0	4	false	0	1	95	18.9	true	ok
+Assets/Art/Environments/Troy/Gameplay/troy_fallen_block.png	128x35	-	1	42.857143	true	true	centro	0.0	0	false	0	1	14	17.3	true	ok
+Assets/Art/Environments/Troy/Gameplay/troy_plank_bridge.png	300x17	-	1	42.857143	true	true	centro	0.0	0	false	0	1	48	19.5	true	ok
+Assets/Art/Environments/Cytera/Foreground/cytera_fg_rigging.png	33x88	-	1	42.857143	true	true	base	0.0	0	false	0	1	32	19.1	true	ok
+Assets/Art/Environments/Cytera/Foreground/cytera_fg_rope_barrel.png	70x54	-	1	42.857143	true	true	base	0.0	0	false	0	1	62	17.6	true	ok
+Assets/Art/Environments/Eolo/Foreground/eolo_fg_balustrade.png	95x38	-	1	42.857143	true	true	base	0.0	0	false	0	1	56	18.3	true	ok
+Assets/Art/Environments/Eolo/Foreground/eolo_fg_cloud.png	81x50	-	1	42.857143	true	true	base	0.0	0	false	0	1	30	24.4	true	ok
+Assets/Art/Environments/ItacaReturn/Foreground/itaca_ret_fg_branch.png	38x67	-	1	42.857143	true	true	base	0.0	0	false	0	1	39	15.0	true	ok
+Assets/Art/Environments/ItacaReturn/Foreground/itaca_ret_fg_weeds.png	111x59	-	1	42.857143	true	true	base	0.0	0	false	0	1	58	20.1	true	ok
+Assets/Art/Environments/Pretendentes/Foreground/pret_fg_banner_edge.png	31x120	-	1	42.857143	true	true	base	0.0	0	false	0	1	36	25.2	true	ok
+Assets/Art/Environments/Pretendentes/Foreground/pret_fg_spilled_amphora.png	102x51	-	1	42.857143	true	true	base	0.0	0	false	0	1	41	18.4	true	ok
+Assets/Art/Environments/Eolo/Palace/eolo_entablature_native.png	475x186	-	1	42.857143	true	true	base	0.0	0	false	0	1	34	24.1	true	ok
+Assets/Art/Environments/Final/Props/final_hearth_fire_anim.png	623x82	103x82	6	42.857143	true	true	base	0.0	0	false	48	1	20	0.4	true	ok, ver: 48 px soltos
+Assets/Art/Environments/ItacaReturn/Props/itaca_ret_brazier_anim.png	755x190	125x190	6	42.857143	true	true	base	0.0	0	false	32	1	95	21.8	true	ok, ver: 32 px soltos
+Assets/Art/Environments/Pretendentes/Courtyard/pret_cooking_fire_anim.png	1241x174	206x174	6	42.857143	true	true	base	0.0	0	false	63	1	43	0.0	true	ok, ver: 63 px soltos
+Assets/Art/Environments/Pretendentes/VFX/pret_torch_stand_anim.png	227x197	37x197	6	42.857143	true	true	base	0.0	0	false	2	1	16	0.0	true	ok
+Assets/Art/Environments/Troy/Camp/troy_campfire_01_anim.png	401x84	66x84	6	42.857143	true	true	base	0.0	0	false	0	1	43	14.3	true	ok

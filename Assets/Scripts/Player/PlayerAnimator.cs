@@ -35,6 +35,8 @@ namespace Odisseia.Player
         private const string StateBow = "Bow";
         private const string StateShield = "Shield";
         private const string StateShieldHold = "ShieldHold";
+        private const string StateShieldJump = "ShieldJump";
+        private const string StateShieldFall = "ShieldFall";
         private const string StateInteraction = "Interaction";
         private const string StateVictory = "Victory";
         private const string StateDamage = "Damage";
@@ -195,6 +197,13 @@ namespace Odisseia.Player
                 case StateShieldHold:
                     animator.Play(StateShield);
                     break;
+                // Folha sem os estados de defesa no ar: fica o salto/queda comum, como era antes.
+                case StateShieldJump:
+                    animator.Play(StateJump);
+                    break;
+                case StateShieldFall:
+                    Play(StateFall);
+                    break;
                 case StateCrouchWalk:
                     Play(StateCrouch);
                     break;
@@ -259,7 +268,11 @@ namespace Odisseia.Player
 
             if (!grounded)
             {
-                Play(verticalSpeed < fallThreshold ? StateFall : StateJump);
+                // A defesa no ar já funcionava (PlayerShield.IsBlocking reduz o dano), mas o corpo
+                // seguia no salto comum — QA-14. Só o visual muda aqui; a regra de dano é do PlayerShield.
+                bool defendendo = shield != null && shield.IsBlocking;
+                bool caindo = verticalSpeed < fallThreshold;
+                Play(defendendo ? (caindo ? StateShieldFall : StateShieldJump) : (caindo ? StateFall : StateJump));
                 return;
             }
 

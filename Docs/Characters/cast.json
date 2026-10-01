@@ -51,6 +51,10 @@
         "job": "character: 7a5a09a9-5ab2-4f93-95a6-397d542ef223\nanimation: v3 custom (recoiling from a blow to the chest, side view facing right, torso snaps backward and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, the spear stays attached to his hand in every frame)\ndir",
         "prompt": "recoiling from a blow to the chest, side view facing right, torso snaps backward and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, the spear stays attached to his hand in every frame",
         "frames": 6
+      },
+      "Attack": {
+        "job": "character: 7a5a09a9-5ab2-4f93-95a6-397d542ef223\nanimation: v3 custom (thrusting the spear forward hard at chest height, side view facing right, front foot stepping in and body lunging forward, then pulling the spear back to a guarded stance, the spear stays attached to his hand in every frame)\ndirec",
+        "prompt": "thrusting the spear forward hard at chest height, side view facing right, front foot stepping in and body lunging forward, then pulling the spear back to a guarded stance, the spear stays attached to his hand in every frame"
       }
     }
   },
@@ -155,6 +159,10 @@
         "job": "character: c416f3a0-7b39-4dd0-86ad-969c7dc29075\nanimation: v3 custom (struck down, side view facing right, knees buckle and the body falls backward, landing flat on his back on the ground and lying still, spear and shield dropping beside him)\ndirections: east (1 jobs)\ngroup: 253c0b33-b18a-4351-8c8d-",
         "prompt": "struck down, side view facing right, knees buckle and the body falls backward, landing flat on his back on the ground and lying still, spear and shield dropping beside him",
         "frames": 8
+      },
+      "Attack": {
+        "job": "character: c416f3a0-7b39-4dd0-86ad-969c7dc29075\nanimation: v3 custom (thrusting the spear forward hard at chest height, side view facing right, front foot stepping in and body lunging forward, then pulling the spear back to a guarded stance, spear and shield stay attached to his hands in every frame",
+        "prompt": "thrusting the spear forward hard at chest height, side view facing right, front foot stepping in and body lunging forward, then pulling the spear back to a guarded stance, spear and shield stay attached to his hands in every frame"
       }
     },
     "id": "c416f3a0-7b39-4dd0-86ad-969c7dc29075",
@@ -196,6 +204,10 @@
         "job": "character: f4640c38-d2a2-4e6f-9a1d-353a7b84a946\nanimation: v3 custom (recoiling from a blow to the chest, side view facing right, torso snaps backward and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, spear and shield stay attached to his hands in every fra",
         "prompt": "recoiling from a blow to the chest, side view facing right, torso snaps backward and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, spear and shield stay attached to his hands in every frame",
         "frames": 6
+      },
+      "Attack": {
+        "job": "character: f4640c38-d2a2-4e6f-9a1d-353a7b84a946\nanimation: v3 custom (thrusting the spear forward hard at chest height, side view facing right, front foot stepping in and body lunging forward, then pulling the spear back to a guarded stance, spear and shield stay attached to his hands in every frame",
+        "prompt": "thrusting the spear forward hard at chest height, side view facing right, front foot stepping in and body lunging forward, then pulling the spear back to a guarded stance, spear and shield stay attached to his hands in every frame"
       }
     },
     "id": "f4640c38-d2a2-4e6f-9a1d-353a7b84a946",
@@ -319,6 +331,10 @@
         "job": "character: 4f805faa-08e5-43a0-8438-f2a2c2b4e186\nanimation: v3 custom (collapsing from a fatal blow, side view facing right, legs giving way, body falling onto its side on the ground and lying still)\ndirections: east (1 jobs)\ngroup: 060e03d8-431d-4f94-8a9c-0c5ea4575c40\nframes: 8 (reference stripped, ",
         "prompt": "collapsing from a fatal blow, side view facing right, legs giving way, body falling onto its side on the ground and lying still",
         "frames": 8
+      },
+      "Attack": {
+        "job": "character: 4f805faa-08e5-43a0-8438-f2a2c2b4e186\nanimation: v3 custom (lunging forward and snapping its jaws at chest height, side view facing right, front paws pushing off, head thrusting forward with the mouth open, then pulling back to a crouched snarl, back paws stay planted)\ndirections: east (1 ",
+        "prompt": "lunging forward and snapping its jaws at chest height, side view facing right, front paws pushing off, head thrusting forward with the mouth open, then pulling back to a crouched snarl, back paws stay planted"
       }
     },
     "id": "4f805faa-08e5-43a0-8438-f2a2c2b4e186",
@@ -347,6 +363,10 @@
         "job": "character: 3d75c50c-fcc9-4a7b-ab67-99f3396781b5\nanimation: v3 custom (recoiling from a blow to the chest, side view facing right, torso snaps backward and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, spear and shield stay attached to his hands in every fra",
         "prompt": "recoiling from a blow to the chest, side view facing right, torso snaps backward and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, spear and shield stay attached to his hands in every frame",
         "frames": 6
+      },
+      "Attack": {
+        "job": "character: 3d75c50c-fcc9-4a7b-ab67-99f3396781b5\nanimation: v3 custom (thrusting the spear forward hard at chest height, side view facing right, front foot stepping in and body lunging forward, then pulling the spear back to a guarded stance, spear and shield stay attached to his hands in every frame",
+        "prompt": "thrusting the spear forward hard at chest height, side view facing right, front foot stepping in and body lunging forward, then pulling the spear back to a guarded stance, spear and shield stay attached to his hands in every frame"
       }
     },
     "id": "3d75c50c-fcc9-4a7b-ab67-99f3396781b5",
@@ -485,6 +505,10 @@
         "job": "character: 6aa164f4-223a-4ca6-9b62-453681c6e1b3\nanimation: v3 custom (recoiling from a blow to the chest, side view facing right, torso snaps backward and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, the short sword stays attached to his hand in every fram",
         "prompt": "recoiling from a blow to the chest, side view facing right, torso snaps backward and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, the short sword stays attached to his hand in every frame",
         "frames": 6
+      },
+      "Attack": {
+        "job": "character: 6aa164f4-223a-4ca6-9b62-453681c6e1b3\nanimation: v3 custom (swinging the short sword in a wide arc from high above the shoulder down in front of him, side view facing right, front foot stepping in, then recovering to a guarded stance, the short sword stays attached to his hand in every fra",
+        "prompt": "swinging the short sword in a wide arc from high above the shoulder down in front of him, side view facing right, front foot stepping in, then recovering to a guarded stance, the short sword stays attached to his hand in every frame"
       }
     },
     "id": "6aa164f4-223a-4ca6-9b62-453681c6e1b3",

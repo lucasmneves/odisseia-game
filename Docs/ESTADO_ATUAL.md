@@ -796,3 +796,24 @@ seção em "PixelLab — Personagens" (🤖 AI), decisões D-055 a D-058.
 - `FinalSceneDresser` escrito e **não executado** (a sessão não tinha Unity). Falta rodar `FinalSceneDresser.Run`,
   `PlaceholderProbe`, `CampaignValidation`, `FinalSceneDresser.Shots` e o WebGL Build. A prévia montada fora do Unity
   está em `Docs/Environment/Fase16/_previa/`.
+
+## PixelLab Asset Completion (2026-10-01)
+
+Fonte: **`Docs/Art/PIXELLAB_ASSET_COMPLETION_MASTER.md`** (auditoria, plano aprovado, execução). Auditoria: `node Tools/art-audit.js`.
+
+- **122 gerações** (865 → 987; restam 1013). Executor com livro-razão: `Tools/pxl.js`; montagem: `node Tools/build-pack.js`.
+- Gerado e empacotado (sem integrar): 7 efeitos de combate, aljava, altar de checkpoint (apagado/aceso), moeda nativa,
+  reencontro do Ending, ponte e bloco de Troia, 5 fogos em loop, mapa do Egeu, navio-marcador, 16 emblemas (+ bloqueados),
+  9 ícones de HUD, arte do menu, 8 peças de primeiro plano (04/06/14/15), entablamento nativo de Éolo.
+- **Código aprovado nesta etapa:** `EnemyController.Attacked` + estado `Attack` no `EnemyAnimator`; `ShieldJump`/`ShieldFall`
+  no `PlayerAnimator` (com fallback). Não compilado aqui — sem Unity.
+- **Bloqueio:** `backblaze.pixellab.ai` negado pela rede do ambiente; as 8 animações de personagem (6 ataques + 2 de
+  escudo no ar) estão pagas e prontas no PixelLab, esperando download.
+- Lições: efeito se descreve por forma e cor, não pelo que atinge; `animate_image` devolve 3 quadros novos; `pixen` aceita
+  no máximo 512×512 de área; `pro` com referência só vale quando há personagem a preservar.
+
+### QA do pack (2026-10-01)
+`node Tools/pack-audit.js`: 73 arquivos, 0 falhas técnicas. As 8 animações pagas seguem presas no PixelLab
+(`backblaze.pixellab.ai` → 403 na saída); IDs e grupos em `Docs/Art/PixelLab/_pendentes/animacoes_pagas.json`; recuperar com
+`node Tools/fetch-paid-anims.js` quando o host for liberado. Ressalvas: moeda ainda com degradê de pintura (corrigível por
+código), lótus do HUD pequena demais em 1×. 0 gerações.

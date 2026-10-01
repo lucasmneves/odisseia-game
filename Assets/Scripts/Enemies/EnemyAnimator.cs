@@ -17,6 +17,7 @@ namespace Odisseia.Enemies
         private const string StateRun = "Run";
         private const string StateHit = "Hit";
         private const string StateDeath = "Death";
+        private const string StateAttack = "Attack";
 
         [SerializeField] private SpriteAnimator animator;
         [SerializeField] private float runThreshold = 0.15f;
@@ -25,6 +26,7 @@ namespace Odisseia.Enemies
 
         private Rigidbody2D rb;
         private HealthSystem health;
+        private EnemyController controller;
 
         private float lockTimer;
         private bool deathPlayed;
@@ -34,6 +36,7 @@ namespace Odisseia.Enemies
         {
             rb = GetComponent<Rigidbody2D>();
             health = GetComponent<HealthSystem>();
+            controller = GetComponent<EnemyController>();
 
             if (animator == null)
             {
@@ -53,6 +56,11 @@ namespace Odisseia.Enemies
                 health.Damaged += OnDamaged;
                 health.Died += OnDied;
             }
+
+            if (controller != null)
+            {
+                controller.Attacked += OnAttacked;
+            }
         }
 
         private void OnDisable()
@@ -62,6 +70,26 @@ namespace Odisseia.Enemies
                 health.Damaged -= OnDamaged;
                 health.Died -= OnDied;
             }
+
+            if (controller != null)
+            {
+                controller.Attacked -= OnAttacked;
+            }
+        }
+
+        /// <summary>
+        /// O golpe do inimigo. Só toca se a folha da facção tiver o estado <c>Attack</c> — as que
+        /// não têm continuam como antes (Idle/Run). O Hit, que chega depois, interrompe o ataque.
+        /// </summary>
+        private void OnAttacked()
+        {
+            if (animator == null || deathPlayed || !animator.HasState(StateAttack))
+            {
+                return;
+            }
+
+            animator.Play(StateAttack, restart: true);
+            lockTimer = animator.GetStateDuration(StateAttack);
         }
 
         private void OnDamaged(int amount, int currentHealth)

@@ -1,0 +1,69 @@
+AUDITORIA DE ARTE — 2026-10-01
+391 PNGs, 53 arquivos YAML, 185 scripts
+
+pasta | PNGs | sem uso | ampliado | PPU≠42,857 | >1500 cores (pintado)
+Assets/Art/Environments/Calipso | 20 | 2 | 2 | 0 | 0
+Assets/Art/Environments/Ciclopes | 20 | 0 | 0 | 0 | 0
+Assets/Art/Environments/Cicones | 20 | 1 | 0 | 0 | 0
+Assets/Art/Environments/CilaCaribdis | 11 | 2 | 0 | 0 | 0
+Assets/Art/Environments/Circe | 20 | 0 | 0 | 0 | 0
+Assets/Art/Environments/Cytera | 18 | 1 | 0 | 0 | 0
+Assets/Art/Environments/Eolo | 24 | 0 | 0 | 0 | 0
+Assets/Art/Environments/Final | 11 | 0 | 1 | 0 | 0
+Assets/Art/Environments/GadoDoSol | 24 | 2 | 1 | 0 | 0
+Assets/Art/Environments/ItacaReturn | 13 | 0 | 1 | 0 | 0
+Assets/Art/Environments/Ithaca | 61 | 8 | 1 | 0 | 0
+Assets/Art/Environments/Lestrigoes | 17 | 0 | 0 | 0 | 0
+Assets/Art/Environments/MundoDosMortos | 18 | 2 | 0 | 0 | 0
+Assets/Art/Environments/Pretendentes | 13 | 0 | 1 | 0 | 0
+Assets/Art/Environments/Sereias | 19 | 2 | 1 | 0 | 0
+Assets/Art/Environments/Troy | 23 | 4 | 1 | 0 | 0
+Assets/Art/Odisseia/Backgrounds | 9 | 0 | 0 | 9 | 9
+Assets/Art/Odisseia/Characters | 7 | 3 | 0 | 6 | 6
+Assets/Art/Odisseia/Props | 2 | 0 | 0 | 2 | 0
+Assets/Art/Odisseia/UI | 1 | 0 | 0 | 1 | 1
+Assets/Art/Player/PlaceholderSquare.png | 1 | 0 | 1 | 1 | 0
+Assets/Art/map/mapa.png | 1 | 0 | 0 | 1 | 1
+Assets/Resources/Odisseia/Characters | 26 | 1 | 0 | 0 | 0
+Assets/Resources/Odisseia/Enemies | 10 | 0 | 0 | 1 | 1
+Assets/Resources/Odisseia/Environments | 1 | 0 | 0 | 0 | 0
+Assets/Resources/Odisseia/Items | 1 | 0 | 0 | 1 | 1
+
+PLACEHOLDERS EM CENA/PREFAB (valor do YAML; vestidores podem desligar por override)
+ArrowPickup.prefab: 1 (1 ativos e ligados no YAML)
+Ending.unity: 8 (8 ativos e ligados no YAML)
+LevelGoal.prefab: 1 (1 ativos e ligados no YAML)
+Level_01_Itaca_Prologue.unity: 19 (3 ativos e ligados no YAML)
+Level_02_Troia.unity: 14 (9 ativos e ligados no YAML)
+Level_03_Cicones.unity: 12 (5 ativos e ligados no YAML)
+Level_03_Lotofagos.unity: 6 (5 ativos e ligados no YAML)
+Level_04_Citera.unity: 26 (2 ativos e ligados no YAML)
+Level_05_Ciclopes.unity: 27 (12 ativos e ligados no YAML)
+Level_06_Eolo.unity: 13 (2 ativos e ligados no YAML)
+Level_07_Lestrigoes.unity: 21 (5 ativos e ligados no YAML)
+Level_08_Circe.unity: 11 (6 ativos e ligados no YAML)
+Level_09_MundoDosMortos.unity: 19 (6 ativos e ligados no YAML)
+Level_10_Sereias.unity: 13 (5 ativos e ligados no YAML)
+Level_11_CilaCaribdis.unity: 16 (2 ativos e ligados no YAML)
+Level_12_GadoDoSol.unity: 10 (2 ativos e ligados no YAML)
+Level_13_Calipso.unity: 7 (2 ativos e ligados no YAML)
+Level_13_Feacios.unity: 8 (8 ativos e ligados no YAML)
+Level_14_Itaca_Return.unity: 7 (2 ativos e ligados no YAML)
+Level_15_Pretendentes.unity: 7 (3 ativos e ligados no YAML)
+Level_16_Final.unity: 7 (7 ativos e ligados no YAML)
+Player.prefab: 1 (0 ativos e ligados no YAML)
+WorldMap.unity: 1 (1 ativos e ligados no YAML)
+WorldMapNode.prefab: 2 (1 ativos e ligados no YAML)
+WorldMapPathSegment.prefab: 1 (1 ativos e ligados no YAML)
+
+CÓDIGO QUE DESENHA COM O PlaceholderSprite
+  Arrow.cs (1 VfxBurst)
+  ArrowPickup.cs (1 VfxBurst)
+  InteractPoint.cs (1 VfxBurst)
+  TrainingTarget.cs (1 VfxBurst)
+  PlayerBow.cs (1 VfxBurst)
+  PlayerCombat.cs (1 VfxBurst)
+  PlayerShield.cs (1 VfxBurst)
+  Checkpoint.cs (1 VfxBurst)
+  Collectible.cs (1 VfxBurst)
+  DamageFeedback.cs (2 VfxBurst)
