@@ -1,0 +1,35 @@
+{
+  "prioridade": "P2",
+  "saida": "Docs/Environment_Eolo/_fontes_sprint",
+  "nota": "N-06: entablamento de Éolo esticado 2,0×; ampliar não cria detalhe. Peça nova em densidade nativa.",
+  "itens": [
+    {
+      "nome": "eolo_entablature_native_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a long horizontal Greek temple entablature beam of pale marble with a bronze trimmed frieze of swirling wind spirals and flying cloud motifs, seen from directly beside it, strict flat side profile, a wide flat band. Isolated game asset cut out on a fully transparent background, only the entablature. Palette of pale marble, bronze and sky blue accents. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 512,
+        "height": 64,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "eolo_entablature_native_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a long horizontal Greek temple entablature beam of pale marble with a bronze trimmed frieze of swirling wind spirals and flying cloud motifs, seen from directly beside it, strict flat side profile, a wide flat band. Isolated game asset cut out on a fully transparent background, only the entablature. Palette of pale marble, bronze and sky blue accents. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 512,
+        "height": 64,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    }
+  ]
+}

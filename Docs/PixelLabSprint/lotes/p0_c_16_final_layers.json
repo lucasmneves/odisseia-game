@@ -1,0 +1,91 @@
+{
+  "prioridade": "P0",
+  "saida": "Docs/Environment_Final/_fontes",
+  "nota": "Fase 16 — profundidade: fundo do salão ao amanhecer (bandas largas: pixen, não pro — ESTADO_ATUAL §3) e primeiro plano de vigas e coluna em silhueta. Passar em seam-test.js antes de montar.",
+  "itens": [
+    {
+      "nome": "final_bg_hall_dawn_band_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "the far interior wall of a great Mycenaean palace hall at dawn, a row of thick red-painted wooden columns tapering downward standing before a plastered wall with painted friezes of spirals and griffins, hanging bronze shields between the columns, pale morning light from high openings, seen from directly beside it, strict flat side profile, a wide continuous band. Palette of warm limestone and dark wood lit by orange firelight, with cool night-blue shadows, the light turning pale gold. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 512,
+        "height": 224,
+        "no_background": false,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "final_bg_hall_dawn_band_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "the far interior wall of a great Mycenaean palace hall at dawn, a row of thick red-painted wooden columns tapering downward standing before a plastered wall with painted friezes of spirals and griffins, hanging bronze shields between the columns, pale morning light from high openings, seen from directly beside it, strict flat side profile, a wide continuous band. Palette of warm limestone and dark wood lit by orange firelight, with cool night-blue shadows, the light turning pale gold. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 512,
+        "height": 224,
+        "no_background": false,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "final_fg_roof_beams_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "heavy dark wooden roof beams and rafters of an ancient hall seen from below at the very top of the view, thick horizontal timbers with a few hanging bronze lamps on chains, seen from directly beside it, strict flat side profile, a wide band. Isolated game asset cut out on a fully transparent background, only the beams and lamps. Very dark brown wood in silhouette with thin warm rim light. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 512,
+        "height": 96,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "final_fg_roof_beams_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "heavy dark wooden roof beams and rafters of an ancient hall seen from below at the very top of the view, thick horizontal timbers with a few hanging bronze lamps on chains, seen from directly beside it, strict flat side profile, a wide band. Isolated game asset cut out on a fully transparent background, only the beams and lamps. Very dark brown wood in silhouette with thin warm rim light. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 512,
+        "height": 96,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "final_fg_column_silhouette_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "one thick Minoan style wooden column that tapers downward with a round cushion capital, in near black silhouette as a foreground element, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the column. Near black brown with a thin warm rim light on one edge. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 64,
+        "height": 320,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "final_fg_column_silhouette_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "one thick Minoan style wooden column that tapers downward with a round cushion capital, in near black silhouette as a foreground element, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the column. Near black brown with a thin warm rim light on one edge. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 64,
+        "height": 320,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    }
+  ]
+}

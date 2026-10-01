@@ -1,0 +1,91 @@
+{
+  "prioridade": "P1",
+  "saida": "Docs/Gameplay_VFX/_fontes",
+  "nota": "Fogo e tochas são estáticos em 01, 02, 14, 15, 16. Uma chama-chave por porte; os quadros do loop saem por código (deslocamento de linhas + ciclo de rampa Fogo da paleta 15) e tocam no SpriteAnimator que os NPCs já usam. Rodar --ping antes: se o MCP tiver ferramenta de animar objeto, preferi-la.",
+  "itens": [
+    {
+      "nome": "fire_key_torch_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a single small bright flame of a torch, orange and yellow with a white hot core and a few rising sparks, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the flame. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 32,
+        "height": 48,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "lineless",
+        "detail": "low detail"
+      }
+    },
+    {
+      "nome": "fire_key_torch_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a single small bright flame of a torch, orange and yellow with a white hot core and a few rising sparks, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the flame. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 32,
+        "height": 48,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "lineless",
+        "detail": "low detail"
+      }
+    },
+    {
+      "nome": "fire_key_brazier_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a medium wide flame of a bronze brazier fire, tongues of orange and yellow with a white hot core, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the flame. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "lineless",
+        "detail": "low detail"
+      }
+    },
+    {
+      "nome": "fire_key_brazier_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a medium wide flame of a bronze brazier fire, tongues of orange and yellow with a white hot core, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the flame. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "lineless",
+        "detail": "low detail"
+      }
+    },
+    {
+      "nome": "fire_key_campfire_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a campfire flame rising from crossed logs, tall flickering tongues of orange and yellow, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the flame. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 64,
+        "height": 80,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "lineless",
+        "detail": "low detail"
+      }
+    },
+    {
+      "nome": "fire_key_campfire_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a campfire flame rising from crossed logs, tall flickering tongues of orange and yellow, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the flame. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 64,
+        "height": 80,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "lineless",
+        "detail": "low detail"
+      }
+    }
+  ]
+}

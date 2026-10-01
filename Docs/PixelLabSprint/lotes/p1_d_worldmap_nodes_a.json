@@ -1,0 +1,119 @@
+{
+  "prioridade": "P1",
+  "saida": "Docs/UI_WorldMap/_fontes",
+  "nota": "Emblemas das fases 01–08.",
+  "itens": [
+    {
+      "nome": "map_node_01_itaca",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small round map emblem icon for a game world map, a bronze rimmed medallion showing a small olive tree beside a white house, Isolated game asset cut out on a fully transparent background, only the medallion. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "map_node_02_troia",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small round map emblem icon for a game world map, a bronze rimmed medallion showing a wooden horse before a city wall, Isolated game asset cut out on a fully transparent background, only the medallion. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "map_node_03_cicones",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small round map emblem icon for a game world map, a bronze rimmed medallion showing a burning village roof, Isolated game asset cut out on a fully transparent background, only the medallion. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "map_node_04_citera",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small round map emblem icon for a game world map, a bronze rimmed medallion showing a ship tossed on a big wave, Isolated game asset cut out on a fully transparent background, only the medallion. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "map_node_05_ciclopes",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small round map emblem icon for a game world map, a bronze rimmed medallion showing a single giant eye in a cave, Isolated game asset cut out on a fully transparent background, only the medallion. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "map_node_06_eolo",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small round map emblem icon for a game world map, a bronze rimmed medallion showing a leather bag of winds tied with silver cord, Isolated game asset cut out on a fully transparent background, only the medallion. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "map_node_07_lestrigoes",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small round map emblem icon for a game world map, a bronze rimmed medallion showing a giant hand throwing a boulder, Isolated game asset cut out on a fully transparent background, only the medallion. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "map_node_08_circe",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small round map emblem icon for a game world map, a bronze rimmed medallion showing a golden goblet with green vapor, Isolated game asset cut out on a fully transparent background, only the medallion. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "prioridade": "P0",
+  "saida": "Docs/Environment_Final/_fontes",
+  "nota": "Fase 16 — peças de salão que a 15 não tem: lareira central do mégaron, tear de Penélope, escudos dos pretendentes no chão, facho de luz da aurora.",
+  "itens": [
+    {
+      "nome": "final_hearth_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "the great round central hearth of a Mycenaean megaron hall, a low raised ring of painted stone with a bed of glowing embers and a small steady fire, thin smoke rising, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the hearth and its fire. Palette of warm limestone and dark wood lit by orange firelight, with cool night-blue shadows. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 160,
+        "height": 112,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "final_hearth_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "the great round central hearth of a Mycenaean megaron hall, a low raised ring of painted stone with a bed of glowing embers and a small steady fire, thin smoke rising, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the hearth and its fire. Palette of warm limestone and dark wood lit by orange firelight, with cool night-blue shadows. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 160,
+        "height": 112,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "final_penelope_loom_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a tall upright warp-weighted loom of ancient Greece, two wooden uprights and a top beam, long vertical threads hanging down held taut by rows of clay loom weights, a half-woven shroud of pale linen with a sea-blue border on the upper part, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the loom. Palette of warm limestone, olive green, sun-bleached wood and sea blue. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 112,
+        "height": 144,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "final_penelope_loom_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a tall upright warp-weighted loom of ancient Greece, two wooden uprights and a top beam, long vertical threads hanging down held taut by rows of clay loom weights, a half-woven shroud of pale linen with a sea-blue border on the upper part, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the loom. Palette of warm limestone, olive green, sun-bleached wood and sea blue. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 112,
+        "height": 144,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "final_suitor_shields_floor_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a heap of dropped round bronze shields and two broken spears lying flat on a stone floor after a fight, one shield tilted up on its rim, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the shields and spears. Palette of tarnished bronze, saffron cloth straps and dark wood. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 160,
+        "height": 64,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "final_suitor_shields_floor_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a heap of dropped round bronze shields and two broken spears lying flat on a stone floor after a fight, one shield tilted up on its rim, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the shields and spears. Palette of tarnished bronze, saffron cloth straps and dark wood. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 160,
+        "height": 64,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "final_dawn_light_shaft_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a tall soft shaft of pale golden dawn light falling diagonally from a smoke hole in a roof, made of a few long translucent bands of light with dust motes floating inside, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the beam of light. Palette of pale gold and warm cream. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 128,
+        "height": 320,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "lineless",
+        "detail": "low detail"
+      }
+    },
+    {
+      "nome": "final_dawn_light_shaft_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a tall soft shaft of pale golden dawn light falling diagonally from a smoke hole in a roof, made of a few long translucent bands of light with dust motes floating inside, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the beam of light. Palette of pale gold and warm cream. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 128,
+        "height": 320,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "lineless",
+        "detail": "low detail"
+      }
+    }
+  ]
+}

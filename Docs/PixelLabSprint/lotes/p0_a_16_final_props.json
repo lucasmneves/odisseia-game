@@ -1,0 +1,119 @@
+{
+  "prioridade": "P0",
+  "saida": "Docs/Environment_Final/_fontes",
+  "nota": "Fase 16 — props-assinatura da prova do arco. Paredes, colunas, braseiros, mesas e trono vêm da 15 (custo 0). Escala: 42,857 px = 1 un; Odisseu 60 px.",
+  "itens": [
+    {
+      "nome": "final_axe_on_stand_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a single ancient Greek double-headed bronze axe head mounted upright on top of a short wooden post planted in the floor, the round hole of the axe head clearly open and visible through the blade so an arrow could pass through it, seen from directly beside it, strict flat side profile. Drawn small enough that the post base and the whole blade are complete and visible. Isolated game asset cut out on a fully transparent background, only the axe and its post. Palette of polished bronze and dark oak. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 64,
+        "height": 96,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "final_axe_on_stand_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a single ancient Greek double-headed bronze axe head mounted upright on top of a short wooden post planted in the floor, the round hole of the axe head clearly open and visible through the blade so an arrow could pass through it, seen from directly beside it, strict flat side profile. Drawn small enough that the post base and the whole blade are complete and visible. Isolated game asset cut out on a fully transparent background, only the axe and its post. Palette of polished bronze and dark oak. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 64,
+        "height": 96,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "final_axe_on_stand_c",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a single ancient Greek double-headed bronze axe head mounted upright on top of a short wooden post planted in the floor, the round hole of the axe head clearly open and visible through the blade so an arrow could pass through it, seen from directly beside it, strict flat side profile. Drawn small enough that the post base and the whole blade are complete and visible. Isolated game asset cut out on a fully transparent background, only the axe and its post. Palette of polished bronze and dark oak. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 64,
+        "height": 96,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "final_axe_row_12_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a long straight row of twelve identical bronze axe heads mounted on short wooden posts standing in a line on a stone floor, every axe hole aligned at the same height, seen from directly beside it, strict flat side profile, the row receding slightly so all twelve overlap a little. Isolated game asset cut out on a fully transparent background, only the row of axes. Palette of polished bronze and dark oak. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 384,
+        "height": 96,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "final_axe_row_12_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a long straight row of twelve identical bronze axe heads mounted on short wooden posts standing in a line on a stone floor, every axe hole aligned at the same height, seen from directly beside it, strict flat side profile, the row receding slightly so all twelve overlap a little. Isolated game asset cut out on a fully transparent background, only the row of axes. Palette of polished bronze and dark oak. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 384,
+        "height": 96,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "final_great_bow_rack_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "the great bow of Odysseus, a long recurved composite bow of horn and dark wood with bronze tips, unstrung and resting on two wooden pegs on a wall bracket, a leather quiver of arrows hanging beside it, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the bow, quiver and bracket. Palette of dark horn, honey wood, bronze and worn leather. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 96,
+        "height": 128,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "final_great_bow_rack_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "the great bow of Odysseus, a long recurved composite bow of horn and dark wood with bronze tips, unstrung and resting on two wooden pegs on a wall bracket, a leather quiver of arrows hanging beside it, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the bow, quiver and bracket. Palette of dark horn, honey wood, bronze and worn leather. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 96,
+        "height": 128,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "final_great_bow_rack_c",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "the great bow of Odysseus, a long recurved composite bow of horn and dark wood with bronze tips, unstrung and resting on two wooden pegs on a wall bracket, a leather quiver of arrows hanging beside it, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the bow, quiver and bracket. Palette of dark horn, honey wood, bronze and worn leather. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 96,
+        "height": 128,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    }
+  ]
+}

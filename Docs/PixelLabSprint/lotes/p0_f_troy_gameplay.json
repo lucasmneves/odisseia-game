@@ -1,0 +1,63 @@
+{
+  "prioridade": "P0",
+  "saida": "Docs/Environment_Troy/_fontes_sprint",
+  "nota": "Troia N-08: muralha, chão e barricada já existem (troy_wall_section_01, troy_tiles_*, troy_barricade_01). Faltam a ponte e blocos de muralha caída para os degraus do Gauntlet.",
+  "itens": [
+    {
+      "nome": "troy_plank_bridge_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a rough wooden siege bridge of thick planks lashed together with rope over two log beams, slightly sagging, seen from directly beside it, strict flat side profile, a long flat walkable platform. Isolated game asset cut out on a fully transparent background, only the bridge. Palette of sun-bleached and dark weathered wood with tan rope. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 192,
+        "height": 48,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "troy_plank_bridge_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a rough wooden siege bridge of thick planks lashed together with rope over two log beams, slightly sagging, seen from directly beside it, strict flat side profile, a long flat walkable platform. Isolated game asset cut out on a fully transparent background, only the bridge. Palette of sun-bleached and dark weathered wood with tan rope. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 192,
+        "height": 48,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "troy_fallen_block_platform_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "one large fallen block of pale limestone city wall masonry lying flat with a level top surface to stand on, cracked edges and a few smaller chunks at its foot, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the stone block. Palette of pale warm limestone with dusty ochre shadows. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 96,
+        "height": 64,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "troy_fallen_block_platform_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "one large fallen block of pale limestone city wall masonry lying flat with a level top surface to stand on, cracked edges and a few smaller chunks at its foot, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the stone block. Palette of pale warm limestone with dusty ochre shadows. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 96,
+        "height": 64,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    }
+  ]
+}

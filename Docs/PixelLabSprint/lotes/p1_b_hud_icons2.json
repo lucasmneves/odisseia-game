@@ -1,0 +1,91 @@
+{
+  "prioridade": "P1",
+  "saida": "Docs/UI_HUD/_fontes",
+  "nota": "QA-15 (cont.) e moldura do HUD.",
+  "itens": [
+    {
+      "nome": "hud_laurel_xp_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small icon of a green laurel wreath tied with a gold ribbon, Isolated game asset cut out on a fully transparent background, only the wreath. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "hud_laurel_xp_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small icon of a green laurel wreath tied with a gold ribbon, Isolated game asset cut out on a fully transparent background, only the wreath. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "hud_shield_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small icon of a round bronze Greek shield seen from the front with a simple spiral emblem, Isolated game asset cut out on a fully transparent background, only the shield. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "hud_shield_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small icon of a round bronze Greek shield seen from the front with a simple spiral emblem, Isolated game asset cut out on a fully transparent background, only the shield. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "hud_frame_meander_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a horizontal interface bar frame made of a thin bronze border with a Greek meander key pattern, dark inner panel, Isolated game asset cut out on a fully transparent background, only the frame. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 192,
+        "height": 32,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "hud_frame_meander_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a horizontal interface bar frame made of a thin bronze border with a Greek meander key pattern, dark inner panel, Isolated game asset cut out on a fully transparent background, only the frame. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 192,
+        "height": 32,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    }
+  ]
+}

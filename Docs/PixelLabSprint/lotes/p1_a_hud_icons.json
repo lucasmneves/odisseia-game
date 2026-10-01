@@ -1,0 +1,119 @@
+{
+  "prioridade": "P1",
+  "saida": "Docs/UI_HUD/_fontes",
+  "nota": "QA-15: HUD só com texto. Ícones a 32 px (pixen exige quadrado abaixo de 32; 32 é o mínimo seguro). Paleta do Odisseu: bronze, carmesim, linho.",
+  "itens": [
+    {
+      "nome": "hud_heart_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small health heart icon for a game interface, a solid crimson heart with a darker red shade and one white shine pixel, Isolated game asset cut out on a fully transparent background, only the heart. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "hud_heart_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small health heart icon for a game interface, a solid crimson heart with a darker red shade and one white shine pixel, Isolated game asset cut out on a fully transparent background, only the heart. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "hud_arrow_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small icon of a single arrow with a bronze head and pale fletching pointing diagonally up to the right, Isolated game asset cut out on a fully transparent background, only the arrow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "hud_arrow_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small icon of a single arrow with a bronze head and pale fletching pointing diagonally up to the right, Isolated game asset cut out on a fully transparent background, only the arrow. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "hud_drachma_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small icon of an ancient Greek silver coin with an owl stamped on its face, Isolated game asset cut out on a fully transparent background, only the coin. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "hud_drachma_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small icon of an ancient Greek silver coin with an owl stamped on its face, Isolated game asset cut out on a fully transparent background, only the coin. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "hud_helmet_life_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small icon of a bronze Greek helmet with cheek guards seen from the side with a crimson crest, Isolated game asset cut out on a fully transparent background, only the helmet. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "hud_helmet_life_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small icon of a bronze Greek helmet with cheek guards seen from the side with a crimson crest, Isolated game asset cut out on a fully transparent background, only the helmet. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    }
+  ]
+}

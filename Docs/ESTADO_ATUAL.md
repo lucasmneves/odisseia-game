@@ -783,3 +783,13 @@ Notion: "Character Art — Fase 11 — Cila e Caríbdis", seção em "PixelLab �
 - Caríbdis = ENVIRONMENT (`FX_Charybdis`), intocada; escala 0,42 fica como pendência de cenário.
 - PixelLab: **20 gerações** (786 → 806 de 2000), sem descarte.
 - Pendências: Cila com pés visíveis ("pairando"); palácio de Éolo 0,52; porco da Circe; `EnemyBasic` carmesim em 01, 14, 15.
+
+## Sprint PixelLab antes da expiração (2026-10-01)
+
+Plano em **`Docs/PixelLabSprint/PIXELLAB_SPRINT_PLAN.md`**, 14 lotes prontos em `Docs/PixelLabSprint/lotes/` (93 gerações
+de imagem + ~8 de animação), executor `Tools/sprint-run.js` (`--dry`, `--ping`, `--only P0`, `--max N`; pula o que já
+foi baixado). Prioridades: Fase 16 (única sem cenário), VFX de gameplay (hoje quadrados coloridos), Troia N-08, HUD,
+mapa, chamas, primeiro plano em 04/06/14/15.
+
+**Nenhuma geração feita**: a sessão na nuvem não alcança `api.pixellab.ai` (política de rede) e não tem a credencial.
+`Tools/pixellab.js` agora aceita `PIXELLAB_API_KEY` (e `PIXELLAB_MCP_URL`) além do `~/.claude.json` local.

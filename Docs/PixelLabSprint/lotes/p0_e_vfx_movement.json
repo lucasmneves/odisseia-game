@@ -1,0 +1,119 @@
+{
+  "prioridade": "P0",
+  "saida": "Docs/Gameplay_VFX/_fontes",
+  "nota": "Poeira de pouso/corrida, respingo e coleta. Paleta neutra: a cor final de cada fase entra pela cor do SpriteRenderer, como já faz o VfxBurst.",
+  "itens": [
+    {
+      "nome": "vfx_dust_land_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a low wide puff of pale sandy dust spreading to both sides along the ground, soft rounded small clouds, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the dust. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 64,
+        "height": 32,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "low detail"
+      }
+    },
+    {
+      "nome": "vfx_dust_land_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a low wide puff of pale sandy dust spreading to both sides along the ground, soft rounded small clouds, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the dust. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 64,
+        "height": 32,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "low detail"
+      }
+    },
+    {
+      "nome": "vfx_dust_run_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small single puff of pale dust kicked up behind a running foot, drifting backward, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the dust puff. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "low detail"
+      }
+    },
+    {
+      "nome": "vfx_dust_run_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small single puff of pale dust kicked up behind a running foot, drifting backward, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the dust puff. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "low detail"
+      }
+    },
+    {
+      "nome": "vfx_water_splash_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a splash of sea water bursting upward with droplets flying out, white foam and light blue water, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the splash. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "low detail"
+      }
+    },
+    {
+      "nome": "vfx_water_splash_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a splash of sea water bursting upward with droplets flying out, white foam and light blue water, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the splash. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "low detail"
+      }
+    },
+    {
+      "nome": "vfx_collect_sparkle_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small four pointed golden twinkle star with a soft glow and two tiny sparkles beside it, Isolated game asset cut out on a fully transparent background, only the sparkle. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "lineless",
+        "detail": "low detail"
+      }
+    },
+    {
+      "nome": "vfx_collect_sparkle_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small four pointed golden twinkle star with a soft glow and two tiny sparkles beside it, Isolated game asset cut out on a fully transparent background, only the sparkle. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "lineless",
+        "detail": "low detail"
+      }
+    }
+  ]
+}

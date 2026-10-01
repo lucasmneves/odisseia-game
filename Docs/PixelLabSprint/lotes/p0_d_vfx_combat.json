@@ -1,0 +1,119 @@
+{
+  "prioridade": "P0",
+  "saida": "Docs/Gameplay_VFX/_fontes",
+  "nota": "VFX comuns a todas as fases. O VfxBurst atual espalha quadrados de cor sólida; estes viram os sprites dos estilhaços (Spawn já recebe Sprite). Quadros extras saem por código (escala/alpha), como o resto do projeto.",
+  "itens": [
+    {
+      "nome": "vfx_hit_spark_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small bright impact spark burst, a white hot center with four to six sharp short rays of yellow and orange, Isolated game asset cut out on a fully transparent background, only the spark. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "lineless",
+        "detail": "low detail"
+      }
+    },
+    {
+      "nome": "vfx_hit_spark_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small bright impact spark burst, a white hot center with four to six sharp short rays of yellow and orange, Isolated game asset cut out on a fully transparent background, only the spark. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 32,
+        "height": 32,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "lineless",
+        "detail": "low detail"
+      }
+    },
+    {
+      "nome": "vfx_slash_arc_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a crescent shaped sword slash arc swoosh trail, thick at the middle and thin at both tips, pale white with a light blue edge, Isolated game asset cut out on a fully transparent background, only the slash arc. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "lineless",
+        "detail": "low detail"
+      }
+    },
+    {
+      "nome": "vfx_slash_arc_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a crescent shaped sword slash arc swoosh trail, thick at the middle and thin at both tips, pale white with a light blue edge, Isolated game asset cut out on a fully transparent background, only the slash arc. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "lineless",
+        "detail": "low detail"
+      }
+    },
+    {
+      "nome": "vfx_block_spark_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a flash of sparks bouncing off a bronze shield, a bright bronze and white star burst with small flying sparks to one side, Isolated game asset cut out on a fully transparent background, only the sparks. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "lineless",
+        "detail": "low detail"
+      }
+    },
+    {
+      "nome": "vfx_block_spark_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a flash of sparks bouncing off a bronze shield, a bright bronze and white star burst with small flying sparks to one side, Isolated game asset cut out on a fully transparent background, only the sparks. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "lineless",
+        "detail": "low detail"
+      }
+    },
+    {
+      "nome": "vfx_death_poof_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a round puff of grey white smoke bursting outward with a few small curls, Isolated game asset cut out on a fully transparent background, only the smoke puff. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "low detail"
+      }
+    },
+    {
+      "nome": "vfx_death_poof_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a round puff of grey white smoke bursting outward with a few small curls, Isolated game asset cut out on a fully transparent background, only the smoke puff. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "low detail"
+      }
+    }
+  ]
+}

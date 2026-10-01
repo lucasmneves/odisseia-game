@@ -1,0 +1,119 @@
+{
+  "prioridade": "P2",
+  "saida": "Docs/Foreground_Sprint/_fontes",
+  "nota": "Citera (04), Éolo (06), Ítaca Return (14) e Pretendentes (15) não têm primeiro plano. Duas peças por fase, ordem acima do jogador, longe de pontos de parada (regra do FINAL POLISH N-05).",
+  "itens": [
+    {
+      "nome": "fg_04_citera_rigging",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a ship rope rigging with a coiled rope and a wooden block pulley hanging from the top, in dark near silhouette as a foreground element close to the camera, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the ship rope rigging with a coiled rope and a wooden block pulley hanging from the top. Palette of wet dark wood and grey rope, very dark with a thin rim light. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 128,
+        "height": 256,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "fg_04_citera_wave_crest",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a curling sea wave crest with white foam, in dark near silhouette as a foreground element close to the camera, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the curling sea wave crest with white foam. Palette of deep storm teal and foam white, very dark with a thin rim light. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 256,
+        "height": 96,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "fg_06_eolo_bronze_urn",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a tall bronze urn on a pedestal, in dark near silhouette as a foreground element close to the camera, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the tall bronze urn on a pedestal. Palette of dark bronze and pale marble, very dark with a thin rim light. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 96,
+        "height": 192,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "fg_06_eolo_cloud_wisp",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a low drifting wisp of wind cloud, in dark near silhouette as a foreground element close to the camera, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the low drifting wisp of wind cloud. Palette of pale blue grey, very dark with a thin rim light. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 256,
+        "height": 96,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "fg_14_itaca_olive_branch",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a gnarled olive tree branch with leaves hanging from the top, in dark near silhouette as a foreground element close to the camera, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the gnarled olive tree branch with leaves hanging from the top. Palette of dark olive green and brown bark at dusk, very dark with a thin rim light. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 256,
+        "height": 128,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "fg_14_itaca_tall_grass",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a clump of tall dry grass and wildflowers, in dark near silhouette as a foreground element close to the camera, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the clump of tall dry grass and wildflowers. Palette of dusk olive and dry straw, very dark with a thin rim light. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 192,
+        "height": 96,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "fg_15_pret_banner_drape",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a long torn red banner hanging from the top, in dark near silhouette as a foreground element close to the camera, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the long torn red banner hanging from the top. Palette of wine red and night blue, very dark with a thin rim light. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 96,
+        "height": 256,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "fg_15_pret_overturned_krater",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a large overturned bronze wine krater with spilled wine, in dark near silhouette as a foreground element close to the camera, seen from directly beside it, strict flat side profile. Isolated game asset cut out on a fully transparent background, only the large overturned bronze wine krater with spilled wine. Palette of bronze, wine red and night blue, very dark with a thin rim light. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 160,
+        "height": 96,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    }
+  ]
+}

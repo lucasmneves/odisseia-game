@@ -1,0 +1,119 @@
+{
+  "prioridade": "P1",
+  "saida": "Docs/UI_WorldMap/_fontes",
+  "nota": "Emblemas das fases 09–16.",
+  "itens": [
+    {
+      "nome": "map_node_09_mortos",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small round map emblem icon for a game world map, a bronze rimmed medallion showing a pale ghost over dark water, Isolated game asset cut out on a fully transparent background, only the medallion. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "map_node_10_sereias",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small round map emblem icon for a game world map, a bronze rimmed medallion showing a bird woman with turquoise wings, Isolated game asset cut out on a fully transparent background, only the medallion. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "map_node_11_cila",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small round map emblem icon for a game world map, a bronze rimmed medallion showing a serpent headed sea monster and a whirlpool, Isolated game asset cut out on a fully transparent background, only the medallion. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "map_node_12_gado",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small round map emblem icon for a game world map, a bronze rimmed medallion showing a white bull under a golden sun, Isolated game asset cut out on a fully transparent background, only the medallion. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "map_node_13_calipso",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small round map emblem icon for a game world map, a bronze rimmed medallion showing a small green island with a cave, Isolated game asset cut out on a fully transparent background, only the medallion. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "map_node_14_itaca_return",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small round map emblem icon for a game world map, a bronze rimmed medallion showing a beggar with a staff before a house, Isolated game asset cut out on a fully transparent background, only the medallion. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "map_node_15_pretendentes",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small round map emblem icon for a game world map, a bronze rimmed medallion showing a banquet table with a red banner, Isolated game asset cut out on a fully transparent background, only the medallion. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "map_node_16_final",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small round map emblem icon for a game world map, a bronze rimmed medallion showing a bow and a row of axes, Isolated game asset cut out on a fully transparent background, only the medallion. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    }
+  ]
+}

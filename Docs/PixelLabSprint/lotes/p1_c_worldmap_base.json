@@ -1,0 +1,77 @@
+{
+  "prioridade": "P1",
+  "saida": "Docs/UI_WorldMap/_fontes",
+  "nota": "QA-16: nós do mapa são quadrados escuros. Fundo de carta náutica + marcador do navio + estados de nó.",
+  "itens": [
+    {
+      "nome": "map_bg_aegean_a",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "an old hand painted map of the Aegean sea on aged parchment, scattered islands of ochre and olive with tiny painted mountains, a pale teal sea with small curling wave marks, a decorative meander border, seen from directly above. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 768,
+        "height": 432,
+        "no_background": false,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "lineless",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "map_bg_aegean_b",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "an old hand painted map of the Aegean sea on aged parchment, scattered islands of ochre and olive with tiny painted mountains, a pale teal sea with small curling wave marks, a decorative meander border, seen from directly above. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 768,
+        "height": 432,
+        "no_background": false,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "lineless",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "map_ship_marker",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a tiny ancient Greek galley with a single square sail and a row of oars, seen from the side, Isolated game asset cut out on a fully transparent background, only the ship. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "side",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "map_node_locked",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small round map emblem, a dark bronze medallion with a closed padlock shape, dull and tarnished, Isolated game asset cut out on a fully transparent background, only the medallion. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    },
+    {
+      "nome": "map_node_done",
+      "ferramenta": "create_image_pixen",
+      "args": {
+        "description": "a small round map emblem, a bright bronze medallion with a green laurel wreath, Isolated game asset cut out on a fully transparent background, only the medallion. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+        "width": 48,
+        "height": 48,
+        "no_background": true,
+        "view": "high top-down",
+        "direction": "east",
+        "outline": "single color black outline",
+        "detail": "medium detail"
+      }
+    }
+  ]
+}
