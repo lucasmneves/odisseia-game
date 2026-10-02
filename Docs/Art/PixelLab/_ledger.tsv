@@ -1,0 +1,283 @@
+quando	id	nome	ferramenta	job	status
+2026-10-01T03:10:52.024Z	PXL-001	hit_a	create_image_pixen	419fa2e3-68db-478d-a448-fb8c0fa2632e	disparado
+2026-10-01T03:11:20.308Z	PXL-001	hit_a	-	419fa2e3-68db-478d-a448-fb8c0fa2632e	ok 1 img 28s
+2026-10-01T03:11:44.233Z	PXL-001	hit_a_anim	animate_image	5b3955ee-c672-4036-83bc-3da9deae7c17	disparado
+2026-10-01T03:13:24.757Z	PXL-001	hit_a_anim	-	5b3955ee-c672-4036-83bc-3da9deae7c17	ok 4 img 101s
+2026-10-01T03:13:59.715Z	PXL-003	block_a	create_image_pixen	31f08806-e700-4b5a-8cc6-43cd4f23e25b	disparado
+2026-10-01T03:13:59.760Z	PXL-004	death_a	create_image_pixen	a1a019cd-4d9a-4d53-bfc7-34478ac883bc	disparado
+2026-10-01T03:13:59.880Z	PXL-006	arrowhit_a	create_image_pixen	5cbd5bcc-209a-4aec-b898-617534fd30c4	disparado
+2026-10-01T03:14:00.827Z	PXL-007	collect_a	create_image_pixen	c99a52ef-ea21-4bd8-9fa0-3dbbb64e3367	disparado
+2026-10-01T03:14:01.088Z	PXL-002	slash_a	create_image_pixen	d943b6d5-651a-441f-a2c9-1f5779f5bbc4	disparado
+2026-10-01T03:14:39.318Z	PXL-007	collect_a	-	c99a52ef-ea21-4bd8-9fa0-3dbbb64e3367	ok 1 img 38s
+2026-10-01T03:14:48.890Z	PXL-006	arrowhit_a	-	5cbd5bcc-209a-4aec-b898-617534fd30c4	ok 1 img 49s
+2026-10-01T03:14:59.567Z	PXL-003	block_a	-	31f08806-e700-4b5a-8cc6-43cd4f23e25b	ok 1 img 60s
+2026-10-01T03:15:35.744Z	PXL-002	slash_a	-	d943b6d5-651a-441f-a2c9-1f5779f5bbc4	ok 1 img 95s
+2026-10-01T03:16:49.142Z	PXL-004	death_a	-	a1a019cd-4d9a-4d53-bfc7-34478ac883bc	ok 1 img 169s
+2026-10-01T03:17:11.856Z	PXL-006	arrowhit_b	create_image_pixen	de132a3a-fc9c-47c0-a8a8-6f5ba40da7b9	disparado
+2026-10-01T03:17:12.009Z	PXL-003	block_b	create_image_pixen	99c1af14-1491-45b2-925d-42ad0ecbe54b	disparado
+2026-10-01T03:18:11.915Z	PXL-003	block_b	-	99c1af14-1491-45b2-925d-42ad0ecbe54b	ok 1 img 60s
+2026-10-01T03:18:24.815Z	PXL-006	arrowhit_b	-	de132a3a-fc9c-47c0-a8a8-6f5ba40da7b9	ok 1 img 73s
+2026-10-01T03:18:39.037Z	PXL-006	arrowhit_c	create_image_pixen	4de43785-38bb-4328-8596-a5d90218c7ef	disparado
+2026-10-01T03:19:34.232Z	PXL-006	arrowhit_c	-	4de43785-38bb-4328-8596-a5d90218c7ef	ok 1 img 55s
+2026-10-01T03:20:04.512Z	PXL-006	arrowhit_anim	animate_image	6ea92168-cd65-42e8-aed3-9f809a7c7f83	disparado
+2026-10-01T03:20:04.694Z	PXL-003	block_anim	animate_image	91d4869d-f94b-4318-855b-bb367ad54e9f	disparado
+2026-10-01T03:20:04.741Z	PXL-004	death_anim	animate_image	9117322c-e4c1-4f03-961a-f7044f4dab42	disparado
+2026-10-01T03:20:04.767Z	PXL-002	slash_anim	animate_image	f353f3ce-c9e2-456b-b891-e7e919c5ba7a	disparado
+2026-10-01T03:20:04.815Z	PXL-007	collect_anim	animate_image	a5682f2e-0869-4b70-a57a-6b8a986612ac	disparado
+2026-10-01T03:20:04.896Z	PXL-005	dust_anim	animate_image	9d002fbc-da26-43d0-a622-13fd9ec20108	disparado
+2026-10-01T03:21:52.649Z	PXL-006	arrowhit_anim	-	6ea92168-cd65-42e8-aed3-9f809a7c7f83	ok 4 img 108s
+2026-10-01T03:22:47.108Z	PXL-003	block_anim	-	91d4869d-f94b-4318-855b-bb367ad54e9f	ok 4 img 162s
+2026-10-01T03:22:52.291Z	PXL-004	death_anim	-	9117322c-e4c1-4f03-961a-f7044f4dab42	ok 4 img 168s
+2026-10-01T03:23:04.797Z	PXL-007	collect_anim	-	a5682f2e-0869-4b70-a57a-6b8a986612ac	ok 4 img 180s
+2026-10-01T03:23:57.504Z	PXL-002	slash_anim	-	f353f3ce-c9e2-456b-b891-e7e919c5ba7a	ok 4 img 233s
+2026-10-01T03:24:07.236Z	PXL-005	dust_anim	-	9d002fbc-da26-43d0-a622-13fd9ec20108	ok 4 img 242s
+2026-10-01T03:25:22.862Z	PXL-008	quiver_a	create_image_pixen	fa038fac-9640-4c38-8a9d-53c8ec6cce47	disparado
+2026-10-01T03:26:17.591Z	PXL-008	quiver_a	-	fa038fac-9640-4c38-8a9d-53c8ec6cce47	ok 1 img 55s
+2026-10-01T03:27:06.783Z	PXL-009	reunion_pro	create_image_pro	a3ccc128-6d00-470a-b326-a4876a79b3ce	disparado
+2026-10-01T03:29:22.756Z	PXL-009	reunion_pro	-	a3ccc128-6d00-470a-b326-a4876a79b3ce	ok 4 img 136s
+2026-10-01T03:30:16.462Z	PXL-010	bridge_a	create_image_pixen	b3f93adc-1426-496c-b44c-5a56bd82eaca	disparado
+2026-10-01T03:31:05.493Z	PXL-010	bridge_a	-	b3f93adc-1426-496c-b44c-5a56bd82eaca	ok 1 img 49s
+2026-10-01T03:34:13.422Z	PXL-013	ShieldJump	animate_character	908b7f60-0624-43bc-a0cd-89ad16416400	disparado
+2026-10-01T03:34:19.090Z	PXL-013	ShieldFall	animate_character	908b7f60-0624-43bc-a0cd-89ad16416400	disparado
+2026-10-01T03:42:32.607Z	PXL-014	altar_a	create_image_pixen	c1d83784-95c8-4632-88f3-f16ba2121b56	disparado
+2026-10-01T03:43:00.754Z	PXL-014	altar_a	-	c1d83784-95c8-4632-88f3-f16ba2121b56	ok 1 img 28s
+2026-10-01T03:44:08.759Z	PXL-015	cooking_fire_anim	animate_image	c808432e-1bb0-4e0d-b188-3acf40a6fdba	disparado
+2026-10-01T03:44:08.849Z	PXL-015	torch_stand_anim	animate_image	cbcc7a35-3aee-434e-a7d2-c84d2bb6cd86	disparado
+2026-10-01T03:44:08.968Z	PXL-015	campfire_troy_anim	animate_image	2b45aa9a-b276-4378-8c67-f339f5ee1a5b	disparado
+2026-10-01T03:44:09.291Z	PXL-015	hearth_anim	animate_image	3ebf3fbe-860d-4b26-8ce2-17862aff828c	disparado
+2026-10-01T03:44:09.445Z	PXL-015	brazier_anim	animate_image	78c36c55-d3e8-4105-b57d-736a6a84f2f1	disparado
+2026-10-01T03:45:22.382Z	PXL-015	campfire_troy_anim	-	2b45aa9a-b276-4378-8c67-f339f5ee1a5b	ok 4 img 73s
+2026-10-01T03:45:41.148Z	PXL-015	cooking_fire_anim	-	c808432e-1bb0-4e0d-b188-3acf40a6fdba	ok 4 img 92s
+2026-10-01T03:46:03.077Z	PXL-015	brazier_anim	-	78c36c55-d3e8-4105-b57d-736a6a84f2f1	ok 4 img 114s
+2026-10-01T03:46:14.943Z	PXL-015	torch_stand_anim	-	cbcc7a35-3aee-434e-a7d2-c84d2bb6cd86	ok 4 img 126s
+2026-10-01T03:47:31.993Z	PXL-015	hearth_anim	-	3ebf3fbe-860d-4b26-8ce2-17862aff828c	ok 4 img 203s
+2026-10-01T03:48:48.931Z	PXL-017	ship_a	create_image_pixen	5e457faf-b451-4d15-b368-f07a654a45da	disparado
+2026-10-01T03:49:05.775Z	PXL-017	ship_a	-	5e457faf-b451-4d15-b368-f07a654a45da	ok 1 img 17s
+2026-10-01T03:49:16.218Z	PXL-016	map_a	create_image_pixen	ca118208-6957-4864-b66c-9f28215fbb83	disparado
+2026-10-01T03:50:27.559Z	PXL-016	map_a	-	ca118208-6957-4864-b66c-9f28215fbb83	ok 1 img 71s
+2026-10-01T03:50:56.866Z	PXL-018	e06_eolo	create_image_pixen	b35a7cdc-fcaa-4c57-920d-c632dd8a82e1	disparado
+2026-10-01T03:50:56.932Z	PXL-018	e04_citera	create_image_pixen	4b847787-1969-4106-8105-32c36f289a19	disparado
+2026-10-01T03:50:56.939Z	PXL-018	e01_itaca	create_image_pixen	94eb532f-1a6d-4451-84a8-6c2403134ec1	disparado
+2026-10-01T03:50:57.023Z	PXL-018	e05_ciclopes	create_image_pixen	ac0c4a45-19b2-4cde-8730-f063627f0615	disparado
+2026-10-01T03:50:57.032Z	PXL-018	e02_troia	create_image_pixen	54e4ff7b-6fc7-4ddc-953f-0b2134cd0c48	disparado
+2026-10-01T03:50:57.088Z	PXL-018	e03_cicones	create_image_pixen	218b8533-0518-46f2-a4a8-8492a958f6cc	disparado
+2026-10-01T03:50:57.109Z	PXL-018	e07_lestrigoes	create_image_pixen	070df6e4-c9ee-4959-9590-00f75030e898	disparado
+2026-10-01T03:50:57.231Z	PXL-018	e08_circe	create_image_pixen	b852952b-c9af-4d10-8042-cb734575646c	disparado
+2026-10-01T03:51:24.771Z	PXL-018	e04_citera	-	4b847787-1969-4106-8105-32c36f289a19	ok 1 img 28s
+2026-10-01T03:51:25.303Z	PXL-018	e06_eolo	-	b35a7cdc-fcaa-4c57-920d-c632dd8a82e1	ok 1 img 28s
+2026-10-01T03:51:35.190Z	PXL-018	e07_lestrigoes	-	070df6e4-c9ee-4959-9590-00f75030e898	ok 1 img 38s
+2026-10-01T03:51:35.370Z	PXL-018	e01_itaca	-	94eb532f-1a6d-4451-84a8-6c2403134ec1	ok 1 img 38s
+2026-10-01T03:51:35.387Z	PXL-018	e08_circe	-	b852952b-c9af-4d10-8042-cb734575646c	ok 1 img 38s
+2026-10-01T03:51:37.061Z	PXL-018	e05_ciclopes	-	ac0c4a45-19b2-4cde-8730-f063627f0615	ok 1 img 40s
+2026-10-01T03:51:37.709Z	PXL-018	e02_troia	-	54e4ff7b-6fc7-4ddc-953f-0b2134cd0c48	ok 1 img 41s
+2026-10-01T03:51:45.707Z	PXL-018	e03_cicones	-	218b8533-0518-46f2-a4a8-8492a958f6cc	ok 1 img 49s
+2026-10-01T03:51:47.469Z	PXL-018	e11_cila	create_image_pixen	15eea4f5-e401-404f-abc3-ae7910e291b2	disparado
+2026-10-01T03:51:47.586Z	PXL-018	e10_sereias	create_image_pixen	ef13bf12-bf30-4e80-81e9-566f5cb69adc	disparado
+2026-10-01T03:51:47.631Z	PXL-018	e13_calipso	create_image_pixen	d84a3859-7e73-43fa-a37f-356385465248	disparado
+2026-10-01T03:51:48.427Z	PXL-018	e15_pretendentes	create_image_pixen	8c9ac7b0-4040-4a80-9deb-c037676f5b6d	disparado
+2026-10-01T03:51:48.449Z	PXL-018	e12_gado	create_image_pixen	12179ba6-e9db-4f60-b61d-af6acdefaf7e	disparado
+2026-10-01T03:51:48.683Z	PXL-018	e09_mortos	create_image_pixen	f1b5d220-d7ff-49e7-aa7e-f61ec8c4d632	disparado
+2026-10-01T03:51:49.392Z	PXL-018	e16_final	create_image_pixen	e8223be7-6490-463a-873e-ddd977154206	disparado
+2026-10-01T03:51:50.472Z	PXL-018	e14_itaca_retorno	create_image_pixen	5ff52b05-a076-4669-860f-66969020edb7	disparado
+2026-10-01T03:52:15.330Z	PXL-018	e10_sereias	-	ef13bf12-bf30-4e80-81e9-566f5cb69adc	ok 1 img 28s
+2026-10-01T03:52:15.351Z	PXL-018	e11_cila	-	15eea4f5-e401-404f-abc3-ae7910e291b2	ok 1 img 28s
+2026-10-01T03:52:15.654Z	PXL-018	e13_calipso	-	d84a3859-7e73-43fa-a37f-356385465248	ok 1 img 28s
+2026-10-01T03:52:15.990Z	PXL-018	e12_gado	-	12179ba6-e9db-4f60-b61d-af6acdefaf7e	ok 1 img 28s
+2026-10-01T03:52:16.087Z	PXL-018	e09_mortos	-	f1b5d220-d7ff-49e7-aa7e-f61ec8c4d632	ok 1 img 27s
+2026-10-01T03:52:28.055Z	PXL-018	e16_final	-	e8223be7-6490-463a-873e-ddd977154206	ok 1 img 39s
+2026-10-01T03:52:28.936Z	PXL-018	e14_itaca_retorno	-	5ff52b05-a076-4669-860f-66969020edb7	ok 1 img 38s
+2026-10-01T03:52:37.669Z	PXL-018	e15_pretendentes	-	8c9ac7b0-4040-4a80-9deb-c037676f5b6d	ok 1 img 49s
+2026-10-01T03:53:02.938Z	PXL-018	e10_sereias_b	create_image_pixen	15eca4b2-0135-4e96-9deb-8b62e3f5e418	disparado
+2026-10-01T03:53:02.976Z	PXL-018	e16_final_b	create_image_pixen	24c842cc-2ded-43df-a0cd-de9cf758f037	disparado
+2026-10-01T03:53:03.229Z	PXL-018	e07_lestrigoes_b	create_image_pixen	39195328-5f43-4533-b660-97dba758848f	disparado
+2026-10-01T03:53:31.381Z	PXL-018	e10_sereias_b	-	15eca4b2-0135-4e96-9deb-8b62e3f5e418	ok 1 img 28s
+2026-10-01T03:53:31.516Z	PXL-018	e07_lestrigoes_b	-	39195328-5f43-4533-b660-97dba758848f	ok 1 img 28s
+2026-10-01T03:53:32.126Z	PXL-018	e16_final_b	-	24c842cc-2ded-43df-a0cd-de9cf758f037	ok 1 img 29s
+2026-10-01T03:53:50.119Z	PXL-018	e10_sereias_pro	create_image_pro	4ac059ee-b487-4b7f-9a9b-a08a70a553ad	disparado
+2026-10-01T03:59:10.728Z	PXL-018	e10_sereias_pro	-	4ac059ee-b487-4b7f-9a9b-a08a70a553ad	ok 4 img 321s
+2026-10-01T04:00:29.253Z	PXL-019	h_lives	create_image_pixen	af381bd2-8b65-404e-a410-19676ac1e76b	disparado
+2026-10-01T04:00:29.305Z	PXL-019	h_health	create_image_pixen	21637de8-6d40-4f3c-a352-597c459182be	disparado
+2026-10-01T04:00:29.312Z	PXL-019	h_shield	create_image_pixen	8cbddb25-4cbc-4a5f-86d8-f269fc3a8822	disparado
+2026-10-01T04:00:29.371Z	PXL-019	h_arrows	create_image_pixen	7bd1f440-dcbb-4f45-b243-f9a4881dd018	disparado
+2026-10-01T04:00:29.561Z	PXL-019	h_lotus	create_image_pixen	df6e9561-f07b-4a13-9766-99991db7fbec	disparado
+2026-10-01T04:00:29.627Z	PXL-019	h_xp	create_image_pixen	5acd447d-659e-4465-aea4-20562a3facdf	disparado
+2026-10-01T04:00:29.719Z	PXL-019	h_hunger	create_image_pixen	3d7fecdc-907e-4b87-ab14-15cbdb2be4f1	disparado
+2026-10-01T04:00:30.419Z	PXL-019	h_wax	create_image_pixen	991264a0-85e9-4e4d-acee-0232a8731679	disparado
+2026-10-01T04:00:57.437Z	PXL-019	h_health	-	21637de8-6d40-4f3c-a352-597c459182be	ok 1 img 28s
+2026-10-01T04:00:57.527Z	PXL-019	h_arrows	-	7bd1f440-dcbb-4f45-b243-f9a4881dd018	ok 1 img 28s
+2026-10-01T04:01:06.543Z	PXL-019	h_lives	-	af381bd2-8b65-404e-a410-19676ac1e76b	ok 1 img 37s
+2026-10-01T04:01:07.271Z	PXL-019	h_shield	-	8cbddb25-4cbc-4a5f-86d8-f269fc3a8822	ok 1 img 38s
+2026-10-01T04:01:18.676Z	PXL-019	h_hunger	-	3d7fecdc-907e-4b87-ab14-15cbdb2be4f1	ok 1 img 49s
+2026-10-01T04:01:28.827Z	PXL-019	h_lotus	-	df6e9561-f07b-4a13-9766-99991db7fbec	ok 1 img 59s
+2026-10-01T04:01:30.268Z	PXL-019	h_wax	-	991264a0-85e9-4e4d-acee-0232a8731679	ok 1 img 60s
+2026-10-01T04:01:40.523Z	PXL-019	h_xp	-	5acd447d-659e-4465-aea4-20562a3facdf	ok 1 img 71s
+2026-10-01T04:02:19.662Z	PXL-020	menu_a	create_image_pixen	5415c32c-91ef-4974-9d2e-5ab60b640e84	disparado
+2026-10-01T04:05:54.718Z	PXL-020	menu_a	-	5415c32c-91ef-4974-9d2e-5ab60b640e84	ok 1 img 215s
+2026-10-01T04:06:36.826Z	PXL-021	fg15_spill	create_image_pixen	7f2a1c50-f647-4c8f-8600-272a23290bef	disparado
+2026-10-01T04:06:36.908Z	PXL-021	fg15_banner	create_image_pixen	fb9399b5-fead-4e76-8905-aeb34ff6af5d	disparado
+2026-10-01T04:06:36.944Z	PXL-021	fg14_branch	create_image_pixen	1af88c08-061e-44e8-9137-6fb7786cf827	disparado
+2026-10-01T04:06:37.213Z	PXL-021	fg04_rope	create_image_pixen	6ed0a477-f97e-4629-9c67-d4b0854ca5a8	disparado
+2026-10-01T04:06:37.414Z	PXL-021	fg06_rail	create_image_pixen	4ba86c92-efa8-47de-84ac-bf5751efde17	disparado
+2026-10-01T04:06:37.470Z	PXL-021	fg06_cloud	create_image_pixen	557cb15e-a786-47dd-81cf-f6bc5916f718	disparado
+2026-10-01T04:06:38.271Z	PXL-021	fg04_rigging	create_image_pixen	1efba726-18ae-434d-884e-cbf774e367d6	disparado
+2026-10-01T04:06:38.941Z	PXL-021	fg14_weeds	create_image_pixen	e0fb94e5-582b-4bdb-a10c-91467dd76721	disparado
+2026-10-01T04:07:26.081Z	PXL-021	fg15_banner	-	fb9399b5-fead-4e76-8905-aeb34ff6af5d	ok 1 img 49s
+2026-10-01T04:07:36.249Z	PXL-021	fg15_spill	-	7f2a1c50-f647-4c8f-8600-272a23290bef	ok 1 img 59s
+2026-10-01T04:07:36.956Z	PXL-021	fg14_branch	-	1af88c08-061e-44e8-9137-6fb7786cf827	ok 1 img 60s
+2026-10-01T04:07:40.216Z	PXL-021	fg14_weeds	-	e0fb94e5-582b-4bdb-a10c-91467dd76721	ok 1 img 61s
+2026-10-01T04:07:47.927Z	PXL-021	fg06_cloud	-	557cb15e-a786-47dd-81cf-f6bc5916f718	ok 1 img 70s
+2026-10-01T04:08:10.267Z	PXL-021	fg06_rail	-	4ba86c92-efa8-47de-84ac-bf5751efde17	ok 1 img 93s
+2026-10-01T04:08:10.422Z	PXL-021	fg04_rigging	-	1efba726-18ae-434d-884e-cbf774e367d6	ok 1 img 92s
+2026-10-01T04:08:19.469Z	PXL-021	fg04_rope	-	6ed0a477-f97e-4629-9c67-d4b0854ca5a8	ok 1 img 102s
+2026-10-01T04:08:35.806Z	PXL-021	fg04_rope_b	create_image_pixen	b9c73146-3af6-4749-9246-475bf478771e	disparado
+2026-10-01T04:09:38.720Z	PXL-021	fg04_rope_b	-	b9c73146-3af6-4749-9246-475bf478771e	ok 1 img 63s
+2026-10-01T04:10:04.228Z	PXL-022	entab_a	create_image_pixen	26e1a2c2-8daf-44dc-b734-2c8d1e78e5a5	disparado
+2026-10-01T04:11:04.101Z	PXL-022	entab_a	-	26e1a2c2-8daf-44dc-b734-2c8d1e78e5a5	ok 1 img 60s
+2026-10-01T12:35:22.360Z	PP-01	hit_pro	create_image_pro	95d33989-3850-45b3-8709-a5aa0a5bb105	disparado
+2026-10-01T12:35:22.583Z	PP-02	slash_pro	create_image_pro	5a41873a-e33b-45f2-9dbb-036db1079925	disparado
+2026-10-01T12:39:51.830Z	PP-01	hit_pro	-	95d33989-3850-45b3-8709-a5aa0a5bb105	ok 4 img 269s
+2026-10-01T12:41:29.481Z	PP-02	slash_pro	-	5a41873a-e33b-45f2-9dbb-036db1079925	ok 4 img 367s
+2026-10-01T12:42:01.091Z	PP-03	ricochet_a	create_image_pixen	49e9768d-b86a-43fa-8a89-e53d29758cd2	disparado
+2026-10-01T12:42:01.375Z	PP-01	thrust_b	create_image_pixen	40c2a5d0-cc47-4b54-b7ba-6e08d25b7420	disparado
+2026-10-01T12:42:01.899Z	PP-02	heavy_b	create_image_pixen	40d6d06b-d8ae-45b2-8001-d09f994943f2	disparado
+2026-10-01T12:42:02.437Z	PP-02	heavy_a	create_image_pixen	b33c86b5-e6ea-424c-b2ec-70d0d6a00d30	disparado
+2026-10-01T12:42:04.351Z	PP-01	thrust_a	create_image_pixen	b82eaeb3-a3a7-434a-a9c4-9732be2813d3	disparado
+2026-10-01T12:42:40.507Z	PP-03	ricochet_a	-	49e9768d-b86a-43fa-8a89-e53d29758cd2	ok 1 img 39s
+2026-10-01T12:42:41.180Z	PP-01	thrust_b	-	40c2a5d0-cc47-4b54-b7ba-6e08d25b7420	ok 1 img 40s
+2026-10-01T12:42:53.198Z	PP-02	heavy_a	-	b33c86b5-e6ea-424c-b2ec-70d0d6a00d30	ok 1 img 51s
+2026-10-01T12:42:56.115Z	PP-01	thrust_a	-	b82eaeb3-a3a7-434a-a9c4-9732be2813d3	ok 1 img 52s
+2026-10-01T12:43:23.988Z	PP-02	heavy_b	-	40d6d06b-d8ae-45b2-8001-d09f994943f2	ok 1 img 82s
+2026-10-01T12:43:43.463Z	PP-01	thrust_pro	create_image_pro	0c89f8d4-f804-49be-942c-f9242467b17c	disparado
+2026-10-01T12:43:43.839Z	PP-02	heavy_pro	create_image_pro	f6200f99-6866-4776-8d12-c36eb5fcb206	disparado
+2026-10-01T12:45:52.730Z	PP-01	thrust_pro	-	0c89f8d4-f804-49be-942c-f9242467b17c	ok 4 img 129s
+2026-10-01T12:46:31.897Z	PP-02	heavy_pro	-	f6200f99-6866-4776-8d12-c36eb5fcb206	ok 4 img 168s
+2026-10-01T12:46:49.949Z	PP-02	slash_v2_anim	animate_image	3b0e46c2-378f-4e3c-89c3-46c9773c4ca5	disparado
+2026-10-01T12:46:50.818Z	PP-01	hit_v2_anim	animate_image	64817fad-9da6-47eb-9998-382a5dce22d9	disparado
+2026-10-01T12:46:51.073Z	PP-01	thrust_anim	animate_image	2aae0df1-5fc5-4943-a953-0370782acb82	disparado
+2026-10-01T12:46:51.123Z	PP-02	heavy_anim	animate_image	02c707ee-3994-4c43-b4f8-e0025f5bb1b9	disparado
+2026-10-01T12:48:22.954Z	PP-01	hit_v2_anim	-	64817fad-9da6-47eb-9998-382a5dce22d9	ok 4 img 92s
+2026-10-01T12:48:35.070Z	PP-02	heavy_anim	-	02c707ee-3994-4c43-b4f8-e0025f5bb1b9	ok 4 img 104s
+2026-10-01T12:48:35.404Z	PP-01	thrust_anim	-	2aae0df1-5fc5-4943-a953-0370782acb82	ok 4 img 104s
+2026-10-01T12:48:54.737Z	PP-02	slash_v2_anim	-	3b0e46c2-378f-4e3c-89c3-46c9773c4ca5	ok 4 img 125s
+2026-10-01T13:20:18.558Z	PP-05	land_a	create_image_pixen	2d3f663d-a6f0-41cd-b193-9c9d11baadd3	disparado
+2026-10-01T13:20:18.574Z	PP-04	chips_a	create_image_pixen	83cffbf7-df61-4ab8-a18f-beea8dc71d8e	disparado
+2026-10-01T13:20:18.673Z	PP-07	leaves_a	create_image_pixen	788bc3bd-b48e-49fa-ba07-b6a75b3a86c0	disparado
+2026-10-01T13:20:19.005Z	PP-06	foam_a	create_image_pixen	7d3559c5-bec5-4dfb-a647-ea51ca4b2999	disparado
+2026-10-01T13:20:19.156Z	PP-05	rundust_a	create_image_pixen	319a7b35-e74b-4b81-b487-bff6bd4ed152	disparado
+2026-10-01T13:20:19.751Z	PP-05	fall_a	create_image_pixen	8b851021-ee0e-4ce7-bb91-c9948d3b9c47	disparado
+2026-10-01T13:20:19.962Z	PP-04	sparks_a	create_image_pixen	52188f19-361f-4967-b4d2-513b6471a51c	disparado
+2026-10-01T13:20:21.605Z	PP-06	drops_a	create_image_pixen	22daa2f0-4534-4f22-8b24-fee5797c8b68	disparado
+2026-10-01T13:20:47.421Z	PP-07	leaves_a	-	788bc3bd-b48e-49fa-ba07-b6a75b3a86c0	ok 1 img 29s
+2026-10-01T13:20:47.999Z	PP-05	fall_a	-	8b851021-ee0e-4ce7-bb91-c9948d3b9c47	ok 1 img 28s
+2026-10-01T13:20:57.814Z	PP-05	land_a	-	2d3f663d-a6f0-41cd-b193-9c9d11baadd3	ok 1 img 39s
+2026-10-01T13:20:58.053Z	PP-06	foam_a	-	7d3559c5-bec5-4dfb-a647-ea51ca4b2999	ok 1 img 39s
+2026-10-01T13:20:59.742Z	PP-05	rundust_a	-	319a7b35-e74b-4b81-b487-bff6bd4ed152	ok 1 img 41s
+2026-10-01T13:21:10.079Z	PP-04	chips_a	-	83cffbf7-df61-4ab8-a18f-beea8dc71d8e	ok 1 img 52s
+2026-10-01T13:21:53.180Z	PP-04	sparks_a	-	52188f19-361f-4967-b4d2-513b6471a51c	ok 1 img 93s
+2026-10-01T13:21:55.640Z	PP-06	drops_a	-	22daa2f0-4534-4f22-8b24-fee5797c8b68	ok 1 img 94s
+2026-10-01T13:22:21.611Z	PP-06	foam_b	create_image_pixen	c087c52a-c855-4704-8a11-2ff3faabddbf	disparado
+2026-10-01T13:22:21.616Z	PP-05	fall_b	create_image_pixen	0bbc36d7-d760-49f9-b5ef-34686f4e1180	disparado
+2026-10-01T13:22:21.705Z	PP-05	rundust_b	create_image_pixen	9db3ccb5-54e6-4b49-ae40-c6245a19fe55	disparado
+2026-10-01T13:22:21.827Z	PP-05	land_b	create_image_pixen	0c64980d-588f-42e6-bb47-74e459c65904	disparado
+2026-10-01T13:22:24.332Z	PP-04	sparks_b	create_image_pixen	d16eaccf-1635-4c94-8e62-6e3eac2861a0	disparado
+2026-10-01T13:22:49.536Z	PP-05	fall_b	-	0bbc36d7-d760-49f9-b5ef-34686f4e1180	ok 1 img 28s
+2026-10-01T13:23:10.739Z	PP-06	foam_b	-	c087c52a-c855-4704-8a11-2ff3faabddbf	ok 1 img 49s
+2026-10-01T13:23:33.020Z	PP-05	rundust_b	-	9db3ccb5-54e6-4b49-ae40-c6245a19fe55	ok 1 img 71s
+2026-10-01T13:23:33.041Z	PP-05	land_b	-	0c64980d-588f-42e6-bb47-74e459c65904	ok 1 img 71s
+2026-10-01T13:23:36.937Z	PP-04	sparks_b	-	d16eaccf-1635-4c94-8e62-6e3eac2861a0	ok 1 img 73s
+2026-10-01T13:23:57.405Z	PP-05	land_pro	create_image_pro	24f931fe-c119-4830-aca9-7eacbb888d69	disparado
+2026-10-01T13:26:25.809Z	PP-05	land_pro	-	24f931fe-c119-4830-aca9-7eacbb888d69	ok 4 img 148s
+2026-10-01T13:26:47.406Z	PP-05	fall_anim	animate_image	a2d7ae3d-52c1-4846-aecb-255a57a66d91	disparado
+2026-10-01T13:26:47.793Z	PP-05	land_anim	animate_image	914f03fd-9d5f-43b3-8295-c5dc9ce1d6b8	disparado
+2026-10-01T13:28:26.375Z	PP-05	land_anim	-	914f03fd-9d5f-43b3-8295-c5dc9ce1d6b8	ok 4 img 99s
+2026-10-01T13:28:49.196Z	PP-05	fall_anim	-	a2d7ae3d-52c1-4846-aecb-255a57a66d91	ok 4 img 122s
+2026-10-01T13:34:24.758Z	PP-08	ripple_a	create_image_pixen	ba877072-ad5f-4d51-828d-edcbbb52cb47	disparado
+2026-10-01T13:34:25.735Z	PP-08	splash_s_a	create_image_pixen	b434a41c-1db8-4e9e-8e2f-308e9323b8ee	disparado
+2026-10-01T13:34:25.836Z	PP-08	splash_l_a	create_image_pixen	8814c688-fe5c-435e-863c-babfb228984a	disparado
+2026-10-01T13:35:04.367Z	PP-08	ripple_a	-	ba877072-ad5f-4d51-828d-edcbbb52cb47	ok 1 img 40s
+2026-10-01T13:35:27.277Z	PP-08	splash_s_a	-	b434a41c-1db8-4e9e-8e2f-308e9323b8ee	ok 1 img 62s
+2026-10-01T13:35:38.476Z	PP-08	splash_l_a	-	8814c688-fe5c-435e-863c-babfb228984a	ok 1 img 73s
+2026-10-01T13:35:57.764Z	PP-08	splash_l_b	create_image_pixen	9b05fe8d-99eb-4b3a-8f99-f6ed5dbf9729	disparado
+2026-10-01T13:35:57.901Z	PP-08	splash_s_b	create_image_pixen	d3354700-92da-4bd9-8e8e-4f845038a31d	disparado
+2026-10-01T13:36:37.570Z	PP-08	splash_s_b	-	d3354700-92da-4bd9-8e8e-4f845038a31d	ok 1 img 40s
+2026-10-01T13:36:37.821Z	PP-08	splash_l_b	-	9b05fe8d-99eb-4b3a-8f99-f6ed5dbf9729	ok 1 img 40s
+2026-10-01T13:37:11.233Z	PP-08	crest_anim	animate_image	541ba3ea-cdf7-48d1-ad4a-52d179985032	disparado
+2026-10-01T13:37:11.651Z	PP-08	splash_l_anim	animate_image	233ae135-c2b1-4cdd-86cb-e3227d39c55c	disparado
+2026-10-01T13:38:32.971Z	PP-08	crest_anim	-	541ba3ea-cdf7-48d1-ad4a-52d179985032	ok 4 img 82s
+2026-10-01T13:38:47.948Z	PP-08	splash_l_anim	-	233ae135-c2b1-4cdd-86cb-e3227d39c55c	ok 4 img 96s
+2026-10-01T13:47:04.960Z	PP-09	warn_a	create_image_pixen	423b0141-74df-4baa-9c15-63e4e82c0d29	disparado
+2026-10-01T13:47:05.005Z	PP-09	strike_a	create_image_pixen	d052b74c-937c-4856-b113-ada4ccbd81c9	disparado
+2026-10-01T13:47:05.372Z	PP-09	bolts_a	create_image_pixen	f9130bd4-0ae9-42b6-812d-9e91d1ad786a	disparado
+2026-10-01T13:47:55.049Z	PP-09	warn_a	-	423b0141-74df-4baa-9c15-63e4e82c0d29	ok 1 img 50s
+2026-10-01T13:47:56.300Z	PP-09	bolts_a	-	f9130bd4-0ae9-42b6-812d-9e91d1ad786a	ok 1 img 51s
+2026-10-01T13:48:27.478Z	PP-09	strike_a	-	d052b74c-937c-4856-b113-ada4ccbd81c9	ok 1 img 82s
+2026-10-01T13:48:48.881Z	PP-09	warn_b	create_image_pixen	e96e0a0e-c2d9-4250-b67e-156a1c1f613b	disparado
+2026-10-01T13:48:48.891Z	PP-09	strike_b	create_image_pixen	ea4394e6-0d26-4a72-9596-662f7d958beb	disparado
+2026-10-01T13:49:22.296Z	PP-09	strike_b	-	ea4394e6-0d26-4a72-9596-662f7d958beb	ok 1 img 33s
+2026-10-01T13:49:29.338Z	PP-09	warn_b	-	e96e0a0e-c2d9-4250-b67e-156a1c1f613b	ok 1 img 40s
+2026-10-01T13:51:11.680Z	PP-09	warn_anim	animate_image	f2fa789f-8bd2-4e99-b62d-3f268866c3fb	disparado
+2026-10-01T13:52:17.843Z	PP-09	warn_anim	-	f2fa789f-8bd2-4e99-b62d-3f268866c3fb	ok 4 img 66s
+2026-10-01T14:03:15.356Z	PP-11	smoke_a	create_image_pixen	a423874b-02fd-48af-b683-4cfcb7f11ee0	disparado
+2026-10-01T14:03:16.326Z	PP-10	ground_a	create_image_pixen	43cde42d-ddfd-42ce-8d32-94f29afb4a3b	disparado
+2026-10-01T14:03:17.027Z	PP-11	transform_a	create_image_pixen	60a96d71-919f-4db6-a25d-48b07ea20539	disparado
+2026-10-01T14:03:18.423Z	PP-10	circle_a	create_image_pixen	04d4f7fe-a316-49b4-90b6-f5bc9495b084	disparado
+2026-10-01T14:03:55.056Z	PP-11	smoke_a	-	a423874b-02fd-48af-b683-4cfcb7f11ee0	ok 1 img 40s
+2026-10-01T14:03:59.635Z	PP-10	circle_a	-	04d4f7fe-a316-49b4-90b6-f5bc9495b084	ok 1 img 41s
+2026-10-01T14:04:08.955Z	PP-11	transform_a	-	60a96d71-919f-4db6-a25d-48b07ea20539	ok 1 img 52s
+2026-10-01T14:04:17.482Z	PP-10	ground_a	-	43cde42d-ddfd-42ce-8d32-94f29afb4a3b	ok 1 img 61s
+2026-10-01T14:04:39.636Z	PP-10	circle_b	create_image_pixen	b2579200-76a1-4ae6-9dac-e5db4ad7fba0	disparado
+2026-10-01T14:05:31.084Z	PP-10	circle_b	-	b2579200-76a1-4ae6-9dac-e5db4ad7fba0	ok 1 img 51s
+2026-10-01T14:06:45.981Z	PP-11	transform_anim	animate_image	b7904c7b-0e87-4f90-b833-cf375a053cb8	disparado
+2026-10-01T14:06:46.217Z	PP-11	smoke_anim	animate_image	101558fd-be5b-4aa8-bbba-4064646eaa99	disparado
+2026-10-01T14:07:59.586Z	PP-11	transform_anim	-	b7904c7b-0e87-4f90-b833-cf375a053cb8	ok 4 img 74s
+2026-10-01T14:08:22.861Z	PP-11	smoke_anim	-	101558fd-be5b-4aa8-bbba-4064646eaa99	ok 4 img 97s
+2026-10-01T16:59:38.433Z	PP-12	brazier_anim	animate_image	652dd5b3-52e8-428f-a321-22359d38fd26	disparado
+2026-10-01T17:01:12.044Z	PP-12	brazier_anim	-	652dd5b3-52e8-428f-a321-22359d38fd26	ok 4 img 94s
+2026-10-01T17:01:27.925Z	PP-12	soul_b	create_image_pixen	6745b603-7de9-40e3-a302-c69056e936ca	disparado
+2026-10-01T17:01:28.164Z	PP-12	soul_a	create_image_pixen	33320a29-731a-4311-87a0-22a70e91f5ef	disparado
+2026-10-01T17:01:56.142Z	PP-12	soul_a	-	33320a29-731a-4311-87a0-22a70e91f5ef	ok 1 img 28s
+2026-10-01T17:02:07.616Z	PP-12	soul_b	-	6745b603-7de9-40e3-a302-c69056e936ca	ok 1 img 40s
+2026-10-01T17:02:26.461Z	PP-12	soul_anim	animate_image	8ca66246-6668-4365-b429-0169b05b8132	disparado
+2026-10-01T17:04:32.199Z	PP-12	soul_anim	-	8ca66246-6668-4365-b429-0169b05b8132	ok 4 img 126s
+2026-10-01T17:20:12.733Z	PP-13	surge_a	create_image_pixen	a51833e0-1f62-4d3e-9b2e-2b487e23579e	disparado
+2026-10-01T17:21:12.799Z	PP-13	surge_a	-	a51833e0-1f62-4d3e-9b2e-2b487e23579e	ok 1 img 60s
+2026-10-01T17:21:25.084Z	PP-13	surge_anim	animate_image	5bc1631b-aefd-4010-9a5f-a685f4318f35	disparado
+2026-10-01T17:23:09.411Z	PP-13	surge_anim	-	5bc1631b-aefd-4010-9a5f-a685f4318f35	ok 4 img 104s
+2026-10-01T17:39:16.874Z	PP-07	eolo_brazier_anim	animate_image	ab8dcfcb-7b3b-4705-956c-bf2cfa932ea9	disparado
+2026-10-01T17:39:16.887Z	PP-07	giant_fire_anim	animate_image	d7ecfe0b-cfd6-4e5a-9d8c-280a92b42437	disparado
+2026-10-01T17:39:17.008Z	PP-07	ithaca_torch_anim	animate_image	92e632c6-4173-46a2-a206-2c296da30775	disparado
+2026-10-01T17:39:17.237Z	PP-07	torch_wall_anim	animate_image	2963a0e3-be9d-4da1-9935-01c8523ab9a0	disparado
+2026-10-01T17:40:18.626Z	PP-07	eolo_brazier_anim	-	ab8dcfcb-7b3b-4705-956c-bf2cfa932ea9	ok 4 img 62s
+2026-10-01T17:40:39.746Z	PP-07	giant_fire_anim	-	d7ecfe0b-cfd6-4e5a-9d8c-280a92b42437	ok 4 img 83s
+2026-10-01T17:41:45.039Z	PP-07	ithaca_torch_anim	-	92e632c6-4173-46a2-a206-2c296da30775	ok 4 img 148s
+2026-10-01T17:45:20.565Z	PP-07	torch_wall_anim	-	2963a0e3-be9d-4da1-9935-01c8523ab9a0	ok 4 img 363s
+2026-10-01T17:46:17.554Z	PP-07	lamp_a	create_image_pixen	aae1a4a1-70f9-427f-9ce8-69b171052512	disparado
+2026-10-01T17:47:07.222Z	PP-07	lamp_a	-	aae1a4a1-70f9-427f-9ce8-69b171052512	ok 1 img 50s
+2026-10-01T17:47:20.402Z	PP-07	lamp_anim	animate_image	5caef638-5af1-4778-bc3e-52ac73d9c027	disparado
+2026-10-01T17:49:03.952Z	PP-07	lamp_anim	-	5caef638-5af1-4778-bc3e-52ac73d9c027	ok 4 img 104s
+2026-10-01T17:52:24.289Z	PP-16	laurel_b	create_image_pixen	01ea4588-5b72-4bfd-b807-bcb67e4f3cc5	disparado
+2026-10-01T17:52:24.656Z	PP-16	laurel_a	create_image_pixen	bec54a25-41ba-4e57-b28a-4b5146260672	disparado
+2026-10-01T17:53:36.682Z	PP-16	laurel_a	-	bec54a25-41ba-4e57-b28a-4b5146260672	ok 1 img 72s
+2026-10-01T17:53:58.595Z	PP-16	laurel_b	-	01ea4588-5b72-4bfd-b807-bcb67e4f3cc5	ok 1 img 94s
+2026-10-01T19:31:50.145Z	PP-14	bedroom_b	create_image_pixen	842f72b3-8536-4e1e-acae-ac3c092f3319	disparado
+2026-10-01T19:31:50.266Z	PP-14	bedroom_a	create_image_pixen	bc9f09e4-3578-4ae1-a1af-da397bd78a8c	disparado
+2026-10-01T19:33:01.765Z	PP-14	bedroom_b	-	842f72b3-8536-4e1e-acae-ac3c092f3319	ok 1 img 72s
+2026-10-01T19:33:12.306Z	PP-14	bedroom_a	-	bc9f09e4-3578-4ae1-a1af-da397bd78a8c	ok 1 img 82s
+2026-10-01T20:34:43.083Z	TR-01	master_a	create_image_pixen	4c101812-6128-4867-92a2-8161ca6160f2	disparado
+2026-10-01T20:34:43.743Z	TR-01	master_b	create_image_pixen	4d8252b4-cb8b-48ae-af21-ae50ab86aac5	disparado
+2026-10-01T20:34:44.162Z	TR-01	master_c	create_image_pixen	6d6ac0e3-2a5d-4a96-bfa5-88f209b1a9f9	disparado
+2026-10-01T20:36:16.143Z	TR-01	master_a	-	4c101812-6128-4867-92a2-8161ca6160f2	ok 1 img 93s
+2026-10-01T20:36:18.181Z	TR-01	master_c	-	6d6ac0e3-2a5d-4a96-bfa5-88f209b1a9f9	ok 1 img 94s
+2026-10-01T20:37:17.291Z	TR-01	master_b	-	4d8252b4-cb8b-48ae-af21-ae50ab86aac5	ok 1 img 154s
+2026-10-02T02:16:30.942Z	TR-02	sky_a	create_image_pixen	44193724-c030-498b-9b59-71ec6f1f04ca	disparado
+2026-10-02T02:16:32.103Z	TR-02	city_a	create_image_pixen	4733931f-d97e-426f-886a-9b8af0fdf1e2	disparado
+2026-10-02T02:16:32.797Z	TR-02	mountains_b	create_image_pixen	dc5a822c-1375-4b7d-bd12-c9e80114e1ef	disparado
+2026-10-02T02:16:32.906Z	TR-02	city_b	create_image_pixen	9946402c-6a35-4b31-8cce-105b3ea7825b	disparado
+2026-10-02T02:16:32.968Z	TR-02	mountains_a	create_image_pixen	52d34c48-7dc9-4037-9f0f-7a2bb6f63b39	disparado
+2026-10-02T02:16:33.278Z	TR-02	city_c	create_image_pixen	39d50727-feae-43ac-a37b-bdc7f09c1cf7	disparado
+2026-10-02T02:17:22.318Z	TR-02	mountains_b	-	dc5a822c-1375-4b7d-bd12-c9e80114e1ef	ok 1 img 50s
+2026-10-02T02:17:34.400Z	TR-02	mountains_a	-	52d34c48-7dc9-4037-9f0f-7a2bb6f63b39	ok 1 img 61s
+2026-10-02T02:17:42.026Z	TR-02	sky_a	-	44193724-c030-498b-9b59-71ec6f1f04ca	ok 1 img 71s
+2026-10-02T02:17:55.804Z	TR-02	city_b	-	9946402c-6a35-4b31-8cce-105b3ea7825b	ok 1 img 83s
+2026-10-02T02:18:07.465Z	TR-02	city_a	-	4733931f-d97e-426f-886a-9b8af0fdf1e2	ok 1 img 95s
+2026-10-02T02:18:16.328Z	TR-02	city_c	-	39d50727-feae-43ac-a37b-bdc7f09c1cf7	ok 1 img 103s

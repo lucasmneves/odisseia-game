@@ -783,3 +783,52 @@ Notion: "Character Art — Fase 11 — Cila e Caríbdis", seção em "PixelLab �
 - Caríbdis = ENVIRONMENT (`FX_Charybdis`), intocada; escala 0,42 fica como pendência de cenário.
 - PixelLab: **20 gerações** (786 → 806 de 2000), sem descarte.
 - Pendências: Cila com pés visíveis ("pairando"); palácio de Éolo 0,52; porco da Circe; `EnemyBasic` carmesim em 01, 14, 15.
+
+## Cenário da Fase 16 — Final (2026-10-01)
+
+Fonte: **`Docs/Environment/Fase16/FINAL_ENVIRONMENT_ART.md`**. Notion: "Environment Art — Fase 16 — Final" em 🎨 Art,
+seção em "PixelLab — Personagens" (🤖 AI), decisões D-055 a D-058.
+
+- A mesma casa da 15, na manhã seguinte: reaproveitei parede, trono, braseiros, colunas e piso. São novos os machados, o arco,
+  a lareira (base + chama separada), o tear, o fundo do amanhecer, a fachada do palácio e 2 peças de primeiro plano.
+- PixelLab: **20 gerações** (845 → 865 de 2000), todas `pixen`. Na nuvem funciona com `PIXELLAB_API_KEY` +
+  `NODE_USE_ENV_PROXY=1`.
+- `FinalSceneDresser` escrito e **não executado** (a sessão não tinha Unity). Falta rodar `FinalSceneDresser.Run`,
+  `PlaceholderProbe`, `CampaignValidation`, `FinalSceneDresser.Shots` e o WebGL Build. A prévia montada fora do Unity
+  está em `Docs/Environment/Fase16/_previa/`.
+
+## PixelLab Asset Completion (2026-10-01)
+
+Fonte: **`Docs/Art/PIXELLAB_ASSET_COMPLETION_MASTER.md`** (auditoria, plano aprovado, execução). Auditoria: `node Tools/art-audit.js`.
+
+- **122 gerações** (865 → 987; restam 1013). Executor com livro-razão: `Tools/pxl.js`; montagem: `node Tools/build-pack.js`.
+- Gerado e empacotado (sem integrar): 7 efeitos de combate, aljava, altar de checkpoint (apagado/aceso), moeda nativa,
+  reencontro do Ending, ponte e bloco de Troia, 5 fogos em loop, mapa do Egeu, navio-marcador, 16 emblemas (+ bloqueados),
+  9 ícones de HUD, arte do menu, 8 peças de primeiro plano (04/06/14/15), entablamento nativo de Éolo.
+- **Código aprovado nesta etapa:** `EnemyController.Attacked` + estado `Attack` no `EnemyAnimator`; `ShieldJump`/`ShieldFall`
+  no `PlayerAnimator` (com fallback). Não compilado aqui — sem Unity.
+- **Bloqueio:** `backblaze.pixellab.ai` negado pela rede do ambiente; as 8 animações de personagem (6 ataques + 2 de
+  escudo no ar) estão pagas e prontas no PixelLab, esperando download.
+- Lições: efeito se descreve por forma e cor, não pelo que atinge; `animate_image` devolve 3 quadros novos; `pixen` aceita
+  no máximo 512×512 de área; `pro` com referência só vale quando há personagem a preservar.
+
+### QA do pack (2026-10-01)
+`node Tools/pack-audit.js`: 73 arquivos, 0 falhas técnicas. As 8 animações pagas seguem presas no PixelLab
+(`backblaze.pixellab.ai` → 403 na saída); IDs e grupos em `Docs/Art/PixelLab/_pendentes/animacoes_pagas.json`; recuperar com
+`node Tools/fetch-paid-anims.js` quando o host for liberado. Ressalvas: moeda ainda com degradê de pintura (corrigível por
+código), lótus do HUD pequena demais em 1×. 0 gerações.
+
+## PixelLab Visual Polish Pass 02 (2026-10-01)
+
+Fonte: **`Docs/Art/PIXELLAB_VISUAL_POLISH_PASS_02.md`** (auditoria, plano, 12 grupos, fechamento). Prancha geral:
+`Docs/Art/PixelLab/_polish_pass_02.png`.
+
+- **166 gerações** (987 → 1153; restam 847), 65 jobs sem falha. 50 assets novos, todos gerados e empacotados por
+  `node Tools/build-pack.js <grupo>` (reprodutível byte a byte), `pack-audit`: 123 arquivos, 0 falhas. **Sem integração.**
+- Combate v2 e partículas; água (splash, ondinha, crista animada de Citera); tempestade (aviso, golpe, raio animado);
+  Circe (círculo de Hécate, transformação, cura pela moly, fumaça); Mortos (braseiro espectral, alma errante); Cila
+  (maré, aviso e golpe do chefe); 5 fogos animados + lamparina grega; estados do mapa; transições (meandro, louros,
+  vinheta); Ending (o quarto com a cama na oliveira).
+- **Achado de gameplay:** as 2 `TidalHazard` da Fase 11 estão invisíveis em jogo (o dresser desliga o placeholder) —
+  `cila_tidal_surge_anim` é o primeiro item da integração.
+- Pendente: integração; HUD (PP-18/19); download das 8 animações pagas (backblaze bloqueado).

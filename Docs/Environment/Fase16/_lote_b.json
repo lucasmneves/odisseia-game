@@ -1,0 +1,102 @@
+[
+  {
+    "nome": "final_loom_penelope_a",
+    "ferramenta": "create_image_pixen",
+    "args": {
+      "description": "the upright loom of Penelope, an ancient Greek warp-weighted loom of pale oak: two tall wooden posts leaning slightly back, a crossbeam at the top with a half-woven cloth of cream and deep red with a simple meander border rolled around it, long vertical warp threads hanging down, a row of small round clay loom weights tied at the bottom of the threads, a wooden shuttle resting against one post, elegant handcrafted construction, seen from directly in front. Drawn small enough that the whole loom from top beam to the floor is complete and visible. Isolated game asset cut out on a fully transparent background, only the loom. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 96,
+      "height": 112,
+      "no_background": true,
+      "view": "side",
+      "detail": "medium detail",
+      "outline": "single color black outline"
+    }
+  },
+  {
+    "nome": "final_loom_penelope_b",
+    "ferramenta": "create_image_pixen",
+    "args": {
+      "description": "the upright loom of Penelope, an ancient Greek warp-weighted loom of pale oak: two tall wooden posts leaning slightly back, a crossbeam at the top with a half-woven cloth of cream and deep red with a simple meander border rolled around it, long vertical warp threads hanging down, a row of small round clay loom weights tied at the bottom of the threads, a wooden shuttle resting against one post, elegant handcrafted construction, seen from directly in front. Drawn small enough that the whole loom from top beam to the floor is complete and visible. Isolated game asset cut out on a fully transparent background, only the loom. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 96,
+      "height": 112,
+      "no_background": true,
+      "view": "side",
+      "detail": "medium detail",
+      "outline": "single color black outline"
+    }
+  },
+  {
+    "nome": "final_loom_penelope_c",
+    "ferramenta": "create_image_pixen",
+    "args": {
+      "description": "the upright loom of Penelope, an ancient Greek warp-weighted loom of pale oak: two tall wooden posts leaning slightly back, a crossbeam at the top with a half-woven cloth of cream and deep red with a simple meander border rolled around it, long vertical warp threads hanging down, a row of small round clay loom weights tied at the bottom of the threads, a wooden shuttle resting against one post, elegant handcrafted construction, seen from directly in front. Drawn small enough that the whole loom from top beam to the floor is complete and visible. Isolated game asset cut out on a fully transparent background, only the loom. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 96,
+      "height": 112,
+      "no_background": true,
+      "view": "side",
+      "detail": "medium detail",
+      "outline": "single color black outline"
+    }
+  },
+  {
+    "nome": "final_bg_dawn_a",
+    "ferramenta": "create_image_pixen",
+    "args": {
+      "description": "a wide calm dawn landscape of the Greek island of Ithaca, seen from the side as a flat parallax background layer for a 2D platformer: soft clear pale blue sky at the top fading to warm peach and pale gold near the horizon, the sun just rising as a small pale disc between distant soft blue-grey mountains, a calm sea with thin golden reflections, low rocky hills with dark olive trees and slim cypress silhouettes along the bottom, a few small soft clouds lit pink-gold from below. Peaceful, hopeful early morning light, the end of a long journey. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 768,
+      "height": 288,
+      "no_background": false,
+      "view": "side",
+      "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "final_bg_dawn_b",
+    "ferramenta": "create_image_pixen",
+    "args": {
+      "description": "a wide calm dawn landscape of the Greek island of Ithaca, seen from the side as a flat parallax background layer for a 2D platformer: soft clear pale blue sky at the top fading to warm peach and pale gold near the horizon, the sun just rising as a small pale disc between distant soft blue-grey mountains, a calm sea with thin golden reflections, low rocky hills with dark olive trees and slim cypress silhouettes along the bottom, a few small soft clouds lit pink-gold from below. Peaceful, hopeful early morning light, the end of a long journey. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 768,
+      "height": 288,
+      "no_background": false,
+      "view": "side",
+      "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "final_mg_palace_a",
+    "ferramenta": "create_image_pixen",
+    "args": {
+      "description": "a long continuous row of the palace of Odysseus on Ithaca seen from directly in front at early morning, strict flat side profile like a technical elevation drawing: low buildings of pale cream limestone with flat roofs, a portico of thick plain fluted columns holding a flat entablature with a painted red and dark blue meander band, wooden doors, stone stairs, slim dark cypress trees and olive trees between the buildings, soft warm golden sunrise light on the walls facing the viewer and cool blue-grey shadows, plain pale morning sky above the rooftops, the same rhythm repeating across the whole width. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 768,
+      "height": 256,
+      "no_background": false,
+      "view": "side",
+      "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "final_mg_palace_b",
+    "ferramenta": "create_image_pixen",
+    "args": {
+      "description": "a long continuous row of the palace of Odysseus on Ithaca seen from directly in front at early morning, strict flat side profile like a technical elevation drawing: low buildings of pale cream limestone with flat roofs, a portico of thick plain fluted columns holding a flat entablature with a painted red and dark blue meander band, wooden doors, stone stairs, slim dark cypress trees and olive trees between the buildings, soft warm golden sunrise light on the walls facing the viewer and cool blue-grey shadows, plain pale morning sky above the rooftops, the same rhythm repeating across the whole width. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 768,
+      "height": 256,
+      "no_background": false,
+      "view": "side",
+      "detail": "medium detail"
+    }
+  },
+  {
+    "nome": "final_axe_post_d",
+    "ferramenta": "create_image_pixen",
+    "args": {
+      "description": "a single heavy ancient Greek double-headed bronze axe head, a labrys with two curved blades, with a round empty hole in the middle where the handle socket is, mounted upright on top of a short plain wooden post planted in a small square stone base, you can see straight through the open round hole, seen from directly beside it, strict flat side profile. Drawn small enough that the stone base and both blades are complete and visible. Isolated game asset cut out on a fully transparent background, only the axe and its post. Palette of worn bronze and dark oak. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 64,
+      "height": 96,
+      "no_background": true,
+      "view": "side",
+      "detail": "medium detail",
+      "outline": "single color black outline"
+    }
+  }
+]

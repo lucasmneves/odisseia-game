@@ -94,6 +94,12 @@ const GRUPOS_PRETENDENTES = [
   ['Invasion', 'Invasion'], ['Special', 'Special'], ['Foreground', 'Foreground'],
   ['Props', 'Props'], ['VFX', 'VFX'],
 ];
+// Fase 16 — Final. A fonte mora em Docs/Environment/Fase16 (o caminho que o briefing da fase
+// pediu), e por isso o teste abaixo procura 'Fase16', não um nome de cenário.
+const GRUPOS_FINAL = [
+  ['Background', 'Background'], ['Midground', 'Midground'], ['Props', 'Props'],
+  ['Foreground', 'Foreground'], ['VFX', 'VFX'],
+];
 const FASE = process.env.FASE_SRC || '';
 const GROUPS = FASE.includes('Troy') ? GRUPOS_TROIA
   : FASE.includes('Cicones') ? GRUPOS_CICONES
@@ -109,6 +115,7 @@ const GROUPS = FASE.includes('Troy') ? GRUPOS_TROIA
   : FASE.includes('Calipso') ? GRUPOS_CALIPSO
   : FASE.includes('ItacaReturn') ? GRUPOS_ITACARETURN
   : FASE.includes('Pretendentes') ? GRUPOS_PRETENDENTES
+  : FASE.includes('Fase16') ? GRUPOS_FINAL
   : GRUPOS_ITACA;
 
 // Pasta de destino dentro de Assets, derivada de DST. Antes estava escrita a mao como
@@ -159,7 +166,12 @@ const FAIXAS_ITACARETURN = ['itaca_ret_bg_dusk.png', 'itaca_ret_village_band.png
 // de malha FULL RECT porque a metade esquerda dele e alpha zero.
 const FAIXAS_PRETENDENTES = ['pret_hall_wall_band.png', 'pret_courtyard_wall_band.png',
   'pret_firelight_gradient.png'];
+// Faixas da Fase 16: o palácio do midground e o véu do amanhecer, que precisa de FULL RECT pelo
+// mesmo motivo do véu de fogo da 15 (a ponta esquerda dele é alpha zero). O fundo já entra como
+// Background.
+const FAIXAS_FINAL = ['final_mg_palace_band.png', 'final_dawn_gradient.png'];
 const ehFaixaQueRepete = nome => nome.includes('_tiles_') || FAIXAS_CILA.includes(nome)
+  || FAIXAS_FINAL.includes(nome)
   || FAIXAS_CALIPSO.includes(nome) || FAIXAS_ITACARETURN.includes(nome)
   || FAIXAS_PRETENDENTES.includes(nome)
   || FAIXAS_GADO.includes(nome) || FAIXAS_CYTERA.includes(nome)

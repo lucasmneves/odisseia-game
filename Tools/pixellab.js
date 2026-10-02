@@ -6,13 +6,26 @@
 // As respostas podem vir como SSE ("data: {...}") ou JSON puro.
 const fs = require('fs'), os = require('os'), path = require('path');
 
+// Numa sessão na nuvem não existe o ~/.claude.json da máquina local: a credencial vem do
+// ambiente (PIXELLAB_API_KEY, e PIXELLAB_MCP_URL se o endpoint mudar). O host
+// api.pixellab.ai também precisa estar liberado na política de rede do ambiente.
 function config() {
-  const j = JSON.parse(fs.readFileSync(path.join(os.homedir(), '.claude.json'), 'utf8'));
-  for (const cfg of Object.values(j.projects || {})) {
-    const s = cfg.mcpServers && cfg.mcpServers.pixellab;
-    if (s) return s;
+  if (process.env.PIXELLAB_API_KEY) {
+    return {
+      url: process.env.PIXELLAB_MCP_URL || 'https://api.pixellab.ai/mcp',
+      headers: { Authorization: `Bearer ${process.env.PIXELLAB_API_KEY}` },
+    };
   }
-  throw new Error('servidor pixellab não encontrado em ~/.claude.json');
+  const arquivo = path.join(os.homedir(), '.claude.json');
+  if (fs.existsSync(arquivo)) {
+    const j = JSON.parse(fs.readFileSync(arquivo, 'utf8'));
+    if (j.mcpServers && j.mcpServers.pixellab) return j.mcpServers.pixellab;
+    for (const cfg of Object.values(j.projects || {})) {
+      const s = cfg.mcpServers && cfg.mcpServers.pixellab;
+      if (s) return s;
+    }
+  }
+  throw new Error('servidor pixellab não encontrado: defina PIXELLAB_API_KEY ou registre o MCP em ~/.claude.json');
 }
 
 let _session = null;

@@ -156,6 +156,12 @@ namespace Odisseia.Enemies
             rb.linearVelocity = new Vector2(direction * chaseSpeed, rb.linearVelocity.y);
         }
 
+        /// <summary>
+        /// Disparado no instante do golpe, junto com o dano. Só informa — quem anima (o
+        /// <see cref="EnemyAnimator"/>) escuta; dano, alcance e cooldown continuam aqui.
+        /// </summary>
+        public event System.Action Attacked;
+
         private void TryAttack()
         {
             if (attackTimer > 0f)
@@ -164,6 +170,7 @@ namespace Odisseia.Enemies
             }
 
             attackTimer = attackCooldown;
+            Attacked?.Invoke();
 
             if (playerTransform.TryGetComponent(out HealthSystem playerHealth))
             {

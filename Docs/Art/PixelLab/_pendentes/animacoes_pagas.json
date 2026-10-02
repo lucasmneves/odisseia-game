@@ -1,0 +1,130 @@
+[
+  {
+    "personagem": "Trojan_Soldier",
+    "estado": "Attack",
+    "character_id": "c416f3a0-7b39-4dd0-86ad-969c7dc29075",
+    "cabecalho": "Attack — 1 dir (east), 6f 2026-10-01 [type=custom-thrusting the spear forward ha] [group: c2a43e69-afdb-489f-88cf-2c9c4c44041b]",
+    "grupo": "c2a43e69-afdb-489f-88cf-2c9c4c44041b",
+    "quadros": 6,
+    "urls": [
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/c416f3a0-7b39-4dd0-86ad-969c7dc29075/animations/8c6698f5-bcc8-46be-9875-0bb51bb45e8e/east/0.png?t=1790825687681",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/c416f3a0-7b39-4dd0-86ad-969c7dc29075/animations/8c6698f5-bcc8-46be-9875-0bb51bb45e8e/east/1.png?t=1790825687681",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/c416f3a0-7b39-4dd0-86ad-969c7dc29075/animations/8c6698f5-bcc8-46be-9875-0bb51bb45e8e/east/2.png?t=1790825687681",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/c416f3a0-7b39-4dd0-86ad-969c7dc29075/animations/8c6698f5-bcc8-46be-9875-0bb51bb45e8e/east/3.png?t=1790825687681",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/c416f3a0-7b39-4dd0-86ad-969c7dc29075/animations/8c6698f5-bcc8-46be-9875-0bb51bb45e8e/east/4.png?t=1790825687681",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/c416f3a0-7b39-4dd0-86ad-969c7dc29075/animations/8c6698f5-bcc8-46be-9875-0bb51bb45e8e/east/5.png?t=1790825687681"
+    ]
+  },
+  {
+    "personagem": "Cicones_Warrior",
+    "estado": "Attack",
+    "character_id": "f4640c38-d2a2-4e6f-9a1d-353a7b84a946",
+    "cabecalho": "Attack — 1 dir (east), 6f 2026-10-01 [type=custom-thrusting the spear forward ha] [group: c38ed570-204f-4bea-89fb-633ac639d6f5]",
+    "grupo": "c38ed570-204f-4bea-89fb-633ac639d6f5",
+    "quadros": 6,
+    "urls": [
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/f4640c38-d2a2-4e6f-9a1d-353a7b84a946/animations/131353d5-6b84-470e-ac05-426fdc541170/east/0.png?t=1790826085122",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/f4640c38-d2a2-4e6f-9a1d-353a7b84a946/animations/131353d5-6b84-470e-ac05-426fdc541170/east/1.png?t=1790826085122",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/f4640c38-d2a2-4e6f-9a1d-353a7b84a946/animations/131353d5-6b84-470e-ac05-426fdc541170/east/2.png?t=1790826085122",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/f4640c38-d2a2-4e6f-9a1d-353a7b84a946/animations/131353d5-6b84-470e-ac05-426fdc541170/east/3.png?t=1790826085122",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/f4640c38-d2a2-4e6f-9a1d-353a7b84a946/animations/131353d5-6b84-470e-ac05-426fdc541170/east/4.png?t=1790826085122",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/f4640c38-d2a2-4e6f-9a1d-353a7b84a946/animations/131353d5-6b84-470e-ac05-426fdc541170/east/5.png?t=1790826085122"
+    ]
+  },
+  {
+    "personagem": "Circe_Wolf",
+    "estado": "Attack",
+    "character_id": "4f805faa-08e5-43a0-8438-f2a2c2b4e186",
+    "cabecalho": "Attack — 1 dir (east), 6f 2026-10-01 [type=custom-lunging forward and snapping i] [group: eb2a3cb4-1f47-49b4-9888-8e1d39f6dc25]",
+    "grupo": "eb2a3cb4-1f47-49b4-9888-8e1d39f6dc25",
+    "quadros": 6,
+    "urls": [
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/4f805faa-08e5-43a0-8438-f2a2c2b4e186/animations/0701fc7e-b9a5-4b4c-a000-a0da3cadcf4a/east/0.png?t=1790825814072",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/4f805faa-08e5-43a0-8438-f2a2c2b4e186/animations/0701fc7e-b9a5-4b4c-a000-a0da3cadcf4a/east/1.png?t=1790825814072",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/4f805faa-08e5-43a0-8438-f2a2c2b4e186/animations/0701fc7e-b9a5-4b4c-a000-a0da3cadcf4a/east/2.png?t=1790825814072",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/4f805faa-08e5-43a0-8438-f2a2c2b4e186/animations/0701fc7e-b9a5-4b4c-a000-a0da3cadcf4a/east/3.png?t=1790825814072",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/4f805faa-08e5-43a0-8438-f2a2c2b4e186/animations/0701fc7e-b9a5-4b4c-a000-a0da3cadcf4a/east/4.png?t=1790825814072",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/4f805faa-08e5-43a0-8438-f2a2c2b4e186/animations/0701fc7e-b9a5-4b4c-a000-a0da3cadcf4a/east/5.png?t=1790825814072"
+    ]
+  },
+  {
+    "personagem": "Shade_Warrior",
+    "estado": "Attack",
+    "character_id": "3d75c50c-fcc9-4a7b-ab67-99f3396781b5",
+    "cabecalho": "Attack — 1 dir (east), 6f 2026-10-01 [type=custom-thrusting the spear forward ha] [group: 7f6454cc-75b1-42cf-879c-2235cd0f7035]",
+    "grupo": "7f6454cc-75b1-42cf-879c-2235cd0f7035",
+    "quadros": 6,
+    "urls": [
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/3d75c50c-fcc9-4a7b-ab67-99f3396781b5/animations/a82e580f-b252-4311-8340-ecc8a547cc63/east/0.png?t=1790825864998",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/3d75c50c-fcc9-4a7b-ab67-99f3396781b5/animations/a82e580f-b252-4311-8340-ecc8a547cc63/east/1.png?t=1790825864998",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/3d75c50c-fcc9-4a7b-ab67-99f3396781b5/animations/a82e580f-b252-4311-8340-ecc8a547cc63/east/2.png?t=1790825864998",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/3d75c50c-fcc9-4a7b-ab67-99f3396781b5/animations/a82e580f-b252-4311-8340-ecc8a547cc63/east/3.png?t=1790825864998",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/3d75c50c-fcc9-4a7b-ab67-99f3396781b5/animations/a82e580f-b252-4311-8340-ecc8a547cc63/east/4.png?t=1790825864998",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/3d75c50c-fcc9-4a7b-ab67-99f3396781b5/animations/a82e580f-b252-4311-8340-ecc8a547cc63/east/5.png?t=1790825864998"
+    ]
+  },
+  {
+    "personagem": "Suitor",
+    "estado": "Attack",
+    "character_id": "6aa164f4-223a-4ca6-9b62-453681c6e1b3",
+    "cabecalho": "Attack — 1 dir (east), 6f 2026-10-01 [type=custom-swinging the short sword in a ] [group: f6918b1d-3814-454a-87e8-d6db82dff007]",
+    "grupo": "f6918b1d-3814-454a-87e8-d6db82dff007",
+    "quadros": 6,
+    "urls": [
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/6aa164f4-223a-4ca6-9b62-453681c6e1b3/animations/572e67b1-25cf-40fb-be8d-7432aef9a8c2/east/0.png?t=1790825748653",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/6aa164f4-223a-4ca6-9b62-453681c6e1b3/animations/572e67b1-25cf-40fb-be8d-7432aef9a8c2/east/1.png?t=1790825748653",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/6aa164f4-223a-4ca6-9b62-453681c6e1b3/animations/572e67b1-25cf-40fb-be8d-7432aef9a8c2/east/2.png?t=1790825748653",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/6aa164f4-223a-4ca6-9b62-453681c6e1b3/animations/572e67b1-25cf-40fb-be8d-7432aef9a8c2/east/3.png?t=1790825748653",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/6aa164f4-223a-4ca6-9b62-453681c6e1b3/animations/572e67b1-25cf-40fb-be8d-7432aef9a8c2/east/4.png?t=1790825748653",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/6aa164f4-223a-4ca6-9b62-453681c6e1b3/animations/572e67b1-25cf-40fb-be8d-7432aef9a8c2/east/5.png?t=1790825748653"
+    ]
+  },
+  {
+    "personagem": "Soldier_Ithaca",
+    "estado": "Attack",
+    "character_id": "7a5a09a9-5ab2-4f93-95a6-397d542ef223",
+    "cabecalho": "Attack — 1 dir (east), 6f 2026-10-01 [type=custom-thrusting the spear forward ha] [group: e04adba7-630a-4752-9d89-9487aeb07b7e]",
+    "grupo": "e04adba7-630a-4752-9d89-9487aeb07b7e",
+    "quadros": 6,
+    "urls": [
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/7a5a09a9-5ab2-4f93-95a6-397d542ef223/animations/30cb173b-4d9b-46ad-80ae-a86324fe23b0/east/0.png?t=1790825960097",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/7a5a09a9-5ab2-4f93-95a6-397d542ef223/animations/30cb173b-4d9b-46ad-80ae-a86324fe23b0/east/1.png?t=1790825960097",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/7a5a09a9-5ab2-4f93-95a6-397d542ef223/animations/30cb173b-4d9b-46ad-80ae-a86324fe23b0/east/2.png?t=1790825960097",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/7a5a09a9-5ab2-4f93-95a6-397d542ef223/animations/30cb173b-4d9b-46ad-80ae-a86324fe23b0/east/3.png?t=1790825960097",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/7a5a09a9-5ab2-4f93-95a6-397d542ef223/animations/30cb173b-4d9b-46ad-80ae-a86324fe23b0/east/4.png?t=1790825960097",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/7a5a09a9-5ab2-4f93-95a6-397d542ef223/animations/30cb173b-4d9b-46ad-80ae-a86324fe23b0/east/5.png?t=1790825960097"
+    ]
+  },
+  {
+    "personagem": "Odysseus (master)",
+    "estado": "ShieldJump",
+    "character_id": "908b7f60-0624-43bc-a0cd-89ad16416400",
+    "cabecalho": "ShieldJump — 1 dir (east), 8f 2026-10-01 [type=custom-jumping straight up into the a] [group: 7960de31-e216-4d8b-9c82-5d807554fb81]",
+    "grupo": "7960de31-e216-4d8b-9c82-5d807554fb81",
+    "quadros": 8,
+    "urls": [
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/908b7f60-0624-43bc-a0cd-89ad16416400/animations/4f772d81-85f8-4b80-9527-dbebc449ac26/east/0.png?t=1790826216580",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/908b7f60-0624-43bc-a0cd-89ad16416400/animations/4f772d81-85f8-4b80-9527-dbebc449ac26/east/1.png?t=1790826216580",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/908b7f60-0624-43bc-a0cd-89ad16416400/animations/4f772d81-85f8-4b80-9527-dbebc449ac26/east/2.png?t=1790826216580",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/908b7f60-0624-43bc-a0cd-89ad16416400/animations/4f772d81-85f8-4b80-9527-dbebc449ac26/east/3.png?t=1790826216580",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/908b7f60-0624-43bc-a0cd-89ad16416400/animations/4f772d81-85f8-4b80-9527-dbebc449ac26/east/4.png?t=1790826216580",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/908b7f60-0624-43bc-a0cd-89ad16416400/animations/4f772d81-85f8-4b80-9527-dbebc449ac26/east/5.png?t=1790826216580",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/908b7f60-0624-43bc-a0cd-89ad16416400/animations/4f772d81-85f8-4b80-9527-dbebc449ac26/east/6.png?t=1790826216580",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/908b7f60-0624-43bc-a0cd-89ad16416400/animations/4f772d81-85f8-4b80-9527-dbebc449ac26/east/7.png?t=1790826216580"
+    ]
+  },
+  {
+    "personagem": "Odysseus (master)",
+    "estado": "ShieldFall",
+    "character_id": "908b7f60-0624-43bc-a0cd-89ad16416400",
+    "cabecalho": "ShieldFall — 1 dir (east), 4f 2026-10-01 [type=custom-falling down through the air w] [group: 16c0e03c-def8-4c36-884c-c5053a4766ba]",
+    "grupo": "16c0e03c-def8-4c36-884c-c5053a4766ba",
+    "quadros": 4,
+    "urls": [
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/908b7f60-0624-43bc-a0cd-89ad16416400/animations/27ad1d1d-ce63-40a8-9154-78bac90ebcff/east/0.png?t=1790826322845",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/908b7f60-0624-43bc-a0cd-89ad16416400/animations/27ad1d1d-ce63-40a8-9154-78bac90ebcff/east/1.png?t=1790826322845",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/908b7f60-0624-43bc-a0cd-89ad16416400/animations/27ad1d1d-ce63-40a8-9154-78bac90ebcff/east/2.png?t=1790826322845",
+      "https://backblaze.pixellab.ai/file/pixellab-characters/34bd270b-88d1-4b9a-a92f-e93783bde6b9/908b7f60-0624-43bc-a0cd-89ad16416400/animations/27ad1d1d-ce63-40a8-9154-78bac90ebcff/east/3.png?t=1790826322845"
+    ]
+  }
+]

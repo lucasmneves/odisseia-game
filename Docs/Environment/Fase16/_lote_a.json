@@ -1,0 +1,106 @@
+[
+  {
+    "nome": "final_axe_post_a",
+    "ferramenta": "create_image_pixen",
+    "args": {
+      "description": "a single heavy ancient Greek bronze axe head with a round hole through the middle of the blade, mounted upright on top of a short plain wooden post planted in a small square stone base, the round hole clearly open so an arrow could pass through it, seen from directly beside it, strict flat side profile. Drawn small enough that the stone base and the whole blade are complete and visible. Isolated game asset cut out on a fully transparent background, only the axe and its post. Palette of worn bronze and dark oak. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 64,
+      "height": 96,
+      "no_background": true,
+      "view": "side",
+      "detail": "medium detail",
+      "outline": "single color black outline"
+    }
+  },
+  {
+    "nome": "final_axe_post_b",
+    "ferramenta": "create_image_pixen",
+    "args": {
+      "description": "a single heavy ancient Greek bronze axe head with a round hole through the middle of the blade, mounted upright on top of a short plain wooden post planted in a small square stone base, the round hole clearly open so an arrow could pass through it, seen from directly beside it, strict flat side profile. Drawn small enough that the stone base and the whole blade are complete and visible. Isolated game asset cut out on a fully transparent background, only the axe and its post. Palette of worn bronze and dark oak. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 64,
+      "height": 96,
+      "no_background": true,
+      "view": "side",
+      "detail": "medium detail",
+      "outline": "single color black outline"
+    }
+  },
+  {
+    "nome": "final_axe_post_c",
+    "ferramenta": "create_image_pixen",
+    "args": {
+      "description": "a single heavy ancient Greek bronze axe head with a round hole through the middle of the blade, mounted upright on top of a short plain wooden post planted in a small square stone base, the round hole clearly open so an arrow could pass through it, seen from directly beside it, strict flat side profile. Drawn small enough that the stone base and the whole blade are complete and visible. Isolated game asset cut out on a fully transparent background, only the axe and its post. Palette of worn bronze and dark oak. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 64,
+      "height": 96,
+      "no_background": true,
+      "view": "side",
+      "detail": "medium detail",
+      "outline": "single color black outline"
+    }
+  },
+  {
+    "nome": "final_bow_odysseus_a",
+    "ferramenta": "create_image_pixen",
+    "args": {
+      "description": "the great bow of Odysseus, an elegant ancient Greek recurved bow of dark polished wood and horn with gently curled bronze-capped tips and a thin taut string, standing upright, seen from directly beside it, strict flat side profile, a precious old heirloom, simple and heroic. Drawn small enough that both curled tips are complete and visible. Isolated game asset cut out on a fully transparent background, only the bow. Palette of dark brown wood, cream horn and worn bronze. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 64,
+      "height": 96,
+      "no_background": true,
+      "view": "side",
+      "detail": "medium detail",
+      "outline": "single color black outline"
+    }
+  },
+  {
+    "nome": "final_bow_odysseus_b",
+    "ferramenta": "create_image_pixen",
+    "args": {
+      "description": "the great bow of Odysseus, an elegant ancient Greek recurved bow of dark polished wood and horn with gently curled bronze-capped tips and a thin taut string, standing upright, seen from directly beside it, strict flat side profile, a precious old heirloom, simple and heroic. Drawn small enough that both curled tips are complete and visible. Isolated game asset cut out on a fully transparent background, only the bow. Palette of dark brown wood, cream horn and worn bronze. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 64,
+      "height": 96,
+      "no_background": true,
+      "view": "side",
+      "detail": "medium detail",
+      "outline": "single color black outline"
+    }
+  },
+  {
+    "nome": "final_bow_odysseus_c",
+    "ferramenta": "create_image_pixen",
+    "args": {
+      "description": "the great bow of Odysseus, an elegant ancient Greek recurved bow of dark polished wood and horn with gently curled bronze-capped tips and a thin taut string, standing upright, seen from directly beside it, strict flat side profile, a precious old heirloom, simple and heroic. Drawn small enough that both curled tips are complete and visible. Isolated game asset cut out on a fully transparent background, only the bow. Palette of dark brown wood, cream horn and worn bronze. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 64,
+      "height": 96,
+      "no_background": true,
+      "view": "side",
+      "detail": "medium detail",
+      "outline": "single color black outline"
+    }
+  },
+  {
+    "nome": "final_hearth_a",
+    "ferramenta": "create_image_pixen",
+    "args": {
+      "description": "the round central hearth of an ancient Greek palace hall, a low raised circular platform of pale cream limestone blocks with a painted red and dark blue meander band around its rim, a fire of crossed oak logs burning in the center with warm orange and yellow flames, glowing embers, seen from directly beside it, strict flat side profile, warm and welcoming. Drawn small enough that the whole platform and the flames are complete and visible. Isolated game asset cut out on a fully transparent background, only the hearth and its fire. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 128,
+      "height": 96,
+      "no_background": true,
+      "view": "side",
+      "detail": "medium detail",
+      "outline": "single color black outline"
+    }
+  },
+  {
+    "nome": "final_hearth_b",
+    "ferramenta": "create_image_pixen",
+    "args": {
+      "description": "the round central hearth of an ancient Greek palace hall, a low raised circular platform of pale cream limestone blocks with a painted red and dark blue meander band around its rim, a fire of crossed oak logs burning in the center with warm orange and yellow flames, glowing embers, seen from directly beside it, strict flat side profile, warm and welcoming. Drawn small enough that the whole platform and the flames are complete and visible. Isolated game asset cut out on a fully transparent background, only the hearth and its fire. Retro 16-bit pixel art, crisp pixels, flat readable shapes, no anti-aliasing.",
+      "width": 128,
+      "height": 96,
+      "no_background": true,
+      "view": "side",
+      "detail": "medium detail",
+      "outline": "single color black outline"
+    }
+  }
+]

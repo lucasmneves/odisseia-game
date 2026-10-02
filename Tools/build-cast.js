@@ -136,6 +136,9 @@ const ANIM_TROIANO = {
     'and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, ' + APEGO },
   Death: { frames: 8, ancora: false, desc: 'struck down, side view facing right, knees buckle and the body falls backward, ' +
     'landing flat on his back on the ground and lying still, spear and shield dropping beside him' },
+  // PXL-012 (Asset Completion): o EnemyAnimator passou a tocar Attack no evento EnemyController.Attacked.
+  Attack: { frames: 6, ancora: false, desc: 'thrusting the spear forward hard at chest height, side view facing right, ' +
+    'front foot stepping in and body lunging forward, then pulling the spear back to a guarded stance, ' + APEGO },
 };
 
 Object.assign(ELENCO, {
@@ -300,6 +303,8 @@ const ANIM_LOBO = {
     'body recoiling and crouching, then recovering to a snarling stance' },
   Death: { frames: 8, ancora: false, desc: 'collapsing from a fatal blow, side view facing right, legs giving way, ' +
     'body falling onto its side on the ground and lying still' },
+  Attack: { frames: 6, ancora: false, desc: 'lunging forward and snapping its jaws at chest height, side view facing right, ' +
+    'front paws pushing off, head thrusting forward with the mouth open, then pulling back to a crouched snarl, back paws stay planted' },
 };
 
 Object.assign(ELENCO, {
@@ -467,6 +472,8 @@ const ANIM_PRETENDENTE = {
     'and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, ' + APEGO_ESPADA },
   Death: { frames: 8, ancora: false, desc: 'struck down, side view facing right, knees buckle and the body falls backward, ' +
     'landing flat on his back on the ground and lying still, the sword dropping beside him' },
+  Attack: { frames: 6, ancora: false, desc: 'swinging the short sword in a wide arc from high above the shoulder down in front of him, ' +
+    'side view facing right, front foot stepping in, then recovering to a guarded stance, ' + APEGO_ESPADA },
 };
 
 Object.assign(ELENCO, {
@@ -512,6 +519,8 @@ ELENCO.Soldier_Ithaca.anims = {
     'and head jerks back, one foot steps back to catch balance, then returns to a guarded stance, ' + APEGO_LANCA },
   Death: { frames: 8, ancora: false, desc: 'struck down, side view facing right, knees buckle and the body falls backward, ' +
     'landing flat on his back on the ground and lying still, the spear dropping beside him' },
+  Attack: { frames: 6, ancora: false, desc: 'thrusting the spear forward hard at chest height, side view facing right, ' +
+    'front foot stepping in and body lunging forward, then pulling the spear back to a guarded stance, ' + APEGO_LANCA },
 };
 
 const faseDe = n => ELENCO[n].fase || '01';

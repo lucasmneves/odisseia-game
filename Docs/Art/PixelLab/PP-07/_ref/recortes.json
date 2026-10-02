@@ -1,0 +1,39 @@
+{
+  "giant_fire": {
+    "fonte": "Assets/Art/Environments/Ciclopes/Special/ciclopes_giant_fire.png",
+    "x0": 86,
+    "y0": 6,
+    "w": 100,
+    "h": 146,
+    "protege": [
+      [
+        78,
+        70,
+        22,
+        76
+      ]
+    ],
+    "soChama": true
+  },
+  "torch_wall": {
+    "fonte": "Assets/Art/Environments/Ciclopes/Props/ciclopes_torch_wall.png",
+    "x0": 24,
+    "y0": 24,
+    "w": 32,
+    "h": 36
+  },
+  "eolo_brazier": {
+    "fonte": "Assets/Art/Environments/Eolo/Palace/eolo_brazier_native.png",
+    "x0": 10,
+    "y0": 6,
+    "w": 60,
+    "h": 48
+  },
+  "ithaca_torch": {
+    "fonte": "Assets/Art/Environments/Ithaca/Props/ithaca_torch_01.png",
+    "x0": 6,
+    "y0": 0,
+    "w": 20,
+    "h": 22
+  }
+}

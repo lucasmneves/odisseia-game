@@ -1,0 +1,37 @@
+{
+  "torch_stand": {
+    "fonte": "Assets/Art/Environments/Pretendentes/VFX/pret_torch_stand.png",
+    "x0": 0,
+    "y0": 0,
+    "w": 37,
+    "h": 36
+  },
+  "brazier": {
+    "fonte": "Assets/Art/Environments/ItacaReturn/Props/itaca_ret_brazier.png",
+    "x0": 40,
+    "y0": 0,
+    "w": 46,
+    "h": 62
+  },
+  "cooking_fire": {
+    "fonte": "Assets/Art/Environments/Pretendentes/Courtyard/pret_cooking_fire.png",
+    "x0": 62,
+    "y0": 84,
+    "w": 68,
+    "h": 46
+  },
+  "campfire_troy": {
+    "fonte": "Assets/Art/Environments/Troy/Camp/troy_campfire_01.png",
+    "x0": 16,
+    "y0": 50,
+    "w": 34,
+    "h": 28
+  },
+  "hearth": {
+    "fonte": "Final/Props/final_hearth_base+fire",
+    "x0": 30,
+    "y0": 0,
+    "w": 42,
+    "h": 50
+  }
+}
