@@ -269,3 +269,15 @@ quando	id	nome	ferramenta	job	status
 2026-10-01T20:36:16.143Z	TR-01	master_a	-	4c101812-6128-4867-92a2-8161ca6160f2	ok 1 img 93s
 2026-10-01T20:36:18.181Z	TR-01	master_c	-	6d6ac0e3-2a5d-4a96-bfa5-88f209b1a9f9	ok 1 img 94s
 2026-10-01T20:37:17.291Z	TR-01	master_b	-	4d8252b4-cb8b-48ae-af21-ae50ab86aac5	ok 1 img 154s
+2026-10-02T02:16:30.942Z	TR-02	sky_a	create_image_pixen	44193724-c030-498b-9b59-71ec6f1f04ca	disparado
+2026-10-02T02:16:32.103Z	TR-02	city_a	create_image_pixen	4733931f-d97e-426f-886a-9b8af0fdf1e2	disparado
+2026-10-02T02:16:32.797Z	TR-02	mountains_b	create_image_pixen	dc5a822c-1375-4b7d-bd12-c9e80114e1ef	disparado
+2026-10-02T02:16:32.906Z	TR-02	city_b	create_image_pixen	9946402c-6a35-4b31-8cce-105b3ea7825b	disparado
+2026-10-02T02:16:32.968Z	TR-02	mountains_a	create_image_pixen	52d34c48-7dc9-4037-9f0f-7a2bb6f63b39	disparado
+2026-10-02T02:16:33.278Z	TR-02	city_c	create_image_pixen	39d50727-feae-43ac-a37b-bdc7f09c1cf7	disparado
+2026-10-02T02:17:22.318Z	TR-02	mountains_b	-	dc5a822c-1375-4b7d-bd12-c9e80114e1ef	ok 1 img 50s
+2026-10-02T02:17:34.400Z	TR-02	mountains_a	-	52d34c48-7dc9-4037-9f0f-7a2bb6f63b39	ok 1 img 61s
+2026-10-02T02:17:42.026Z	TR-02	sky_a	-	44193724-c030-498b-9b59-71ec6f1f04ca	ok 1 img 71s
+2026-10-02T02:17:55.804Z	TR-02	city_b	-	9946402c-6a35-4b31-8cce-105b3ea7825b	ok 1 img 83s
+2026-10-02T02:18:07.465Z	TR-02	city_a	-	4733931f-d97e-426f-886a-9b8af0fdf1e2	ok 1 img 95s
+2026-10-02T02:18:16.328Z	TR-02	city_c	-	39d50727-feae-43ac-a37b-bdc7f09c1cf7	ok 1 img 103s

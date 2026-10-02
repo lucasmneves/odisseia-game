@@ -16,7 +16,7 @@ const { temXadrezPintado } = require('./checker-cut.js');
 
 const ROOT = path.join(__dirname, '..');
 const PAL = Object.values(loadPalette(path.join(ROOT, 'Docs/Environment_Pretendentes/Palette/PRETENDENTES_PALETTE.gpl'))).flat();
-const QUADRO_INTEIRO = /map_aegean|menu_bg_|ending_bedroom_|_tile\.png|_9slice\.png/;   // ladrilhos e 9-slices são opacos até a borda de propósito
+const QUADRO_INTEIRO = /map_aegean|menu_bg_|troy_bg_master|troy_bg_sky_war|ending_bedroom_|_tile\.png|_9slice\.png/;   // ladrilhos e 9-slices são opacos até a borda de propósito
 
 function listar() {
   const raizes = ['Assets/Art/Effects', 'Assets/Art/Items', 'Assets/Art/Ending', 'Assets/Art/Map', 'Assets/Art/UI'];
@@ -37,6 +37,10 @@ function listar() {
     'Assets/Art/Environments/Cytera/Background/cytera_storm_cloud_lit.png',
     'Assets/Art/Environments/MundoDosMortos/Props/mortos_brazier_tall_spectral_anim.png',
     'Assets/Art/Environments/CilaCaribdis/Ocean/cila_tidal_surge_anim.png',
+    'Assets/Art/Environments/Troy/Background/troy_bg_master.png',
+    'Assets/Art/Environments/Troy/Background/troy_bg_sky_war.png',
+    'Assets/Art/Environments/Troy/Background/troy_bg_mountains.png',
+    'Assets/Art/Environments/Troy/Background/troy_bg_city_distant.png',
     'Assets/Art/Environments/Ciclopes/Special/ciclopes_giant_fire_anim.png',
     'Assets/Art/Environments/Ciclopes/Props/ciclopes_torch_wall_anim.png',
     'Assets/Art/Environments/Eolo/Palace/eolo_brazier_native_anim.png',

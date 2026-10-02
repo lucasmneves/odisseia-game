@@ -1,6 +1,6 @@
 # Troy Visual Pack — Fase 02 (Troia)
 
-2026-10-01 · **Estado: TROY-01 (master) em seleção.** Sem integração no Unity, sem commit.
+2026-10-02 · **Estado: TROY-01 aprovado (`master_a`); TROY-02 pronto para revisão.** Sem integração no Unity.
 
 Saldo no início: **1153 usadas / 847 restantes**. Primeira rodada autorizada: até **50 gerações**.
 Executor: `Tools/pxl.js` (livro-razão `Docs/Art/PixelLab/_ledger.tsv`), IDs `TR-01…TR-08`.
@@ -44,7 +44,7 @@ distante, céu com atmosfera de guerra. O Greek Soldier Master (3 figuras de fun
 Os 7 de geometria de gameplay (ponte, 3 gauntlets, obstáculo, muralha de limite, mar) **não precisam de geração** — é
 integração. O que este pack resolve é o fundo, que hoje é o ponto mais fraco da fase.
 
-## TROY-01 — Master Background · 3 gerações (1153 → 1156) · AGUARDANDO APROVAÇÃO
+## TROY-01 — Master Background · 3 gerações (1153 → 1156) · **APROVADO: `master_a`**
 
 Modelo: `create_image_pixen`, 672×384 (máximo 16:9 da ferramenta; ≈ 1× nativo: 384 px = 9 un, a câmera mostra 10 un).
 O `create_image_pro` em 688×384 devolve **um** candidato por 20–40 gerações — reservado para o caso de nenhum pixen servir.
@@ -66,3 +66,33 @@ média, a muralha como fundo. Prancha: `Docs/Art/PixelLab/_troy01_master.png`.
 **Ressalvas do `master_a`:** as ameias dão um ar de castelo (a mesma linguagem do Conceito B aprovado); os soldados estão
 em grupos estáticos — os duelos, quedas e arqueiros em ação vêm do TROY-04 como sprites próprios. O céu quente substitui o
 `troy_bg_sky` azul (o master passa a ditar a luz da fase).
+
+## TROY-02 — Cidade, céu e montanhas · 6 gerações (rodada: 9 de 50)
+
+> Saldo: o ciclo da conta PixelLab renovou durante o grupo — `get_balance` passou a **6 usadas / 1994 restantes** (as 6
+> são deste grupo). O teto da rodada continua o combinado: 50 gerações, 9 usadas.
+
+**Método:** recortar a cidade do próprio master não dá — 20 cores do céu/fumaça são as mesmas da sombra da muralha, e
+o recorte por cor vazaria. Cada camada foi gerada **separada, com fundo transparente e o mesmo texto do master**, e depois
+**trazida para as cores do `master_a`** (quantização / faixas de luminância). Assim a paleta é idêntica por construção.
+Muralha, torre e portão de gameplay (`Architecture/`) já eram bons — **reutilizados**, não regenerados.
+
+| Arquivo (`Assets/Art/Environments/Troy/Background/`) | px · un | Pivô | Origem | Custo |
+|---|---|---|---|---|
+| `troy_bg_master` | 672×384 · 15,7×9,0 | centro | o master aprovado — fundo de tela cheia (carregamento, cutscene) e referência | 0 |
+| `troy_bg_sky_war` | 380×240 · 8,9×5,6 — **ladrilho** | base | **do master**: faixa x 0–189, y 0–79 (o único céu sem fumaça), espelhada; abaixo, a cor dominante da última linha. 7 cores, todas do master | 0 |
+| `troy_bg_mountains` | 1536×108 · 35,8×2,5 — **ladrilho** | base | `mountains_b` (pixen; xadrez pintado removido) → 5 faixas de luminância mapeadas para os 5 azuis das montanhas limpas do master; espelhada | 2 (a + b) |
+| `troy_bg_city_distant` | 768×229 · 17,9×5,3 | base | `city_c` (pixen; fundo chapado recortado): muralha na MESMA altura da do master (~75 px), templos à esquerda, palácio no alto à direita, fogos nos telhados; quantizada para as 67 cores do master (30 usadas) | 3 (a, b, c) |
+
+**Prova:** tela de jogo recomposta (762×428 = câmera em 1×) com céu → montanhas → cidade → planície do master: as camadas
+casam com o master em luz, paleta e escala. Prancha: `Docs/Art/PixelLab/_troy02_city.png`.
+
+**Descartados:** `sky_a` (laranja chapado, nuvens em disco voador — o céu do master é melhor), `mountains_a` (veio com céu
+pintado de mesmo tom das montanhas; o recorte comeu a serra), `city_a` (menor, dois portões, restos de xadrez),
+`city_b` (a mais bonita, mas a muralha é ~40% maior que a do master — fica como alternativa para uma camada mais
+próxima). Defeitos meus corrigidos antes de fechar: o recorte do céu pegava telhados (blocos repetidos) e o 1º
+mapeamento das montanhas puxava o verde das árvores do master e virava ruído.
+
+**Integração (depois):** parallax sugerido — céu 0,95 (quase parado, ladrilhado), montanhas 0,85 (ladrilhadas), cidade
+0,7 (peça única: Troia é um marco, desliza devagar e fica para trás do portão da Área 4). A fumaça sobre a cidade vem do
+TROY-07, por cima desta camada. Animação: nenhuma PixelLab; fogos dos telhados podem piscar por código.

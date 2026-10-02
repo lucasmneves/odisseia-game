@@ -841,6 +841,81 @@ GRUPOS.ending = function () {
   folha('Assets/Art/Ending/ending_bedroom_olive.png', [b], { align: ALIGN.center, canvasInteiro: true });
 };
 
+// ================================================================ TROY VISUAL PACK (Docs/Art/TROY_VISUAL_PACK.md)
+const MASTER_TROIA = () => p.read(path.join(PX, 'TR-01/_candidatos/master_a.png'));
+/** Cores (RGB) de uma imagem, opcionalmente só as que passam no filtro. */
+function coresDe(img, filtro = () => true) {
+  const s = new Map();
+  for (let i = 0; i < img.width * img.height; i++) { const d = i * 4; if (img.data[d + 3] < 128) continue;
+    const k = img.data.readUInt32BE(d) >>> 8, c = [k >> 16, (k >> 8) & 255, k & 255]; if (filtro(c)) s.set(k, c); }
+  return [...s.values()];
+}
+/** Cada pixel opaco vai para a cor mais próxima (RGB) da paleta dada. */
+function quantizar(img, pal) {
+  const o = p.blank(img.width, img.height); img.data.copy(o.data); const memo = new Map();
+  for (let i = 0; i < o.width * o.height; i++) { const d = i * 4; if (o.data[d + 3] < 128) { o.data[d + 3] = 0; continue; }
+    const k = o.data.readUInt32BE(d) >>> 8; let c = memo.get(k);
+    if (!c) { let bd = 1e9; for (const q of pal) { const e = (q[0] - (k >> 16)) ** 2 + (q[1] - ((k >> 8) & 255)) ** 2 + (q[2] - (k & 255)) ** 2; if (e < bd) { bd = e; c = q; } } memo.set(k, c); }
+    o.data[d] = c[0]; o.data[d + 1] = c[1]; o.data[d + 2] = c[2]; o.data[d + 3] = 255; }
+  return o;
+}
+/** Mapeia as cores por POSIÇÃO de luminância: a i-ésima mais escura da origem vira a correspondente da rampa alvo. */
+function porRampa(img, alvo) {
+  const lum = (c) => 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
+  const orig = coresDe(img).sort((a, b) => lum(a) - lum(b)), dest = [...alvo].sort((a, b) => lum(a) - lum(b));
+  const mapa = new Map(orig.map((c, i) => [c.join(), dest[Math.min(dest.length - 1, Math.floor(i * dest.length / orig.length))]]));
+  const o = p.blank(img.width, img.height); img.data.copy(o.data);
+  for (let i = 0; i < o.width * o.height; i++) { const d = i * 4; if (o.data[d + 3] < 128) continue;
+    const c = mapa.get([o.data[d], o.data[d + 1], o.data[d + 2]].join()); o.data[d] = c[0]; o.data[d + 1] = c[1]; o.data[d + 2] = c[2]; }
+  return o;
+}
+/** Junta a imagem com o próprio espelho: ladrilho horizontal sem emenda (céu, montanhas). */
+function ladrilhoEspelhado(img) {
+  const o = p.blank(img.width * 2, img.height), m = espelhar(img);
+  for (let y = 0; y < img.height; y++) { img.data.copy(o.data, y * o.width * 4, y * img.width * 4, (y + 1) * img.width * 4);
+    m.data.copy(o.data, (y * o.width + img.width) * 4, y * img.width * 4, (y + 1) * img.width * 4); }
+  return o;
+}
+
+// ---------------------------------------------------------------- TROY-01 / TROY-02 — fundo, céu, montanhas, cidade
+GRUPOS.troia02 = function () {
+  const R = 'Assets/Art/Environments/Troy/Background/', M = MASTER_TROIA();
+  // Master aprovado (TROY-01): a referência de luz, paleta e escala de todo o pack; também serve de fundo de tela cheia
+  // (cutscene, tela de carregamento) — 672×384 ≈ 1× nativo.
+  folha(R + 'troy_bg_master.png', [M], { align: ALIGN.center, canvasInteiro: true });
+  // Céu: a faixa esquerda do master (x 0–189, y 0–79) é o único trecho sem fumaça, cidade nem montanha — nuvens em
+  // faixas horizontais, cores exatas do master. Espelhada vira ladrilho sem emenda; abaixo da linha 79 (atrás das
+  // montanhas) a cor dominante da última linha, até 240 px.
+  const CEU_W = 190, CEU_H = 80, ALTO = 240, ceu = p.blank(CEU_W, ALTO);
+  for (let y = 0; y < CEU_H; y++) M.data.copy(ceu.data, y * CEU_W * 4, y * M.width * 4, (y * M.width + CEU_W) * 4);
+  // abaixo: a cor DOMINANTE da última linha (repetir a linha pixel a pixel esticava qualquer detalhe em coluna)
+  const ult = new Map(); for (let x = 0; x < CEU_W; x++) { const k = M.data.readUInt32BE(((CEU_H - 1) * M.width + x) * 4); ult.set(k, (ult.get(k) || 0) + 1); }
+  const dom = [...ult].sort((a, b) => b[1] - a[1])[0][0];
+  for (let y = CEU_H; y < ALTO; y++) for (let x = 0; x < CEU_W; x++) ceu.data.writeUInt32BE(dom >>> 0, (y * CEU_W + x) * 4);
+  folha(R + 'troy_bg_sky_war.png', [ladrilhoEspelhado(ceu)], { align: ALIGN.bottom, canvasInteiro: true });
+  // Montanhas: mountains_b (pixen, xadrez pintado removido) — o resto de xadrez na encosta esquerda vira a cor da
+  // serra de trás; depois as cores vão, por luminância, para os azuis-ardósia das montanhas do master. Ladrilho espelhado.
+  const mt = alphaDuro(p.read(path.join(PX, 'TR-02/_prep/mountains_b.png')));
+  const fundoSerra = (() => { const n = new Map(); for (let y = 0; y < 60; y++) for (let x = 60; x < 200; x++) { const d = (y * mt.width + x) * 4;
+    if (mt.data[d + 3]) { const k = mt.data.readUInt32BE(d) >>> 8; n.set(k, (n.get(k) || 0) + 1); } } return [...n].sort((a, b) => b[1] - a[1])[0][0]; })();
+  const lumK = (k) => 0.2126 * (k >> 16) + 0.7152 * ((k >> 8) & 255) + 0.0722 * (k & 255);
+  for (let y = 0; y < mt.height; y++) for (let x = 0; x < 45; x++) { const d = (y * mt.width + x) * 4; if (!mt.data[d + 3]) continue;
+    const k = mt.data.readUInt32BE(d) >>> 8; if (k !== fundoSerra && lumK(k) > lumK(fundoSerra) - 12) mt.data.writeUInt32BE(((fundoSerra << 8) | 255) >>> 0, d); }
+  // Faixas de luminância da mountains_b (serra da frente ~88, faces iluminadas ~104–112, serra de trás ~184, neve 256)
+  // → os cinco azuis das montanhas limpas do master (x 0–109, y 96–139). Faixa a faixa, e não cor a cor: o pontilhado
+  // sutil do pixen viraria ruído se cada cinza ganhasse um azul diferente.
+  const AZUL = [[0x44, 0x60, 0x72], [0x4a, 0x67, 0x78], [0x60, 0x7f, 0x8f], [0x85, 0x9c, 0xa4], [0xb3, 0xcd, 0xd2]];
+  const faixa = (L) => L < 93 ? 0 : L < 100 ? 1 : L < 140 ? 2 : L < 215 ? 3 : 4;
+  for (let i = 0; i < mt.width * mt.height; i++) { const d = i * 4; if (!mt.data[d + 3]) continue;
+    const c = AZUL[faixa(0.2126 * mt.data[d] + 0.7152 * mt.data[d + 1] + 0.0722 * mt.data[d + 2])];
+    mt.data[d] = c[0]; mt.data[d + 1] = c[1]; mt.data[d + 2] = c[2]; }
+  const b = p.bounds(mt);
+  folha(R + 'troy_bg_mountains.png', [ladrilhoEspelhado(p.crop(mt, 0, b.y0, mt.width, b.h))], { align: ALIGN.bottom, canvasInteiro: true });
+  // Cidade distante: city_c (pixen, fundo chapado recortado) — a muralha tem a mesma altura da do master (~75 px), os
+  // templos à esquerda e o palácio à direita repetem a composição dele; quantizada para as 67 cores do master.
+  folha(R + 'troy_bg_city_distant.png', [quantizar(alphaDuro(p.read(path.join(PX, 'TR-02/_prep/city_c.png'))), coresDe(M))], { align: ALIGN.bottom });
+};
+
 const pedido = process.argv[2];
 for (const [nome, fn] of Object.entries(GRUPOS)) {
   if (pedido && pedido !== nome) continue;
