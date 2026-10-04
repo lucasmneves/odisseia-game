@@ -264,10 +264,26 @@ namespace Odisseia.UI
             RefreshCollectibles();
         }
 
+        private int vidaMostrada = -1;
+
+        /// <summary>
+        /// A vida também é conferida a cada quadro, além dos eventos: (1) o HUD pode inicializar ANTES do HealthSystem do
+        /// Odisseu (ordem entre objetos não é garantida) e lia 0 — visto no WebGL: "0/100" no começo da fase até o primeiro
+        /// dano; (2) o respawn devolve a vida por ResetHealth(), que não dispara evento. Só reescreve quando o número muda.
+        /// </summary>
+        private void LateUpdate()
+        {
+            if (playerHealth != null && playerHealth.CurrentHealth != vidaMostrada)
+            {
+                RefreshHealth();
+            }
+        }
+
         private void RefreshHealth()
         {
             if (healthText != null && playerHealth != null)
             {
+                vidaMostrada = playerHealth.CurrentHealth;
                 healthText.text = $"{Rotulo(0, "♥ ")}{playerHealth.CurrentHealth}/{playerHealth.MaxHealth}";
             }
         }

@@ -57,6 +57,10 @@ public static class BuildScript
         PlayerSettings.WebGL.dataCaching = true;
         PlayerSettings.WebGL.decompressionFallback = true;
 
+        // Template do projeto (Assets/WebGLTemplates/Odisseia): canvas responsivo em 16:9 no lugar do 960×600 fixo do
+        // template padrão (QA-07) e persistência automática do save (QA-18).
+        PlayerSettings.WebGL.template = "PROJECT:Odisseia";
+
         // Sem exceções = wasm menor e mais rápido. O jogo não depende de try/catch
         // em runtime para nada de gameplay.
         PlayerSettings.WebGL.exceptionSupport = WebGLExceptionSupport.None;

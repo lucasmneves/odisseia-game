@@ -65,10 +65,10 @@ Todas as 16 carregam, com jogador, câmera e HUD. Nenhum erro/exceção de conso
 | QA-06 | 12 | MEDIUM | Enquanto a saída espera o vento (25 s), dá para **passar do ponto da saída e cair do fim da fase**, perdendo vidas | Correr direto até o fim: o bot chegou a x = 46 (saída em 34,5..37,5) e caiu; 2 mortes | O `LevelGoal` fica inativo até o `TimeGatedActivator`; não há limite físico depois dele | **corrigido** (Etapa 6) |
 | QA-07 | web | MEDIUM | No desktop o **canvas é fixo em 960 × 600**: janela menor corta o jogo (barras de rolagem); maior não escala | Abrir o build numa janela < 960 px ou > 1080 p | Template padrão `unity-desktop` com tamanho fixo | **corrigido** (Etapa 6) |
 | QA-08 | mobile | LOW (confirmar em aparelho) | Em retrato (emulação) o jogo desenha em ~57% da tela e o aviso "Gire o aparelho…" é cortado nas duas bordas | Emulação Pixel 8 retrato | Aviso de orientação existe; texto sem quebra. A área parcial pode ser artefato de DPR da emulação | **corrigido** (Etapa 6) |
-| QA-09 | UI | LOW | Com o idioma **English**, textos ficam em português: "JOGAR" (mapa), "Vidas" (HUD), "Carregando…" (loading), "Gire o aparelho…" | Jogo novo em inglês (padrão) | Strings fora da tabela de localização | aberto |
-| QA-10 | UI | LOW | **Travessão ausente** nos títulos: "Ithaca  The Call", "Ithaca  before the war" (espaço duplo) | Mapa e loading da Fase 01 | Fonte sem o glifo "—" | aberto |
-| QA-11 | 01 | LOW (bot) | Bot não concluiu a Fase 01 (preso no portão do salão com Explorar 3/4) | — | Limitação do bot: na rodada 1 (Interagir contínuo) o objetivo chegou a 4/4, Convocação 1/1, Família 1/2. `PrologueProbe` confirma todos os atos fecháveis. **Fase 01 não foi jogada inteira nesta passagem** | registrado |
-| QA-12 | 04 | LOW | Citera: quedas no mar entre as plataformas do navio (bot 1 de 3) | Rodadas 1–3 | Dificuldade de plataforma com ondas; concluída na rodada 1 | registrado |
+| QA-09 | UI | LOW | Com o idioma **English**, textos ficam em português: "JOGAR" (mapa), "Vidas" (HUD), "Carregando…" (loading), "Gire o aparelho…" | Jogo novo em inglês (padrão) | Strings fora da tabela de localização | **corrigido** (§13) |
+| QA-10 | UI | LOW | **Travessão ausente** nos títulos: "Ithaca  The Call", "Ithaca  before the war" (espaço duplo) | Mapa e loading da Fase 01 | Fonte sem o glifo "—" | **corrigido** (§14; aparelho real não testado) |
+| QA-11 | 01 | LOW (bot) | Bot não concluiu a Fase 01 (preso no portão do salão com Explorar 3/4) | — | Limitação do bot: na rodada 1 (Interagir contínuo) o objetivo chegou a 4/4, Convocação 1/1, Família 1/2. `PrologueProbe` confirma todos os atos fecháveis. **Fase 01 não foi jogada inteira nesta passagem** | **melhorou**: < 5 s (§13) |
+| QA-12 | 04 | LOW | Citera: quedas no mar entre as plataformas do navio (bot 1 de 3) | Rodadas 1–3 | Dificuldade de plataforma com ondas; concluída na rodada 1 | **corrigido** (§13) |
 | QA-13 | todas | POLISH | Diálogo disparado **em pleno pulo** deixa o Odisseu **parado no ar** até a fala acabar | Calipso: pular através do `DialogueTrigger_Grove` (x 9–11) — medido: pé em −1,18 por > 1 s | `PlayerInputLock` desliga o `PlayerController` e zera a velocidade; a queda parece depender do controlador | aberto |
 | QA-14 | todas | POLISH / FUTURO | **Defesa aérea possui efeito mecânico, mas não possui representação visual** | Pular e segurar X — medido: IsBlocking=True, animador Fall, nenhum escudo desenhado | `Jump`/`Fall` sem escudo; placeholder desligado (N-07) | registrado |
 | QA-15 | UI | POLISH | HUD com números sem rótulo (0/100, 0, 10/10, "Vidas 3", XP) sobre o céu, às vezes atrás das nuvens | Qualquer fase | HUD de texto puro | aberto |
@@ -291,3 +291,37 @@ Em todas: carregou, spawn, câmera seguindo, HUD, inimigos contados, saída pres
 ### Não validado aqui
 Fase 01 inteira por input (o bot não fecha o "Explorar"); dificuldade da Cila por humano (QA-02); mobile e gamepad físicos;
 travessão no navegador (QA-10, Etapa 10).
+
+## 13. Etapas 9 e 10 — build WebGL e navegador (2026-10-04)
+
+- **Build:** `BuildScript.BuildWebGL` → **Build Finished, Result: Success**. Dados 17,67 → **14,84 MB**, wasm 4,40 MB (Brotli).
+- **Template do projeto** `Assets/WebGLTemplates/Odisseia` (selecionado pelo `BuildScript`): canvas no maior 16:9 da janela com
+  faixas pretas (QA-07); `autoSyncPersistentDataPath` (QA-18 — sem aviso no console, e o save persiste: volume e "Continue"
+  sobrevivem ao recarregar); botão de tela cheia só no desktop; **`?mudo=1`** suspende todo áudio (testes sempre no mudo).
+- **Navegador (painel do app, Chromium, mudo):** 0 erros no console; desktop detectado sem controles de toque; menu →
+  seleção de fases → New Game → mapa → Fase 01; Fase 01 em **< 5 s** depois do clique (QA-17, antes ~20 s); 60,3 fps, quadro
+  mais lento 16,8 ms, 46 MB de heap JS.
+- **QA-10 confirmado no navegador:** o travessão some ("Ithaca  The Call"). Fonte embutida do Unity sem o glifo; no Editor o
+  Windows supre. Decisão de fonte para a Etapa 13.
+- Limites do painel: sem foco de janela o Unity pausa (runInBackground desligado) e emulações maiores que o painel são
+  reduzidas — redimensionar com o jogo aberto e janelas grandes ficam para um navegador comum.
+
+## 14. Etapa 11 — mobile por emulação (2026-10-04)
+
+| Verificação | Resultado |
+|---|---|
+| Detecção | Android emulado (Pixel 8, 5 toques): `IsMobile=True (user agent + touch)`; controles criados (Left/Right/Jump/Attack/Shield/Bow) |
+| Paisagem (480 × 222, proporção 2,16 de celular) | jogo em tela cheia; controles visíveis no mapa (mover + entrar) e na fase (USE, BOW, JUMP, DEF, ATK) |
+| Retrato (111 × 240, proporção 0,46) | aviso de girar aparece |
+| Save | persiste ao recarregar |
+
+**Corrigido nesta etapa (build refeito e reverificado):**
+- **Botão de tela cheia do template cobria o ATK** (e o "PLAY" do mapa) — defeito da Etapa 9; oculto no celular.
+- **QA-08:** aviso de girar cortado nas duas bordas (largura fixa 700, sem quebra) → largura da tela com margem e quebra de linha.
+- **Configurações em paisagem de celular:** o painel (~700 de altura) passava do Canvas (~650) e o botão Fechar saía da tela →
+  encolhe por escala quando não cabe (`SettingsScreen.AjustarAoTamanhoDaTela`, a cada quadro aberto).
+- **HUD com vida "0/100" no começo da fase (visto no WebGL)** e, pelo código, depois do respawn: o HUD podia inicializar antes
+  do `HealthSystem`, e `ResetHealth()` não dispara evento → o HUD confere a vida por quadro e só reescreve quando muda.
+
+**Não validado:** iOS e Android **físicos** (toque real, notch/área segura, desempenho de GPU móvel, Safari), mudança de
+orientação com o jogo aberto, escala dos controles num aparelho real.

@@ -832,3 +832,54 @@ Fonte: **`Docs/Art/PIXELLAB_VISUAL_POLISH_PASS_02.md`** (auditoria, plano, 12 gr
 - **Achado de gameplay:** as 2 `TidalHazard` da Fase 11 estão invisíveis em jogo (o dresser desliga o placeholder) —
   `cila_tidal_surge_anim` é o primeiro item da integração.
 - Pendente: integração; HUD (PP-18/19); download das 8 animações pagas (backblaze bloqueado).
+
+## Sessão local de integração no Unity (2026-10-02 a 2026-10-04) — PASSAGEM PARA A PRÓXIMA SESSÃO
+
+Unity **6000.5.8f1** local (`C:\Program Files\Unity\Hub\Editor\6000.5.8f1\Editor\Unity.exe`, módulo WebGL). Branch
+**`feat/integracao-unity-local`**, commit **`92802a8`** (etapas 1–8). **Etapas 9–11 ainda SEM commit** (ver abaixo).
+Regras da sessão: PixelLab **congelado** (nada gerado; falta de arte vira `PIXELLAB-FUTURE`); não mexer em gameplay sem bug de
+QA; nada de commit/push/PR sem pedido; **todo teste no mudo** (navegador com `?mudo=1`; ferramentas de Editor já mutam).
+Detalhes completos: `Docs/QA/FULL_CAMPAIGN_PLAYTEST.md` §10–14, `Docs/Art/PIXELLAB_ASSET_COMPLETION_MASTER.md` (fim),
+`Docs/Art/TROY_VISUAL_PACK.md` (fim).
+
+### Feito (etapas 1–11)
+1–2. Inspeção; `main` local estava 47 commits atrás → fast-forward; compila com 0 erros.
+3. **TROY-02** integrado (céu 0,95 / montanhas 0,85 / cidade 0,70, peça única). Bug: o `TroySceneDresser` supunha a câmera em
+   x=−33 (está em 0) — corrigido lendo a câmera da cena.
+4. Fase 02 validada; `QaMechanicsTest.TroiaVaos` prova que os vãos passam com pulo simples.
+5. Fase 16 (`FinalSceneDresser`, 1ª execução); **32 fogos animados** em 9 fases (`FireAnimationDresser` — rodar DEPOIS dos
+   vestidores de cena); entablamento nativo de Éolo; primeiro plano/decoração 04/06/14/15 (`PackForegroundDresser`); moeda
+   nativa (`Tools/build-coin-native.js`), altar e aljava (`ItemArtDresser`, colisores com o mesmo tamanho no mundo).
+6. Troia sem placeholders (ponte, blocos, pedra `Tools/build-troy-obstacle.js`, barricadas); **efeitos de combate** (`VfxSheet`,
+   folhas em `Resources/Odisseia/Effects/`) + poeira (`PlayerDustFx`); **HUD com ícones**; **mapa-múndi** com emblemas, louro,
+   aro animado, trilha, navio e mar; `LevelSelect` com `map_aegean`; **Ending** no quarto da cama na oliveira (`EndingSceneDresser`).
+7. Bloqueios: Fase 07 já corrigida (`4267db0`) e reconfirmada; **QA-04** atrito 0 no jogador (`PlayerPhysicsFix`); **QA-03**
+   "Tentar de novo" no fim de jogo; **QA-06** parede-limite com arte no Gado do Sol (`GadoDoSolExitFix`).
+8. QA das 16 fases: bot corrigido (pulo duplo projetado, `-qaTrace`) → **15/16 concluídas** (01: limite do bot; `PrologueProbe`
+   OK); `PlaceholderProbe` OK nas 16; `LocalizationProbe` OK; textos fixos em PT localizados; chaves de falante em PT;
+   painel do mapa; QA-13 era o QA-04.
+9. Build WebGL OK; **template próprio** `Assets/WebGLTemplates/Odisseia` (canvas 16:9 responsivo, save persistente, `?mudo=1`).
+10. Navegador: 0 erros, Fase 01 em < 5 s, 60 fps. **Travessão some no WebGL** (fonte embutida sem o glifo).
+11. Mobile (emulação): detecção, controles e retrato/paisagem OK; corrigidos botão de tela cheia sobre o ATK, aviso de girar
+    cortado (QA-08), configurações cortadas em paisagem, HUD "0/100" (ordem de inicialização / respawn sem evento).
+
+### Pendente de commit (etapas 9–11)
+`Assets/WebGLTemplates/` (novo), `BuildScript.cs`, `HUD.cs`, `MobileControlsRoot.cs`, `SettingsScreen.cs`, `Builds/WebGL/`
+(build regenerado; a antiga `TemplateData/` sai), `Docs/QA/FULL_CAMPAIGN_PLAYTEST.md`, `Docs/QA/_hud/itaca_hud.png`, este arquivo.
+
+### Próximos passos
+- **Etapa 12 — gamepad:** revisar bindings Xbox/PlayStation no código; sem controle físico → "GAMEPAD — NÃO VALIDADO FISICAMENTE".
+- **Etapa 13 — polish:** decisão de **fonte** (QA-10, recomendado: fonte livre com os glifos); contraste do HUD e do título do
+  Ending; **menu principal** com a arte nova (exige título e botões próprios — decisão do usuário); mapa geográfico sobre o
+  `map_aegean` (decisão do usuário); ícones de fome/lótus/cera/escudo; chama do altar animada (exige código).
+- **PIXELLAB-FUTURE:** cavalo de Troia (saída da Fase 02); ataques das 6 facções (PXL-012) e escudo no ar (PXL-013) — pagos,
+  download bloqueado (`node Tools/fetch-paid-anims.js` só com autorização).
+- **Não validado:** iOS/Android físicos, gamepad físico, Fase 01 inteira por input, dificuldade da Cila por humano,
+  redimensionar a janela com o jogo aberto (painel do app sem foco).
+
+### Como rodar
+`Unity.exe -batchmode -nographics -quit -projectPath . -executeMethod <Ferramenta>` (Editor FECHADO). Play mode sem
+`-nographics` e sem `-quit`: `QaPlaytestBot.Run [-qaFrom N -qaTo M -qaTrace x0,x1]`, `QaMechanicsTest.Run|TroiaVaos|Calipso|Lestrigoes|DialogoNoAr`,
+`HudShot.Capture -hudScene <fase|caminho> [-hudMapProgress N]`, `FireAnimationDresser.Conferir`. Capturas de cenário:
+`PrologueScreenshot.Capture -shotScene ... -shotXs ... -shotY ... [-shotSize 6]`. Build: `BuildScript.BuildWebGL` (~10 min);
+servir: `.claude/launch.json` → `webgl-build` (porta 8080), abrir com `?mudo=1`.

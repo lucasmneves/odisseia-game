@@ -353,16 +353,20 @@ namespace Odisseia.UI
 
             var textGO = new GameObject("Text", typeof(RectTransform));
             textGO.transform.SetParent(go.transform, false);
+            // QA-08: em retrato a tela tem bem menos que 700 unidades de largura, e o texto (largura fixa, sem quebra) saía
+            // cortado nas duas bordas. Agora ocupa a largura da tela com margem e quebra linha.
             var textRect = (RectTransform)textGO.transform;
-            textRect.anchorMin = new Vector2(0.5f, 0.5f);
-            textRect.anchorMax = new Vector2(0.5f, 0.5f);
-            textRect.sizeDelta = new Vector2(700f, 140f);
-            textRect.anchoredPosition = Vector2.zero;
+            textRect.anchorMin = new Vector2(0.08f, 0.3f);
+            textRect.anchorMax = new Vector2(0.92f, 0.7f);
+            textRect.offsetMin = Vector2.zero;
+            textRect.offsetMax = Vector2.zero;
 
             var text = textGO.AddComponent<Text>();
             text.text = Localization.Get("ui.mobile.rotate");
             text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
             text.fontSize = UITheme.FontHeading;
+            text.horizontalOverflow = HorizontalWrapMode.Wrap;
+            text.verticalOverflow = VerticalWrapMode.Overflow;
             text.alignment = TextAnchor.MiddleCenter;
             text.color = UITheme.TextPrimary;
 
