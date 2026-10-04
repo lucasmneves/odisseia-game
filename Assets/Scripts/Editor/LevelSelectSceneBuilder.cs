@@ -24,7 +24,9 @@ using Odisseia.UI;
 public static class LevelSelectSceneBuilder
 {
     private const string ScenePath = "Assets/Scenes/Menu/LevelSelect.unity";
-    private const string MapPath = "Assets/Art/map/mapa.png";
+    // O mapa em pixel art do Asset Completion (PXL-016), no lugar da ilustração pintada mapa.png (1674×940, outra
+    // linguagem). Mesma proporção 16:9 — o quadro com AspectRatioFitter acompanha a arte.
+    private const string MapPath = "Assets/Art/Map/map_aegean.png";
 
     /// <summary>Fatia da largura ocupada pela coluna da lista.</summary>
     private const float SideWidth = 0.26f;

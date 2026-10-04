@@ -21,7 +21,7 @@ namespace Odisseia.UI
         private static GameOverScreen instance;
 
         private GameObject root;
-        private Text statsText;
+        private Text titleText, messageText, statsText, hintText, retryLabel, menuLabel;
         private InputActionMap playerMap;
 
         /// <summary>
@@ -70,9 +70,13 @@ namespace Odisseia.UI
         {
             EventSystemBootstrap.EnsureExists();
 
-            statsText.text =
-                $"Experiência acumulada: {ExperienceCounter.Total} XP\n" +
-                $"Itens coletados: {CollectibleCounter.Count}";
+            // Lidos a cada exibição: o idioma pode ter mudado desde que a tela foi montada.
+            titleText.text = Localization.Get("ui.gameover.title");
+            messageText.text = Localization.Get("ui.gameover.message");
+            statsText.text = Localization.Get("ui.gameover.stats", ExperienceCounter.Total, CollectibleCounter.Count);
+            hintText.text = Localization.Get("ui.gameover.hint");
+            retryLabel.text = Localization.Get("ui.gameover.retry");
+            menuLabel.text = Localization.Get("ui.pause.menu");
 
             // Congela o jogo e cala o input de gameplay: o jogador não deve continuar
             // controlando Odisseu por baixo da tela.
@@ -82,6 +86,20 @@ namespace Odisseia.UI
 
             root.SetActive(true);
             AudioManager.PlayDeath();
+        }
+
+        /// <summary>
+        /// QA-03: recomeça a FASE atual com a jornada inteira de volta (vidas e experiência) — o mesmo reinício que o
+        /// menu principal faz ao entrar. Antes, perder a última vida obrigava a passar por menu e mapa para tentar de novo.
+        /// </summary>
+        private void Retry()
+        {
+            root.SetActive(false);
+            Time.timeScale = 1f;
+            AudioManager.PlayUiClick();
+            LivesCounter.BeginRun();
+            ExperienceCounter.BeginRun();
+            SceneLoader.Load(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         }
 
         private void BackToMenu()
@@ -120,27 +138,29 @@ namespace Odisseia.UI
             var background = root.AddComponent<Image>();
             background.color = new Color(0.05f, 0.03f, 0.05f, 0.94f);
 
-            CreateText(root.transform, "Title", "FIM DA JORNADA", UITheme.FontTitle,
+            titleText = CreateText(root.transform, "Title", string.Empty, UITheme.FontTitle,
                 UITheme.TextAccent, new Vector2(900f, 70f), new Vector2(0f, 120f));
 
-            CreateText(root.transform, "Message",
-                "Odisseu não chegou a Ítaca desta vez.", UITheme.FontHeading,
+            messageText = CreateText(root.transform, "Message",
+                string.Empty, UITheme.FontHeading,
                 UITheme.TextPrimary, new Vector2(900f, 44f), new Vector2(0f, 52f));
 
             statsText = CreateText(root.transform, "Stats", string.Empty, UITheme.FontBody,
                 UITheme.TextSecondary, new Vector2(900f, 70f), new Vector2(0f, -14f));
 
-            CreateButton(root.transform, "MenuButton", "Menu principal",
-                new Vector2(280f, 54f), new Vector2(0f, -110f), BackToMenu);
+            retryLabel = CreateButton(root.transform, "RetryButton", string.Empty,
+                new Vector2(280f, 54f), new Vector2(-150f, -110f), Retry);
+            menuLabel = CreateButton(root.transform, "MenuButton", string.Empty,
+                new Vector2(280f, 54f), new Vector2(150f, -110f), BackToMenu);
 
-            CreateText(root.transform, "Hint",
-                "As fases já conquistadas continuam desbloqueadas.", UITheme.FontBody,
+            hintText = CreateText(root.transform, "Hint",
+                string.Empty, UITheme.FontBody,
                 UITheme.TextSecondary, new Vector2(900f, 34f), new Vector2(0f, -170f));
 
             root.SetActive(false);
         }
 
-        private static void CreateButton(Transform parent, string name, string label,
+        private static Text CreateButton(Transform parent, string name, string label,
             Vector2 size, Vector2 position, UnityEngine.Events.UnityAction onClick)
         {
             var go = new GameObject(name, typeof(RectTransform));
@@ -171,6 +191,7 @@ namespace Odisseia.UI
             Text text = CreateText(rect, "Label", label, UITheme.FontButton,
                 UITheme.TextPrimary, size, Vector2.zero);
             Stretch((RectTransform)text.transform);
+            return text;
         }
 
         private static Text CreateText(Transform parent, string name, string content, int fontSize,

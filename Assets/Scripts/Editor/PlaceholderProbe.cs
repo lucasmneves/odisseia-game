@@ -50,6 +50,11 @@ public static class PlaceholderProbe
     {
         ["World/Background/Sky"] = "fundo de cobertura, na cor do topo do degradê do céu; garante que nenhuma camada de parallax deixe buraco",
 
+        // Troia (TROY-02).
+        ["TroyScenery/Sky_Fill"] = "cobertura acima do céu, em #ca8f67 — a cor MEDIDA da primeira linha de troy_bg_sky_war (380 dos 380 px)",
+        ["Sea_Background"] = "mar chapado herdado da Fase 01, INATIVO na cena de Troia (que não tem mar); nenhum script o referencia ou liga",
+        ["TroyScenery/BG_Troy_Mountains/BG_Troy_Plain"] = "planície abaixo das montanhas, presa a elas, em #b28b54 — a cor MEDIDA da planície do troy_bg_master; cobre o vão entre o chão e as camadas quando a câmera sobe e nos abismos",
+
         // Cicones. Sao preenchimentos CHAPADOS de proposito: cor solida e a ferramenta certa
         // para o que fica atras de tudo e nao pode ter textura competindo com o cenario.
         ["CiconesScenery/Sky_Fill"] = "fundo de cobertura na cor do topo do degradê do céu, para nenhuma camada de parallax deixar buraco",

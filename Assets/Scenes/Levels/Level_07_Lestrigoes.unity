@@ -5856,6 +5856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1410095827}
   - component: {fileID: 1410095828}
+  - component: {fileID: 1410095829}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -5938,6 +5939,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &1410095829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410095826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ec61beb84d6dce076e971336589dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Systems.SpriteAnimator
+  resourcePath: Odisseia/Environments/Fire/troy_campfire_01_anim
+  defaultState: anim
+  defaultFramesPerSecond: 9
+  states: []
 --- !u!1 &1448316385
 GameObject:
   m_ObjectHideFlags: 0

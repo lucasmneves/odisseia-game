@@ -256,7 +256,7 @@ namespace Odisseia.UI
                 new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
 
             // Só no mapa: entrar na fase. Reaproveita a ação Interact, a mesma do "E".
-            CreateOnScreenButton(groupRect, "EnterLevelButton", Bind("Interact", null, "<Keyboard>/e"), "JOGAR",
+            CreateOnScreenButton(groupRect, "EnterLevelButton", Bind("Interact", null, "<Keyboard>/e"), Localization.Get("ui.worldMap.enter"),
                 new Vector2(1f, 0f), new Vector2(-col1, row0),
                 new Vector2(actionSize * 1.4f, actionSize), cornerRadius: actionSize / 2f,
                 context: ButtonContext.WorldMap);
@@ -360,7 +360,7 @@ namespace Odisseia.UI
             textRect.anchoredPosition = Vector2.zero;
 
             var text = textGO.AddComponent<Text>();
-            text.text = "Gire o aparelho para jogar em modo paisagem";
+            text.text = Localization.Get("ui.mobile.rotate");
             text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
             text.fontSize = UITheme.FontHeading;
             text.alignment = TextAnchor.MiddleCenter;

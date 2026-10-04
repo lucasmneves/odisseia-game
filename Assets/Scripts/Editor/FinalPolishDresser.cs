@@ -41,6 +41,12 @@ public static class FinalPolishDresser
         EditorApplication.Exit(ok ? 0 : 1);
     }
 
+    /// <summary>Só a Fase 06 (N-06, entablamento nativo), sem reabrir as outras oito cenas.</summary>
+    public static void DressEolo()
+    {
+        EditorApplication.Exit(Cena("Level_06_Eolo", Fase06) ? 0 : 1);
+    }
+
     private static bool Cena(string nome, System.Func<bool> corrigir)
     {
         EditorSceneManager.OpenScene(Levels + nome + ".unity", OpenSceneMode.Single);
@@ -67,7 +73,8 @@ public static class FinalPolishDresser
     /// <summary>
     /// Peças do palácio encolhidas no Transform (0,52–0,70) trocadas pelas versões reamostradas para a densidade
     /// nativa (Tools/downscale-native.js), em escala 1 — mesmo lugar, mesmo tamanho de tela, pixel do tamanho do
-    /// resto do jogo. O entablamento (ESTICADO a 2,0) não tem versão nativa: ampliar não cria detalhe.
+    /// resto do jogo. O entablamento (ESTICADO a 2,0) ganhou versão nativa no Asset Completion (PXL-022, 475×186):
+    /// em escala 1 mede 11,1 un contra os 12 da antiga e ainda cobre as colunas externas (N-06).
     /// </summary>
     private static bool Fase06()
     {
@@ -80,6 +87,7 @@ public static class FinalPolishDresser
             { "eolo_brazier", P + "Palace/eolo_brazier_native.png" },
             { "eolo_statue", P + "Palace/eolo_statue_native.png" },
             { "eolo_banner", P + "Props/eolo_banner_native.png" },
+            { "eolo_entablature", P + "Palace/eolo_entablature_native.png" },
         };
         int n = 0;
         foreach (var sr in Object.FindObjectsByType<SpriteRenderer>(FindObjectsInactive.Include, FindObjectsSortMode.None)
@@ -96,7 +104,11 @@ public static class FinalPolishDresser
             Debug.Log($"[Polish] P-03: {sr.name} escala {k:0.##} -> 1 ({nativo.name}); x {antesMin.x:0.00}..{antesMax.x:0.00} -> " +
                       $"{sr.bounds.min.x:0.00}..{sr.bounds.max.x:0.00}, y {antesMin.y:0.00}..{antesMax.y:0.00} -> {sr.bounds.min.y:0.00}..{sr.bounds.max.y:0.00}");
         }
-        return n > 0;
+        // Rodar de novo numa cena já trocada não é falha: tudo nativo é o resultado esperado.
+        int jaNativos = Object.FindObjectsByType<SpriteRenderer>(FindObjectsInactive.Include, FindObjectsSortMode.None)
+            .Count(s => s.name.StartsWith("Palace_") && s.sprite != null && s.sprite.name.EndsWith("_native"));
+        if (n == 0) { Debug.Log($"[Polish] P-03: nada a trocar, {jaNativos} peças já nativas"); }
+        return n > 0 || jaNativos > 0;
     }
 
     // ------------------------------------------------------------------ P-01 e P-02 — Fase 11

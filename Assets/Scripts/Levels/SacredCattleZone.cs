@@ -67,7 +67,7 @@ namespace Odisseia.Levels
 
             hungerInRange = hunger;
             healthInRange = other.GetComponent<HealthSystem>();
-            prompt?.Show(this, "Pressione E para comer o gado sagrado de Hélio (isso terá consequências).", 3f);
+            prompt?.Show(this, Odisseia.Systems.ControlHints.Instruction("ui.cattle.eatPrompt", "Interact"), 3f);
         }
 
         private void OnTriggerExit2D(Collider2D other)

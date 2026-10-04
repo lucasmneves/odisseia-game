@@ -31,8 +31,8 @@ public static class PrologueScreenshot
     /// </summary>
     private const string CenaPadrao = "Assets/Scenes/Levels/Level_01_Itaca_Prologue.unity";
 
-    /// <summary>Mesmo enquadramento do jogo: ortográfica de tamanho 5, em 16:9.</summary>
-    private const float TamanhoOrtografico = 5f;
+    /// <summary>Mesmo enquadramento do jogo: ortográfica de tamanho 5, em 16:9. A Fase 16 usa 6: <c>-shotSize 6</c>.</summary>
+    private static float TamanhoOrtografico = 5f;
     private const int Largura = 960;
     private const int Altura = 540;
 
@@ -46,6 +46,7 @@ public static class PrologueScreenshot
     public static void Capture()
     {
         float y = Argumento("-shotY", 0f);
+        TamanhoOrtografico = Argumento("-shotSize", 5f);
         string saida = ArgumentoTexto("-shotOut", "Docs/Environment_Ithaca/_cena.png");
         string lista = ArgumentoTexto("-shotXs", null);
 

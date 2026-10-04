@@ -277,6 +277,37 @@ namespace Odisseia.Systems
                 "Menu principal",
             },
 
+            // Fim de jogo (QA-03: ganhou "tentar de novo"; os textos saíram do português fixo — QA-09).
+            ["ui.gameover.title"] = new[]
+            {
+                "END OF THE JOURNEY",
+                "FIM DA JORNADA",
+            },
+
+            ["ui.gameover.message"] = new[]
+            {
+                "Odysseus did not reach Ithaca this time.",
+                "Odisseu não chegou a Ítaca desta vez.",
+            },
+
+            ["ui.gameover.stats"] = new[]
+            {
+                "Experience gathered: {0} XP\nItems collected: {1}",
+                "Experiência acumulada: {0} XP\nItens coletados: {1}",
+            },
+
+            ["ui.gameover.retry"] = new[]
+            {
+                "Try again",
+                "Tentar de novo",
+            },
+
+            ["ui.gameover.hint"] = new[]
+            {
+                "Stages already won stay unlocked.",
+                "As fases já conquistadas continuam desbloqueadas.",
+            },
+
             ["ui.stageComplete"] = new[]
             {
                 "STAGE COMPLETE",
@@ -329,6 +360,31 @@ namespace Odisseia.Systems
             {
                 "Loading...",
                 "Carregando...",
+            },
+
+            // QA-09: textos que estavam fixos em português no código.
+            ["ui.worldMap.enter"] = new[]
+            {
+                "PLAY",
+                "JOGAR",
+            },
+
+            ["ui.mobile.rotate"] = new[]
+            {
+                "Rotate your device to play in landscape",
+                "Gire o aparelho para jogar em modo paisagem",
+            },
+
+            ["ui.cattle.eatPrompt"] = new[]
+            {
+                "Press {0} to eat the sacred cattle of Helios (there will be consequences).",
+                "Pressione {0} para comer o gado sagrado de Hélio (isso terá consequências).",
+            },
+
+            ["ui.rebind.waiting"] = new[]
+            {
+                "Press the new key for \"{0}\". Esc cancels.",
+                "Pressione a nova tecla para \"{0}\". Esc cancela.",
             },
 
             ["ui.rebind.move"] = new[]
@@ -491,6 +547,32 @@ namespace Odisseia.Systems
             {
                 "Odysseus",
                 "Odisseu",
+            },
+
+            // Cenas que gravam o falante em PORTUGUÊS (o DialogueSequence busca "speaker." + nome sem acento): sem estas
+            // chaves o nome saía cru, "Odisseu", com a fala em inglês. Mesmas traduções das chaves canônicas.
+            ["speaker.odisseu"] = new[]
+            {
+                "Odysseus",
+                "Odisseu",
+            },
+
+            ["speaker.telemaco"] = new[]
+            {
+                "Telemachus",
+                "Telêmaco",
+            },
+
+            ["speaker.eumeu"] = new[]
+            {
+                "Eumaeus",
+                "Eumeu",
+            },
+
+            ["speaker.companheiro"] = new[]
+            {
+                "Crewman",
+                "Companheiro",
             },
 
             ["speaker.penelope"] = new[]

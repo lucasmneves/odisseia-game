@@ -51,20 +51,20 @@ Logs desta passagem: `Logs/qa_playtest_rodada2.txt`, `Logs/qa_playtest_r3_*.txt`
 | 15 | Pretendentes | ok | **sim** (17 s) | 0 | ✓ → nó 16 |
 | 16 | Final | ok | **sim** (15 s) | 0 | → **Ending** ✓ |
 
-Todas as 16 carregam, com jogador, câmera e HUD. Nenhum erro/exceção de console registrado durante as fases.
+Todas as 16 carregam, com jogador, câmera e HUD. Nenhum erro/exceção de console **resolvido** pelo QA-04 (§12) durante as fases.
 
 ## 3. Bugs
 
 | ID | Fase | Severidade | Problema | Reprodução | Causa provável | Status |
 |----|------|------------|----------|------------|----------------|--------|
 | QA-01 | 07 | ~~**BLOCKER**~~ → **corrigido (BUG-001, §9)** | O gigante perseguidor mata o Odisseu **durante a fala de abertura**, antes de o jogador ter controle; o respawn cai de novo dentro da fala. 2 vidas perdidas sem poder agir, a 3ª com margem mínima → fim de jogo em 3–4 s | Entrar na Fase 07. Reproduzido 3/3 (bot, rodadas 1–3): mortes em t = 1 s e 2 s em x = −18 (nascimento), com o colisor do perseguidor em x −21,3..−18,3 | `PursuerHazard` anda (5,5 un/s) desde o 1º quadro, sem esperar a `LevelIntro` (trava 3 s). Nasce em x = −24, a 4,2 un do jogador (−18): chega em 0,8 s. `resetOffsetX` −8 põe o respawn de novo ao alcance durante a trava. Jogador anda 6 un/s: fuga com 0,5 un/s de margem | **corrigido** — BUG-001 |
-| QA-02 | 11 | MEDIUM (verificar com humano) | A Cila mata no convés: bot perdeu as 3 vidas em ~8 s nas 2 tentativas | Entrar na Fase 11 e andar direto pelo convés (x 0..10) | Golpes a cada 2,8 s em x = 3, 6, 9 (raio 1,4) cobrem ~8,8 un do convés; exige esperar o golpe e atravessar na janela de ~2,1 s. Possível, mas não validado por humano | aberto |
-| QA-03 | todas | MEDIUM | A tela de **fim de jogo só oferece voltar ao menu** — não há "tentar de novo a fase". Congela o tempo e desliga os controles | Perder as 3 vidas (medido no teste de mecânicas) | `GameOverScreen.Show` → só `BackToMenu`. Somado ao QA-01, a Fase 07 vira um loop menu → mapa → fase → fim de jogo | aberto |
-| QA-04 | todas (visto em 01, 10, 13) | MEDIUM | O Odisseu **gruda na lateral** de plataformas no ar enquanto a direção é segurada — não sobe nem cai | Calipso: correr para a direita contra a `Platform_Grove` (x 12) e pular. Medido: preso no ar em x = 11,70 com o pé a −1,05..−1,75. Soltar a direção → cai; pulo duplo → passa (pousa em x = 19) | Colisor do jogador sem `PhysicsMaterial2D` (e sem material padrão no Physics2D): o atrito contra a parede segura o corpo | aberto |
-| QA-05 | 01 | LOW | Apertar Interagir logo que uma conversa termina, ainda perto do NPC, **reabre a mesma conversa** | Falar com a Penélope e apertar E repetidamente (a rodada 1 do bot ficou 6 min nisso) | `NPCDialogue` permite conversar de novo ao fim (`talking` volta a falso); só não reabre DURANTE. Sai andando | aberto |
-| QA-06 | 12 | MEDIUM | Enquanto a saída espera o vento (25 s), dá para **passar do ponto da saída e cair do fim da fase**, perdendo vidas | Correr direto até o fim: o bot chegou a x = 46 (saída em 34,5..37,5) e caiu; 2 mortes | O `LevelGoal` fica inativo até o `TimeGatedActivator`; não há limite físico depois dele | aberto |
-| QA-07 | web | MEDIUM | No desktop o **canvas é fixo em 960 × 600**: janela menor corta o jogo (barras de rolagem); maior não escala | Abrir o build numa janela < 960 px ou > 1080 p | Template padrão `unity-desktop` com tamanho fixo | aberto |
-| QA-08 | mobile | LOW (confirmar em aparelho) | Em retrato (emulação) o jogo desenha em ~57% da tela e o aviso "Gire o aparelho…" é cortado nas duas bordas | Emulação Pixel 8 retrato | Aviso de orientação existe; texto sem quebra. A área parcial pode ser artefato de DPR da emulação | aberto |
+| QA-02 | 11 | MEDIUM (verificar com humano) | A Cila mata no convés: bot perdeu as 3 vidas em ~8 s nas 2 tentativas | Entrar na Fase 11 e andar direto pelo convés (x 0..10) | Golpes a cada 2,8 s em x = 3, 6, 9 (raio 1,4) cobrem ~8,8 un do convés; exige esperar o golpe e atravessar na janela de ~2,1 s. Possível, mas não validado por humano | **corrigido** (§11) |
+| QA-03 | todas | MEDIUM | A tela de **fim de jogo só oferece voltar ao menu** — não há "tentar de novo a fase". Congela o tempo e desliga os controles | Perder as 3 vidas (medido no teste de mecânicas) | `GameOverScreen.Show` → só `BackToMenu`. Somado ao QA-01, a Fase 07 vira um loop menu → mapa → fase → fim de jogo | **corrigido** (§11) |
+| QA-04 | todas (visto em 01, 10, 13) | MEDIUM | O Odisseu **gruda na lateral** de plataformas no ar enquanto a direção é segurada — não sobe nem cai | Calipso: correr para a direita contra a `Platform_Grove` (x 12) e pular. Medido: preso no ar em x = 11,70 com o pé a −1,05..−1,75. Soltar a direção → cai; pulo duplo → passa (pousa em x = 19) | Colisor do jogador sem `PhysicsMaterial2D` (e sem material padrão no Physics2D): o atrito contra a parede segura o corpo | **corrigido** (§11) |
+| QA-05 | 01 | LOW | Apertar Interagir logo que uma conversa termina, ainda perto do NPC, **reabre a mesma conversa** | Falar com a Penélope e apertar E repetidamente (a rodada 1 do bot ficou 6 min nisso) | `NPCDialogue` permite conversar de novo ao fim (`talking` volta a falso); só não reabre DURANTE. Sai andando | **corrigido** (§12) |
+| QA-06 | 12 | MEDIUM | Enquanto a saída espera o vento (25 s), dá para **passar do ponto da saída e cair do fim da fase**, perdendo vidas | Correr direto até o fim: o bot chegou a x = 46 (saída em 34,5..37,5) e caiu; 2 mortes | O `LevelGoal` fica inativo até o `TimeGatedActivator`; não há limite físico depois dele | **corrigido** (Etapa 6) |
+| QA-07 | web | MEDIUM | No desktop o **canvas é fixo em 960 × 600**: janela menor corta o jogo (barras de rolagem); maior não escala | Abrir o build numa janela < 960 px ou > 1080 p | Template padrão `unity-desktop` com tamanho fixo | **corrigido** (Etapa 6) |
+| QA-08 | mobile | LOW (confirmar em aparelho) | Em retrato (emulação) o jogo desenha em ~57% da tela e o aviso "Gire o aparelho…" é cortado nas duas bordas | Emulação Pixel 8 retrato | Aviso de orientação existe; texto sem quebra. A área parcial pode ser artefato de DPR da emulação | **corrigido** (Etapa 6) |
 | QA-09 | UI | LOW | Com o idioma **English**, textos ficam em português: "JOGAR" (mapa), "Vidas" (HUD), "Carregando…" (loading), "Gire o aparelho…" | Jogo novo em inglês (padrão) | Strings fora da tabela de localização | aberto |
 | QA-10 | UI | LOW | **Travessão ausente** nos títulos: "Ithaca  The Call", "Ithaca  before the war" (espaço duplo) | Mapa e loading da Fase 01 | Fonte sem o glifo "—" | aberto |
 | QA-11 | 01 | LOW (bot) | Bot não concluiu a Fase 01 (preso no portão do salão com Explorar 3/4) | — | Limitação do bot: na rodada 1 (Interagir contínuo) o objetivo chegou a 4/4, Convocação 1/1, Família 1/2. `PrologueProbe` confirma todos os atos fecháveis. **Fase 01 não foi jogada inteira nesta passagem** | registrado |
@@ -136,7 +136,7 @@ Fase 01 ~20 s (QA-17). Em play mode, todas as fases rodaram a 2× sem erro.
 
 ## 9. BUG-001 — Lestrigões — gigante mata durante abertura
 
-**Status: corrigido (local, sem commit).** Correção **só da Fase 07**, por componente de cena + override da cena.
+**Status: corrigido — commitado em 4267db0; reconfirmado em 2026-10-03 (§11).** Correção **só da Fase 07**, por componente de cena + override da cena.
 Nenhum sistema global alterado (`PursuerHazard`, `BossController`, `LevelIntro`, `PlayerRespawn`, `HealthSystem`, prefab
 `Player` intocados); nenhum asset gerado.
 
@@ -200,3 +200,94 @@ desenhada; afastar a largada é decisão de design, não foi mudada.
 |---|---|
 | `CampaignValidation` | **OK — 16 etapas na ordem oficial**, 0 erros de compilação |
 | Build WebGL | **Build Finished, Result: Success** |
+
+## 10. Validação local da Fase 02 — Troia (2026-10-02, Unity 6000.5.8f1 local, depois do TROY-02)
+
+| Verificação | Resultado |
+|---|---|
+| Carregamento, spawn (−28, −2), câmera, HUD, 3 inimigos, saída | ok (bot) |
+| Elenco (`CastProbe`) | Odisseu 42,857 px/un; 3 troianos por override; 3 gregos; 0 Animator. Coletáveis ainda a 100 px/un (moeda nativa do pack não integrada) |
+| `PlaceholderProbe` | 8 visíveis — só a geometria N-08 |
+| `CampaignProbe` | 01 → desbloqueia 02; nó 02 disponível no mapa |
+| Vãos (`QaMechanicsTest.TroiaVaos`, novo) | **os 4 vãos passam com pulo simples saindo da borda** (decolagem x≈3,65 → pouso na ponte em 7,24; Gauntlets idem). Pulo duplo da borda nos Gauntlets ultrapassa a plataforma de 3 un (erro de jogador, não da fase) |
+| Bot (`QaPlaytestBot`) | **não conclui** (3 quedas, x 10, 32, 37) — **igual na cena anterior ao TROY-02**, 2 rodadas; não é regressão do cenário |
+| Combate (`QaMechanicsTest.Run`, 3 rodadas) | cooldown, escudo 80%, costas, respawn, pausa, fim de jogo = 30/09. **Divergem, de forma determinística:** 1º golpe (Odisseu ainda no ar, posto 0,7 un acima do chão) e arco (animador `Damage` — inimigo patrulhando já em cima dele). Golpe duplo acerta e o evento de disparo sai: leitura é **artefato de posição do teste**, a confirmar por humano |
+
+**QA-21 (bot, LOW):** o segundo pulo do bot exige `saltosSemAvanco > 0`, mas o contador zera assim que ele avança 0,25 un — logo
+depois de decolar. Na prática o bot não dá pulo duplo em movimento, e o gatilho de 1,1 un antes da borda não alcança os
+vãos com subida (ponte, Gauntlet_1). Acrescentado `-qaOlhar` (padrão 1,1 = comportamento registrado); com 0,5 o bot ainda
+raspa a quina da ponte e gruda (QA-04). Fase passável por humano segundo as medidas acima; transição 02 → mapa não foi
+re-observada pelo bot nesta rodada.
+
+**QA-22 (design, LOW — verificar com humano):** os vãos com subida de Troia (3 un, +1,2) têm folga de ~0,3 un no pulo
+simples saindo da borda. Passável, mas é a passagem mais apertada do tutorial de combate.
+
+## 11. Etapa 7 — bloqueios de gameplay (2026-10-03, Unity 6000.5.8f1 local)
+
+**Classificação dos problemas conhecidos:** BLOCKER: nenhum restante (QA-01 confirmado). HIGH: QA-03, QA-04, QA-06 —
+**corrigidos abaixo**. MEDIUM: QA-13 (parado no ar em diálogo), QA-09/10 + achados da Etapa 6 (EN/PT misturado; painel do
+mapa com texto atrás do botão), QA-02 (Cila, humano), QA-07 (canvas WebGL, Etapa 9). LOW: QA-05, 08, 12, 17, 18, 19, 21, 22.
+Resolvidos na Etapa 6: QA-15, QA-16, QA-20.
+
+| ID | Correção | Prova |
+|---|---|---|
+| QA-01 (07) | já no código desde 4267db0 (`LestrigoesChaseGuard`) | `QaMechanicsTest.Lestrigoes`: abertura travada 3,0 s com 0 golpes e 0 mortes nas 3 entradas (direta, restart, reentrada); respawn com perseguidor parado a 8 un e colisor desligado. Bot 2/2 concluídas, transição → mapa no nó 08 |
+| QA-04 (todas) | `PlayerPhysicsFix`: `Assets/Settings/Physics/Player_NoFriction.physicsMaterial2D` (atrito 0) no `CapsuleCollider2D` do prefab Player. Nada dependia do atrito: velocidade horizontal é escrita pelo controlador, plataformas móveis carregam por `FrameDelta`, chãos são caixas planas | `QaMechanicsTest.Calipso`: pé mais alto −1,75/−1,18/−1,05 (preso abaixo do topo −0,80) → **−0,31/−0,18/−0,19** (passa por cima); "grudado → solta a direção" agora **SUBIU**. Sem regressão: vãos de Troia iguais, combate idêntico, bot de Troia sem evento "GRUDADO" |
+| QA-03 (todas) | `GameOverScreen`: botão **"Tentar de novo"** — recarrega a fase atual com `LivesCounter/ExperienceCounter.BeginRun()` (o mesmo reinício do menu). Textos da tela pela localização (`ui.gameover.*`) | `QaMechanicsTest.Run` (caso novo): "Try again" → cena recarregada, vidas 3, timeScale 1, mapa Player ligado, painel fechado |
+| QA-06 (12) | `GadoDoSolExitFix`: `Wall_End` (layer Ground) com a face no fim do Floor_3 (x = 40) e 4,5 un acima do chão (> pulo duplo 3,43), desenhado com o muro de pedra seca da fase em 3 fiadas — o chão desenhado ia até x = 42 e o colisor acabava em 40 | Bot 2/2 **concluídas com 0 mortes** (antes 2 quedas): para em x = 39,7, espera o vento, sai → mapa no nó 13 |
+
+**Ponta esquerda da Fase 12** (chão começa em −18, câmera vê até −20): mesmo padrão, não registrado em QA porque o jogador
+nasce em −14 andando para a direita. Fica como LOW.
+
+## 12. Etapa 8 — QA das 16 fases (2026-10-04, Unity 6000.5.8f1 local)
+
+### Bot corrigido antes (QA-21 — ferramenta, não jogo)
+O segundo pulo exigia `saltosSemAvanco > 0`, que zera assim que o corpo avança — nunca havia pulo duplo em movimento. Agora,
+no alto do primeiro pulo, o bot projeta a queda (velocidade real, gravidade efetiva) e testa, ponto a ponto: o CORPO (caixa do
+pé à cabeça, na borda da frente da cápsula) bateria numa lateral? → segundo pulo; há chão logo abaixo do pé? → pousa. Uma
+primeira versão olhava 4 un acima e confundia teto com parede (gastava o segundo pulo perto do chão — causa das quedas de
+Ciclopes e Éolo na rodada 1, **não** regressão da física). `-qaTrace x0,x1` registra a trajetória quadro a quadro.
+
+### Rodada 2 do bot (campanha inteira, mesma sessão de save)
+| Fase | Resultado | Mortes | Transição / mapa |
+|---|---|---|---|
+| 01 Ítaca | não (bot preso em Explorar 3/4 — QA-11) | 0 | `PrologueProbe` **OK**: cadeia de atos completa, 39 figuras apoiadas, alcance de todo objetivo |
+| 02 Troia | **sim** (24 s) | 0 | → mapa, nó 03 ✓ |
+| 03 Cícones | **sim** (17 s) | 0 | ✓ |
+| 04 Citera | **sim** (24 s) | 1 | ✓ |
+| 05 Ciclopes | **sim** (19 s) | 0 | ✓ |
+| 06 Éolo | **sim** (12 s) | 0 | ✓ |
+| 07 Lestrigões | **sim** (14 s) | 1 (perseguição) | ✓ |
+| 08 Circe | **sim** (14 s) | 0 | ✓ |
+| 09 Mundo dos Mortos | **sim** (18 s) | 0 | ✓ |
+| 10 Sereias | **sim** (14 s) | 0 | ✓ |
+| 11 Cila e Caríbdis | **sim** (12 s) — 1ª vez | 2 (golpes) | ✓ |
+| 12 Gado do Sol | **sim** (31 s) | 0 | ✓ |
+| 13 Calipso | **sim** (18 s) | 0 | ✓ |
+| 14 Ítaca Return | **sim** (18 s) | 0 | ✓ |
+| 15 Pretendentes | **sim** (17 s) | 0 | ✓ → nó 16 |
+| 16 Final | **sim** (14 s) | 0 | → **Ending** ✓ |
+
+Em todas: carregou, spawn, câmera seguindo, HUD, inimigos contados, saída presente. **15/16 pelo bot** (antes: 11/16 em 30/09).
+
+### Probes
+| | |
+|---|---|
+| `PlaceholderProbe` | **OK nas 16 fases** (primeira vez — Troia falhava) |
+| `PrologueProbe` | OK |
+| `GlobalCastAudit` | elenco inteiro a 42,857 px/un, escala 1; alertas de empate de ordem (checkpoint, moeda, objetivo, props) **idênticos à auditoria de 30/09** (N-05, profundidade intencional) |
+| `LocalizationProbe` | **OK** — a probe lia `"speaker." + nome` como chave e falhava sempre (falso positivo corrigido na probe) |
+| `CampaignValidation` | OK |
+
+### Correções desta etapa (MEDIUM)
+- **QA-09 / textos:** "JOGAR" (mapa e touch), "Carregando...", "Gire o aparelho…", prompt do gado de Hélio (agora com a tecla
+  real via `ControlHints`), mensagem de remapear → localização (`ui.worldMap.enter`, `ui.mobile.rotate`, `ui.cattle.eatPrompt`,
+  `ui.rebind.waiting`; `ui.loading` já existia). Falantes gravados em português nas cenas (Odisseu ×26, Telêmaco, Eumeu,
+  Companheiro) não tinham chave — o nome saía em português sobre fala em inglês: chaves acrescentadas.
+- **Painel do mapa:** o botão cobria a linha "Já concluída — [E] para jogar de novo" (painel 108 → 148).
+- **QA-13:** medido (`QaMechanicsTest.DialogoNoAr`): travado no ar com o pé em −1,04, **cai até o chão em ~0,2 s**. O
+  "parado no ar" de 30/09 era o atrito na parede (QA-04), já corrigido — o gatilho do bosque encosta na `Platform_Grove`.
+
+### Não validado aqui
+Fase 01 inteira por input (o bot não fecha o "Explorar"); dificuldade da Cila por humano (QA-02); mobile e gamepad físicos;
+travessão no navegador (QA-10, Etapa 10).

@@ -57,8 +57,11 @@ namespace Odisseia.Systems
 
             flashRoutine = StartCoroutine(FlashRoutine());
 
-            Sprite sprite = GameAssets.Instance != null ? GameAssets.Instance.PlaceholderSprite : null;
-            VfxBurst.Spawn(sprite, transform.position + Vector3.up * 0.6f, burstColor, 5, 2.5f, 0.3f);
+            if (!VfxSheet.Play("fx_hit_v2", transform.position + Vector3.up * 0.6f))
+            {
+                Sprite sprite = GameAssets.Instance != null ? GameAssets.Instance.PlaceholderSprite : null;
+                VfxBurst.Spawn(sprite, transform.position + Vector3.up * 0.6f, burstColor, 5, 2.5f, 0.3f);
+            }
 
             CameraFollow.ShakeActive(0.12f, shakeMagnitude);
 
@@ -74,8 +77,12 @@ namespace Odisseia.Systems
 
         private void OnDied()
         {
-            Sprite sprite = GameAssets.Instance != null ? GameAssets.Instance.PlaceholderSprite : null;
-            VfxBurst.Spawn(sprite, transform.position + Vector3.up * 0.6f, burstColor, 10, 3.5f, 0.45f, 0.15f);
+            // A nuvem de morte tem 6 quadros (2 de dissolução): 12 fps a deixa no ar meio segundo.
+            if (!VfxSheet.Play("fx_death", transform.position + Vector3.up * 0.6f, false, 12f))
+            {
+                Sprite sprite = GameAssets.Instance != null ? GameAssets.Instance.PlaceholderSprite : null;
+                VfxBurst.Spawn(sprite, transform.position + Vector3.up * 0.6f, burstColor, 10, 3.5f, 0.45f, 0.15f);
+            }
 
             CameraFollow.ShakeActive(0.22f, shakeMagnitude * 1.8f);
             AudioManager.PlayDeath();

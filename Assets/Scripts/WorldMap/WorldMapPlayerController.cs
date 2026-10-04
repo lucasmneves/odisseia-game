@@ -140,6 +140,24 @@ namespace Odisseia.WorldMap
             SetDistance(next);
         }
 
+        /// <summary>
+        /// O navio de Odisseu (map_ship_marker, flâmula carmesim) no lugar do retângulo: sprite nativo em escala 1 — o
+        /// sinal do x continua sendo a direção, como o UpdateFacing espera. Sem a arte, fica o retângulo.
+        /// </summary>
+        private void Start()
+        {
+            var sr = visualRoot != null ? visualRoot.GetComponent<SpriteRenderer>() : null;
+            Sprite navio = Resources.Load<Sprite>("Odisseia/Map/map_ship_marker");
+            if (sr == null || navio == null)
+            {
+                return;
+            }
+
+            sr.sprite = navio;
+            sr.color = Color.white;
+            visualRoot.localScale = new Vector3(facingRight ? 1f : -1f, 1f, 1f);
+        }
+
         private void UpdateFacing(float input)
         {
             bool right = input > 0f;

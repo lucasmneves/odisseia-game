@@ -157,15 +157,16 @@ namespace Odisseia.WorldMap
             progressText = CreateText(root, "Progress", string.Empty, UITheme.FontBody,
                 UITheme.TextSecondary, new Vector2(0.5f, 1f), new Vector2(0f, -88f), new Vector2(600f, 28f));
 
-            // painel do nó (rodapé)
+            // painel do nó (rodapé). 148 de altura, não 108: com 108 o botão (rodapé, 12..52) cobria a linha de ajuda
+            // (−52..−80 do topo) — "Já concluída — [E] para jogar de novo" ficava escondida atrás dele.
             nodePanel = CreatePanel(root, "NodePanel", new Vector2(0.5f, 0f),
-                new Vector2(0f, 18f), new Vector2(560f, 108f));
+                new Vector2(0f, 18f), new Vector2(560f, 148f));
             nodeNameText = CreateText(nodePanel.transform, "NodeName", string.Empty, UITheme.FontHeading,
                 UITheme.TextPrimary, new Vector2(0.5f, 1f), new Vector2(0f, -12f), new Vector2(520f, 38f));
             nodeHintText = CreateText(nodePanel.transform, "NodeHint", string.Empty, UITheme.FontBody,
                 UITheme.TextSecondary, new Vector2(0.5f, 1f), new Vector2(0f, -52f), new Vector2(520f, 28f));
 
-            enterButton = CreateButton(nodePanel.transform, "EnterButton", "JOGAR",
+            enterButton = CreateButton(nodePanel.transform, "EnterButton", Localization.Get("ui.worldMap.enter"),
                 new Vector2(0.5f, 0f), new Vector2(0f, 12f), new Vector2(200f, 40f));
             enterButton.onClick.AddListener(() => manager?.TryEnterCurrentNode());
 

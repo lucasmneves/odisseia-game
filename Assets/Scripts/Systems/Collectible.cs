@@ -62,7 +62,10 @@ namespace Odisseia.Systems
             Sprite sprite = Odisseia.Core.GameAssets.Instance != null
                 ? Odisseia.Core.GameAssets.Instance.PlaceholderSprite
                 : null;
-            VfxBurst.Spawn(sprite, transform.position, burstColor, 8, 2.5f, 0.35f, 0.1f, 3f);
+            if (!VfxSheet.Play("fx_collect", transform.position))
+            {
+                VfxBurst.Spawn(sprite, transform.position, burstColor, 8, 2.5f, 0.35f, 0.1f, 3f);
+            }
             AudioManager.PlayCollect();
 
             StartCoroutine(PlayCollectEffectAndDestroy());

@@ -4170,6 +4170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 777013025}
   - component: {fileID: 777013026}
+  - component: {fileID: 777013027}
   m_Layer: 0
   m_Name: Brazier_DialogueTrigger_Mother_R
   m_TagString: Untagged
@@ -4252,6 +4253,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &777013027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777013024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ec61beb84d6dce076e971336589dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Systems.SpriteAnimator
+  resourcePath: Odisseia/Environments/Fire/mortos_brazier_tall_spectral_anim
+  defaultState: anim
+  defaultFramesPerSecond: 8.5
+  states: []
 --- !u!1 &800325959
 GameObject:
   m_ObjectHideFlags: 0
@@ -5508,6 +5525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1087673514}
   - component: {fileID: 1087673515}
+  - component: {fileID: 1087673516}
   m_Layer: 0
   m_Name: Brazier_DialogueTrigger_Shades_L
   m_TagString: Untagged
@@ -5590,6 +5608,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &1087673516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087673513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ec61beb84d6dce076e971336589dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Systems.SpriteAnimator
+  resourcePath: Odisseia/Environments/Fire/mortos_brazier_tall_spectral_anim
+  defaultState: anim
+  defaultFramesPerSecond: 7.5
+  states: []
 --- !u!1 &1101413272
 GameObject:
   m_ObjectHideFlags: 0
@@ -9068,6 +9102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1785186454}
   - component: {fileID: 1785186455}
+  - component: {fileID: 1785186456}
   m_Layer: 0
   m_Name: Brazier_DialogueTrigger_Mother_L
   m_TagString: Untagged
@@ -9150,6 +9185,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &1785186456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785186453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ec61beb84d6dce076e971336589dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Systems.SpriteAnimator
+  resourcePath: Odisseia/Environments/Fire/mortos_brazier_tall_spectral_anim
+  defaultState: anim
+  defaultFramesPerSecond: 8.5
+  states: []
 --- !u!1 &1785347900
 GameObject:
   m_ObjectHideFlags: 0
@@ -9423,6 +9474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1821484893}
   - component: {fileID: 1821484894}
+  - component: {fileID: 1821484895}
   m_Layer: 0
   m_Name: Brazier_DialogueTrigger_Shades_R
   m_TagString: Untagged
@@ -9505,6 +9557,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &1821484895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821484892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ec61beb84d6dce076e971336589dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Systems.SpriteAnimator
+  resourcePath: Odisseia/Environments/Fire/mortos_brazier_tall_spectral_anim
+  defaultState: anim
+  defaultFramesPerSecond: 7.5
+  states: []
 --- !u!1 &1821859006
 GameObject:
   m_ObjectHideFlags: 0

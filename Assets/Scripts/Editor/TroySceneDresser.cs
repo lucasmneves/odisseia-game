@@ -63,7 +63,7 @@ public static class TroySceneDresser
     {
         var scene = EditorSceneManager.OpenScene(ScenePath, OpenSceneMode.Single);
 
-        if (Arte("Background/troy_bg_sky.png") == null)
+        if (Arte("Background/troy_bg_sky_war.png") == null)
         {
             Debug.LogError("[Troia] arte nao importada — rode 'node Tools/unity-import-troy.js'");
             return false;
@@ -80,6 +80,7 @@ public static class TroySceneDresser
         VestirChao(trechos);
         MontarMuralha();
         PovoarAcampamento(trechos);
+        VestirGeometriaDeJogo();
 
         EditorSceneManager.MarkSceneDirty(scene);
         EditorSceneManager.SaveScene(scene);
@@ -116,18 +117,40 @@ public static class TroySceneDresser
         }
     }
 
+    /// <summary>
+    /// Fundo do TROY-02, nas cores do master aprovado (<c>troy_bg_master</c>): céu de fim de
+    /// tarde, montanhas azuis e a cidade de Troia como peça única. As alturas reproduzem a prova
+    /// de composição do pack (<c>Docs/Art/PixelLab/_troy02_city.png</c>) com o jogador no chão.
+    /// </summary>
     private static void MontarParallax()
     {
-        // Fundo de cobertura primeiro, na cor do topo do degradê do céu. Sem ele, qualquer
-        // ponto acima da faixa de céu fica sem nada — e a captura mostrou exatamente isso.
-        // O sprite de céu tem 5,97 un e a câmera mostra 10.
-        Bloco("Sky_Fill", 20f, 6f, 140f, 30f, new Color(100f / 255f, 129f / 255f, 160f / 255f), -60);
+        LerCamera();
+
+        // Cobertura acima do céu, na cor MEDIDA da primeira linha de troy_bg_sky_war (380 dos
+        // 380 px). O céu tem 5,6 un e a câmera mostra 10.
+        Bloco("Sky_Fill", (cameraMin + cameraMax) * 0.5f, 12f, 140f, 30f, Cor("#ca8f67"), -60);
 
         // Fator ALTO é longe: a camada acompanha a câmera e quase não desliza na tela.
-        // Os três ladrilham, então o fator pode descer até onde a profundidade aparece — em
-        // Ítaca as telas pintadas não ladrilhavam e obrigavam a 0,93-0,97, parallax quase nulo.
-        Camada("BG_Troy_Sky", "Background/troy_bg_sky.png", 1.00f, -50, -1.5f);
-        Camada("BG_Troy_City", "Background/troy_bg_city.png", 0.86f, -46, -1.2f);
+        Camada("BG_Troy_Sky", "Background/troy_bg_sky_war.png", 0.95f, -50, -1.6f);
+        GameObject montanhas = Camada("BG_Troy_Mountains", "Background/troy_bg_mountains.png", 0.85f, -48, -2.1f);
+
+        // A planície do master, por baixo das montanhas e presa a elas: quando a câmera sobe num
+        // salto, o chão do mundo desce na tela e abre uma faixa entre ele e a base das camadas.
+        // Sem esta faixa, o vão mostraria céu ABAIXO das montanhas. Cor MEDIDA da planície do
+        // master (linhas 290-330, 52% dos pixels).
+        if (montanhas != null)
+        {
+            var sr = montanhas.GetComponent<SpriteRenderer>();
+            GameObject planicie = Bloco("BG_Troy_Plain", montanhas.transform.position.x,
+                montanhas.transform.position.y - 5f, sr.size.x, 10f, Cor("#b28b54"), -49);
+            planicie.transform.SetParent(montanhas.transform, true);
+        }
+
+        Cidade();
+
+        // A faixa de névoa saiu do parallax. Como camada de largura inteira ela vira um
+        // retângulo cinza atravessando a tela, com borda superior reta — lê como erro, não como
+        // ar quente. Fumaça no horizonte fica melhor localizada, pelas colunas de fumaça.
         // A faixa de névoa saiu do parallax. Como camada de largura inteira ela vira um
         // retângulo cinza atravessando a tela, com borda superior reta — lê como erro, não como
         // ar quente. Fumaça no horizonte fica melhor localizada, pelas colunas de fumaça.
@@ -140,13 +163,13 @@ public static class TroySceneDresser
     /// Retângulo de cor chapada. É a ferramenta certa para fundo de cobertura, e a errada para
     /// qualquer outra coisa.
     /// </summary>
-    private static void Bloco(string nome, float x, float y, float largura, float altura,
+    private static GameObject Bloco(string nome, float x, float y, float largura, float altura,
         Color cor, int ordem)
     {
         Sprite quadrado = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Art/Player/PlaceholderSquare.png");
         if (quadrado == null)
         {
-            return;
+            return null;
         }
 
         var go = new GameObject(nome);
@@ -158,24 +181,83 @@ public static class TroySceneDresser
         sr.sprite = quadrado;
         sr.color = cor;
         sr.sortingOrder = ordem;
+        return go;
     }
 
-    private static void Camada(string nome, string caminho, float fator, int ordem, float baseY)
+    // --- Câmera -----------------------------------------------------------------------------
+
+    /// <summary>
+    /// Meia largura de tela com folga: 16:9 dá 8,9 un, mas WebGL e mobile em paisagem chegam a
+    /// 20:9 (11,1). A camada cobre a mais larga.
+    /// </summary>
+    private const float MeiaTela = 12f;
+
+    /// <summary>Altura da câmera com o jogador no chão: pés em −2 mais o offset de 1 do follow.</summary>
+    private const float CameraNoChao = GroundTop + 1f;
+
+    private static Vector3 cameraInicio;
+    private static float cameraMin;
+    private static float cameraMax;
+
+    /// <summary>
+    /// O <see cref="ParallaxLayer"/> mede o deslocamento a partir de onde a câmera ESTÁ quando
+    /// ele inicia — a posição dela na cena, porque o follow não salta para o jogador, desliza.
+    /// O vestidor anterior supunha a câmera em x=−33 e ela está em 0: o céu saía 33 un fora do
+    /// lugar, e o começo da fase mostrava só o bloco de cobertura. Lido da cena, não suposto.
+    /// O percurso vem dos limites do <see cref="CameraFollow"/>.
+    /// </summary>
+    private static void LerCamera()
+    {
+        Camera principal = Camera.main;
+        cameraInicio = principal != null ? principal.transform.position : Vector3.zero;
+        cameraMin = -34f + 8.9f;
+        cameraMax = 76f - 8.9f;
+
+        var follow = principal != null ? principal.GetComponent<CameraFollow>() : null;
+        if (follow != null)
+        {
+            var so = new SerializedObject(follow);
+            if (so.FindProperty("useBounds").boolValue)
+            {
+                float meia = so.FindProperty("orthographicSize").floatValue * 16f / 9f;
+                cameraMin = so.FindProperty("minBounds").vector2Value.x + meia;
+                cameraMax = so.FindProperty("maxBounds").vector2Value.x - meia;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Posição de autoria para que, com a câmera em <paramref name="cameraAlvo"/>, a camada
+    /// esteja em <paramref name="alvo"/> — o inverso do que o <see cref="ParallaxLayer"/> faz.
+    /// </summary>
+    private static float Autoria(float alvo, float cameraAlvo, float cameraDeInicio, float fator)
+    {
+        return alvo - (cameraAlvo - cameraDeInicio) * fator;
+    }
+
+    /// <summary>
+    /// Faixa ladrilhada que cobre a tela em todo o percurso da câmera. <paramref name="baseY"/> é
+    /// a altura da base com o jogador no chão.
+    /// </summary>
+    private static GameObject Camada(string nome, string caminho, float fator, int ordem, float baseY)
     {
         Sprite arte = Arte(caminho);
         if (arte == null)
         {
-            return;
+            return null;
         }
 
-        // Troia vai de x=-33 a x=74; a câmera passeia por ~107 unidades.
-        const float comprimento = 110f;
-        const float larguraDaTela = 18f;
-        float deslize = comprimento * (1f - fator);
+        // A camada desliza (1 − fator) do percurso em relação à tela; centrada no meio do
+        // percurso, precisa de metade disso de cada lado, mais a tela.
+        float meio = (cameraMin + cameraMax) * 0.5f;
+        float deslize = (cameraMax - cameraMin) * (1f - fator);
 
         var go = new GameObject(nome);
         go.transform.SetParent(cenario, false);
-        go.transform.position = new Vector3(-33f + deslize * 0.5f, baseY, 1f);
+        go.transform.position = new Vector3(
+            Autoria(meio, meio, cameraInicio.x, fator),
+            Autoria(baseY, CameraNoChao, cameraInicio.y, fator),
+            1f);
 
         var sr = go.AddComponent<SpriteRenderer>();
         sr.sprite = arte;
@@ -183,12 +265,56 @@ public static class TroySceneDresser
         sr.drawMode = SpriteDrawMode.Tiled;
         sr.tileMode = SpriteTileMode.Continuous;
         // Altura NATIVA: esticar size.y faz a faixa repetir na vertical e aparecer uma listra.
-        sr.size = new Vector2(deslize + larguraDaTela * 2f, arte.bounds.size.y);
+        sr.size = new Vector2(deslize + MeiaTela * 2f + 2f, arte.bounds.size.y);
 
+        Parallax(go, fator);
+        return go;
+    }
+
+    /// <summary>
+    /// A cidade NÃO ladrilha: Troia é um marco, uma só. Entra pela direita no campo de batalha,
+    /// fica inteira em quadro na aproximação da Área 4 (câmera em x≈50) e some atrás da muralha
+    /// de gameplay no fim. A base afunda 0,66 un no chão — a mesma linha da prova de composição,
+    /// onde a planície do master cobre o pé da muralha.
+    /// </summary>
+    private static void Cidade()
+    {
+        const float fator = 0.70f;
+        const float cameraNoCentro = 50f;
+        const float baseY = GroundTop - 0.66f;
+
+        Sprite arte = Arte("Background/troy_bg_city_distant.png");
+        if (arte == null)
+        {
+            return;
+        }
+
+        var go = new GameObject("BG_Troy_City");
+        go.transform.SetParent(cenario, false);
+        go.transform.position = new Vector3(
+            Autoria(cameraNoCentro, cameraNoCentro, cameraInicio.x, fator),
+            Autoria(baseY, CameraNoChao, cameraInicio.y, fator),
+            1f);
+
+        var sr = go.AddComponent<SpriteRenderer>();
+        sr.sprite = arte;
+        sr.sortingOrder = -46;
+
+        Parallax(go, fator);
+    }
+
+    private static void Parallax(GameObject go, float fator)
+    {
         var parallax = go.AddComponent<ParallaxLayer>();
         var so = new SerializedObject(parallax);
         so.FindProperty("parallaxFactor").floatValue = fator;
         so.ApplyModifiedProperties();
+    }
+
+    private static Color Cor(string hex)
+    {
+        ColorUtility.TryParseHtmlString(hex, out Color cor);
+        return cor;
     }
 
     /// <summary>
@@ -277,6 +403,96 @@ public static class TroySceneDresser
     /// jogador vê crescer. Ela tem 11,9 un e a câmera mostra 10 — não cabe em quadro, e é isso
     /// que faz Troia parecer grande.
     /// </summary>
+    // --- Geometria de jogo (N-08) -----------------------------------------------------------
+
+    /// <summary>
+    /// Os oito placeholders de gameplay que o PlaceholderProbe acusava, vestidos com arte que já existia (0 gerações).
+    /// A posição sai do COLISOR de cada um, nunca de constante: o topo do desenho cai no topo do colisor, que é onde o pé
+    /// pisa. Só o SpriteRenderer do placeholder é desligado — colisor, layer e scripts ficam como estão.
+    ///
+    /// O LevelGoal perde o mastro e a vela chapados: a narrativa da saída é o CAVALO ("o cavalo cumpriu o que a lança
+    /// não conseguiu"), que não tem asset (PIXELLAB-FUTURE). Até lá, a escada de cerco já posta em x=71, sobre o gatilho,
+    /// marca a chegada às muralhas.
+    /// </summary>
+    private static void VestirGeometriaDeJogo()
+    {
+        // Ponte e blocos têm pivô no CENTRO: centro = topo do colisor − meia altura do desenho.
+        if (Colisor("Platform_Bridge", out Bounds ponte))
+        {
+            Sprite tabuas = Arte("Gameplay/troy_plank_bridge.png");
+            if (tabuas != null)
+            {
+                Peca("Bridge_Planks", tabuas, ponte.center.x, ponte.max.y - tabuas.bounds.extents.y, -1, false);
+            }
+        }
+
+        Sprite bloco = Arte("Gameplay/troy_fallen_block.png");
+        for (int i = 1; i <= 3 && bloco != null; i++)
+        {
+            if (Colisor($"Gauntlet_{i}", out Bounds b))
+            {
+                // O do meio espelhado: três blocos idênticos em fila liam como ladrilho.
+                Peca($"Gauntlet_Block_{i}", bloco, b.center.x, b.max.y - bloco.bounds.extents.y, -1, i == 2);
+            }
+        }
+
+        // Pedra única (Tools/build-troy-obstacle.js), pivô na base, no chão sob o colisor de 0,6 × 0,8.
+        if (Colisor("Obstacle_Low", out Bounds obstaculo))
+        {
+            Sprite pedra = Arte("Gameplay/troy_fallen_stone.png");
+            if (pedra != null) { Peca("Obstacle_Stone", pedra, obstaculo.center.x, obstaculo.min.y, 1, false); }
+        }
+
+        // Limite esquerdo: é o lado GREGO (acampamento), então barricadas de toras do próprio acampamento, empilhadas até
+        // a altura do colisor, em espelho alternado — não pedra troiana. (O tile cheio de madeira foi tentado e lia como
+        // uma coluna de terra: o miolo dele é a mesma textura pontilhada do chão.)
+        if (Colisor("Wall_Troia", out Bounds muro))
+        {
+            Sprite toras = Arte("Camp/troy_barricade_01.png");
+            for (int i = 0; toras != null && muro.min.y + i * toras.bounds.size.y < muro.max.y - 0.5f; i++)
+            {
+                Peca($"Palisade_{i}", toras, muro.center.x, muro.min.y + i * toras.bounds.size.y, -1, i % 2 == 1);
+            }
+        }
+
+        foreach (string nome in new[] { "Platform_Bridge", "Gauntlet_1", "Gauntlet_2", "Gauntlet_3", "Obstacle_Low", "Wall_Troia" })
+        {
+            DesligarDesenho(GameObject.Find(nome));
+        }
+
+        GameObject alvo = GameObject.Find("LevelGoal");
+        if (alvo != null)
+        {
+            foreach (SpriteRenderer sr in alvo.GetComponentsInChildren<SpriteRenderer>(true)) { sr.enabled = false; }
+        }
+    }
+
+    private static bool Colisor(string nome, out Bounds b)
+    {
+        GameObject go = GameObject.Find(nome);
+        var col = go != null ? go.GetComponent<Collider2D>() : null;
+        b = col != null ? col.bounds : default;
+        if (col == null) { Debug.LogWarning($"[Troia] {nome} sem colisor na cena — não vestido"); }
+        return col != null;
+    }
+
+    private static void Peca(string nome, Sprite arte, float x, float y, int ordem, bool espelhar)
+    {
+        var go = new GameObject(nome);
+        go.transform.SetParent(cenario, false);
+        go.transform.position = new Vector3(x, y, 0f);
+        var sr = go.AddComponent<SpriteRenderer>();
+        sr.sprite = arte;
+        sr.sortingOrder = ordem;
+        sr.flipX = espelhar;
+    }
+
+    private static void DesligarDesenho(GameObject go)
+    {
+        var sr = go != null ? go.GetComponent<SpriteRenderer>() : null;
+        if (sr != null) { sr.enabled = false; }
+    }
+
     private static void MontarMuralha()
     {
         Sprite muro = Arte("Architecture/troy_wall_section_01.png");
@@ -322,7 +538,9 @@ public static class TroySceneDresser
         // Área 3: campo de batalha, no segundo e terceiro trechos.
         Prop("War_Barricade_1", -10f, "Camp/troy_barricade_01.png", 1);
         Prop("War_Spears_1", -6f, "Camp/troy_spear_cluster_01.png", 1);
-        Prop("War_Shield_1", 0f, "Camp/troy_broken_shield_01.png", 1);
+        // −2,5 e não 0: em 0 o escudo (ordem 1) cobria metade do altar do checkpoint (x=−1), e à direita esconderia a
+        // moeda de x=2.
+        Prop("War_Shield_1", -2.5f, "Camp/troy_broken_shield_01.png", 1);
         Prop("War_Banner_2", 2.5f, "Camp/troy_banner_pole_01.png", -1);
         Prop("War_Barricade_2", 17f, "Camp/troy_barricade_01.png", 1);
         Prop("War_Spears_2", 23f, "Camp/troy_spear_cluster_01.png", 1);

@@ -256,7 +256,7 @@ namespace Odisseia.UI
             }
 
             keyLabel.text = "...";
-            SetMessage($"Pressione a nova tecla para \"{entry.Label}\". Esc cancela.");
+            SetMessage(Localization.Get("ui.rebind.waiting", entry.Label));
             AudioManager.PlayUiClick();
 
             activeOperation = KeyRebindService.StartRebind(entry.Action, entry.BindingIndex, reason =>

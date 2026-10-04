@@ -96,3 +96,28 @@ mapeamento das montanhas puxava o verde das árvores do master e virava ruído.
 **Integração (depois):** parallax sugerido — céu 0,95 (quase parado, ladrilhado), montanhas 0,85 (ladrilhadas), cidade
 0,7 (peça única: Troia é um marco, desliza devagar e fica para trás do portão da Área 4). A fumaça sobre a cidade vem do
 TROY-07, por cima desta camada. Animação: nenhuma PixelLab; fogos dos telhados podem piscar por código.
+
+## TROY-02 — Integração no Unity (2026-10-02) · 0 gerações
+
+`TroySceneDresser.Run` (idempotente: 2ª e 3ª rodadas dão a cena idêntica linha a linha, só os fileIDs mudam).
+
+| Camada | Asset | Fator | Ordem | Base com o jogador no chão |
+|---|---|---|---|---|
+| Cobertura | `Sky_Fill` `#ca8f67` (1ª linha do `sky_war`) | mundo | −60 | — |
+| Céu | `troy_bg_sky_war`, ladrilhado | 0,95 | −50 | y −1,6 (topo na borda da tela) |
+| Planície | `BG_Troy_Plain` `#b28b54` (planície do master), filho das montanhas | 0,85 | −49 | abaixo das montanhas |
+| Montanhas | `troy_bg_mountains`, ladrilhado | 0,85 | −48 | y −2,1 (pé escondido no chão) |
+| Cidade | `troy_bg_city_distant`, **peça única** | 0,70 | −46 | y −2,66 (como na prova de composição) |
+
+- **Bug corrigido (apresentação):** o vestidor supunha a câmera começando em x=−33; ela está em x=0 na cena e o
+  `CameraFollow` não salta, desliza. O `ParallaxLayer` mede a partir da posição da cena, então o céu antigo ficava 33 un
+  fora do lugar e o início da fase mostrava só o bloco azul. Agora posição e percurso são lidos da câmera e dos limites
+  do `CameraFollow`; a cobertura lateral considera tela até 20:9 (meia largura 12 un).
+- **Cidade como marco:** entra pela direita no campo de batalha (câmera ≈ −10), fica inteira em quadro na aproximação da
+  Área 4 (câmera 50) e termina atrás da muralha de gameplay.
+- **Planície presa às montanhas:** com a câmera alta (salto) e nos abismos, o vão abaixo das camadas mostra a planície
+  do master em vez de céu.
+- `troy_bg_sky` e `troy_bg_city` antigos ficaram sem uso (não apagados).
+- Capturas antes/depois: `Docs/Art/PixelLab/TR-02/_integracao/` (y −1 e y 2); **0 pixel magenta** nas 9.
+- `PlaceholderProbe` Troia: 9 → **8** visíveis — restam só as 8 geometrias de gameplay (N-08): `Wall_Troia`,
+  `Obstacle_Low`, `Platform_Bridge`, `Gauntlet_1..3`, `LevelGoal/Mast|Sail`. Colisores da cena: 14, idênticos.

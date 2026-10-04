@@ -50,6 +50,18 @@ namespace Odisseia.WorldMap
             }
         }
 
+        /// <summary>
+        /// Reaplica o estado depois do Bind (que vem logo após o Instantiate, no mesmo quadro). Sem isto o nó BLOQUEADO
+        /// ficava com o quadrado: o estado dele nunca muda, então o Apply só tinha rodado antes de a ordem ser conhecida.
+        /// </summary>
+        private void Start()
+        {
+            if (node != null)
+            {
+                Apply(node.State);
+            }
+        }
+
         private void OnDisable()
         {
             if (node != null)
@@ -58,10 +70,79 @@ namespace Odisseia.WorldMap
             }
         }
 
+        // ---------------------------------------------------------------- emblemas (Asset Completion PXL-018)
+
+        private const string PastaDoMapa = "Odisseia/Map/";
+
+        private bool emblemaTentado;
+        private Sprite emblema, emblemaBloqueado;
+        private GameObject louro, aro;
+
+        /// <summary>
+        /// Emblema da fase (<c>emblem_NN</c>, NN = ordem na campanha) e a variante bloqueada; louro atrás quando
+        /// concluída e aro animado na frente quando atual. Carregado no primeiro Apply com a ordem conhecida — o nó é
+        /// instanciado (Awake/OnEnable) antes do Bind que diz qual fase ele é. Sem a arte, fica o quadrado colorido.
+        /// </summary>
+        private void TentarEmblema()
+        {
+            if (emblemaTentado || node == null || node.Order <= 0)
+            {
+                return;
+            }
+
+            emblemaTentado = true;
+            emblema = Resources.Load<Sprite>($"{PastaDoMapa}Emblems/emblem_{node.Order:00}");
+            emblemaBloqueado = Resources.Load<Sprite>($"{PastaDoMapa}Emblems/emblem_{node.Order:00}_locked");
+            if (emblema == null)
+            {
+                return;
+            }
+
+            // O emblema já é a marca de concluído (com o louro); o ✓ antigo sairia por cima dele.
+            if (completedMark != null) { completedMark.SetActive(false); completedMark = null; }
+
+            Sprite folhaDeLouro = Resources.Load<Sprite>(PastaDoMapa + "States/map_state_completed_wreath");
+            if (folhaDeLouro != null)
+            {
+                louro = Camada("Wreath", folhaDeLouro, spriteRenderer.sortingOrder - 1);
+            }
+
+            // Ativo ao receber o animador (o Awake dele, que pega o SpriteRenderer, só roda em objeto ativo).
+            aro = Camada("CurrentRing", null, spriteRenderer.sortingOrder + 1, ativo: true);
+            var animador = aro.AddComponent<Odisseia.Systems.SpriteAnimator>();
+            animador.Configure(PastaDoMapa + "States/map_state_current_ring", "ring", 8f);
+            aro.SetActive(false);
+        }
+
+        private GameObject Camada(string nome, Sprite sprite, int ordem, bool ativo = false)
+        {
+            var go = new GameObject(nome);
+            go.transform.SetParent(transform, false);
+            var sr = go.AddComponent<SpriteRenderer>();
+            sr.sprite = sprite;
+            sr.sortingOrder = ordem;
+            go.SetActive(ativo);
+            return go;
+        }
+
         private void Apply(LevelNodeState state)
         {
             if (spriteRenderer == null)
             {
+                return;
+            }
+
+            TentarEmblema();
+            if (emblema != null)
+            {
+                // Arte nativa (42,857 px/un) em escala 1: o emblema tem 1,31 un. O nó atual não cresce — o aro
+                // animado é o que o marca; o pulso continua, sutil.
+                spriteRenderer.sprite = state == LevelNodeState.Locked && emblemaBloqueado != null ? emblemaBloqueado : emblema;
+                spriteRenderer.color = Color.white;
+                targetScale = 1f;
+                transform.localScale = Vector3.one;
+                if (louro != null) { louro.SetActive(state == LevelNodeState.Completed); }
+                if (aro != null) { aro.SetActive(state == LevelNodeState.Current); }
                 return;
             }
 
