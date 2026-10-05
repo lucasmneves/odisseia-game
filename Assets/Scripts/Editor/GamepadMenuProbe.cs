@@ -168,26 +168,66 @@ public static class GamepadMenuProbe
         // reconstrói (o jogo não permite isso, a troca é feita dentro delas).
         OptionsMenu.Open();
         yield return 0.3f;
-        // Nada de "(Negative)", rótulos e teclas na língua do jogo, nos dois idiomas.
+        // Etapa 13A: rótulos, teclas, mensagens e dicas na língua do jogo, nos dois idiomas — e nada da outra língua.
         Language idiomaOriginal = Localization.Current;
-        var reconstruir = typeof(OptionsMenu).GetMethod("RebuildRows", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
-        foreach (Language idioma in new[] { Language.English, Language.Portuguese })
+        var idiomas = new[]
         {
+            (Language.English,
+                new[] { "CONTROLS", "Move left", "Move right", "SPACE", "LEFT ARROW", "RIGHT ARROW", "LEFT SHIFT", "RIGHT SHIFT", "Restore defaults", "Close", "Select a key" },
+                new[] { "Mover", "ESPAÇO", "SETA", "ESQUERD", "Fechar", "Restaurar", "Selecione" },
+                "key already used by \"Attack\"", "Not changed — cancelled.", "Press SPACE to jump."),
+            (Language.Portuguese,
+                new[] { "CONTROLES", "Mover para a esquerda", "Mover para a direita", "ESPAÇO", "SETA ESQUERDA", "SETA DIREITA", "SHIFT ESQUERDO", "SHIFT DIREITO", "Restaurar padrões", "Fechar", "Selecione uma tecla" },
+                new[] { "Move ", "SPACE", "ARROW", "LEFT", "Close", "Restore", "Select" },
+                "tecla já usada por \"Atacar\"", "Não alterado — cancelado.", "Pressione ESPAÇO para pular."),
+        };
+
+        foreach (var (idioma, esperado, proibido, conflito, cancelado, tutorial) in idiomas)
+        {
+            // Troca com a tela aberta: título e botões (LocalizedText) mudam na hora, sem reiniciar nada.
             Localization.Current = idioma;
-            reconstruir.Invoke(OptionsMenu.Instance, null);
             yield return 0.2f;
+            string vivo = string.Join(" | ", OptionsMenu.Instance.GetComponentsInChildren<Text>(false)
+                .Where(t => t.name == "Title" || t.transform.parent.name.EndsWith("Button") && t.transform.parent.name != "KeyButton")
+                .Select(t => t.text));
+            Checar(esperado.Count(x => vivo.Contains(x)) == 3, $"{idioma}, troca com a tela aberta: {vivo}");
+
+            // Fecha e reabre (o caminho do jogo: troca nas Configurações, depois Personalizar): linhas na nova língua.
+            e = Botao(GamepadButton.East); while (e.MoveNext()) { yield return e.Current; }
+            OptionsMenu.Open();
+            yield return 0.3f;
             string tela = string.Join(" | ", OptionsMenu.Instance.GetComponentsInChildren<Text>(false).Select(t => t.text));
             L($"- {idioma}: {tela}");
-            bool ok = !tela.Contains("(Negative)") && !tela.Contains("(Positive)");
-            ok &= idioma == Language.English
-                ? tela.Contains("CONTROLS") && tela.Contains("Move left") && tela.Contains("SPACE") && tela.Contains("Restore defaults")
-                : tela.Contains("CONTROLES") && tela.Contains("Mover para a esquerda") && tela.Contains("ESPAÇO")
-                  && tela.Contains("SETA ESQUERDA") && tela.Contains("Restaurar padrões") && tela.Contains("Fechar");
-            Checar(ok, $"tela de Controles traduzida em {idioma}");
+            var faltam = esperado.Where(x => !tela.Contains(x)).ToList();
+            var sobram = proibido.Where(x => tela.Contains(x)).ToList();
+            Checar(!tela.Contains("(Negative)") && !tela.Contains("(Positive)") && faltam.Count == 0 && sobram.Count == 0,
+                $"{idioma}: tela traduzida (faltam: {string.Join(", ", faltam)}; da outra língua: {string.Join(", ", sobram)})");
+
+            // Mensagens da captura: tecla em conflito (Z do Atacar) e cancelamento por Esc. A linha do Interagir fica com E.
+            var interagir = OptionsMenu.Instance.GetComponentsInChildren<Button>(false).Last(b => b.name == "KeyButton");
+            Text mensagem = OptionsMenu.Instance.GetComponentsInChildren<Text>(false).First(t => t.name == "Message");
+            EventSystem.current.SetSelectedGameObject(interagir.gameObject);
+            yield return 0.1f;
+            e = Botao(GamepadButton.South); while (e.MoveNext()) { yield return e.Current; }
+            e = Tecla(Key.Z); while (e.MoveNext()) { yield return e.Current; }
+            yield return 0.2f;
+            Checar(mensagem.text.Contains(conflito) && interagir.GetComponentInChildren<Text>().text == "E",
+                $"{idioma}, conflito: \"{mensagem.text}\" (tecla ficou {interagir.GetComponentInChildren<Text>().text})");
+            EventSystem.current.SetSelectedGameObject(interagir.gameObject);
+            e = Botao(GamepadButton.South); while (e.MoveNext()) { yield return e.Current; }
+            e = Tecla(Key.Escape); while (e.MoveNext()) { yield return e.Current; }
+            yield return 0.2f;
+            Checar(OptionsMenu.IsOpen && mensagem.text == cancelado, $"{idioma}, cancelamento: \"{mensagem.text}\" (tela aberta: {OptionsMenu.IsOpen})");
+
+            // Dicas com os mesmos nomes de tecla (o teclado é o dispositivo agora, pelo Esc acima).
+            string teclaPausa = ControlHints.Button("Pause");
+            string pulo = ControlHints.Instruction("tut.Level_02_Troia.Tutorial_Jump", "Jump");
+            Checar(InputDeviceTracker.Current == InputDeviceKind.Keyboard && teclaPausa == "ESC" && pulo == tutorial,
+                $"{idioma}, dicas no teclado: pausa \"{teclaPausa}\", tutorial \"{pulo}\"");
         }
+
+        KeyRebindService.ResetAll();
         Localization.Current = idiomaOriginal;
-        reconstruir.Invoke(OptionsMenu.Instance, null);
-        yield return 0.2f;
         e = Botao(GamepadButton.East); while (e.MoveNext()) { yield return e.Current; }
         Checar(!OptionsMenu.IsOpen, "B fecha Controles aberta sozinha");
 

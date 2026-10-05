@@ -479,3 +479,47 @@ Build WebGL Success · navegador (`?mudo=1`, controle simulado) com os glifos vi
 - Testes: `LocalizationProbe` OK (317 chaves) · `InputBindingsProbe` OK · `GamepadMenuProbe` OK, com checagem nova que lê a
   tela inteira em inglês e em português (sem "(Negative)", "Move left"/"Mover para a esquerda", "SPACE"/"ESPAÇO",
   "Restore defaults"/"Restaurar padrões").
+
+## 17. ETAPA 13A — CONTROLS LOCALIZATION (2026-10-04)
+
+**Problema:** "Negative"/"Positive" não eram reconhecidos porque o código comparava em minúsculas com os valores
+capitalizados do asset — a tela mostrava "Mover (Negative)". Além disso, nomes de ação, título, botões, mensagens e motivos
+da captura estavam fixos em PT, e os nomes de tecla em EN.
+
+**Correção** (commit `39c8a12`): comparação case-insensitive e centralização das traduções de ações (`ui.rebind.*`),
+textos da tela (`ui.controls.*`), motivos da captura (`ui.rebind.reason.*`) e nomes de tecla (`ui.key.*`) na
+`LocalizationTable`, pelo `Localization` existente. Textos fixos da tela com `LocalizedText` (mudam com a tela aberta).
+
+**Validação (esta subetapa):** o `GamepadMenuProbe` ganhou, por idioma:
+
+| Verificação | English | Português |
+|---|---|---|
+| Troca com a tela aberta (título e botões) | — | CONTROLES · Restaurar padrões · Fechar |
+| Linhas e teclas | Move left/right · SPACE · LEFT/RIGHT ARROW · LEFT/RIGHT SHIFT | Mover para a esquerda/direita · ESPAÇO · SETA ESQUERDA/DIREITA · SHIFT ESQUERDO/DIREITO |
+| Nada da outra língua | sem Mover/ESPAÇO/SETA/Fechar… | sem Move/SPACE/ARROW/Close… |
+| Sem "(Negative)"/"(Positive)" | OK | OK |
+| Conflito (Interagir → Z) | Not changed — key already used by "Attack". (tecla fica E) | Não alterado — tecla já usada por "Atacar". |
+| Cancelamento por Esc | Not changed — cancelled. (tela continua aberta) | Não alterado — cancelado. |
+| Dica de pausa no teclado | ESC | ESC |
+| Tutorial de Troia | Press SPACE to jump. | Pressione ESPAÇO para pular. |
+
+Revisão de código: sem texto fixo restante em `OptionsMenu`/`KeyRebindService` (só "—" para tecla vazia); sem dependência
+circular (`KeyRebindService` → `Localization`, nunca o contrário); lógica de idioma só na tabela. Duplicação aceita, por
+contexto: "CONTROLES" (seção das Configurações × título da tela) e "Fechar" (`ui.settings.close` é "FECHAR", em caixa
+alta) — chaves separadas para cada tela poder mudar sozinha.
+
+**Resultado: PASS.** Regressão e WebGL abaixo.
+
+**Regressão (13A):** compilação 0 erros · `LocalizationProbe` OK (317 chaves) · `GamepadSetup` OK · `InputBindingsProbe` OK
+(Pausa = ESC) · `CampaignValidation` OK · `PlaceholderProbe` OK nas 16 fases · `GamepadMenuProbe` OK (inclui foco, D-pad,
+B, captura, Xbox/PlayStation/genérico e as checagens acima) · Build WebGL Success (dados 15,91 MB).
+
+**WebGL (`?mudo=1`, controle simulado pela Gamepad API):** menu → A em Settings → A no ">" do idioma troca para Português
+na hora (tela inteira refeita) → D-pad até Personalizar → A abre CONTROLES todo em português (Mover para a esquerda, SETA
+ESQUERDA, ESPAÇO, SHIFT ESQUERDO, Restaurar padrões, Fechar; foco em Fechar) → B fecha e o foco volta a Personalizar →
+volta para English → Customize abre CONTROLS em inglês (Move left, LEFT ARROW, SPACE, LEFT SHIFT, Restore defaults, Close)
+→ B, B volta ao menu. 0 erros no console.
+
+**Achados para a 13B (não corrigidos aqui):** nomes de qualidade gráfica em inglês nas Configurações em português ("High" —
+vêm do `QualitySettings` do Unity); rótulo "Restaurar padrões" encostado nas bordas do botão de 196 un. (DejaVu é mais larga
+que a fonte antiga).
