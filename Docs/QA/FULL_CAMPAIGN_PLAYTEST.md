@@ -452,7 +452,7 @@ Build WebGL Success · navegador (`?mudo=1`, controle simulado) com os glifos vi
   as folhas. → **Feito na 2ª rodada (abaixo).**
 - Nas capturas do `HudShot`, pedras do primeiro plano de Sereias passam por cima da caixa de diálogo — efeito da captura
   (Canvas em Screen Space Camera); no jogo o Canvas é Overlay. Conferir no navegador ao passar por Sereias.
-- A tela de Controles continua com rótulos fixos em PT.
+- A tela de Controles continua com rótulos fixos em PT. → **Traduzida na 3ª rodada (abaixo).**
 
 ### Contraste (2ª rodada da Etapa 13, pedido do usuário)
 
@@ -464,3 +464,18 @@ Build WebGL Success · navegador (`?mudo=1`, controle simulado) com os glifos vi
   tentativa ancorada no centro ficava fora da tela: o Canvas ainda tem 1280×960 quando a cena carrega.
 - Conferido por `HudShot`: Gado do Sol (números e "Waiting for a fair wind" legíveis sobre as nuvens), Sereias (céu claro),
   Fase 01, Final.
+
+### Tela de Controles traduzida (3ª rodada da Etapa 13)
+
+- **"Mover (Negative)" era bug:** o asset grava as partes do eixo como "Negative"/"Positive" e o `KeyRebindService`
+  comparava com "negative" — as chaves `ui.rebind.moveLeft/moveRight`, que já existiam, nunca eram usadas. Comparação sem
+  diferenciar maiúsculas.
+- Nomes das ações saíram do `switch` fixo em PT para `ui.rebind.*` (+ `ui.rebind.sprint`); título, dica, botões e
+  mensagens para `ui.controls.*`, com `LocalizedText` nos textos fixos (a tela é montada uma vez e sobrevive à troca de
+  idioma); motivos da captura (cancelado, ação inválida, tecla já usada) para `ui.rebind.reason.*`.
+- **Nomes de tecla traduzidos** (`ui.key.<controle>`): SPACE/ESPAÇO, LEFT ARROW/SETA ESQUERDA, LEFT SHIFT/SHIFT ESQUERDO,
+  ESC, Enter, Tab… Letras e números ficam como o Input System escreve. Vale também para as dicas do tutorial
+  ("Pressione ESPAÇO para pular").
+- Testes: `LocalizationProbe` OK (317 chaves) · `InputBindingsProbe` OK · `GamepadMenuProbe` OK, com checagem nova que lê a
+  tela inteira em inglês e em português (sem "(Negative)", "Move left"/"Mover para a esquerda", "SPACE"/"ESPAÇO",
+  "Restore defaults"/"Restaurar padrões").

@@ -104,7 +104,7 @@ namespace Odisseia.UI
             focusBeforeOpen = EventSystem.current != null ? EventSystem.current.currentSelectedGameObject : null;
 
             RebuildRows();
-            SetMessage("Clique numa tecla para trocar. Esc cancela.");
+            SetMessage(Localization.Get("ui.controls.hint"));
             root.SetActive(true);
 
             // Começa no Fechar, não na primeira tecla: no controle, o A logo ao abrir
@@ -217,7 +217,7 @@ namespace Odisseia.UI
 
             if (entries.Count == 0)
             {
-                SetMessage("Controles indisponíveis nesta cena.");
+                SetMessage(Localization.Get("ui.controls.unavailable"));
                 return;
             }
 
@@ -329,8 +329,8 @@ namespace Odisseia.UI
                 RefreshKeyLabels();
 
                 SetMessage(reason == null
-                    ? $"\"{entry.Label}\" atualizado."
-                    : $"Não alterado — {reason}.");
+                    ? Localization.Get("ui.controls.updated", entry.Label)
+                    : Localization.Get("ui.controls.notChanged", reason));
             });
         }
 
@@ -403,8 +403,9 @@ namespace Odisseia.UI
             var panelImage = panelGO.AddComponent<Image>();
             panelImage.color = UITheme.PanelBackground;
 
-            Text title = CreateText(panelRect, "Title", "CONTROLES", UITheme.FontHeading,
+            Text title = CreateText(panelRect, "Title", Localization.Get("ui.controls.title"), UITheme.FontHeading,
                 UITheme.TextAccent, TextAnchor.MiddleCenter);
+            Localize(title, "ui.controls.title");
             var titleRect = (RectTransform)title.transform;
             titleRect.anchorMin = new Vector2(0f, 1f);
             titleRect.anchorMax = new Vector2(1f, 1f);
@@ -432,17 +433,17 @@ namespace Odisseia.UI
             messageRect.sizeDelta = new Vector2(-24f, 40f);
             messageRect.anchoredPosition = new Vector2(0f, 66f);
 
-            resetButton = CreateActionButton(panelRect, "ResetButton", "Restaurar padrões",
+            resetButton = CreateActionButton(panelRect, "ResetButton", "ui.controls.reset",
                 new Vector2(0.5f, 0f), new Vector2(-104f, 18f), new Vector2(196f, 44f), () =>
                 {
                     CancelActiveOperation();
                     KeyRebindService.ResetAll();
                     RefreshKeyLabels();
-                    SetMessage("Controles restaurados.");
+                    SetMessage(Localization.Get("ui.controls.restored"));
                     AudioManager.PlayUiClick();
                 });
 
-            closeButton = CreateActionButton(panelRect, "CloseButton", "Fechar",
+            closeButton = CreateActionButton(panelRect, "CloseButton", "ui.controls.close",
                 new Vector2(0.5f, 0f), new Vector2(104f, 18f), new Vector2(196f, 44f), Close);
 
             // Foco e "voltar" para teclado e controle; sem isto a tela só respondia ao mouse.
@@ -452,7 +453,20 @@ namespace Odisseia.UI
             root.SetActive(false);
         }
 
-        private Button CreateActionButton(RectTransform parent, string name, string label,
+        /// <summary>
+        /// Liga um texto montado aqui à tabela de idiomas: a tela é montada uma vez só e sobrevive à troca de idioma nas
+        /// configurações, então o texto fixo precisa se reescrever sozinho.
+        /// </summary>
+        private static void Localize(Text text, string key)
+        {
+            if (text != null)
+            {
+                text.gameObject.AddComponent<LocalizedText>().SetKey(key);
+            }
+        }
+
+        /// <summary><paramref name="labelKey"/> é a chave de tradução do rótulo.</summary>
+        private Button CreateActionButton(RectTransform parent, string name, string labelKey,
             Vector2 anchor, Vector2 position, Vector2 size, UnityEngine.Events.UnityAction onClick)
         {
             var go = new GameObject(name, typeof(RectTransform));
@@ -473,9 +487,10 @@ namespace Odisseia.UI
             button.colors = ButtonColors();
             button.onClick.AddListener(onClick);
 
-            Text text = CreateText(rect, "Label", label, UITheme.FontButton, UITheme.TextPrimary,
+            Text text = CreateText(rect, "Label", Localization.Get(labelKey), UITheme.FontButton, UITheme.TextPrimary,
                 TextAnchor.MiddleCenter);
             Stretch((RectTransform)text.transform);
+            Localize(text, labelKey);
             return button;
         }
 

@@ -111,6 +111,7 @@ public static class GamepadMenuProbe
         OptionsMenu.Open();
         yield return 0.3f;
         Checar(OptionsMenu.IsOpen && Sel() == "CloseButton", $"Controles abertos, foco inicial: {Sel()} (esperado CloseButton)");
+
         e = Botao(GamepadButton.DpadUp); while (e.MoveNext()) { yield return e.Current; }
         Checar(Sel() == "ResetButton", $"D-pad cima: {Sel()} (esperado ResetButton)");
         e = Botao(GamepadButton.DpadUp); while (e.MoveNext()) { yield return e.Current; }
@@ -162,6 +163,33 @@ public static class GamepadMenuProbe
         e = Botao(GamepadButton.East); while (e.MoveNext()) { yield return e.Current; }
         yield return 0.2f;
         Checar(!SettingsScreen.IsOpen && Sel() != "(nada)", $"B fecha Configurações: aberta={SettingsScreen.IsOpen}, foco {Sel()}");
+
+        // Tradução da tela de Controles (etapa 13), aberta sozinha: trocar o idioma com as Configurações por baixo as
+        // reconstrói (o jogo não permite isso, a troca é feita dentro delas).
+        OptionsMenu.Open();
+        yield return 0.3f;
+        // Nada de "(Negative)", rótulos e teclas na língua do jogo, nos dois idiomas.
+        Language idiomaOriginal = Localization.Current;
+        var reconstruir = typeof(OptionsMenu).GetMethod("RebuildRows", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
+        foreach (Language idioma in new[] { Language.English, Language.Portuguese })
+        {
+            Localization.Current = idioma;
+            reconstruir.Invoke(OptionsMenu.Instance, null);
+            yield return 0.2f;
+            string tela = string.Join(" | ", OptionsMenu.Instance.GetComponentsInChildren<Text>(false).Select(t => t.text));
+            L($"- {idioma}: {tela}");
+            bool ok = !tela.Contains("(Negative)") && !tela.Contains("(Positive)");
+            ok &= idioma == Language.English
+                ? tela.Contains("CONTROLS") && tela.Contains("Move left") && tela.Contains("SPACE") && tela.Contains("Restore defaults")
+                : tela.Contains("CONTROLES") && tela.Contains("Mover para a esquerda") && tela.Contains("ESPAÇO")
+                  && tela.Contains("SETA ESQUERDA") && tela.Contains("Restaurar padrões") && tela.Contains("Fechar");
+            Checar(ok, $"tela de Controles traduzida em {idioma}");
+        }
+        Localization.Current = idiomaOriginal;
+        reconstruir.Invoke(OptionsMenu.Instance, null);
+        yield return 0.2f;
+        e = Botao(GamepadButton.East); while (e.MoveNext()) { yield return e.Current; }
+        Checar(!OptionsMenu.IsOpen, "B fecha Controles aberta sozinha");
 
         // ---- Mapa-múndi: dica por dispositivo
         e = Carregar(SceneLoader.WorldMap); while (e.MoveNext()) { yield return e.Current; }

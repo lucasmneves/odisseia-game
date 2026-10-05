@@ -872,12 +872,13 @@ Detalhes completos: `Docs/QA/FULL_CAMPAIGN_PLAYTEST.md` §10–16, `Docs/Art/PIX
     → travessão e ✕ □ △ ○ ◄ ► ✓ aparecem no WebGL (QA-10 resolvido; +0,34 MB). Emojis removidos (objetivo, fome, lótus,
     mastro, vento); mastro e vento traduzidos; letreiro da Fase 14 ganhou `LocalizedText`. Ícones de fome, cera (barra das
     sereias) e lótus nos indicadores (`IndicatorIcon`). Menu principal mantido. **Contraste:** contorno nos textos soltos do
-    HUD e do Final, e faixa translúcida atrás do título do Final (`TextContrast`). Detalhes: QA §16.
+    HUD e do Final, e faixa translúcida atrás do título do Final (`TextContrast`). **Tela de Controles traduzida** (rótulos,
+    botões, mensagens e nomes de tecla; corrigido "Mover (Negative)"). Detalhes: QA §16.
 
 ### Próximos passos
 - **Polish que ficou:** mapa geográfico sobre o
-  `map_aegean`; chama do altar animada; ícone do escudo (o `PlayerShield` não tem medidor); rótulos fixos em PT na tela
-  de Controles. Menu principal: mantido por decisão do usuário.
+  `map_aegean`; chama do altar animada; ícone do escudo (o `PlayerShield` não tem medidor). Menu principal: mantido por
+  decisão do usuário.
 - **PIXELLAB-FUTURE:** cavalo de Troia (saída da Fase 02); ataques das 6 facções (PXL-012) e escudo no ar (PXL-013) — pagos,
   download bloqueado (`node Tools/fetch-paid-anims.js` só com autorização).
 - **Não validado:** iOS/Android físicos, gamepad físico, Fase 01 inteira por input, dificuldade da Cila por humano,

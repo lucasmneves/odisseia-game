@@ -478,6 +478,101 @@ namespace Odisseia.Systems
                 "{0} (alt.)",
             },
 
+            ["ui.rebind.sprint"] = new[]
+            {
+                "Sprint",
+                "Correr",
+            },
+
+            ["ui.rebind.reason.invalid"] = new[]
+            {
+                "invalid action",
+                "ação inválida",
+            },
+
+            ["ui.rebind.reason.cancelled"] = new[]
+            {
+                "cancelled",
+                "cancelado",
+            },
+
+            ["ui.rebind.reason.conflict"] = new[]
+            {
+                "key already used by \"{0}\"",
+                "tecla já usada por \"{0}\"",
+            },
+
+            // ---------------------------------------------------------- Tela de Controles
+
+            ["ui.controls.title"] = new[]
+            {
+                "CONTROLS",
+                "CONTROLES",
+            },
+
+            ["ui.controls.hint"] = new[]
+            {
+                "Select a key to change it. Esc cancels.",
+                "Selecione uma tecla para trocar. Esc cancela.",
+            },
+
+            ["ui.controls.unavailable"] = new[]
+            {
+                "Controls unavailable in this scene.",
+                "Controles indisponíveis nesta cena.",
+            },
+
+            ["ui.controls.updated"] = new[]
+            {
+                "\"{0}\" updated.",
+                "\"{0}\" atualizado.",
+            },
+
+            ["ui.controls.notChanged"] = new[]
+            {
+                "Not changed — {0}.",
+                "Não alterado — {0}.",
+            },
+
+            ["ui.controls.restored"] = new[]
+            {
+                "Controls restored.",
+                "Controles restaurados.",
+            },
+
+            ["ui.controls.reset"] = new[]
+            {
+                "Restore defaults",
+                "Restaurar padrões",
+            },
+
+            ["ui.controls.close"] = new[]
+            {
+                "Close",
+                "Fechar",
+            },
+
+            // ---------------------------------------------------------- Nomes de tecla (ui.key.<controle do Input System>)
+            // Só as que têm nome; letras e números ficam como o Input System escreve.
+
+            ["ui.key.space"] = new[] { "SPACE", "ESPAÇO" },
+            ["ui.key.leftArrow"] = new[] { "LEFT ARROW", "SETA ESQUERDA" },
+            ["ui.key.rightArrow"] = new[] { "RIGHT ARROW", "SETA DIREITA" },
+            ["ui.key.upArrow"] = new[] { "UP ARROW", "SETA PARA CIMA" },
+            ["ui.key.downArrow"] = new[] { "DOWN ARROW", "SETA PARA BAIXO" },
+            ["ui.key.leftShift"] = new[] { "LEFT SHIFT", "SHIFT ESQUERDO" },
+            ["ui.key.rightShift"] = new[] { "RIGHT SHIFT", "SHIFT DIREITO" },
+            ["ui.key.leftCtrl"] = new[] { "LEFT CTRL", "CTRL ESQUERDO" },
+            ["ui.key.rightCtrl"] = new[] { "RIGHT CTRL", "CTRL DIREITO" },
+            ["ui.key.leftAlt"] = new[] { "LEFT ALT", "ALT ESQUERDO" },
+            ["ui.key.rightAlt"] = new[] { "RIGHT ALT", "ALT DIREITO" },
+            ["ui.key.enter"] = new[] { "ENTER", "ENTER" },
+            ["ui.key.numpadEnter"] = new[] { "NUMPAD ENTER", "ENTER NUMÉRICO" },
+            ["ui.key.tab"] = new[] { "TAB", "TAB" },
+            ["ui.key.backspace"] = new[] { "BACKSPACE", "BACKSPACE" },
+            ["ui.key.escape"] = new[] { "ESC", "ESC" },
+            ["ui.key.capsLock"] = new[] { "CAPS LOCK", "CAPS LOCK" },
+
             ["ui.npc.interactPrompt"] = new[]
             {
                 "Press {0} to talk",
