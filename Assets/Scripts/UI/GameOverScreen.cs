@@ -153,6 +153,15 @@ namespace Odisseia.UI
             menuLabel = CreateButton(root.transform, "MenuButton", string.Empty,
                 new Vector2(280f, 54f), new Vector2(150f, -110f), BackToMenu);
 
+            // Foco para teclado e controle: sem um botão selecionado, quem joga só de
+            // controle chegava a esta tela sem ter como tentar de novo nem sair dela.
+            var navigator = root.AddComponent<MenuNavigator>();
+            navigator.SetItems(new[]
+            {
+                retryLabel.GetComponentInParent<Button>(),
+                menuLabel.GetComponentInParent<Button>(),
+            });
+
             hintText = CreateText(root.transform, "Hint",
                 string.Empty, UITheme.FontBody,
                 UITheme.TextSecondary, new Vector2(900f, 34f), new Vector2(0f, -170f));

@@ -140,7 +140,8 @@ namespace Odisseia.UI
                 AjustarAoTamanhoDaTela();
             }
 
-            if (!IsOpen || OptionsMenu.IsOpen)
+            // O B/Esc que acabou de fechar a tela de controles não fecha esta junto.
+            if (!IsOpen || OptionsMenu.IsOpen || OptionsMenu.ClosedThisFrame)
             {
                 return;
             }

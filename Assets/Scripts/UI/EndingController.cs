@@ -21,6 +21,15 @@ namespace Odisseia.UI
             backToMenuButton?.onClick.AddListener(OnBackToMenu);
         }
 
+        /// <summary>
+        /// Foco para teclado e controle (começa em Jogar novamente). No Start pelo mesmo motivo
+        /// do <see cref="LevelCompleteMenu"/>: o EventSystem da cena já está ligado.
+        /// </summary>
+        private void Start()
+        {
+            gameObject.AddComponent<MenuNavigator>().SetItems(new[] { playAgainButton, backToMenuButton });
+        }
+
         private void OnPlayAgain()
         {
             CampaignManager.Instance?.StartNewGame();

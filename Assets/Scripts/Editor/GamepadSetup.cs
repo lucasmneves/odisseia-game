@@ -30,6 +30,8 @@ public static class GamepadSetup
         ("Bow", "<Gamepad>/rightTrigger"),
         ("Interact", "<Gamepad>/buttonNorth"),
         ("Pause", "<Gamepad>/start"),
+        ("Crouch", "<Gamepad>/dpad/down"),
+        ("Sprint", "<Gamepad>/rightShoulder"),
     };
 
     private static readonly (string acao, string caminho)[] EsperadoDialogo =

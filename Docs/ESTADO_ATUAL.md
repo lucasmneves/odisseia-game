@@ -836,13 +836,13 @@ Fonte: **`Docs/Art/PIXELLAB_VISUAL_POLISH_PASS_02.md`** (auditoria, plano, 12 gr
 ## Sessão local de integração no Unity (2026-10-02 a 2026-10-04) — PASSAGEM PARA A PRÓXIMA SESSÃO
 
 Unity **6000.5.8f1** local (`C:\Program Files\Unity\Hub\Editor\6000.5.8f1\Editor\Unity.exe`, módulo WebGL). Branch
-**`feat/integracao-unity-local`**, commit **`92802a8`** (etapas 1–8). **Etapas 9–11 ainda SEM commit** (ver abaixo).
+**`feat/integracao-unity-local`**, commits **`92802a8`** (etapas 1–8) e **`6ae78ff`** (etapas 9–11). **Etapa 12 ainda SEM commit** (ver abaixo).
 Regras da sessão: PixelLab **congelado** (nada gerado; falta de arte vira `PIXELLAB-FUTURE`); não mexer em gameplay sem bug de
 QA; nada de commit/push/PR sem pedido; **todo teste no mudo** (navegador com `?mudo=1`; ferramentas de Editor já mutam).
-Detalhes completos: `Docs/QA/FULL_CAMPAIGN_PLAYTEST.md` §10–14, `Docs/Art/PIXELLAB_ASSET_COMPLETION_MASTER.md` (fim),
+Detalhes completos: `Docs/QA/FULL_CAMPAIGN_PLAYTEST.md` §10–15, `Docs/Art/PIXELLAB_ASSET_COMPLETION_MASTER.md` (fim),
 `Docs/Art/TROY_VISUAL_PACK.md` (fim).
 
-### Feito (etapas 1–11)
+### Feito (etapas 1–12)
 1–2. Inspeção; `main` local estava 47 commits atrás → fast-forward; compila com 0 erros.
 3. **TROY-02** integrado (céu 0,95 / montanhas 0,85 / cidade 0,70, peça única). Bug: o `TroySceneDresser` supunha a câmera em
    x=−33 (está em 0) — corrigido lendo a câmera da cena.
@@ -862,14 +862,21 @@ Detalhes completos: `Docs/QA/FULL_CAMPAIGN_PLAYTEST.md` §10–14, `Docs/Art/PIX
 10. Navegador: 0 erros, Fase 01 em < 5 s, 60 fps. **Travessão some no WebGL** (fonte embutida sem o glifo).
 11. Mobile (emulação): detecção, controles e retrato/paisagem OK; corrigidos botão de tela cheia sobre o ATK, aviso de girar
     cortado (QA-08), configurações cortadas em paisagem, HUD "0/100" (ordem de inicialização / respawn sem evento).
+12. Gamepad — **GAMEPAD — NÃO VALIDADO FISICAMENTE** (sem controle na sessão). Bindings Xbox/PlayStation conferidos e mantidos
+    (tabela em §15). Corrigidos: menus sem foco (Pause, Fim de jogo, Fase concluída, Final, Controles — só com controle não se
+    escolhia nada); B volta/fecha; esquerda/direita no `MenuNavigator`; Controles abre no Fechar, B/Esc cancela só a captura e
+    o foco volta a quem abriu; Pause com o botão selecionado branco e ilegível e "Controles" rotulado "Resume"; mapa e tutorial
+    de Troia sem tecla fixa (`ControlHints`). Validado pelo `GamepadMenuProbe` (novo, controle virtual: OK) e no build com
+    controle simulado pela Gamepad API. **Os símbolos ✕ □ △ ○ somem no WebGL** ("[Y/] Play") — mesma causa do travessão.
 
-### Pendente de commit (etapas 9–11)
-`Assets/WebGLTemplates/` (novo), `BuildScript.cs`, `HUD.cs`, `MobileControlsRoot.cs`, `SettingsScreen.cs`, `Builds/WebGL/`
-(build regenerado; a antiga `TemplateData/` sai), `Docs/QA/FULL_CAMPAIGN_PLAYTEST.md`, `Docs/QA/_hud/itaca_hud.png`, este arquivo.
+### Pendente de commit (etapa 12)
+`MenuNavigator.cs`, `PauseMenu.cs`, `OptionsMenu.cs`, `GameOverScreen.cs`, `LevelCompleteMenu.cs`, `EndingController.cs`,
+`SettingsScreen.cs`, `WorldMapUI.cs`, `TutorialTrigger.cs`, `LocalizationTable.cs`, `ControlHints.cs`, `KeyRebindService.cs`,
+`GamepadSetup.cs`, `GamepadMenuProbe.cs` (novo, com .meta), `Builds/WebGL/` (build regenerado),
+`Docs/QA/FULL_CAMPAIGN_PLAYTEST.md`, este arquivo.
 
 ### Próximos passos
-- **Etapa 12 — gamepad:** revisar bindings Xbox/PlayStation no código; sem controle físico → "GAMEPAD — NÃO VALIDADO FISICAMENTE".
-- **Etapa 13 — polish:** decisão de **fonte** (QA-10, recomendado: fonte livre com os glifos); contraste do HUD e do título do
+- **Etapa 13 — polish:** decisão de **fonte** (QA-10, recomendado: fonte livre com os glifos — **inclui ✕ □ △ ○ do controle**); contraste do HUD e do título do
   Ending; **menu principal** com a arte nova (exige título e botões próprios — decisão do usuário); mapa geográfico sobre o
   `map_aegean` (decisão do usuário); ícones de fome/lótus/cera/escudo; chama do altar animada (exige código).
 - **PIXELLAB-FUTURE:** cavalo de Troia (saída da Fase 02); ataques das 6 facções (PXL-012) e escudo no ar (PXL-013) — pagos,
@@ -880,6 +887,7 @@ Detalhes completos: `Docs/QA/FULL_CAMPAIGN_PLAYTEST.md` §10–14, `Docs/Art/PIX
 ### Como rodar
 `Unity.exe -batchmode -nographics -quit -projectPath . -executeMethod <Ferramenta>` (Editor FECHADO). Play mode sem
 `-nographics` e sem `-quit`: `QaPlaytestBot.Run [-qaFrom N -qaTo M -qaTrace x0,x1]`, `QaMechanicsTest.Run|TroiaVaos|Calipso|Lestrigoes|DialogoNoAr`,
-`HudShot.Capture -hudScene <fase|caminho> [-hudMapProgress N]`, `FireAnimationDresser.Conferir`. Capturas de cenário:
+`HudShot.Capture -hudScene <fase|caminho> [-hudMapProgress N]`, `FireAnimationDresser.Conferir`, `GamepadMenuProbe.Run`
+(relatório em `Logs/qa_gamepad.txt`); em batch, `GamepadSetup.Run` confere os caminhos de gamepad. Capturas de cenário:
 `PrologueScreenshot.Capture -shotScene ... -shotXs ... -shotY ... [-shotSize 6]`. Build: `BuildScript.BuildWebGL` (~10 min);
 servir: `.claude/launch.json` → `webgl-build` (porta 8080), abrir com `?mudo=1`.

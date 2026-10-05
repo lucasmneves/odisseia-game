@@ -68,6 +68,12 @@ namespace Odisseia.UI
                 {
                     nav.selectOnUp = ativos[(index - 1 + ativos.Count) % ativos.Count];
                     nav.selectOnDown = ativos[(index + 1) % ativos.Count];
+
+                    // Esquerda/direita fazem o mesmo ciclo: telas como o fim de jogo põem
+                    // os botões lado a lado, e no controle o analógico para o lado é o
+                    // gesto natural ali. Numa lista vertical isso não atrapalha nada.
+                    nav.selectOnLeft = nav.selectOnUp;
+                    nav.selectOnRight = nav.selectOnDown;
                 }
 
                 item.navigation = nav;

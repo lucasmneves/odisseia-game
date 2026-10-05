@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using Odisseia.Systems;
@@ -9,7 +10,7 @@ namespace Odisseia.UI
     /// Menu de pause das fases. Usa a ação "Pause" do Input System, que existia desde
     /// a primeira etapa sem nenhum sistema ligado a ela.
     /// </summary>
-    public class PauseMenu : MonoBehaviour
+    public class PauseMenu : MonoBehaviour, ICancelHandler
     {
         [Header("Input")]
         [SerializeField] private InputActionAsset inputActions;
@@ -38,7 +39,8 @@ namespace Odisseia.UI
             restartButton?.onClick.AddListener(RestartLevel);
             menuButton?.onClick.AddListener(BackToMenu);
 
-            CreateControlsButton();
+            Button controls = CreateControlsButton();
+            CreateNavigator(controls);
 
             panel?.SetActive(false);
         }
@@ -48,11 +50,11 @@ namespace Odisseia.UI
         /// empurrando o de Menu para baixo. Feito em runtime para as 16 fases ganharem
         /// o botão sem editar 16 cenas.
         /// </summary>
-        private void CreateControlsButton()
+        private Button CreateControlsButton()
         {
             if (resumeButton == null || menuButton == null || panel == null)
             {
-                return;
+                return null;
             }
 
             var menuRect = (RectTransform)menuButton.transform;
@@ -73,6 +75,10 @@ namespace Odisseia.UI
                 label.text = "Controles";
             }
 
+            // O clone herda o LocalizedText do Retomar, que reescrevia o rótulo para "Retomar"
+            // ao ligar o painel — o pause mostrava dois "Retomar". A chave própria resolve.
+            controls.GetComponentInChildren<LocalizedText>(true)?.SetKey("ui.pause.controls");
+
             controls.onClick.RemoveAllListeners();
             controls.onClick.AddListener(OptionsMenu.Open);
 
@@ -83,6 +89,51 @@ namespace Odisseia.UI
             {
                 panelRect.sizeDelta += new Vector2(0f, spacing);
             }
+
+            return controls;
+        }
+
+        /// <summary>
+        /// Foco e "voltar" no painel. Sem um item selecionado, o controle abria o pause
+        /// (Start) e não conseguia escolher nada — Reiniciar e Menu só existiam para o
+        /// mouse. O B/Círculo fecha o pause, como o Start.
+        /// </summary>
+        private void CreateNavigator(Button controls)
+        {
+            if (panel == null)
+            {
+                return;
+            }
+
+            Button[] itens = { resumeButton, restartButton, controls, menuButton };
+
+            // Os botões das 16 cenas têm a cor de "selecionado" padrão do Unity (quase branca)
+            // com texto branco: com foco, o item ficava um retângulo branco ilegível. Antes
+            // ninguém recebia foco e isso não aparecia. Selecionado = destacado, como no resto da UI.
+            foreach (Button b in itens)
+            {
+                if (b != null)
+                {
+                    ColorBlock cores = b.colors;
+                    cores.selectedColor = cores.highlightedColor;
+                    b.colors = cores;
+                }
+            }
+
+            var navigator = panel.AddComponent<MenuNavigator>();
+            navigator.SetItems(itens);
+            navigator.SetCancelTarget(this);
+        }
+
+        public void OnCancel(BaseEventData eventData)
+        {
+            // O B que fecha a tela de controles aberta por cima não pode fechar o pause junto.
+            if (!IsPaused || OptionsMenu.IsOpen || OptionsMenu.ClosedThisFrame)
+            {
+                return;
+            }
+
+            Resume();
         }
 
         private void OnEnable()

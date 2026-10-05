@@ -325,3 +325,85 @@ travessão no navegador (QA-10, Etapa 10).
 
 **Não validado:** iOS e Android **físicos** (toque real, notch/área segura, desempenho de GPU móvel, Safari), mudança de
 orientação com o jogo aberto, escala dos controles num aparelho real.
+
+## 15. Etapa 12 — gamepad (2026-10-04)
+
+> **GAMEPAD — NÃO VALIDADO FISICAMENTE.** Não há controle Xbox/PlayStation físico nesta sessão. A validação abaixo é por
+> código, por controle **virtual** do Input System em play mode e por controle **simulado** pela Gamepad API no build WebGL.
+> Falta confirmar com controle na mão: mapeamento real de cada modelo no navegador, vibração, zona morta do analógico.
+
+### Bindings (`PlayerControls.inputactions`, inalterados)
+
+| Ação | Xbox | PlayStation | Caminho |
+|---|---|---|---|
+| Mover | analógico esq. / D-pad ◄ ► | analógico esq. / D-pad ◄ ► | `leftStick/x` (zona morta 0,15–0,95), `dpad/left`, `dpad/right` |
+| Pular | A | ✕ | `buttonSouth` |
+| Atacar | X | □ | `buttonWest` |
+| Interagir / entrar no mapa | Y | △ | `buttonNorth` |
+| Escudo | LT | L2 | `leftTrigger` |
+| Arco | RT | R2 | `rightTrigger` |
+| Correr | RB | R1 | `rightShoulder` |
+| Agachar | D-pad ▼ / analógico ▼ | D-pad ▼ / analógico ▼ | `dpad/down`, `leftStick/down` |
+| Pausa | Menu (Start) | Options | `start` |
+| Diálogo: avançar / pular | A / B | ✕ / ○ | `Dialogue/Advance` `buttonSouth`, `Dialogue/Skip` `buttonEast` |
+| Menus: confirmar / voltar | A / B | ✕ / ○ | UI padrão do `InputSystemUIInputModule` + `MenuNavigator` (`buttonEast`) |
+
+Família detectada pelo `InputDeviceTracker` (subclasse no Editor; no WebGL, texto do id: xbox/xinput/045e ou
+dualsense/dualshock/sony/054c); controle não identificado mostra as duas grafias ("A/✕"). Remapeamento: só teclado (o
+controle tem layout fixo).
+
+### Correções
+
+- **Menus sem foco (MEDIUM):** Pause, Fim de jogo, Fase concluída, Final e a tela de Controles não selecionavam botão
+  nenhum — com só o controle, abria-se a tela e não se escolhia nada (no fim de jogo, nem "Tentar de novo"). Agora todos usam
+  o `MenuNavigator` (foco inicial, cima/baixo e **esquerda/direita** em ciclo, B volta). Fase concluída e Final criam o
+  navegador no `Start` (no `Awake` podia nascer um EventSystem extra).
+- **Pause:** B/○ retoma, como o Start. Os 3 botões das 16 cenas tinham a cor de "selecionado" padrão do Unity (quase branca)
+  com texto branco — com foco virava um retângulo branco ilegível (visto no build); agora selecionado = destaque. O botão
+  "Controles" (clone do Retomar) herdava o `LocalizedText` do original e aparecia como um segundo "Resume" → chave própria
+  `ui.pause.controls`.
+- **Tela de Controles:** abre com foco em **Fechar** (no controle, A numa linha inicia captura que só o teclado completa);
+  B/○ ou Esc cancela só a captura em andamento, senão fecha; o foco volta a quem abriu (Configurações ou Pause); o B que a
+  fecha não fecha também o Pause nem as Configurações por baixo (`OptionsMenu.ClosedThisFrame`).
+- **Dicas por dispositivo:** mapa-múndi trocou "[E] Jogar" fixo por `ControlHints` ("[Y/△] Jogar", "[E] Jogar", no toque
+  "Toque em JOGAR") e reescreve ao trocar de dispositivo; tutorial de Troia trocou "Z", "SPACE" e "A/D" fixos por `{0}`
+  (`TutorialTrigger` → `ControlHints.Instruction`, ação tirada do fim da chave) — vale também para tecla remapeada.
+- `ControlHints`: rótulo de Correr no controle (RB/R1). `GamepadSetup` passa a conferir Agachar e Correr.
+
+### Testes
+
+| Teste | Resultado |
+|---|---|
+| Compilação | 0 erros |
+| `GamepadSetup.Run` | OK — todos os caminhos de gamepad, PlayerHaptics no prefab |
+| `InputBindingsProbe.Check` | OK — teclado padrão intacto |
+| `LocalizationProbe.Check` | OK — 285 chaves, 2 idiomas |
+| `PlaceholderProbe.Run` (16 fases, `-probeScene`) | OK nas 16 |
+| `CampaignValidation.Run` | OK — 16 etapas na ordem oficial |
+| `GamepadMenuProbe.Run` (novo; play mode, controle virtual + DualShock4 + XInput virtuais; `Logs/qa_gamepad.txt`) | **OK** |
+| Build WebGL | Build Finished, Result: Success |
+| Navegador (`?mudo=1`, controle simulado pela Gamepad API → `WebGLGamepad`, família Generic) | OK, ver abaixo |
+
+`GamepadMenuProbe` mede: menu principal (foco, D-pad nas 4 direções); Configurações → Controles (foco no Fechar, captura
+aberta por A e cancelada por B e por Esc sem fechar a tela, captura gravando "K", B fecha Controles e devolve o foco, B fecha
+Configurações); mapa (controle "[Y/△] Play", teclado "[E] Play"); Troia (genérico "A/✕"/"X/□"/"Left Stick", PlayStation
+"✕"/"□", Xbox "A"/"X", teclado "SPACE"/"Z" — sem Z/SPACE/A/D no controle); Pause (Start pausa, foco em Retomar, D-pad até
+Controles, A abre, B fecha só Controles com o jogo ainda pausado e o foco de volta, B retoma, Start/Start); Fim de jogo (foco
+em Tentar de novo, ◄ ►, A recomeça a fase); Fase concluída (foco, A segue); Final (foco em Jogar novamente, ▼, A volta ao menu).
+
+No build (navegador): D-pad e A no menu; A abre Configurações; D-pad até Personalizar; A abre Controles com foco em Fechar;
+A numa linha abre a captura ("..."), B cancela só ela; B fecha Controles e o foco volta a Personalizar; B fecha
+Configurações; A em Continue → mapa com "[Y/△] Play" e, após Shift, "[E] Play"; Y entra na Fase 01; A avança o diálogo;
+Start pausa; D-pad até Controles, A abre, B volta ao Pause, B retoma; 0 erros no console.
+
+### Observações (não são da Etapa 12)
+
+- **Símbolos do PlayStation somem no WebGL:** o mapa mostrou **"[Y/] Play"** — o △ não existe na fonte embutida, como o
+  travessão (QA-10). Mesma causa e mesma correção (fonte) → **Etapa 13**. Afeta ✕ □ △ ○ em controle PlayStation e genérico.
+- **Dois EventSystems nas cenas de menu:** o `MobileControlsRoot` cria um persistente no boot (as fases não têm EventSystem)
+  e as cenas de menu trazem o seu. Funciona (só o primeiro processa), é anterior a esta etapa.
+- **Pausa indisponível durante a abertura com diálogo** (mapa Player desligado): igual no teclado — fluxo de gameplay, não do
+  controle.
+- A tela de Controles ainda tem textos fixos em PT ("Mover (Negative)", "Fechar", mensagens) mesmo em inglês.
+- Teste no painel do app: com o mouse parado sobre um botão, fechar uma tela por cima devolve o foco ao botão sob o mouse
+  (hover seleciona) — comportamento normal do mouse, não do controle.

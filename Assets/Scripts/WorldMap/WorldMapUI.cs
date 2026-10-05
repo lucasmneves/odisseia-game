@@ -42,6 +42,9 @@ namespace Odisseia.WorldMap
         private Button enterButton;
         private WorldMapManager manager;
 
+        private LevelNode currentNode;
+        private int currentTotal;
+
         private void Awake()
         {
             manager = FindAnyObjectByType<WorldMapManager>();
@@ -49,9 +52,20 @@ namespace Odisseia.WorldMap
             Build();
         }
 
+        // A dica do nó cita o botão ("[E] Jogar" / "[Y] Jogar"): trocar de teclado para
+        // controle com o painel aberto tem que reescrevê-la.
+        private void OnEnable() => InputDeviceTracker.Changed += RefreshNode;
+
+        private void OnDisable() => InputDeviceTracker.Changed -= RefreshNode;
+
+        private void RefreshNode() => ShowNode(currentNode, currentTotal);
+
         /// <summary>Mostra os dados do nó em foco, ou esconde o painel se não houver.</summary>
         public void ShowNode(LevelNode node, int TotalLevels)
         {
+            currentNode = node;
+            currentTotal = TotalLevels;
+
             if (node == null)
             {
                 nodePanel.SetActive(false);
@@ -65,8 +79,8 @@ namespace Odisseia.WorldMap
             bool enterable = node.IsEnterable;
             nodeHintText.text = enterable
                 ? (node.State == LevelNodeState.Completed
-                    ? Localization.Get("ui.worldMap.replay")
-                    : Localization.Get("ui.worldMap.play"))
+                    ? ControlHints.Instruction("ui.worldMap.replay", "Interact")
+                    : ControlHints.Instruction("ui.worldMap.play", "Interact"))
                 : Localization.Get("ui.worldMap.blocked");
 
             enterButton.gameObject.SetActive(enterable);

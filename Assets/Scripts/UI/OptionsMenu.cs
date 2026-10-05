@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using Odisseia.Systems;
@@ -12,7 +13,7 @@ namespace Odisseia.UI
     /// <see cref="LoadingScreen"/> — assim funciona tanto no menu principal quanto no
     /// pause das 16 fases, sem editar nenhuma cena.
     /// </summary>
-    public class OptionsMenu : MonoBehaviour
+    public class OptionsMenu : MonoBehaviour, ICancelHandler
     {
         private const float ReferenceWidth = 960f;
         private const float ReferenceHeight = 600f;
@@ -33,7 +34,25 @@ namespace Odisseia.UI
         private InputActionMap playerMap;
         private bool mapWasEnabled;
 
+        private MenuNavigator navigator;
+        private Button resetButton;
+        private Button closeButton;
+        private readonly List<Button> keyButtons = new();
+
+        /// <summary>Quem tinha o foco antes de abrir (o botão do pause ou das configurações).</summary>
+        private GameObject focusBeforeOpen;
+
+        /// <summary>Quadro em que a tela fechou ou uma captura terminou — ver <see cref="ClosedThisFrame"/>.</summary>
+        private int closedFrame = -1;
+        private int rebindEndedFrame = -1;
+
         public static bool IsOpen => instance != null && instance.root != null && instance.root.activeSelf;
+
+        /// <summary>
+        /// Verdadeiro no quadro em que a tela fechou. O mesmo B/Esc que a fecha chega,
+        /// no mesmo quadro, a quem estava por baixo (o pause) — que precisa ignorá-lo.
+        /// </summary>
+        public static bool ClosedThisFrame => instance != null && instance.closedFrame == Time.frameCount;
 
         public static OptionsMenu Instance
         {
@@ -82,10 +101,37 @@ namespace Odisseia.UI
 
             SuspendGameplayInput();
 
+            focusBeforeOpen = EventSystem.current != null ? EventSystem.current.currentSelectedGameObject : null;
+
             RebuildRows();
             SetMessage("Clique numa tecla para trocar. Esc cancela.");
             root.SetActive(true);
+
+            // Começa no Fechar, não na primeira tecla: no controle, o A logo ao abrir
+            // iniciaria uma captura de tecla que só o teclado completa.
+            navigator?.Select(closeButton);
             AudioManager.PlayUiClick();
+        }
+
+        /// <summary>
+        /// B/Círculo (ou Esc): com uma captura em andamento, cancela só a captura; senão
+        /// fecha a tela. O Esc que a própria captura já consumiu neste quadro é ignorado,
+        /// para não fechar a tela inteira junto.
+        /// </summary>
+        public void OnCancel(BaseEventData eventData)
+        {
+            if (activeOperation != null)
+            {
+                CancelActiveOperation();
+                return;
+            }
+
+            if (rebindEndedFrame == Time.frameCount || !IsOpen)
+            {
+                return;
+            }
+
+            Close();
         }
 
         private void Close()
@@ -94,6 +140,15 @@ namespace Odisseia.UI
             RestoreGameplayInput();
             Time.timeScale = previousTimeScale;
             root.SetActive(false);
+            closedFrame = Time.frameCount;
+
+            // Devolve o foco a quem abriu. Sem isto o foco ficava num botão desta tela,
+            // já invisível, e o navegador do menu principal o puxava para um item
+            // escondido atrás das configurações — o A seguinte disparava esse item.
+            if (focusBeforeOpen != null && focusBeforeOpen.activeInHierarchy && EventSystem.current != null)
+            {
+                EventSystem.current.SetSelectedGameObject(focusBeforeOpen);
+            }
             AudioManager.PlayUiClick();
         }
 
@@ -156,6 +211,7 @@ namespace Odisseia.UI
                 Destroy(child.gameObject);
             }
             rows.Clear();
+            keyButtons.Clear();
 
             List<KeyRebindService.Entry> entries = KeyRebindService.GetEntries();
 
@@ -171,6 +227,12 @@ namespace Odisseia.UI
             }
 
             ResizeToFit(entries.Count);
+
+            if (navigator != null)
+            {
+                var itens = new List<Button>(keyButtons) { resetButton, closeButton };
+                navigator.SetItems(itens);
+            }
         }
 
         /// <summary>
@@ -242,6 +304,7 @@ namespace Odisseia.UI
             keyRect.offsetMax = Vector2.zero;
 
             rows.Add((entry, keyLabel));
+            keyButtons.Add(button);
 
             KeyRebindService.Entry captured = entry;
             Text capturedLabel = keyLabel;
@@ -262,6 +325,7 @@ namespace Odisseia.UI
             activeOperation = KeyRebindService.StartRebind(entry.Action, entry.BindingIndex, reason =>
             {
                 activeOperation = null;
+                rebindEndedFrame = Time.frameCount;
                 RefreshKeyLabels();
 
                 SetMessage(reason == null
@@ -368,7 +432,7 @@ namespace Odisseia.UI
             messageRect.sizeDelta = new Vector2(-24f, 40f);
             messageRect.anchoredPosition = new Vector2(0f, 66f);
 
-            CreateActionButton(panelRect, "ResetButton", "Restaurar padrões",
+            resetButton = CreateActionButton(panelRect, "ResetButton", "Restaurar padrões",
                 new Vector2(0.5f, 0f), new Vector2(-104f, 18f), new Vector2(196f, 44f), () =>
                 {
                     CancelActiveOperation();
@@ -378,13 +442,17 @@ namespace Odisseia.UI
                     AudioManager.PlayUiClick();
                 });
 
-            CreateActionButton(panelRect, "CloseButton", "Fechar",
+            closeButton = CreateActionButton(panelRect, "CloseButton", "Fechar",
                 new Vector2(0.5f, 0f), new Vector2(104f, 18f), new Vector2(196f, 44f), Close);
+
+            // Foco e "voltar" para teclado e controle; sem isto a tela só respondia ao mouse.
+            navigator = root.AddComponent<MenuNavigator>();
+            navigator.SetCancelTarget(this);
 
             root.SetActive(false);
         }
 
-        private void CreateActionButton(RectTransform parent, string name, string label,
+        private Button CreateActionButton(RectTransform parent, string name, string label,
             Vector2 anchor, Vector2 position, Vector2 size, UnityEngine.Events.UnityAction onClick)
         {
             var go = new GameObject(name, typeof(RectTransform));
@@ -408,6 +476,7 @@ namespace Odisseia.UI
             Text text = CreateText(rect, "Label", label, UITheme.FontButton, UITheme.TextPrimary,
                 TextAnchor.MiddleCenter);
             Stretch((RectTransform)text.transform);
+            return button;
         }
 
         /// <summary>

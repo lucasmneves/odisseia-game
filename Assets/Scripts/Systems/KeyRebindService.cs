@@ -309,7 +309,7 @@ namespace Odisseia.Systems
             action.Disable();
 
             return action.PerformInteractiveRebinding(bindingIndex)
-                // Só teclado: o jogo não tem gamepad e o mouse é usado pelos menus.
+                // Só teclado: o controle tem layout fixo (Xbox/PlayStation, ver ControlHints) e o mouse é dos menus.
                 .WithControlsHavingToMatchPath("<Keyboard>")
                 .WithCancelingThrough("<Keyboard>/escape")
                 .OnCancel(operation =>

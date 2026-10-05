@@ -225,14 +225,27 @@ namespace Odisseia.Systems
 
             ["ui.worldMap.play"] = new[]
             {
-                "[E] Play",
-                "[E] Jogar",
+                "[{0}] Play",
+                "[{0}] Jogar",
+            },
+
+            // No toque não há tecla: o botão da tela já se chama JOGAR (ui.worldMap.enter).
+            ["ui.worldMap.play.mobile"] = new[]
+            {
+                "Tap PLAY",
+                "Toque em JOGAR",
             },
 
             ["ui.worldMap.replay"] = new[]
             {
-                "Already finished — [E] to play again",
-                "Já concluída — [E] para jogar de novo",
+                "Already finished — [{0}] to play again",
+                "Já concluída — [{0}] para jogar de novo",
+            },
+
+            ["ui.worldMap.replay.mobile"] = new[]
+            {
+                "Already finished — tap PLAY to play again",
+                "Já concluída — toque em JOGAR para jogar de novo",
             },
 
             ["ui.worldMap.blocked"] = new[]
@@ -269,6 +282,12 @@ namespace Odisseia.Systems
             {
                 "Restart stage",
                 "Reiniciar fase",
+            },
+
+            ["ui.pause.controls"] = new[]
+            {
+                "Controls",
+                "Controles",
             },
 
             ["ui.pause.menu"] = new[]
@@ -907,20 +926,32 @@ namespace Odisseia.Systems
 
             ["tut.Level_02_Troia.Tutorial_Attack"] = new[]
             {
-                "Press Z to attack.",
-                "Pressione Z para atacar.",
+                "Press {0} to attack.",
+                "Pressione {0} para atacar.",
+            },
+
+            ["tut.Level_02_Troia.Tutorial_Attack.mobile"] = new[]
+            {
+                "Tap {0} to attack.",
+                "Toque em {0} para atacar.",
             },
 
             ["tut.Level_02_Troia.Tutorial_Jump"] = new[]
             {
-                "Press SPACE to jump.",
-                "Pressione SPACE para pular.",
+                "Press {0} to jump.",
+                "Pressione {0} para pular.",
+            },
+
+            ["tut.Level_02_Troia.Tutorial_Jump.mobile"] = new[]
+            {
+                "Tap {0} to jump.",
+                "Toque em {0} para pular.",
             },
 
             ["tut.Level_02_Troia.Tutorial_Move"] = new[]
             {
-                "Use A/D or ←/→ to move.",
-                "Use A/D ou ←/→ para se mover.",
+                "Use {0} to move.",
+                "Use {0} para se mover.",
             },
 
 
