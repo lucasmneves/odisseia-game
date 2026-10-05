@@ -256,7 +256,7 @@ namespace Odisseia.UI
                 new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
 
             // Só no mapa: entrar na fase. Reaproveita a ação Interact, a mesma do "E".
-            CreateOnScreenButton(groupRect, "EnterLevelButton", Bind("Interact", null, "<Keyboard>/e"), "JOGAR",
+            CreateOnScreenButton(groupRect, "EnterLevelButton", Bind("Interact", null, "<Keyboard>/e"), Localization.Get("ui.worldMap.enter"),
                 new Vector2(1f, 0f), new Vector2(-col1, row0),
                 new Vector2(actionSize * 1.4f, actionSize), cornerRadius: actionSize / 2f,
                 context: ButtonContext.WorldMap);
@@ -330,7 +330,7 @@ namespace Odisseia.UI
 
             var text = labelGO.AddComponent<Text>();
             text.text = label;
-            text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            text.font = UITheme.Font;
             text.fontSize = label.Length > 2 ? 20 : 36;
             text.alignment = TextAnchor.MiddleCenter;
             text.color = UITheme.TextPrimary;
@@ -353,16 +353,20 @@ namespace Odisseia.UI
 
             var textGO = new GameObject("Text", typeof(RectTransform));
             textGO.transform.SetParent(go.transform, false);
+            // QA-08: em retrato a tela tem bem menos que 700 unidades de largura, e o texto (largura fixa, sem quebra) saía
+            // cortado nas duas bordas. Agora ocupa a largura da tela com margem e quebra linha.
             var textRect = (RectTransform)textGO.transform;
-            textRect.anchorMin = new Vector2(0.5f, 0.5f);
-            textRect.anchorMax = new Vector2(0.5f, 0.5f);
-            textRect.sizeDelta = new Vector2(700f, 140f);
-            textRect.anchoredPosition = Vector2.zero;
+            textRect.anchorMin = new Vector2(0.08f, 0.3f);
+            textRect.anchorMax = new Vector2(0.92f, 0.7f);
+            textRect.offsetMin = Vector2.zero;
+            textRect.offsetMax = Vector2.zero;
 
             var text = textGO.AddComponent<Text>();
-            text.text = "Gire o aparelho para jogar em modo paisagem";
-            text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            text.text = Localization.Get("ui.mobile.rotate");
+            text.font = UITheme.Font;
             text.fontSize = UITheme.FontHeading;
+            text.horizontalOverflow = HorizontalWrapMode.Wrap;
+            text.verticalOverflow = VerticalWrapMode.Overflow;
             text.alignment = TextAnchor.MiddleCenter;
             text.color = UITheme.TextPrimary;
 

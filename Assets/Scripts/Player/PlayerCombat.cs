@@ -130,8 +130,13 @@ namespace Odisseia.Player
 
             // Feedback do golpe em si (sai mesmo errando o alvo — o jogador precisa
             // sentir que a espada respondeu ao comando).
-            Sprite sprite = GameAssets.Instance != null ? GameAssets.Instance.PlaceholderSprite : null;
-            VfxBurst.Spawn(sprite, attackPoint.position, new Color(0.95f, 0.95f, 1f), 4, 2f, 0.2f, 0.1f, 2f);
+            // Arco do golpe (o pesado tem o seu); o lado vem do attackPoint, que o PlayerController espelha ao virar.
+            bool paraEsquerda = attackPoint.position.x < transform.position.x;
+            if (!VfxSheet.Play(forte ? "fx_heavy_slash" : "fx_slash_v2", attackPoint.position, paraEsquerda))
+            {
+                Sprite sprite = GameAssets.Instance != null ? GameAssets.Instance.PlaceholderSprite : null;
+                VfxBurst.Spawn(sprite, attackPoint.position, new Color(0.95f, 0.95f, 1f), 4, 2f, 0.2f, 0.1f, 2f);
+            }
             AudioManager.PlayAttack();
 
             var hits = Physics2D.OverlapCircleAll(attackPoint.position, raio, targetLayer);

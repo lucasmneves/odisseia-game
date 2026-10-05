@@ -165,6 +165,121 @@ public static class QaMechanicsTest
 
     public static void Run() { cenaAlvo = Cena; Iniciar(Roteiro()); }
 
+    /// <summary>
+    /// QA-13: diálogo disparado em pleno pulo deixava o Odisseu parado no ar? Pula ATRAVÉS do DialogueTrigger_Grove de
+    /// Calipso (x 9..11, dispara uma vez) e amostra o pé enquanto o controle está travado.
+    /// Unity.exe -batchmode -projectPath . -executeMethod QaMechanicsTest.DialogoNoAr
+    /// </summary>
+    public static void DialogoNoAr() { cenaAlvo = "Level_13_Calipso"; Iniciar(RoteiroDialogoNoAr()); }
+
+    private static IEnumerator<float> RoteiroDialogoNoAr()
+    {
+        while (CampaignManager.Instance == null) { yield return 0.2f; }
+        fundo = InputSystem.settings.backgroundBehavior; editorIn = InputSystem.settings.editorInputBehaviorInPlayMode;
+        InputSystem.settings.backgroundBehavior = InputSettings.BackgroundBehavior.IgnoreFocus;
+        InputSystem.settings.editorInputBehaviorInPlayMode = InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;
+        Application.runInBackground = true;
+        kb = InputSystem.AddDevice<Keyboard>("QAMechKeyboard");
+        LivesCounter.BeginRun();
+        SceneManager.LoadScene(cenaAlvo);
+        while (SceneManager.GetActiveScene().name != cenaAlvo || GameObject.FindGameObjectWithTag("Player") == null) { yield return 0.2f; }
+        var p = GameObject.FindGameObjectWithTag("Player");
+        var ctl = p.GetComponent<PlayerController>(); var rb = p.GetComponent<Rigidbody2D>(); var col = p.GetComponent<Collider2D>();
+        while (!ctl.enabled) { yield return 0.2f; }   // fala de abertura
+        yield return 0.5f;
+
+        p.transform.position = new Vector3(6.5f, -1.95f, 0f); rb.linearVelocity = Vector2.zero;
+        Soltar(); yield return 0.5f;
+        Segurar(Key.D);
+        float limite = Time.realtimeSinceStartup + 3f;
+        while (p.transform.position.x < 8.0f && Time.realtimeSinceStartup < limite) { yield return 0.005f; }
+        InputSystem.QueueStateEvent(kb, new KeyboardState(Key.D, Key.Space)); yield return 0.1f; Segurar(Key.D);
+
+        while (ctl.enabled && Time.realtimeSinceStartup < limite + 2f) { yield return 0.005f; }
+        Soltar();
+        L($"\n## Diálogo disparado no ar (Calipso, gatilho do bosque)\n- trava em x={p.transform.position.x:0.00}, pé y={col.bounds.min.y:0.00}, vy={rb.linearVelocity.y:0.0}");
+        var amostras = new System.Text.StringBuilder();
+        float yInicio = col.bounds.min.y;
+        for (int i = 0; i < 10 && !ctl.enabled; i++)
+        {
+            yield return 0.1f;
+            amostras.Append($"{col.bounds.min.y:0.00} ");
+        }
+        float yFim = col.bounds.min.y;
+        L($"- pé durante a trava (0,1 s): {amostras}→ {(yFim < yInicio - 0.3f || yFim <= -1.95f ? "CAIU até o chão (sem congelar)" : "**PARADO NO AR**")}");
+    }
+
+    /// <summary>
+    /// Os 4 vãos de Troia, onde o bot caiu nas três vidas (2026-10-02). Para cada vão, pulos por input real partindo
+    /// da BORDA (como um jogador faria) e de 1,1 un antes (o gatilho do bot), simples e duplo:
+    /// Unity.exe -batchmode -projectPath . -executeMethod QaMechanicsTest.TroiaVaos   (relatório em Logs/qa_mecanicas.txt)
+    /// Os inimigos são desligados em play mode (nada é salvo) para medir só o pulo.
+    /// </summary>
+    public static void TroiaVaos() { cenaAlvo = Cena; Iniciar(RoteiroTroiaVaos()); }
+
+    private static IEnumerator<float> RoteiroTroiaVaos()
+    {
+        while (CampaignManager.Instance == null) { yield return 0.2f; }
+        fundo = InputSystem.settings.backgroundBehavior; editorIn = InputSystem.settings.editorInputBehaviorInPlayMode;
+        InputSystem.settings.backgroundBehavior = InputSettings.BackgroundBehavior.IgnoreFocus;
+        InputSystem.settings.editorInputBehaviorInPlayMode = InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;
+        Application.runInBackground = true;
+        kb = InputSystem.AddDevice<Keyboard>("QAMechKeyboard");
+        LivesCounter.BeginRun(99);   // cada queda custa uma vida; 16 pulos não podem virar fim de jogo
+        SceneManager.LoadScene(Cena);
+        while (SceneManager.GetActiveScene().name != Cena || GameObject.FindGameObjectWithTag("Player") == null) { yield return 0.2f; }
+        yield return 1.5f;
+
+        var p = GameObject.FindGameObjectWithTag("Player");
+        var ctl = p.GetComponent<PlayerController>(); var rb = p.GetComponent<Rigidbody2D>(); var col = p.GetComponent<Collider2D>();
+        var vida = p.GetComponent<HealthSystem>();
+        foreach (var e in Object.FindObjectsByType<EnemyController>(FindObjectsSortMode.None)) { e.gameObject.SetActive(false); }
+        while (!ctl.enabled) { yield return 0.2f; }
+
+        // (nome, borda da decolagem, y do pé na decolagem, início do alvo, topo do alvo)
+        var vaos = new[]
+        {
+            ("Floor_2 → Platform_Bridge (3 un, sobe 1,2)", 4f, -2f, 7f, -0.8f),
+            ("Floor_3 → Gauntlet_1 (3 un, sobe 1,2)", 26f, -2f, 29f, -0.8f),
+            ("Gauntlet_1 → Gauntlet_2 (3 un, mesmo nível)", 32f, -0.8f, 35f, -0.8f),
+            ("Gauntlet_2 → Gauntlet_3 (3 un, mesmo nível)", 38f, -0.8f, 41f, -0.8f),
+        };
+        var variantes = new[] { (0.35f, false, "da borda, pulo simples"), (0.35f, true, "da borda, pulo duplo"), (1.1f, false, "1,1 un antes (bot), simples"), (1.1f, true, "1,1 un antes (bot), duplo") };
+
+        foreach (var (nome, borda, yPe, alvoX, alvoTopo) in vaos)
+        {
+            L($"\n## {nome}");
+            foreach (var (antes, duplo, como) in variantes)
+            {
+                while (!ctl.enabled || p.transform.position.y < -5f) { yield return 0.2f; }   // respawn de uma queda anterior
+                yield return 0.3f;
+                vida.ResetHealth();
+                p.transform.position = new Vector3(borda - 3f, yPe + 0.05f, 0f); rb.linearVelocity = Vector2.zero;
+                Soltar(); yield return 0.5f;
+                Segurar(Key.D);
+                float limite = Time.realtimeSinceStartup + 3f;
+                while (p.transform.position.x < borda - antes && Time.realtimeSinceStartup < limite) { yield return 0.005f; }
+                float xDecolagem = p.transform.position.x, vx = rb.linearVelocity.x;
+                InputSystem.QueueStateEvent(kb, new KeyboardState(Key.D, Key.Space)); yield return 0.12f; Segurar(Key.D);
+                if (duplo)
+                {
+                    while (rb.linearVelocity.y > 0.5f && Time.realtimeSinceStartup < limite) { yield return 0.005f; }
+                    InputSystem.QueueStateEvent(kb, new KeyboardState(Key.D, Key.Space)); yield return 0.12f; Segurar(Key.D);
+                }
+                // O PONTO DE POUSO, não onde ele está depois: as plataformas têm 3 un, e segurar a direção depois de
+                // pousar o leva para fora pela outra ponta — isso é a corrida seguinte, não este pulo.
+                while (!ctl.IsGrounded && col.bounds.min.y > alvoTopo - 3f && Time.realtimeSinceStartup < limite + 2f) { yield return 0.005f; }
+                Soltar();
+                // O sensor de chão liga um pouco antes do contato: solta a direção e deixa assentar antes de medir.
+                yield return 0.25f;
+                float xPouso = p.transform.position.x, yPouso = col.bounds.min.y;
+                bool pousou = ctl.IsGrounded && col.bounds.max.x > alvoX && Mathf.Abs(yPouso - alvoTopo) < 0.1f;
+                L($"- {como}: decolou em x={xDecolagem:0.00} (vx {vx:0.0}) → pousou x={xPouso:0.00}, pé y={yPouso:0.00} → {(pousou ? "PASSOU" : "**CAIU / NÃO ALCANÇOU**")}");
+                yield return 0.6f;
+            }
+        }
+    }
+
     private static void Iniciar(IEnumerator<float> r)
     {
         opcoesAtivas = EditorSettings.enterPlayModeOptionsEnabled;
@@ -184,8 +299,19 @@ public static class QaMechanicsTest
         EditorApplication.EnterPlaymode();
     }
 
+    /// <summary>Efeitos de folha (VfxSheet) vistos durante o roteiro, por nome — amostrados a cada update do Editor.</summary>
+    private static readonly Dictionary<string, int> vfxVistos = new Dictionary<string, int>();
+    private static readonly HashSet<Object> vfxContados = new HashSet<Object>();
+
     private static void Tick()
     {
+        if (EditorApplication.isPlaying)
+        {
+            foreach (var v in Object.FindObjectsByType<Odisseia.Systems.VfxSheet>())
+            {
+                if (vfxContados.Add(v)) { vfxVistos[v.name] = vfxVistos.TryGetValue(v.name, out int k) ? k + 1 : 1; }
+            }
+        }
         if (!EditorApplication.isPlaying || EditorApplication.timeSinceStartup < acordarEm) { return; }
         try
         {
@@ -327,7 +453,28 @@ public static class QaMechanicsTest
         yield return 0.5f;
         var go = GameObject.Find("GameOverScreen");
         L($"\n## Fim de jogo\n- vidas 0 → timeScale {Time.timeScale}, tela de fim de jogo ativa: {go != null && go.GetComponentsInChildren<Canvas>(true).Any(c => c.gameObject.activeInHierarchy)} · mapa de ações Player habilitado: {KeyRebindService.Asset?.FindActionMap("Player")?.enabled}");
-        L("- a tela só oferece voltar ao menu (não há \"tentar de novo\" a fase)");
+        // QA-03: "Tentar de novo" — clica no botão da própria tela e confere o recomeço da fase.
+        var tentar = go != null ? go.GetComponentsInChildren<UnityEngine.UI.Button>(true).FirstOrDefault(b => b.name == "RetryButton") : null;
+        if (tentar == null)
+        {
+            L("- **sem botão \"Tentar de novo\"** (só menu)");
+            Time.timeScale = 1f;
+            yield return 0.1f;
+            yield break;
+        }
+
+        string rotulo = tentar.GetComponentInChildren<UnityEngine.UI.Text>()?.text;
+        tentar.onClick.Invoke();
+        float tT = Time.realtimeSinceStartup;
+        GameObject novo = null;
+        while (Time.realtimeSinceStartup - tT < 15f)
+        {
+            novo = GameObject.FindGameObjectWithTag("Player");
+            if (novo != null && novo != p && novo.GetComponent<PlayerController>().enabled) { break; }
+            yield return 0.2f;
+        }
+        yield return 1.5f;
+        L($"- \"{rotulo}\": cena {SceneManager.GetActiveScene().name} recarregada={novo != null && novo != p} · vidas {LivesCounter.Current} · timeScale {Time.timeScale} · mapa Player habilitado {KeyRebindService.Asset?.FindActionMap("Player")?.enabled} · painel de fim de jogo visível {go.transform.Find("GameOverCanvas/Root")?.gameObject.activeSelf}");
         Time.timeScale = 1f;
         yield return 0.1f;
     }
@@ -406,6 +553,7 @@ public static class QaMechanicsTest
     private static void Sair(int c)
     {
         EditorApplication.update -= Tick;
+        L("\n## Efeitos de folha vistos (VfxSheet)\n- " + (vfxVistos.Count == 0 ? "nenhum" : string.Join(" · ", vfxVistos.Select(p => p.Key + " ×" + p.Value))));
         System.IO.File.WriteAllText("Logs/qa_mecanicas.txt", rel.ToString());
         EditorSettings.enterPlayModeOptionsEnabled = opcoesAtivas;
         EditorSettings.enterPlayModeOptions = opcoes;

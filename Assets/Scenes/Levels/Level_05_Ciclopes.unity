@@ -681,6 +681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 96834275}
   - component: {fileID: 96834276}
+  - component: {fileID: 96834277}
   m_Layer: 0
   m_Name: Cave_Torch_3
   m_TagString: Untagged
@@ -763,6 +764,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &96834277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96834274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ec61beb84d6dce076e971336589dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Systems.SpriteAnimator
+  resourcePath: Odisseia/Environments/Fire/ciclopes_torch_wall_anim
+  defaultState: anim
+  defaultFramesPerSecond: 8
+  states: []
 --- !u!1 &98508434
 GameObject:
   m_ObjectHideFlags: 0
@@ -2150,6 +2167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 312275096}
   - component: {fileID: 312275097}
+  - component: {fileID: 312275098}
   m_Layer: 0
   m_Name: Cave_Torch_1
   m_TagString: Untagged
@@ -2232,6 +2250,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &312275098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312275095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ec61beb84d6dce076e971336589dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Systems.SpriteAnimator
+  resourcePath: Odisseia/Environments/Fire/ciclopes_torch_wall_anim
+  defaultState: anim
+  defaultFramesPerSecond: 8
+  states: []
 --- !u!1 &354335259
 GameObject:
   m_ObjectHideFlags: 0
@@ -8075,6 +8109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1736969562}
   - component: {fileID: 1736969563}
+  - component: {fileID: 1736969564}
   m_Layer: 0
   m_Name: Cave_Torch_0
   m_TagString: Untagged
@@ -8157,6 +8192,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &1736969564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736969561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ec61beb84d6dce076e971336589dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Systems.SpriteAnimator
+  resourcePath: Odisseia/Environments/Fire/ciclopes_torch_wall_anim
+  defaultState: anim
+  defaultFramesPerSecond: 8
+  states: []
 --- !u!1 &1740483895
 GameObject:
   m_ObjectHideFlags: 0
@@ -8973,6 +9024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1931653071}
   - component: {fileID: 1931653072}
+  - component: {fileID: 1931653073}
   m_Layer: 0
   m_Name: Polifemo_Fire
   m_TagString: Untagged
@@ -9055,6 +9107,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &1931653073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931653070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ec61beb84d6dce076e971336589dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Systems.SpriteAnimator
+  resourcePath: Odisseia/Environments/Fire/ciclopes_giant_fire_anim
+  defaultState: anim
+  defaultFramesPerSecond: 9
+  states: []
 --- !u!1 &1937301858
 GameObject:
   m_ObjectHideFlags: 0
@@ -9171,6 +9239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1939111982}
   - component: {fileID: 1939111983}
+  - component: {fileID: 1939111984}
   m_Layer: 0
   m_Name: Cave_Torch_2
   m_TagString: Untagged
@@ -9253,6 +9322,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &1939111984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939111981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ec61beb84d6dce076e971336589dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Systems.SpriteAnimator
+  resourcePath: Odisseia/Environments/Fire/ciclopes_torch_wall_anim
+  defaultState: anim
+  defaultFramesPerSecond: 8
+  states: []
 --- !u!1 &1965044673
 GameObject:
   m_ObjectHideFlags: 0
@@ -9590,6 +9675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2035385860}
   - component: {fileID: 2035385861}
+  - component: {fileID: 2035385862}
   m_Layer: 0
   m_Name: Cave_Torch_4
   m_TagString: Untagged
@@ -9672,6 +9758,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &2035385862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035385859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ec61beb84d6dce076e971336589dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Systems.SpriteAnimator
+  resourcePath: Odisseia/Environments/Fire/ciclopes_torch_wall_anim
+  defaultState: anim
+  defaultFramesPerSecond: 8
+  states: []
 --- !u!1 &2048021385
 GameObject:
   m_ObjectHideFlags: 0

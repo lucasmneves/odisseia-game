@@ -163,7 +163,9 @@ namespace Odisseia.Systems
 
             if (binding.isPartOfComposite)
             {
-                baseLabel = binding.name switch
+                // O asset grava "Negative"/"Positive" com maiúscula; comparar exato caía no rótulo genérico e a tela
+                // mostrava "Mover (Negative)".
+                baseLabel = binding.name?.ToLowerInvariant() switch
                 {
                     "negative" => Localization.Get("ui.rebind.moveLeft"),
                     "positive" => Localization.Get("ui.rebind.moveRight"),
@@ -177,17 +179,12 @@ namespace Odisseia.Systems
             return alternate >= 1 ? Localization.Get("ui.rebind.alternate", baseLabel) : baseLabel;
         }
 
-        private static string Translate(string actionName) => actionName switch
+        /// <summary>Nome da ação na língua do jogo ("ui.rebind.jump"...); sem tradução, o nome interno.</summary>
+        private static string Translate(string actionName)
         {
-            "Move" => "Mover",
-            "Jump" => "Pular",
-            "Sprint" => "Correr",
-            "Attack" => "Atacar",
-            "Shield" => "Defender",
-            "Bow" => "Arco",
-            "Interact" => "Interagir",
-            _ => actionName,
-        };
+            string chave = "ui.rebind." + char.ToLowerInvariant(actionName[0]) + actionName.Substring(1);
+            return Localization.Has(chave) ? Localization.Get(chave) : actionName;
+        }
 
         /// <summary>Tecla atual de um binding, em texto legível (ex.: "J").</summary>
         public static string GetDisplayString(InputAction action, int bindingIndex)
@@ -201,6 +198,15 @@ namespace Odisseia.Systems
             if (string.IsNullOrEmpty(path))
             {
                 return "—";
+            }
+
+            // Teclas com nome (Espaço, setas, Shift...) vêm da tabela de idiomas, "ui.key.<controle>"; letras e números
+            // ficam como o Input System escreve.
+            int barra = path.LastIndexOf('/');
+            string chave = "ui.key." + (barra >= 0 ? path.Substring(barra + 1) : path);
+            if (Localization.Has(chave))
+            {
+                return Localization.Get(chave);
             }
 
             string display = InputControlPath.ToHumanReadableString(
@@ -300,7 +306,7 @@ namespace Odisseia.Systems
         {
             if (action == null)
             {
-                onFinish?.Invoke("ação inválida");
+                onFinish?.Invoke(Localization.Get("ui.rebind.reason.invalid"));
                 return null;
             }
 
@@ -309,7 +315,7 @@ namespace Odisseia.Systems
             action.Disable();
 
             return action.PerformInteractiveRebinding(bindingIndex)
-                // Só teclado: o jogo não tem gamepad e o mouse é usado pelos menus.
+                // Só teclado: o controle tem layout fixo (Xbox/PlayStation, ver ControlHints) e o mouse é dos menus.
                 .WithControlsHavingToMatchPath("<Keyboard>")
                 .WithCancelingThrough("<Keyboard>/escape")
                 .OnCancel(operation =>
@@ -319,7 +325,7 @@ namespace Odisseia.Systems
                     {
                         action.Enable();
                     }
-                    onFinish?.Invoke("cancelado");
+                    onFinish?.Invoke(Localization.Get("ui.rebind.reason.cancelled"));
                 })
                 .OnComplete(operation =>
                 {
@@ -335,7 +341,7 @@ namespace Odisseia.Systems
                         {
                             action.Enable();
                         }
-                        onFinish?.Invoke($"tecla já usada por \"{conflict}\"");
+                        onFinish?.Invoke(Localization.Get("ui.rebind.reason.conflict", conflict));
                         return;
                     }
 

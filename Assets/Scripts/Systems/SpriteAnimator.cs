@@ -103,6 +103,21 @@ namespace Odisseia.Systems
             }
         }
 
+        /// <summary>
+        /// Configura por código uma folha criada em runtime (o Awake já rodou no AddComponent, com o caminho vazio):
+        /// recarrega os clipes e toca o estado. Para os objetos montados em cena pelo Inspector nada muda.
+        /// </summary>
+        public void Configure(string path, string state, float framesPerSecond)
+        {
+            resourcePath = path;
+            defaultState = state;
+            defaultFramesPerSecond = framesPerSecond;
+            clips.Clear();
+            CurrentState = null;
+            LoadClips();
+            Play(state, restart: true);
+        }
+
         private void LoadClips()
         {
             if (string.IsNullOrEmpty(resourcePath))

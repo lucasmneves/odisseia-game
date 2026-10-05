@@ -145,6 +145,14 @@ namespace Odisseia.Systems
                 "Qualidade",
             },
 
+            // Níveis do Quality Settings do Unity (ProjectSettings/QualitySettings.asset), ui.quality.<nome sem espaço>.
+            ["ui.quality.veryLow"] = new[] { "Very Low", "Muito baixa" },
+            ["ui.quality.low"] = new[] { "Low", "Baixa" },
+            ["ui.quality.medium"] = new[] { "Medium", "Média" },
+            ["ui.quality.high"] = new[] { "High", "Alta" },
+            ["ui.quality.veryHigh"] = new[] { "Very High", "Muito alta" },
+            ["ui.quality.ultra"] = new[] { "Ultra", "Ultra" },
+
             ["ui.settings.resolution"] = new[]
             {
                 "Resolution",
@@ -225,14 +233,27 @@ namespace Odisseia.Systems
 
             ["ui.worldMap.play"] = new[]
             {
-                "[E] Play",
-                "[E] Jogar",
+                "[{0}] Play",
+                "[{0}] Jogar",
+            },
+
+            // No toque não há tecla: o botão da tela já se chama JOGAR (ui.worldMap.enter).
+            ["ui.worldMap.play.mobile"] = new[]
+            {
+                "Tap PLAY",
+                "Toque em JOGAR",
             },
 
             ["ui.worldMap.replay"] = new[]
             {
-                "Already finished — [E] to play again",
-                "Já concluída — [E] para jogar de novo",
+                "Already finished — [{0}] to play again",
+                "Já concluída — [{0}] para jogar de novo",
+            },
+
+            ["ui.worldMap.replay.mobile"] = new[]
+            {
+                "Already finished — tap PLAY to play again",
+                "Já concluída — toque em JOGAR para jogar de novo",
             },
 
             ["ui.worldMap.blocked"] = new[]
@@ -271,10 +292,47 @@ namespace Odisseia.Systems
                 "Reiniciar fase",
             },
 
+            ["ui.pause.controls"] = new[]
+            {
+                "Controls",
+                "Controles",
+            },
+
             ["ui.pause.menu"] = new[]
             {
                 "Main menu",
                 "Menu principal",
+            },
+
+            // Fim de jogo (QA-03: ganhou "tentar de novo"; os textos saíram do português fixo — QA-09).
+            ["ui.gameover.title"] = new[]
+            {
+                "END OF THE JOURNEY",
+                "FIM DA JORNADA",
+            },
+
+            ["ui.gameover.message"] = new[]
+            {
+                "Odysseus did not reach Ithaca this time.",
+                "Odisseu não chegou a Ítaca desta vez.",
+            },
+
+            ["ui.gameover.stats"] = new[]
+            {
+                "Experience gathered: {0} XP\nItems collected: {1}",
+                "Experiência acumulada: {0} XP\nItens coletados: {1}",
+            },
+
+            ["ui.gameover.retry"] = new[]
+            {
+                "Try again",
+                "Tentar de novo",
+            },
+
+            ["ui.gameover.hint"] = new[]
+            {
+                "Stages already won stay unlocked.",
+                "As fases já conquistadas continuam desbloqueadas.",
             },
 
             ["ui.stageComplete"] = new[]
@@ -309,26 +367,69 @@ namespace Odisseia.Systems
 
             ["ui.hud.hunger"] = new[]
             {
-                "🍖 Hunger: {0}%",
-                "🍖 Fome: {0}%",
+                "Hunger: {0}%",
+                "Fome: {0}%",
+            },
+
+            ["ui.siren.mast"] = new[]
+            {
+                "Bound to the mast — resisting the sirens' song.",
+                "Amarrado ao mastro — resistente ao canto das sereias.",
+            },
+
+            ["ui.wind.waiting"] = new[]
+            {
+                "Waiting for a fair wind: {0}s",
+                "Aguardando vento favorável: {0}s",
+            },
+
+            ["ui.hud.lotus"] = new[]
+            {
+                "Drowsiness {0}%",
+                "Sonolência {0}%",
             },
 
             ["ui.hud.disguised"] = new[]
             {
-                "🥸 Disguised as a beggar",
-                "🥸 Disfarçado de mendigo",
+                "Disguised as a beggar",
+                "Disfarçado de mendigo",
             },
 
             ["ui.hud.itacaBefore"] = new[]
             {
-                "🏠 Ithaca — before the war",
-                "🏠 Ítaca — antes da guerra",
+                "Ithaca — before the war",
+                "Ítaca — antes da guerra",
             },
 
             ["ui.loading"] = new[]
             {
                 "Loading...",
                 "Carregando...",
+            },
+
+            // QA-09: textos que estavam fixos em português no código.
+            ["ui.worldMap.enter"] = new[]
+            {
+                "PLAY",
+                "JOGAR",
+            },
+
+            ["ui.mobile.rotate"] = new[]
+            {
+                "Rotate your device to play in landscape",
+                "Gire o aparelho para jogar em modo paisagem",
+            },
+
+            ["ui.cattle.eatPrompt"] = new[]
+            {
+                "Press {0} to eat the sacred cattle of Helios (there will be consequences).",
+                "Pressione {0} para comer o gado sagrado de Hélio (isso terá consequências).",
+            },
+
+            ["ui.rebind.waiting"] = new[]
+            {
+                "Press the new key for \"{0}\". Esc cancels.",
+                "Pressione a nova tecla para \"{0}\". Esc cancela.",
             },
 
             ["ui.rebind.move"] = new[]
@@ -384,6 +485,101 @@ namespace Odisseia.Systems
                 "{0} (alt.)",
                 "{0} (alt.)",
             },
+
+            ["ui.rebind.sprint"] = new[]
+            {
+                "Sprint",
+                "Correr",
+            },
+
+            ["ui.rebind.reason.invalid"] = new[]
+            {
+                "invalid action",
+                "ação inválida",
+            },
+
+            ["ui.rebind.reason.cancelled"] = new[]
+            {
+                "cancelled",
+                "cancelado",
+            },
+
+            ["ui.rebind.reason.conflict"] = new[]
+            {
+                "key already used by \"{0}\"",
+                "tecla já usada por \"{0}\"",
+            },
+
+            // ---------------------------------------------------------- Tela de Controles
+
+            ["ui.controls.title"] = new[]
+            {
+                "CONTROLS",
+                "CONTROLES",
+            },
+
+            ["ui.controls.hint"] = new[]
+            {
+                "Select a key to change it. Esc cancels.",
+                "Selecione uma tecla para trocar. Esc cancela.",
+            },
+
+            ["ui.controls.unavailable"] = new[]
+            {
+                "Controls unavailable in this scene.",
+                "Controles indisponíveis nesta cena.",
+            },
+
+            ["ui.controls.updated"] = new[]
+            {
+                "\"{0}\" updated.",
+                "\"{0}\" atualizado.",
+            },
+
+            ["ui.controls.notChanged"] = new[]
+            {
+                "Not changed — {0}.",
+                "Não alterado — {0}.",
+            },
+
+            ["ui.controls.restored"] = new[]
+            {
+                "Controls restored.",
+                "Controles restaurados.",
+            },
+
+            ["ui.controls.reset"] = new[]
+            {
+                "Restore defaults",
+                "Restaurar padrões",
+            },
+
+            ["ui.controls.close"] = new[]
+            {
+                "Close",
+                "Fechar",
+            },
+
+            // ---------------------------------------------------------- Nomes de tecla (ui.key.<controle do Input System>)
+            // Só as que têm nome; letras e números ficam como o Input System escreve.
+
+            ["ui.key.space"] = new[] { "SPACE", "ESPAÇO" },
+            ["ui.key.leftArrow"] = new[] { "LEFT ARROW", "SETA ESQUERDA" },
+            ["ui.key.rightArrow"] = new[] { "RIGHT ARROW", "SETA DIREITA" },
+            ["ui.key.upArrow"] = new[] { "UP ARROW", "SETA PARA CIMA" },
+            ["ui.key.downArrow"] = new[] { "DOWN ARROW", "SETA PARA BAIXO" },
+            ["ui.key.leftShift"] = new[] { "LEFT SHIFT", "SHIFT ESQUERDO" },
+            ["ui.key.rightShift"] = new[] { "RIGHT SHIFT", "SHIFT DIREITO" },
+            ["ui.key.leftCtrl"] = new[] { "LEFT CTRL", "CTRL ESQUERDO" },
+            ["ui.key.rightCtrl"] = new[] { "RIGHT CTRL", "CTRL DIREITO" },
+            ["ui.key.leftAlt"] = new[] { "LEFT ALT", "ALT ESQUERDO" },
+            ["ui.key.rightAlt"] = new[] { "RIGHT ALT", "ALT DIREITO" },
+            ["ui.key.enter"] = new[] { "ENTER", "ENTER" },
+            ["ui.key.numpadEnter"] = new[] { "NUMPAD ENTER", "ENTER NUMÉRICO" },
+            ["ui.key.tab"] = new[] { "TAB", "TAB" },
+            ["ui.key.backspace"] = new[] { "BACKSPACE", "BACKSPACE" },
+            ["ui.key.escape"] = new[] { "ESC", "ESC" },
+            ["ui.key.capsLock"] = new[] { "CAPS LOCK", "CAPS LOCK" },
 
             ["ui.npc.interactPrompt"] = new[]
             {
@@ -491,6 +687,32 @@ namespace Odisseia.Systems
             {
                 "Odysseus",
                 "Odisseu",
+            },
+
+            // Cenas que gravam o falante em PORTUGUÊS (o DialogueSequence busca "speaker." + nome sem acento): sem estas
+            // chaves o nome saía cru, "Odisseu", com a fala em inglês. Mesmas traduções das chaves canônicas.
+            ["speaker.odisseu"] = new[]
+            {
+                "Odysseus",
+                "Odisseu",
+            },
+
+            ["speaker.telemaco"] = new[]
+            {
+                "Telemachus",
+                "Telêmaco",
+            },
+
+            ["speaker.eumeu"] = new[]
+            {
+                "Eumaeus",
+                "Eumeu",
+            },
+
+            ["speaker.companheiro"] = new[]
+            {
+                "Crewman",
+                "Companheiro",
             },
 
             ["speaker.penelope"] = new[]
@@ -825,20 +1047,32 @@ namespace Odisseia.Systems
 
             ["tut.Level_02_Troia.Tutorial_Attack"] = new[]
             {
-                "Press Z to attack.",
-                "Pressione Z para atacar.",
+                "Press {0} to attack.",
+                "Pressione {0} para atacar.",
+            },
+
+            ["tut.Level_02_Troia.Tutorial_Attack.mobile"] = new[]
+            {
+                "Tap {0} to attack.",
+                "Toque em {0} para atacar.",
             },
 
             ["tut.Level_02_Troia.Tutorial_Jump"] = new[]
             {
-                "Press SPACE to jump.",
-                "Pressione SPACE para pular.",
+                "Press {0} to jump.",
+                "Pressione {0} para pular.",
+            },
+
+            ["tut.Level_02_Troia.Tutorial_Jump.mobile"] = new[]
+            {
+                "Tap {0} to jump.",
+                "Toque em {0} para pular.",
             },
 
             ["tut.Level_02_Troia.Tutorial_Move"] = new[]
             {
-                "Use A/D or ←/→ to move.",
-                "Use A/D ou ←/→ para se mover.",
+                "Use {0} to move.",
+                "Use {0} para se mover.",
             },
 
 

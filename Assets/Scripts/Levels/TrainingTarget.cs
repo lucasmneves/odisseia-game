@@ -50,8 +50,11 @@ namespace Odisseia.Levels
                 body.color = hitColor;
             }
 
-            Sprite sprite = GameAssets.Instance != null ? GameAssets.Instance.PlaceholderSprite : null;
-            VfxBurst.Spawn(sprite, transform.position, hitColor, 5, 2.2f, 0.25f);
+            if (!VfxSheet.Play("fx_hit_v2", transform.position))
+            {
+                Sprite sprite = GameAssets.Instance != null ? GameAssets.Instance.PlaceholderSprite : null;
+                VfxBurst.Spawn(sprite, transform.position, hitColor, 5, 2.2f, 0.25f);
+            }
 
             course?.Report(reportAction);
         }

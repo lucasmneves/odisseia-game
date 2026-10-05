@@ -30,6 +30,7 @@ namespace Odisseia.UI
 
         private GameObject root;
         private Text titleText;
+        private Text hintText;
         private RectTransform barFill;
         private Coroutine routine;
 
@@ -87,7 +88,10 @@ namespace Odisseia.UI
 
         private IEnumerator LoadRoutine(string sceneName, string title)
         {
-            titleText.text = string.IsNullOrEmpty(title) ? "Carregando..." : title;
+            // QA-09: pela localização, lida a cada carga (o idioma pode mudar com a tela já montada).
+            string carregando = Odisseia.Systems.Localization.Get("ui.loading");
+            titleText.text = string.IsNullOrEmpty(title) ? carregando : title;
+            if (hintText != null) { hintText.text = carregando; }
             SetProgress(0f);
             root.SetActive(true);
 
@@ -175,8 +179,8 @@ namespace Odisseia.UI
             titleText = CreateText(root.transform, "Title", UITheme.FontTitle, UITheme.TextAccent,
                 new Vector2(1400f, 80f), new Vector2(0f, 60f));
 
-            CreateText(root.transform, "Hint", UITheme.FontBody, UITheme.TextSecondary,
-                new Vector2(900f, 40f), new Vector2(0f, 0f)).text = "Carregando...";
+            hintText = CreateText(root.transform, "Hint", UITheme.FontBody, UITheme.TextSecondary,
+                new Vector2(900f, 40f), new Vector2(0f, 0f));
 
             CreateBar(root.transform);
 
@@ -227,7 +231,7 @@ namespace Odisseia.UI
             rect.anchoredPosition = position;
 
             var text = go.AddComponent<Text>();
-            text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            text.font = UITheme.Font;
             text.fontSize = fontSize;
             text.alignment = TextAnchor.MiddleCenter;
             text.color = color;

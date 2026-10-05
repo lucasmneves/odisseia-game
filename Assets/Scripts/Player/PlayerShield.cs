@@ -170,9 +170,14 @@ namespace Odisseia.Player
         {
             Blocked?.Invoke(absorbed);
 
-            Sprite sprite = GameAssets.Instance != null ? GameAssets.Instance.PlaceholderSprite : null;
-            VfxBurst.Spawn(sprite, transform.position + Vector3.up * 0.7f,
-                new Color(0.6f, 0.8f, 1f), 4, 2f, 0.22f);
+            // A faísca sai na frente do escudo, do lado para onde o Odisseu olha.
+            Vector3 escudo = transform.position + Vector3.up * 0.7f + (FacingRight ? Vector3.right : Vector3.left) * 0.35f;
+            if (!VfxSheet.Play("fx_block", escudo, !FacingRight))
+            {
+                Sprite sprite = GameAssets.Instance != null ? GameAssets.Instance.PlaceholderSprite : null;
+                VfxBurst.Spawn(sprite, transform.position + Vector3.up * 0.7f,
+                    new Color(0.6f, 0.8f, 1f), 4, 2f, 0.22f);
+            }
             CameraFollow.ShakeActive(0.07f, 0.05f);
             AudioManager.PlayHit();
         }

@@ -46,6 +46,11 @@ namespace Odisseia.WorldMap
         [SerializeField] private CameraFollow cameraFollow;
         [SerializeField] private float cameraPadding = 6f;
 
+        [Header("Mapa geográfico (Etapa 13B)")]
+        [Tooltip("Arte do arquipélago (map_aegean) atrás do caminho. Com ela, a câmera fica dentro do mapa e os brilhos de " +
+                 "onda extras não são criados (a arte já tem ondas). Vazio, o mapa volta ao mar chapado com brilhos.")]
+        [SerializeField] private SpriteRenderer geography;
+
         [Header("Caminhada automática após concluir uma fase")]
         [Tooltip("Espera antes de Odisseu sair andando, para o anúncio ser lido.")]
         [SerializeField] private float autoTravelDelay = 1.2f;
@@ -88,6 +93,7 @@ namespace Odisseia.WorldMap
             RefreshStates();
             PlacePlayer();
             ConfigureCamera();
+            MontarMar();
             AnnounceIfJustCompleted();
         }
 
@@ -147,6 +153,117 @@ namespace Odisseia.WorldMap
             }
         }
 
+        // ---------------------------------------------------------------- arte do mapa (Asset Completion / Polish 02)
+
+        private const string PastaDoMapa = "Odisseia/Map/";
+
+        /// <summary>Distância entre os pontos da trilha, em unidades.</summary>
+        private const float PassoDaTrilha = 0.42f;
+
+        /// <summary>Cor MEDIDA da água do map_aegean (#577ea2, 44,7% dos pixels): o mar de fundo do mapa.</summary>
+        private static readonly Color CorDoMar = new Color(0x57 / 255f, 0x7e / 255f, 0xa2 / 255f);
+
+        private readonly List<(SpriteRenderer ponto, float distancia)> trilha = new List<(SpriteRenderer, float)>();
+        private Sprite pontoNavegado, pontoPorNavegar;
+
+        /// <summary>
+        /// Trilha pontilhada (map_trail_dot: 00 navegado, vinho; 01 por navegar, areia) no lugar dos segmentos
+        /// esticados. Devolve false sem a arte — aí o desenho antigo segue.
+        /// </summary>
+        private bool DesenharTrilhaPontilhada(Transform parent)
+        {
+            Sprite[] quadros = Resources.LoadAll<Sprite>(PastaDoMapa + "map_trail_dot");
+            if (quadros.Length < 2)
+            {
+                return false;
+            }
+
+            System.Array.Sort(quadros, (a, b) => string.CompareOrdinal(a.name, b.name));
+            pontoNavegado = quadros[0];
+            pontoPorNavegar = quadros[1];
+
+            float acumulado = 0f, proximo = 0f;
+            foreach ((Vector2 from, Vector2 to) in path.Segments())
+            {
+                float comprimento = Vector2.Distance(from, to);
+                while (proximo <= acumulado + comprimento && comprimento > 0.0001f)
+                {
+                    Vector2 posicao = Vector2.Lerp(from, to, (proximo - acumulado) / comprimento);
+                    var go = new GameObject("TrailDot");
+                    go.transform.SetParent(parent, false);
+                    go.transform.position = posicao;
+                    var sr = go.AddComponent<SpriteRenderer>();
+                    sr.sprite = pontoPorNavegar;
+                    sr.sortingOrder = 1;
+                    trilha.Add((sr, proximo));
+                    proximo += PassoDaTrilha;
+                }
+
+                acumulado += comprimento;
+            }
+
+            return true;
+        }
+
+        /// <summary>Pinta de "navegado" a trilha até onde o jogador já pode chegar.</summary>
+        private void PintarTrilha(float ate)
+        {
+            foreach ((SpriteRenderer ponto, float distancia) in trilha)
+            {
+                if (ponto != null) { ponto.sprite = distancia <= ate + 0.01f ? pontoNavegado : pontoPorNavegar; }
+            }
+        }
+
+        /// <summary>
+        /// Mar: a câmera limpa na cor da água do map_aegean e brilhos de onda (map_wave_glint, 4 quadros que nascem, abrem
+        /// e somem) espalhados pela área que a câmera percorre, cada um num ritmo — posições de semente fixa, então o
+        /// mapa é o mesmo a cada visita. Antes era um fundo azul-escuro chapado (QA-16).
+        /// </summary>
+        private void MontarMar()
+        {
+            Camera cam = cameraFollow != null ? cameraFollow.GetComponent<Camera>() : Camera.main;
+            if (cam != null)
+            {
+                cam.backgroundColor = CorDoMar;
+            }
+
+            if (path == null || path.IsEmpty || Resources.LoadAll<Sprite>(PastaDoMapa + "map_wave_glint").Length == 0)
+            {
+                return;
+            }
+
+            // A arte do arquipélago já desenha as ondas; brilho solto por cima cairia também sobre ilha e montanha.
+            if (geography != null && geography.sprite != null)
+            {
+                return;
+            }
+
+            var min = new Vector2(float.MaxValue, float.MaxValue);
+            var max = new Vector2(float.MinValue, float.MinValue);
+            foreach ((Vector2 from, Vector2 to) in path.Segments())
+            {
+                min = Vector2.Min(min, Vector2.Min(from, to));
+                max = Vector2.Max(max, Vector2.Max(from, to));
+            }
+
+            min -= Vector2.one * cameraPadding;
+            max += Vector2.one * cameraPadding;
+            var raiz = new GameObject("Sea_Glints").transform;
+            var sorteio = new System.Random(16);
+            int total = Mathf.Clamp(Mathf.RoundToInt((max.x - min.x) * (max.y - min.y) / 9f), 8, 90);
+            for (int i = 0; i < total; i++)
+            {
+                var go = new GameObject("Glint");
+                go.transform.SetParent(raiz, false);
+                go.transform.position = new Vector3(
+                    Mathf.Lerp(min.x, max.x, (float)sorteio.NextDouble()),
+                    Mathf.Lerp(min.y, max.y, (float)sorteio.NextDouble()), 0f);
+                go.AddComponent<SpriteRenderer>().sortingOrder = 0;
+                go.AddComponent<SpriteAnimator>().Configure(PastaDoMapa + "map_wave_glint", "glint",
+                    2.5f + (float)sorteio.NextDouble() * 2.5f);
+            }
+        }
+
         private void DrawPath()
         {
             if (path == null || pathSegmentPrefab == null)
@@ -155,6 +272,10 @@ namespace Odisseia.WorldMap
             }
 
             Transform parent = pathParent != null ? pathParent : transform;
+            if (DesenharTrilhaPontilhada(parent))
+            {
+                return;
+            }
 
             foreach ((Vector2 from, Vector2 to) in path.Segments())
             {
@@ -212,6 +333,8 @@ namespace Odisseia.WorldMap
             {
                 player.SetTravelLimit(FurthestReachableDistance());
             }
+
+            PintarTrilha(FurthestReachableDistance());
         }
 
         /// <summary>Distância do nó desbloqueado mais avançado — é até onde dá para andar.</summary>
@@ -304,6 +427,15 @@ namespace Odisseia.WorldMap
             // Caminho de um ponto só não gera segmento: sem limites úteis a calcular.
             if (min.x > max.x)
             {
+                return;
+            }
+
+            // Com o mapa geográfico, o limite é a própria arte: o caminho chega à borda (o Mundo dos Mortos fica na beira
+            // do mundo), e a folga de sempre mostraria o fundo além do desenho.
+            if (geography != null && geography.sprite != null)
+            {
+                Bounds arte = geography.bounds;
+                cameraFollow.SetBounds(arte.min, arte.max);
                 return;
             }
 

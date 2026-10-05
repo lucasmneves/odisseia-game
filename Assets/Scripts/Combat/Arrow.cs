@@ -34,6 +34,7 @@ namespace Odisseia.Combat
 
         private Rigidbody2D rb;
         private bool consumed;
+        private bool impactoMostrado;
 
         /// <summary>Fincada num alvo parado: parou de voar e virou munição a recolher.</summary>
         private bool fincada;
@@ -111,6 +112,7 @@ namespace Odisseia.Combat
             if ((targetLayers.value & otherLayer) != 0 && other.TryGetComponent(out HealthSystem health))
             {
                 consumed = true;
+                Impacto();
                 health.TakeDamage(damage, new DamageInfo(transform.position));
 
                 // Em inimigo a flecha some; em alvo parado ela fica fincada e pode ser
@@ -131,6 +133,7 @@ namespace Odisseia.Combat
             if ((obstacleLayers.value & otherLayer) != 0)
             {
                 consumed = true;
+                Impacto();
                 Fincar(other.transform);
             }
         }
@@ -201,10 +204,20 @@ namespace Odisseia.Combat
             return Mathf.Abs(escala.x - escala.y) < 0.01f && Mathf.Abs(escala.x - escala.z) < 0.01f;
         }
 
+        /// <summary>Lascas no ponto do acerto, viradas para o lado de onde a flecha veio. Só apresentação.</summary>
+        private void Impacto()
+        {
+            impactoMostrado = VfxSheet.Play("fx_arrow_impact", transform.position, rb != null && rb.linearVelocity.x < 0f);
+        }
+
         private void Vanish()
         {
-            Sprite sprite = GameAssets.Instance != null ? GameAssets.Instance.PlaceholderSprite : null;
-            VfxBurst.Spawn(sprite, transform.position, new Color(0.9f, 0.85f, 0.6f), 3, 1.8f, 0.18f);
+            // Depois de um acerto as lascas já saíram; os quadradinhos ficam só para a flecha que some no ar.
+            if (!impactoMostrado)
+            {
+                Sprite sprite = GameAssets.Instance != null ? GameAssets.Instance.PlaceholderSprite : null;
+                VfxBurst.Spawn(sprite, transform.position, new Color(0.9f, 0.85f, 0.6f), 3, 1.8f, 0.18f);
+            }
             Destroy(gameObject);
         }
     }

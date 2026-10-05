@@ -1,54 +1,91 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | Odisseia</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes">
+    <title>Odisseia</title>
+    <!--
+      Template do Odisseia (QA-07 e QA-18). O template padrão do Unity fixava o canvas em 960 × 600 px no desktop:
+      janela menor cortava o jogo, maior não aproveitava a tela. Aqui o canvas ocupa a MAIOR área 16:9 que cabe na
+      janela (faixas pretas no que sobra) e acompanha o redimensionamento — 16:9 porque os cenários foram compostos
+      nessa proporção. O Unity casa a resolução de render com o tamanho do canvas (matchWebGLToCanvasSize).
+    -->
+    <script>
+      // Teste e QA: ?mudo=1 na URL deixa o jogo sem som desde o primeiro quadro — todo AudioContext nasce suspenso e
+      // não pode ser retomado (nem por clique). Sem o parâmetro, nada muda para o jogador.
+      if (/[?&](mudo|mute)=1(&|$)/.test(location.search)) {
+        (function () {
+          var Base = window.AudioContext || window.webkitAudioContext;
+          if (!Base) { return; }
+          Base.prototype.resume = function () { return Promise.resolve(); };
+          var Mudo = function () { var c = new (Function.prototype.bind.apply(Base, [null].concat([].slice.call(arguments))))(); c.suspend(); return c; };
+          Mudo.prototype = Base.prototype;
+          window.AudioContext = window.webkitAudioContext = Mudo;
+        })();
+      }
+    </script>
+    <style>
+      html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+      #unity-container { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+      #unity-canvas { display: block; background: #0b0e14; outline: none; }
+      #loading {
+        position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        gap: 14px; color: #e9e2cf; font: 18px/1.3 "Trebuchet MS", Arial, sans-serif; letter-spacing: 0.04em;
+      }
+      #bar { width: min(320px, 60vw); height: 10px; border: 2px solid #e9e2cf; padding: 2px; box-sizing: content-box; }
+      #bar-fill { width: 0; height: 100%; background: #d9a441; }
+      #fullscreen {
+        position: absolute; right: 10px; bottom: 10px; width: 34px; height: 34px; border: 0; border-radius: 6px;
+        background: rgba(0, 0, 0, 0.45); color: #e9e2cf; font-size: 18px; cursor: pointer; display: none;
+      }
+      #fullscreen:hover { background: rgba(0, 0, 0, 0.7); }
+      #warning { position: absolute; left: 50%; top: 8px; transform: translateX(-50%); max-width: 90%; display: none; }
+      #warning div { padding: 8px 12px; margin-bottom: 6px; font: 14px Arial, sans-serif; }
+    </style>
   </head>
   <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
-      <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-logo-title-footer"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Odisseia</div>
-      </div>
+    <div id="unity-container">
+      <canvas id="unity-canvas" tabindex="-1"></canvas>
+      <div id="loading"><span id="loading-text">Carregando…</span><div id="bar"><div id="bar-fill"></div></div></div>
+      <button id="fullscreen" title="Tela cheia" aria-label="Tela cheia">⛶</button>
+      <div id="warning"></div>
     </div>
     <script>
       var canvas = document.querySelector("#unity-canvas");
+      var mobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
-      function unityShowBanner(msg, type) {
-        var warningBanner = document.querySelector("#unity-warning");
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+      if (!/^pt/i.test(navigator.language || "")) {
+        document.querySelector("#loading-text").textContent = "Loading…";
+        document.querySelector("#fullscreen").title = "Fullscreen";
+      }
+
+      // Maior retângulo 16:9 que cabe na janela. No celular, a tela inteira (como o template padrão fazia) —
+      // o jogo trata retrato com o aviso de girar o aparelho.
+      function ajustar() {
+        var w = window.innerWidth, h = window.innerHeight;
+        if (!mobile) {
+          if (w / h > 16 / 9) { w = Math.round(h * 16 / 9); } else { h = Math.round(w * 9 / 16); }
         }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
-        else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
+        canvas.style.width = w + "px";
+        canvas.style.height = h + "px";
+      }
+      window.addEventListener("resize", ajustar);
+      ajustar();
+
+      function unityShowBanner(msg, type) {
+        var banner = document.querySelector("#warning");
+        var div = document.createElement("div");
+        div.textContent = msg;
+        div.style.background = type == "error" ? "#b3261e" : "#e0b100";
+        div.style.color = type == "error" ? "#fff" : "#000";
+        banner.appendChild(div);
+        banner.style.display = "block";
+        if (type != "error") {
+          setTimeout(function () {
+            banner.removeChild(div);
+            banner.style.display = banner.children.length ? "block" : "none";
           }, 5000);
         }
-        updateBannerVisibility();
       }
 
       var buildUrl = "Build";
@@ -63,71 +100,32 @@
         productName: "Odisseia",
         productVersion: "1.0",
         showBanner: unityShowBanner,
-        // errorHandler: function(err, url, line) {
-        //    alert("error " + err + " occurred at line " + line);
-        //    // Return 'true' if you handled this error and don't want Unity
-        //    // to process it further, 'false' otherwise.
-        //    return true;
-        // },
+        // QA-18: o save (PlayerPrefs) é persistido pelo próprio motor, sem a sincronização manual
+        // JS_FileSystem_Sync() que o console acusava como depreciada.
+        autoSyncPersistentDataPath: true,
       };
 
-      // By default, Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
-
-      // If you would like all file writes inside Unity Application.persistentDataPath
-      // directory to automatically persist so that the contents are remembered when
-      // the user revisits the site the next time, uncomment the following line:
-      // config.autoSyncPersistentDataPath = true;
-      // This autosyncing is currently not the default behavior to avoid regressing
-      // existing user projects that might rely on the earlier manual
-      // JS_FileSystem_Sync() behavior, but in future Unity version, this will be
-      // expected to change.
-
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
+      if (mobile) {
         document.querySelector("#unity-container").className = "unity-mobile";
-        canvas.className = "unity-mobile";
-
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
-
-
-      } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
       }
-
-      document.querySelector("#unity-loading-bar").style.display = "block";
 
       var script = document.createElement("script");
       script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
-                document.querySelector("#unity-loading-bar").style.display = "none";
-                document.querySelector("#unity-fullscreen-button").onclick = () => {
-                  unityInstance.SetFullscreen(1);
-                };
-
-              }).catch((message) => {
-                alert(message);
-              });
-            };
-
+      script.onload = function () {
+        createUnityInstance(canvas, config, function (progress) {
+          document.querySelector("#bar-fill").style.width = 100 * progress + "%";
+        }).then(function (unityInstance) {
+          document.querySelector("#loading").style.display = "none";
+          var botao = document.querySelector("#fullscreen");
+          // No celular o jogo já ocupa a tela inteira, e este canto é dos controles de toque: o botão cobria o ATK.
+          botao.style.display = mobile ? "none" : "block";
+          botao.onclick = function () { unityInstance.SetFullscreen(1); canvas.focus(); };
+          canvas.focus();
+        }).catch(function (message) {
+          unityShowBanner(message, "error");
+        });
+      };
       document.body.appendChild(script);
-
     </script>
   </body>
 </html>

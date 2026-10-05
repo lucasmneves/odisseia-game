@@ -61,7 +61,9 @@ public static class LocalizationProbe
         foreach (string arquivo in Directory.GetFiles("Assets/Scripts", "*.cs", SearchOption.AllDirectories))
         {
             string fonte = File.ReadAllText(arquivo);
-            foreach (Match m in Regex.Matches(fonte, @"Localization\.(?:Get|Has)\(""([^""]+)"""))
+            // Só o literal que É o argumento inteiro (seguido de ")" ou ","): "speaker." + falante é um PREFIXO montado
+            // em runtime, e lido como chave deixava a probe sempre em FALHOU, escondendo erro de verdade.
+            foreach (Match m in Regex.Matches(fonte, @"Localization\.(?:Get|Has)\(""([^""]+)""\s*[,)]"))
             {
                 usadas.Add(m.Groups[1].Value);
             }

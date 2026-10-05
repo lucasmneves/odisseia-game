@@ -359,3 +359,80 @@ Avisos analisados:
 | Fogo, altar | aprovados | só a chama se mexe; altar com o mesmo pivô apagado e aceso |
 | Troia, primeiro plano, Éolo | aprovados | — |
 | Fase 16 | aprovada | auditada na etapa da fase; a chama da lareira agora tem loop |
+
+---
+
+# INTEGRAÇÃO NO UNITY — ETAPA 5 (2026-10-02, Unity 6000.5.8f1 local) · 0 gerações
+
+| Item | Ferramenta (idempotente) | Resultado |
+|---|---|---|
+| Fase 16 | `FinalSceneDresser.Run` (1ª execução real) | 34 objetos; 2ª rodada idêntica; `PlaceholderProbe` OK; capturas com parallax simulado (`PrologueScreenshot -shotSize 6`) em `Docs/Environment/Fase16/_capturas_unity/`, 0 px magenta |
+| Fogo em loop (PXL-015 + Polish 02) | `FireAnimationDresser.Run` / `.Conferir` | 9 folhas movidas (git mv, GUID mantido) para `Resources/Odisseia/Environments/Fire/` — o `SpriteAnimator` só carrega de Resources. **32 fogos em 9 cenas** (02, 03, 05, 06, 07, 09, 14, 15, 16); em play mode, 32/32 trocam de quadro. Rodar DEPOIS dos vestidores de cena |
+| Entablamento de Éolo (PXL-022, N-06) | `FinalPolishDresser.DressEolo` (P-03) | escala 2,01 → 1; 12,0 → 11,1 un, mesma base |
+| Primeiro plano 04/06/14/15 (PXL-021) | `PackForegroundDresser.Run`, raiz `PackForeground` | 5 de 8 peças: barril com corda (04), balaustrada e nuvem (06), mato ×2 (14), ânfora ×2 (15). Ordem 12, base enterrada, fora de pontos de parada |
+
+**Decisões aplicadas (recomendado, aprovado em 2026-10-02):**
+
+| Item | Como | Resultado |
+|---|---|---|
+| Moeda | `node Tools/build-coin-native.js`: cada quadro reduzido à metade por MODA (34×37 → 17×19 px), folha em `Resources/Odisseia/Items/item_collectible_coin.png` (fonte em Art intacta) | 0,40 × 0,44 un em escala 1 (antes 0,33 un pintada a 100 px/un). Anima em play mode (estado `coin`) |
+| Aljava, altar, moeda nos prefabs | `ItemArtDresser.Run` (idempotente) | escala 1 com o **colisor no mesmo tamanho no mundo** (raio × escala antiga: moeda 0,175, aljava 0,2). Altar: quadro 00 apagado / 01 aceso nos sprites que o `Checkpoint` já troca; pivô das fatias em y 0,366 para a base cair 0,7 un abaixo do Transform, como o pilar antigo — nenhuma instância mexida. A aljava não é instanciada hoje (a flecha recolhida usa o próprio objeto) |
+| Cordame, galho, estandarte | `PackForegroundDresser`, raiz `PackDecor` | DECORAÇÃO presa a estruturas, atrás do jogador: verga do mastro da proa (04, ordem −6), beiral da casa tomada pela hera (14, −17), sobre a porta do salão (15, −29) |
+| Troia | `TroySceneDresser` | `War_Shield_1` 0 → −2,5: cobria metade do altar |
+
+Ainda fora: a chama do altar aceso é estática (o `Checkpoint` troca um sprite; animar exigiria código). Tocha de Ítaca animada e lamparina sem uso em cena.
+
+# INTEGRAÇÃO — ETAPA 6, parte 1 (2026-10-03) · 0 gerações
+
+## Troia — os 8 placeholders de gameplay (N-08 / QA-20)
+`TroySceneDresser.VestirGeometriaDeJogo`: posição lida do COLISOR de cada placeholder; só o SpriteRenderer dele é desligado.
+
+| Placeholder | Arte |
+|---|---|
+| `Platform_Bridge` | `troy_plank_bridge`, topo no topo do colisor |
+| `Gauntlet_1..3` | `troy_fallen_block` (o do meio espelhado) |
+| `Obstacle_Low` | `troy_fallen_stone` (novo, `node Tools/build-troy-obstacle.js`: a 1ª pedra inteira do bloco, de junta a junta, 0,72 × 0,82 un) |
+| `Wall_Troia` | 3 `troy_barricade_01` empilhadas em espelho alternado — lado grego do acampamento (o tile cheio de madeira lia como coluna de terra) |
+| `LevelGoal`, `Mast`, `Sail` | desenho desligado; a escada de cerco (x=71) marca a chegada. **PIXELLAB-FUTURE: o cavalo de Troia** — é a narrativa da saída |
+
+`Sea_Background` (inativo, herdado da 01) justificado no `PlaceholderProbe`. **`PlaceholderProbe` Troia: OK** (antes 8 visíveis).
+
+## Efeitos de combate no lugar dos quadradinhos do VfxBurst
+`Odisseia.Systems.VfxSheet` (novo): toca uma folha uma vez e se destrói; cache estático; se a folha faltar devolve false e o
+ponto de chamada mantém o `VfxBurst` antigo. Folhas movidas (git mv, GUID mantido) para `Resources/Odisseia/Effects/`.
+
+| Evento | Onde | Folha |
+|---|---|---|
+| golpe leve / pesado | `PlayerCombat` | `fx_slash_v2` / `fx_heavy_slash`, espelhado pelo lado do `attackPoint` |
+| dano (jogador e inimigo), boneco de treino | `DamageFeedback`, `TrainingTarget` | `fx_hit_v2` |
+| morte | `DamageFeedback` | `fx_death` (12 fps) |
+| bloqueio | `PlayerShield` | `fx_block`, 0,35 un à frente, lado do olhar |
+| impacto da flecha | `Arrow.OnTriggerEnter2D` | `fx_arrow_impact`; o `Vanish` não repete quadradinhos depois de um acerto |
+| coleta | `Collectible` | `fx_collect` |
+| pulo / pouso | `PlayerDustFx` (novo, no prefab Player; só LÊ `IsGrounded` e a velocidade) | `fx_jump_dust` / `fx_land_dust` |
+
+Prova (play mode, `QaMechanicsTest.Run`, que agora conta os VfxSheet): hit ×22, slash ×1, block ×4, collect ×1, jump dust ×1,
+land dust ×1, arrow impact ×1, death ×3. Medidas de combate idênticas às de antes da troca. `fx_heavy_slash` não foi
+disparado pelo roteiro (ele não encadeia o segundo golpe).
+Mantidos com `VfxBurst` por ora: disparo do arco, pilha de flechas, ponto de interação, checkpoint.
+
+# INTEGRAÇÃO — ETAPA 6, parte 2 (2026-10-03) · 0 gerações · HUD, mapa, LevelSelect, Ending
+
+| Tela | O que entrou | Onde | Prova |
+|---|---|---|---|
+| HUD (PXL-019, QA-15) | ícone à esquerda de vida, moedas, flechas, vidas e XP, em tamanho nativo (23–32 px numa linha de 32); o texto mostra só o número. Sem o ícone, volta o glifo/palavra antigo. Resolve "Vidas"/"XP" fixos em português | `HUD.cs` (ícones de `Resources/Odisseia/UI/HUD/`, git mv) | `HudShot` → `Docs/QA/_hud/troia.png` |
+| Mapa-múndi (PXL-016/017/018, Polish 02, QA-16) | emblema da fase no nó (variante bloqueada em cinza), louro atrás quando concluída, aro dourado animado quando atual; trilha pontilhada (vinho navegado / areia por navegar) no lugar dos segmentos esticados; navio-marcador; mar na cor da água do `map_aegean` (#577ea2) com brilhos de onda animados de semente fixa | `LevelNodeView`, `WorldMapManager`, `WorldMapPlayerController` (arte em `Resources/Odisseia/Map/`); `SpriteAnimator.Configure` novo para folhas criadas em runtime | `HudShot -hudMapProgress 0` e `3` → `worldmap_00/03.png`; `CampaignValidation` |
+| LevelSelect (PXL-016) | `map_aegean` no lugar da ilustração pintada `mapa.png` | `LevelSelectSceneBuilder` (MapPath) | `LevelSelectProbe`: 0 erros, proporção 1,776 = 1,776 |
+| Ending (PXL-009, PP-14) | quarto da cama na oliveira em tela cheia (câmera 3,97), casal do reencontro, Telêmaco adulto com Idle, chama animada da lychnos; caixas e fundos chapados desligados | `EndingSceneDresser` (idempotente, raiz `EndingScenery`) | `HudShot` → `ending.png`; 2ª rodada sem diferença |
+
+**Não feito, com motivo:**
+- **Menu principal (PXL-020):** a pintura atual é um mockup com logotipo e placas de botão desenhados, e os botões reais
+  estão ancorados sobre essas placas (`MainMenuLayoutProbe`). Trocar só a imagem deixaria botões soltos e o jogo sem logo —
+  exige redesenho do menu. **Decisão pendente.**
+- **Mapa geográfico:** `map_aegean` é um arquipélago 16:9 de uma tela; o mapa-múndi é uma faixa de 60 un. Usá-lo como
+  fundo do mapa-múndi exigiria redesenhar o traçado sobre as ilhas. **Decisão pendente.**
+- Ícones de fome, lótus, cera e escudo: os sistemas desses indicadores não passam pelo `HUD`; ficam para a integração deles.
+
+**Achados de QA (registrar na Etapa 8):** painel do mapa com "Already completed — play again" (EN) **atrás** do botão "JOGAR"
+(PT); diálogo da Troia com corpo em inglês e falante "Odisseu" em português; contraste baixo do HUD sobre céu claro e do
+título do Ending sobre a copa da oliveira.

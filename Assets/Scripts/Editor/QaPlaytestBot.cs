@@ -19,7 +19,7 @@ using Odisseia.WorldMap;
 /// virtual do Input System, as mesmas ações (Move, Jump, Attack, Interact, Shield, Bow). Nada é teleportado e
 /// nenhum objetivo é marcado por código: se a fase fecha, foi jogando.
 ///
-/// Unity.exe -batchmode -projectPath . -executeMethod QaPlaytestBot.Run [-qaFrom 1] [-qaTo 16] [-qaTimeScale 2]
+/// Unity.exe -batchmode -projectPath . -executeMethod QaPlaytestBot.Run [-qaFrom 1] [-qaTo 16] [-qaTimeScale 2] [-qaOlhar 1.1]
 /// (sem -quit: o bot encerra sozinho; relatório em Logs/qa_playtest.txt)
 ///
 /// Comportamento (deliberadamente simples, para ser reproduzível): segura "direita"; pula quando fica parado
@@ -52,6 +52,47 @@ public static class QaPlaytestBot
     private static int indice, ate;
     private static double marco;
     private static float escalaDeTempo = 2f;
+    private static float olharFrente = 1.1f;
+    private static bool segundoPuloUsado;
+    private static float traceDe = float.NaN, traceAte;
+
+    /// <summary>
+    /// No alto do primeiro pulo: projeta a queda à frente (velocidade horizontal real, gravidade efetiva do corpo) e
+    /// procura onde o pé cai. Pousa → não precisa. Bate na LATERAL de algo mais alto que o pé naquele ponto, ou não acha
+    /// chão em 5 un → precisa do segundo pulo. É o que um jogador faz olhando a plataforma chegar.
+    /// </summary>
+    private static bool PrecisaDoSegundoPulo(Rigidbody2D corpo, float direcao)
+    {
+        float vx = Mathf.Max(Mathf.Abs(corpo.linearVelocity.x), 3f);
+        float vy = corpo.linearVelocity.y;
+        float g = Mathf.Abs(Physics2D.gravity.y * corpo.gravityScale);
+        Vector2 pe = corpo.position;
+        for (float d = 0.1f; d <= 6f; d += 0.1f)
+        {
+            float tempo = d / vx;
+            float peY = pe.y + vy * tempo - 0.5f * g * tempo * tempo;
+            if (peY < pe.y - 6f) { break; }
+
+            // Na BORDA DA FRENTE da cápsula (meia largura 0,3): é ela que chega ao canto da plataforma, e o fundo
+            // arredondado desliza para cima dele — o pouso medido no QaMechanicsTest.TroiaVaos.
+            float x = pe.x + direcao * (d + 0.3f);
+
+            // O CORPO (do pé até a cabeça, 1,4 un) bateria em algo ali? Lateral de plataforma → precisa subir. Só o corpo
+            // conta: teto ou rocha acima da cabeça não bloqueia (a primeira versão olhava 4 un acima e confundia teto
+            // com parede, gastando o segundo pulo perto do chão).
+            if (Physics2D.OverlapBox(new Vector2(x, peY + 0.8f), new Vector2(0.05f, 1.2f), 0f, 1 << LayerChao) != null)
+            {
+                return true;
+            }
+
+            // Chão logo abaixo do pé: pousa aqui.
+            if (Physics2D.Raycast(new Vector2(x, peY + 0.05f), Vector2.down, 0.2f, 1 << LayerChao).collider != null)
+            {
+                return false;
+            }
+        }
+        return true;   // nada para pousar à frente
+    }
     private static bool opcoesOriginaisAtivas;
     private static EnterPlayModeOptions opcoesOriginais;
     private static Keyboard teclado;
@@ -86,6 +127,20 @@ public static class QaPlaytestBot
         ate = Mathf.Clamp(De("-qaTo", 16), 1, 16) - 1;
         int k = System.Array.IndexOf(a, "-qaTimeScale");
         if (k >= 0) { float.TryParse(a[k + 1], System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out escalaDeTempo); }
+        // -qaOlhar: a que distância à frente o bot procura chão para decidir o pulo. O padrão 1,1 é o das rodadas
+        // registradas; 0,5 pula da borda, como um jogador (medido em QaMechanicsTest.TroiaVaos).
+        olharFrente = 1.1f;
+        // -qaTrace x0,x1: registra no log, quadro a quadro, posição, velocidade, chão e pulo dentro dessa faixa de x.
+        traceDe = float.NaN;
+        int tr = System.Array.IndexOf(a, "-qaTrace");
+        if (tr >= 0)
+        {
+            string[] faixa = a[tr + 1].Split(',');
+            float.TryParse(faixa[0], System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out traceDe);
+            float.TryParse(faixa[1], System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out traceAte);
+        }
+        int o = System.Array.IndexOf(a, "-qaOlhar");
+        if (o >= 0) { float.TryParse(a[o + 1], System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out olharFrente); }
 
         opcoesOriginaisAtivas = EditorSettings.enterPlayModeOptionsEnabled;
         opcoesOriginais = EditorSettings.enterPlayModeOptions;
@@ -270,8 +325,9 @@ public static class QaPlaytestBot
         // pular: parado contra algo, ou sem chão à frente
         bool noChao = controle.IsGrounded;
         bool parado = Mathf.Abs(rb.linearVelocity.x) < 0.3f;
-        Vector2 frente = (Vector2)jogador.position + new Vector2(recuando ? -1.1f : 1.1f, 0.3f);
+        Vector2 frente = (Vector2)jogador.position + new Vector2(recuando ? -olharFrente : olharFrente, 0.3f);
         bool semChao = Physics2D.Raycast(frente, Vector2.down, 4f, 1 << LayerChao).collider == null;
+        if (noChao && t >= pularAte) { segundoPuloUsado = false; }
         if (t < pularAte) { teclas.Add(Key.Space); }
         else if (noChao && (parado && t - ultimoAvanco > 0.35f || semChao))
         {
@@ -279,10 +335,19 @@ public static class QaPlaytestBot
             saltosSemAvanco++;
             teclas.Add(Key.Space);
         }
-        else if (!noChao && rb.linearVelocity.y < 0.5f && saltosSemAvanco > 0 && (parado || semChao))
+        else if (!noChao && !segundoPuloUsado && rb.linearVelocity.y < 0.5f
+            && (parado && saltosSemAvanco > 0 || PrecisaDoSegundoPulo(rb, recuando ? -1f : 1f)))
         {
+            // QA-21: antes o segundo pulo exigia saltosSemAvanco > 0, que zera assim que o corpo avança 0,25 un — logo
+            // depois de decolar. Na prática o bot nunca dava pulo duplo em movimento.
+            segundoPuloUsado = true;
             pularAte = t + 0.15f;   // segundo pulo no alto do primeiro
             teclas.Add(Key.Space);
+        }
+
+        if (!float.IsNaN(traceDe) && jogador.position.x >= traceDe && jogador.position.x <= traceAte)
+        {
+            Debug.Log($"[QATrace] t={t:0.00} x={jogador.position.x:0.00} y={jogador.position.y:0.00} vx={rb.linearVelocity.x:0.0} vy={rb.linearVelocity.y:0.0} chao={noChao} semChao={semChao} teclas={string.Join("+", teclas)} seg={segundoPuloUsado}");
         }
 
         // interagir e atacar

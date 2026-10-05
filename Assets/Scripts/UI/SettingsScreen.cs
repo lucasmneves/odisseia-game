@@ -119,9 +119,29 @@ namespace Odisseia.UI
             }
         }
 
+        /// <summary>
+        /// Celular deitado (~2,16:1): o Canvas de referência 1280×720 com match 0,5 fica com ~650 unidades de altura, e o
+        /// painel (~700) saía cortado embaixo — o botão de fechar ficava fora da tela. Quando não cabe, o painel e a moldura
+        /// encolhem por escala até caber, com folga; em tela que comporta, nada muda. Refeito a cada quadro aberto, porque o
+        /// aparelho pode girar com a tela aberta.
+        /// </summary>
+        private void AjustarAoTamanhoDaTela()
+        {
+            float disponivel = ((RectTransform)root.transform).rect.height - 24f;
+            float altura = content.sizeDelta.y + 6f;
+            float escala = altura > disponivel && disponivel > 0f ? disponivel / altura : 1f;
+            content.localScale = borderRect.localScale = new Vector3(escala, escala, 1f);
+        }
+
         private void Update()
         {
-            if (!IsOpen || OptionsMenu.IsOpen)
+            if (IsOpen)
+            {
+                AjustarAoTamanhoDaTela();
+            }
+
+            // O B/Esc que acabou de fechar a tela de controles não fecha esta junto.
+            if (!IsOpen || OptionsMenu.IsOpen || OptionsMenu.ClosedThisFrame)
             {
                 return;
             }
@@ -216,7 +236,7 @@ namespace Odisseia.UI
             Row(Localization.Get("ui.settings.keyboardGamepad"), Localization.Get("ui.settings.customize"), OptionsMenu.Open);
 
             Section(Localization.Get("ui.settings.section.graphics"));
-            Stepper(Localization.Get("ui.settings.quality"), SettingsManager.QualityNames,
+            Stepper(Localization.Get("ui.settings.quality"), SettingsManager.QualityDisplayNames,
                 () => SettingsManager.QualityLevel, i => SettingsManager.QualityLevel = i);
 
             // No navegador quem manda no tamanho é a página; oferecer o controle seria
@@ -478,7 +498,7 @@ namespace Odisseia.UI
             go.AddComponent<RectTransform>();
 
             var text = go.AddComponent<Text>();
-            text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            text.font = UITheme.Font;
             text.text = texto;
             text.fontSize = tamanho;
             text.color = cor;

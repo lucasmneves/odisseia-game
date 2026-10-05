@@ -44,6 +44,7 @@ namespace Odisseia.Systems
                 { "Shield", ("LT", "L2", "LT/L2") },
                 { "Bow", ("RT", "R2", "RT/R2") },
                 { "Interact", ("Y", "△", "Y/△") },
+                { "Sprint", ("RB", "R1", "RB/R1") },
                 { "Pause", ("Menu", "Options", "Menu/Options") },
             };
 

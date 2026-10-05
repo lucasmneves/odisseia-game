@@ -42,6 +42,9 @@ namespace Odisseia.WorldMap
         private Button enterButton;
         private WorldMapManager manager;
 
+        private LevelNode currentNode;
+        private int currentTotal;
+
         private void Awake()
         {
             manager = FindAnyObjectByType<WorldMapManager>();
@@ -49,9 +52,20 @@ namespace Odisseia.WorldMap
             Build();
         }
 
+        // A dica do nó cita o botão ("[E] Jogar" / "[Y] Jogar"): trocar de teclado para
+        // controle com o painel aberto tem que reescrevê-la.
+        private void OnEnable() => InputDeviceTracker.Changed += RefreshNode;
+
+        private void OnDisable() => InputDeviceTracker.Changed -= RefreshNode;
+
+        private void RefreshNode() => ShowNode(currentNode, currentTotal);
+
         /// <summary>Mostra os dados do nó em foco, ou esconde o painel se não houver.</summary>
         public void ShowNode(LevelNode node, int TotalLevels)
         {
+            currentNode = node;
+            currentTotal = TotalLevels;
+
             if (node == null)
             {
                 nodePanel.SetActive(false);
@@ -65,8 +79,8 @@ namespace Odisseia.WorldMap
             bool enterable = node.IsEnterable;
             nodeHintText.text = enterable
                 ? (node.State == LevelNodeState.Completed
-                    ? Localization.Get("ui.worldMap.replay")
-                    : Localization.Get("ui.worldMap.play"))
+                    ? ControlHints.Instruction("ui.worldMap.replay", "Interact")
+                    : ControlHints.Instruction("ui.worldMap.play", "Interact"))
                 : Localization.Get("ui.worldMap.blocked");
 
             enterButton.gameObject.SetActive(enterable);
@@ -149,23 +163,27 @@ namespace Odisseia.WorldMap
             canvasGO.AddComponent<GraphicRaycaster>();
             Transform root = canvasGO.transform;
 
-            // topo
-            CreateText(root, "Title", Texto("ui.worldMap.title", mapTitle), UITheme.FontHeading, UITheme.TextAccent,
+            // topo — soltos sobre o mapa geográfico (ilhas, costa), com o mesmo contorno dos textos do HUD.
+            Text titulo = CreateText(root, "Title", Texto("ui.worldMap.title", mapTitle), UITheme.FontHeading, UITheme.TextAccent,
                 new Vector2(0.5f, 1f), new Vector2(0f, -26f), new Vector2(600f, 40f));
-            CreateText(root, "Subtitle", Texto("ui.worldMap.subtitle", mapSubtitle), UITheme.FontBody, UITheme.TextSecondary,
+            Text subtitulo = CreateText(root, "Subtitle", Texto("ui.worldMap.subtitle", mapSubtitle), UITheme.FontBody, UITheme.TextSecondary,
                 new Vector2(0.5f, 1f), new Vector2(0f, -60f), new Vector2(600f, 28f));
             progressText = CreateText(root, "Progress", string.Empty, UITheme.FontBody,
                 UITheme.TextSecondary, new Vector2(0.5f, 1f), new Vector2(0f, -88f), new Vector2(600f, 28f));
+            TextContrast.Apply(titulo);
+            TextContrast.Apply(subtitulo);
+            TextContrast.Apply(progressText);
 
-            // painel do nó (rodapé)
+            // painel do nó (rodapé). 148 de altura, não 108: com 108 o botão (rodapé, 12..52) cobria a linha de ajuda
+            // (−52..−80 do topo) — "Já concluída — [E] para jogar de novo" ficava escondida atrás dele.
             nodePanel = CreatePanel(root, "NodePanel", new Vector2(0.5f, 0f),
-                new Vector2(0f, 18f), new Vector2(560f, 108f));
+                new Vector2(0f, 18f), new Vector2(560f, 148f));
             nodeNameText = CreateText(nodePanel.transform, "NodeName", string.Empty, UITheme.FontHeading,
                 UITheme.TextPrimary, new Vector2(0.5f, 1f), new Vector2(0f, -12f), new Vector2(520f, 38f));
             nodeHintText = CreateText(nodePanel.transform, "NodeHint", string.Empty, UITheme.FontBody,
                 UITheme.TextSecondary, new Vector2(0.5f, 1f), new Vector2(0f, -52f), new Vector2(520f, 28f));
 
-            enterButton = CreateButton(nodePanel.transform, "EnterButton", "JOGAR",
+            enterButton = CreateButton(nodePanel.transform, "EnterButton", Localization.Get("ui.worldMap.enter"),
                 new Vector2(0.5f, 0f), new Vector2(0f, 12f), new Vector2(200f, 40f));
             enterButton.onClick.AddListener(() => manager?.TryEnterCurrentNode());
 
@@ -220,7 +238,7 @@ namespace Odisseia.WorldMap
 
             var text = go.AddComponent<Text>();
             text.text = content;
-            text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            text.font = Odisseia.UI.UITheme.Font;
             text.fontSize = fontSize;
             text.alignment = TextAnchor.MiddleCenter;
             text.color = color;
