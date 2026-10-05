@@ -498,7 +498,7 @@ namespace Odisseia.UI
             go.AddComponent<RectTransform>();
 
             var text = go.AddComponent<Text>();
-            text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            text.font = UITheme.Font;
             text.text = texto;
             text.fontSize = tamanho;
             text.color = cor;

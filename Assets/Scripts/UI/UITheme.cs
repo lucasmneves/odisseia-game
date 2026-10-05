@@ -29,6 +29,32 @@ namespace Odisseia.UI
         public static readonly Color Health = new Color(0.90f, 0.35f, 0.40f);
         public static readonly Color Collectible = new Color(1f, 0.85f, 0.30f);
 
+        private static Font font;
+
+        /// <summary>
+        /// Fonte de toda a UI: DejaVu Sans (<c>Resources/Fonts</c>, licença ao lado).
+        ///
+        /// A fonte embutida do Unity (LegacyRuntime) não tem travessão, ✕ □ △ ○, ◄ ► nem ✓: no
+        /// Editor o Windows supre os glifos, no WebGL eles simplesmente somem ("Ítaca  antes da
+        /// guerra", "[Y/] Jogar"). Sem o arquivo, cai na embutida para a UI nunca ficar sem texto.
+        /// </summary>
+        public static Font Font
+        {
+            get
+            {
+                if (font == null)
+                {
+                    font = Resources.Load<Font>("Fonts/DejaVuSans");
+                    if (font == null)
+                    {
+                        font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                    }
+                }
+
+                return font;
+            }
+        }
+
         // Tamanhos de fonte
         public const int FontTitle = 46;
         public const int FontHeading = 30;

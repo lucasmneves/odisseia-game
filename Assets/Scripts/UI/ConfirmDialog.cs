@@ -248,7 +248,7 @@ namespace Odisseia.UI
             go.AddComponent<RectTransform>();
 
             var text = go.AddComponent<Text>();
-            text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            text.font = UITheme.Font;
             text.fontSize = size;
             text.color = color;
             text.alignment = TextAnchor.MiddleCenter;

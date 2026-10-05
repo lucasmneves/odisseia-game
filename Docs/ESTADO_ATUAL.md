@@ -836,13 +836,13 @@ Fonte: **`Docs/Art/PIXELLAB_VISUAL_POLISH_PASS_02.md`** (auditoria, plano, 12 gr
 ## Sessão local de integração no Unity (2026-10-02 a 2026-10-04) — PASSAGEM PARA A PRÓXIMA SESSÃO
 
 Unity **6000.5.8f1** local (`C:\Program Files\Unity\Hub\Editor\6000.5.8f1\Editor\Unity.exe`, módulo WebGL). Branch
-**`feat/integracao-unity-local`**, commits **`92802a8`** (etapas 1–8) e **`6ae78ff`** (etapas 9–11). **Etapa 12 ainda SEM commit** (ver abaixo).
+**`feat/integracao-unity-local`**, commits **`92802a8`** (etapas 1–8), **`6ae78ff`** (etapas 9–11) e **`475be7c`** (etapa 12).
 Regras da sessão: PixelLab **congelado** (nada gerado; falta de arte vira `PIXELLAB-FUTURE`); não mexer em gameplay sem bug de
 QA; nada de commit/push/PR sem pedido; **todo teste no mudo** (navegador com `?mudo=1`; ferramentas de Editor já mutam).
-Detalhes completos: `Docs/QA/FULL_CAMPAIGN_PLAYTEST.md` §10–15, `Docs/Art/PIXELLAB_ASSET_COMPLETION_MASTER.md` (fim),
+Detalhes completos: `Docs/QA/FULL_CAMPAIGN_PLAYTEST.md` §10–16, `Docs/Art/PIXELLAB_ASSET_COMPLETION_MASTER.md` (fim),
 `Docs/Art/TROY_VISUAL_PACK.md` (fim).
 
-### Feito (etapas 1–12)
+### Feito (etapas 1–13)
 1–2. Inspeção; `main` local estava 47 commits atrás → fast-forward; compila com 0 erros.
 3. **TROY-02** integrado (céu 0,95 / montanhas 0,85 / cidade 0,70, peça única). Bug: o `TroySceneDresser` supunha a câmera em
    x=−33 (está em 0) — corrigido lendo a câmera da cena.
@@ -867,18 +867,16 @@ Detalhes completos: `Docs/QA/FULL_CAMPAIGN_PLAYTEST.md` §10–15, `Docs/Art/PIX
     escolhia nada); B volta/fecha; esquerda/direita no `MenuNavigator`; Controles abre no Fechar, B/Esc cancela só a captura e
     o foco volta a quem abriu; Pause com o botão selecionado branco e ilegível e "Controles" rotulado "Resume"; mapa e tutorial
     de Troia sem tecla fixa (`ControlHints`). Validado pelo `GamepadMenuProbe` (novo, controle virtual: OK) e no build com
-    controle simulado pela Gamepad API. **Os símbolos ✕ □ △ ○ somem no WebGL** ("[Y/] Play") — mesma causa do travessão.
-
-### Pendente de commit (etapa 12)
-`MenuNavigator.cs`, `PauseMenu.cs`, `OptionsMenu.cs`, `GameOverScreen.cs`, `LevelCompleteMenu.cs`, `EndingController.cs`,
-`SettingsScreen.cs`, `WorldMapUI.cs`, `TutorialTrigger.cs`, `LocalizationTable.cs`, `ControlHints.cs`, `KeyRebindService.cs`,
-`GamepadSetup.cs`, `GamepadMenuProbe.cs` (novo, com .meta), `Builds/WebGL/` (build regenerado),
-`Docs/QA/FULL_CAMPAIGN_PLAYTEST.md`, este arquivo.
+    controle simulado pela Gamepad API. Os símbolos ✕ □ △ ○ sumiam no WebGL ("[Y/] Play") — resolvido na etapa 13.
+13. Polish (decisões do usuário): fonte **DejaVu Sans** (`Resources/Fonts`, licença ao lado; `UITheme.Font` + `FontBootstrap`)
+    → travessão e ✕ □ △ ○ ◄ ► ✓ aparecem no WebGL (QA-10 resolvido; +0,34 MB). Emojis removidos (objetivo, fome, lótus,
+    mastro, vento); mastro e vento traduzidos; letreiro da Fase 14 ganhou `LocalizedText`. Ícones de fome, cera (barra das
+    sereias) e lótus nos indicadores (`IndicatorIcon`). Menu principal mantido. Detalhes: QA §16.
 
 ### Próximos passos
-- **Etapa 13 — polish:** decisão de **fonte** (QA-10, recomendado: fonte livre com os glifos — **inclui ✕ □ △ ○ do controle**); contraste do HUD e do título do
-  Ending; **menu principal** com a arte nova (exige título e botões próprios — decisão do usuário); mapa geográfico sobre o
-  `map_aegean` (decisão do usuário); ícones de fome/lótus/cera/escudo; chama do altar animada (exige código).
+- **Polish que ficou:** contraste do HUD e do título do Final (sugestão: Outline/Shadow); mapa geográfico sobre o
+  `map_aegean`; chama do altar animada; ícone do escudo (o `PlayerShield` não tem medidor); rótulos fixos em PT na tela
+  de Controles. Menu principal: mantido por decisão do usuário.
 - **PIXELLAB-FUTURE:** cavalo de Troia (saída da Fase 02); ataques das 6 facções (PXL-012) e escudo no ar (PXL-013) — pagos,
   download bloqueado (`node Tools/fetch-paid-anims.js` só com autorização).
 - **Não validado:** iOS/Android físicos, gamepad físico, Fase 01 inteira por input, dificuldade da Cila por humano,

@@ -330,7 +330,7 @@ namespace Odisseia.UI
 
             var text = labelGO.AddComponent<Text>();
             text.text = label;
-            text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            text.font = UITheme.Font;
             text.fontSize = label.Length > 2 ? 20 : 36;
             text.alignment = TextAnchor.MiddleCenter;
             text.color = UITheme.TextPrimary;
@@ -363,7 +363,7 @@ namespace Odisseia.UI
 
             var text = textGO.AddComponent<Text>();
             text.text = Localization.Get("ui.mobile.rotate");
-            text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            text.font = UITheme.Font;
             text.fontSize = UITheme.FontHeading;
             text.horizontalOverflow = HorizontalWrapMode.Wrap;
             text.verticalOverflow = VerticalWrapMode.Overflow;

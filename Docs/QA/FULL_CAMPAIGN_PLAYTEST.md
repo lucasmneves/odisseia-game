@@ -407,3 +407,49 @@ Start pausa; D-pad até Controles, A abre, B volta ao Pause, B retoma; 0 erros n
 - A tela de Controles ainda tem textos fixos em PT ("Mover (Negative)", "Fechar", mensagens) mesmo em inglês.
 - Teste no painel do app: com o mouse parado sobre um botão, fechar uma tela por cima devolve o foco ao botão sob o mouse
   (hover seleciona) — comportamento normal do mouse, não do controle.
+
+## 16. Etapa 13 — polish (2026-10-04)
+
+Decisões do usuário: fonte **DejaVu Sans**; **remover** os emojis; **manter** o menu principal; ligar os ícones de
+fome/lótus/cera/escudo. Mapa geográfico, contraste do HUD/Ending e chama do altar ficaram fora desta rodada.
+
+### Fonte (QA-10 resolvido)
+
+- `Assets/Resources/Fonts/DejaVuSans.ttf` (release oficial 2.37 do GitHub `dejavu-fonts`; licença Bitstream Vera/domínio
+  público, ao lado em `DejaVuSans-LICENSE.txt`). Cobertura conferida no `cmap`: acentos do PT, —, ✕ □ △ ○, ◄ ►, ✓, ← →, aspas.
+- `UITheme.Font` (cai na embutida se o arquivo faltar); as 11 chamadas à fonte embutida passaram a usá-la; `FontBootstrap`
+  troca a embutida nos textos de cada cena carregada (~245 textos nas 20 cenas, sem reescrever cena). Negrito das cenas:
+  sintético (sem arquivo Bold).
+- Build: dados 15,57 → **15,91 MB** (+0,34 MB). No navegador: "ITHACA **—** THE CALL", "**[Y/△]** Play", "Ithaca **—** before
+  the war"; 0 erros.
+
+### Emojis removidos
+
+O WebGL não desenha emoji (nem a DejaVu tem): 🏠 e 🥸 do objetivo, 🍖 da fome, 🌸 do lótus, 🔗 do mastro e 🌬️ do vento
+deixavam um buraco no começo do texto. Saíram da tabela e do código. Mastro e vento eram texto fixo em PT na cena → chaves
+`ui.siren.mast` e `ui.wind.waiting` (o texto da cena fica de reserva). O letreiro "Disfarçado de mendigo" da Fase 14 não
+tinha `LocalizedText` (o da Fase 01 tem) → componente adicionado à cena com a chave `ui.hud.disguised`, que já existia sem
+uso (única edição de cena: +14 linhas).
+
+### Ícones dos indicadores (`IndicatorIcon`, escala inteira)
+
+| Indicador | Ícone | Onde |
+|---|---|---|
+| Fome (Gado do Sol) | `icon_hunger` (30×28) | dentro do painel, à esquerda; texto pela tabela ("Hunger/Fome: 92%") |
+| Resistência ao canto (Sereias) | `icon_wax` (20×24) | à esquerda da barra |
+| Sonolência (Lotófagos, fora da campanha) | `icon_lotus` (17×12 → 2×) | dentro do painel; chave nova `ui.hud.lotus` |
+| Escudo | `icon_shield` | **não ligado:** o `PlayerShield` não tem medidor (stamina/durabilidade) para o ícone acompanhar |
+
+### Testes
+
+`LocalizationProbe` OK (288 chaves; 16 rótulos de cena) · `PlaceholderProbe` OK (Fase 14) · `GamepadMenuProbe` OK com a
+fonte nova (texto mais largo não quebrou menus) · `HudShot` de Gado do Sol, Sereias, Ítaca (retorno), Troia, mapa e Final ·
+Build WebGL Success · navegador (`?mudo=1`, controle simulado) com os glifos visíveis e 0 erros.
+
+### Visto e não feito (fora das escolhas desta rodada)
+
+- **Contraste:** números do HUD e o contador do vento somem sobre nuvens claras (Gado do Sol); título do Final fraco sobre
+  as folhas. Sugestão: `Outline`/`Shadow` nos textos do HUD e do Final.
+- Nas capturas do `HudShot`, pedras do primeiro plano de Sereias passam por cima da caixa de diálogo — efeito da captura
+  (Canvas em Screen Space Camera); no jogo o Canvas é Overlay. Conferir no navegador ao passar por Sereias.
+- A tela de Controles continua com rótulos fixos em PT.

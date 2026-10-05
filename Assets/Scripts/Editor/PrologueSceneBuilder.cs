@@ -378,7 +378,7 @@ public static class PrologueSceneBuilder
         rect.anchoredPosition = new Vector2(0f, -54f);
 
         var texto = panel.AddComponent<Text>();
-        texto.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+        texto.font = Odisseia.UI.UITheme.Font;
         texto.fontSize = 18;
         texto.alignment = TextAnchor.MiddleCenter;
         texto.color = new Color(0.95f, 0.95f, 0.9f);

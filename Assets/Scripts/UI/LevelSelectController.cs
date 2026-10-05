@@ -189,7 +189,7 @@ namespace Odisseia.UI
             rect.offsetMax = Vector2.zero;
 
             var text = go.AddComponent<Text>();
-            text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            text.font = UITheme.Font;
             text.text = content;
             text.fontSize = UITheme.FontBody;
             text.alignment = alignment;

@@ -359,20 +359,38 @@ namespace Odisseia.Systems
 
             ["ui.hud.hunger"] = new[]
             {
-                "🍖 Hunger: {0}%",
-                "🍖 Fome: {0}%",
+                "Hunger: {0}%",
+                "Fome: {0}%",
+            },
+
+            ["ui.siren.mast"] = new[]
+            {
+                "Bound to the mast — resisting the sirens' song.",
+                "Amarrado ao mastro — resistente ao canto das sereias.",
+            },
+
+            ["ui.wind.waiting"] = new[]
+            {
+                "Waiting for a fair wind: {0}s",
+                "Aguardando vento favorável: {0}s",
+            },
+
+            ["ui.hud.lotus"] = new[]
+            {
+                "Drowsiness {0}%",
+                "Sonolência {0}%",
             },
 
             ["ui.hud.disguised"] = new[]
             {
-                "🥸 Disguised as a beggar",
-                "🥸 Disfarçado de mendigo",
+                "Disguised as a beggar",
+                "Disfarçado de mendigo",
             },
 
             ["ui.hud.itacaBefore"] = new[]
             {
-                "🏠 Ithaca — before the war",
-                "🏠 Ítaca — antes da guerra",
+                "Ithaca — before the war",
+                "Ítaca — antes da guerra",
             },
 
             ["ui.loading"] = new[]

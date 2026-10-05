@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using Odisseia.Player;
+using Odisseia.Systems;
 using Odisseia.UI;
 
 namespace Odisseia.Levels
@@ -15,7 +16,10 @@ namespace Odisseia.Levels
     {
         [SerializeField] private float immunityDuration = 8f;
         [SerializeField] private TutorialPrompt prompt;
-        [SerializeField] private string message = "🔗 Amarrado ao mastro — resistente ao canto das sereias.";
+        [SerializeField] private string message = "Amarrado ao mastro — resistente ao canto das sereias.";
+
+        [Tooltip("Chave de tradução do aviso. Na tabela, ela manda; sem ela, vale a mensagem acima.")]
+        [SerializeField] private string messageKey = "ui.siren.mast";
 
         private bool triggered;
 
@@ -32,7 +36,8 @@ namespace Odisseia.Levels
             }
 
             triggered = true;
-            prompt?.Show(this, message, immunityDuration);
+            string texto = !string.IsNullOrEmpty(messageKey) && Localization.Has(messageKey) ? Localization.Get(messageKey) : message;
+            prompt?.Show(this, texto, immunityDuration);
             StartCoroutine(GrantImmunity(resistance));
         }
 

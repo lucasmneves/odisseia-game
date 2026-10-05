@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Odisseia.Systems;
 
 namespace Odisseia.Levels
 {
@@ -13,7 +14,10 @@ namespace Odisseia.Levels
         [SerializeField] private float delay = 25f;
         [SerializeField] private GameObject target;
         [SerializeField] private Text countdownText;
-        [SerializeField] private string countdownFormat = "🌬️ Aguardando vento favorável: {0}s";
+        [SerializeField] private string countdownFormat = "Aguardando vento favorável: {0}s";
+
+        [Tooltip("Chave de tradução do contador. Na tabela, ela manda; sem ela, vale o formato acima.")]
+        [SerializeField] private string countdownKey = "ui.wind.waiting";
 
         private float timer;
         private bool activated;
@@ -39,7 +43,10 @@ namespace Odisseia.Levels
 
             if (countdownText != null)
             {
-                countdownText.text = string.Format(countdownFormat, Mathf.Max(0, Mathf.CeilToInt(timer)));
+                int segundos = Mathf.Max(0, Mathf.CeilToInt(timer));
+                countdownText.text = !string.IsNullOrEmpty(countdownKey) && Localization.Has(countdownKey)
+                    ? Localization.Get(countdownKey, segundos)
+                    : string.Format(countdownFormat, segundos);
             }
 
             if (timer <= 0f)

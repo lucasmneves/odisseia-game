@@ -272,7 +272,7 @@ public static class LevelSelectSceneBuilder
         Esticar(rect, Vector2.zero, Vector2.one);
 
         var texto = rect.gameObject.AddComponent<Text>();
-        texto.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+        texto.font = Odisseia.UI.UITheme.Font;
         texto.text = conteudo;
         texto.fontSize = tamanho;
         texto.color = cor;
