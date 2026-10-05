@@ -236,7 +236,7 @@ namespace Odisseia.UI
             Row(Localization.Get("ui.settings.keyboardGamepad"), Localization.Get("ui.settings.customize"), OptionsMenu.Open);
 
             Section(Localization.Get("ui.settings.section.graphics"));
-            Stepper(Localization.Get("ui.settings.quality"), SettingsManager.QualityNames,
+            Stepper(Localization.Get("ui.settings.quality"), SettingsManager.QualityDisplayNames,
                 () => SettingsManager.QualityLevel, i => SettingsManager.QualityLevel = i);
 
             // No navegador quem manda no tamanho é a página; oferecer o controle seria

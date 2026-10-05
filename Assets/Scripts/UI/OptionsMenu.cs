@@ -19,6 +19,13 @@ namespace Odisseia.UI
         private const float ReferenceHeight = 600f;
         private const float RowHeight = 34f;
         private const float PanelWidth = 620f;
+
+        /// <summary>
+        /// Botões de baixo (Restaurar padrões / Fechar). Eram 196: com a DejaVu, "Restaurar padrões" (≈210 no corpo 24)
+        /// encostava nas bordas. 240 deixa folga nos dois idiomas sem mexer no corpo da letra.
+        /// </summary>
+        private const float ActionButtonWidth = 240f;
+        private const float ActionButtonGap = 12f;
         private const float RowsTop = 62f;      // espaço do título
         private const float BottomArea = 124f;  // mensagem + botões
         private const float MaxPanelHeight = 560f;
@@ -434,7 +441,7 @@ namespace Odisseia.UI
             messageRect.anchoredPosition = new Vector2(0f, 66f);
 
             resetButton = CreateActionButton(panelRect, "ResetButton", "ui.controls.reset",
-                new Vector2(0.5f, 0f), new Vector2(-104f, 18f), new Vector2(196f, 44f), () =>
+                new Vector2(0.5f, 0f), new Vector2(-(ActionButtonWidth + ActionButtonGap) / 2f, 18f), new Vector2(ActionButtonWidth, 44f), () =>
                 {
                     CancelActiveOperation();
                     KeyRebindService.ResetAll();
@@ -444,7 +451,7 @@ namespace Odisseia.UI
                 });
 
             closeButton = CreateActionButton(panelRect, "CloseButton", "ui.controls.close",
-                new Vector2(0.5f, 0f), new Vector2(104f, 18f), new Vector2(196f, 44f), Close);
+                new Vector2(0.5f, 0f), new Vector2((ActionButtonWidth + ActionButtonGap) / 2f, 18f), new Vector2(ActionButtonWidth, 44f), Close);
 
             // Foco e "voltar" para teclado e controle; sem isto a tela só respondia ao mouse.
             navigator = root.AddComponent<MenuNavigator>();

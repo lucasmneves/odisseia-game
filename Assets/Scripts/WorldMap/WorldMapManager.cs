@@ -46,6 +46,11 @@ namespace Odisseia.WorldMap
         [SerializeField] private CameraFollow cameraFollow;
         [SerializeField] private float cameraPadding = 6f;
 
+        [Header("Mapa geográfico (Etapa 13B)")]
+        [Tooltip("Arte do arquipélago (map_aegean) atrás do caminho. Com ela, a câmera fica dentro do mapa e os brilhos de " +
+                 "onda extras não são criados (a arte já tem ondas). Vazio, o mapa volta ao mar chapado com brilhos.")]
+        [SerializeField] private SpriteRenderer geography;
+
         [Header("Caminhada automática após concluir uma fase")]
         [Tooltip("Espera antes de Odisseu sair andando, para o anúncio ser lido.")]
         [SerializeField] private float autoTravelDelay = 1.2f;
@@ -223,6 +228,12 @@ namespace Odisseia.WorldMap
             }
 
             if (path == null || path.IsEmpty || Resources.LoadAll<Sprite>(PastaDoMapa + "map_wave_glint").Length == 0)
+            {
+                return;
+            }
+
+            // A arte do arquipélago já desenha as ondas; brilho solto por cima cairia também sobre ilha e montanha.
+            if (geography != null && geography.sprite != null)
             {
                 return;
             }
@@ -416,6 +427,15 @@ namespace Odisseia.WorldMap
             // Caminho de um ponto só não gera segmento: sem limites úteis a calcular.
             if (min.x > max.x)
             {
+                return;
+            }
+
+            // Com o mapa geográfico, o limite é a própria arte: o caminho chega à borda (o Mundo dos Mortos fica na beira
+            // do mundo), e a folga de sempre mostraria o fundo além do desenho.
+            if (geography != null && geography.sprite != null)
+            {
+                Bounds arte = geography.bounds;
+                cameraFollow.SetBounds(arte.min, arte.max);
                 return;
             }
 

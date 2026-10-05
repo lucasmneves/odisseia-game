@@ -837,10 +837,11 @@ Fonte: **`Docs/Art/PIXELLAB_VISUAL_POLISH_PASS_02.md`** (auditoria, plano, 12 gr
 
 Unity **6000.5.8f1** local (`C:\Program Files\Unity\Hub\Editor\6000.5.8f1\Editor\Unity.exe`, módulo WebGL). Branch
 **`feat/integracao-unity-local`**, commits **`92802a8`** (etapas 1–8), **`6ae78ff`** (etapas 9–11), **`475be7c`** (etapa 12) e
-**`accd8cc`**, **`19e050d`**, **`39c8a12`** (etapa 13); PR #16 aberto contra a `main`. Validação da 13A ainda sem commit.
+**`accd8cc`**, **`19e050d`**, **`39c8a12`** (etapa 13), **`ba8f710`** (13A) e o commit da 13B parcial; PR #16 contra a `main`.
+**O projeto mudou para `E:\Claude\Odisseia`** (2026-10-05: o C: encheu e a pasta `Documents\Claude` foi movida para o E:).
 Regras da sessão: PixelLab **congelado** (nada gerado; falta de arte vira `PIXELLAB-FUTURE`); não mexer em gameplay sem bug de
 QA; nada de commit/push/PR sem pedido; **todo teste no mudo** (navegador com `?mudo=1`; ferramentas de Editor já mutam).
-Detalhes completos: `Docs/QA/FULL_CAMPAIGN_PLAYTEST.md` §10–17, `Docs/Art/PIXELLAB_ASSET_COMPLETION_MASTER.md` (fim),
+Detalhes completos: `Docs/QA/FULL_CAMPAIGN_PLAYTEST.md` §10–18, `Docs/Art/PIXELLAB_ASSET_COMPLETION_MASTER.md` (fim),
 `Docs/Art/TROY_VISUAL_PACK.md` (fim).
 
 ### Feito (etapas 1–13)
@@ -878,11 +879,16 @@ Detalhes completos: `Docs/QA/FULL_CAMPAIGN_PLAYTEST.md` §10–17, `Docs/Art/PIX
 13A. **Controls localization — PASS.** Validação da tradução da tela de Controles nos dois idiomas pelo `GamepadMenuProbe`
     (troca com a tela aberta, nada da outra língua, sem "(Negative)", mensagens de conflito e cancelamento, ESC e
     "Pressione ESPAÇO para pular"); regressão completa e WebGL. Detalhes: QA §17.
+13B (parcial). Qualidade gráfica traduzida nas Configurações ("Alta", não "High"); botões da tela de Controles com 240 un.
+    ("Restaurar padrões" não encosta mais). **13B.1 mapa geográfico:** `map_aegean` 3× atrás do caminho, rota de 52 pontos
+    pelo mar com as 16 paradas na ordem oficial (`WorldMapGeographyDresser`), câmera dentro da arte e acima do painel.
+    Detalhes: QA §18.
 
 ### Próximos passos
-- **Próxima: ETAPA 13B — POLISH VISUAL** (aguarda autorização do usuário), nesta ordem: 1. mapa geográfico da Odisseia
-  (sobre o `map_aegean`); 2. chama animada do altar; 3. ícone de escudo (o `PlayerShield` não tem medidor); 4. fonte e
-  símbolos PlayStation; 5. menu principal; 6. HUD; 7. Ending; 8. QA final.
+- **Continuar a ETAPA 13B — POLISH VISUAL:** 2. chama animada do altar; 3. ícone de escudo (o `PlayerShield` não tem
+  medidor); 4. fonte e símbolos PlayStation (revisão final); 5. menu principal; 6. HUD; 7. Ending; 8. QA final.
+- Junção `C:\Users\luucas\Documents\Claude → E:\Claude` não criada: as pastas vazias `Habita` e `Odisseia` em C: estavam em
+  uso. Depois de fechar os programas que as usam, pode ser criada com `mklink /J`.
 - **PIXELLAB-FUTURE:** cavalo de Troia (saída da Fase 02); ataques das 6 facções (PXL-012) e escudo no ar (PXL-013) — pagos,
   download bloqueado (`node Tools/fetch-paid-anims.js` só com autorização).
 - **Não validado:** iOS/Android físicos, gamepad físico, Fase 01 inteira por input, dificuldade da Cila por humano,

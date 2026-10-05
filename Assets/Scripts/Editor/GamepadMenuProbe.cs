@@ -203,6 +203,22 @@ public static class GamepadMenuProbe
             Checar(!tela.Contains("(Negative)") && !tela.Contains("(Positive)") && faltam.Count == 0 && sobram.Count == 0,
                 $"{idioma}: tela traduzida (faltam: {string.Join(", ", faltam)}; da outra língua: {string.Join(", ", sobram)})");
 
+            // Nomes de qualidade gráfica (vêm do Quality Settings do Unity, em inglês) na língua do jogo.
+            string qualidades = string.Join(", ", SettingsManager.QualityDisplayNames);
+            bool qualidadeOk = idioma == Language.English
+                ? qualidades.Contains("High") && !qualidades.Contains("Alta")
+                : qualidades.Contains("Alta") && qualidades.Contains("Média") && !qualidades.Contains("High") && !qualidades.Contains("Medium");
+            Checar(qualidadeOk && SettingsManager.QualityDisplayNames.Length == SettingsManager.QualityNames.Length,
+                $"{idioma}, qualidade: {qualidades}");
+
+            // Rótulos dos botões de baixo cabem com folga (a DejaVu é mais larga que a fonte antiga).
+            foreach (Button b in OptionsMenu.Instance.GetComponentsInChildren<Button>(false).Where(b => b.name == "ResetButton" || b.name == "CloseButton"))
+            {
+                Text r = b.GetComponentInChildren<Text>();
+                float largura = ((RectTransform)b.transform).rect.width;
+                Checar(r.preferredWidth + 24f <= largura, $"{idioma}, botão \"{r.text}\": texto {r.preferredWidth:0} + folga 24 cabe em {largura:0}");
+            }
+
             // Mensagens da captura: tecla em conflito (Z do Atacar) e cancelamento por Esc. A linha do Interagir fica com E.
             var interagir = OptionsMenu.Instance.GetComponentsInChildren<Button>(false).Last(b => b.name == "KeyButton");
             Text mensagem = OptionsMenu.Instance.GetComponentsInChildren<Text>(false).First(t => t.name == "Message");

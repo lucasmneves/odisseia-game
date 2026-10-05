@@ -145,6 +145,14 @@ namespace Odisseia.Systems
                 "Qualidade",
             },
 
+            // Níveis do Quality Settings do Unity (ProjectSettings/QualitySettings.asset), ui.quality.<nome sem espaço>.
+            ["ui.quality.veryLow"] = new[] { "Very Low", "Muito baixa" },
+            ["ui.quality.low"] = new[] { "Low", "Baixa" },
+            ["ui.quality.medium"] = new[] { "Medium", "Média" },
+            ["ui.quality.high"] = new[] { "High", "Alta" },
+            ["ui.quality.veryHigh"] = new[] { "Very High", "Muito alta" },
+            ["ui.quality.ultra"] = new[] { "Ultra", "Ultra" },
+
             ["ui.settings.resolution"] = new[]
             {
                 "Resolution",

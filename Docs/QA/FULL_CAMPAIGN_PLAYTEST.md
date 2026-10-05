@@ -523,3 +523,46 @@ volta para English → Customize abre CONTROLS em inglês (Move left, LEFT ARROW
 **Achados para a 13B (não corrigidos aqui):** nomes de qualidade gráfica em inglês nas Configurações em português ("High" —
 vêm do `QualitySettings` do Unity); rótulo "Restaurar padrões" encostado nas bordas do botão de 196 un. (DejaVu é mais larga
 que a fonte antiga).
+
+## 18. ETAPA 13B — POLISH VISUAL (parcial, 2026-10-05)
+
+### Correções prévias
+
+- **Qualidade gráfica em inglês nas Configurações em português ("High"):** os nomes vêm do `QualitySettings` do Unity
+  (`ProjectSettings/QualitySettings.asset`: Very Low … Ultra). `SettingsManager.QualityDisplayNames` traduz pela tabela
+  (`ui.quality.<nome sem espaço>`), na mesma ordem — a lógica de qualidade continua por índice, sem mudança. PT: Muito
+  baixa · Baixa · Média · Alta · Muito alta · Ultra; EN igual ao Unity.
+- **"Restaurar padrões" encostando nas bordas:** botões de baixo da tela de Controles de 196 → 240 un. (simétricos, vão de
+  12), corpo da letra mantido. Medido no `GamepadMenuProbe`: "Restaurar padrões" 214 e "Restore defaults" 190 + folga 24
+  cabem em 240.
+
+### 13B.1 — Mapa geográfico (feito)
+
+- Fundo: `map_aegean` (arte existente, 604×340) em escala inteira 3× atrás do caminho (42,3 × 23,8 un.), ordem −20.
+- Caminho redesenhado pelo mar, 52 pontos, 16 paradas na ordem oficial (o `WorldMapGeographyDresser` confere a ordem):
+  Ítaca = ilha grande da esquerda (prólogo SO, retorno SE, pretendentes no centro, final ao norte); leste: Troia (costa do
+  alto à direita), Cícones (península), Citera, Ciclopes, Éolo (ilhas da direita); oeste: Lestrigões, Circe (ilhas de
+  baixo), Mundo dos Mortos (penhasco da beira do mundo); Sereias (ilhota), Cila e Caríbdis (estreito entre a ilha do centro
+  e a península), Gado do Sol (ilha do centro), Calipso (ilhota) e volta a Ítaca. Rota conferida sobre a arte antes de
+  gravar; menor distância entre paradas 2,76 un. (emblema 1,3 un.).
+- `WorldMapManager`: com a arte, a câmera fica dentro dela e os brilhos de onda extras não são criados (a arte já tem
+  ondas). Câmera 6 (era 5), deslocada 1 un. para baixo do navio (o painel da fase cobre o terço de baixo); navio 10/9
+  (era 4,5/3,5 — caminho de ~190 un., era 60). Título, subtítulo e progresso do mapa com o contorno do `TextContrast`.
+- Desbloqueio, nós, emblemas, louros, aro, trilha (navegada/por navegar), navio, painel e entrada na fase: inalterados.
+- Capturas (`HudShot -hudMapProgress 0/3/8/15`): fases bloqueadas em cinza, concluídas com louro, atual com aro, navio em
+  posições diferentes. A faixa de mar nas bordas de algumas capturas é da captura (aspecto 4:3 do batch); no jogo é 16:9.
+- Polish: com o navio no alto de Ítaca, "Stage 15 of 16" encosta no emblema do Final.
+- Regressão: compilação 0 erros; `LocalizationProbe` (323 chaves), `GamepadSetup`, `InputBindingsProbe`,
+  `CampaignValidation` e `GamepadMenuProbe` OK; build WebGL Success (dados 15,91 MB). **Mapa no WebGL ainda não conferido:**
+  a janela do app estava sem foco e o navegador limitou a página a 2 fps (o limite já registrado na Etapa 10).
+
+### Interrupção
+
+O disco C: encheu (0 GB livres, por fora do projeto) e o Unity e o git pararam. A pasta `Documents\Claude` (8,1 GB, 86.056
+arquivos) foi movida para **`E:\Claude`** a pedido do usuário (robocopy, 0 falhas, contagem e bytes conferidos). O projeto
+agora está em `E:\Claude\Odisseia`.
+
+### Ainda não feito na 13B
+
+13B.2 chama do altar · 13B.3 ícone de escudo · 13B.4 fonte e símbolos PlayStation (revisão final; a DejaVu já resolve os
+glifos) · 13B.5 menu principal · 13B.6 HUD · 13B.7 Ending · 13B.8 QA final. PixelLab: 0 gerações.

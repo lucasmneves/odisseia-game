@@ -163,13 +163,16 @@ namespace Odisseia.WorldMap
             canvasGO.AddComponent<GraphicRaycaster>();
             Transform root = canvasGO.transform;
 
-            // topo
-            CreateText(root, "Title", Texto("ui.worldMap.title", mapTitle), UITheme.FontHeading, UITheme.TextAccent,
+            // topo — soltos sobre o mapa geográfico (ilhas, costa), com o mesmo contorno dos textos do HUD.
+            Text titulo = CreateText(root, "Title", Texto("ui.worldMap.title", mapTitle), UITheme.FontHeading, UITheme.TextAccent,
                 new Vector2(0.5f, 1f), new Vector2(0f, -26f), new Vector2(600f, 40f));
-            CreateText(root, "Subtitle", Texto("ui.worldMap.subtitle", mapSubtitle), UITheme.FontBody, UITheme.TextSecondary,
+            Text subtitulo = CreateText(root, "Subtitle", Texto("ui.worldMap.subtitle", mapSubtitle), UITheme.FontBody, UITheme.TextSecondary,
                 new Vector2(0.5f, 1f), new Vector2(0f, -60f), new Vector2(600f, 28f));
             progressText = CreateText(root, "Progress", string.Empty, UITheme.FontBody,
                 UITheme.TextSecondary, new Vector2(0.5f, 1f), new Vector2(0f, -88f), new Vector2(600f, 28f));
+            TextContrast.Apply(titulo);
+            TextContrast.Apply(subtitulo);
+            TextContrast.Apply(progressText);
 
             // painel do nó (rodapé). 148 de altura, não 108: com 108 o botão (rodapé, 12..52) cobria a linha de ajuda
             // (−52..−80 do topo) — "Já concluída — [E] para jogar de novo" ficava escondida atrás dele.

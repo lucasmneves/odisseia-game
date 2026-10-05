@@ -180,6 +180,31 @@ namespace Odisseia.Systems
 
         public static string[] QualityNames => QualitySettings.names;
 
+        /// <summary>
+        /// Os mesmos níveis de <see cref="QualityNames"/>, na mesma ordem, com o nome para a tela: "ui.quality.&lt;nome sem
+        /// espaço&gt;" na tabela de idiomas ("Very High" → ui.quality.veryHigh). Os nomes vêm do Quality Settings do Unity, em
+        /// inglês — sem isto a tela em português mostrava "High". Nível sem tradução fica com o nome original.
+        /// </summary>
+        public static string[] QualityDisplayNames
+        {
+            get
+            {
+                string[] nomes = QualitySettings.names;
+                var exibidos = new string[nomes.Length];
+
+                for (int i = 0; i < nomes.Length; i++)
+                {
+                    string compacto = nomes[i].Replace(" ", string.Empty);
+                    string chave = compacto.Length > 0
+                        ? "ui.quality." + char.ToLowerInvariant(compacto[0]) + compacto.Substring(1)
+                        : string.Empty;
+                    exibidos[i] = Localization.Has(chave) ? Localization.Get(chave) : nomes[i];
+                }
+
+                return exibidos;
+            }
+        }
+
         private static void EnsureLoaded()
         {
             if (loaded)

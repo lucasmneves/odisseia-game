@@ -52,6 +52,48 @@ LightmapSettings:
     m_EnvironmentLightingMode: 0
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
+  m_LightmapEditorSettings:
+    serializedVersion: 12
+    m_Resolution: 2
+    m_BakeResolution: 40
+    m_AtlasSize: 1024
+    m_AO: 0
+    m_AOMaxDistance: 1
+    m_CompAOExponent: 1
+    m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
+    m_Padding: 2
+    m_LightmapParameters: {fileID: 0}
+    m_LightmapsBakeMode: 1
+    m_TextureCompression: 1
+    m_ReflectionCompression: 2
+    m_MixedBakeMode: 2
+    m_BakeBackend: 2
+    m_PVRSampling: 1
+    m_PVRDirectSampleCount: 32
+    m_PVRSampleCount: 512
+    m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 256
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 1
+    m_PVRDenoiserTypeDirect: 1
+    m_PVRDenoiserTypeIndirect: 1
+    m_PVRDenoiserTypeAO: 1
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
+    m_PVREnvironmentMIS: 1
+    m_PVRCulling: 1
+    m_PVRFilteringGaussRadiusDirect: 1
+    m_PVRFilteringGaussRadiusIndirect: 1
+    m_PVRFilteringGaussRadiusAO: 1
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
+  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -119,7 +161,7 @@ Camera:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500000001}
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0.086, g: 0.106, b: 0.16, a: 1}
   m_projectionMatrixMode: 1
@@ -180,12 +222,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4610c9e3d1276843b72cc79de5801d6, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Systems.CameraFollow
   target: {fileID: 0}
-  offset: {x: 0, y: 1}
+  offset: {x: 0, y: -1}
   smoothTime: 0.15
-  orthographicSize: 5
+  orthographicSize: 6
   useBounds: 0
   minBounds: {x: 0, y: 0}
   maxBounds: {x: 0, y: 0}
@@ -223,128 +265,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &500000013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 500000010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5733c7933bc8bcd60fa5bbdf90a7304f, type: 3}
-  m_Name:
-  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.WorldMap.WorldMapPath
-  points:
-  - position: {x: 0, y: 0}
-    isLevelStop: 1
-  - position: {x: 1.333, y: 0.533}
-    isLevelStop: 0
-  - position: {x: 2.667, y: 1.067}
-    isLevelStop: 0
-  - position: {x: 4, y: 1.6}
-    isLevelStop: 1
-  - position: {x: 5.333, y: 1.4}
-    isLevelStop: 0
-  - position: {x: 6.667, y: 1.2}
-    isLevelStop: 0
-  - position: {x: 8, y: 1}
-    isLevelStop: 1
-  - position: {x: 9.333, y: 0.367}
-    isLevelStop: 0
-  - position: {x: 10.667, y: -0.267}
-    isLevelStop: 0
-  - position: {x: 12, y: -0.9}
-    isLevelStop: 1
-  - position: {x: 13.333, y: -0.467}
-    isLevelStop: 0
-  - position: {x: 14.667, y: -0.033}
-    isLevelStop: 0
-  - position: {x: 16, y: 0.4}
-    isLevelStop: 1
-  - position: {x: 17.333, y: 0.933}
-    isLevelStop: 0
-  - position: {x: 18.667, y: 1.467}
-    isLevelStop: 0
-  - position: {x: 20, y: 2}
-    isLevelStop: 1
-  - position: {x: 21.333, y: 1.533}
-    isLevelStop: 0
-  - position: {x: 22.667, y: 1.067}
-    isLevelStop: 0
-  - position: {x: 24, y: 0.6}
-    isLevelStop: 1
-  - position: {x: 25.333, y: 0.867}
-    isLevelStop: 0
-  - position: {x: 26.667, y: 1.133}
-    isLevelStop: 0
-  - position: {x: 28, y: 1.4}
-    isLevelStop: 1
-  - position: {x: 29.333, y: 0.133}
-    isLevelStop: 0
-  - position: {x: 30.667, y: -1.133}
-    isLevelStop: 0
-  - position: {x: 32, y: -2.4}
-    isLevelStop: 1
-  - position: {x: 33.333, y: -1.833}
-    isLevelStop: 0
-  - position: {x: 34.667, y: -1.267}
-    isLevelStop: 0
-  - position: {x: 36, y: -0.7}
-    isLevelStop: 1
-  - position: {x: 37.333, y: -0.2}
-    isLevelStop: 0
-  - position: {x: 38.667, y: 0.3}
-    isLevelStop: 0
-  - position: {x: 40, y: 0.8}
-    isLevelStop: 1
-  - position: {x: 41.333, y: 1.067}
-    isLevelStop: 0
-  - position: {x: 42.667, y: 1.333}
-    isLevelStop: 0
-  - position: {x: 44, y: 1.6}
-    isLevelStop: 1
-  - position: {x: 45.333, y: 1.133}
-    isLevelStop: 0
-  - position: {x: 46.667, y: 0.667}
-    isLevelStop: 0
-  - position: {x: 48, y: 0.2}
-    isLevelStop: 1
-  - position: {x: 49.333, y: 0.133}
-    isLevelStop: 0
-  - position: {x: 50.667, y: 0.067}
-    isLevelStop: 0
-  - position: {x: 52, y: 0}
-    isLevelStop: 1
-  - position: {x: 53.333, y: 0.333}
-    isLevelStop: 0
-  - position: {x: 54.667, y: 0.667}
-    isLevelStop: 0
-  - position: {x: 56, y: 1}
-    isLevelStop: 1
-  - position: {x: 57.333, y: 1.267}
-    isLevelStop: 0
-  - position: {x: 58.667, y: 1.533}
-    isLevelStop: 0
-  - position: {x: 60, y: 1.8}
-    isLevelStop: 1
---- !u!114 &500000014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 500000010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d06ad2ade9bbf7817e31c6deae7a5b68, type: 3}
-  m_Name:
-  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.WorldMap.WorldMapUI
-  mapTitle: A ODISSEIA
-  mapSubtitle: Jornada de Odisseu
-  lockedMessage: Complete a fase anterior para continuar sua jornada.
-  lockedMessageDuration: 1.8
-  announcementDuration: 3.2
 --- !u!114 &500000012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,7 +275,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90925641e0a2f6416ecbb0e38ad857a8, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.WorldMap.WorldMapManager
   path: {fileID: 500000013}
   player: {fileID: 500000042}
@@ -371,6 +291,143 @@ MonoBehaviour:
   enterActionName: Interact
   cameraFollow: {fileID: 500000005}
   cameraPadding: 6
+  geography: {fileID: 1791273914}
+  autoTravelDelay: 1.2
+  autoTravelSpeed: 9
+--- !u!114 &500000013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500000010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5733c7933bc8bcd60fa5bbdf90a7304f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.WorldMap.WorldMapPath
+  points:
+  - position: {x: -11.48, y: -2.9399998}
+    isLevelStop: 1
+  - position: {x: -6.79, y: -5.46}
+    isLevelStop: 0
+  - position: {x: -2.8, y: -3.78}
+    isLevelStop: 0
+  - position: {x: 2.31, y: -3.08}
+    isLevelStop: 0
+  - position: {x: 7.2099996, y: -4.62}
+    isLevelStop: 0
+  - position: {x: 14.21, y: -3.08}
+    isLevelStop: 0
+  - position: {x: 14.7, y: 2.8}
+    isLevelStop: 0
+  - position: {x: 17.71, y: 5.25}
+    isLevelStop: 0
+  - position: {x: 18.619999, y: 7.2799997}
+    isLevelStop: 1
+  - position: {x: 15.959999, y: 5.04}
+    isLevelStop: 0
+  - position: {x: 13.299999, y: 4.2}
+    isLevelStop: 0
+  - position: {x: 10.219999, y: 3.08}
+    isLevelStop: 1
+  - position: {x: 13.0199995, y: 1.4}
+    isLevelStop: 0
+  - position: {x: 11.2, y: -0.97999996}
+    isLevelStop: 1
+  - position: {x: 14.21, y: -3.08}
+    isLevelStop: 0
+  - position: {x: 17.22, y: -5.6}
+    isLevelStop: 1
+  - position: {x: 14.21, y: -3.08}
+    isLevelStop: 0
+  - position: {x: 14.98, y: 0.14}
+    isLevelStop: 0
+  - position: {x: 18.48, y: 1.54}
+    isLevelStop: 1
+  - position: {x: 14.98, y: 0.14}
+    isLevelStop: 0
+  - position: {x: 14.21, y: -3.08}
+    isLevelStop: 0
+  - position: {x: 13.0199995, y: -5.74}
+    isLevelStop: 0
+  - position: {x: 9.5199995, y: -9.24}
+    isLevelStop: 1
+  - position: {x: 6.8599997, y: -5.8799996}
+    isLevelStop: 0
+  - position: {x: 3.01, y: -3.9199998}
+    isLevelStop: 0
+  - position: {x: -0.14, y: -6.58}
+    isLevelStop: 1
+  - position: {x: -3.5, y: -3.9199998}
+    isLevelStop: 0
+  - position: {x: -6.79, y: -5.46}
+    isLevelStop: 0
+  - position: {x: -12.879999, y: -6.4399996}
+    isLevelStop: 0
+  - position: {x: -16.24, y: -7.8399997}
+    isLevelStop: 0
+  - position: {x: -19.18, y: -8.82}
+    isLevelStop: 1
+  - position: {x: -15.82, y: -5.6}
+    isLevelStop: 0
+  - position: {x: -15.679999, y: 1.4}
+    isLevelStop: 0
+  - position: {x: -14.98, y: 4.62}
+    isLevelStop: 0
+  - position: {x: -12.879999, y: 5.8799996}
+    isLevelStop: 1
+  - position: {x: -10.219999, y: 4.48}
+    isLevelStop: 0
+  - position: {x: -6.16, y: 4.7599998}
+    isLevelStop: 0
+  - position: {x: -4.06, y: 3.9199998}
+    isLevelStop: 0
+  - position: {x: -0.7, y: 5.8799996}
+    isLevelStop: 0
+  - position: {x: 2.24, y: 3.6399999}
+    isLevelStop: 0
+  - position: {x: 2.3799999, y: 1.68}
+    isLevelStop: 1
+  - position: {x: 1.12, y: 1.26}
+    isLevelStop: 0
+  - position: {x: -0.84, y: 1.4}
+    isLevelStop: 1
+  - position: {x: -4.06, y: 3.9199998}
+    isLevelStop: 0
+  - position: {x: -6.16, y: 4.7599998}
+    isLevelStop: 0
+  - position: {x: -8.19, y: 6.5099998}
+    isLevelStop: 1
+  - position: {x: -5.46, y: 4.06}
+    isLevelStop: 0
+  - position: {x: -5.3199997, y: -1.9599999}
+    isLevelStop: 0
+  - position: {x: -6.2999997, y: -3.6399999}
+    isLevelStop: 0
+  - position: {x: -7.8399997, y: -3.6399999}
+    isLevelStop: 1
+  - position: {x: -10.08, y: -0.56}
+    isLevelStop: 1
+  - position: {x: -8.679999, y: 1.9599999}
+    isLevelStop: 1
+--- !u!114 &500000014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500000010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06ad2ade9bbf7817e31c6deae7a5b68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Odisseia.WorldMap.WorldMapUI
+  mapTitle: A ODISSEIA
+  mapSubtitle: Jornada de Odisseu
+  lockedMessage: Complete a fase anterior para continuar sua jornada.
+  lockedMessageDuration: 1.8
+  announcementDuration: 3.2
 --- !u!1 &500000020
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,11 +533,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 248b733862fbeed9364464fb10344d25, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.WorldMap.WorldMapPlayerController
   actionMapName: Player
   moveActionName: Move
-  moveSpeed: 4.5
+  moveSpeed: 10
   arriveThreshold: 0.45
   visualRoot: {fileID: 500000044}
 --- !u!1 &500000043
@@ -617,9 +674,101 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4f17dd428ae74e4d99a971aed97d217, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Odisseia.Systems.SceneAudio
   track: 1
+--- !u!1 &1791273913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1791273915}
+  - component: {fileID: 1791273914}
+  m_Layer: 0
+  m_Name: MapGeography
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1791273914
+SpriteRenderer:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791273913}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -20
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 21300000, guid: ed248422e1a3b1da3cca9ac5b80e7ffd, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 14.093333, y: 7.9333334}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
+--- !u!4 &1791273915
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791273913}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -630,3 +779,4 @@ SceneRoots:
   - {fileID: 500000021}
   - {fileID: 500000031}
   - {fileID: 500000041}
+  - {fileID: 1791273915}
