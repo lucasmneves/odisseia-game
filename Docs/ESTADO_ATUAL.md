@@ -871,10 +871,11 @@ Detalhes completos: `Docs/QA/FULL_CAMPAIGN_PLAYTEST.md` §10–16, `Docs/Art/PIX
 13. Polish (decisões do usuário): fonte **DejaVu Sans** (`Resources/Fonts`, licença ao lado; `UITheme.Font` + `FontBootstrap`)
     → travessão e ✕ □ △ ○ ◄ ► ✓ aparecem no WebGL (QA-10 resolvido; +0,34 MB). Emojis removidos (objetivo, fome, lótus,
     mastro, vento); mastro e vento traduzidos; letreiro da Fase 14 ganhou `LocalizedText`. Ícones de fome, cera (barra das
-    sereias) e lótus nos indicadores (`IndicatorIcon`). Menu principal mantido. Detalhes: QA §16.
+    sereias) e lótus nos indicadores (`IndicatorIcon`). Menu principal mantido. **Contraste:** contorno nos textos soltos do
+    HUD e do Final, e faixa translúcida atrás do título do Final (`TextContrast`). Detalhes: QA §16.
 
 ### Próximos passos
-- **Polish que ficou:** contraste do HUD e do título do Final (sugestão: Outline/Shadow); mapa geográfico sobre o
+- **Polish que ficou:** mapa geográfico sobre o
   `map_aegean`; chama do altar animada; ícone do escudo (o `PlayerShield` não tem medidor); rótulos fixos em PT na tela
   de Controles. Menu principal: mantido por decisão do usuário.
 - **PIXELLAB-FUTURE:** cavalo de Troia (saída da Fase 02); ataques das 6 facções (PXL-012) e escudo no ar (PXL-013) — pagos,

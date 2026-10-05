@@ -449,7 +449,18 @@ Build WebGL Success · navegador (`?mudo=1`, controle simulado) com os glifos vi
 ### Visto e não feito (fora das escolhas desta rodada)
 
 - **Contraste:** números do HUD e o contador do vento somem sobre nuvens claras (Gado do Sol); título do Final fraco sobre
-  as folhas. Sugestão: `Outline`/`Shadow` nos textos do HUD e do Final.
+  as folhas. → **Feito na 2ª rodada (abaixo).**
 - Nas capturas do `HudShot`, pedras do primeiro plano de Sereias passam por cima da caixa de diálogo — efeito da captura
   (Canvas em Screen Space Camera); no jogo o Canvas é Overlay. Conferir no navegador ao passar por Sereias.
 - A tela de Controles continua com rótulos fixos em PT.
+
+### Contraste (2ª rodada da Etapa 13, pedido do usuário)
+
+- `TextContrast` (sem reescrever cena): textos **soltos** sobre o cenário — filhos diretos do "HUD Canvas" (vida, moedas,
+  flechas, vidas, XP, letreiro, objetivo, contador do vento) e do "Ending Canvas" (título e mensagem) — ganham contorno
+  escuro (`Outline` 2 un., 90%). O que está em painel ou botão já tem fundo e fica igual.
+- **Final:** só o contorno não bastava (letra fina e clara contra as folhas da oliveira) → faixa escura translúcida (60%)
+  atrás do título e da mensagem, do tamanho do texto mais largo (acompanha o idioma), ancorada no alto como os textos. 1ª
+  tentativa ancorada no centro ficava fora da tela: o Canvas ainda tem 1280×960 quando a cena carrega.
+- Conferido por `HudShot`: Gado do Sol (números e "Waiting for a fair wind" legíveis sobre as nuvens), Sereias (céu claro),
+  Fase 01, Final.
