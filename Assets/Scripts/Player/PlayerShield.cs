@@ -44,6 +44,9 @@ namespace Odisseia.Player
         /// <summary>Verdadeiro enquanto o botão de defesa está pressionado.</summary>
         public bool IsBlocking { get; private set; }
 
+        /// <summary>A defesa pode ser usada nesta fase (ligada e com a ação de input). Só leitura, para o HUD.</summary>
+        public bool IsAvailable => shieldEnabled && shieldAction != null;
+
         /// <summary>Disparado quando a defesa liga/desliga.</summary>
         public event Action<bool> BlockingChanged;
 

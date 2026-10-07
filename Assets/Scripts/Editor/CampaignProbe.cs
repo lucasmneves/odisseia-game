@@ -38,8 +38,15 @@ public static class CampaignProbe
     private static bool opcoesOriginaisAtivas;
     private static EnterPlayModeOptions opcoesOriginais;
 
+    private static bool mudoOriginal;
+
     public static void Run()
     {
+        // Todo teste no mudo (restaurado no Sair).
+        mudoOriginal = EditorUtility.audioMasterMute;
+        EditorUtility.audioMasterMute = true;
+        AudioListener.volume = 0f;
+
         opcoesOriginaisAtivas = EditorSettings.enterPlayModeOptionsEnabled;
         opcoesOriginais = EditorSettings.enterPlayModeOptions;
         EditorSettings.enterPlayModeOptionsEnabled = true;
@@ -201,6 +208,8 @@ public static class CampaignProbe
     {
         EditorApplication.update -= Tick;
         EditorApplication.isPlaying = false;
+        AudioListener.volume = 1f;
+        EditorUtility.audioMasterMute = mudoOriginal;
 
         EditorSettings.enterPlayModeOptionsEnabled = opcoesOriginaisAtivas;
         EditorSettings.enterPlayModeOptions = opcoesOriginais;

@@ -21,7 +21,9 @@ namespace Odisseia.UI
         // ainda há checkpoint para onde voltar) é o LivesCounter.
         [SerializeField] private GameObject panel;
         [SerializeField] private Text messageText;
+        [Tooltip("Reserva só para quando a chave não estiver na tabela de idiomas.")]
         [SerializeField] private string message = "Você caiu — retornando ao último checkpoint";
+        [SerializeField] private string messageKey = "ui.death.message";
         [SerializeField] private float displayDuration = 1.4f;
 
         private Coroutine routine;
@@ -55,8 +57,10 @@ namespace Odisseia.UI
         {
             if (messageText != null)
             {
-                string plural = remaining == 1 ? "vida restante" : "vidas restantes";
-                messageText.text = $"{message}\n{remaining} {plural}";
+                // Tudo pela tabela (13B.6): antes a frase e o "vida(s) restante(s)" eram fixos em português.
+                string frase = !string.IsNullOrEmpty(messageKey) && Localization.Has(messageKey) ? Localization.Get(messageKey) : message;
+                string vidas = Localization.Get(remaining == 1 ? "ui.death.lifeLeft" : "ui.death.livesLeft", remaining);
+                messageText.text = $"{frase}\n{vidas}";
             }
 
             panel?.SetActive(true);

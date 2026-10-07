@@ -12,14 +12,14 @@ using UnityEngine.UI;
 ///
 /// Abre a fase pelo Boot como o jogo faz, espera o HUD montar, passa os Canvas para Screen Space Camera sobre a câmera
 /// principal só durante o render (1280×720, a resolução de referência do CanvasScaler) e grava o PNG. Registra no log os
-/// textos e ícones do HUD. Não salva cena nenhuma; restaura as opções de play mode.
+/// textos e ícones do HUD. Roda no mudo. Não salva cena nenhuma; restaura as opções de play mode e o som.
 /// </summary>
 public static class HudShot
 {
     private static string cena, saida;
     private static double acordar;
     private static int passo;
-    private static bool opcoesAtivas;
+    private static bool opcoesAtivas, mudoOriginal;
     private static EnterPlayModeOptions opcoes;
 
     public static void Capture()
@@ -28,6 +28,11 @@ public static class HudShot
         string Arg(string n, string d) { int i = System.Array.IndexOf(a, n); return i >= 0 && i < a.Length - 1 ? a[i + 1] : d; }
         cena = Arg("-hudScene", "Level_02_Troia");
         saida = Arg("-hudOut", "Docs/QA/_hud/" + System.IO.Path.GetFileNameWithoutExtension(cena) + ".png");
+
+        // Todo teste no mudo (restaurado no fim).
+        mudoOriginal = EditorUtility.audioMasterMute;
+        EditorUtility.audioMasterMute = true;
+        AudioListener.volume = 0f;
 
         opcoesAtivas = EditorSettings.enterPlayModeOptionsEnabled;
         opcoes = EditorSettings.enterPlayModeOptions;
@@ -83,6 +88,8 @@ public static class HudShot
         {
             EditorApplication.update -= Tick;
             EditorApplication.ExitPlaymode();
+            AudioListener.volume = 1f;
+            EditorUtility.audioMasterMute = mudoOriginal;
             EditorSettings.enterPlayModeOptionsEnabled = opcoesAtivas;
             EditorSettings.enterPlayModeOptions = opcoes;
             if (progressoDoMapa >= 0)

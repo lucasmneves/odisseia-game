@@ -111,7 +111,7 @@ namespace Odisseia.UI
             focusBeforeOpen = EventSystem.current != null ? EventSystem.current.currentSelectedGameObject : null;
 
             RebuildRows();
-            SetMessage(Localization.Get("ui.controls.hint"));
+            SetMessage(Localization.Get("ui.controls.hint", ControlHints.Button(ControlHints.Cancel)));
             root.SetActive(true);
 
             // Começa no Fechar, não na primeira tecla: no controle, o A logo ao abrir
@@ -326,7 +326,7 @@ namespace Odisseia.UI
             }
 
             keyLabel.text = "...";
-            SetMessage(Localization.Get("ui.rebind.waiting", entry.Label));
+            SetMessage(Localization.Get("ui.rebind.waiting", entry.Label, ControlHints.Button(ControlHints.Cancel)));
             AudioManager.PlayUiClick();
 
             activeOperation = KeyRebindService.StartRebind(entry.Action, entry.BindingIndex, reason =>

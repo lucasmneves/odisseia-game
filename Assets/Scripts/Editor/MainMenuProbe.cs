@@ -26,16 +26,25 @@ public static class MainMenuProbe
     private static int total;
     private static bool falhou;
 
-    private static bool opcoesAtivas;
+    private static bool opcoesAtivas, mudoOriginal;
     private static EnterPlayModeOptions opcoes;
+    private static string saveAnterior;
 
     public static void Run()
     {
+        // Todo teste no mudo (restaurado no Sair).
+        mudoOriginal = EditorUtility.audioMasterMute;
+        EditorUtility.audioMasterMute = true;
+        AudioListener.volume = 0f;
+
         opcoesAtivas = EditorSettings.enterPlayModeOptionsEnabled;
         opcoes = EditorSettings.enterPlayModeOptions;
         EditorSettings.enterPlayModeOptionsEnabled = true;
         EditorSettings.enterPlayModeOptions = EnterPlayModeOptions.DisableDomainReload;
 
+        // O teste cria um save; o do Editor é guardado aqui e devolvido no Sair (antes ficava o do teste, e o
+        // GamepadMenuProbe rodado depois via um mapa com progresso).
+        saveAnterior = PlayerPrefs.HasKey("Odisseia.Save") ? PlayerPrefs.GetString("Odisseia.Save") : null;
         PlayerPrefs.DeleteKey("Odisseia.Save");
         PlayerPrefs.Save();
 
@@ -404,6 +413,10 @@ public static class MainMenuProbe
     {
         EditorApplication.update -= Tick;
         EditorApplication.isPlaying = false;
+        AudioListener.volume = 1f;
+        EditorUtility.audioMasterMute = mudoOriginal;
+        if (saveAnterior != null) { PlayerPrefs.SetString("Odisseia.Save", saveAnterior); } else { PlayerPrefs.DeleteKey("Odisseia.Save"); }
+        PlayerPrefs.Save();
 
         EditorSettings.enterPlayModeOptionsEnabled = opcoesAtivas;
         EditorSettings.enterPlayModeOptions = opcoes;

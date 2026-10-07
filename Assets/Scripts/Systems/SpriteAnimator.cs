@@ -118,6 +118,24 @@ namespace Odisseia.Systems
             Play(state, restart: true);
         }
 
+        /// <summary>
+        /// Toca uma sequência de sprites dada por referência, para folhas que não moram em Resources ou das quais só
+        /// parte dos quadros é um laço (o altar do checkpoint: quadro 00 apagado, 01–06 a chama). Mesmo laço do Update.
+        /// </summary>
+        public void Configure(string state, Sprite[] frames, float framesPerSecond)
+        {
+            if (string.IsNullOrEmpty(state) || frames == null || frames.Length == 0)
+            {
+                return;
+            }
+
+            defaultState = state;
+            defaultFramesPerSecond = framesPerSecond;
+            clips[state] = frames;
+            CurrentState = null;
+            Play(state, restart: true);
+        }
+
         private void LoadClips()
         {
             if (string.IsNullOrEmpty(resourcePath))

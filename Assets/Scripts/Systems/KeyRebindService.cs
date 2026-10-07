@@ -194,7 +194,12 @@ namespace Odisseia.Systems
                 return "—";
             }
 
-            string path = action.bindings[bindingIndex].effectivePath;
+            return GetPathDisplayString(action.bindings[bindingIndex].effectivePath);
+        }
+
+        /// <summary>Nome de tecla para a tela a partir do caminho ("&lt;Keyboard&gt;/space" → "ESPAÇO"); "—" se vazio.</summary>
+        public static string GetPathDisplayString(string path)
+        {
             if (string.IsNullOrEmpty(path))
             {
                 return "—";
@@ -264,7 +269,7 @@ namespace Odisseia.Systems
             foreach (InputBinding binding in action.bindings)
             {
                 if (binding.isPartOfComposite
-                    && binding.name == partName
+                    && string.Equals(binding.name, partName, StringComparison.OrdinalIgnoreCase)
                     && binding.effectivePath.StartsWith("<Keyboard>"))
                 {
                     return binding.effectivePath;

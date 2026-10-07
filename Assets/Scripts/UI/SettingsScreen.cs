@@ -271,13 +271,45 @@ namespace Odisseia.UI
                 Close();
             });
 
-            // Altura do painel conforme o conteúdo realmente ocupou.
-            float usado = 250f - y + 40f;
-            content.sizeDelta = new Vector2(PanelWidth, Mathf.Max(320f, usado));
-            borderRect.sizeDelta = content.sizeDelta + new Vector2(6f, 6f);
+            EncaixarPainelNosItens();
 
             LinkNavigation();
             root.SetActive(false);
+        }
+
+        /// <summary>Folga entre o primeiro/último item e a borda do painel, em unidades do Canvas.</summary>
+        private const float PanelPadding = 20f;
+
+        /// <summary>
+        /// Altura do painel pelo que os itens realmente ocupam, com a pilha centralizada nele. Os itens são postos de cima
+        /// para baixo a partir de y = +250, e o painel é centralizado: antes, a altura "usada" não batia com essa origem —
+        /// sobrava uma faixa vazia no topo e o "Fechar" passava da borda de baixo (cortado em 1280×720). Mede a caixa de
+        /// todos os filhos, desloca a pilha para o centro e reancora o repouso dos botões (MenuButton guarda a posição).
+        /// </summary>
+        private void EncaixarPainelNosItens()
+        {
+            float topo = float.MinValue, fundo = float.MaxValue;
+            foreach (RectTransform filho in content)
+            {
+                float altura = filho.sizeDelta.y;
+                topo = Mathf.Max(topo, filho.anchoredPosition.y + altura * (1f - filho.pivot.y));
+                fundo = Mathf.Min(fundo, filho.anchoredPosition.y - altura * filho.pivot.y);
+            }
+
+            if (topo < fundo)
+            {
+                return;
+            }
+
+            float centro = (topo + fundo) / 2f;
+            foreach (RectTransform filho in content)
+            {
+                filho.anchoredPosition -= new Vector2(0f, centro);
+                filho.GetComponent<MenuButton>()?.RefreshBasePosition();
+            }
+
+            content.sizeDelta = new Vector2(PanelWidth, Mathf.Max(320f, topo - fundo + 2f * PanelPadding));
+            borderRect.sizeDelta = content.sizeDelta + new Vector2(6f, 6f);
         }
 
         // ---------------------------------------------------------------- linhas

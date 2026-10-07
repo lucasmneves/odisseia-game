@@ -43,6 +43,7 @@ namespace Odisseia.UI
 
         private Button button;
         private Image background;
+        private Outline border;
         private Text[] labels;
         private Color[] labelBaseColors;
         private RectTransform rect;
@@ -58,6 +59,8 @@ namespace Odisseia.UI
         {
             button = GetComponent<Button>();
             background = GetComponent<Image>();
+            // A borda dourada é opcional: só os botões com Outline (o menu principal) a têm.
+            border = GetComponent<Outline>();
             rect = (RectTransform)transform;
 
             // Todos os rótulos, não só o primeiro: uma entrada da seleção de fases tem
@@ -200,6 +203,10 @@ namespace Odisseia.UI
         {
             if (background != null)
             {
+                // A transição ColorTint do Button (desligada no Awake) já tinha tingido o CanvasRenderer; a tela mostra o
+                // produto das duas cores e o botão saía bem mais escuro que o UITheme (medido na 13B.8). Tinta neutra: a
+                // cor do botão é só a que este componente escreve abaixo.
+                background.canvasRenderer.SetColor(Color.white);
                 background.color = !button.interactable
                     ? UITheme.ButtonDisabled
                     : pressed
@@ -207,6 +214,15 @@ namespace Odisseia.UI
                         : highlighted
                             ? UITheme.ButtonHighlight
                             : UITheme.ButtonNormal;
+            }
+
+            if (border != null)
+            {
+                border.effectColor = !button.interactable
+                    ? UITheme.ButtonBorderDisabled
+                    : highlighted
+                        ? UITheme.TextAccent
+                        : UITheme.ButtonBorder;
             }
 
             if (labels != null)
@@ -242,8 +258,49 @@ namespace Odisseia.UI
 
             if (focusMarker != null)
             {
-                focusMarker.SetActive(highlighted && button.interactable);
+                bool ligado = highlighted && button.interactable;
+                focusMarker.SetActive(ligado);
+                if (ligado)
+                {
+                    PlaceMarker();
+                }
             }
+        }
+
+        /// <summary>Espaço entre o "►" e o começo do rótulo, em unidades do botão.</summary>
+        private const float MarkerGap = 8f;
+
+        /// <summary>
+        /// Encosta o marcador de foco logo antes de onde o rótulo (centralizado) começa, medido pela largura do texto, em
+        /// unidades do próprio botão: vale em qualquer resolução e idioma. Numa posição fixa ele caía em cima de rótulos
+        /// longos ("Jogar novamente", "SELECIONAR FASE"). Só quando o marcador é filho direto do botão.
+        /// </summary>
+        private void PlaceMarker()
+        {
+            if (!(focusMarker.transform is RectTransform marca) || marca.parent != transform)
+            {
+                return;
+            }
+
+            Text rotulo = null;
+            foreach (Text t in labels)
+            {
+                if (t != null && !t.transform.IsChildOf(focusMarker.transform))
+                {
+                    rotulo = t;
+                    break;
+                }
+            }
+
+            if (rotulo == null)
+            {
+                return;
+            }
+
+            float meia = Mathf.Min(rotulo.preferredWidth, rotulo.rectTransform.rect.width) / 2f;
+            marca.anchorMin = marca.anchorMax = new Vector2(0.5f, 0.5f);
+            marca.pivot = new Vector2(1f, 0.5f);
+            marca.anchoredPosition = new Vector2(rotulo.rectTransform.rect.center.x + rotulo.rectTransform.anchoredPosition.x - meia - MarkerGap, 0f);
         }
 
         /// <summary>

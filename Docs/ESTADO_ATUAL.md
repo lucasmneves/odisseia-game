@@ -883,13 +883,53 @@ Detalhes completos: `Docs/QA/FULL_CAMPAIGN_PLAYTEST.md` §10–18, `Docs/Art/PIX
     ("Restaurar padrões" não encosta mais). **13B.1 mapa geográfico:** `map_aegean` 3× atrás do caminho, rota de 52 pontos
     pelo mar com as 16 paradas na ordem oficial (`WorldMapGeographyDresser`), câmera dentro da arte e acima do painel.
     Detalhes: QA §18.
+13B.2. **Chama do altar — PASS.** O altar (`Checkpoint.prefab`, nas 16 fases) aceso toca os quadros 01–06 da própria folha
+    pelo `SpriteAnimator` dos fogos (sobrecarga com lista de sprites), 7,5–9 fps; nada de transform, colisor ou ordem
+    muda. `AltarFlameProbe` (no mudo): parado, aceso, câmera, pausa, volta, troca de cena, reentrada. Sem commit. QA §18.
+13B.3. **Ícone do escudo — PASS.** `icon_shield` (já existia, sem uso) numa linha abaixo do XP: opaco = disponível, sobe
+    3 un. defendendo, pisca dourado no bloqueio. `HudShieldProbe` (no mudo): 7 fases × PT/EN + mobile, 17 passadas OK.
+    `HudShot` agora muta. Sem commit. QA §18.
+13B.4. **Símbolos de controle — PASS.** `ControlHints` lê o binding real do gamepad (A/✕, B/○, X/□, Y/△, LT/L2…; Crouch,
+    Advance, Skip e Cancel incluídos); corrigido "Move" no lugar de "A/D" no teclado e as setas de toque presas ao A/D fixo;
+    rótulos de toque traduzidos (PULO/ATQ/DEF/ARCO/USAR); "{botão} cancela" na tela Controles. Sem commit. QA §18.
+13B.5. **Menu principal — PASS.** Fundo na proporção da arte (3:2) com faixas na cor da moldura; borda dourada e marcador
+    "►" no item em foco (`MenuButton`); logo pintado mantido como marca (decisão do usuário). `MainMenuPolishProbe` (no mudo):
+    EN/PT em 5 resoluções, teclado, Xbox, PlayStation, toque, Novo Jogo → mapa → F01. Build não gerado (C: 4,48 GB).
+    Sem commit. QA §18.
+13B.6. **HUD, camadas e tela de morte — PASS.** Odisseu na frente do altar: só o sprite `Body` em z −0,05 (ganha os empates
+    da ordem 0; nenhuma ordem mudou; raiz, colisor, respawn e câmera intactos). Tela de morte traduzida (`ui.death.*`, com
+    singular/plural). `LayeringDeathProbe` (no mudo): 15 altares em 9 fases, morte EN/PT, respawn, fim de jogo e "Tentar de
+    novo" por teclado/Xbox/PS/toque. Build não gerado (C: 4,41 GB). Sem commit. QA §18.
+13B.7. **Tela final — PASS.** Botões com o visual do menu (`PolirBotao` compartilhado; 290 de largura); "►" sempre logo
+    antes do rótulo (`MenuButton.PlaceMarker`); faixas de tela larga no marrom do quarto; Canvas pela altura (o botão não
+    cobre mais o casal em 2340×1080). Fotos dos testes em várias resoluções corrigidas (CanvasScaler da janela do batch).
+    `EndingProbe` (no mudo): EN/PT, 5 resoluções, música, teclado/Xbox/PS/toque. Build não gerado (C: 3,95 GB). QA §18.
+13B.8. **Auditoria final.** Nenhum BLOCKER/HIGH de código; suíte completa OK; 13/16 fases pelo bot (01 limite do bot; 04 e 11
+    dificuldade, validação humana). Achados: MEDIUM "Fechar" das Configurações fora do painel; LOW cor dos botões (tinta
+    dupla do CanvasRenderer), respawn sem invulnerabilidade, avisos de Editor. WebGL bloqueado (C: 3,76 GB). QA §18.
 
 ### Próximos passos
-- **Continuar a ETAPA 13B — POLISH VISUAL:** 2. chama animada do altar; 3. ícone de escudo (o `PlayerShield` não tem
-  medidor); 4. fonte e símbolos PlayStation (revisão final); 5. menu principal; 6. HUD; 7. Ending; 8. QA final.
+- **Etapa 13B concluída.** Próximo: liberar ≥ 5 GB no C: e gerar o WebGL; teste no navegador e em aparelhos; validação
+  humana de F04 e F11; com autorização, commit da 13B.2–13B.8.
+- **RC polish fechado (2026-10-07).** (1) `SettingsScreen.EncaixarPainelNosItens`: o painel mede a pilha de itens,
+  centraliza e ganha a altura dela + 20 de folga — o "Fechar" fica dentro da moldura em todas as resoluções (1280×720:
+  y 33–80, antes −50…−1); repouso dos botões reancorado. (2) `MenuButton.Apply`: tinta do CanvasRenderer neutra — os
+  botões mostram a cor do `UITheme` (0,20; 0,34; 0,55 em repouso, 0,28; 0,46; 0,70 no foco; antes 0,04; 0,12; 0,30).
+  Suíte inteira no mudo: compile 0 erros; todos OK; ReleaseAuditProbe 47 OK (as Configurações passaram nas 5 resoluções,
+  EN/PT) e só as 2 LOW já conhecidas (respawn perto de inimigo em Circe/Mundo dos Mortos); mecânicas iguais às referências.
+  **WebGL RC gerado:** Build Finished, Success — 20,7 MB (dados 15,91 MB, wasm 4,62 MB). C: 6,52 GB. Pronto para testes
+  físicos (navegador, controles, celulares) e validação humana de F04/F11.
+- Empate altar×jogador (13B.2): **resolvido na 13B.6** (Body em z −0,05).
 - Junção `C:\Users\luucas\Documents\Claude → E:\Claude` não criada: as pastas vazias `Habita` e `Odisseia` em C: estavam em
   uso. Depois de fechar os programas que as usam, pode ser criada com `mklink /J`.
-- **PIXELLAB-FUTURE:** cavalo de Troia (saída da Fase 02); ataques das 6 facções (PXL-012) e escudo no ar (PXL-013) — pagos,
+- Placeholders do HUD registrados na 13B.3 (QA §18): botões de toque (texto ATK/DEF/JUMP, só em inglês), barra das
+  Sereias, painel da fome; `VfxBurst` com o quadrado placeholder. Ferramentas ainda sem mudo: `CampaignProbe`,
+  `FireAnimationDresser.Conferir`, `LevelSelectProbe`, `MainMenuProbe`.
+- Pendências da 13B.4: ~~tela de morte só em português~~ (resolvida na 13B.6); tela Controles só de teclado apesar de
+  "Teclado e controle" nas Configurações.
+- Build WebGL só com ≥ 5 GB livres no C: (decisão de 2026-10-06); o último build é o da 13B.4; C: em 3,95 GB na 13B.7, caindo ~0,5 GB por etapa.
+- Futuro: cores da UI mais escuras que o `UITheme` (provável espaço de cor linear).
+- **PIXELLAB-FUTURE:** ícones de toque (espada, pulo) e moldura da barra das Sereias (13B.3); cavalo de Troia (saída da Fase 02); ataques das 6 facções (PXL-012) e escudo no ar (PXL-013) — pagos,
   download bloqueado (`node Tools/fetch-paid-anims.js` só com autorização).
 - **Não validado:** iOS/Android físicos, gamepad físico, Fase 01 inteira por input, dificuldade da Cila por humano,
   redimensionar a janela com o jogo aberto (painel do app sem foco).

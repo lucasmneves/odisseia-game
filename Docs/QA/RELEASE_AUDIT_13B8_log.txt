@@ -1,0 +1,68 @@
+# Auditoria final (13B.8) — 2026-10-07 00:51
+
+## 1. Fases (EN e PT)
+- OK Level_01_Itaca_Prologue [English]: 77 textos/falas conferidos
+  - nota: grandes na camada de jogo: Sea_Deep 140×8, Training_Wall 84×1, Sea 140×3, Bedrock 349×8
+- OK Level_01_Itaca_Prologue [Portuguese]: 77 textos/falas conferidos
+- OK Level_02_Troia [English]: 9 textos/falas conferidos
+  - nota: grandes na camada de jogo: Troy_Wall 40×12
+- OK Level_02_Troia [Portuguese]: 9 textos/falas conferidos
+- OK Level_03_Cicones [English]: 8 textos/falas conferidos
+- OK Level_03_Cicones [Portuguese]: 8 textos/falas conferidos
+- OK Level_04_Citera [English]: 12 textos/falas conferidos
+  - nota: grandes na camada de jogo: Rain_Back 60×6
+- OK Level_04_Citera [Portuguese]: 12 textos/falas conferidos
+- OK Level_05_Ciclopes [English]: 8 textos/falas conferidos
+- OK Level_05_Ciclopes [Portuguese]: 8 textos/falas conferidos
+- OK Level_06_Eolo [English]: 7 textos/falas conferidos
+  - nota: grandes na camada de jogo: Wind_Lines 69×18
+- OK Level_06_Eolo [Portuguese]: 7 textos/falas conferidos
+- OK Level_07_Lestrigoes [English]: 7 textos/falas conferidos
+  - nota: câmera não acompanhou (-12,0 → -12,0; pode ser limite da fase)
+- OK Level_07_Lestrigoes [Portuguese]: 7 textos/falas conferidos
+- **FALHA** Level_08_Circe [English]: 7 textos/falas conferidos — respawn: vidas 3→2, 0,7 un. do altar, vida 80/100
+- OK Level_08_Circe [Portuguese]: 7 textos/falas conferidos
+- **FALHA** Level_09_MundoDosMortos [English]: 9 textos/falas conferidos — respawn: vidas 3→2, 0,7 un. do altar, vida 70/100
+  - nota: grandes na camada de jogo: Souls 66×12
+- OK Level_09_MundoDosMortos [Portuguese]: 9 textos/falas conferidos
+- OK Level_10_Sereias [English]: 7 textos/falas conferidos
+- OK Level_10_Sereias [Portuguese]: 7 textos/falas conferidos
+- OK Level_11_CilaCaribdis [English]: 7 textos/falas conferidos
+- OK Level_11_CilaCaribdis [Portuguese]: 7 textos/falas conferidos
+- OK Level_12_GadoDoSol [English]: 9 textos/falas conferidos
+- OK Level_12_GadoDoSol [Portuguese]: 9 textos/falas conferidos
+- OK Level_13_Calipso [English]: 9 textos/falas conferidos
+- OK Level_13_Calipso [Portuguese]: 9 textos/falas conferidos
+- OK Level_14_Itaca_Return [English]: 12 textos/falas conferidos
+- OK Level_14_Itaca_Return [Portuguese]: 12 textos/falas conferidos
+- OK Level_15_Pretendentes [English]: 9 textos/falas conferidos
+- OK Level_15_Pretendentes [Portuguese]: 9 textos/falas conferidos
+- OK Level_16_Final [English]: 8 textos/falas conferidos
+- OK Level_16_Final [Portuguese]: 8 textos/falas conferidos
+
+## 2. Mapa
+- OK 0 concluídas: 16 nós em ordem=True; Current 1, Locked 15
+- OK 8 concluídas: 16 nós em ordem=True; Completed 8, Available 1, Locked 7
+- OK 15 concluídas: 16 nós em ordem=True; Completed 15, Available 1
+
+## 3. Telas × resoluções
+- OK Mapa [English]: 30 textos em 5 resoluções, nenhum cortado ou sobreposto
+- OK Pausa [English]: 50 textos em 5 resoluções, nenhum cortado ou sobreposto
+- **FALHA** Configurações [English]: 150 textos em 5 resoluções, nenhum cortado ou sobreposto — 1280×720 Label "CLOSE" fora da tela; 1920×1080 Label "CLOSE" fora da tela; 960×540 Label "CLOSE" fora da tela; 2340×1080 Label "CLOSE" fora da tela
+- OK Controles [English]: 119 textos em 5 resoluções, nenhum cortado ou sobreposto
+- OK Fim de jogo [English]: 30 textos em 5 resoluções, nenhum cortado ou sobreposto
+- OK Fase concluída [English]: 40 textos em 5 resoluções, nenhum cortado ou sobreposto
+- OK Mapa [Portuguese]: 60 textos em 5 resoluções, nenhum cortado ou sobreposto
+- OK Pausa [Portuguese]: 50 textos em 5 resoluções, nenhum cortado ou sobreposto
+- **FALHA** Configurações [Portuguese]: 150 textos em 5 resoluções, nenhum cortado ou sobreposto — 1280×720 Label "FECHAR" fora da tela; 1920×1080 Label "FECHAR" fora da tela; 960×540 Label "FECHAR" fora da tela; 2340×1080 Label "FECHAR" fora da tela
+- OK Controles [Portuguese]: 119 textos em 5 resoluções, nenhum cortado ou sobreposto
+- OK Fim de jogo [Portuguese]: 30 textos em 5 resoluções, nenhum cortado ou sobreposto
+- OK Fase concluída [Portuguese]: 40 textos em 5 resoluções, nenhum cortado ou sobreposto
+
+## 4. Áudio
+- OK volume de música 0 → fonte 0,00; 1 → 0,35
+- OK fontes em laço tocando no menu: 1 antes, 1 depois de ir à fase e voltar (sem música duplicada)
+
+## Erros no console durante a auditoria: 0
+
+## RESULTADO: 4 falha(s)
