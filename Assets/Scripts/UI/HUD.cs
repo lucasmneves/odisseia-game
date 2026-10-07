@@ -7,7 +7,7 @@ using Odisseia.Systems;
 namespace Odisseia.UI
 {
     /// <summary>
-    /// HUD simples: vida do jogador, contador de coletáveis e munição do arco.
+    /// HUD simples: vida do jogador, contador de coletáveis, munição do arco e o estado do escudo.
     /// </summary>
     public class HUD : MonoBehaviour
     {
@@ -19,6 +19,7 @@ namespace Odisseia.UI
         [SerializeField] private HealthSystem playerHealth;
 
         private PlayerBow playerBow;
+        private PlayerShield playerShield;
 
         private void Awake()
         {
@@ -27,15 +28,15 @@ namespace Odisseia.UI
             if (playerHealth != null)
             {
                 playerBow = playerHealth.GetComponent<PlayerBow>();
+                playerShield = playerHealth.GetComponent<PlayerShield>();
             }
 
             // As cenas existentes só têm os Texts de vida e coletáveis; os demais são
             // criados em runtime, empilhados abaixo, para não editar o HUD Canvas das
             // 16 fases.
+            int slot = 1;
             if (collectiblesText != null)
             {
-                int slot = 1;
-
                 if (arrowsText == null && playerBow != null)
                 {
                     arrowsText = CreateStackedLabel(collectiblesText, slot++, "ArrowsText");
@@ -50,6 +51,16 @@ namespace Odisseia.UI
                 {
                     experienceText = CreateStackedLabel(collectiblesText, slot, "ExperienceText");
                 }
+                slot++;
+
+                // Escudo (13B.3): só o ícone, na linha abaixo do XP — o PlayerShield não tem número (nem stamina nem
+                // durabilidade) para mostrar. A linha é um Text vazio para o ícone sair pelo mesmo AddIcon dos outros;
+                // criada ANTES dos ícones, que empurram os textos para a direita.
+                if (playerShield != null)
+                {
+                    shieldRow = CreateStackedLabel(collectiblesText, slot, "ShieldRow");
+                    shieldRow.text = string.Empty;
+                }
             }
 
             // Ícone à esquerda de cada contador (Asset Completion PXL-019): o ícone É o rótulo. Sem ele o texto volta ao
@@ -59,6 +70,63 @@ namespace Odisseia.UI
             temIcone[2] = AddIcon(arrowsText, "icon_arrows");
             temIcone[3] = AddIcon(livesText, "icon_lives");
             temIcone[4] = AddIcon(experienceText, "icon_xp");
+
+            if (shieldRow != null && AddIcon(shieldRow, "icon_shield"))
+            {
+                shieldIcon = shieldRow.transform.parent.Find("Icon_icon_shield").GetComponent<Image>();
+                posicaoDoEscudo = shieldIcon.rectTransform.anchoredPosition;
+                shieldIcon.gameObject.SetActive(false); // o LateUpdate liga quando o escudo estiver disponível
+            }
+        }
+
+        private Text shieldRow;
+        private Image shieldIcon;
+        private int escudoMostrado = -1;
+        private float flashDoBloqueio;
+        private Vector2 posicaoDoEscudo;
+
+        /// <summary>
+        /// Defendendo (tecla, gamepad ou toque — a mesma ação), o ícone sobe 3 unidades: o escudo erguido. Pronto, fica opaco
+        /// como os outros ícones (meio apagado ele sumia no muro escuro da Fase 15 e no bege das Sereias). Passo inteiro,
+        /// para a pixel art não borrar. Só reflete o estado do PlayerShield.
+        /// </summary>
+        private const float ErguidoEmUnidades = 3f;
+
+        /// <summary>
+        /// Acompanha o escudo a cada quadro em vez de por evento: o PlayerShield acha a ação de input no Awake dele, que
+        /// pode rodar depois do deste HUD. Só reescreve a cor quando o estado muda (ou durante o brilho do bloqueio).
+        /// </summary>
+        private void RefreshShield()
+        {
+            if (shieldIcon == null || playerShield == null)
+            {
+                return;
+            }
+
+            bool disponivel = playerShield.IsAvailable;
+            int estado = !disponivel ? 0 : playerShield.IsBlocking ? 2 : 1;
+            bool brilhando = flashDoBloqueio > 0f;
+            if (brilhando)
+            {
+                flashDoBloqueio -= Time.unscaledDeltaTime;
+            }
+
+            if (estado == escudoMostrado && !brilhando)
+            {
+                return;
+            }
+
+            escudoMostrado = brilhando ? -1 : estado; // durante o brilho, reaplica no quadro seguinte
+            shieldIcon.gameObject.SetActive(disponivel);
+            shieldIcon.color = brilhando && flashDoBloqueio > 0f ? UITheme.TextAccent : Color.white;
+            shieldIcon.rectTransform.anchoredPosition = posicaoDoEscudo + new Vector2(0f, estado == 2 ? ErguidoEmUnidades : 0f);
+        }
+
+        /// <summary>Golpe absorvido pela defesa: o ícone pisca dourado por um instante.</summary>
+        private void OnShieldBlocked(int absorvido)
+        {
+            flashDoBloqueio = 0.15f;
+            escudoMostrado = -1;
         }
 
         private const string PastaDosIcones = "Odisseia/UI/HUD/";
@@ -126,6 +194,11 @@ namespace Odisseia.UI
                 playerBow.OutOfArrows += OnOutOfArrows;
             }
 
+            if (playerShield != null)
+            {
+                playerShield.Blocked += OnShieldBlocked;
+            }
+
             CollectibleCounter.CountChanged += OnCollectiblesChanged;
             LivesCounter.Changed += OnLivesChanged;
             ExperienceCounter.Changed += OnExperienceChanged;
@@ -149,6 +222,11 @@ namespace Odisseia.UI
             {
                 playerBow.ArrowsChanged -= OnArrowsChanged;
                 playerBow.OutOfArrows -= OnOutOfArrows;
+            }
+
+            if (playerShield != null)
+            {
+                playerShield.Blocked -= OnShieldBlocked;
             }
 
             CollectibleCounter.CountChanged -= OnCollectiblesChanged;
@@ -277,6 +355,8 @@ namespace Odisseia.UI
             {
                 RefreshHealth();
             }
+
+            RefreshShield();
         }
 
         private void RefreshHealth()

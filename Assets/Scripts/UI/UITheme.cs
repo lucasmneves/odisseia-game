@@ -25,6 +25,10 @@ namespace Odisseia.UI
         public static readonly Color ButtonPressed = new Color(0.15f, 0.26f, 0.43f);
         public static readonly Color ButtonDisabled = new Color(0.22f, 0.24f, 0.30f, 0.6f);
 
+        // Borda dourada dos botões que têm Outline (menu principal): o dourado do logo e dos louros.
+        public static readonly Color ButtonBorder = new Color(0.78f, 0.60f, 0.30f, 0.9f);
+        public static readonly Color ButtonBorderDisabled = new Color(0.45f, 0.45f, 0.50f, 0.35f);
+
         // Feedback
         public static readonly Color Health = new Color(0.90f, 0.35f, 0.40f);
         public static readonly Color Collectible = new Color(1f, 0.85f, 0.30f);

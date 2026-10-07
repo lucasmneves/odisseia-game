@@ -438,7 +438,7 @@ uso (única edição de cena: +14 linhas).
 | Fome (Gado do Sol) | `icon_hunger` (30×28) | dentro do painel, à esquerda; texto pela tabela ("Hunger/Fome: 92%") |
 | Resistência ao canto (Sereias) | `icon_wax` (20×24) | à esquerda da barra |
 | Sonolência (Lotófagos, fora da campanha) | `icon_lotus` (17×12 → 2×) | dentro do painel; chave nova `ui.hud.lotus` |
-| Escudo | `icon_shield` | **não ligado:** o `PlayerShield` não tem medidor (stamina/durabilidade) para o ícone acompanhar |
+| Escudo | `icon_shield` (28×28) | **ligado na 13B.3:** linha própria abaixo do XP, só o ícone (ver §18, 13B.3) |
 
 ### Testes
 
@@ -564,5 +564,393 @@ agora está em `E:\Claude\Odisseia`.
 
 ### Ainda não feito na 13B
 
-13B.2 chama do altar · 13B.3 ícone de escudo · 13B.4 fonte e símbolos PlayStation (revisão final; a DejaVu já resolve os
-glifos) · 13B.5 menu principal · 13B.6 HUD · 13B.7 Ending · 13B.8 QA final. PixelLab: 0 gerações.
+~~13B.2 chama do altar~~ (feito, abaixo) · ~~13B.3 ícone de escudo~~ (feito, abaixo) · ~~13B.4 fonte e símbolos PlayStation~~ (feito, abaixo) (revisão final; a DejaVu já resolve os
+glifos) · ~~13B.5 menu principal~~ (feito, abaixo) · ~~13B.6 HUD~~ (feito, abaixo) · ~~13B.7 Ending~~ (feito, abaixo) · ~~13B.8 QA final~~ (feita, abaixo). PixelLab: 0 gerações.
+
+### ETAPA 13B.2 — CHAMA DO ALTAR (2026-10-05)
+
+- **Asset utilizado:** `Assets/Art/Items/item_checkpoint_altar.png` (já existia; 7 quadros 48×82, PPU 42,86, pivô no pé).
+  Quadro 00 = apagado; 01–06 = a chama acesa em ciclo, mesmo canvas e pivô, corpo do altar idêntico (só chama e
+  fagulhas mudam). Antes o jogo usava só o 00 e o 01, então o altar aceso ficava parado. Nenhum asset novo; PixelLab: 0.
+- **Sistema utilizado:** o mesmo dos fogos de cenário, o `SpriteAnimator` (`FireAnimationDresser`). Ele só lia folhas de
+  `Resources` agrupando os quadros pelo nome, o que juntaria o 00 apagado à chama; ganhou uma sobrecarga
+  `Configure(estado, Sprite[], fps)` que toca uma lista de sprites pelo mesmo laço do `Update` (o caminho do jogador e dos
+  fogos não muda). Nenhum segundo sistema de fogo, sem partículas.
+- **Implementação:** `Checkpoint` tem `activeFrames` (01–06, preenchidos pelo `ItemArtDresser.Altar()`); ao acender, cria
+  UMA vez o `SpriteAnimator` no próprio altar e toca a chama a 7,5–9 fps conforme a posição (mesma regra do
+  `FireAnimationDresser`, altares vizinhos não pulsam juntos). O apagado continua parado. Movimento vertical e variação de
+  tamanho vêm dos próprios quadros; transform, escala, pivô, colisor (gatilho 0,3×1,4), ordem e camada intactos.
+  Pausa: congela com o `timeScale` 0, como os outros fogos. Sem Instantiate, coroutine nem objeto novo por quadro.
+- **Fases afetadas:** todas as 16 (o altar é o `Checkpoint.prefab`, sem override de sprite nas cenas; o Prólogo tem 7).
+- **Testes** (`AltarFlameProbe.Run`, play mode, **no mudo**: `audioMasterMute` + volume 0, restaurados no fim), Troia →
+  Circe → Final → Troia de novo: 1. altar parado no quadro 00, sem animador; 2. o jogador posto no altar acende pelo
+  gatilho; 2–3. jogador andando 4 un./s e câmera indo atrás (5,6–7,5 un.): 6 quadros, só 01–06, a chama nunca some;
+  4. pausa: parada num quadro; 5. depois do Resume: anima de novo; 6–7. troca de cena, saída e reentrada: altar volta
+  apagado e acende de novo. Posição, escala, colisor e ordem iguais em todas; nenhum objeto sobra (159→158, 129→128,
+  109→109: a faísca do acendimento some). Fotos: `Docs/QA/_hud/altar_flame.png`. Compile 0 erros; `PlaceholderProbe` OK;
+  `CampaignValidation` OK (16 etapas); build WebGL Success (dados 15,92 MB).
+- **Resultado:** PASS.
+
+**Pendência pré-existente (registrada, não corrigida):** o altar e o corpo do jogador estão empatados (camada Default,
+ordem 0, z 0) desde o 1º commit, e o altar fica no ponto de nascimento de toda fase. Com o empate a ordem não é fixa:
+numa rodada o Odisseu apareceu atrás do altar, na seguinte na frente. A ordem −2 no altar foi testada e descartada (o
+usuário aprovou testar): no Prólogo o muro baixo (x=202, 237) e o poste do cais (x=320) passavam a cobrir o altar
+(`Docs/QA/_hud/altar_ordem_menos2_vs_0.png`, esquerda −2 / direita 0); afastar o altar em z mexeria no respawn, que usa a
+posição inteira. Decisão do usuário: manter 0 e tratar depois (13B.6 ou QA final), provavelmente pelo lado do jogador.
+`AltarFlameProbe.Vizinhanca` lista o que encosta em cada altar e `AltarFlameProbe.Comparar` fotografa as duas ordens.
+
+### ETAPA 13B.3 — ÍCONE DO ESCUDO NO HUD (2026-10-05)
+
+- **Asset: reutilizado, não criado.** `Assets/Resources/Odisseia/UI/HUD/icon_shield.png` (aspis de bronze, 28×28), do mesmo
+  pacote PXL-019 dos outros ícones do HUD e com a mesma importação (PPU 42,86, filtro Point, sem compressão). Já existia e
+  estava sem uso. Outras fontes vistas e descartadas: `ithaca_shield_round_01` e `troy_broken_shield_01` (objetos de
+  cenário, outra escala). PixelLab: 0.
+- **Antes:** o HUD não mostrava o escudo de jeito nenhum (só vida, moedas, flechas, vidas e XP); no mobile só o botão de
+  toque "DEF".
+- **Implementado** (`HUD.cs`): linha nova na coluna da esquerda, abaixo do XP (y −200; ícone em x 20 como os outros),
+  criada pelo mesmo `CreateStackedLabel` + `AddIcon` dos outros contadores, em tamanho nativo. Só o ícone, sem texto: o
+  `PlayerShield` não tem número para mostrar, e assim nada muda entre PT e EN. Estados, só refletindo o que já existe:
+  **disponível** = ícone opaco (`PlayerShield.IsAvailable`, getter novo só de leitura: `shieldEnabled` e a ação de input);
+  **defendendo** (`IsBlocking`: tecla X, LT/L2 ou o botão DEF do toque, todos pela mesma ação) = o ícone sobe 3 un. (o
+  escudo erguido; passo inteiro, sem borrar a pixel art); **golpe bloqueado** (evento `Blocked`) = pisca dourado 0,15 s;
+  **indisponível** = sem ícone. A 1ª versão ("pronto" meio apagado) ficou ilegível no muro escuro da Fase 15 e no bege
+  das Sereias e foi trocada. Mecânica, bindings, os outros contadores e o `PlayerShield` (fora o getter) intactos.
+- **Testes** (`HudShieldProbe.Run`, play mode **no mudo**): F01, F02, F08, F10, F12, F15 e F16 em inglês e português, e F02,
+  F10 e F16 com os controles de toque forçados (`MobilePlatformDetector.DebugOverride`): 17 passadas, 102 conferências,
+  **RESULTADO OK**. Em cada uma: `icon_shield` 28×28 ligado, dentro da tela, sem encostar em nenhum gráfico visível (textos
+  medidos pelos glifos); X segurado (teclado/toque) e LT (gamepad) erguem, soltar abaixa; golpe de frente 10 → 2 e pelas
+  costas 10 (a conta da defesa não mudou), com o brilho dourado. O diálogo de abertura (que trava o jogador) é pulado
+  antes, como o jogador faria. Canto do HUD em 1280×720, 1920×1080, 960×540, 2340×1080 (celular) e 1024×768:
+  `Docs/QA/_hud/hud_shield.png`. Compile 0 erros; `PlaceholderProbe` OK; `CampaignValidation` OK; build WebGL Success
+  (dados 15,92 MB; total 20,7 MB). Não conferido no navegador: o painel do app fica oculto e a página para (0 fps).
+- **Resultado:** PASS — ícone reutilizado de asset existente.
+
+**Placeholders restantes no HUD (registrados, não corrigidos):**
+1. **Botões de toque** (`MobileControlsRoot`): retângulos arredondados gerados por código com rótulos de texto "ATK", "DEF",
+   "JUMP" e setas, só em inglês. DEF e arco podem reaproveitar `icon_shield`/`icon_arrows`; espada e pulo não têm ícone →
+   **PIXELLAB-FUTURE** (ícones de toque: espada, pulo).
+2. **Barra de resistência das Sereias:** retângulo azul chapado com borda cinza; só o ícone de cera é arte →
+   **PIXELLAB-FUTURE** (moldura e preenchimento da barra).
+3. **Painel da fome (Gado do Sol):** caixa escura lisa com texto (segue o `UITheme`, mas é painel chapado).
+4. Fora do HUD, no mundo: as faíscas `VfxBurst` (checkpoint, coletável, flecha, golpe, escudo…) usam o `PlaceholderSprite`
+   (quadrado tingido).
+
+**Outros achados:** o `HudShot` não mutava — corrigido (`audioMasterMute` + volume 0, restaurados); uma captura de Troia
+rodou antes da correção. Ainda sem mudo: `CampaignProbe`, `FireAnimationDresser.Conferir`, `LevelSelectProbe` e
+`MainMenuProbe` (não usados nesta etapa). No `HudShot`, os objetos de primeiro plano das Sereias aparecem por cima do
+diálogo: efeito da captura (o Canvas passa para 1 un. da câmera), não do jogo, onde o HUD é overlay.
+
+### ETAPA 13B.4 — FONTE E SÍMBOLOS DE CONTROLE (2026-10-06)
+
+**Busca:** símbolos PS/Xbox, A/B/X/Y, LT/RT/LB/RB/L1/R1/L2/R2, Start/Options, nomes de tecla, "[E]", "Press/Pressione" — no
+código, na tabela de idiomas, nas cenas e nos prefabs. Tudo o que o jogador vê passa pelo `ControlHints` (tutoriais de
+Troia e do Prólogo, mapa, NPC, pontos de interação, gado do sol) ou pelo `KeyRebindService` (tela Controles). Pause, Fase
+concluída, Fim de jogo e Configurações não citam botão (navegação por foco). O diálogo não mostra dica de botão.
+Os textos fixos em cena (3 dicas de Troia, mastro) são só reserva para chave ausente e não aparecem.
+
+**Problemas encontrados:**
+1. O rótulo do controle vinha de uma **tabela fixa** por ação — batia hoje com o binding, mas não era lido dele; **Crouch**,
+   **Advance** e **Skip** (mapa Dialogue) não estavam nela e sairiam com o nome interno da ação.
+2. **Teclado: a dica de mover dizia "Move"** em vez de "A/D" ("Use Move to move" no Prólogo e em Troia): o asset grafa as
+   partes do composto "Negative"/"Positive" e a comparação era com minúscula. O teste antigo só olhava o Move fora do teclado.
+3. A mesma comparação no `KeyRebindService.GetCompositePartPath`: as **setas de toque** nunca achavam o binding e caíam no
+   fixo A/D — remapear "mover" deixaria a seta de toque sem efeito.
+4. Rótulos de toque **só em inglês** (JUMP/ATK/DEF/BOW/USE): em português a dica dizia "Toque em JUMP para pular"; o botão
+   "ENTRAR" do mapa lia a tradução uma vez só.
+5. Tela Controles: **"Esc cancela"** fixo, também no controle (lá é B/○).
+
+**Correções** (bindings, mapeamento de ações e mecânica intactos; sem sistema novo, sem fonte nova):
+- `ControlHints`: o rótulo do controle sai do **binding de gamepad da própria ação** (qualquer mapa do asset), traduzido para a
+  família: Sul A/✕, Leste B/○, Oeste X/□, Norte Y/△, LT/L2, RT/R2, LB/L1, RB/R1, Menu/Options, View/Create, LS/L3, RS/R3;
+  direcional "D-pad ▼"/"Direcional ▼"; genérico "A/✕". Entrada `Cancel` (Esc / B / ○, os mesmos controles que as telas
+  já leem). Partes do composto sem diferença de caixa.
+- `KeyRebindService`: `GetPathDisplayString` (extraído do `GetDisplayString`, mesmo comportamento) e a comparação do composto
+  sem caixa.
+- Toque: chaves `ctrl.touch.*` (EN JUMP/ATK/DEF/BOW/USE · PT PULO/ATQ/DEF/ARCO/USAR) lidas pelo botão (`MobileControlsRoot`,
+  com `LocalizedText`, troca com o idioma) e pela dica (`ControlHints`) — não divergem. "ENTRAR" do mapa idem.
+- Tela Controles: "{0} cancela" com o botão do dispositivo em uso.
+- Fonte: a DejaVu Sans já tem ✕ □ △ ○ ▲ ▼ ◄ ► ✓ — (conferido na tabela cmap). Nenhum asset novo; PixelLab: 0.
+
+**Testes** (todos no mudo onde há play mode): compile 0 erros · `LocalizationProbe` OK (332 chaves) · `InputBindingsProbe` OK
+(o "KeyBindingProbe" do pedido) · `GamepadSetup` OK (o "ControllerProbe") · `PlaceholderProbe` OK · `CampaignValidation` OK ·
+`GamepadMenuProbe` OK (o "CampaignControllerMenuProbe"), agora com a **tabela de todas as ações** (Jump, Attack, Shield,
+Bow, Interact, Sprint, Crouch, Pause, Advance, Skip, Cancel, Move) para controle genérico, PlayStation (DualShock 4
+virtual), Xbox (XInput virtual), teclado e toque, em inglês e português — cada rótulo igual ao binding real, sem nome
+interno ("Negative", "button…", "<Gamepad>"); mais as setas de toque seguindo o binding, Controles sem "(Negative)", Pause,
+Fase concluída, Fim de jogo, mapa ("[Y/△] Play" / "[E] Play") e tutorial de Troia. `HudShieldProbe` OK, com os botões de
+toque reais em F02/F10/F16 nos dois idiomas e trocando de idioma em jogo. Build WebGL Success (total 20,7 MB).
+
+**Pendente (fora do escopo de controles):** a tela de morte (`DeathOverlay`, "Você caiu — retornando ao último
+checkpoint" e "vida(s) restante(s)") é **só em português**, sem chave na tabela. No toque, ações sem botão na tela (correr,
+agachar, pausa) caem no nome da tecla — hoje nenhuma dica as cita. A tela Controles só lista e remapeia o **teclado**,
+embora a linha das Configurações diga "Teclado e controle".
+
+### ETAPA 13B.5 — MENU PRINCIPAL (2026-10-06)
+
+**Inspeção:** fundo `BG_MainMenu` (1536×1024, 3:2) com o logo "ODISSEIA — Jornada de Odisseu" pintado; quatro botões
+(Continuar, Novo Jogo, Seletor de Fases, Configurações) com `MenuButton` e `MenuNavigator` (ciclo, foco garantido, voltar
+num lugar só); rótulos por `LocalizedText`; aviso "sem save" traduzido; música pelo `SceneAudio` (tema "the-odyssey" em
+laço); sem "Sair" (WebGL). Os textos `Title`/`Subtitle` da cena estão desligados (o logo é a arte). Existem também
+`menu_bg_ithaca` e `menu_bg_ithaca_odysseus` (pixel art, sem título), não usados.
+
+**Decisões do usuário:** manter a arte; o logo pintado vale como marca nos dois idiomas. Corrigir a proporção do fundo.
+
+**Problemas encontrados:**
+1. Fundo **esticado** para a tela: em 16:9 (o template WebGL é sempre 16:9) o logo e o Odisseu ficavam 18% mais largos;
+   45% em 2340×1080 e 11% espremidos em 4:3.
+2. A **borda dourada** que o `MenuButton` descreve não existia, e o foco era só um leve aumento + empurrão de 10 px para a
+   direita, que tirava o item da coluna (visto no navegador na 13B.1).
+3. `MainMenuProbe` (antigo) entrava em play mode **sem mudo** e deixava um **save de teste** no Editor, que fazia o mapa do
+   `GamepadMenuProbe` falhar se rodado depois.
+
+**Correções** (sem asset novo; fluxo de cenas, save, desbloqueio, mapa e bindings intactos):
+- `MainMenuPolishDresser` (idempotente — a 2ª execução deixa a cena idêntica): fundo com `AspectRatioFitter` (FitInParent,
+  1,5) e faixas na cor da moldura pintada (#08131E) atrás de tudo; `Outline` nos quatro botões; marcador "►" dourado na
+  borda esquerda do item em foco (o `focusMarker` do `MenuButton`, que não estava ligado); empurrão em foco zerado.
+- `MenuButton`: pinta a borda por estado quando o botão tem `Outline` (repouso dourado, foco `TextAccent`, desabilitado
+  cinza). `UITheme`: `ButtonBorder`, `ButtonBorderDisabled`.
+- `MainMenuProbe`: mudo e save do Editor devolvido no fim. `GamepadMenuProbe`: começa sempre sem save e o devolve no fim.
+- Achado durante a etapa: numa 2ª execução, a 1ª versão do dresser punha a faixa por cima do fundo (menu todo escuro). Os
+  testes de caixas passavam; o `MainMenuPolishProbe` agora confere **pixels** (centro de cada botão e do logo).
+
+**Testes** (todos os de play mode no mudo): compile 0 erros · `PlaceholderProbe`, `LocalizationProbe` (332 chaves),
+`InputBindingsProbe`, `GamepadSetup`, `CampaignValidation` OK · `GamepadMenuProbe` OK · `MainMenuProbe` OK (música no menu e
+depois de trocar de cena: "the-odyssey", laço, sem reiniciar) · **`MainMenuPolishProbe` OK** (55 conferências), novo:
+- visual EN e PT: borda e marcador só no foco, rótulos = tabela, fundo 1,500, nada fora da tela, sobreposto ou coberto, em
+  1280×720, 1920×1080, 960×540, 2340×1080 e 1024×768 (`Docs/QA/_hud/mainmenu_en.png`, `mainmenu_pt.png`);
+- teclado: foco inicial, ↑/↓ em ciclo pulando o Continuar desabilitado, Enter abre e Esc fecha as Configurações;
+  Espaço não confirma (o Submit da UI é Enter / A / ✕);
+- Novo Jogo → mapa → Interagir → **F01 carrega** com o jogador;
+- Xbox virtual: com save o foco começa no Continuar; D-pad e analógico; A no Novo Jogo pede confirmação e B a cancela sem
+  apagar o save; A no Continuar leva ao mapa;
+- PlayStation virtual (família detectada): analógico ↓, ✕ abre o Seletor de Fases e ○ volta; ✕ abre as Configurações,
+  Controles por cima, ○ fecha um de cada vez; ○ no menu não faz nada. **Limite do teste:** o ↑ do analógico do DualShock 4
+  virtual não chega (eixo em byte invertido; o relatório HID real é interno ao pacote) — o ↓ dele e o ↑/↓ do Xbox navegam,
+  e a UI lê `<Gamepad>/leftStick` igual para todos;
+- toque (mobile forçado): nenhum controle de jogo visível sobre o menu; tocar em Configurações abre a tela.
+- Os testes rodados em sequência (gamepad → menu → polish → gamepad) passam todos.
+
+**Build WebGL não gerado:** C: com 4,48 GB livres (regra: só com ≥ 5 GB).
+
+**Restante (registrado):** logo pintado em português nos dois idiomas (decisão: marca); botões continuam retângulos
+chapados com borda — sem moldura em pixel art (não há asset; não vira PIXELLAB-FUTURE por ora); cores da UI mais escuras
+que os valores do `UITheme` (espaço de cor linear — afeta o jogo todo); textos `Title`/`Subtitle` desligados e só em PT na
+cena (inofensivos, não aparecem).
+
+### ETAPA 13B.6 — HUD, CAMADAS E TELA DE MORTE (2026-10-06)
+
+**A) Altar × jogador — análise** (`SortingProbe.Scan`, sem play mode, relatório em `Logs/qa_sorting.txt`):
+1. Jogador: `Body` ordem 0 e `ShieldVisual` 2; sem SortingGroup; nenhum script muda a ordem em jogo.
+2. Altares (`Checkpoint`): ordem 0, z 0 — o mesmo do jogador. Uma camada só (Default); pipeline Built-in, câmera ortográfica:
+   com ordem igual, o Unity desempata pela distância à câmera, e tudo estava em z 0 — por isso o resultado variava.
+3. **A ordem 0 é a camada "interativa" de toda fase:** chão, altares, moedas, objetivo, plataformas, pickups. Ordem 1: NPCs
+   (30 no Prólogo), portões, mastros e velas, peças de guerra de Troia, gado, telhado; poeira do pulo. Ordem 2: inimigos,
+   lança. 3+: primeiro plano (rochas, névoa, braseiros). Negativas: fundo e paredes.
+4. Dependências da ordem do jogador: a poeira (1, por cima do pé) e o escudo (2). As "Rock_Cover" de Ciclopes têm o desenho
+   desligado (só colisor), então nada na ordem 0 foi pensado para esconder o jogador.
+5. Descartados: altar na ordem −2 (muros, palácio e cais do Prólogo passavam a cobri-lo — 13B.2) e jogador na ordem 1
+   (empataria com NPCs, portões e mastros nas 16 fases).
+
+**Solução (específica do jogador, sem mudar ordem nenhuma):** o sprite `Body` fica em z local −0,05 (0,05 mais perto da
+câmera) — `ItemArtDresser.CorpoNaFrente`, idempotente. Ele ganha só os empates da ordem 0 (altar, chão, moedas,
+plataformas); ordem 1+ continua por cima e as negativas por baixo, como antes. A raiz, o colisor, o `GroundCheck`, o
+`AttackPoint`, o `FirePoint` e o escudo não se mexem; o respawn e a câmera usam a raiz; a física 2D ignora z. Nenhuma cena
+sobrescreve a posição do Body.
+
+**B) Tela de morte:** `DeathOverlay` passa a usar a tabela: `ui.death.message` ("You fell — returning to the last
+checkpoint" / "Você caiu — retornando ao último checkpoint"), `ui.death.lifeLeft` ("{0} life left" / "{0} vida restante") e
+`ui.death.livesLeft` ("{0} lives left" / "{0} vidas restantes"). O texto da cena ficou só como reserva para chave ausente.
+Morte, respawn e checkpoint intactos. O fim de jogo já era traduzido (`ui.gameover.*`).
+
+**Testes** (`LayeringDeathProbe.Run`, play mode **no mudo**, 72 conferências, **RESULTADO OK**):
+- F01 (os 7 altares), F02, F05, F08, F10, F13, F14, F15, F16: Odisseu posto em cada altar e a cena fotografada três vezes
+  (só altar, só Odisseu, os dois) — **Odisseu na frente em 100% dos 1270 px sobrepostos** em todos os 15 altares; altar
+  com posição, colisor e ordem intactos; raiz em z 0 e Body −0,05; câmera em z −10. Contraprova: a NPC Penélope (ordem 1)
+  continua na frente dele (0%). Fotos: `Docs/QA/_hud/altar_player_layering.png`.
+- Mecânicas em Troia: escudo 10 → 2 de frente e 10 pelas costas; arco 10 → 9 flechas; espada (PlayerCombat) ativa.
+- Tela de morte em inglês e português: plural ("2 lives left" / "2 vidas restantes") e singular ("1 life left" / "1 vida
+  restante"), sem texto do outro idioma; texto em 2 linhas com todos os caracteres visíveis na caixa de 680×60; respawn no
+  checkpoint com vida cheia; na última vida, fim de jogo com o título traduzido e foco em "Tentar de novo". Fotos:
+  `Docs/QA/_hud/death_en.png`, `death_pt.png`.
+- "Tentar de novo" pelo teclado (Enter), Xbox virtual (A), PlayStation virtual (✕) e toque: recomeça a fase com 3 vidas.
+- Regressão: compile 0 erros · `PlaceholderProbe`, `LocalizationProbe` (335 chaves), `InputBindingsProbe`, `GamepadSetup`,
+  `CampaignValidation`, `GamepadMenuProbe`, `MainMenuProbe`, `MainMenuPolishProbe` e `HudShieldProbe` (17 passadas) OK.
+
+**C) Revisão do HUD** (capturas do `HudShieldProbe`, 7 fases × PT/EN + mobile, 5 resoluções): coluna alinhada, ícone do
+escudo no lugar, nada cortado ou sobreposto; nada novo causado pela 13B.2–13B.6. Observações (registradas, não corrigidas):
+~~em 960×540 o HUD inteiro fica pequeno~~ (artefato do teste, retirado na 13B.7); sobre nuvem branca (F01) os números perdem
+contraste apesar do contorno. Continuam fora do escopo: barra das Sereias, painel da fome, ícones PIXELLAB-FUTURE,
+faíscas `VfxBurst` placeholder, botões de toque sem pixel art.
+
+**D) UITheme:** as cores da UI aparecem mais escuras que os valores do `UITheme` (provável espaço de cor linear). Não
+investigado — possível trabalho futuro.
+
+**Build WebGL não gerado:** C: com 4,41 GB livres (regra: só com ≥ 5 GB).
+
+### ETAPA 13B.7 — TELA FINAL (2026-10-07)
+
+**Inspeção:** quarto da cama na oliveira (`ending_bedroom_olive`, 604×340 = 16:9) com o casal (`Reunion`) e Telêmaco;
+título e mensagem traduzidos (`ui.ending.*`) com faixa translúcida (etapa 13); "Jogar novamente" (zera o progresso e vai
+ao Prólogo) e "Voltar ao menu", com `MenuNavigator` (foco, ←/→); música: o tema único "the-odyssey" em laço.
+
+**Problemas encontrados:**
+1. Os dois botões eram Buttons com troca de cor, sem o visual do menu (borda dourada, marcador): o foco quase não se via.
+2. Em telas mais largas que 16:9 as faixas laterais saíam no azul padrão da câmera (#314D79), que destoava do quarto.
+3. Em telas mais largas o Canvas (que seguia a largura) crescia mais que o quarto (a câmera segue a altura):
+   "Jogar novamente" cobria o casal em 2340×1080.
+4. Com rótulos longos ("Jogar novamente"; no menu, "SELECIONAR FASE") o "►" em posição fixa caía em cima da 1ª letra.
+5. **Nos testes:** as fotos em várias resoluções (menu, HUD, final) saíam com o fator do CanvasScaler da janela do batch
+   (640×480) e com glifos em cache da escala anterior — o layout fotografado não era o daquela resolução. A observação da
+   13B.6 "HUD pequeno em 960×540" era isso, e foi retirada.
+
+**Correções** (sem asset novo; textos, cenário, fluxo, save e música intactos):
+- `EndingPolishDresser` (idempotente): os dois botões com `MainMenuPolishDresser.PolirBotao` (agora compartilhado:
+  `MenuButton`, borda dourada, marcador), largura 240 → 290 (posições ±155, vão de 20); fundo da câmera #2A1D16 (marrom das
+  paredes do quarto); Canvas do final pela altura (match 1), como a câmera — em 16:9 (o WebGL) nada muda. Conferido com
+  medição honesta: com o match 0 original o botão cobre o casal em 2340×1080; com 1, não.
+- `MenuButton.PlaceMarker`: no foco, o "►" fica logo antes de onde o rótulo começa (pela largura do texto, em unidades do
+  botão) — vale em qualquer resolução e idioma, no menu e no final. O menu principal ficou com o Canvas original (uma
+  tentativa com Shrink foi desfeita).
+- Testes (`MainMenuPolishProbe`, `HudShieldProbe`, `EndingProbe`): recalculam o CanvasScaler e refazem as malhas antes de
+  cada foto; o marcador é medido com o foco em cada botão.
+
+**Testes** (todos os de play mode no mudo): compile 0 erros · `LocalizationProbe` (335), `InputBindingsProbe`,
+`GamepadSetup`, `PlaceholderProbe`, `CampaignValidation` OK · `GamepadMenuProbe`, `MainMenuProbe`, `MainMenuPolishProbe`
+(55), `HudShieldProbe` (17 passadas), `LayeringDeathProbe` OK · **`EndingProbe` OK** (31 conferências), novo:
+- EN e PT: título, mensagem e botões pela tabela; borda e marcador no foco; nada fora da tela, sobreposto, coberto (pixel)
+  ou por cima dos personagens; "►" sem encostar no rótulo e dentro do botão — em 1280×720, 1920×1080, 960×540, 2340×1080 e
+  1024×768 (`Docs/QA/_hud/ending_en.png`, `ending_pt.png`);
+- música: "the-odyssey" em laço, a mesma do menu e das fases;
+- teclado: foco inicial em Jogar novamente, ←/→, Enter em Voltar ao menu → menu;
+- Xbox virtual: D-pad ←/→; A em Jogar novamente → Prólogo com o progresso zerado;
+- PlayStation virtual: ○ não faz nada (não há para onde voltar); ✕ em Voltar ao menu → menu;
+- toque (mobile forçado): nenhum controle de toque sobre os botões; tocar em Voltar ao menu → menu.
+
+**Build WebGL não gerado:** C: com 3,95 GB livres (regra: só com ≥ 5 GB). O espaço cai ~0,5 GB por etapa (temporários do
+Unity no C:).
+
+**Restante:** rótulos do final em caixa normal ("Play again") e do menu em maiúsculas — texto da tabela, mantido.
+
+### ETAPA 13B.8 — AUDITORIA FINAL / RELEASE AUDIT (2026-10-07)
+
+Sem features, sem assets, sem refactor. Única mudança: mudo em `CampaignProbe` e `LevelSelectProbe` (os dois últimos que
+entravam em play mode com som) e dois probes novos de auditoria (`ReleaseAuditProbe`, `SettingsShotProbe`). Todos os testes
+de play mode rodaram no mudo. Log completo da auditoria: `Docs/QA/RELEASE_AUDIT_13B8_log.txt`.
+
+**Compilação:** 0 erros. 247 avisos, **todos em scripts de Editor** (CS0618 — `FindObjectsByType` com `FindObjectsSortMode` e
+`FindFirstObjectByType` obsoletos no Unity 6.5); **0 avisos no código do jogo**.
+
+**Suíte** (todos OK, salvo o indicado):
+
+| Probe | Resultado | Conferências |
+|---|---|---|
+| PlaceholderProbe · LocalizationProbe (335 chaves) · InputBindingsProbe · GamepadSetup · CampaignValidation · PrologueProbe | OK | edição |
+| GamepadMenuProbe | OK | 73 |
+| MainMenuProbe | OK (música "the-odyssey" em laço, sem reiniciar) | — |
+| MainMenuPolishProbe | OK | 55 (1 limite do simulador: ↑ do analógico do DualShock virtual) |
+| HudShieldProbe | OK | 102 (17 passadas) |
+| LayeringDeathProbe | OK | 72 |
+| EndingProbe | OK | 31 |
+| AltarFlameProbe | OK | 16 |
+| CampaignProbe · LevelSelectProbe | OK | — |
+| QaMechanicsTest (Lestrigões, Calipso, vãos de Troia, Run) | iguais aos registros de referência | — |
+| QaPlaytestBot 1→16 | 13/16 concluídas (ver abaixo) | — |
+| ReleaseAuditProbe (novo) | 45 OK, 4 falhas triadas (abaixo) | 49 |
+
+**16 fases** (bot jogando + auditoria em EN/PT): todas carregam com jogador, câmera, HUD, pausa, checkpoint, morte e respawn,
+uma música só e 0 erros no console nas 32 passadas. Bot: 02, 03, 05–10, 12–16 concluídas com transição, desbloqueio e nó do
+mapa corretos (16 → Final). Não concluídas:
+- **01** — limitação do bot (só anda para a direita; "Explorar" pede voltar). `PrologueProbe`: cadeia de atos completa.
+- **04 Citera** — 0/7 rodadas, em fases diferentes da onda: mortes pela onda (`TidalHazard`, senoide de ~12,6 s, mata ao tocar)
+  e pelo raio (`StormHazard`, aviso piscando 1 s, golpe 0,45 s a cada 3,25 s). O bot não espera janela; nada mudou na fase
+  nem nos perigos desde `92802a8` (na Etapa 8 ele passou por sorte de fase). Janelas legíveis — validação humana pendente.
+- **11 Cila** — Game Over na campanha inteira; isolada, **3/3 concluídas sem mortes**. Variância; QA-02 (validação humana).
+
+**Riscos conhecidos:** F07 Lestrigões (BUG-001) igual ao relatório da correção — abertura travada 3 s, 0 golpes, 0 mortes,
+perseguidor parado a 8 un no respawn; F11 dificuldade, não bloqueio; F01 limite do bot; F13 Calipso concluída, mesma
+trajetória do QA-04; F12 Gado do Sol: saída e parede-limite funcionando (concluída); F14/F15 sem problema de ordem e com
+transição; F16 → Final → menu (EndingProbe).
+
+**Mapa:** 16 nós em ordem; 0 concluídas = atual 1 + 15 bloqueados; 8 = 8 concluídos + 1 disponível + 7 bloqueados; 15 = 15 +
+1. Trilha, navio, louros e entrada nas fases nas capturas (13B.1) e pelo bot. Conferência no navegador: pendente.
+
+**Localização:** nada do outro idioma, nenhum "(Negative)", nome interno do Input System nem chave crua em 16 fases × EN/PT
+(HUD, avisos e todas as falas), menu, mapa, tutoriais, Controles, morte, fim de jogo, fase concluída e final.
+
+**Telas × resoluções** (1280×720, 1920×1080, 960×540, 2340×1080, 1024×768; CanvasScaler e encaixe recalculados antes da foto):
+Mapa, Pausa, Controles, Fim de jogo, Fase concluída, menu, HUD e final OK nos dois idiomas. **Configurações: o botão
+"Fechar" sai do painel** (achado abaixo).
+
+**Áudio:** volume de música 0 → fonte 0; uma fonte de música só, também depois de ir a uma fase e voltar; tema único em laço
+no menu, nas fases e no final.
+
+**Achados novos (não corrigidos):**
+1. **MEDIUM — "Fechar" das Configurações fora do painel.** Os itens são postos de cima para baixo a partir de y=+250, mas o
+   painel é centralizado com a altura usada: sobra uma faixa vazia no topo e o último item (Fechar) passa da borda de baixo.
+   No WebGL (sem a linha de Resolução) o botão sai 21 un. da moldura e perde ~4 px na borda da tela em 1280×720 — visível e
+   clicável, e Esc/B fecham. No Editor/standalone (com a linha de Resolução) fica pela metade. Anterior à 13B. Foto:
+   `Docs/QA/_hud/settings_close_1280x720_antes.png` (corrigido no RC polish: `settings_close_1280x720_corrigido.png`).
+2. **LOW — cores dos botões mais escuras (item 12).** Não é espaço de cor (o projeto é **Gamma**) nem captura: medido, o
+   `Image` tem a cor certa (0,20; 0,34; 0,55), mas o `CanvasRenderer` guarda a tinta da transição ColorTint do Button, que o
+   `MenuButton` desliga depois — a tela mostra o produto (0,04; 0,12; 0,30). Correção futura de uma linha (zerar a tinta do
+   CanvasRenderer quando o MenuButton desliga a transição).
+3. **LOW — respawn sem invulnerabilidade perto de inimigo** (Circe: lobo em cima do altar; Mundo dos Mortos): vida 80/100 e
+   70/100 2,5 s depois do respawn. Já registrado como decisão de design (sem invulnerabilidade pós-respawn).
+4. **LOW — avisos CS0618** em scripts de Editor.
+5. Artefatos de teste corrigidos nesta etapa (não são do jogo): Gado do Sol e Final não usam `LevelGoal`; Configurações
+   deixadas abertas contaminavam as fotos seguintes; o encaixe do painel só roda no Update; câmera "parada" em F07 é a
+   abertura travada.
+
+**Build WebGL: BLOQUEADO PELO AMBIENTE** — C: com 3,76 GB (regra ≥ 5 GB). O último build válido é o da 13B.4 (20,7 MB).
+
+**Matriz de release:**
+
+| Área | Status | Severidade | Observação |
+|---|---|---|---|
+| Compile | OK | — | 0 erros; avisos só em Editor (LOW) |
+| 16 fases | OK | MEDIUM (F04/F11) | 13/16 pelo bot; F01 limite do bot; F04/F11 dificuldade, validação humana |
+| Mapa | OK | — | navegador pendente |
+| Teclado | OK | — | todas as ações e menus |
+| Xbox | OK (virtual) | PHYSICAL-TEST | controle físico pendente |
+| PlayStation | OK (virtual) | PHYSICAL-TEST | ↑ do analógico do DualShock virtual: limite do simulador |
+| Toque | OK (forçado no Editor) | PHYSICAL-TEST | aparelho pendente |
+| PT/EN | OK | — | — |
+| HUD | OK | — | — |
+| Menu principal | OK | LOW | cor dos botões (tinta dupla) |
+| Configurações | Falha visual | MEDIUM | "Fechar" fora do painel |
+| Final | OK | — | — |
+| Save | OK | — | Novo jogo, Continuar, desbloqueio, fim de jogo, tentar de novo, jogar novamente |
+| Áudio | OK | — | — |
+| WebGL | Bloqueado | ENVIRONMENT | C: 3,76 GB; último build 13B.4 |
+| Controle físico | Pendente | PHYSICAL-TEST | — |
+| Mobile físico | Pendente | PHYSICAL-TEST | — |
+| Navegador | Pendente | ENVIRONMENT | painel do app sem renderizar |
+| PixelLab-Future | Pendente | PIXELLAB-FUTURE | cosmético, não bloqueia |
+
+**Decisão:** nenhum BLOCKER nem HIGH de código. Release candidate **sim pelo código**; o artefato depende de gerar o WebGL
+(espaço no C:) e do teste no navegador.
+
+### RC POLISH (2026-10-07)
+
+Os dois ajustes autorizados depois da auditoria; nada mais mudou.
+
+1. **"Fechar" das Configurações** — `SettingsScreen.EncaixarPainelNosItens`: o painel mede a caixa de todos os itens,
+   centraliza a pilha e fica com a altura dela + 20 de folga; o repouso dos botões (`MenuButton`) é reancorado. O "Fechar"
+   fica dentro da moldura em todas as resoluções (1280×720: y 33–80; antes −50…−1) e some a faixa vazia do topo.
+   Antes/depois: `Docs/QA/_hud/settings_close_1280x720_antes.png` · `settings_close_1280x720_corrigido.png`.
+2. **Cor dos botões** — `MenuButton.Apply` deixa a tinta do `CanvasRenderer` neutra a cada estado. Medido: repouso
+   (0,20; 0,34; 0,55) e foco (0,28; 0,46; 0,70), as cores do `UITheme` — antes (0,04; 0,12; 0,30). O item em foco agora se
+   distingue bem dos outros (menu e final).
+
+**Testes** (todos os de play mode no mudo): compile 0 erros; LocalizationProbe, InputBindingsProbe, GamepadSetup,
+PlaceholderProbe, CampaignValidation, PrologueProbe OK; GamepadMenuProbe 73, MainMenuProbe OK, MainMenuPolishProbe 55,
+HudShieldProbe 17 passadas, LayeringDeathProbe 72, EndingProbe 31, AltarFlameProbe, CampaignProbe e LevelSelectProbe OK;
+QaMechanicsTest igual às referências (os 16 resultados dos vãos de Troia idênticos); ReleaseAuditProbe 47 OK — as
+Configurações passam nas 5 resoluções em EN/PT; restam só as 2 LOW já registradas (respawn perto de inimigo em Circe e no
+Mundo dos Mortos). 0 erros no console.
+
+**WebGL RC:** Build Finished, Result: Success — 20,7 MB (dados 15,91 MB, wasm 4,62 MB, framework 66 KB, loader 118 KB).
+Gerado depois da última alteração de código. C: 6,52 GB.
+
+**Pendente (fora do código):** navegador real, controles Xbox/PlayStation físicos, Android/iPhone, validação humana de F04
+(Citera) e F11 (Cila).

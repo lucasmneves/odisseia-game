@@ -232,31 +232,31 @@ namespace Odisseia.UI
             float row1 = margin + actionSize + gap;
             float row2 = margin + 2f * (actionSize + gap);
 
-            CreateOnScreenButton(groupRect, "AttackButton", Bind("Attack", null, "<Keyboard>/z"), "ATK",
+            CreateOnScreenButton(groupRect, "AttackButton", Bind("Attack", null, "<Keyboard>/z"), ControlHints.TouchKey("Attack"),
                 new Vector2(1f, 0f), new Vector2(-col1, row0),
                 new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
 
-            CreateOnScreenButton(groupRect, "ShieldButton", Bind("Shield", null, "<Keyboard>/x"), "DEF",
+            CreateOnScreenButton(groupRect, "ShieldButton", Bind("Shield", null, "<Keyboard>/x"), ControlHints.TouchKey("Shield"),
                 new Vector2(1f, 0f), new Vector2(-col0, row0),
                 new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
 
-            CreateOnScreenButton(groupRect, "JumpButton", Bind("Jump", null, "<Keyboard>/space"), "JUMP",
+            CreateOnScreenButton(groupRect, "JumpButton", Bind("Jump", null, "<Keyboard>/space"), ControlHints.TouchKey("Jump"),
                 new Vector2(1f, 0f), new Vector2(-col1, row1),
                 new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
 
-            CreateOnScreenButton(groupRect, "BowButton", Bind("Bow", null, "<Keyboard>/c"), "BOW",
+            CreateOnScreenButton(groupRect, "BowButton", Bind("Bow", null, "<Keyboard>/c"), ControlHints.TouchKey("Bow"),
                 new Vector2(1f, 0f), new Vector2(-col0, row1),
                 new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
 
             // Nas fases: interagir com NPCs e com os pontos de preparação. Sem este
             // botão, tudo que depende de "E" (conversar, examinar) ficava inacessível
             // no toque — o mapa tinha o seu botão de Interact, o gameplay não tinha.
-            CreateOnScreenButton(groupRect, "InteractButton", Bind("Interact", null, "<Keyboard>/e"), "USE",
+            CreateOnScreenButton(groupRect, "InteractButton", Bind("Interact", null, "<Keyboard>/e"), ControlHints.TouchKey("Interact"),
                 new Vector2(1f, 0f), new Vector2(-col1, row2),
                 new Vector2(actionSize, actionSize), cornerRadius: actionSize / 2f);
 
             // Só no mapa: entrar na fase. Reaproveita a ação Interact, a mesma do "E".
-            CreateOnScreenButton(groupRect, "EnterLevelButton", Bind("Interact", null, "<Keyboard>/e"), Localization.Get("ui.worldMap.enter"),
+            CreateOnScreenButton(groupRect, "EnterLevelButton", Bind("Interact", null, "<Keyboard>/e"), "ui.worldMap.enter",
                 new Vector2(1f, 0f), new Vector2(-col1, row0),
                 new Vector2(actionSize * 1.4f, actionSize), cornerRadius: actionSize / 2f,
                 context: ButtonContext.WorldMap);
@@ -328,14 +328,22 @@ namespace Odisseia.UI
             labelRect.offsetMin = Vector2.zero;
             labelRect.offsetMax = Vector2.zero;
 
+            // O rótulo é uma CHAVE da tabela de idiomas (o mesmo texto que o ControlHints põe nas dicas) ou, sem
+            // tradução, o próprio texto (as setas). Com chave, acompanha a troca de idioma pelo LocalizedText.
+            bool traduzido = Localization.Has(label);
             var text = labelGO.AddComponent<Text>();
-            text.text = label;
+            text.text = traduzido ? Localization.Get(label) : label;
             text.font = UITheme.Font;
-            text.fontSize = label.Length > 2 ? 20 : 36;
+            text.fontSize = text.text.Length > 2 ? 20 : 36;
             text.alignment = TextAnchor.MiddleCenter;
             text.color = UITheme.TextPrimary;
             // O clique tem que chegar no botão por baixo, não ser interceptado pelo texto.
             text.raycastTarget = false;
+
+            if (traduzido)
+            {
+                labelGO.AddComponent<LocalizedText>().SetKey(label);
+            }
         }
 
         private GameObject CreateRotatePanel(Transform parent)

@@ -329,6 +329,25 @@ namespace Odisseia.Systems
                 "Tentar de novo",
             },
 
+            // Aviso de vida perdida (DeathOverlay): a frase e a contagem de vidas, com singular e plural.
+            ["ui.death.message"] = new[]
+            {
+                "You fell — returning to the last checkpoint",
+                "Você caiu — retornando ao último checkpoint",
+            },
+
+            ["ui.death.lifeLeft"] = new[]
+            {
+                "{0} life left",
+                "{0} vida restante",
+            },
+
+            ["ui.death.livesLeft"] = new[]
+            {
+                "{0} lives left",
+                "{0} vidas restantes",
+            },
+
             ["ui.gameover.hint"] = new[]
             {
                 "Stages already won stay unlocked.",
@@ -428,8 +447,8 @@ namespace Odisseia.Systems
 
             ["ui.rebind.waiting"] = new[]
             {
-                "Press the new key for \"{0}\". Esc cancels.",
-                "Pressione a nova tecla para \"{0}\". Esc cancela.",
+                "Press the new key for \"{0}\". {1} cancels.",
+                "Pressione a nova tecla para \"{0}\". {1} cancela.",
             },
 
             ["ui.rebind.move"] = new[]
@@ -520,8 +539,8 @@ namespace Odisseia.Systems
 
             ["ui.controls.hint"] = new[]
             {
-                "Select a key to change it. Esc cancels.",
-                "Selecione uma tecla para trocar. Esc cancela.",
+                "Select a key to change it. {0} cancels.",
+                "Selecione uma tecla para trocar. {0} cancela.",
             },
 
             ["ui.controls.unavailable"] = new[]
@@ -1869,6 +1888,19 @@ namespace Odisseia.Systems
                 "Left Stick",
                 "Analógico esquerdo",
             },
+
+            // Direcional: igual no Xbox e no PlayStation (ControlHints.PadLabel).
+            ["ctrl.gamepad.dpadUp"] = new[] { "D-pad ▲", "Direcional ▲" },
+            ["ctrl.gamepad.dpadDown"] = new[] { "D-pad ▼", "Direcional ▼" },
+            ["ctrl.gamepad.dpadLeft"] = new[] { "D-pad ◄", "Direcional ◄" },
+            ["ctrl.gamepad.dpadRight"] = new[] { "D-pad ►", "Direcional ►" },
+
+            // Rótulos dos botões de toque — o botão (MobileControlsRoot) e a dica (ControlHints) leem a mesma chave.
+            ["ctrl.touch.jump"] = new[] { "JUMP", "PULO" },
+            ["ctrl.touch.attack"] = new[] { "ATK", "ATQ" },
+            ["ctrl.touch.shield"] = new[] { "DEF", "DEF" },
+            ["ctrl.touch.bow"] = new[] { "BOW", "ARCO" },
+            ["ctrl.touch.interact"] = new[] { "USE", "USAR" },
 
             ["ui.settings.vibration"] = new[]
             {

@@ -32,11 +32,16 @@ public static class LevelSelectProbe
     private static int total;
     private static bool falhou;
 
-    private static bool opcoesAtivas;
+    private static bool opcoesAtivas, mudoOriginal;
     private static EnterPlayModeOptions opcoes;
 
     public static void Run()
     {
+        // Todo teste no mudo (restaurado no Sair).
+        mudoOriginal = EditorUtility.audioMasterMute;
+        EditorUtility.audioMasterMute = true;
+        AudioListener.volume = 0f;
+
         opcoesAtivas = EditorSettings.enterPlayModeOptionsEnabled;
         opcoes = EditorSettings.enterPlayModeOptions;
         EditorSettings.enterPlayModeOptionsEnabled = true;
@@ -322,6 +327,8 @@ public static class LevelSelectProbe
     {
         EditorApplication.update -= Tick;
         EditorApplication.isPlaying = false;
+        AudioListener.volume = 1f;
+        EditorUtility.audioMasterMute = mudoOriginal;
 
         EditorSettings.enterPlayModeOptionsEnabled = opcoesAtivas;
         EditorSettings.enterPlayModeOptions = opcoes;

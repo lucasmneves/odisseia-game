@@ -33,6 +33,7 @@ public static class GamepadMenuProbe
     private static readonly List<InputDevice> extras = new List<InputDevice>();
     private static int falhas;
     private static bool mudoOriginal;
+    private static string saveAnterior;
     private static InputSettings.BackgroundBehavior fundo;
     private static InputSettings.EditorInputBehaviorInPlayMode editorIn;
     private static bool opcoesAtivas;
@@ -51,6 +52,10 @@ public static class GamepadMenuProbe
         AudioListener.volume = 0f;
         rel.Clear();
         falhas = 0;
+        // Sempre sem save (o mapa testado é o do começo da jornada); o do Editor volta no Sair.
+        saveAnterior = PlayerPrefs.HasKey("Odisseia.Save") ? PlayerPrefs.GetString("Odisseia.Save") : null;
+        PlayerPrefs.DeleteKey("Odisseia.Save");
+        PlayerPrefs.Save();
         L($"# QA gamepad (virtual) — {System.DateTime.Now:yyyy-MM-dd HH:mm}");
         EditorSceneManager.OpenScene("Assets/Scenes/Boot/Boot.unity", OpenSceneMode.Single);
         roteiro = Roteiro();
@@ -264,10 +269,12 @@ public static class GamepadMenuProbe
         L("\n## Troia — dicas do tutorial");
         e = Botao(GamepadButton.North); while (e.MoveNext()) { yield return e.Current; }
         DicasTroia("controle genérico", "A/✕", "X/□");
+        TabelaDeBotoes("controle genérico");
         var ps = InputSystem.AddDevice<UnityEngine.InputSystem.DualShock.DualShock4GamepadHID>("QADualShock");
         extras.Add(ps);
         e = BotaoEm(ps, ps.buttonNorth); while (e.MoveNext()) { yield return e.Current; }
         DicasTroia("PlayStation", "✕", "□");
+        TabelaDeBotoes("PlayStation");
         Gamepad xpad = null;
         try { xpad = InputSystem.AddDevice("XInputControllerWindows", "QAXbox") as Gamepad; } catch (System.Exception ex) { L("- Xbox: " + ex.Message); }
         if (xpad != null)
@@ -275,6 +282,7 @@ public static class GamepadMenuProbe
             extras.Add(xpad);
             e = BotaoEm(xpad, xpad.buttonNorth); while (e.MoveNext()) { yield return e.Current; }
             DicasTroia("Xbox", "A", "X");
+            TabelaDeBotoes("Xbox");
         }
         else
         {
@@ -282,6 +290,8 @@ public static class GamepadMenuProbe
         }
         e = Tecla(Key.LeftShift); while (e.MoveNext()) { yield return e.Current; }
         DicasTroia("teclado", "SPACE", "Z");
+        TabelaDeBotoes("teclado");
+        TabelaDeBotoes("toque");
 
         // De volta ao gamepad virtual genérico.
         e = Botao(GamepadButton.North); while (e.MoveNext()) { yield return e.Current; }
@@ -373,6 +383,82 @@ public static class GamepadMenuProbe
     }
 
     // ------------------------------------------------------------------ ajudantes
+
+    /// <summary>
+    /// 13B.4: o rótulo de TODAS as ações, nos dois idiomas, para o dispositivo atual (ou o toque, forçado por reflexão só
+    /// aqui). Confere com os bindings do PlayerControls.inputactions, sem nome interno do Input System ("Negative",
+    /// "buttonSouth", "&lt;Gamepad&gt;") nem o nome da própria ação. Também a dica da tela Controles ("{0} cancela").
+    /// </summary>
+    private static void TabelaDeBotoes(string como)
+    {
+        var acoes = new[] { "Jump", "Attack", "Shield", "Bow", "Interact", "Sprint", "Crouch", "Pause", "Advance", "Skip", ControlHints.Cancel, "Move" };
+        // Esperado por família, na ordem de "acoes"; null = depende do idioma (conferido abaixo).
+        var esperado = new Dictionary<string, string[]>
+        {
+            ["controle genérico"] = new[] { "A/✕", "X/□", "LT/L2", "RT/R2", "Y/△", "RB/R1", null, "Menu/Options", "A/✕", "B/○", "B/○", null },
+            ["PlayStation"] = new[] { "✕", "□", "L2", "R2", "△", "R1", null, "Options", "✕", "○", "○", null },
+            ["Xbox"] = new[] { "A", "X", "LT", "RT", "Y", "RB", null, "Menu", "A", "B", "B", null },
+            ["teclado"] = new[] { null, "Z", "X", "C", "E", null, "S", "ESC", null, "ESC", "ESC", "A/D" },
+            ["toque"] = new[] { null, null, "DEF", null, null, null, "S", "ESC", null, "ESC", "ESC", "◄ ►" },
+        };
+        // Os que mudam com o idioma: [inglês, português].
+        var porIdioma = new Dictionary<(string, string), string[]>
+        {
+            [("controle genérico", "Crouch")] = new[] { "D-pad ▼", "Direcional ▼" },
+            [("PlayStation", "Crouch")] = new[] { "D-pad ▼", "Direcional ▼" },
+            [("Xbox", "Crouch")] = new[] { "D-pad ▼", "Direcional ▼" },
+            [("controle genérico", "Move")] = new[] { "Left Stick", "Analógico esquerdo" },
+            [("PlayStation", "Move")] = new[] { "Left Stick", "Analógico esquerdo" },
+            [("Xbox", "Move")] = new[] { "Left Stick", "Analógico esquerdo" },
+            [("teclado", "Jump")] = new[] { "SPACE", "ESPAÇO" },
+            [("teclado", "Advance")] = new[] { "SPACE", "ESPAÇO" },
+            [("teclado", "Sprint")] = new[] { "LEFT SHIFT", "SHIFT ESQUERDO" },
+            [("toque", "Jump")] = new[] { "JUMP", "PULO" },
+            [("toque", "Attack")] = new[] { "ATK", "ATQ" },
+            [("toque", "Bow")] = new[] { "BOW", "ARCO" },
+            [("toque", "Interact")] = new[] { "USE", "USAR" },
+            [("toque", "Advance")] = new[] { "SPACE", "ESPAÇO" },
+            [("toque", "Sprint")] = new[] { "LEFT SHIFT", "SHIFT ESQUERDO" },
+        };
+
+        var atual = typeof(InputDeviceTracker).GetProperty("Current");
+        object antes = atual.GetValue(null);
+        if (como == "toque") { atual.GetSetMethod(true).Invoke(null, new object[] { InputDeviceKind.Touch }); }
+
+        Language idiomaAntes = Localization.Current;
+        foreach (Language idioma in new[] { Language.English, Language.Portuguese })
+        {
+            Localization.Current = idioma;
+            int col = idioma == Language.English ? 0 : 1;
+            var linha = new List<string>();
+            var erros = new List<string>();
+            for (int i = 0; i < acoes.Length; i++)
+            {
+                string r = ControlHints.Button(acoes[i]);
+                string e = esperado[como][i] ?? (porIdioma.TryGetValue((como, acoes[i]), out var par) ? par[col] : "?");
+                linha.Add($"{acoes[i]}={r}");
+                bool interno = r == acoes[i] || r.Contains("Negative") || r.Contains("Positive") || r.Contains("<") || r.Contains("button") || r.Contains("Trigger");
+                if (r != e || interno) { erros.Add($"{acoes[i]}: \"{r}\" (esperado \"{e}\")"); }
+            }
+            string dicaControles = Localization.Get("ui.controls.hint", ControlHints.Button(ControlHints.Cancel));
+            string cancela = esperado[como][10];
+            if (!dicaControles.Contains(cancela) || dicaControles.Contains("{")) { erros.Add($"dica Controles \"{dicaControles}\""); }
+            L($"- {como}, {idioma}: {string.Join(" · ", linha)} · Controles: \"{dicaControles}\"");
+            Checar(erros.Count == 0, $"{como}, {idioma}: todas as ações com o rótulo do binding real" + (erros.Count > 0 ? " — " + string.Join("; ", erros) : ""));
+        }
+
+        if (como == "teclado")
+        {
+            // As setas de toque acham a parte do composto pelo nome ("negative"); o asset grafa "Negative". Antes da 13B.4
+            // caíam sempre no fallback, e remapear "mover" deixava a seta de toque sem efeito.
+            string esq = KeyRebindService.GetCompositePartPath("Move", "negative", "FALLBACK");
+            string dir = KeyRebindService.GetCompositePartPath("Move", "positive", "FALLBACK");
+            Checar(esq == "<Keyboard>/a" && dir == "<Keyboard>/d", $"setas de toque seguem o binding do Move: {esq} / {dir}");
+        }
+
+        Localization.Current = idiomaAntes;
+        if (como == "toque") { atual.GetSetMethod(true).Invoke(null, new object[] { antes }); }
+    }
 
     private static void DicasTroia(string como, string pulo, string ataque)
     {
@@ -481,6 +567,8 @@ public static class GamepadMenuProbe
         Time.timeScale = 1f;
         AudioListener.volume = 1f;
         EditorUtility.audioMasterMute = mudoOriginal;
+        if (saveAnterior != null) { PlayerPrefs.SetString("Odisseia.Save", saveAnterior); } else { PlayerPrefs.DeleteKey("Odisseia.Save"); }
+        PlayerPrefs.Save();
         EditorApplication.ExitPlaymode();
         EditorApplication.Exit(c);
     }

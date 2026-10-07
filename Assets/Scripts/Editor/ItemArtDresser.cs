@@ -12,7 +12,8 @@ using Odisseia.Systems;
 ///   100 px/un encolhida a 0,35.
 /// - ArrowPickup: aljava em escala 1, no lugar do quadrado tingido a 0,4. (Hoje nenhuma cena instancia o prefab — a
 ///   flecha recolhida acrescenta o componente nela mesma.)
-/// - Checkpoint: altar grego, quadro 00 apagado e 01 aceso, nos dois sprites que o <c>Checkpoint</c> já troca.
+/// - Checkpoint: altar grego, quadro 00 apagado e 01 aceso, nos dois sprites que o <c>Checkpoint</c> já troca; 01–06
+///   como a chama em laço.
 ///
 /// Só apresentação: o COLISOR fica do mesmo tamanho no mundo. Ele está no mesmo Transform cuja escala muda, então o raio
 /// é recalculado (raio × escala antiga). Idempotente: rodar de novo dá o mesmo prefab.
@@ -21,7 +22,7 @@ public static class ItemArtDresser
 {
     public static void Run()
     {
-        bool ok = Moeda() & Aljava() & Altar() & Poeira();
+        bool ok = Moeda() & Aljava() & Altar() & Poeira() & CorpoNaFrente();
         AssetDatabase.SaveAssets();
         if (Application.isBatchMode) { EditorApplication.Exit(ok ? 0 : 1); }
     }
@@ -85,6 +86,14 @@ public static class ItemArtDresser
         Sprite aceso = Quadro(folha, "item_checkpoint_altar_01");
         if (apagado == null || aceso == null) { return false; }
 
+        // 01–06: a chama em laço (mesmo canvas e pivô; só a chama e as fagulhas mudam).
+        var chama = new Sprite[6];
+        for (int i = 0; i < chama.Length; i++)
+        {
+            chama[i] = Quadro(folha, $"item_checkpoint_altar_{i + 1:00}");
+            if (chama[i] == null) { return false; }
+        }
+
         GameObject raiz = PrefabUtility.LoadPrefabContents(caminho);
         try
         {
@@ -92,15 +101,47 @@ public static class ItemArtDresser
             var so = new SerializedObject(raiz.GetComponent<Checkpoint>());
             so.FindProperty("inactiveSprite").objectReferenceValue = apagado;
             so.FindProperty("activeSprite").objectReferenceValue = aceso;
+            SerializedProperty quadros = so.FindProperty("activeFrames");
+            quadros.arraySize = chama.Length;
+            for (int i = 0; i < chama.Length; i++) { quadros.GetArrayElementAtIndex(i).objectReferenceValue = chama[i]; }
             so.ApplyModifiedPropertiesWithoutUndo();
             PrefabUtility.SaveAsPrefabAsset(raiz, caminho);
-            Debug.Log("[Itens] Checkpoint: altar apagado/aceso (quadros 00 e 01)");
+            Debug.Log("[Itens] Checkpoint: altar apagado/aceso (quadros 00 e 01) e chama em laço (01–06)");
             return true;
         }
         finally { PrefabUtility.UnloadPrefabContents(raiz); }
     }
 
     /// <summary>Poeira de pulo e pouso no Player (só observa o controlador; ver PlayerDustFx).</summary>
+    /// <summary>
+    /// Odisseu na frente do altar (13B.6). Ordem 0 é a camada "interativa" de toda fase (chão, altares, moedas, plataformas,
+    /// objetivo) e o Body do jogador também é 0: com ordem igual, o Unity (pipeline Built-in, câmera ortográfica) desempata
+    /// pela distância à câmera, e tudo estava em z 0 — o Odisseu nascia às vezes atrás do altar. Só o sprite Body chega
+    /// 0,05 para a câmera: ganha os empates da ordem 0 e nada mais muda (ordem 1+ — NPCs, portões, mastros, inimigos,
+    /// primeiro plano — continua na frente; negativas, atrás). A raiz, o colisor e o respawn não mexem (a física 2D ignora z).
+    /// Descartados: altar na ordem −2 (muros e cais do Prólogo o cobriam) e jogador na ordem 1 (empataria com NPCs e portões).
+    /// </summary>
+    private static bool CorpoNaFrente()
+    {
+        const string caminho = "Assets/Prefabs/Player.prefab";
+        GameObject raiz = PrefabUtility.LoadPrefabContents(caminho);
+        try
+        {
+            var corpo = raiz.GetComponentsInChildren<SpriteRenderer>(true).FirstOrDefault(r => r.name == "Body");
+            if (corpo == null) { Debug.LogError("[Itens] Player sem Body"); return false; }
+            Vector3 p = corpo.transform.localPosition;
+            if (Mathf.Approximately(p.z, ZDoCorpo)) { Debug.Log("[Itens] Player: Body já na frente (z −0,05)"); return true; }
+            corpo.transform.localPosition = new Vector3(p.x, p.y, ZDoCorpo);
+            PrefabUtility.SaveAsPrefabAsset(raiz, caminho);
+            Debug.Log("[Itens] Player: Body em z −0,05 (ganha os empates da ordem 0)");
+            return true;
+        }
+        finally { PrefabUtility.UnloadPrefabContents(raiz); }
+    }
+
+    /// <summary>Distância do sprite do jogador para a câmera, em unidades: pequena, só para desempatar.</summary>
+    public const float ZDoCorpo = -0.05f;
+
     private static bool Poeira()
     {
         const string caminho = "Assets/Prefabs/Player.prefab";
